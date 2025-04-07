@@ -1,0 +1,29 @@
+[ctrl]
+     # 设置程序输出的程度，缺省为1
+     print_level =               1
+     # 设置Rayon和OpenMP的并行数，缺省为1
+     num_threads =               4
+     # 设置使用的电子结构方法，缺省为HF
+     xc =                        "mp2" 
+     basis_path =                "def2-TZVP"
+     auxbas_path =               "def2-SVP-JKFIT" 
+     # 使用resolution-of-identity (RI)技术处理四中心积分（缺省）
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+     job_type =                  "force"
+     numerical_force =           true
+     nforce_displacement =       0.005
+
+
+[geom]
+     name = "NH3"
+     unit = "angstrom"
+     position = '''
+        N  -2.1988391019      1.8973746268      0.0000000000
+        H  -1.1788391019      1.8973746268      0.0000000000
+        H  -2.5388353987      1.0925460144     -0.5263586446
+        H  -2.5388400276      2.7556271745     -0.4338224694'''
+
