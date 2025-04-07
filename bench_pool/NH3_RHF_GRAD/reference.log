@@ -1,0 +1,88 @@
+=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Force calculation
+The exchange-correlation method: hf
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from def2-TZVP
+The spheric-GTO auxiliary basis set is taken from def2-SVP-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+N       -2.19883910      1.89737463      0.00000000
+H       -1.17883910      1.89737463      0.00000000
+H       -2.53883540      1.09254601     -0.52635864
+H       -2.53884003      2.75562717     -0.43382247
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+=========================================================
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 23, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 66,final natm: 8
+numbasis: 49, num_auxbas: 131
+Molecule_name: NH3
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      11.84792373 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00506740 with the total number of basis functions:     49
+Generate SAD of N
+Generate SAD of H
+Initial guess energy using single atom density (SAD):     -56.2166271501990806
+The total energy:       -56.1726524489 Ha by the initial guess
+Energy:     -56.2057144827 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 1.27508e-3; eev 3.62266e-1 Ha; etot -7.95860e-3 Ha
+Energy:     -56.2136730790 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 2.25877e-4; eev 8.66827e-3 Ha; etot -3.64710e-3 Ha
+Energy:     -56.2173201806 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 4.44681e-5; eev 6.86373e-4 Ha; etot -3.23074e-5 Ha
+Energy:     -56.2173524880 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 2.67539e-5; eev 2.68939e-4 Ha; etot -1.15530e-6 Ha
+Energy:     -56.2173536433 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 6.41175e-6; eev 1.50417e-4 Ha; etot -2.01993e-7 Ha
+Energy:     -56.2173538453 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 9.39317e-7; eev 1.09844e-5 Ha; etot -7.54352e-9 Ha
+Energy:     -56.2173538528 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 9.42383e-8; eev 2.38544e-6 Ha; etot -9.98739e-11 Ha
+Energy:     -56.2173538529 Ha after    8 iterations (in       0.00 seconds).
+SCF Change: DM 1.07537e-8; eev 4.29137e-7 Ha; etot -1.56319e-12 Ha
+Energy:     -56.2173538529 Ha after    9 iterations (in       0.00 seconds).
+SCF Change: DM 2.70490e-9; eev 8.92750e-8 Ha; etot 7.10543e-14 Ha
+Energy:     -56.2173538529 Ha after   10 iterations (in       0.00 seconds).
+SCF is converged after   10 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+N       -0.00401894     -0.00063106      0.01134897
+H        0.02006915     -0.00015773      0.00282861
+H       -0.00802486     -0.01678341     -0.00804460
+H       -0.00802536      0.01757220     -0.00613298
+
+------------------------------------
+force                   0.091 s for force calculation
+Mulliken population analysis:
+  0-N  :  -0.728567
+  1-H  :   0.242856
+  2-H  :   0.242856
+  3-H  :   0.242856
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -56.2173538529 Ha
+Detailed time report:
+Overall   |:    0.135 s for the whole job
+SCF       |:    0.044 s for the scf procedure
+force     |:    0.091 s for force calculation
