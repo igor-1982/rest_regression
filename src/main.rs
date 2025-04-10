@@ -7,6 +7,8 @@ use std::process::Command as ProcessCommand;
 use walkdir::WalkDir;
 use chrono::{DateTime, Local};
 
+mod parse_grad;
+
 pub fn parse_input() -> ArgMatches {
     Command::new("rest_regression")
         .version("0.1")
@@ -115,6 +117,16 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         let rmsd1 = cap["rmsd1"].parse::<f64>().unwrap();
         let rmsd2 = cap["rmsd2"].parse::<f64>().unwrap();
         result.insert("EP Benchmark".to_string(), vec![rmsd1, rmsd2]);
+    }
+
+    let re_grad = Regex::new(
+        r"[-]{3,} *Output gradient *\[[a-zA-Z.]*\] *[-]{3,}\n+(?P<grad>[\S\s]*)\n+[-]{3,}"
+    ).unwrap();
+
+    if re_grad.is_match(&buf) {
+        let caps = re_grad.captures(&buf).unwrap();
+        let grad = crate::parse_grad::parse_grad(&caps["grad"].to_string());
+        result.insert("gradient".to_string(), grad);
     }
 
     Ok(result)
