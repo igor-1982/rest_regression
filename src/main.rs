@@ -153,7 +153,28 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                 println!("{:20} not found in output", key);
                 //break;
             }
-        } else {
+        } else if key.eq("gradient") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let out_norm = out_value.iter().fold(0.0, |r, f| r + f.powf(2.0)).powf(0.5);
+                let ref_norm = ref_value.iter().fold(0.0, |r, f| r + f.powf(2.0)).powf(0.5);
+                let dev = out_value.iter().zip(ref_value.iter()).fold(0.0, |r, (o, f)| {
+                    r + (*o - *f).powf(2.0)
+                }).powf(0.5);
+
+                if dev > 1.0e-4 {
+                    is_same = false;
+                    println!("WARNNING: {:20}: norm {:20.10} != norm {:20.10}", key, out_norm, ref_norm);
+                } else {
+                    println!("Pass    : {:20}: norm {:20.10}  = norm {:20.10}", key, out_norm, ref_norm);
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+                //break;
+            }
+            
+        }
+         else {
             if let Some(out_value) = out_hashmap.get(key) {
                 if (ref_value[0] - out_value[0]).abs() > 1e-5 {
                     is_same = false;
