@@ -1,0 +1,475 @@
+=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: mp2
+Print level:                2
+The number of threads used for parallelism:      16
+The spheric-GTO basis set is taken from def2-TZVP
+The spheric-GTO auxiliary basis set is taken from def2-SVP-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+N        0.00000000      0.00000000      0.00000000
+H        0.00000000      1.50000000      1.00000000
+H        1.40000000      1.10000000      0.00000000
+H        1.20000000      0.00000000      1.30000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+Turn on the basis pair symmetry for RI 3D-tensors
+The pruning method is nwchem
+The radial grid generation method is treutler
+min_num_angular_points: 110
+max_num_angular_points: 590
+hardness: 3
+Grid generation level: 3
+Even tempered basis generation: false
+The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+Initial guess is prepared by (sad).
+=========================================================
+the scf functional for 'mp2' contains
+the post-scf functional 'mp2' is employed, which contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 23, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 66,final natm: 8
+numbasis: 49, num_auxbas: 131
+Molecule_name: NH3
+job_type = "SinglePoint"
+print_level = 2
+basis_path = "def2-TZVP"
+basis_type = "spheric"
+auxbas_path = "def2-SVP-JKFIT"
+auxbas_type = "spheric"
+use_auxbas = true
+even_tempered_basis = false
+etb_start_atom_number = 37
+etb_beta = 2.0
+ri_k_only = false
+auxbasis_response = false
+numerical_force = false
+use_isdf = false
+isdf_k_only = false
+isdf_k_mu = 8
+isdf_new = false
+eri_type = "ri_v"
+use_ri_symm = true
+xc = "mp2"
+xc_type = "Standard"
+post_xc = []
+post_correlation = []
+post_ai_correction = "none"
+charge = 0.0
+spin = 1.0
+spin_channel = 1
+spin_polarization = false
+frozen_core_postscf = 0
+frequency_points = 20
+lambda_points = 20
+freq_grid_type = 0
+freq_cut_off = 10.0
+radial_precision = 0.000000000001
+min_num_angular_points = 110
+max_num_angular_points = 590
+grid_gen_level = 3
+hardness = 3
+pruning = "nwchem"
+rad_grid_method = "treutler"
+external_grids = "grids"
+mixer = "diis"
+mix_param = 0.2
+num_max_diis = 8
+start_diis_cycle = 1
+start_check_oscillation = 20
+max_scf_cycle = 100
+scf_acc_rho = 0.00000001
+scf_acc_eev = 0.000001
+scf_acc_etot = 0.00000001
+restart = false
+chkfile = "none"
+chkfile_type = "hdf5"
+guessfile = "none"
+guessfile_type = "none"
+external_init_guess = false
+initial_guess = "sad"
+noiter = false
+check_stab = false
+use_dm_only = false
+use_ri_vj = true
+fciqmc_dump = false
+outputs = []
+cube_orb_setting = [3.0, 80.0]
+cube_orb_indices = []
+atom_sad = false
+occupation_type = "INTEGER"
+frac_tolerant = 0.001
+deep_pot = false
+bench_eps = false
+num_threads = 16
+batch_size = 64
+nforce_displacement = 0.0013
+ndipole_displacement = 0.0003
+force_state_occupation = []
+auxiliary_reference_states = []
+pt2_mpi_mode = 0
+
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:       7.60073032 Hartree
+External dipole field contribution to nuc energy exists:       0.49132879 Hartree
+no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Detailed time report:
+inv_sqrt  |:    0.002 s for for the sqrt inverse of aux_ij
+ri_v      |:    0.000 s for for RI dot aux_v^{-1/2}
+prim ri   |:    0.001 s for for the pure three-center integrals
+aux_ij    |:    0.000 s for for the coulomb matrix of auxiliary basis
+all ri    |:    0.004 s for for the total evaluations of ri3fn
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01809249 with the total number of basis functions:     49
+Generate SAD of N
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 11, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 36,final natm: 2
+numbasis: 31, num_auxbas: 77
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.02949996 with the total number of basis functions:     31
+Grid size: 14046
+Initial guess from SAP
+The evaluation of vmat costs             0.00 seconds
+The total energy:       -53.8354235512 Ha by the initial guess
+Energy:     -53.8576417636 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 6.14822e-4; eev 7.37777e-2 Ha; etot 8.67403e-3 Ha
+Energy:     -53.8489677319 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 8.59929e-5; eev 2.59797e-2 Ha; etot 2.99527e-3 Ha
+Energy:     -53.8459724647 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 2.16807e-4; eev 1.87431e-2 Ha; etot -2.26129e-3 Ha
+Energy:     -53.8482337587 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 4.25404e-5; eev 1.16453e-2 Ha; etot -5.79871e-4 Ha
+Energy:     -53.8488136295 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 7.50932e-5; eev 5.84409e-3 Ha; etot 8.58266e-4 Ha
+Energy:     -53.8479553630 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 2.02111e-5; eev 4.81361e-3 Ha; etot 1.35480e-4 Ha
+Energy:     -53.8478198834 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 1.90645e-5; eev 1.05291e-3 Ha; etot -2.57972e-4 Ha
+Energy:     -53.8480778557 Ha after    8 iterations (in       0.00 seconds).
+SCF Change: DM 5.75785e-6; eev 1.06196e-3 Ha; etot -8.23884e-8 Ha
+Energy:     -53.8480779380 Ha after    9 iterations (in       0.00 seconds).
+SCF Change: DM 4.14979e-7; eev 1.47014e-5 Ha; etot -2.17008e-8 Ha
+Energy:     -53.8480779598 Ha after   10 iterations (in       0.00 seconds).
+SCF Change: DM 9.03687e-8; eev 2.44303e-6 Ha; etot -1.93410e-11 Ha
+Energy:     -53.8480779598 Ha after   11 iterations (in       0.00 seconds).
+SCF Change: DM 3.95825e-9; eev 2.31847e-7 Ha; etot -1.12266e-12 Ha
+Energy:     -53.8480779598 Ha after   12 iterations (in       0.00 seconds).
+SCF Change: DM 5.68073e-10; eev 1.35472e-8 Ha; etot 7.81597e-14 Ha
+Energy:     -53.8480779598 Ha after   13 iterations (in       0.00 seconds).
+SCF Change: DM 5.41358e-12; eev 4.53132e-10 Ha; etot 7.10543e-15 Ha
+Energy:     -53.8480779598 Ha after   14 iterations (in       0.00 seconds).
+SCF is converged after   14 iterations.
+the job spends             0.02 seconds
+Generate SAD of H
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 4, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 10,final natm: 2
+numbasis:  6, num_auxbas: 18
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.10940728 with the total number of basis functions:      6
+Grid size: 10024
+Initial guess from SAP
+The evaluation of vmat costs             0.00 seconds
+The total energy:        -0.4746750264 Ha by the initial guess
+Energy:      -0.4947605578 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.00 seconds).
+SCF Change: DM (5.66606e-3, 0.00000e0); eev 1.10268e-1 Ha; etot -7.45427e-3 Ha
+Energy:      -0.5022148265 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    2 iterations (in       0.00 seconds).
+SCF Change: DM (1.14143e-3, 0.00000e0); eev 4.34604e-2 Ha; etot 1.31784e-3 Ha
+Energy:      -0.5008969838 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    3 iterations (in       0.00 seconds).
+SCF Change: DM (1.43377e-4, 0.00000e0); eev 1.02798e-2 Ha; etot 9.31515e-4 Ha
+Energy:      -0.4999654685 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    4 iterations (in       0.00 seconds).
+SCF Change: DM (7.91559e-5, 0.00000e0); eev 9.84671e-4 Ha; etot 1.87791e-4 Ha
+Energy:      -0.4997776776 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    5 iterations (in       0.00 seconds).
+SCF Change: DM (3.24521e-5, 0.00000e0); eev 4.69603e-4 Ha; etot -4.66356e-6 Ha
+Energy:      -0.4997823411 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    6 iterations (in       0.00 seconds).
+SCF Change: DM (7.56118e-6, 0.00000e0); eev 2.79855e-4 Ha; etot -1.82058e-5 Ha
+Energy:      -0.4998005469 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    7 iterations (in       0.00 seconds).
+SCF Change: DM (7.54890e-7, 0.00000e0); eev 9.53395e-5 Ha; etot -9.28526e-6 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    8 iterations (in       0.00 seconds).
+SCF Change: DM (3.24600e-7, 0.00000e0); eev 5.34945e-6 Ha; etot -2.91857e-11 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    9 iterations (in       0.00 seconds).
+SCF Change: DM (1.12497e-7, 0.00000e0); eev 7.57020e-7 Ha; etot -2.64538e-12 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   10 iterations (in       0.00 seconds).
+SCF Change: DM (9.37822e-14, 0.00000e0); eev 2.04837e-12 Ha; etot -5.83977e-14 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   11 iterations (in       0.00 seconds).
+SCF is converged after   11 iterations.
+the job spends             0.01 seconds
+Exc:       0.00000000, Vxc:       0.00000000
+Initial guess energy using single atom density (SAD):     -55.1654131075286074
+Detailed time report:
+CInt      |:    0.006 s for Two, Three, and Four-center integrals
+Overall   |:    0.041 s for SCF Preparation
+ISDF      |:    0.000 s for ISDF initialization
+InitGuess |:    0.035 s for Prepare initial guess
+DFT Grids |:    0.000 s for Initialization of the tabulated Grids and AOs
+Exc:       0.00000000, Vxc:       0.00000000
+The total energy:       -55.8038915285 Ha by the initial guess
+Exc:       0.00000000, Vxc:       0.00000000
+Energy:     -55.7564705237 Ha after    1 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.63104e-2; eev  1.53689e0 Ha; etot 5.13147e-2 Ha
+Energy:     -55.7051558727 Ha after    2 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 2.88098e-3; eev 1.54891e-1 Ha; etot -1.85697e-1 Ha
+Energy:     -55.8908524048 Ha after    3 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.43793e-3; eev 1.64693e-2 Ha; etot -4.17299e-3 Ha
+Energy:     -55.8950253950 Ha after    4 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.18788e-3; eev 1.77922e-2 Ha; etot -8.71774e-4 Ha
+Energy:     -55.8958971687 Ha after    5 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 4.62819e-4; eev 4.07478e-3 Ha; etot -3.61397e-4 Ha
+Energy:     -55.8962585655 Ha after    6 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 4.48120e-4; eev 2.20797e-3 Ha; etot -8.35874e-5 Ha
+Energy:     -55.8963421529 Ha after    7 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.97234e-4; eev 1.11591e-3 Ha; etot -4.12946e-5 Ha
+Energy:     -55.8963834475 Ha after    8 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.07904e-4; eev 9.84721e-4 Ha; etot -9.08147e-6 Ha
+Energy:     -55.8963925290 Ha after    9 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 8.72395e-5; eev 9.13370e-4 Ha; etot -2.67923e-6 Ha
+Energy:     -55.8963952082 Ha after   10 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.83228e-5; eev 2.42494e-4 Ha; etot -9.11645e-7 Ha
+Energy:     -55.8963961198 Ha after   11 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.04426e-5; eev 5.65705e-5 Ha; etot -7.15606e-8 Ha
+Energy:     -55.8963961914 Ha after   12 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.32848e-5; eev 6.31794e-5 Ha; etot -3.93846e-8 Ha
+Energy:     -55.8963962308 Ha after   13 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 6.81581e-6; eev 3.44150e-5 Ha; etot -3.12954e-8 Ha
+Energy:     -55.8963962621 Ha after   14 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.83380e-6; eev 3.27362e-5 Ha; etot -5.76587e-9 Ha
+Energy:     -55.8963962678 Ha after   15 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 5.05268e-7; eev 1.07224e-5 Ha; etot -5.55232e-10 Ha
+Energy:     -55.8963962684 Ha after   16 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 5.58913e-7; eev 2.53796e-6 Ha; etot -5.40297e-11 Ha
+Energy:     -55.8963962685 Ha after   17 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 2.84441e-7; eev 2.96484e-6 Ha; etot -3.94351e-11 Ha
+Energy:     -55.8963962685 Ha after   18 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 1.05472e-7; eev 3.46189e-7 Ha; etot -8.83915e-12 Ha
+Energy:     -55.8963962685 Ha after   19 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 8.84271e-8; eev 7.10385e-7 Ha; etot -2.74269e-12 Ha
+Energy:     -55.8963962685 Ha after   20 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 2.94352e-8; eev 3.31100e-7 Ha; etot -1.12266e-12 Ha
+Energy:     -55.8963962685 Ha after   21 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+SCF Change: DM 6.40958e-9; eev 7.02857e-8 Ha; etot -2.84217e-14 Ha
+Energy:     -55.8963962685 Ha after   22 iterations (in       0.00 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.00s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+SCF is converged after   22 iterations.
+   State    Occupation        Eigenvalue
+       0       2.00000        -15.927857
+       1       2.00000         -1.155424
+       2       2.00000         -0.663500
+       3       2.00000         -0.609081
+       4       2.00000         -0.538602
+       5       0.00000         -0.133644
+       6       0.00000         -0.112068
+       7       0.00000         -0.084680
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+generate RI3MO only for occ_range:0..5, vir_range:5..49
+Finish the RI3MO generation
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.25995367,      -0.21126703,      -0.04868663
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.259953667787 Ha
+E[MP2  ]=:     -56.15634994 Ha, Ex[HF]:      -7.02325832 Ha, Ec[PT2  ]:      -0.25995367 Ha
+Detailed time report:
+c_r5dft   |:    0.000 s for for advanced correlations
+ao2mo     |:    0.000 s for for the generation of RI3MO
+xc_energy |:    0.001 s for for x_hf, xc_scf, xc_xdh
+Mulliken population analysis:
+  0-N  :   0.528468
+  1-H  :  -0.822748
+  2-H  :  -0.341294
+  3-H  :   0.635575
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -55.8963962685 Ha
+The (R)-xDH energy    :     -56.1563499363 Ha
+Detailed time report:
+SCF       |:    0.083 s for the scf procedure
+Overall   |:    0.085 s for the whole job
+PT2       |:    0.001 s for the PT2 evaluation
