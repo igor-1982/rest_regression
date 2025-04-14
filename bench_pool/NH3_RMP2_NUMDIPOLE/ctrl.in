@@ -1,7 +1,7 @@
 [ctrl]
      print_level =          2
      job_type =             "numerical dipole"
-     xc =                   "hf"
+     xc =                   "mp2"
      basis_path =           "def2-TZVP"
      auxbas_path =          "def2-SVP-JKFIT"
      guessfile =            "none"

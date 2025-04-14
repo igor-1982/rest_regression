@@ -2,7 +2,7 @@
 Input parameters for the REST calculation
 =========================================================
 Calculation type: Numerical dipole calculation
-The exchange-correlation method: hf
+The exchange-correlation method: mp2
 Print level:                2
 The number of threads used for parallelism:      16
 The spheric-GTO basis set is taken from def2-TZVP
@@ -36,7 +36,8 @@ The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF pro
 Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
 Initial guess is prepared by (sad).
 =========================================================
-the functional of 'hf' contains
+the scf functional for 'mp2' contains
+the post-scf functional 'mp2' is employed, which contains
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
 Libxc version used in REST: 7.0.0
 nbas: 23, natm: 4 for standard basis sets
@@ -63,7 +64,7 @@ isdf_k_mu = 8
 isdf_new = false
 eri_type = "ri_v"
 use_ri_symm = true
-xc = "hf"
+xc = "mp2"
 xc_type = "Standard"
 post_xc = []
 post_correlation = []
@@ -128,11 +129,11 @@ no empirical dispersion correction is employed
 No ghost effective potential
 No ghost point charges
 Detailed time report:
-inv_sqrt  |:    0.002 s for for the sqrt inverse of aux_ij
-all ri    |:    0.005 s for for the total evaluations of ri3fn
-aux_ij    |:    0.001 s for for the coulomb matrix of auxiliary basis
 prim ri   |:    0.001 s for for the pure three-center integrals
+aux_ij    |:    0.001 s for for the coulomb matrix of auxiliary basis
+all ri    |:    0.004 s for for the total evaluations of ri3fn
 ri_v      |:    0.000 s for for RI dot aux_v^{-1/2}
+inv_sqrt  |:    0.002 s for for the sqrt inverse of aux_ij
 Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.01809249 with the total number of basis functions:     49
 Generate SAD of N
@@ -168,17 +169,17 @@ SCF Change: DM 2.02111e-5; eev 4.81361e-3 Ha; etot 1.35480e-4 Ha
 Energy:     -53.8478198834 Ha after    7 iterations (in       0.00 seconds).
 SCF Change: DM 1.90645e-5; eev 1.05291e-3 Ha; etot -2.57972e-4 Ha
 Energy:     -53.8480778557 Ha after    8 iterations (in       0.00 seconds).
-SCF Change: DM 5.75785e-6; eev 1.06196e-3 Ha; etot -8.23884e-8 Ha
+SCF Change: DM 5.75785e-6; eev 1.06196e-3 Ha; etot -8.23885e-8 Ha
 Energy:     -53.8480779380 Ha after    9 iterations (in       0.00 seconds).
 SCF Change: DM 4.14979e-7; eev 1.47014e-5 Ha; etot -2.17008e-8 Ha
 Energy:     -53.8480779598 Ha after   10 iterations (in       0.00 seconds).
-SCF Change: DM 9.03687e-8; eev 2.44303e-6 Ha; etot -1.92699e-11 Ha
+SCF Change: DM 9.03687e-8; eev 2.44303e-6 Ha; etot -1.92912e-11 Ha
 Energy:     -53.8480779598 Ha after   11 iterations (in       0.00 seconds).
-SCF Change: DM 3.95825e-9; eev 2.31847e-7 Ha; etot -1.10845e-12 Ha
+SCF Change: DM 3.95825e-9; eev 2.31847e-7 Ha; etot -1.08002e-12 Ha
 Energy:     -53.8480779598 Ha after   12 iterations (in       0.00 seconds).
-SCF Change: DM 5.68073e-10; eev 1.35472e-8 Ha; etot 3.55271e-14 Ha
+SCF Change: DM 5.68074e-10; eev 1.35472e-8 Ha; etot -2.84217e-14 Ha
 Energy:     -53.8480779598 Ha after   13 iterations (in       0.00 seconds).
-SCF Change: DM 5.41300e-12; eev 4.53116e-10 Ha; etot -2.84217e-14 Ha
+SCF Change: DM 5.41295e-12; eev 4.53130e-10 Ha; etot 2.84217e-14 Ha
 Energy:     -53.8480779598 Ha after   14 iterations (in       0.00 seconds).
 SCF is converged after   14 iterations.
 the job spends             0.03 seconds
@@ -217,20 +218,20 @@ SCF Change: DM (7.54890e-7, 0.00000e0); eev 9.53395e-5 Ha; etot -9.28526e-6 Ha
 Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    8 iterations (in       0.00 seconds).
 SCF Change: DM (3.24600e-7, 0.00000e0); eev 5.34945e-6 Ha; etot -2.91857e-11 Ha
 Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    9 iterations (in       0.00 seconds).
-SCF Change: DM (1.12497e-7, 0.00000e0); eev 7.57020e-7 Ha; etot -2.64538e-12 Ha
+SCF Change: DM (1.12497e-7, 0.00000e0); eev 7.57020e-7 Ha; etot -2.64544e-12 Ha
 Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   10 iterations (in       0.00 seconds).
-SCF Change: DM (9.37822e-14, 0.00000e0); eev 2.04837e-12 Ha; etot -5.83977e-14 Ha
+SCF Change: DM (9.37822e-14, 0.00000e0); eev 2.04837e-12 Ha; etot -5.83422e-14 Ha
 Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   11 iterations (in       0.00 seconds).
 SCF is converged after   11 iterations.
 the job spends             0.01 seconds
 Exc:       0.00000000, Vxc:       0.00000000
 Initial guess energy using single atom density (SAD):     -55.1654131075286145
 Detailed time report:
-ISDF      |:    0.000 s for ISDF initialization
-CInt      |:    0.006 s for Two, Three, and Four-center integrals
-InitGuess |:    0.037 s for Prepare initial guess
-Overall   |:    0.043 s for SCF Preparation
 DFT Grids |:    0.000 s for Initialization of the tabulated Grids and AOs
+Overall   |:    0.043 s for SCF Preparation
+ISDF      |:    0.000 s for ISDF initialization
+InitGuess |:    0.037 s for Prepare initial guess
+CInt      |:    0.006 s for Two, Three, and Four-center integrals
 Exc:       0.00000000, Vxc:       0.00000000
 The total energy:       -55.6659012671 Ha by the initial guess
 Exc:       0.00000000, Vxc:       0.00000000
@@ -332,7 +333,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 1.37900e-6; eev 1.23302e-5 Ha; etot -3.22611e-8 Ha
+SCF Change: DM 1.37900e-6; eev 1.23302e-5 Ha; etot -3.22610e-8 Ha
 Energy:     -55.7647305009 Ha after   12 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -341,7 +342,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 2.99632e-7; eev 3.29446e-6 Ha; etot -4.28564e-10 Ha
+SCF Change: DM 2.99632e-7; eev 3.29446e-6 Ha; etot -4.28599e-10 Ha
 Energy:     -55.7647305013 Ha after   13 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -350,7 +351,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 2.71835e-7; eev 1.61536e-6 Ha; etot -5.73976e-11 Ha
+SCF Change: DM 2.71835e-7; eev 1.61536e-6 Ha; etot -5.74403e-11 Ha
 Energy:     -55.7647305013 Ha after   14 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -359,7 +360,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 1.42965e-7; eev 1.60212e-6 Ha; etot -3.07026e-11 Ha
+SCF Change: DM 1.42965e-7; eev 1.60212e-6 Ha; etot -3.05462e-11 Ha
 Energy:     -55.7647305014 Ha after   15 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -368,7 +369,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 2.78226e-8; eev 1.36935e-6 Ha; etot -5.48539e-12 Ha
+SCF Change: DM 2.78226e-8; eev 1.36935e-6 Ha; etot -5.64881e-12 Ha
 Energy:     -55.7647305014 Ha after   16 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -377,7 +378,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 2.71226e-8; eev 2.53548e-7 Ha; etot -4.61853e-13 Ha
+SCF Change: DM 2.71226e-8; eev 2.53548e-7 Ha; etot -5.11591e-13 Ha
 Energy:     -55.7647305014 Ha after   17 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -386,7 +387,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 3.35936e-8; eev 1.57031e-7 Ha; etot -3.62377e-13 Ha
+SCF Change: DM 3.35936e-8; eev 1.57031e-7 Ha; etot -2.27374e-13 Ha
 Energy:     -55.7647305014 Ha after   18 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -395,7 +396,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 1.39896e-8; eev 8.66355e-8 Ha; etot -6.67910e-13 Ha
+SCF Change: DM 1.39896e-8; eev 8.66355e-8 Ha; etot -6.60805e-13 Ha
 Energy:     -55.7647305014 Ha after   19 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -404,7 +405,7 @@ generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-SCF Change: DM 4.40013e-9; eev 5.10481e-8 Ha; etot 5.68434e-14 Ha
+SCF Change: DM 4.40013e-9; eev 5.10481e-8 Ha; etot -9.23706e-14 Ha
 Energy:     -55.7647305014 Ha after   20 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -422,11 +423,27 @@ SCF is converged after   20 iterations.
        5       0.00000          0.027180
        6       0.00000          0.031704
        7       0.00000          0.050533
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+generate RI3MO only for occ_range:0..5, vir_range:5..49
+Finish the RI3MO generation
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.31670803,      -0.24939631,      -0.06731173
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.316708034121 Ha
+E[MP2  ]=:     -56.08143854 Ha, Ex[HF]:      -7.03225042 Ha, Ec[PT2  ]:      -0.31670803 Ha
+Detailed time report:
+ao2mo     |:    0.000 s for for the generation of RI3MO
+xc_energy |:    0.001 s for for x_hf, xc_scf, xc_xdh
+c_r5dft   |:    0.000 s for for advanced correlations
 Numerical dipole calculation invoked
 Evaluating Numerical Dipole
 Stencil index: 0|1|2|3|4|5|
-Dipole Moment in A.U. :       0.57664945,       0.52832618,       0.47711431
-Dipole Moment in DEBYE:       1.46569666,       1.34287118,       1.21270360
+Dipole Moment in A.U. :       0.46263597,       0.47720594,       0.46036314
+Dipole Moment in DEBYE:       1.17590333,       1.21293648,       1.17012635
 Mulliken population analysis:
   0-N  :  -0.369745
   1-H  :   0.112189
@@ -437,7 +454,9 @@ Mulliken population analysis:
               REST: Mission accomplished
 ====================================================
 The SCF energy        :     -55.7647305014 Ha
+The (R)-xDH energy    :     -56.0814385355 Ha
 Detailed time report:
-Overall   |:    0.264 s for the whole job
+PT2       |:    0.001 s for the PT2 evaluation
 SCF       |:    0.080 s for the scf procedure
+Overall   |:    0.260 s for the whole job
 numerical dipole|:    0.000 s for 
