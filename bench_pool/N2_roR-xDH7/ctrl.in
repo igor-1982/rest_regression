@@ -1,0 +1,21 @@
+[ctrl]
+     print_level =               2
+     num_threads =               4
+     xc =                        "R-xDH7"
+     post_ai_correction =        "scc15"
+     basis_path =                "cc-pVDZ"
+     auxbas_path =               "def2-SV(P)-JKFIT" 
+     charge =                    0.0
+     level_shift =               0.5
+     spin =                      3.0
+     spin_polarization =         false
+
+[geom]
+    name = "N2, example"
+    unit = "Angstrom"
+    position = '''
+            N    0.0000000000       0.0000000000       0.0000000000
+            N    1.0000000000       0.0000000000       0.0000000000
+            '''
+
+
