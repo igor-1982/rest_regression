@@ -39,7 +39,7 @@ Even tempered basis generation: false
 The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
 Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
 Initial guess is prepared by (sad).
-Initial guess mixing (HOMO-LUMO) is enabled with ratio = 0.3
+Initial guess mixing enabled (theta = 15.0°): HOMO-LUMO rotated to induce symmetry breaking
 =========================================================
 the functional of 'b3lyp' contains
 The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
@@ -128,7 +128,8 @@ ndipole_displacement = 0.0003
 force_state_occupation = []
 auxiliary_reference_states = []
 pt2_mpi_mode = 0
-guess_mix_ratio = 0.3
+guess_mix = true
+guess_mix_theta_deg = 15.0
 
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Nuc_energy:      99.44391260 Hartree
@@ -136,11 +137,11 @@ no empirical dispersion correction is employed
 No ghost effective potential
 No ghost point charges
 Detailed time report:
-prim ri   |:    0.010 s for for the pure three-center integrals
-inv_sqrt  |:    0.050 s for for the sqrt inverse of aux_ij
-ri_v      |:    0.001 s for for RI dot aux_v^{-1/2}
-aux_ij    |:    0.002 s for for the coulomb matrix of auxiliary basis
-all ri    |:    0.062 s for for the total evaluations of ri3fn
+prim ri   |:    0.013 s for for the pure three-center integrals
+aux_ij    |:    0.004 s for for the coulomb matrix of auxiliary basis
+ri_v      |:    0.002 s for for RI dot aux_v^{-1/2}
+inv_sqrt  |:    0.165 s for for the sqrt inverse of aux_ij
+all ri    |:    0.184 s for for the total evaluations of ri3fn
 Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.16901005 with the total number of basis functions:     24
 Grid size: 95704
@@ -163,10 +164,10 @@ Initial guess from SAP
 The evaluation of vmat costs             0.02 seconds
 The total energy:       -36.7620628048 Ha by the initial guess
 Energy:     -36.7620628048 Ha after    1 iterations (in       0.00 seconds).
-SCF Change: DM 3.08341e-16; eev 4.64025e-16 Ha; etot -7.10543e-15 Ha
+SCF Change: DM 3.23321e-16; eev 4.64025e-16 Ha; etot -7.10543e-15 Ha
 Energy:     -36.7620628048 Ha after    2 iterations (in       0.00 seconds).
 SCF is converged after    2 iterations.
-the job spends             0.07 seconds
+the job spends             0.08 seconds
 Generate SAD of H
 the functional of 'hf' contains
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
@@ -193,65 +194,54 @@ the job spends             0.02 seconds
 electron number in alpha-channel:  15.99998844
 electron number in beta-channel:   11.99999472
 Exc:     -19.05468045, Vxc:     -12.20695701
-Initial guess energy using single atom density (SAD):    -152.9664158869532002
+Initial guess energy using single atom density (SAD):    -152.9664158869533424
 Detailed time report:
-CInt      |:    0.064 s for Two, Three, and Four-center integrals
-Overall   |:    2.745 s for SCF Preparation
-DFT Grids |:    2.250 s for Initialization of the tabulated Grids and AOs
+Overall   |:    2.942 s for SCF Preparation
+CInt      |:    0.187 s for Two, Three, and Four-center integrals
 ISDF      |:    0.000 s for ISDF initialization
-InitGuess |:    0.431 s for Prepare initial guess
+InitGuess |:    0.435 s for Prepare initial guess
+DFT Grids |:    2.321 s for Initialization of the tabulated Grids and AOs
 electron number in alpha-channel:  13.99999229
 electron number in beta-channel:   13.99999284
 Exc:     -18.75341688, Vxc:     -12.01679798
 The total energy:      -152.6744997225 Ha by the initial guess
-electron number in alpha-channel:  13.93942846
+electron number in alpha-channel:  13.99999238
 electron number in beta-channel:   13.99999257
-Exc:     -18.68613116, Vxc:     -11.97258975
-Energy:    -152.6962141062 Ha with <S^2> =  0.260 and <2S+1> =  1.429 after    1 iterations (in       0.29 seconds).
+Exc:     -18.71346194, Vxc:     -11.99036861
+Energy:    -152.7180388976 Ha with <S^2> =  0.652 and <2S+1> =  1.899 after    1 iterations (in       0.31 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.29s
+prepare_next_input:            0.31s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-electron number in alpha-channel:  13.99999251
-electron number in beta-channel:   13.99999258
-Exc:     -18.74733410, Vxc:     -12.01278166
-SCF Change: DM (2.54686e-2,8.65154e-3); eev 2.18880e-1 Ha; etot 4.21364e-2 Ha
-Energy:    -152.6540777438 Ha with <S^2> =  0.555 and <2S+1> =  1.795 after    2 iterations (in       0.28 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.28s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:  13.99999250
+electron number in alpha-channel:  13.99999249
 electron number in beta-channel:   13.99999256
-Exc:     -18.73923701, Vxc:     -12.00745008
-SCF Change: DM (8.51439e-3,9.22603e-3); eev 1.09324e-1 Ha; etot -8.41188e-2 Ha
-Energy:    -152.7381965495 Ha with <S^2> =  0.819 and <2S+1> =  2.068 after    3 iterations (in       0.28 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.28s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:  13.99999250
-electron number in beta-channel:   13.99999253
-Exc:     -18.74329243, Vxc:     -12.00994775
-SCF Change: DM (1.42098e-2,1.46377e-2); eev 1.00542e-1 Ha; etot -1.48240e-2 Ha
-Energy:    -152.7530205615 Ha with <S^2> =  1.079 and <2S+1> =  2.305 after    4 iterations (in       0.29 seconds).
+Exc:     -18.74198965, Vxc:     -12.00921060
+SCF Change: DM (9.69038e-3,9.93812e-3); eev 9.61359e-2 Ha; etot -2.56770e-2 Ha
+Energy:    -152.7437158687 Ha with <S^2> =  0.915 and <2S+1> =  2.159 after    2 iterations (in       0.29 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.29s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-electron number in alpha-channel:  13.99999252
+electron number in alpha-channel:  13.99999249
 electron number in beta-channel:   13.99999252
-Exc:     -18.76153815, Vxc:     -12.02180731
-SCF Change: DM (9.38162e-4,1.42908e-3); eev 2.26123e-2 Ha; etot -1.38306e-2 Ha
-Energy:    -152.7668511505 Ha with <S^2> =  1.079 and <2S+1> =  2.306 after    5 iterations (in       0.29 seconds).
+Exc:     -18.74559786, Vxc:     -12.01138806
+SCF Change: DM (1.31584e-2,1.30563e-2); eev 9.92379e-2 Ha; etot -1.52731e-2 Ha
+Energy:    -152.7589889329 Ha with <S^2> =  1.102 and <2S+1> =  2.325 after    3 iterations (in       0.30 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.29s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999253
+electron number in beta-channel:   13.99999251
+Exc:     -18.76484205, Vxc:     -12.02396290
+SCF Change: DM (3.05033e-3,2.90908e-3); eev 4.99966e-2 Ha; etot -7.37207e-3 Ha
+Energy:    -152.7663609996 Ha with <S^2> =  1.069 and <2S+1> =  2.297 after    4 iterations (in       0.29 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.29s
 diagonalize_hamiltonian:       0.00s
@@ -260,9 +250,9 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 electron number in alpha-channel:  13.99999251
 electron number in beta-channel:   13.99999251
-Exc:     -18.75975125, Vxc:     -12.02063271
-SCF Change: DM (4.77871e-4,3.11912e-4); eev 7.83299e-3 Ha; etot -1.40995e-4 Ha
-Energy:    -152.7669921456 Ha with <S^2> =  1.074 and <2S+1> =  2.301 after    6 iterations (in       0.28 seconds).
+Exc:     -18.75837345, Vxc:     -12.01974057
+SCF Change: DM (9.83260e-4,9.55544e-4); eev 5.96592e-3 Ha; etot -5.82594e-4 Ha
+Energy:    -152.7669435931 Ha with <S^2> =  1.074 and <2S+1> =  2.301 after    5 iterations (in       0.29 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.28s
 diagonalize_hamiltonian:       0.00s
@@ -271,31 +261,9 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 electron number in alpha-channel:  13.99999251
 electron number in beta-channel:   13.99999251
-Exc:     -18.75890631, Vxc:     -12.02008996
-SCF Change: DM (7.97677e-5,1.18635e-4); eev 2.25075e-3 Ha; etot -1.96388e-5 Ha
-Energy:    -152.7670117844 Ha with <S^2> =  1.074 and <2S+1> =  2.301 after    7 iterations (in       0.29 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.28s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:  13.99999251
-electron number in beta-channel:   13.99999251
-Exc:     -18.75896054, Vxc:     -12.02012630
-SCF Change: DM (4.14750e-5,4.99849e-5); eev 5.53142e-4 Ha; etot -1.27527e-6 Ha
-Energy:    -152.7670130597 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    8 iterations (in       0.28 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.28s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:  13.99999251
-electron number in beta-channel:   13.99999251
-Exc:     -18.75899097, Vxc:     -12.02014610
-SCF Change: DM (2.32213e-5,2.33744e-5); eev 2.09074e-4 Ha; etot -2.23214e-7 Ha
-Energy:    -152.7670132829 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    9 iterations (in       0.29 seconds).
+Exc:     -18.75893012, Vxc:     -12.02010577
+SCF Change: DM (6.41522e-5,8.11025e-5); eev 1.23426e-3 Ha; etot -6.90463e-5 Ha
+Energy:    -152.7670126394 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    6 iterations (in       0.29 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.29s
 diagonalize_hamiltonian:       0.00s
@@ -304,33 +272,44 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 electron number in alpha-channel:  13.99999251
 electron number in beta-channel:   13.99999251
-Exc:     -18.75900674, Vxc:     -12.02015607
-SCF Change: DM (4.59057e-6,4.46522e-6); eev 5.62505e-5 Ha; etot -2.52228e-8 Ha
-Energy:    -152.7670133081 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   10 iterations (in       0.28 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.28s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:  13.99999251
-electron number in beta-channel:   13.99999251
-Exc:     -18.75899929, Vxc:     -12.02015121
-SCF Change: DM (1.85083e-6,1.82208e-6); eev 2.22042e-5 Ha; etot -3.62130e-9 Ha
-Energy:    -152.7670133118 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   11 iterations (in       0.28 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.28s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:  13.99999251
-electron number in beta-channel:   13.99999251
-Exc:     -18.75899663, Vxc:     -12.02014948
-SCF Change: DM (1.77885e-7,8.06830e-8); eev 1.78990e-6 Ha; etot -2.88594e-10 Ha
-Energy:    -152.7670133121 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   12 iterations (in       0.29 seconds).
+Exc:     -18.75899207, Vxc:     -12.02014644
+SCF Change: DM (1.68150e-5,1.37148e-5); eev 2.15873e-4 Ha; etot -6.52667e-7 Ha
+Energy:    -152.7670132921 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    7 iterations (in       0.30 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.29s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75900478, Vxc:     -12.02015481
+SCF Change: DM (3.24741e-6,3.58450e-6); eev 4.94893e-5 Ha; etot -1.78338e-8 Ha
+Energy:    -152.7670133099 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    8 iterations (in       0.30 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.29s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75899835, Vxc:     -12.02015061
+SCF Change: DM (9.87436e-7,1.08143e-6); eev 9.70011e-6 Ha; etot -2.06776e-9 Ha
+Energy:    -152.7670133120 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    9 iterations (in       0.29 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.29s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75899688, Vxc:     -12.02014964
+SCF Change: DM (8.14557e-8,8.53780e-8); eev 5.27449e-7 Ha; etot -9.18305e-11 Ha
+Energy:    -152.7670133121 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   10 iterations (in       0.30 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.30s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
@@ -338,8 +317,8 @@ scf_records.update:            0.00s
 electron number in alpha-channel:  13.99999251
 electron number in beta-channel:   13.99999251
 Exc:     -18.75899679, Vxc:     -12.02014958
-SCF Change: DM (4.13253e-8,1.38999e-8); eev 1.73728e-7 Ha; etot -2.55795e-12 Ha
-Energy:    -152.7670133121 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   13 iterations (in       0.29 seconds).
+SCF Change: DM (3.67326e-8,2.39554e-8); eev 4.75360e-7 Ha; etot -2.35900e-12 Ha
+Energy:    -152.7670133121 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   11 iterations (in       0.30 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.29s
 diagonalize_hamiltonian:       0.00s
@@ -348,16 +327,16 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 electron number in alpha-channel:  13.99999251
 electron number in beta-channel:   13.99999251
-Exc:     -18.75899678, Vxc:     -12.02014957
-SCF Change: DM (5.73289e-9,4.84895e-9); eev 5.83922e-8 Ha; etot -2.55795e-13 Ha
-Energy:    -152.7670133121 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   14 iterations (in       0.29 seconds).
+Exc:     -18.75899680, Vxc:     -12.02014959
+SCF Change: DM (9.08087e-9,5.20410e-9); eev 1.91483e-7 Ha; etot -1.98952e-13 Ha
+Energy:    -152.7670133121 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   12 iterations (in       0.29 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.29s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-SCF is converged after   14 iterations.
+SCF is converged after   12 iterations.
 electron number in alpha-channel:  13.99999251
 electron number in beta-channel:   13.99999251
 Exc:     -18.75899678, Vxc:     -12.02014958
@@ -417,5 +396,5 @@ Mulliken population analysis:
 ====================================================
 The SCF energy        :    -152.7670133121 Ha
 Detailed time report:
-SCF       |:    7.331 s for the scf procedure
-Overall   |:    7.331 s for the whole job
+Overall   |:    7.089 s for the whole job
+SCF       |:    7.088 s for the scf procedure
