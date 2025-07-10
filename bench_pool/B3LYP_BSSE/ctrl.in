@@ -1,0 +1,23 @@
+[ctrl]
+     print_level =               2
+     num_threads =               4
+     xc =                        "b3lyp" 
+     basis_path =                "./cc-pVDZ"
+     auxbas_path =               "./def2-SV(P)-JKFIT" 
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarize =             false
+     initial_guess =             "hcore"
+
+[geom]
+     name = "the calculation of HF molecule with BSSE from another HF molecule"
+     unit = "angstrom"
+     position = '''
+        H  0.00000000000      0.0000000000      0.0000000000
+        F  0.00000000000      0.0000000000      1.0000000000
+        '''
+     ghost = '''
+      # <ghost type>      <elem>               <position>
+        basis set             H           0.000000   0.00000    1.2000000
+        basis set             F           0.000000   0.00000    2.2000000
+     '''
