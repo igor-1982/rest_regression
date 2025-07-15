@@ -1,23 +1,19 @@
 [ctrl]
      # 设置程序输出的程度，缺省为1
-     print_level =               2
+     print_level =               1
      # 设置Rayon和OpenMP的并行数，缺省为1
      num_threads =               4
      # 设置任务类型，缺省为“energy"
-     job_type =                  "energy"
-     ## 使用标准方式输入B3LYP方法
-     #xc =                        "b3lyp"
-     # 使用非标准方式输入B3LYP方法
-     xc_type =                   "nonstandard" 
-     xc_namelist =               ["lda_x_slater", "gga_x_b88", "lda_c_vwn_rpa", "gga_c_lyp"]
-     xc_paralist =               [0.08, 0.72, 0.19, 0.81]
-     xc_hybrid_para =            0.20
-     
+     job_type =                  "opt"
+     numerical_force =           true
+     # 设置使用的电子结构方法，缺省为HF
+     xc =                        "HF" 
      basis_path =                "cc-pVDZ"
      auxbas_path =               "def2-SV(P)-JKFIT" 
      charge =                    0.0
      spin =                      1.0
      spin_polarization =         false
+     #outputs =                   ["dipole"]
 
 [geom]
      name = "CO"
