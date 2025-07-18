@@ -1,0 +1,96 @@
+=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: svwn
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from cc-pVDZ
+The spheric-GTO auxiliary basis set is taken from def2-SV(P)-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+N       -2.19883910      1.89737463      0.00000000
+H       -1.17883910      1.89737463      0.00000000
+H       -2.53883540      1.09254601     -0.52635864
+H       -2.53884003      2.75562717     -0.43382247
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+=========================================================
+the functional of 'svwn' contains
+The density functional 'Slater exchange' belongs to the 'LDA' family and is defined in the reference(s):
+(0): P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+(1): F. Bloch.,  Z. Phys. 57, 545 (1929)
+The density functional 'Vosko, Wilk & Nusair (VWN5)' belongs to the 'LDA' family and is defined in the reference(s):
+(0): S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 9, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 52,final natm: 8
+numbasis: 29, num_auxbas: 131
+Molecule_name: NH3
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      11.84792373 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01677135 with the total number of basis functions:     29
+Grid size: 44118
+
+=======================
+Generating SAD for atom: N
+=======================
+
+SAD generation for N complete.
+
+
+=======================
+Generating SAD for atom: H
+=======================
+
+SAD generation for H complete.
+
+Initial guess energy using single atom density (SAD):     -56.0549469009979617
+The total energy:       -55.8390280875 Ha by the initial guess
+Energy:     -55.4267349187 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.62259e-1; eev  2.14999e0 Ha; etot 7.31653e-1 Ha
+Energy:     -54.6950822768 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 1.83045e-2; eev 1.99570e-1 Ha; etot -1.33813e0 Ha
+Energy:     -56.0332129545 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 1.28869e-3; eev 2.45217e-2 Ha; etot -3.24706e-2 Ha
+Energy:     -56.0656835373 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 4.82625e-4; eev 9.12389e-3 Ha; etot -2.47155e-4 Ha
+Energy:     -56.0659306925 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 9.12524e-5; eev 1.39712e-3 Ha; etot -3.07733e-5 Ha
+Energy:     -56.0659614658 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.33564e-5; eev 1.84317e-4 Ha; etot -1.02260e-6 Ha
+Energy:     -56.0659624884 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 1.81573e-7; eev 2.80980e-6 Ha; etot -1.78590e-8 Ha
+Energy:     -56.0659625063 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 1.92923e-8; eev 3.05518e-7 Ha; etot -1.17240e-12 Ha
+Energy:     -56.0659625063 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 3.23345e-10; eev 3.86839e-9 Ha; etot -7.10543e-14 Ha
+Energy:     -56.0659625063 Ha after   10 iterations (in       0.01 seconds).
+SCF is converged after   10 iterations.
+Mulliken population analysis:
+  0-N  :  -0.313990
+  1-H  :   0.104664
+  2-H  :   0.104663
+  3-H  :   0.104663
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -56.0659625063 Ha
+Detailed time report:
+SCF       |:    0.177 s for the scf procedure
+Overall   |:    0.177 s for the whole job
