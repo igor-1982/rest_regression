@@ -9,6 +9,7 @@
      auxbas_path =               "def2-SV(P)-JKFIT" 
      # 使用resolution-of-identity (RI)技术处理四中心积分（缺省）
      eri_type =                  "ri_v"
+     #use_ri_vj =                 "false"
      use_ri_symm =               true
      charge =                    0.0
      spin =                      1.0
