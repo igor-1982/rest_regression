@@ -1,0 +1,174 @@
+Script started on 2025-08-19 17:26:10+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="90" LINES="16"]
+[?2004h]0;admin@bdb758ec9674: /opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[01;32madmin@bdb758ec9674[00m:[01;34m/opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[00m$ git log$RERE -i ctrl.inn [A]0;admin@bdb758ec9674: /opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[01;32madmin@bdb758ec9674[00m:[01;34m/opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[00m$ [1Pcd ~/NH3_SCAN/
+[K[A]0;admin@bdb758ec9674: /opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[01;32madmin@bdb758ec9674[00m:[01;34m/opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[00m$ cd ~/NH3_SCAN/$RERE -i ctrl.inn [A]0;admin@bdb758ec9674: /opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[01;32madmin@bdb758ec9674[00m:[01;34m/opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[00m$ [8Pgit log
+[K[A]0;admin@bdb758ec9674: /opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[01;32madmin@bdb758ec9674[00m:[01;34m/opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[00m$ git log[K$REXE -i ctrl.inn 
+[?2004l=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+The exchange-correlation method: scan
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from cc-pVDZ
+The spheric-GTO auxiliary basis set is taken from def2-SV(P)-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+N       -2.19883910      1.89737463      0.00000000
+H       -1.17883910      1.89737463      0.00000000
+H       -2.53883540      1.09254601     -0.52635864
+H       -2.53884003      2.75562717     -0.43382247
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+=========================================================
+the functional of 'scan' contains
+The density functional 'SCAN exchange of Sun, Ruzsinszky, and Perdew' belongs to the 'MGGA' family and is defined in the reference(s):
+(0): J. Sun, A. Ruzsinszky, and J. P. Perdew.,  Phys. Rev. Lett. 115, 036402 (2015)
+The density functional 'SCAN correlation of Sun, Ruzsinszky, and Perdew' belongs to the 'MGGA' family and is defined in the reference(s):
+(0): J. Sun, A. Ruzsinszky, and J. P. Perdew.,  Phys. Rev. Lett. 115, 036402 (2015)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 9, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 52,final natm: 8
+numbasis: 29, num_auxbas: 131
+Molecule_name: NH3
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      11.84792373 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01677135 with the total number of basis functions:     29
+Grid size: 44118
+
+=======================
+Generating SAD for atom: N
+=======================
+SAD generation for N complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):     -56.5038294770918981
+The total energy:       -56.3490603255 Ha by the initial guess
+Energy:     -56.1731520004 Ha after    1 iterations (in       0.33 seconds).
+SCF Change: DM 1.00503e-1; eev  1.53420e0 Ha; etot 2.92937e-1 Ha
+Energy:     -55.8802147742 Ha after    2 iterations (in       0.19 seconds).
+SCF Change: DM 8.64426e-3; eev 1.04390e-1 Ha; etot -6.39099e-1 Ha
+Energy:     -56.5193133668 Ha after    3 iterations (in       0.20 seconds).
+SCF Change: DM 2.46240e-4; eev 1.12467e-2 Ha; etot -5.23578e-3 Ha
+Energy:     -56.5245491472 Ha after    4 iterations (in       0.39 seconds).
+SCF Change: DM 4.69406e-5; eev 7.54018e-4 Ha; etot -3.33952e-6 Ha
+Energy:     -56.5245524867 Ha after    5 iterations (in       0.34 seconds).
+SCF Change: DM 6.07533e-6; eev 2.53401e-4 Ha; etot -2.33177e-7 Ha
+Energy:     -56.5245527199 Ha after    6 iterations (in       0.26 seconds).
+SCF Change: DM 2.79517e-7; eev 1.67338e-5 Ha; etot -3.36070e-9 Ha
+Energy:     -56.5245527232 Ha after    7 iterations (in       0.19 seconds).
+SCF Change: DM 6.97306e-8; eev 1.26962e-6 Ha; etot -4.51905e-12 Ha
+Energy:     -56.5245527233 Ha after    8 iterations (in       0.19 seconds).
+SCF Change: DM 2.53069e-8; eev 7.78488e-7 Ha; etot -3.83693e-13 Ha
+Energy:     -56.5245527233 Ha after    9 iterations (in       0.18 seconds).
+SCF Change: DM 2.73254e-9; eev 5.29055e-8 Ha; etot -1.13687e-13 Ha
+Energy:     -56.5245527233 Ha after   10 iterations (in       0.17 seconds).
+SCF is converged after   10 iterations.
+Mulliken population analysis:
+  0-N  :  -0.271766
+  1-H  :   0.090542
+  2-H  :   0.090649
+  3-H  :   0.090575
+quasiparticle method:bse
+Now starts quasiparticle method computation!
+You are doing G0W0 calculations of entire energy spectrum
+calculated orbital indices:[1, 2, 3, 4, 5, 6]
+Quasiparticle Energies from GW Approximation (in Hatree):
+   Note that only energies around the Fermi surface within 0.3 Hatree are explicitly computed by solving the quasiparticle equation,
+    while others are extrapolated using average energy shifts of the computed ones compared to corresponding SCF results
+    You can set this threshold to be any other float value using the keyword "threshold"
+ (extrapolated) QP Energy of Orbital #0:-14.28692668590894
+ (calculated) QP Energy of Orbital #1:-0.9511783734643372
+ (calculated) QP Energy of Orbital #2:-0.5687092803943914
+ (calculated) QP Energy of Orbital #3:-0.5687028839385845
+ (calculated) QP Energy of Orbital #4:-0.34896396914312694
+-------Fermi Surface--------
+ (calculated) QP Energy of Orbital #5:0.17713866045100862
+ (calculated) QP Energy of Orbital #6:0.2659129096925739
+ (extrapolated) QP Energy of Orbital #7:0.21614619397640134
+ (extrapolated) QP Energy of Orbital #8:0.21616666680913635
+ (extrapolated) QP Energy of Orbital #9:0.5851757954800448
+ (extrapolated) QP Energy of Orbital #10:0.585212180049977
+ (extrapolated) QP Energy of Orbital #11:0.6859593982726111
+ (extrapolated) QP Energy of Orbital #12:0.799599926495997
+ (extrapolated) QP Energy of Orbital #13:0.9066041044333899
+ (extrapolated) QP Energy of Orbital #14:0.9066740418495958
+ (extrapolated) QP Energy of Orbital #15:1.137953500957595
+ (extrapolated) QP Energy of Orbital #16:1.1379853368065254
+ (extrapolated) QP Energy of Orbital #17:1.225249774622473
+ (extrapolated) QP Energy of Orbital #18:1.5346861447127502
+ (extrapolated) QP Energy of Orbital #19:1.742341265785338
+ (extrapolated) QP Energy of Orbital #20:1.765827875430977
+ (extrapolated) QP Energy of Orbital #21:1.765869291334862
+ (extrapolated) QP Energy of Orbital #22:2.0790965862251674
+ (extrapolated) QP Energy of Orbital #23:2.0792555784256863
+ (extrapolated) QP Energy of Orbital #24:2.2678118401881555
+ (extrapolated) QP Energy of Orbital #25:2.5970812673431536
+ (extrapolated) QP Energy of Orbital #26:2.5972712448653263
+ (extrapolated) QP Energy of Orbital #27:2.7657540565997842
+ (extrapolated) QP Energy of Orbital #28:3.0352242875276154
+One round of GW by extrapolated scheme has finished.
+Specific BSE calculations are triggered
+BSE Type:singlet
+starts contructing Full BSE hamiltonian!!!
+First 30 excitations:[
+    0.22367396780802531,
+    0.24327078276371536,
+    0.27224254330687037,
+    0.33598734330638746,
+    0.45141671337381284,
+    0.4616810728463685,
+    0.469829555987154,
+    0.4991157002421471,
+    0.5053713987375641,
+    0.5179438771804706,
+    0.5562369242158981,
+    0.5848009022444163,
+    0.611196287969295,
+    0.6241586828357546,
+    0.7801112162971157,
+    0.8185688820392891,
+    0.8302162457046701,
+    0.8329239395264344,
+    0.8415201445192942,
+    0.8581672778052377,
+    0.8751939177860835,
+    0.8843733570076372,
+    0.8873034931476413,
+    0.9029459957535483,
+    0.9085417516637057,
+    0.9248299719762758,
+    0.931139170270943,
+    0.970772616482566,
+    1.040289672443614,
+    1.0836528957484355,
+]
+The first excitation obtained by BSE is 0.22367396780802531
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -56.5245527233 Ha
+Detailed time report:
+SCF       |:   10.151 s for the scf procedure
+Overall   |:   11.496 s for the whole job
+[?2004h]0;admin@bdb758ec9674: /opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[01;32madmin@bdb758ec9674[00m:[01;34m/opt/rest_workspace/rest_regression/bench_pool/NH3_BSE[00m$ [Kexit
+[?2004lexit
+
+Script done on 2025-08-19 17:26:40+00:00 [COMMAND_EXIT_CODE="0"]
