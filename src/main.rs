@@ -118,7 +118,35 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         let rmsd2 = cap["rmsd2"].parse::<f64>().unwrap();
         result.insert("EP Benchmark".to_string(), vec![rmsd1, rmsd2]);
     }
+    let re_gw_homo=Regex::new(
+        r"The\sQP\senergy\sof\sHOMO\sobtained\sby\sGWA\sis\s*(?P<gw_homo>[\+-]?\d+\.\d+)"
+    ).unwrap();
 
+    if re_gw_homo.is_match(&buf) {
+        let caps = re_gw_homo.captures(&buf).unwrap();
+        let energy = caps.name("gw_homo").unwrap().as_str().parse::<f64>().unwrap();
+        result.insert("GW HOMO QP".to_string(), vec![energy]);
+    }
+
+    let re_gw_lumo=Regex::new(
+        r"The\sQP\senergy\sof\sLUMO\sobtained\sby\sGWA\sis\s*(?P<gw_lumo>[\+-]?\d+\.\d+)"
+    ).unwrap();
+
+    if re_gw_lumo.is_match(&buf) {
+        let caps = re_gw_lumo.captures(&buf).unwrap();
+        let energy = caps.name("gw_lumo").unwrap().as_str().parse::<f64>().unwrap();
+        result.insert("GW LUMO QP".to_string(), vec![energy]);
+    }
+
+    let re_bse=Regex::new(
+        r"The\sfirst\sexcitation\sobtained\sby\sBSE\sis\s*(?P<bse>[\+-]?\d+\.\d+)"
+    ).unwrap();
+
+    if re_bse.is_match(&buf) {
+        let caps = re_bse.captures(&buf).unwrap();
+        let energy = caps.name("bse").unwrap().as_str().parse::<f64>().unwrap();
+        result.insert("BSE 1st Excitation".to_string(), vec![energy]);
+    }
     let re_grad = Regex::new(
         r"[-]{3,} *Output gradient *\[[a-zA-Z.]*\] *[-]{3,}\n+(?P<grad>[\S\s]*)\n+[-]{3,}"
     ).unwrap();
