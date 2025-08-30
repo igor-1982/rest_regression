@@ -1,0 +1,26 @@
+[ctrl]
+     xc =                        "b3lyp"
+     basis_path =                "./6-31G*"
+     auxbas_path =               "./def2-SV(P)-JKFIT"
+
+[geom]
+     name = "H2_5"
+     unit = "angstrom"
+     position = '''
+     H  0.0 0.0 0.0
+     H  1.4 0.0 0.0
+     H  2.8 0.0 0.0
+     H  4.2 0.0 0.0
+     H  5.6 0.0 0.0
+     H  7.0 0.0 0.0
+     H  8.4 0.0 0.0
+     H  9.8 0.0 0.0
+     H  11.2 0.0 0.0
+     H  12.6 0.0 0.0
+     '''
+     rrs_pbc = true
+     unit_cell_elem = ['H','H']
+     num_units = 5
+     pbc_dim = 1
+     rrs_pbc_vec = [1.4,0.0,0.0]
+     k_points = 200
