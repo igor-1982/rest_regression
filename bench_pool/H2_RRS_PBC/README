@@ -1,0 +1,3 @@
+Title: Perform a RRS-PBC calculation for the band structure of Hydrogen chain
+To generate the band structure:
+-> python3 $REST_HOME/rest/utilities/plot_gap.py -i regression.log --plot_fermi true
