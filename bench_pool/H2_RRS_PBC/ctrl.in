@@ -1,48 +1,23 @@
 [ctrl]
-     print_level =               1
      xc =                        "b3lyp"
-     basis_path =                "/home/Igor/rest_workspace/rest_regression/bench_pool/H2_RRS_PBC/6-31G*"
-     basis_type =                "spheric"
-     auxbas_path =               "/home/Igor/rest_workspace/rest_regression/bench_pool/H2_RRS_PBC/def2-SV(P)-JKFIT"
-     eri_type =                  "ri-v"
-     even_tempered_basis =       false
-     etb_start_atom_number =     1
-     etb_beta =                  2.0
-     auxbas_type =               "spheric"
-     auxbasis_response =         true
-     initial_guess =             "vsap"
-     chkfile =                   "none"
-     charge =                    0.0
-     spin =                      1.0
-     spin_polarization =         false
-     pruning =                   "nwchem"
-     radial_grid_method =        "treutler"
-     external_grids =            "none"
-     mixer =                     "diis"
-     num_max_diis =              8
-     start_diis_cycle =          1
-     mix_param =                 0.8
-     max_scf_cycle =             100
-     scf_acc_rho =               1.0e-5
-     scf_acc_eev =               1.0e-5
-     scf_acc_etot =              1.0e-8
-     num_threads =               4
+     basis_path =                "./6-31G*"
+     auxbas_path =               "./def2-SV(P)-JKFIT"
 
 [geom]
      name = "H2_5"
      unit = "angstrom"
-     position = [
-             "H  0.0 0.0 0.0",
-             "H  1.4 0.0 0.0",
-             "H  2.8 0.0 0.0",
-             "H  4.2 0.0 0.0",
-             "H  5.6 0.0 0.0",
-             "H  7.0 0.0 0.0",
-             "H  8.4 0.0 0.0",
-             "H  9.8 0.0 0.0",
-             "H  11.2 0.0 0.0",
-             "H  12.6 0.0 0.0",
-     ]
+     position = '''
+     H  0.0 0.0 0.0
+     H  1.4 0.0 0.0
+     H  2.8 0.0 0.0
+     H  4.2 0.0 0.0
+     H  5.6 0.0 0.0
+     H  7.0 0.0 0.0
+     H  8.4 0.0 0.0
+     H  9.8 0.0 0.0
+     H  11.2 0.0 0.0
+     H  12.6 0.0 0.0
+     '''
      rrs_pbc = true
      unit_cell_elem = ['H','H']
      num_units = 5
