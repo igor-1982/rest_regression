@@ -4,10 +4,10 @@ Input parameters for the REST calculation
 Calculation type: Single-point energy
 The exchange-correlation method: b3lyp
 Print level:                1
-The number of threads used for parallelism:      1
+The number of threads used for parallelism:      4
 The spheric-GTO basis set is taken from ./6-31G*
 The spheric-GTO auxiliary basis set is taken from ./def2-SV(P)-JKFIT
-Charge:   0; Spin:   0
+Charge:   0; Spin:   1
 Spin polarization: Off
 Input molecular structure (in Angstrom): ----------
 H        0.00000000      0.00000000      0.00000000
@@ -20,6 +20,10 @@ H        8.40000000      0.00000000      0.00000000
 H        9.80000000      0.00000000      0.00000000
 H       11.20000000      0.00000000      0.00000000
 H       12.60000000      0.00000000      0.00000000
+H       14.00000000      0.00000000      0.00000000
+H       15.40000000      0.00000000      0.00000000
+H       16.80000000      0.00000000      0.00000000
+H       18.20000000      0.00000000      0.00000000
 End of molecular structure ------------------------
 ERI Type: ri_v
 SCF convergency thresholds: 1e-8 for density matrix
@@ -36,774 +40,470 @@ The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined
 (0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
 Libxc version used in REST: 7.0.0
-nbas: 20, natm: 10 for standard basis sets
+nbas: 28, natm: 14 for standard basis sets
 First valence state for the frozen-core algorithm:     0
-final nbas: 80,final natm: 20
-numbasis: 20, num_auxbas: 180
+final nbas: 112,final natm: 28
+numbasis: 28, num_auxbas: 252
 Molecule_name: H2_5
-Restricted open shell Hartree-Fock (or Kohn-Sham) algorithm is invoked.
-Nuc_energy:       7.29118597 Hartree
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      11.91475466 Hartree
 No ghost effective potential
 No ghost point charges
 Overlap matrix is nonsigular:
-  Lowest eigenvalue:       0.03725839 with the total number of basis functions:     20
-Grid size: 100240
+  Lowest eigenvalue:       0.03170291 with the total number of basis functions:     28
+Grid size: 140336
 
 =======================
 Generating SAD for atom: H
 =======================
 Error happens when inversing the matrix. dgetrf info: 3; dgetri info: 3
 SAD generation for H complete.
-Initial guess energy using single atom density (SAD):      -5.4090882277910506
-The total energy:        -3.9348108883 Ha by the initial guess
-Energy:      -4.8898383556 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.10 seconds).
-SCF Change: DM (1.17945e-1,1.44544e-1); eev  1.09022e0 Ha; etot  1.16727e0 Ha
-Energy:      -3.7225645548 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    2 iterations (in       0.10 seconds).
-SCF Change: DM (1.37412e-1,1.64791e-1); eev  1.57423e0 Ha; etot  1.88603e0 Ha
-Energy:      -1.8365336218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    3 iterations (in       0.10 seconds).
-SCF Change: DM (1.54872e-1,1.72820e-1); eev  1.32635e0 Ha; etot 4.72597e-1 Ha
-Energy:      -1.3639367371 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    4 iterations (in       0.11 seconds).
-SCF Change: DM (1.57162e-1,1.75792e-1); eev  1.44731e0 Ha; etot 1.74622e-1 Ha
-Energy:      -1.1893150943 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    5 iterations (in       0.10 seconds).
-SCF Change: DM (1.56629e-1,1.75371e-1); eev  1.47098e0 Ha; etot -2.30841e-1 Ha
-Energy:      -1.4201563866 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    6 iterations (in       0.10 seconds).
-SCF Change: DM (1.56488e-1,1.75197e-1); eev  1.47147e0 Ha; etot 2.37999e-1 Ha
-Energy:      -1.1821572394 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    7 iterations (in       0.10 seconds).
-SCF Change: DM (1.56459e-1,1.75167e-1); eev  1.46963e0 Ha; etot -2.34191e-1 Ha
-Energy:      -1.4163482829 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    8 iterations (in       0.10 seconds).
-SCF Change: DM (1.56300e-1,1.74926e-1); eev  1.46943e0 Ha; etot 2.35033e-1 Ha
-Energy:      -1.1813150569 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    9 iterations (in       0.10 seconds).
-SCF Change: DM (1.54750e-1,1.73188e-1); eev  1.46173e0 Ha; etot -2.25618e-1 Ha
-Energy:      -1.4069332025 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   10 iterations (in       0.11 seconds).
-SCF Change: DM (1.54345e-1,1.71535e-1); eev  1.47397e0 Ha; etot 3.65916e-1 Ha
-Energy:      -1.0410168493 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   11 iterations (in       0.10 seconds).
-SCF Change: DM (1.52153e-1,1.73008e-1); eev  1.41748e0 Ha; etot -2.41666e-1 Ha
-Energy:      -1.2826828558 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   12 iterations (in       0.10 seconds).
-SCF Change: DM (1.52602e-1,1.74397e-1); eev  1.41988e0 Ha; etot 2.73038e-1 Ha
-Energy:      -1.0096452455 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   13 iterations (in       0.10 seconds).
-SCF Change: DM (1.52368e-1,1.74339e-1); eev  1.42795e0 Ha; etot -2.91799e-1 Ha
-Energy:      -1.3014439227 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   14 iterations (in       0.10 seconds).
-SCF Change: DM (1.52349e-1,1.74311e-1); eev  1.42687e0 Ha; etot 2.88736e-1 Ha
-Energy:      -1.0127075404 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   15 iterations (in       0.10 seconds).
-SCF Change: DM (1.52346e-1,1.74307e-1); eev  1.42678e0 Ha; etot -2.88690e-1 Ha
-Energy:      -1.3013973451 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   16 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42684e0 Ha; etot 2.88814e-1 Ha
-Energy:      -1.0125830484 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   17 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42687e0 Ha; etot -2.88879e-1 Ha
-Energy:      -1.3014621819 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   18 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88876e-1 Ha
-Energy:      -1.0125859414 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   19 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88868e-1 Ha
-Energy:      -1.3014544358 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   20 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145444,      -1.01258559)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145444,      -1.01258559)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88869e-1 Ha
-Energy:      -1.0125855925 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   21 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014552141 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   22 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145521,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145521,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856246 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   23 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551389 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   24 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145514,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145514,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856215 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   25 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551461 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   26 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   27 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   28 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   29 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   30 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   31 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   32 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   33 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   34 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   35 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   36 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   37 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   38 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   39 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   40 iterations (in       0.10 seconds).
-Error happens when inversing the matrix. dgetrf info: 8; dgetri info: 8
-WARNING: fail to obtain the DIIS coefficients. Turn to use the linear mixing algorithm, and re-invoke DIIS  8 steps later
-SCF Change: DM (3.68869e-2,4.20309e-2); eev 4.07658e-1 Ha; etot -1.90439e0 Ha
-Energy:      -3.2058429411 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   41 iterations (in       0.21 seconds).
-SCF Change: DM (1.38416e-1,1.58783e-1); eev  1.21638e0 Ha; etot  2.08587e0 Ha
-Energy:      -1.1199768558 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   42 iterations (in       0.10 seconds).
-SCF Change: DM (3.04140e-2,3.96881e-2); eev 5.03364e-1 Ha; etot -1.06888e0 Ha
-Energy:      -2.1888523589 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   43 iterations (in       0.10 seconds).
-SCF Change: DM (1.46392e-1,1.63733e-1); eev  1.43979e0 Ha; etot 7.28891e-1 Ha
-Energy:      -1.4599615905 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   44 iterations (in       0.10 seconds).
-SCF Change: DM (3.77684e-2,4.32262e-2); eev 6.25392e-1 Ha; etot -1.10470e0 Ha
-Energy:      -2.5646577768 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   45 iterations (in       0.10 seconds).
-SCF Change: DM (1.38325e-1,1.58990e-1); eev  1.11809e0 Ha; etot  1.43940e0 Ha
-Energy:      -1.1252621862 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   46 iterations (in       0.10 seconds).
-SCF Change: DM (3.08478e-2,4.05263e-2); eev 5.10798e-1 Ha; etot -1.03331e0 Ha
-Energy:      -2.1585748792 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   47 iterations (in       0.10 seconds).
-SCF Change: DM (1.46432e-1,1.63686e-1); eev  1.44507e0 Ha; etot 6.86920e-1 Ha
-Energy:      -1.4716552432 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   48 iterations (in       0.10 seconds).
-SCF Change: DM (1.52645e-1,1.73859e-1); eev  1.42229e0 Ha; etot 4.58316e-1 Ha
-Energy:      -1.0133391562 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   49 iterations (in       0.10 seconds).
-SCF Change: DM (1.52184e-1,1.73973e-1); eev  1.41957e0 Ha; etot -2.83447e-1 Ha
-Energy:      -1.2967864149 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   50 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.29678641,      -1.01164260)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.29678641,      -1.01164260)
-SCF Change: DM (1.52380e-1,1.74318e-1); eev  1.42409e0 Ha; etot 2.85144e-1 Ha
-Energy:      -1.0116425971 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   51 iterations (in       0.10 seconds).
-SCF Change: DM (1.52350e-1,1.74315e-1); eev  1.42719e0 Ha; etot -2.89940e-1 Ha
-Energy:      -1.3015827861 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   52 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30158279,      -1.01259172)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30158279,      -1.01259172)
-SCF Change: DM (1.52346e-1,1.74308e-1); eev  1.42692e0 Ha; etot 2.88991e-1 Ha
-Energy:      -1.0125917209 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   53 iterations (in       0.10 seconds).
-SCF Change: DM (1.52346e-1,1.74309e-1); eev  1.42684e0 Ha; etot -2.88845e-1 Ha
-Energy:      -1.3014362567 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   54 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30143626,      -1.01258491)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30143626,      -1.01258491)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42685e0 Ha; etot 2.88851e-1 Ha
-Energy:      -1.0125849093 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   55 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88872e-1 Ha
-Energy:      -1.3014570532 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   56 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145705,      -1.01258570)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145705,      -1.01258570)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88871e-1 Ha
-Energy:      -1.0125856985 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   57 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88869e-1 Ha
-Energy:      -1.3014549620 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   58 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145496,      -1.01258561)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145496,      -1.01258561)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88869e-1 Ha
-Energy:      -1.0125856144 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   59 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551629 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   60 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145516,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145516,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856225 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   61 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551438 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   62 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145514,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145514,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856217 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   63 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551456 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   64 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   65 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   66 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   67 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   68 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   69 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   70 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   71 iterations (in       0.10 seconds).
-Error happens when inversing the matrix. dgetrf info: 8; dgetri info: 8
-WARNING: fail to obtain the DIIS coefficients. Turn to use the linear mixing algorithm, and re-invoke DIIS  8 steps later
-SCF Change: DM (2.82983e-2,3.65961e-2); eev 3.99684e-1 Ha; etot -1.78705e0 Ha
-Energy:      -2.7996405263 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   72 iterations (in       0.21 seconds).
-SCF Change: DM (1.46758e-1,1.64325e-1); eev  1.24929e0 Ha; etot  1.36871e0 Ha
-Energy:      -1.4309305088 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   73 iterations (in       0.10 seconds).
-SCF Change: DM (3.80833e-2,4.33855e-2); eev 6.12780e-1 Ha; etot -1.14824e0 Ha
-Energy:      -2.5791744153 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   74 iterations (in       0.10 seconds).
-SCF Change: DM (1.38336e-1,1.58954e-1); eev  1.11557e0 Ha; etot  1.45519e0 Ha
-Energy:      -1.1239892744 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   75 iterations (in       0.10 seconds).
-SCF Change: DM (3.07972e-2,4.04338e-2); eev 5.10058e-1 Ha; etot -1.03800e0 Ha
-Energy:      -2.1619893248 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   76 iterations (in       0.10 seconds).
-SCF Change: DM (1.46427e-1,1.63699e-1); eev  1.44453e0 Ha; etot 6.91403e-1 Ha
-Energy:      -1.4705866133 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   77 iterations (in       0.10 seconds).
-SCF Change: DM (3.78206e-2,4.32799e-2); eev 6.27935e-1 Ha; etot -1.09192e0 Ha
-Energy:      -2.5625046515 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   78 iterations (in       0.10 seconds).
-SCF Change: DM (1.38323e-1,1.58991e-1); eev  1.11840e0 Ha; etot  1.43623e0 Ha
-Energy:      -1.1262783959 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   79 iterations (in       0.10 seconds).
-SCF Change: DM (1.53059e-1,1.74762e-1); eev  1.46289e0 Ha; etot -2.03469e-1 Ha
-Energy:      -1.3297471828 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   80 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.32974718,      -1.01221309)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.32974718,      -1.01221309)
-SCF Change: DM (1.52233e-1,1.73979e-1); eev  1.44051e0 Ha; etot 3.17534e-1 Ha
-Energy:      -1.0122130866 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   81 iterations (in       0.10 seconds).
-SCF Change: DM (1.52342e-1,1.74287e-1); eev  1.42718e0 Ha; etot -2.87359e-1 Ha
-Energy:      -1.2995724174 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   82 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.29957242,      -1.01260524)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.29957242,      -1.01260524)
-SCF Change: DM (1.52355e-1,1.74318e-1); eev  1.42630e0 Ha; etot 2.86967e-1 Ha
-Energy:      -1.0126052436 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   83 iterations (in       0.10 seconds).
-SCF Change: DM (1.52348e-1,1.74311e-1); eev  1.42689e0 Ha; etot -2.88919e-1 Ha
-Energy:      -1.3015241561 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   84 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30152416,      -1.01259003)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30152416,      -1.01259003)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42688e0 Ha; etot 2.88934e-1 Ha
-Energy:      -1.0125900328 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   85 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88862e-1 Ha
-Energy:      -1.3014520160 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   86 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145202,      -1.01258551)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145202,      -1.01258551)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88867e-1 Ha
-Energy:      -1.0125855061 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   87 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014553266 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   88 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145533,      -1.01258563)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145533,      -1.01258563)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856286 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   89 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551330 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   90 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145513,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145513,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856213 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   91 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551464 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   92 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   93 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   94 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   95 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   96 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   97 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   98 iterations (in       0.10 seconds).
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-Energy increase is detected. Turn on the linear mixing algorithm with (H[DIIS, i-1] + H[DIIS, i+1]).
-Prev_Energies: (     -1.30145515,      -1.01258562)
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot 2.88870e-1 Ha
-Energy:      -1.0125856218 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   99 iterations (in       0.10 seconds).
-SCF Change: DM (1.52347e-1,1.74309e-1); eev  1.42686e0 Ha; etot -2.88870e-1 Ha
-Energy:      -1.3014551454 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after  100 iterations (in       0.10 seconds).
-SCF does not converge within 101 iterations
+Initial guess energy using single atom density (SAD):      -6.6534524929318692
+The total energy:        -7.6321601024 Ha by the initial guess
+Energy:      -7.6328239151 Ha after    1 iterations (in       0.02 seconds).
+SCF Change: DM 2.28893e-3; eev 1.09000e-2 Ha; etot 4.38837e-4 Ha
+Energy:      -7.6323850780 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 3.99875e-4; eev 1.21675e-3 Ha; etot -6.84962e-4 Ha
+Energy:      -7.6330700401 Ha after    3 iterations (in       0.02 seconds).
+SCF Change: DM 1.36060e-4; eev 2.87811e-4 Ha; etot -1.29693e-5 Ha
+Energy:      -7.6330830094 Ha after    4 iterations (in       0.02 seconds).
+SCF Change: DM 3.93847e-5; eev 1.11205e-4 Ha; etot -1.72077e-6 Ha
+Energy:      -7.6330847302 Ha after    5 iterations (in       0.02 seconds).
+SCF Change: DM 9.30951e-6; eev 4.06683e-5 Ha; etot -1.71628e-7 Ha
+Energy:      -7.6330849018 Ha after    6 iterations (in       0.02 seconds).
+SCF Change: DM 8.57224e-7; eev 5.32700e-6 Ha; etot -1.33154e-8 Ha
+Energy:      -7.6330849151 Ha after    7 iterations (in       0.02 seconds).
+SCF Change: DM 1.91180e-7; eev 6.91386e-7 Ha; etot -7.59730e-11 Ha
+Energy:      -7.6330849152 Ha after    8 iterations (in       0.02 seconds).
+SCF Change: DM 2.29193e-8; eev 3.29244e-7 Ha; etot -4.52793e-12 Ha
+Energy:      -7.6330849152 Ha after    9 iterations (in       0.02 seconds).
+SCF Change: DM 6.29262e-9; eev 3.09893e-8 Ha; etot -9.41469e-14 Ha
+Energy:      -7.6330849152 Ha after   10 iterations (in       0.02 seconds).
+SCF is converged after   10 iterations.
 Mulliken population analysis:
-  0-H  :   0.992295
-  1-H  :   1.099385
-  2-H  :  -0.603782
-  3-H  :  -0.987155
-  4-H  :  -1.032822
-  5-H  :  -1.035933
-  6-H  :  -1.042932
-  7-H  :   0.594656
-  8-H  :   1.021199
-  9-H  :   0.995088
+  0-H  :   0.019736
+  1-H  :  -0.015846
+  2-H  :  -0.000895
+  3-H  :   0.001427
+  4-H  :  -0.002534
+  5-H  :  -0.000663
+  6-H  :  -0.001224
+  7-H  :  -0.001224
+  8-H  :  -0.000663
+  9-H  :  -0.002534
+ 10-H  :   0.001427
+ 11-H  :  -0.000895
+ 12-H  :  -0.015846
+ 13-H  :   0.019736
 RRS-PBC results:
 Unit Cell: ["H", "H"]
 Occupied orbitals: 1
 k = -3.1101767270538954
-Orbital energy = [0.7311660558770783, 0.9013371931697141, 1.9829896789974397, 2.039872865745658]
+Orbital energy = [-0.23985762209956063, -0.21925075116570075, 0.9008956689467198, 0.9038781272472747]
 k = -3.078760800517997
-Orbital energy = [0.7308228761350615, 0.9018143455434482, 1.9827857085027523, 2.040023295125558]
+Orbital energy = [-0.2424314933094023, -0.21655946981806934, 0.8994284012789967, 0.9052969185929275]
 k = -3.0473448739820994
-Orbital energy = [0.7302552741090047, 0.9026052347970086, 1.9824484971536676, 2.0402713837304223]
+Orbital energy = [-0.24580372219640204, -0.21299190936771023, 0.8979350398822641, 0.9067096485206733]
 k = -3.015928947446201
-Orbital energy = [0.729469582109832, 0.9037035278831417, 1.981981984058246, 2.040613361538511]
+Orbital energy = [-0.24954379106440544, -0.2089791110160953, 0.8964238092889838, 0.9081083354150705]
 k = -2.9845130209103035
-Orbital energy = [0.7284742607988852, 0.9051007631128966, 1.9813913678839365, 2.041044267435574]
+Orbital energy = [-0.2534523669837493, -0.20472113166127748, 0.8948967343947507, 0.9094912931307788]
 k = -2.9530970943744057
-Orbital energy = [0.7272795448575986, 0.9067867044887611, 1.9806828411741133, 2.041558215732866]
+Orbital energy = [-0.257434328017141, -0.20031400884740755, 0.8933548221116859, 0.9108579480884738]
 k = -2.9216811678385075
-Orbital energy = [0.7258970490481604, 0.9087497356470192, 1.9798633077549448, 2.042148679836737]
+Orbital energy = [-0.2614402384266525, -0.19580827437439985, 0.891798818648206, 0.9122080805037607]
 k = -2.8902652413026098
-Orbital energy = [0.7243393661165931, 0.9109772619573766, 1.9789401095774428, 2.0428087667271164]
+Orbital energy = [-0.2654421052014794, -0.19123318434845035, 0.8902293988606688, 0.9135416333882117]
 k = -2.8588493147667116
-Orbital energy = [0.7226196833546099, 0.9134560939629135, 1.9779207825705631, 2.0435314626723726]
+Orbital energy = [-0.2694228546766568, -0.18660722704854849, 0.8886472281328289, 0.9148586489668321]
 k = -2.827433388230814
-Orbital energy = [0.7207514377139621, 0.9161727922657976, 1.9768128531256806, 2.044309838563776]
+Orbital energy = [-0.27337141371319684, -0.18194302430768736, 0.8870529856396406, 0.9161592437693237]
 k = -2.796017461694916
-Orbital energy = [0.7187480217661537, 0.9191139615650394, 1.9756236795231985, 2.045137210563102]
+Orbital energy = [-0.27728023886724606, -0.17724978317292808, 0.8854473733443314, 0.9174435981717377]
 k = -2.764601535159018
-Orbital energy = [0.7166225458012405, 0.9222664885513048, 1.9743603370117115, 2.0460072573580157]
+Orbital energy = [-0.2811439934030585, -0.17253459820229694, 0.8838311188846277, 0.9187119523672019]
 k = -2.73318560862312
-Orbital energy = [0.714387655743066, 0.9256177239801463, 1.9730295416722101, 2.046914098898264]
+Orbital energy = [-0.2849587984509969, -0.16780317832934719, 0.8822049755131446, 0.9199646057416371]
 k = -2.701769682087222
-Orbital energy = [0.7120554026186248, 0.9291556131842613, 1.97163760643973, 2.047852343246713]
+Orbital energy = [-0.2887217880168483, -0.16306026883843475, 0.8805697204751125, 0.9212019184157808]
 k = -2.670353755551324
-Orbital energy = [0.7096371569861151, 0.932868781618278, 1.9701904222586484, 2.0488171085760833]
+Orbital energy = [-0.2924308328033691, -0.15830990375424114, 0.8789261524954248, 0.9224243144263642]
 k = -2.6389378290154264
-Orbital energy = [0.7071435607179715, 0.9367465830374861, 1.9686934578221975, 2.0498040268686477]
+Orbital energy = [-0.2960843618129432, -0.15355555995381556, 0.8772750887372903, 0.9236322863262617]
 k = -2.607521902479528
-Orbital energy = [0.7045845084923934, 0.940779117954295, 1.9671517722742358, 2.0508092349495817]
+Orbital energy = [-0.2996812426496951, -0.14880025237006897, 0.87561736144971, 0.9248264011224473]
 k = -2.5761059759436304
-Orbital energy = [0.7019691519232618, 0.9449572294393515, 1.965570036333218, 2.0518293574035176]
+Orbital energy = [-0.30322069815710595, -0.14404659294535163, 0.8739538144485322, 0.9260073075337945]
 k = -2.5446900494077322
-Orbital energy = [0.6993059201683121, 0.9492724824237452, 1.9639525583489401, 2.052861484874126]
+Orbital energy = [-0.3067022461474608, -0.1392968268779462, 0.8722852995371982, 0.9271757445768606]
 k = -2.5132741228718345
-Orbital energy = [0.696602551889757, 0.9537171316238293, 1.962303312725672, 2.0539031503244423]
+Orbital energy = [-0.31012565414267007, -0.13455285454264682, 0.870612672951054, 0.9283325514945392]
 k = -2.4818581963359367
-Orbital energy = [0.6938661344625394, 0.9582840821884309, 1.9606259689039969, 2.054952305077891]
+Orbital energy = [-0.31349090406704816, -0.1298162444440294, 0.868936791894902, 0.9294786790381435]
 k = -2.4504422698000385
-Orbital energy = [0.6911031472536051, 0.9629668462392981, 1.9589239196876551, 2.056007295867025]
+Orbital energy = [-0.31679816365328933, -0.1250882407357713, 0.8672585112334439, 0.930615202102488]
 k = -2.419026343264141
-Orbital energy = [0.6883195065933703, 0.9677594976768743, 1.9572003081486615, 2.0570668436708126]
+Orbital energy = [-0.32004776244973854, -0.12036976770493181, 0.8655786803860774, 0.9317433336982927]
 k = -2.3876104167282426
-Orbital energy = [0.685520610718438, 0.9726566269646072, 1.9554580526691518, 2.0581300247974927]
+Orbital energy = [-0.32324017103147606, -0.11566143289505178, 0.863898140470381, 0.9328644402281162]
 k = -2.356194490192345
-Orbital energy = [0.6827113834891547, 0.9776532970793256, 1.9536998699069514, 2.059196254442053]
+Orbital energy = [-0.3263759824807844, -0.11096353006542074, 0.8622177217317551, 0.9339800580120442]
 k = -2.324778563656447
-Orbital energy = [0.6798963160922211, 0.98274500140716, 1.9519282956272932, 2.060265272793414]
+Orbital energy = [-0.3294558955087663, -0.10627604286146551, 0.8605382412900672, 0.935091910988191]
 k = -2.293362637120549
-Orbital energy = [0.6770795062457651, 0.98792762405591, 1.950145703444089, 2.0613371336659503]
+Orbital energy = [-0.3324806987961402, -0.10159864984614739, 0.8588605012275304, 0.936201929491402]
 k = -2.2619467105846507
-Orbital energy = [0.6742646946505109, 0.9931974028267678, 1.9483543215763468, 2.062412195569057]
+Orbital energy = [-0.3354512562725883, -0.09693073137979247, 0.8571852870354445, 0.9373122699917558]
 k = -2.230530784048753
-Orbital energy = [0.6714552985929161, 0.9985508949241595, 1.9465562477600729, 2.0634911150942434]
+Orbital energy = [-0.33836849315241463, -0.09227137871409367, 0.8555133664310197, 0.9384253356531332]
 k = -2.199114857512855
-Orbital energy = [0.6686544427190115, 1.0039849453674863, 1.944753462472057, 2.0645748424841215]
+Orbital energy = [-0.3412333826136582, -0.08761940557137575, 0.8538454885490315, 0.9395437975517105]
 k = -2.1676989309769574
-Orbital energy = [0.6658649870730842, 1.0094966579907139, 1.9429478406257652, 2.0656646192440182]
+Orbital energy = [-0.3440469330573921, -0.08297336240367924, 0.8521823835070581, 0.9406706163749704]
 k = -2.1362830044410592
-Orbital energy = [0.6630895525430243, 1.0150833688653806, 1.9411411618953123, 2.0667619776616646]
+Orbital energy = [-0.34681017591957686, -0.0783315534620411, 0.8505247623370312, 0.9418090644043097]
 k = -2.104867077905161
-Orbital energy = [0.6603305438816958, 1.0207426219520939, 1.939335119814793, 2.067868742108955]
+Orbital energy = [-0.34952415403363596, -0.07369205675072646, 0.8488733172702982, 0.9429627475685272]
 k = -2.0734511513692633
-Orbital energy = [0.6575901704867555, 1.02647214676915, 1.9375313297887418, 2.0689870320106536]
+Orbital energy = [-0.3521899105604275, -0.06905274689156467, 0.8472287223581777, 0.9441356273419406]
 k = -2.0420352248333655
-Orbital energy = [0.6548704651245045, 1.0322698378600612, 1.9357313361369757, 2.070119266376546]
+Orbital energy = [-0.35480847851536845, -0.06441132087829016, 0.8455916344050672, 0.9453320422493376]
 k = -2.0106192982974678
-Orbital energy = [0.6521733007797523, 1.0381337358413414, 1.9339366182843611, 2.0712681698043403]
+Orbital energy = [-0.3573808709313597, -0.059765326658725755, 0.8439626941867059, 0.9465567287308858]
 k = -1.9792033717615696
-Orbital energy = [0.6495004058057328, 1.0440620098153763, 1.9321485961937312, 2.0724367798705225]
+Orbital energy = [-0.35990807170163475, -0.05511219444297511, 0.8423425279220971, 0.9478148411128754]
 k = -1.9477874452256716
-Orbital energy = [0.6468533775375431, 1.0500529409388195, 1.9303686351285068, 2.0736284558341853]
+Orbital energy = [-0.36239102714935634, -0.05044927059795147, 0.8407317489639652, 0.9491119704250929]
 k = -1.9163715186897736
-Orbital energy = [0.6442336945206821, 1.0561049069436292, 1.928598049820986, 2.074846888584648]
+Orbital energy = [-0.364830638371042, -0.04577385395212204, 0.8391309596692466, 0.9504541618018374]
 k = -1.8849555921538759
-Orbital energy = [0.6416427274937342, 1.0622163674146734, 1.926838108112506, 2.076096111766764]
+Orbital energy = [-0.3672277543991004, -0.04108323429896438, 0.8375407534083651, 0.9518479302011676]
 k = -1.853539665617978
-Orbital energy = [0.6390817492518375, 1.0683858496339402, 1.9250900341230404, 2.0773805140178614]
+Orbital energy = [-0.3695831662249863, -0.036374732853055994, 0.8359617166696334, 0.9533002741748371]
 k = -1.82212373908208
-Orbital energy = [0.6365519435055393, 1.07461193480723, 1.923355011000097, 2.0787048522471507]
+Orbital energy = [-0.3718976017190748, -0.0316457443787122, 0.8343944312131469, 0.9548186874192618]
 k = -1.790707812546182
-Orbital energy = [0.6340544128381871, 1.0808932444934587, 1.921634183289981, 2.0800742658812923]
+Orbital energy = [-0.3741717214763529, -0.026893780677498057, 0.8328394762272752, 0.9564111678347276]
 k = -1.759291886010284
-Orbital energy = [0.6315901858544919, 1.0872284270605004, 1.9199286589686153, 2.081494291988232]
+Orbital energy = [-0.37640611560870535, -0.022116515087630576, 0.8312974304399767, 0.958086223815134]
 k = -1.727875959474386
-Orbital energy = [0.6291602236029361, 1.0936161439939434, 1.9182395111639572, 2.0829708811751697]
+Orbital energy = [-0.3786013014950351, -0.017311827615220394, 0.8297688741372076, 0.959852877483102]
 k = -1.6964600329384882
-Orbital energy = [0.6267654253458896, 1.1000550558870652, 1.9165677795977485, 2.084510414134184]
+Orbital energy = [-0.38075772249002315, -0.012477850284488872, 0.8282543910413185, 0.9617206645740802]
 k = -1.6650441064025903
-Orbital energy = [0.6244066337430452, 1.1065438079414454, 1.9149144717705893, 2.086119718679943]
+Orbital energy = [-0.3828757475811113, -0.007613012261701099, 0.8267545700039741, 0.9636996306575881]
 k = -1.6336281798666923
-Orbital energy = [0.6220846395064537, 1.1130810148086754, 1.913280563911347, 2.0878060870874715]
+Orbital energy = [-0.38495567197164815, -0.002716084275829454, 0.8252700064706713, 0.9658003233628227]
 k = -1.6022122533307943
-Orbital energy = [0.619800185578812, 1.1196652446047517, 1.9116670017094253, 2.0895772934920687]
+Orbital energy = [-0.3869977185563208, 0.0022137781716422686, 0.8238013036775529, 0.9680337802490956]
 k = -1.5707963267948963
-Orbital energy = [0.6175539708806594, 1.1262950019304196, 1.910074700846556, 2.0914416110573]
+Orbital energy = [-0.3890020402432792, 0.0071769933442202925, 0.8223490735458775, 0.97041151192807]
 k = -1.5393804002589986
-Orbital energy = [0.6153466536668089, 1.1329687097338692, 1.9085045473434255, 2.093407828548774]
+Orbital energy = [-0.3909687230660508, 0.012173514117936964, 0.8209139372453189, 0.9729454800043458]
 k = -1.5079644737231006
-Orbital energy = [0.6131788545275434, 1.1396846898569877, 1.9069573977355472, 2.0954852658692844]
+Orbital energy = [-0.39289779001784925, 0.017202791724268442, 0.8194965254040572, 0.975648069353433]
 k = -1.4765485471872026
-Orbital energy = [0.6110511590658383, 1.1464411421142902, 1.905434079092483, 2.097683788012705]
+Orbital energy = [-0.3947892055312911, 0.022263742991457676, 0.818097477951396, 0.9785320542013252]
 k = -1.4451326206513047
-Orbital energy = [0.6089641202780063, 1.1532361217651312, 1.9039353888945372, 2.100013816777853]
+Orbital energy = [-0.39664288051835533, 0.027354721698417392, 0.8167174435871503, 0.9816105574085116]
 k = -1.4137166941154067
-Orbital energy = [0.6069182606618329, 1.1600675152561744, 1.9024620947814894, 2.102486339446909]
+Orbital energy = [-0.39845867787870354, 0.032473494658296395, 0.815357078881047, 0.9848970022937211]
 k = -1.3823007675795087
-Orbital energy = [0.6049140740731915, 1.1669330141338283, 1.9010149341889306, 2.105112913473486]
+Orbital energy = [-0.40023641837953516, 0.037617223141489284, 0.8140170470146858, 0.9884050562597628]
 k = -1.350884841043611
-Orbital energy = [0.6029520273494886, 1.1738300870562692, 1.8995946138887578, 2.107905666040771]
+Orbital energy = [-0.4019758868070641, 0.04278245022833105, 0.8126980161876789, 0.9921485654071056]
 k = -1.319468914507713
-Orbital energy = [0.6010325617159442, 1.1807559498738054, 1.898201809452091, 2.1108772871386274]
+Orbital energy = [-0.4036768382886087, 0.047965094647830164, 0.8114006577182785, 0.9961414792414328]
 k = -1.288052987971815
-Orbital energy = [0.5991560939887153, 1.187707533795857, 1.8968371646543363, 2.114041014567738]
+Orbital energy = [-0.40533900468517586, 0.053160451608619375, 0.8101256438765946, 1.0003977645012325]
 k = -1.256637061435917
-Orbital energy = [0.5973230175870727, 1.1946814517242477, 1.8955012908441105, 2.117410609008694]
+Orbital energy = [-0.4069621009572787, 0.058363201060022275, 0.8088736454950872, 1.0049313070524708]
 k = -1.225221134900019
-Orbital energy = [0.5955337033655212, 1.2016739629072544, 1.8941947662994543, 2.1210003169941336]
+Orbital energy = [-0.40854583141146983, 0.06356742373344182, 0.807645329406144, 1.0097558007217207]
 k = -1.1938052083641213
-Orbital energy = [0.5937885002754772, 1.208680936157862, 1.8929181355965745, 2.124824819294659]
+Orbital energy = [-0.41008989574149757, 0.06876662520632602, 0.806441355759929, 1.0148846218696712]
 k = -1.1623892818282233
-Orbital energy = [0.592087735865396, 1.2156978119837465, 1.8916719090178475, 2.1288991618788438]
+Orbital energy = [-0.41159399478596304, 0.07395376810280445, 0.8052623752772308, 1.0203306884463164]
 k = -1.1309733552923253
-Orbital energy = [0.5904317166276272, 1.2227195640951232, 1.8904565620270273, 2.133238666241071]
+Orbital energy = [-0.41305783593357553, 0.0791213123975615, 0.8041090264917018, 1.0261063022216332]
 k = -1.0995574287564276
-Orbital energy = [0.5888207282001381, 1.2297406608893187, 1.889272534840228, 2.1378588155198943]
+Orbital energy = [-0.41448113811726917, 0.08426126362474333, 0.8029819330337423, 1.0322229728554566]
 k = -1.0681415022205294
-Orbital energy = [0.5872550354313426, 1.236755027654742, 1.8881202321213606, 2.142775112471042]
+Orbital energy = [-0.4158636363493119, 0.08936522861484744, 0.8018817010045671, 1.0386912224643083]
 k = -1.0367255756846316
-Orbital energy = [0.5857348823167956, 1.2437560103886736, 1.8870000228298516, 2.148002905035332]
+Orbital energy = [-0.41720508576071047, 0.09442447819419601, 0.8008089164838835, 1.0455203693689925]
 k = -1.0053096491487334
-Orbital energy = [0.5842604918174721, 1.250736342276778, 1.8859122402470019, 2.1535571749842966]
+Orbital energy = [-0.4185052651194038, 0.09943001608942388, 0.7997641432086122, 1.0527182897766525]
 k = -0.9738937226128357
-Orbital energy = [0.5828320655706205, 1.2576881140300111, 1.8848571822046107, 2.1594522849738955]
+Orbital energy = [-0.4197639798126296, 0.10437265309022839, 0.7987479204533913, 1.0602911562792923]
 k = -0.9424777960769379
-Orbital energy = [0.5814497835059627, 1.264602749406765, 1.8838351115360255, 2.165701679340291]
+Orbital energy = [-0.42098106428912896, 0.10924308534506971, 0.7977607611367892, 1.0682431522576707]
 k = -0.9110618695410397
-Orbital energy = [0.5801138033822586, 1.2714709873526422, 1.8828462567650641, 2.1723175341906575]
+Orbital energy = [-0.42215638396623256, 0.11403197550449715, 0.7968031501704994, 1.0765761615907428]
 k = -0.879645943005142
-Orbital energy = [0.5788242602618614, 1.2782828722537163, 1.8818908130428746, 2.1793103528490523]
+Orbital energy = [-0.4232898366151827, 0.11873003529349081, 0.7958755430626961, 1.0852894335182737]
 k = -0.8482300164692438
-Orbital energy = [0.5775812659439874, 1.2850277538067858, 1.8809689433363506, 2.186688503593209]
+Orbital energy = [-0.4243813532450057, 0.12332810799492082, 0.7949783647814184, 1.0943792231281508]
 k = -0.816814089933346
-Orbital energy = [0.5763849083809232, 1.2916942979475627, 1.8800807798649282, 2.194457697953385]
+Orbital energy = [-0.42543089851078963, 0.12781724926739657, 0.7941120088795951, 1.1038384087853028]
 k = -0.7853981633974483
-Orbital energy = [0.575235251105084, 1.2982705101316114, 1.8792264257751738, 2.202620409730462]
+Orbital energy = [-0.42643847067622087, 0.13218880470708236, 0.7932768368801223, 1.1136560889385838]
 k = -0.7539822368615501
-Orbital energy = [0.5741323326988874, 1.3047437720237303, 1.8784059570353733, 2.211175237419981]
+Orbital energy = [-0.4274041011626199, 0.13643448259719224, 0.7924731779173748, 1.1238171621887236]
 k = -0.7225663103256523
-Orbital energy = [0.5730761663433217, 1.3111008923142986, 1.8776194245251625, 2.220116215977181]
+Orbital energy = [-0.42832785371762816, 0.14054642037115864, 0.7917013286304826, 1.1343018963266824]
 k = -0.6911503837897541
-Orbital energy = [0.5720667394850336, 1.3173281719490633, 1.8768668562888564, 2.229432087880166]
+Orbital energy = [-0.4292098232360807, 0.14451724344391995, 0.7909615533035625, 1.1450854942992321]
 k = -0.6597344572538564
-Orbital energy = [0.5711040136650483, 1.3234114835429176, 1.8761482599156138, 2.2391055482545457]
+Orbital energy = [-0.4300501342637217, 0.14834011523597423, 0.7902540842485424, 1.1561376677490216]
 k = -0.6283185307179586
-Orbital energy = [0.5701879245550954, 1.3293363641700098, 1.8754636250053298, 2.249112484363758]
+Orbital energy = [-0.43084893921144013, 0.1520087774205392, 0.7895791224270361, 1.1674222318988068]
 k = -0.5969026041820604
-Orbital energy = [0.5693183822489745, 1.3350881201131117, 1.8748129256764006, 2.2594212359125265]
+Orbital energy = [-0.43160641630398594, 0.1555175796575859, 0.7889368383085821, 1.1788967390428953]
 k = -0.5654866776461627
-Orbital energy = [0.5684952718567529, 1.3406519415543203, 1.874196123070471, 2.269991909118266]
+Orbital energy = [-0.43232276728290187, 0.15886149833104726, 0.7883273729631148, 1.1905121716474272]
 k = -0.5340707511102645
-Orbital energy = [0.5677184544477056, 1.346013024642041, 1.8736131678098658, 2.280775784007932]
+Orbital energy = [-0.43299821487924195, 0.16203614406842554, 0.7877508393855301, 1.2022127198318133]
 k = -0.5026548245743667
-Orbital energy = [0.5669877683841982, 1.3511566979235696, 1.8730640023658907, 2.2917148603882356]
+Orbital energy = [-0.43363300006790845, 0.16503775808702675, 0.7872073240493697, 1.2139356714994363]
 k = -0.4712388980384685
-Orbital energy = [0.5663030310820092, 1.3560685498315723, 1.872548563300176, 2.3027415927549333]
+Orbital energy = [-0.43422737911263654, 0.1678631976708127, 0.7866968886847497, 1.2256114461890963]
 k = -0.43982297150257077
-Orbital energy = [0.5656640412234213, 1.3607345537928164, 1.8720667833466595, 2.313778867259242]
+Orbital energy = [-0.43478162040930335, 0.17050991133036672, 0.7862195722725782, 1.23716380531611]
 k = -0.408407044966673
-Orbital energy = [0.565070581436921, 1.3651411876090436, 1.8716185933083445, 2.32474027384623]
+Orbital energy = [-0.43529600113575007, 0.17297590443110786, 0.7857753932428799, 1.2485102712692853]
 k = -0.3769911184307748
-Orbital energy = [0.5645224214423075, 1.3692755440491344, 1.8712039237503058, 2.3355307229079787]
+Orbital energy = [-0.435770803719098, 0.17525969628827462, 0.785364351859602, 1.259562785203728]
 k = -0.34557519189487707
-Orbital energy = [0.5640193216420422, 1.373125430072838, 1.8708227064781697, 2.346047447418625]
+Orbital energy = [-0.4362063121367464, 0.1773602699189497, 0.7849864327679563, 1.2702286277387917]
 k = -0.31415926535897887
-Orbital energy = [0.5635610371197806, 1.3766794527478994, 1.8704748757988883, 2.356181417930435]
+Orbital energy = [-0.4366028080749744, 0.17927701580953725, 0.7846416076732601, 1.2804116176941065]
 k = -0.2827433388230811
-Orbital energy = [0.5631473219858112, 1.3799270906759853, 1.8701603695681432, 2.365819178793589]
+Orbital energy = [-0.4369605669790383, 0.18100967119966332, 0.7843298381129206, 1.2900135912912527]
 k = -0.25132741228718336
-Orbital energy = [0.5627779339876573, 1.3828587505497645, 1.8698791300352668, 2.3748450898562927]
+Orbital energy = [-0.43727985404037706, 0.18255825649810611, 0.7840510782759832, 1.2989361481153987]
 k = -0.21991148575128516
-Orbital energy = [0.5624526392836684, 1.3854658092615306, 1.869631104502159, 2.3831439297555903]
+Orbital energy = [-0.4375609201792142, 0.18392301052969104, 0.7838052778180763, 1.3070826312441892]
 k = -0.1884955592153874
-Orbital energy = [0.5621712172594637, 1.3877406427117411, 1.869416245817254, 2.390603786547432]
+Orbital energy = [-0.4378039980933887, 0.18510432636040336, 0.7835923846142512, 1.314360288536879]
 k = -0.1570796326794892
-Orbital energy = [0.5619334652530434, 1.3896766430705618, 1.8692345127284475, 2.3971191314085387]
+Orbital energy = [-0.43800929845544073, 0.18610268945641364, 0.7834123473884036, 1.3206825418612356]
 k = -0.12566370614359146
-Orbital energy = [0.561739203045607, 1.3912682266868428, 1.8690858701206232, 2.4025939446079145]
+Orbital energy = [-0.4381770063484925, 0.18691861989690958, 0.7832651181564311, 1.3259712731601]
 k = -0.0942477796076937
-Orbital energy = [0.5615882769727221, 1.3925108350898134, 1.8689702891634503, 2.40694474324262]
+Orbital energy = [-0.4383072780359105, 0.18755262027655678, 0.7831506544210305, 1.3301590230176106]
 k = -0.06283185307179551
-Orbital energy = [0.5614805635153659, 1.393400931580445, 1.8688877473940095, 2.410103350504349]
+Orbital energy = [-0.43840023815930884, 0.18800513079853326, 0.7830689210595488, 1.3331909909352722]
 k = -0.031415926535897754
-Orbital energy = [0.5614159722426357, 1.3939359957653843, 1.8688382287559935, 2.412019248862593]
+Orbital energy = [-0.43845597745320897, 0.18827649287345927, 0.7830198918523945, 1.3350267285148787]
 k = 4.440892098500626e-16
-Orbital energy = [0.5613944479974586, 1.3941145180658507, 1.8688217236139304, 2.4126613756699085]
+Orbital energy = [-0.43847455105271654, 0.1883669223057756, 0.7830035506081582, 1.3356414279657745]
 k = 0.0314159265358982
-Orbital energy = [0.5614159722426357, 1.3939359957653843, 1.8688382287559935, 2.412019248862593]
+Orbital energy = [-0.43845597745320897, 0.18827649287345927, 0.7830198918523945, 1.3350267285148787]
 k = 0.06283185307179595
-Orbital energy = [0.5614805635153659, 1.393400931580445, 1.8688877473940095, 2.410103350504349]
+Orbital energy = [-0.43840023815930884, 0.18800513079853326, 0.7830689210595488, 1.3331909909352722]
 k = 0.09424777960769415
-Orbital energy = [0.5615882769727221, 1.3925108350898134, 1.8689702891634503, 2.40694474324262]
+Orbital energy = [-0.4383072780359105, 0.18755262027655678, 0.7831506544210305, 1.3301590230176106]
 k = 0.1256637061435919
-Orbital energy = [0.561739203045607, 1.3912682266868428, 1.8690858701206232, 2.4025939446079145]
+Orbital energy = [-0.4381770063484925, 0.18691861989690958, 0.7832651181564311, 1.3259712731601]
 k = 0.1570796326794901
-Orbital energy = [0.5619334652530434, 1.3896766430705618, 1.8692345127284475, 2.3971191314085387]
+Orbital energy = [-0.43800929845544073, 0.18610268945641364, 0.7834123473884036, 1.3206825418612356]
 k = 0.18849555921538785
-Orbital energy = [0.5621712172594642, 1.3877406427117411, 1.8694162458172556, 2.3906037865474343]
+Orbital energy = [-0.43780399809338866, 0.18510432636040297, 0.7835923846142508, 1.3143602885368746]
 k = 0.2199114857512856
-Orbital energy = [0.5624526392836684, 1.3854658092615306, 1.869631104502159, 2.3831439297555903]
+Orbital energy = [-0.4375609201792142, 0.18392301052969104, 0.7838052778180763, 1.3070826312441892]
 k = 0.2513274122871838
-Orbital energy = [0.562777933987658, 1.3828587505497634, 1.8698791300352653, 2.3748450898562825]
+Orbital energy = [-0.43727985404037706, 0.18255825649810603, 0.7840510782759833, 1.2989361481153925]
 k = 0.28274333882308156
-Orbital energy = [0.5631473219858094, 1.3799270906759848, 1.8701603695681437, 2.3658191787935916]
+Orbital energy = [-0.4369605669790379, 0.18100967119966332, 0.784329838112921, 1.2900135912912745]
 k = 0.31415926535897976
-Orbital energy = [0.5635610371197806, 1.3766794527478994, 1.8704748757988883, 2.356181417930435]
+Orbital energy = [-0.4366028080749744, 0.17927701580953725, 0.7846416076732601, 1.2804116176941065]
 k = 0.3455751918948775
-Orbital energy = [0.5640193216420422, 1.3731254300728357, 1.870822706478168, 2.346047447418622]
+Orbital energy = [-0.43620631213674665, 0.1773602699189495, 0.784986432767956, 1.2702286277387929]
 k = 0.3769911184307757
-Orbital energy = [0.5645224214423075, 1.3692755440491344, 1.8712039237503058, 2.3355307229079787]
+Orbital energy = [-0.435770803719098, 0.17525969628827462, 0.785364351859602, 1.259562785203728]
 k = 0.40840704496667346
-Orbital energy = [0.565070581436919, 1.3651411876090442, 1.871618593308345, 2.324740273846236]
+Orbital energy = [-0.4352960011357502, 0.17297590443110775, 0.7857753932428799, 1.2485102712692895]
 k = 0.4398229715025712
-Orbital energy = [0.5656640412234206, 1.360734553792817, 1.8720667833466573, 2.3137788672592623]
+Orbital energy = [-0.4347816204093036, 0.17050991133036697, 0.7862195722725778, 1.2371638053161134]
 k = 0.4712388980384694
-Orbital energy = [0.5663030310820103, 1.3560685498315734, 1.8725485633001757, 2.3027415927549466]
+Orbital energy = [-0.43422737911263687, 0.16786319767081218, 0.78669688868475, 1.2256114461890995]
 k = 0.5026548245743672
-Orbital energy = [0.5669877683841975, 1.3511566979235672, 1.8730640023658902, 2.291714860388225]
+Orbital energy = [-0.4336330000679077, 0.165037758087027, 0.7872073240493696, 1.213935671499442]
 k = 0.5340707511102654
-Orbital energy = [0.5677184544477061, 1.3460130246420432, 1.8736131678098633, 2.2807757840079526]
+Orbital energy = [-0.4329982148792418, 0.16203614406842548, 0.7877508393855298, 1.2022127198318169]
 k = 0.5654866776461631
-Orbital energy = [0.5684952718567535, 1.340651941554322, 1.8741961230704696, 2.269991909118277]
+Orbital energy = [-0.4323227672829023, 0.15886149833104762, 0.7883273729631151, 1.1905121716474265]
 k = 0.5969026041820609
-Orbital energy = [0.5693183822489756, 1.3350881201131135, 1.8748129256764003, 2.2594212359125154]
+Orbital energy = [-0.4316064163039864, 0.15551757965758603, 0.7889368383085826, 1.1788967390428873]
 k = 0.6283185307179591
-Orbital energy = [0.5701879245550954, 1.3293363641700104, 1.8754636250053291, 2.249112484363762]
+Orbital energy = [-0.4308489392114405, 0.15200877742053923, 0.7895791224270353, 1.1674222318988112]
 k = 0.6597344572538568
-Orbital energy = [0.5711040136650483, 1.3234114835429172, 1.876148259915614, 2.2391055482545434]
+Orbital energy = [-0.4300501342637217, 0.14834011523597465, 0.7902540842485418, 1.1561376677490247]
 k = 0.691150383789755
-Orbital energy = [0.5720667394850336, 1.3173281719490633, 1.8768668562888564, 2.229432087880166]
+Orbital energy = [-0.4292098232360807, 0.14451724344391995, 0.7909615533035625, 1.1450854942992321]
 k = 0.7225663103256528
-Orbital energy = [0.5730761663433217, 1.3111008923142986, 1.8776194245251625, 2.220116215977181]
+Orbital energy = [-0.42832785371762816, 0.14054642037115864, 0.7917013286304826, 1.1343018963266824]
 k = 0.7539822368615505
-Orbital energy = [0.5741323326988872, 1.3047437720237312, 1.878405957035374, 2.2111752374199813]
+Orbital energy = [-0.4274041011626202, 0.13643448259719218, 0.7924731779173745, 1.1238171621887245]
 k = 0.7853981633974487
-Orbital energy = [0.5752352511050847, 1.2982705101316092, 1.8792264257751725, 2.202620409730451]
+Orbital energy = [-0.42643847067622076, 0.1321888047070825, 0.7932768368801225, 1.1136560889385814]
 k = 0.8168140899333465
-Orbital energy = [0.5763849083809249, 1.291694297947558, 1.8800807798649288, 2.194457697953378]
+Orbital energy = [-0.42543089851078975, 0.1278172492673968, 0.7941120088795954, 1.1038384087853061]
 k = 0.8482300164692447
-Orbital energy = [0.5775812659439874, 1.2850277538067858, 1.8809689433363506, 2.186688503593209]
+Orbital energy = [-0.4243813532450057, 0.12332810799492082, 0.7949783647814184, 1.0943792231281508]
 k = 0.8796459430051424
-Orbital energy = [0.5788242602618616, 1.2782828722537165, 1.8818908130428733, 2.179310352849045]
+Orbital energy = [-0.4232898366151829, 0.11873003529349095, 0.7958755430626963, 1.0852894335182734]
 k = 0.9110618695410402
-Orbital energy = [0.5801138033822593, 1.271470987352643, 1.882846256765065, 2.1723175341906593]
+Orbital energy = [-0.42215638396623245, 0.11403197550449701, 0.7968031501704993, 1.0765761615907432]
 k = 0.9424777960769379
-Orbital energy = [0.5814497835059627, 1.264602749406765, 1.8838351115360255, 2.165701679340291]
+Orbital energy = [-0.42098106428912896, 0.10924308534506971, 0.7977607611367892, 1.0682431522576707]
 k = 0.9738937226128366
-Orbital energy = [0.5828320655706205, 1.2576881140300111, 1.8848571822046107, 2.1594522849738955]
+Orbital energy = [-0.4197639798126296, 0.10437265309022839, 0.7987479204533913, 1.0602911562792923]
 k = 1.0053096491487343
-Orbital energy = [0.5842604918174734, 1.2507363422767788, 1.8859122402470019, 2.1535571749842983]
+Orbital energy = [-0.41850526511940345, 0.09943001608942321, 0.7997641432086118, 1.0527182897766494]
 k = 1.036725575684632
-Orbital energy = [0.5857348823167958, 1.2437560103886736, 1.887000022829853, 2.148002905035336]
+Orbital energy = [-0.4172050857607107, 0.09442447819419643, 0.8008089164838841, 1.0455203693689954]
 k = 1.0681415022205298
-Orbital energy = [0.5872550354313424, 1.2367550276547432, 1.8881202321213615, 2.142775112471045]
+Orbital energy = [-0.41586363634931234, 0.08936522861484733, 0.8018817010045676, 1.0386912224643081]
 k = 1.0995574287564276
-Orbital energy = [0.5888207282001381, 1.2297406608893187, 1.889272534840228, 2.1378588155198943]
+Orbital energy = [-0.41448113811726917, 0.08426126362474333, 0.8029819330337423, 1.0322229728554566]
 k = 1.1309733552923262
-Orbital energy = [0.590431716627627, 1.2227195640951238, 1.8904565620270273, 2.133238666241076]
+Orbital energy = [-0.4130578359335756, 0.07912131239756137, 0.8041090264917019, 1.0261063022216326]
 k = 1.162389281828224
-Orbital energy = [0.5920877358653962, 1.2156978119837465, 1.891671909017849, 2.128899161878844]
+Orbital energy = [-0.41159399478596337, 0.07395376810280424, 0.8052623752772308, 1.0203306884463186]
 k = 1.1938052083641217
-Orbital energy = [0.5937885002754781, 1.2086809361578625, 1.8929181355965756, 2.124824819294654]
+Orbital energy = [-0.41008989574149735, 0.06876662520632605, 0.8064413557599291, 1.0148846218696697]
 k = 1.2252211349000195
-Orbital energy = [0.5955337033655206, 1.2016739629072544, 1.8941947662994547, 2.121000316994138]
+Orbital energy = [-0.40854583141146944, 0.06356742373344174, 0.8076453294061438, 1.0097558007217193]
 k = 1.2566370614359172
-Orbital energy = [0.5973230175870721, 1.194681451724248, 1.8955012908441102, 2.117410609008695]
+Orbital energy = [-0.4069621009572789, 0.058363201060022574, 0.8088736454950874, 1.0049313070524704]
 k = 1.2880529879718159
-Orbital energy = [0.5991560939887146, 1.1877075337958571, 1.8968371646543352, 2.114041014567738]
+Orbital energy = [-0.4053390046851757, 0.05316045160861925, 0.8101256438765945, 1.000397764501232]
 k = 1.3194689145077136
-Orbital energy = [0.6010325617159444, 1.1807559498738065, 1.8982018094520907, 2.1108772871386248]
+Orbital energy = [-0.4036768382886089, 0.047965094647830116, 0.8114006577182784, 0.9961414792414309]
 k = 1.3508848410436114
-Orbital energy = [0.6029520273494888, 1.1738300870562686, 1.8995946138887576, 2.107905666040774]
+Orbital energy = [-0.40197588680706386, 0.042782450228330784, 0.8126980161876786, 0.9921485654071049]
 k = 1.3823007675795091
-Orbital energy = [0.6049140740731913, 1.1669330141338268, 1.9010149341889293, 2.105112913473486]
+Orbital energy = [-0.40023641837953505, 0.03761722314148924, 0.8140170470146865, 0.9884050562597615]
 k = 1.413716694115407
-Orbital energy = [0.6069182606618329, 1.1600675152561744, 1.9024620947814894, 2.102486339446909]
+Orbital energy = [-0.39845867787870354, 0.032473494658296395, 0.815357078881047, 0.9848970022937211]
 k = 1.4451326206513055
-Orbital energy = [0.6089641202780065, 1.1532361217651301, 1.9039353888945372, 2.1000138167778504]
+Orbital energy = [-0.39664288051835495, 0.02735472169841741, 0.8167174435871504, 0.98161055740851]
 k = 1.4765485471872033
-Orbital energy = [0.611051159065839, 1.1464411421142924, 1.905434079092485, 2.097683788012712]
+Orbital energy = [-0.3947892055312908, 0.02226374299145741, 0.818097477951396, 0.978532054201324]
 k = 1.507964473723101
-Orbital energy = [0.6131788545275447, 1.139684689856988, 1.906957397735547, 2.0954852658692853]
+Orbital energy = [-0.39289779001784925, 0.017202791724268408, 0.8194965254040574, 0.9756480693534327]
 k = 1.5393804002589988
-Orbital energy = [0.6153466536668089, 1.1329687097338696, 1.9085045473434268, 2.0934078285487767]
+Orbital energy = [-0.39096872306605107, 0.012173514117936962, 0.8209139372453194, 0.9729454800043477]
 k = 1.5707963267948966
-Orbital energy = [0.6175539708806594, 1.1262950019304196, 1.910074700846556, 2.0914416110573]
+Orbital energy = [-0.3890020402432792, 0.0071769933442202925, 0.8223490735458775, 0.97041151192807]
 k = 1.6022122533307952
-Orbital energy = [0.6198001855788118, 1.11966524460475, 1.911667001709425, 2.0895772934920687]
+Orbital energy = [-0.386997718556321, 0.0022137781716421996, 0.8238013036775527, 0.9680337802490976]
 k = 1.633628179866693
-Orbital energy = [0.6220846395064541, 1.1130810148086765, 1.9132805639113473, 2.087806087087471]
+Orbital energy = [-0.3849556719716478, -0.0027160842758293994, 0.8252700064706712, 0.9658003233628232]
 k = 1.6650441064025907
-Orbital energy = [0.6244066337430452, 1.1065438079414454, 1.9149144717705897, 2.0861197186799405]
+Orbital energy = [-0.38287574758111165, -0.007613012261701072, 0.8267545700039739, 0.9636996306575898]
 k = 1.6964600329384885
-Orbital energy = [0.6267654253458896, 1.1000550558870652, 1.9165677795977485, 2.084510414134184]
+Orbital energy = [-0.38075772249002315, -0.012477850284488872, 0.8282543910413185, 0.9617206645740802]
 k = 1.7278759594743862
-Orbital energy = [0.6291602236029361, 1.0936161439939434, 1.9182395111639572, 2.0829708811751697]
+Orbital energy = [-0.3786013014950351, -0.017311827615220394, 0.8297688741372076, 0.959852877483102]
 k = 1.7592918860102849
-Orbital energy = [0.6315901858544914, 1.0872284270605008, 1.919928658968615, 2.0814942919882324]
+Orbital energy = [-0.37640611560870474, -0.02211651508763057, 0.8312974304399766, 0.9580862238151332]
 k = 1.7907078125461826
-Orbital energy = [0.6340544128381869, 1.080893244493459, 1.9216341832899801, 2.0800742658812936]
+Orbital energy = [-0.3741717214763525, -0.026893780677497987, 0.8328394762272755, 0.9564111678347281]
 k = 1.8221237390820804
-Orbital energy = [0.6365519435055389, 1.0746119348072292, 1.9233550110000952, 2.078704852247151]
+Orbital energy = [-0.37189760171907477, -0.031645744378712315, 0.8343944312131479, 0.954818687419262]
 k = 1.8535396656179781
-Orbital energy = [0.6390817492518375, 1.0683858496339402, 1.9250900341230404, 2.0773805140178614]
+Orbital energy = [-0.3695831662249863, -0.036374732853055994, 0.8359617166696334, 0.9533002741748371]
 k = 1.8849555921538759
-Orbital energy = [0.6416427274937342, 1.0622163674146734, 1.926838108112506, 2.076096111766764]
+Orbital energy = [-0.3672277543991004, -0.04108323429896438, 0.8375407534083651, 0.9518479302011676]
 k = 1.9163715186897745
-Orbital energy = [0.6442336945206821, 1.0561049069436295, 1.9285980498209865, 2.074846888584651]
+Orbital energy = [-0.36483063837104235, -0.04577385395212206, 0.8391309596692463, 0.9504541618018371]
 k = 1.9477874452256723
-Orbital energy = [0.6468533775375438, 1.050052940938819, 1.9303686351285072, 2.0736284558341826]
+Orbital energy = [-0.36239102714935634, -0.050449270597951325, 0.8407317489639652, 0.9491119704250918]
 k = 1.97920337176157
-Orbital energy = [0.6495004058057328, 1.0440620098153768, 1.9321485961937312, 2.072436779870523]
+Orbital energy = [-0.3599080717016354, -0.055112194442975, 0.8423425279220983, 0.947814841112877]
 k = 2.0106192982974678
-Orbital energy = [0.6521733007797532, 1.038133735841342, 1.9339366182843616, 2.071268169804343]
+Orbital energy = [-0.3573808709313596, -0.05976532665872568, 0.8439626941867057, 0.9465567287308857]
 k = 2.0420352248333664
-Orbital energy = [0.6548704651245045, 1.032269837860062, 1.9357313361369752, 2.070119266376545]
+Orbital energy = [-0.3548084785153683, -0.06441132087828992, 0.8455916344050678, 0.9453320422493378]
 k = 2.073451151369264
-Orbital energy = [0.6575901704867562, 1.0264721467691509, 1.9375313297887433, 2.068987032010657]
+Orbital energy = [-0.3521899105604273, -0.0690527468915646, 0.8472287223581781, 0.9441356273419409]
 k = 2.104867077905162
-Orbital energy = [0.660330543881696, 1.020742621952094, 1.939335119814793, 2.067868742108955]
+Orbital energy = [-0.3495241540336361, -0.07369205675072656, 0.848873317270297, 0.9429627475685279]
 k = 2.1362830044410597
-Orbital energy = [0.6630895525430249, 1.0150833688653798, 1.9411411618953118, 2.0667619776616633]
+Orbital energy = [-0.34681017591957664, -0.07833155346204128, 0.8505247623370303, 0.9418090644043082]
 k = 2.1676989309769574
-Orbital energy = [0.6658649870730842, 1.0094966579907139, 1.9429478406257652, 2.0656646192440182]
+Orbital energy = [-0.3440469330573921, -0.08297336240367924, 0.8521823835070581, 0.9406706163749704]
 k = 2.199114857512856
-Orbital energy = [0.6686544427190115, 1.0039849453674863, 1.944753462472057, 2.0645748424841215]
+Orbital energy = [-0.3412333826136582, -0.08761940557137575, 0.8538454885490315, 0.9395437975517105]
 k = 2.230530784048754
-Orbital energy = [0.6714552985929161, 0.9985508949241595, 1.9465562477600729, 2.0634911150942434]
+Orbital energy = [-0.33836849315241463, -0.09227137871409367, 0.8555133664310197, 0.9384253356531332]
 k = 2.2619467105846516
-Orbital energy = [0.6742646946505098, 0.9931974028267673, 1.9483543215763455, 2.0624121955690535]
+Orbital energy = [-0.3354512562725881, -0.09693073137979233, 0.8571852870354456, 0.937312269991755]
 k = 2.2933626371205493
-Orbital energy = [0.6770795062457635, 0.9879276240559087, 1.9501457034440874, 2.06133713366595]
+Orbital energy = [-0.33248069879614023, -0.1015986498461473, 0.8588605012275298, 0.936201929491402]
 k = 2.324778563656447
-Orbital energy = [0.6798963160922191, 0.9827450014071599, 1.9519282956272948, 2.060265272793417]
+Orbital energy = [-0.32945589550876664, -0.10627604286146529, 0.8605382412900676, 0.935091910988191]
 k = 2.3561944901923457
-Orbital energy = [0.6827113834891554, 0.9776532970793259, 1.9536998699069519, 2.0591962544420537]
+Orbital energy = [-0.32637598248078437, -0.11096353006542048, 0.8622177217317554, 0.9339800580120451]
 k = 2.3876104167282435
-Orbital energy = [0.685520610718438, 0.9726566269646072, 1.9554580526691518, 2.0581300247974927]
+Orbital energy = [-0.32324017103147606, -0.11566143289505178, 0.863898140470381, 0.9328644402281162]
 k = 2.4190263432641412
-Orbital energy = [0.6883195065933696, 0.9677594976768741, 1.9572003081486613, 2.0570668436708135]
+Orbital energy = [-0.32004776244973865, -0.12036976770493206, 0.8655786803860781, 0.9317433336982919]
 k = 2.450442269800039
-Orbital energy = [0.6911031472536053, 0.9629668462392978, 1.9589239196876547, 2.056007295867023]
+Orbital energy = [-0.3167981636532894, -0.1250882407357712, 0.867258511233445, 0.9306152021024869]
 k = 2.4818581963359367
-Orbital energy = [0.6938661344625394, 0.9582840821884309, 1.9606259689039969, 2.054952305077891]
+Orbital energy = [-0.31349090406704816, -0.1298162444440294, 0.868936791894902, 0.9294786790381435]
 k = 2.5132741228718354
-Orbital energy = [0.696602551889757, 0.9537171316238293, 1.962303312725672, 2.0539031503244423]
+Orbital energy = [-0.31012565414267007, -0.13455285454264682, 0.870612672951054, 0.9283325514945392]
 k = 2.544690049407733
-Orbital energy = [0.6993059201683121, 0.9492724824237452, 1.9639525583489401, 2.052861484874126]
+Orbital energy = [-0.3067022461474608, -0.1392968268779462, 0.8722852995371982, 0.9271757445768606]
 k = 2.576105975943631
-Orbital energy = [0.7019691519232618, 0.9449572294393513, 1.9655700363332178, 2.05182935740352]
+Orbital energy = [-0.30322069815710595, -0.14404659294535166, 0.8739538144485313, 0.9260073075337952]
 k = 2.6075219024795286
-Orbital energy = [0.704584508492393, 0.9407791179542945, 1.9671517722742353, 2.0508092349495795]
+Orbital energy = [-0.29968124264969587, -0.1488002523700692, 0.8756173614497113, 0.9248264011224472]
 k = 2.6389378290154264
-Orbital energy = [0.7071435607179724, 0.9367465830374868, 1.968693457822197, 2.0498040268686473]
+Orbital energy = [-0.29608436181294334, -0.15355555995381542, 0.8772750887372905, 0.9236322863262614]
 k = 2.670353755551325
-Orbital energy = [0.7096371569861151, 0.932868781618278, 1.9701904222586484, 2.0488171085760833]
+Orbital energy = [-0.2924308328033691, -0.15830990375424114, 0.8789261524954248, 0.9224243144263642]
 k = 2.701769682087223
-Orbital energy = [0.7120554026186248, 0.9291556131842613, 1.97163760643973, 2.047852343246713]
+Orbital energy = [-0.2887217880168483, -0.16306026883843475, 0.8805697204751125, 0.9212019184157808]
 k = 2.7331856086231205
-Orbital energy = [0.7143876557430655, 0.9256177239801462, 1.9730295416722086, 2.0469140988982617]
+Orbital energy = [-0.28495879845099675, -0.16780317832934724, 0.8822049755131446, 0.9199646057416366]
 k = 2.7646015351590183
-Orbital energy = [0.7166225458012403, 0.9222664885513044, 1.9743603370117124, 2.0460072573580166]
+Orbital energy = [-0.28114399340305835, -0.1725345982022969, 0.8838311188846267, 0.9187119523672016]
 k = 2.796017461694916
-Orbital energy = [0.7187480217661537, 0.9191139615650394, 1.9756236795231985, 2.045137210563102]
+Orbital energy = [-0.27728023886724606, -0.17724978317292808, 0.8854473733443314, 0.9174435981717377]
 k = 2.8274333882308147
-Orbital energy = [0.7207514377139621, 0.9161727922657976, 1.9768128531256806, 2.044309838563776]
+Orbital energy = [-0.27337141371319684, -0.18194302430768736, 0.8870529856396406, 0.9161592437693237]
 k = 2.8588493147667124
-Orbital energy = [0.7226196833546099, 0.9134560939629135, 1.9779207825705631, 2.0435314626723726]
+Orbital energy = [-0.2694228546766568, -0.18660722704854849, 0.8886472281328289, 0.9148586489668321]
 k = 2.89026524130261
-Orbital energy = [0.7243393661165938, 0.9109772619573769, 1.978940109577442, 2.0428087667271146]
+Orbital energy = [-0.26544210520147915, -0.19123318434845, 0.8902293988606687, 0.9135416333882115]
 k = 2.921681167838508
-Orbital energy = [0.72589704904816, 0.9087497356470186, 1.9798633077549455, 2.042148679836736]
+Orbital energy = [-0.2614402384266523, -0.19580827437439974, 0.8917988186482061, 0.9122080805037617]
 k = 2.9530970943744057
-Orbital energy = [0.7272795448575986, 0.9067867044887611, 1.9806828411741133, 2.041558215732866]
+Orbital energy = [-0.257434328017141, -0.20031400884740755, 0.8933548221116859, 0.9108579480884738]
 k = 2.9845130209103043
-Orbital energy = [0.7284742607988852, 0.9051007631128966, 1.9813913678839365, 2.041044267435574]
+Orbital energy = [-0.2534523669837493, -0.20472113166127748, 0.8948967343947507, 0.9094912931307788]
 k = 3.015928947446202
-Orbital energy = [0.729469582109832, 0.9037035278831417, 1.981981984058246, 2.040613361538511]
+Orbital energy = [-0.24954379106440544, -0.2089791110160953, 0.8964238092889838, 0.9081083354150705]
 k = 3.0473448739821
-Orbital energy = [0.7302552741090043, 0.9026052347970088, 1.9824484971536687, 2.0402713837304205]
+Orbital energy = [-0.24580372219640217, -0.21299190936771029, 0.8979350398822644, 0.9067096485206737]
 k = 3.0787608005179976
-Orbital energy = [0.7308228761350615, 0.9018143455434481, 1.9827857085027518, 2.040023295125558]
+Orbital energy = [-0.2424314933094022, -0.21655946981806934, 0.8994284012789958, 0.9052969185929282]
 k = 3.1101767270538954
-Orbital energy = [0.7311660558770783, 0.9013371931697141, 1.9829896789974397, 2.039872865745658]
+Orbital energy = [-0.23985762209956063, -0.21925075116570075, 0.9008956689467198, 0.9038781272472747]
 k = 3.141592653589794
-Orbital energy = [0.7312808918563538, 0.9011776995972799, 1.9830579481757131, 2.0398224548384944]
-HOMO-LUMO gap: 4.62312766657517 eV
+Orbital energy = [-0.2388340247648194, -0.22031352054179631, 0.9020874696017533, 0.9027025016262292]
+HOMO-LUMO gap: 0.5039685948834628 eV
 
 ====================================================
               REST: Mission accomplished
 ====================================================
-The SCF energy        :      -1.0125856218 Ha
+The SCF energy        :      -7.6330849152 Ha
 Detailed time report:
-Overall   |:   12.001 s for the whole job
-SCF       |:   11.660 s for the scf procedure
+Overall   |:    0.692 s for the whole job
+SCF       |:    0.688 s for the scf procedure
