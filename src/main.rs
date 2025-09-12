@@ -52,21 +52,37 @@ pub fn parse_input() -> ArgMatches {
 }
 
 pub fn is_file_exist_in_dir(dir_name: &Path, file_name: &str) -> anyhow::Result<bool> {
-    let file_iter = fs::read_dir(dir_name)?;
     let mut is_exist = false;
-    file_iter.into_iter().try_for_each(|x| {
-        let entry = x.unwrap();
+    if !dir_name.exists() || !dir_name.is_dir() {
+        return Ok(false);
+    }
+    for entry in fs::read_dir(dir_name)? {
+        let entry = entry?;
         let path = entry.path();
         if path.is_file() && path.ends_with(file_name) {
             is_exist = true;
-            None
-        } else {
-            Some(())
+            break;
         }
-    });
+    }
     Ok(is_exist)
 }
 
+fn copy_dir_all(src: &Path, dst: &Path) -> anyhow::Result<()> {
+    fs::create_dir_all(dst)?;
+    for entry in fs::read_dir(src)? {
+        let entry = entry?;
+        let file_type = entry.file_type()?;
+        let src_path = entry.path();
+        let dst_path = dst.join(entry.file_name());
+        
+        if file_type.is_dir() {
+            copy_dir_all(&src_path, &dst_path)?;
+        } else {
+            fs::copy(&src_path, &dst_path)?;
+        }
+    }
+    Ok(())
+}
 
 pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f64>>> {
     let mut result = HashMap::new();
@@ -346,9 +362,6 @@ fn main() -> anyhow::Result<()> {
         store_file.push(".log");
         println!("output file: {}", store_file.clone().into_string().unwrap());
 
-
-        // enter the job folder
-        env::set_current_dir(entry.path())?;
         // collect the job list, which will be performed in sequence
         let mut job_list = vec![];
         if is_file_exist_in_dir(entry.path(), "rest_jobs").unwrap() {
@@ -366,8 +379,13 @@ fn main() -> anyhow::Result<()> {
             job_list.push("ctrl.in".to_string());
         }
 
+        let job_work_dir = work_path.join(entry.path().file_name().unwrap());
+        copy_dir_all(entry.path(), &job_work_dir)?;
+
+        // enter the job folder
+        env::set_current_dir(&job_work_dir)?;
+
         let mut output_string = String::new();
-        //println!("debug job_list {:?}", &job_list);
         for job in job_list {
             let output = if num_mpi == 1 {
                 ProcessCommand::new(rest_cmd.as_str())
