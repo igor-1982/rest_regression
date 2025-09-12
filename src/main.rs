@@ -403,6 +403,8 @@ fn main() -> anyhow::Result<()> {
         }
         // leave the job folder
         env::set_current_dir(curr_path)?;
+        // remove the tmp job folder
+        fs::remove_dir_all(&job_work_dir)?;
 
         let mut ff = File::create(store_file.to_str().unwrap()).unwrap();
         ff.write(output_string.as_bytes())?;
