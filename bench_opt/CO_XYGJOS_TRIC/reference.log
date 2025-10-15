@@ -1,0 +1,318 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Geometry optimization
+Optimization engine: geometric_pyo3
+Geometric_pyo3 is used for geometry optimization
+Standard geometry optimization is enabled
+The exchange-correlation method: xygjos
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from cc-pVDZ
+The spheric-GTO auxiliary basis set is taken from def2-SV(P)-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+=========================================================
+the scf functional for 'xygjos' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+the post-scf functional 'xygjos' is employed, which contains
+The density functional 'Slater exchange' belongs to the 'LDA' family and is defined in the reference(s):
+(0): P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+(1): F. Bloch.,  Z. Phys. 57, 545 (1929)
+The density functional 'Becke 88' belongs to the 'GGA' family and is defined in the reference(s):
+(0): A. D. Becke.,  Phys. Rev. A 38, 3098 (1988)
+The density functional 'Vosko, Wilk & Nusair (VWN5_RPA)' belongs to the 'LDA' family and is defined in the reference(s):
+(0): S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+The density functional 'Lee, Yang & Parr' belongs to the 'GGA' family and is defined in the reference(s):
+(0): C. Lee, W. Yang, and R. G. Parr.,  Phys. Rev. B 37, 785 (1988)
+(1): B. Miehlich, A. Savin, H. Stoll, and H. Preuss.,  Chem. Phys. Lett. 157, 200 (1989)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 6, natm: 2 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 56,final natm: 4
+numbasis: 28, num_auxbas: 152
+Molecule_name: CO
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      21.16708833 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+Grid size: 28164
+
+=======================
+Generating SAD for atom: C
+=======================
+SAD generation for C complete.
+
+=======================
+Generating SAD for atom: O
+=======================
+SAD generation for O complete.
+Initial guess energy using single atom density (SAD):    -113.3859683746306359
+The total energy:      -113.2572069675 Ha by the initial guess
+Energy:    -112.9305757089 Ha after    1 iterations (in       0.02 seconds).
+SCF Change: DM 1.28787e-1; eev  1.72793e0 Ha; etot 8.08644e-1 Ha
+Energy:    -112.1219318676 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 1.68542e-2; eev 2.15463e-1 Ha; etot -1.11714e0 Ha
+Energy:    -113.2390668985 Ha after    3 iterations (in       0.02 seconds).
+SCF Change: DM 4.54184e-3; eev 4.49952e-2 Ha; etot -7.05668e-2 Ha
+Energy:    -113.3096337425 Ha after    4 iterations (in       0.02 seconds).
+SCF Change: DM 6.90524e-4; eev 1.41802e-2 Ha; etot -3.43384e-3 Ha
+Energy:    -113.3130675863 Ha after    5 iterations (in       0.02 seconds).
+SCF Change: DM 1.59445e-4; eev 2.43787e-3 Ha; etot -1.32890e-5 Ha
+Energy:    -113.3130808753 Ha after    6 iterations (in       0.02 seconds).
+SCF Change: DM 1.62936e-5; eev 1.75958e-4 Ha; etot -8.56161e-7 Ha
+Energy:    -113.3130817314 Ha after    7 iterations (in       0.02 seconds).
+SCF Change: DM 4.34501e-6; eev 4.10938e-5 Ha; etot -5.84647e-8 Ha
+Energy:    -113.3130817899 Ha after    8 iterations (in       0.02 seconds).
+SCF Change: DM 5.14567e-7; eev 7.42841e-6 Ha; etot -3.07966e-9 Ha
+Energy:    -113.3130817930 Ha after    9 iterations (in       0.02 seconds).
+SCF Change: DM 6.35247e-9; eev 1.40368e-7 Ha; etot -4.69811e-11 Ha
+Energy:    -113.3130817930 Ha after   10 iterations (in       0.02 seconds).
+SCF is converged after   10 iterations.
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.47956861,      -0.35064230,      -0.12892631
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.153020298586 Ha
+E[XYGJOS]=:    -113.00410077 Ha, Ex[HF]:     -13.24339896 Ha, Ec[PT2  ]:      -0.47956861 Ha
+Geometry optimization invoked using the optimization engine of geometric_pyo3
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00000000
+Nuc_energy:      21.16708833 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+Grid size: 28164
+The total energy:      -113.3130817930 Ha by the initial guess
+Energy:    -113.3130817930 Ha after    1 iterations (in       0.02 seconds).
+SCF Change: DM 9.97634e-9; eev 1.08819e-7 Ha; etot 1.42109e-13 Ha
+Energy:    -113.3130817930 Ha after    2 iterations (in       0.02 seconds).
+SCF is converged after    2 iterations.
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.47956861,      -0.35064229,      -0.12892631
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.153020297423 Ha
+E[XYGJOS]=:    -113.00410076 Ha, Ex[HF]:     -13.24339897 Ha, Ec[PT2  ]:      -0.47956861 Ha
+Force calculation invoked
+Numerical force calculation ...|   0|   1|
+------ Output gradient [a.u.] ------
+C       -0.10625003      0.00000000     -0.00000000
+O        0.10625003     -0.00000000     -0.00000000
+
+------------------------------------
+force                   8.076 s for 
+Input geometry in this round is:
+C        0.02681905     -0.00000000      0.00000000
+O        1.17318095      0.00000000      0.00000000
+Nuc_energy:      22.15749304 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01403959 with the total number of basis functions:     28
+Grid size: 28164
+The total energy:      -113.3855460162 Ha by the initial guess
+Energy:    -113.3182380581 Ha after    1 iterations (in       0.03 seconds).
+SCF Change: DM 1.01340e-2; eev 1.28621e-1 Ha; etot 1.06505e-2 Ha
+Energy:    -113.3075875544 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 1.15751e-3; eev 1.75924e-2 Ha; etot -1.33744e-2 Ha
+Energy:    -113.3209619528 Ha after    3 iterations (in       0.02 seconds).
+SCF Change: DM 1.57203e-4; eev 2.83855e-3 Ha; etot -9.58597e-5 Ha
+Energy:    -113.3210578124 Ha after    4 iterations (in       0.02 seconds).
+SCF Change: DM 3.04791e-5; eev 4.24381e-4 Ha; etot -2.05215e-6 Ha
+Energy:    -113.3210598646 Ha after    5 iterations (in       0.03 seconds).
+SCF Change: DM 3.28711e-6; eev 5.98652e-5 Ha; etot -3.84014e-8 Ha
+Energy:    -113.3210599030 Ha after    6 iterations (in       0.03 seconds).
+SCF Change: DM 1.15785e-7; eev 1.27330e-6 Ha; etot -4.63842e-10 Ha
+Energy:    -113.3210599034 Ha after    7 iterations (in       0.03 seconds).
+SCF Change: DM 5.39857e-9; eev 5.77920e-8 Ha; etot -1.79057e-12 Ha
+Energy:    -113.3210599034 Ha after    8 iterations (in       0.02 seconds).
+SCF is converged after    8 iterations.
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.45218713,      -0.33159360,      -0.12059354
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.144707445391 Ha
+E[XYGJOS]=:    -113.01050877 Ha, Ex[HF]:     -13.30388700 Ha, Ec[PT2  ]:      -0.45218713 Ha
+Force calculation invoked
+Numerical force calculation ...|   0|   1|
+------ Output gradient [a.u.] ------
+C       -0.01358976     -0.00000000      0.00000000
+O        0.01358976      0.00000000     -0.00000000
+
+------------------------------------
+force                  16.380 s for 
+Input geometry in this round is:
+C        0.03075239      0.00000006     -0.00000001
+O        1.16924762     -0.00000006      0.00000001
+Nuc_energy:      22.31059506 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01395302 with the total number of basis functions:     28
+Grid size: 28164
+The total energy:      -113.3308977245 Ha by the initial guess
+Energy:    -113.3212685207 Ha after    1 iterations (in       0.02 seconds).
+SCF Change: DM 1.47227e-3; eev 1.85631e-2 Ha; etot 2.41884e-4 Ha
+Energy:    -113.3210266366 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 1.57970e-4; eev 2.61149e-3 Ha; etot -3.02162e-4 Ha
+Energy:    -113.3213287985 Ha after    3 iterations (in       0.02 seconds).
+SCF Change: DM 1.64663e-5; eev 2.89502e-4 Ha; etot -1.37552e-6 Ha
+Energy:    -113.3213301740 Ha after    4 iterations (in       0.02 seconds).
+SCF Change: DM 3.15639e-6; eev 5.31018e-5 Ha; etot -1.43302e-8 Ha
+Energy:    -113.3213301884 Ha after    5 iterations (in       0.02 seconds).
+SCF Change: DM 3.05178e-7; eev 5.59611e-6 Ha; etot -2.40234e-10 Ha
+Energy:    -113.3213301886 Ha after    6 iterations (in       0.03 seconds).
+SCF Change: DM 9.26732e-9; eev 1.39325e-7 Ha; etot -4.39115e-12 Ha
+Energy:    -113.3213301886 Ha after    7 iterations (in       0.03 seconds).
+SCF is converged after    7 iterations.
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.44840049,      -0.32894700,      -0.11945349
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.143552471165 Ha
+E[XYGJOS]=:    -113.01058468 Ha, Ex[HF]:     -13.31328337 Ha, Ec[PT2  ]:      -0.44840049 Ha
+Force calculation invoked
+Numerical force calculation ...|   0|   1|
+------ Output gradient [a.u.] ------
+C        0.00355493     -0.00000000     -0.00000000
+O       -0.00355493      0.00000000      0.00000000
+
+------------------------------------
+force                  24.300 s for 
+Input geometry in this round is:
+C        0.02993681      0.00000008      0.00000002
+O        1.17006319     -0.00000008     -0.00000002
+Nuc_energy:      22.27867595 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01397110 with the total number of basis functions:     28
+Grid size: 28164
+The total energy:      -113.3193139044 Ha by the initial guess
+Energy:    -113.3212931852 Ha after    1 iterations (in       0.02 seconds).
+SCF Change: DM 3.06847e-4; eev 3.85043e-3 Ha; etot 1.07353e-5 Ha
+Energy:    -113.3212824499 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 3.25656e-5; eev 5.47266e-4 Ha; etot -1.33564e-5 Ha
+Energy:    -113.3212958063 Ha after    3 iterations (in       0.03 seconds).
+SCF Change: DM 3.19688e-6; eev 5.56114e-5 Ha; etot -5.52136e-8 Ha
+Energy:    -113.3212958615 Ha after    4 iterations (in       0.03 seconds).
+SCF Change: DM 6.19937e-7; eev 1.09443e-5 Ha; etot -4.59892e-10 Ha
+Energy:    -113.3212958620 Ha after    5 iterations (in       0.03 seconds).
+SCF Change: DM 5.93294e-8; eev 1.06564e-6 Ha; etot -7.75913e-12 Ha
+Energy:    -113.3212958620 Ha after    6 iterations (in       0.03 seconds).
+SCF Change: DM 1.44740e-9; eev 2.51848e-8 Ha; etot -1.42109e-13 Ha
+Energy:    -113.3212958620 Ha after    7 iterations (in       0.03 seconds).
+SCF is converged after    7 iterations.
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.44918105,      -0.32949282,      -0.11968823
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.143790667639 Ha
+E[XYGJOS]=:    -113.01059001 Ha, Ex[HF]:     -13.31132342 Ha, Ec[PT2  ]:      -0.44918105 Ha
+Force calculation invoked
+Numerical force calculation ...|   0|   1|
+------ Output gradient [a.u.] ------
+C       -0.00008357      0.00000000     -0.00000000
+O        0.00008357     -0.00000000      0.00000000
+
+------------------------------------
+force                  32.997 s for 
+Input geometry in this round is:
+C        0.02995555      0.00000004      0.00000006
+O        1.17004446     -0.00000004     -0.00000006
+Nuc_energy:      22.27940802 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01397069 with the total number of basis functions:     28
+Grid size: 28164
+The total energy:      -113.3213423035 Ha by the initial guess
+Energy:    -113.3212967783 Ha after    1 iterations (in       0.02 seconds).
+SCF Change: DM 7.04477e-6; eev 8.84541e-5 Ha; etot 5.64012e-9 Ha
+Energy:    -113.3212967727 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 7.49263e-7; eev 1.25539e-5 Ha; etot -7.02069e-9 Ha
+Energy:    -113.3212967797 Ha after    3 iterations (in       0.02 seconds).
+SCF Change: DM 7.42956e-8; eev 1.29509e-6 Ha; etot -2.95159e-11 Ha
+Energy:    -113.3212967797 Ha after    4 iterations (in       0.02 seconds).
+SCF Change: DM 1.43700e-8; eev 2.51510e-7 Ha; etot -1.27898e-13 Ha
+Energy:    -113.3212967797 Ha after    5 iterations (in       0.02 seconds).
+SCF Change: DM 1.37643e-9; eev 2.48257e-8 Ha; etot 2.27374e-13 Ha
+Energy:    -113.3212967797 Ha after    6 iterations (in       0.03 seconds).
+SCF is converged after    6 iterations.
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.44916310,      -0.32948027,      -0.11968283
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.143785189308 Ha
+E[XYGJOS]=:    -113.01059001 Ha, Ex[HF]:     -13.31136837 Ha, Ec[PT2  ]:      -0.44916310 Ha
+Force calculation invoked
+Numerical force calculation ...|   0|   1|
+------ Output gradient [a.u.] ------
+C       -0.00000050     -0.00000000     -0.00000000
+O        0.00000050      0.00000000      0.00000000
+
+------------------------------------
+force                  41.205 s for 
+Geometry after relaxation [Ang]:
+C        0.02995555      0.00000004      0.00000006
+O        1.17004446     -0.00000004     -0.00000006
+geom_opt               45.332 s for geometry optimization
+Mulliken population analysis:
+  0-C  :  -0.008097
+  1-O  :   0.008097
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :    -113.3212967797 Ha
+The (R)-xDH energy    :    -113.0105900128 Ha
+Detailed time report:
+geom_opt  |:   45.332 s for geometry optimization
+Overall   |:   46.044 s for the whole job
+SCF       |:    1.606 s for the scf procedure
+PT2       |:    0.372 s for the PT2 evaluation
+force     |:   41.205 s for 

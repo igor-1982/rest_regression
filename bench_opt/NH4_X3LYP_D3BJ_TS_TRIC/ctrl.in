@@ -1,0 +1,33 @@
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     job_type =                  "opt"
+     opt_engine =                "geometric-pyo3"
+     numerical_force =           false
+     xc =                        "x3lyp" 
+     empirical_dispersion =      "d3bj"
+     basis_path =                "cc-pVDZ"
+     auxbas_path =               "def2-SV(P)-JKFIT" 
+     charge =                    0.0
+     spin =                      2.0
+     spin_polarization =         true
+
+[geometric_pyo3]
+     transition =                true
+     frequency =                 false
+
+[geom]
+     name = "NH3-H"
+     unit = "angstrom"
+     position = '''
+         H       -0.2626588548    1.9043045419   -0.1244116503
+         N       -2.4488346513    1.8919685753    0.0901923418
+         H       -1.1008458917    1.8875795152    0.1762969660
+         H       -2.5620054046    1.1256112622   -0.5956365914
+         H       -2.5620913810    2.7307820941   -0.5066013560
+    '''
+#         H   0.0000000000      1.8973746268      0.0000000000
+#         N  -2.1988391019      1.8973746268      0.0000000000
+#         H  -1.0000000000      1.8973746268      0.0000000000
+#         H  -2.5388353987      1.0925460144     -0.5263586446
+#         H  -2.5388400276      2.7556271745     -0.4338224694

@@ -1,0 +1,25 @@
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     job_type =                  "opt"
+     opt_engine =                "geometric-pyo3"
+     numerical_force =           true
+     xc =                        "xygjos" 
+     basis_path =                "cc-pVDZ"
+     auxbas_path =               "def2-SV(P)-JKFIT" 
+     charge =                    0.0
+     spin =                      2.0
+     spin_polarization =         true
+
+[geometric_pyo3]
+     transition =                true
+     frequency =                 false
+
+[geom]
+     name = "H...H...H"
+     unit = "angstrom"
+     position = '''
+        H       -0.7590282983    0.0000000004   -0.0000000007
+        H       -1.7125330557    0.0000000001   -0.0000000001
+        H       -2.6420192827   -0.0000000003    0.0000000003
+    '''

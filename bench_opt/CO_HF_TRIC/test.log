@@ -1,0 +1,677 @@
+=========================================================
+Input parameters for the REST calculation
+=========================================================
+Calculation type: Geometry optimization
+The exchange-correlation method: hf
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from cc-pVDZ
+The spheric-GTO auxiliary basis set is taken from def2-SV(P)-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+=========================================================
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 6, natm: 2 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 56,final natm: 4
+numbasis: 28, num_auxbas: 152
+Molecule_name: CO
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      21.16708833 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+
+=======================
+Generating SAD for atom: C
+=======================
+SAD generation for C complete.
+
+=======================
+Generating SAD for atom: O
+=======================
+SAD generation for O complete.
+Initial guess energy using single atom density (SAD):    -112.7344408008480485
+The total energy:      -112.6778450069 Ha by the initial guess
+Energy:    -112.6885821430 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 1.88140e-2; eev 4.86810e-1 Ha; etot -6.97255e-3 Ha
+Energy:    -112.6955546909 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 1.05198e-3; eev 2.99015e-2 Ha; etot -3.62539e-2 Ha
+Energy:    -112.7318086393 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 2.05125e-4; eev 8.20887e-3 Ha; etot -6.11788e-5 Ha
+Energy:    -112.7318698181 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 4.76416e-5; eev 3.70927e-4 Ha; etot -2.10800e-6 Ha
+Energy:    -112.7318719261 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 2.24570e-5; eev 1.49458e-4 Ha; etot -1.38314e-7 Ha
+Energy:    -112.7318720645 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 2.40899e-6; eev 5.09663e-5 Ha; etot -1.66108e-8 Ha
+Energy:    -112.7318720811 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 4.68941e-7; eev 5.94830e-6 Ha; etot -3.51008e-10 Ha
+Energy:    -112.7318720814 Ha after    8 iterations (in       0.00 seconds).
+SCF Change: DM 3.81353e-8; eev 2.07882e-7 Ha; etot -4.40536e-12 Ha
+Energy:    -112.7318720814 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 5.87859e-9; eev 2.87818e-8 Ha; etot 8.52651e-14 Ha
+Energy:    -112.7318720814 Ha after   10 iterations (in       0.00 seconds).
+SCF is converged after   10 iterations.
+Geometry optimization invoked using the optimization engine of geometric-pyo3
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00000000
+Nuc_energy:      21.16708833 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7318720813 Ha by the initial guess
+Energy:    -112.7318720814 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 3.69376e-11; eev 9.36497e-10 Ha; etot  0.00000e0 Ha
+Energy:    -112.7318720814 Ha after    2 iterations (in       0.00 seconds).
+SCF is converged after    2 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387868      0.00000000     -0.00000000
+O        0.19387868     -0.00000000      0.00000000
+
+------------------------------------
+force                   0.311 s for 
+Input geometry in this round is:
+C        0.00052918      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00000000
+Nuc_energy:      21.17642673 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01458657 with the total number of basis functions:     28
+The total energy:      -112.7328626635 Ha by the initial guess
+Energy:    -112.7320654590 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 2.50549e-5; eev 7.37047e-4 Ha; etot -3.45020e-8 Ha
+Energy:    -112.7320654935 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 4.18477e-6; eev 8.71511e-5 Ha; etot -5.80989e-8 Ha
+Energy:    -112.7320655516 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 1.37099e-6; eev 1.23091e-5 Ha; etot -1.08949e-9 Ha
+Energy:    -112.7320655527 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 2.85722e-7; eev 1.42725e-6 Ha; etot -6.99458e-11 Ha
+Energy:    -112.7320655528 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 6.59844e-8; eev 3.06543e-7 Ha; etot -4.26326e-12 Ha
+Energy:    -112.7320655528 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 4.37117e-9; eev 9.89115e-8 Ha; etot -2.27374e-13 Ha
+Energy:    -112.7320655528 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19306357     -0.00000000      0.00000000
+O        0.19306357      0.00000000     -0.00000000
+
+------------------------------------
+force                   0.581 s for 
+Input geometry in this round is:
+C       -0.00052918      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00000000
+Nuc_energy:      21.15775816 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459690 with the total number of basis functions:     28
+The total energy:      -112.7300843521 Ha by the initial guess
+Energy:    -112.7316774204 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 5.02295e-5; eev 1.47628e-3 Ha; etot -1.37459e-7 Ha
+Energy:    -112.7316775578 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 8.37611e-6; eev 1.74587e-4 Ha; etot -2.34005e-7 Ha
+Energy:    -112.7316777919 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 2.74829e-6; eev 2.46121e-5 Ha; etot -4.36415e-9 Ha
+Energy:    -112.7316777962 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 5.74415e-7; eev 2.85488e-6 Ha; etot -2.81148e-10 Ha
+Energy:    -112.7316777965 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 1.32720e-7; eev 6.12433e-7 Ha; etot -1.76499e-11 Ha
+Energy:    -112.7316777965 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 8.80054e-9; eev 1.98271e-7 Ha; etot -4.54747e-13 Ha
+Energy:    -112.7316777965 Ha after    7 iterations (in       0.00 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19469056      0.00000000     -0.00000000
+O        0.19469056     -0.00000000      0.00000000
+
+------------------------------------
+force                   0.879 s for 
+Input geometry in this round is:
+C        0.00000000      0.00052918      0.00000000
+O        1.20000000      0.00000000      0.00000000
+Nuc_energy:      21.16708627 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7326682187 Ha by the initial guess
+Energy:    -112.7318719216 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 2.56646e-5; eev 7.48345e-4 Ha; etot -5.24050e-8 Ha
+Energy:    -112.7318719740 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 6.16710e-6; eev 9.79686e-5 Ha; etot -6.04142e-8 Ha
+Energy:    -112.7318720344 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 3.95022e-6; eev 2.38188e-5 Ha; etot -3.26170e-9 Ha
+Energy:    -112.7318720377 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 1.46485e-6; eev 4.45843e-6 Ha; etot -9.13758e-10 Ha
+Energy:    -112.7318720386 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 1.82740e-7; eev 1.00779e-6 Ha; etot -9.70601e-11 Ha
+Energy:    -112.7318720387 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 2.94359e-8; eev 2.94350e-7 Ha; etot -1.62004e-12 Ha
+Energy:    -112.7318720387 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 7.45315e-9; eev 9.58041e-8 Ha; etot  0.00000e0 Ha
+Energy:    -112.7318720387 Ha after    8 iterations (in       0.00 seconds).
+SCF is converged after    8 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387884      0.00008550      0.00000000
+O        0.19387884     -0.00008550     -0.00000000
+
+------------------------------------
+force                   1.163 s for 
+Input geometry in this round is:
+C        0.00000000     -0.00052918      0.00000000
+O        1.20000000      0.00000000      0.00000000
+Nuc_energy:      21.16708627 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7318704796 Ha by the initial guess
+Energy:    -112.7318719451 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 1.81032e-5; eev 3.43355e-6 Ha; etot -7.20844e-8 Ha
+Energy:    -112.7318720172 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 6.01117e-6; eev 6.67005e-6 Ha; etot -1.94237e-8 Ha
+Energy:    -112.7318720366 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 1.52513e-6; eev 1.06698e-5 Ha; etot -1.97659e-9 Ha
+Energy:    -112.7318720386 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 2.57079e-7; eev 6.34675e-6 Ha; etot -8.39293e-11 Ha
+Energy:    -112.7318720387 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 4.93899e-8; eev 2.55098e-7 Ha; etot -6.62226e-12 Ha
+Energy:    -112.7318720387 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 5.81029e-9; eev 5.89690e-8 Ha; etot -1.13687e-13 Ha
+Energy:    -112.7318720387 Ha after    7 iterations (in       0.00 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387884     -0.00008550     -0.00000000
+O        0.19387884      0.00008550      0.00000000
+
+------------------------------------
+force                   1.434 s for 
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00052918
+O        1.20000000      0.00000000      0.00000000
+Nuc_energy:      21.16708627 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7318712591 Ha by the initial guess
+Energy:    -112.7318719919 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 1.28011e-5; eev 1.72745e-6 Ha; etot -3.60430e-8 Ha
+Energy:    -112.7318720279 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 4.25677e-6; eev 3.36680e-6 Ha; etot -9.71198e-9 Ha
+Energy:    -112.7318720376 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 1.08356e-6; eev 5.61028e-6 Ha; etot -9.88649e-10 Ha
+Energy:    -112.7318720386 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 1.39877e-7; eev 3.55647e-6 Ha; etot -4.25757e-11 Ha
+Energy:    -112.7318720387 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 3.48487e-8; eev 2.50461e-7 Ha; etot -1.67688e-12 Ha
+Energy:    -112.7318720387 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 4.06050e-9; eev 2.95584e-8 Ha; etot -2.84217e-13 Ha
+Energy:    -112.7318720387 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387884     -0.00000000      0.00008550
+O        0.19387884      0.00000000     -0.00008550
+
+------------------------------------
+force                   1.906 s for 
+Input geometry in this round is:
+C        0.00000000      0.00000000     -0.00052918
+O        1.20000000      0.00000000      0.00000000
+Nuc_energy:      21.16708627 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7318704796 Ha by the initial guess
+Energy:    -112.7318719451 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.81032e-5; eev 3.44650e-6 Ha; etot -7.20854e-8 Ha
+Energy:    -112.7318720172 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.01102e-6; eev 6.70006e-6 Ha; etot -1.94234e-8 Ha
+Energy:    -112.7318720366 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 1.52500e-6; eev 1.07127e-5 Ha; etot -1.97662e-9 Ha
+Energy:    -112.7318720386 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 2.58082e-7; eev 6.36708e-6 Ha; etot -8.38725e-11 Ha
+Energy:    -112.7318720387 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 4.93918e-8; eev 2.53941e-7 Ha; etot -6.36646e-12 Ha
+Energy:    -112.7318720387 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 5.81030e-9; eev 5.89778e-8 Ha; etot -3.41061e-13 Ha
+Energy:    -112.7318720387 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387884      0.00000000     -0.00008550
+O        0.19387884     -0.00000000      0.00008550
+
+------------------------------------
+force                   2.446 s for 
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.20052918      0.00000000      0.00000000
+Nuc_energy:      21.15775816 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459690 with the total number of basis functions:     28
+The total energy:      -112.7308809738 Ha by the initial guess
+Energy:    -112.7316776791 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.57163e-5; eev 7.49578e-4 Ha; etot -5.24009e-8 Ha
+Energy:    -112.7316777315 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.16940e-6; eev 9.81211e-5 Ha; etot -6.07284e-8 Ha
+Energy:    -112.7316777922 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 3.95561e-6; eev 2.38026e-5 Ha; etot -3.26503e-9 Ha
+Energy:    -112.7316777955 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 1.46717e-6; eev 4.44663e-6 Ha; etot -9.15975e-10 Ha
+Energy:    -112.7316777964 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.83350e-7; eev 1.00422e-6 Ha; etot -9.73444e-11 Ha
+Energy:    -112.7316777965 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 2.95342e-8; eev 2.94194e-7 Ha; etot -1.62004e-12 Ha
+Energy:    -112.7316777965 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 7.48412e-9; eev 9.58223e-8 Ha; etot -1.70530e-13 Ha
+Energy:    -112.7316777965 Ha after    8 iterations (in       0.01 seconds).
+SCF is converged after    8 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19469055      0.00000000      0.00000000
+O        0.19469055     -0.00000000     -0.00000000
+
+------------------------------------
+force                   2.990 s for 
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.19947082      0.00000000      0.00000000
+Nuc_energy:      21.17642673 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01458657 with the total number of basis functions:     28
+The total energy:      -112.7336595468 Ha by the initial guess
+Energy:    -112.7320651780 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 5.00957e-5; eev 1.47376e-3 Ha; etot -1.37996e-7 Ha
+Energy:    -112.7320653160 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 8.37081e-6; eev 1.74291e-4 Ha; etot -2.32182e-7 Ha
+Energy:    -112.7320655481 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 2.74183e-6; eev 2.46420e-5 Ha; etot -4.36194e-9 Ha
+Energy:    -112.7320655525 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 5.71459e-7; eev 2.85736e-6 Ha; etot -2.79726e-10 Ha
+Energy:    -112.7320655528 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.32035e-7; eev 6.14448e-7 Ha; etot -1.70814e-11 Ha
+Energy:    -112.7320655528 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 8.74166e-9; eev 1.98158e-7 Ha; etot -4.54747e-13 Ha
+Energy:    -112.7320655528 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19306357      0.00000000      0.00000000
+O        0.19306357     -0.00000000     -0.00000000
+
+------------------------------------
+force                   3.478 s for 
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00052918      0.00000000
+Nuc_energy:      21.16708627 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7310745004 Ha by the initial guess
+Energy:    -112.7318719212 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.57079e-5; eev 7.49610e-4 Ha; etot -5.25022e-8 Ha
+Energy:    -112.7318719737 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.16804e-6; eev 9.80936e-5 Ha; etot -6.06592e-8 Ha
+Energy:    -112.7318720344 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 3.95403e-6; eev 2.37885e-5 Ha; etot -3.26216e-9 Ha
+Energy:    -112.7318720376 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 1.46525e-6; eev 4.44515e-6 Ha; etot -9.14895e-10 Ha
+Energy:    -112.7318720386 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.82648e-7; eev 1.00232e-6 Ha; etot -9.73159e-11 Ha
+Energy:    -112.7318720387 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 2.94290e-8; eev 2.93215e-7 Ha; etot -1.73372e-12 Ha
+Energy:    -112.7318720387 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 7.45122e-9; eev 9.54573e-8 Ha; etot  0.00000e0 Ha
+Energy:    -112.7318720387 Ha after    8 iterations (in       0.01 seconds).
+SCF is converged after    8 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387884     -0.00008550     -0.00000000
+O        0.19387884      0.00008550      0.00000000
+
+------------------------------------
+force                   3.989 s for 
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000     -0.00052918      0.00000000
+Nuc_energy:      21.16708627 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7318704796 Ha by the initial guess
+Energy:    -112.7318719451 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.81032e-5; eev 3.45343e-6 Ha; etot -7.20849e-8 Ha
+Energy:    -112.7318720172 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.01091e-6; eev 6.71605e-6 Ha; etot -1.94228e-8 Ha
+Energy:    -112.7318720366 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 1.52493e-6; eev 1.07357e-5 Ha; etot -1.97736e-9 Ha
+Energy:    -112.7318720386 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 2.58622e-7; eev 6.37797e-6 Ha; etot -8.36451e-11 Ha
+Energy:    -112.7318720387 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 4.93927e-8; eev 2.53319e-7 Ha; etot -6.67910e-12 Ha
+Energy:    -112.7318720387 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 5.81025e-9; eev 5.89713e-8 Ha; etot -2.84217e-14 Ha
+Energy:    -112.7318720387 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387884      0.00008550      0.00000000
+O        0.19387884     -0.00008550     -0.00000000
+
+------------------------------------
+force                   4.528 s for 
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00052918
+Nuc_energy:      21.16708627 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7318712591 Ha by the initial guess
+Energy:    -112.7318719919 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.28011e-5; eev 1.72745e-6 Ha; etot -3.60428e-8 Ha
+Energy:    -112.7318720279 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 4.25677e-6; eev 3.36680e-6 Ha; etot -9.71167e-9 Ha
+Energy:    -112.7318720376 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 1.08356e-6; eev 5.61028e-6 Ha; etot -9.89388e-10 Ha
+Energy:    -112.7318720386 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 1.39877e-7; eev 3.55647e-6 Ha; etot -4.20641e-11 Ha
+Energy:    -112.7318720387 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 3.48487e-8; eev 2.50461e-7 Ha; etot -1.76215e-12 Ha
+Energy:    -112.7318720387 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 4.06050e-9; eev 2.95584e-8 Ha; etot -1.98952e-13 Ha
+Energy:    -112.7318720387 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387884      0.00000000     -0.00008550
+O        0.19387884     -0.00000000      0.00008550
+
+------------------------------------
+force                   5.108 s for 
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00000000     -0.00052918
+Nuc_energy:      21.16708627 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7318704796 Ha by the initial guess
+Energy:    -112.7318719451 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.81032e-5; eev 3.44650e-6 Ha; etot -7.20851e-8 Ha
+Energy:    -112.7318720172 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.01102e-6; eev 6.70006e-6 Ha; etot -1.94233e-8 Ha
+Energy:    -112.7318720366 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 1.52500e-6; eev 1.07127e-5 Ha; etot -1.97662e-9 Ha
+Energy:    -112.7318720386 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 2.58082e-7; eev 6.36708e-6 Ha; etot -8.41283e-11 Ha
+Energy:    -112.7318720387 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 4.93918e-8; eev 2.53941e-7 Ha; etot -6.39488e-12 Ha
+Energy:    -112.7318720387 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 5.81030e-9; eev 5.89777e-8 Ha; etot -1.70530e-13 Ha
+Energy:    -112.7318720387 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387884     -0.00000000      0.00008550
+O        0.19387884      0.00000000     -0.00008550
+
+------------------------------------
+force                   5.687 s for 
+Input geometry in this round is:
+C        0.02026245      0.00000008     -0.01364127
+O        1.19974801     -0.00000006      0.01364132
+Nuc_energy:      21.52948236 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01439092 with the total number of basis functions:     28
+The total energy:      -112.7683269680 Ha by the initial guess
+Energy:    -112.7384600007 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 9.39001e-4; eev 2.74449e-2 Ha; etot -1.01220e-4 Ha
+Energy:    -112.7385612206 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 2.97095e-4; eev 3.87148e-3 Ha; etot -7.78921e-5 Ha
+Energy:    -112.7386391127 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 1.85397e-4; eev 1.21881e-3 Ha; etot -7.70976e-6 Ha
+Energy:    -112.7386468224 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 6.97584e-5; eev 2.29489e-4 Ha; etot -2.07183e-6 Ha
+Energy:    -112.7386488943 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 5.49035e-6; eev 5.04382e-5 Ha; etot -2.08894e-7 Ha
+Energy:    -112.7386491032 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.00968e-6; eev 1.06671e-5 Ha; etot -1.72636e-9 Ha
+Energy:    -112.7386491049 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 2.55157e-7; eev 3.27480e-6 Ha; etot -4.70664e-11 Ha
+Energy:    -112.7386491049 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 4.11343e-8; eev 6.15165e-7 Ha; etot -2.21689e-12 Ha
+Energy:    -112.7386491049 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 5.32296e-9; eev 6.83186e-8 Ha; etot -1.70530e-13 Ha
+Energy:    -112.7386491049 Ha after   10 iterations (in       0.01 seconds).
+SCF is converged after   10 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.16033998      0.00000002     -0.00370881
+O        0.16033998     -0.00000002      0.00370881
+
+------------------------------------
+force                   6.244 s for 
+Input geometry in this round is:
+C        0.04974973     -0.00000047     -0.03400572
+O        1.20124146      0.00000060      0.03400589
+Nuc_energy:      22.02040671 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01411676 with the total number of basis functions:     28
+The total energy:      -112.7836635263 Ha by the initial guess
+Energy:    -112.7450365451 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.16753e-3; eev 3.42676e-2 Ha; etot -2.03041e-4 Ha
+Energy:    -112.7452395857 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 4.40710e-4; eev 5.05567e-3 Ha; etot -1.17067e-4 Ha
+Energy:    -112.7453566524 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 2.54856e-4; eev 1.79494e-3 Ha; etot -1.64403e-5 Ha
+Energy:    -112.7453730927 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 9.38561e-5; eev 3.44378e-4 Ha; etot -3.96360e-6 Ha
+Energy:    -112.7453770563 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 5.37745e-6; eev 6.62753e-5 Ha; etot -3.72597e-7 Ha
+Energy:    -112.7453774289 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.13022e-6; eev 1.19798e-5 Ha; etot -1.90894e-9 Ha
+Energy:    -112.7453774308 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 2.73289e-7; eev 3.56115e-6 Ha; etot -5.86908e-11 Ha
+Energy:    -112.7453774308 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 4.32805e-8; eev 6.48118e-7 Ha; etot -2.55795e-12 Ha
+Energy:    -112.7453774308 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 6.52608e-9; eev 8.04565e-8 Ha; etot  0.00000e0 Ha
+Energy:    -112.7453774308 Ha after   10 iterations (in       0.01 seconds).
+SCF is converged after   10 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.10854627     -0.00000010     -0.00641117
+O        0.10854627      0.00000010      0.00641117
+
+------------------------------------
+force                   6.777 s for 
+Input geometry in this round is:
+C        0.09608682     -0.00000133     -0.06371733
+O        1.20283300      0.00000163      0.06371769
+Nuc_energy:      22.79997085 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01367357 with the total number of basis functions:     28
+The total energy:      -112.8065372911 Ha by the initial guess
+Energy:    -112.7492913432 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.58330e-3; eev 4.68917e-2 Ha; etot -4.63645e-4 Ha
+Energy:    -112.7497549877 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.74564e-4; eev 6.96995e-3 Ha; etot -2.08369e-4 Ha
+Energy:    -112.7499633570 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 3.55293e-4; eev 2.67256e-3 Ha; etot -3.64845e-5 Ha
+Energy:    -112.7499998415 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 1.21741e-4; eev 5.51556e-4 Ha; etot -7.69822e-6 Ha
+Energy:    -112.7500075397 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 5.81921e-6; eev 8.96484e-5 Ha; etot -6.31138e-7 Ha
+Energy:    -112.7500081708 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.33197e-6; eev 1.43575e-5 Ha; etot -2.47934e-9 Ha
+Energy:    -112.7500081733 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 2.98330e-7; eev 4.08801e-6 Ha; etot -8.25651e-11 Ha
+Energy:    -112.7500081734 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 4.45180e-8; eev 6.66453e-7 Ha; etot -3.72324e-12 Ha
+Energy:    -112.7500081734 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 8.81509e-9; eev 9.51176e-8 Ha; etot -2.84217e-14 Ha
+Energy:    -112.7500081734 Ha after   10 iterations (in       0.01 seconds).
+SCF is converged after   10 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.01104877     -0.00000003     -0.00127220
+O        0.01104877      0.00000003      0.00127220
+
+------------------------------------
+force                   7.325 s for 
+Input geometry in this round is:
+C        0.10147044     -0.00003699     -0.06695267
+O        1.20292587      0.00004150      0.06695535
+Nuc_energy:      22.89230133 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01362037 with the total number of basis functions:     28
+The total energy:      -112.7571005753 Ha by the initial guess
+Energy:    -112.7500379254 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.93016e-4; eev 5.81720e-3 Ha; etot -6.54952e-6 Ha
+Energy:    -112.7500444749 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 7.58700e-5; eev 8.34897e-4 Ha; etot -3.12616e-6 Ha
+Energy:    -112.7500476010 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 4.33098e-5; eev 3.03374e-4 Ha; etot -4.75869e-7 Ha
+Energy:    -112.7500480769 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 1.37307e-5; eev 5.62891e-5 Ha; etot -1.10743e-7 Ha
+Energy:    -112.7500481877 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 6.54586e-7; eev 8.75955e-6 Ha; etot -8.07682e-9 Ha
+Energy:    -112.7500481957 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.46485e-7; eev 1.39293e-6 Ha; etot -3.13776e-11 Ha
+Energy:    -112.7500481958 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 3.18005e-8; eev 3.81443e-7 Ha; etot -1.39266e-12 Ha
+Energy:    -112.7500481958 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 3.75334e-9; eev 5.53154e-8 Ha; etot -2.84217e-14 Ha
+Energy:    -112.7500481958 Ha after    9 iterations (in       0.01 seconds).
+SCF is converged after    9 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C        0.00174707      0.00000012      0.00021240
+O       -0.00174707     -0.00000012     -0.00021240
+
+------------------------------------
+force                   7.837 s for 
+Input geometry in this round is:
+C        0.10073432     -0.00003550     -0.06651200
+O        1.20291531      0.00003984      0.06651458
+Nuc_energy:      22.87963424 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01362768 with the total number of basis functions:     28
+The total energy:      -112.7490736185 Ha by the initial guess
+Energy:    -112.7500490074 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.66981e-5; eev 8.05975e-4 Ha; etot -1.23923e-7 Ha
+Energy:    -112.7500491313 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 1.03598e-5; eev 1.15197e-4 Ha; etot -5.99491e-8 Ha
+Energy:    -112.7500491913 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 5.98879e-6; eev 4.13917e-5 Ha; etot -8.92126e-9 Ha
+Energy:    -112.7500492002 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 1.88422e-6; eev 7.56061e-6 Ha; etot -2.10892e-9 Ha
+Energy:    -112.7500492023 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 9.01051e-8; eev 1.17404e-6 Ha; etot -1.52028e-10 Ha
+Energy:    -112.7500492025 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 2.00748e-8; eev 1.86494e-7 Ha; etot -7.95808e-13 Ha
+Energy:    -112.7500492025 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 4.34788e-9; eev 5.03057e-8 Ha; etot 1.42109e-13 Ha
+Energy:    -112.7500492025 Ha after    8 iterations (in       0.01 seconds).
+SCF is converged after    8 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.00002414     -0.00000000     -0.00000291
+O        0.00002414      0.00000000      0.00000291
+
+------------------------------------
+force                   8.344 s for 
+Input geometry in this round is:
+C        0.10074434     -0.00003552     -0.06651801
+O        1.20291545      0.00003986      0.06652058
+Nuc_energy:      22.87980677 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01362758 with the total number of basis functions:     28
+The total energy:      -112.7500624788 Ha by the initial guess
+Energy:    -112.7500492026 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 3.63307e-7; eev 1.09657e-5 Ha; etot -2.29079e-11 Ha
+Energy:    -112.7500492026 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 1.41163e-7; eev 1.56811e-6 Ha; etot -1.15392e-11 Ha
+Energy:    -112.7500492026 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 8.14917e-8; eev 5.64076e-7 Ha; etot -1.73372e-12 Ha
+Energy:    -112.7500492026 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 2.56686e-8; eev 1.03223e-7 Ha; etot 3.12639e-13 Ha
+Energy:    -112.7500492026 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.22794e-9; eev 1.60408e-8 Ha; etot -2.27374e-13 Ha
+Energy:    -112.7500492026 Ha after    6 iterations (in       0.01 seconds).
+SCF is converged after    6 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.00000005     -0.00000000     -0.00000001
+O        0.00000005      0.00000000      0.00000001
+
+------------------------------------
+force                   8.842 s for 
+Geometry after relaxation [Ang]:
+C        0.10074434     -0.00003552     -0.06651801
+O        1.20291545      0.00003986      0.06652058
+geom_opt               10.409 s for geometry optimization
+Mulliken population analysis:
+  0-C  :   0.082299
+  1-O  :  -0.082299
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :    -112.7500492026 Ha
+Detailed time report:
+Overall   |:   10.766 s for the whole job
+force     |:    8.842 s for 
+geom_opt  |:   10.409 s for geometry optimization
+SCF       |:    1.336 s for the scf procedure
