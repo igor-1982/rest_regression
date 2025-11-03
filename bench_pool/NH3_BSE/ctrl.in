@@ -14,7 +14,8 @@
      charge =                    0.0
      spin =                      1.0
      spin_polarization =         false
-     quasiparticle_methods=      "bse"
+[quasiparticle_methods]
+     gw_or_bse=      "bse"
      gw_scheme=                  "extrapolated"
      bse_spin=                   "singlet"
      threshold=                  0.3

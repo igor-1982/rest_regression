@@ -14,7 +14,8 @@
      charge =                    0.0
      spin =                      1.0
      spin_polarization =         false
-     quasiparticle_methods=      "gw"
+[quasiparticle_methods]
+     gw_or_bse=      "gw"
      homo_lumo_gw_qp=            true
 
 [geom]
