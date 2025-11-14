@@ -9,7 +9,7 @@
      charge =                    1.0
      spin =                      2.0
      spin_polarization =         true
-     alg_jk =                    "ri-direct"
+     algorithm_jk =                    "ri-direct"
      max_memory =                60
 
 [geom]
