@@ -1,0 +1,23 @@
+[ctrl]
+     print_level =               2
+     num_threads =               4
+     xc =                        "hf" 
+     basis_path =                "cc-pVDZ"
+     auxbas_path =               "def2-SV(P)-JKFIT" 
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     charge =                    1.0
+     spin =                      2.0
+     spin_polarization =         true
+     algorithm_jk =              "ri-direct"
+     max_memory =                60
+
+[geom]
+     name = "NH3"
+     unit = "angstrom"
+     position = '''
+        N  -2.1988391019      1.8973746268      0.0000000000
+        H  -1.1788391019      1.8973746268      0.0000000000
+        H  -2.5388353987      1.0925460144     -0.5263586446
+        H  -2.5388400276      2.7556271745     -0.4338224694'''
+
