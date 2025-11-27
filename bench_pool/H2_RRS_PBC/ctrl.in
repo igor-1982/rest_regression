@@ -1,31 +1,33 @@
 [ctrl]
      xc =                        "b3lyp"
-     basis_path =                "./6-31G*"
-     auxbas_path =               "./def2-SV(P)-JKFIT"
+     basis_path =                "6-31G*"
+     auxbas_path =               "def2-SV(P)-JKFIT"
      spin =                      1.0
+     charge =                    0.0
+     pbc_eigenval =              "reference.eigenval"
 
 [geom]
      name = "H2_7"
      unit = "angstrom"
      position = '''
-H 0.0 0.0 0.0
-H 1.4 0.0 0.0
-H 2.8 0.0 0.0
-H 4.2 0.0 0.0
-H 5.6 0.0 0.0
-H 7.0 0.0 0.0
-H 8.4 0.0 0.0
-H 9.8 0.0 0.0
-H 11.2 0.0 0.0
-H 12.6 0.0 0.0
-H 14.0 0.0 0.0
-H 15.4 0.0 0.0
-H 16.8 0.0 0.0
-H 18.2 0.0 0.0
+     H 0.0 0.0 0.0
+     H 1.4 0.0 0.0
+     H 2.8 0.0 0.0
+     H 4.2 0.0 0.0
+     H 5.6 0.0 0.0
+     H 7.0 0.0 0.0
+     H 8.4 0.0 0.0
+     H 9.8 0.0 0.0
+     H 11.2 0.0 0.0
+     H 12.6 0.0 0.0
+     H 14.0 0.0 0.0
+     H 15.4 0.0 0.0
+     H 16.8 0.0 0.0
+     H 18.2 0.0 0.0
      '''
      rrs_pbc = true
-     unit_cell_elem = ['H','H']
-     num_units = 7
      pbc_dim = 1
+     unit_cell_index = [6,7]
      rrs_pbc_vec = [2.8,0.0,0.0]
-     k_points = 200
+     max_step = [3]
+     k_points = [100]

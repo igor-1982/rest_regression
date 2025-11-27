@@ -173,14 +173,14 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("gradient".to_string(), grad);
     }
 
-    let re_homo_lumo_gap = Regex::new(
-        r"HOMO-LUMO gap\s*:\s*(?P<energy>[-+]?\d+\.\d+)\s*eV"
+    let re_hoco_luco_gap = Regex::new(
+        r"HOCO-LUCO gap\s*:\s*(?P<energy>[-+]?\d+\.\d+)\s*eV"
         ).unwrap();
 
-    if re_homo_lumo_gap.is_match(&buf) {
-        let caps = re_homo_lumo_gap.captures(&buf).unwrap();
+    if re_hoco_luco_gap.is_match(&buf) {
+        let caps = re_hoco_luco_gap.captures(&buf).unwrap();
         let gap_energy = caps.name("energy").unwrap().as_str().parse::<f64>().unwrap();
-        result.insert("homo_lumo_gap".to_string(),vec![gap_energy]);
+        result.insert("hoco_luco_gap".to_string(),vec![gap_energy]);
     }
 
     Ok(result)
@@ -227,7 +227,7 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                 //break;
             }
             
-        } else if key.eq("homo_lumo_gap") {
+        } else if key.eq("hoco_luco_gap") {
             if let Some(out_value) = out_hashmap.get(key) {
                 if (ref_value[0] - out_value[0]).abs() > 1e-5 {
                     is_same = false;
