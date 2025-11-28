@@ -10,7 +10,7 @@
      spin =                      2.0
      spin_polarization =         true
      algorithm_jk =              "ri-direct"
-     max_memory =                60
+     max_memory =                100
 
 [geom]
      name = "NH3"
