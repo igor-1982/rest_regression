@@ -326,6 +326,9 @@ fn main() -> anyhow::Result<()> {
 
     let mut job_index = 0;
     let mut fail_list = vec![];
+    let mut njob: usize = 0;
+    let mut npass: usize = 0;
+    let mut nfail: usize = 0;
     
     for entry in WalkDir::new(input_folder).into_iter().filter_map(|e| e.ok())
         .filter(|e| e.file_type().is_dir() 
@@ -412,7 +415,13 @@ fn main() -> anyhow::Result<()> {
         let out_hashmap = collect_results(store_file.to_str().unwrap())?;
         let is_pass_current = compare_results(&ref_hashmap, &out_hashmap);
         
-        if ! is_pass_current {fail_list.push(entry.path().display().to_string());}
+        njob += 1;
+        if ! is_pass_current {
+            fail_list.push(entry.path().display().to_string());
+            nfail += 1;
+        } else {
+            npass += 1;
+        }
 
         is_pass = is_pass && is_pass_current;
 
@@ -421,21 +430,25 @@ fn main() -> anyhow::Result<()> {
 
     }
 
+    println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+    println!("Regression summary: {}/{} passed, {}/{} failed", npass, njob, nfail, njob);
     if is_pass {
         println!("All regression tasks passed");
     } else {
-        println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         println!("Regression failed for");
         for job in fail_list {
             println!("X: \"{}\"", job);
         }
-        println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
     }
+    println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 
     timing(&s_time, Some(&"Total time consumption"));
 
-    Ok(())
+    if is_pass {
+        Ok(())
+    } else {
+        Err(anyhow::anyhow!("Some regression tasks failed"))
+    }
 }
 
 #[test]
