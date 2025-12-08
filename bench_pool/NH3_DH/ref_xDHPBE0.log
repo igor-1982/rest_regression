@@ -1,0 +1,123 @@
+Use the alternative default path (/home/wjyan/rest-workspace/rest/basis-set-pool/) as rest_basis_dir.
+The specified path for the basis sets is: cc-pVDZ, try to find it from the rest_basis_dir
+Found: /home/wjyan/rest-workspace/rest/basis-set-pool/cc-pVDZ
+The specified path for the auxiliary basis sets is: def2-SV(P)-JKFIT, try to find it from the rest_basis_dir
+Found: /home/wjyan/rest-workspace/rest/basis-set-pool/def2-SV(P)-JKFIT
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: xdh-pbe0
+Print level:                1
+The number of threads used for parallelism:      2
+The spheric-GTO basis set is taken from /home/wjyan/rest-workspace/rest/basis-set-pool/cc-pVDZ
+The spheric-GTO auxiliary basis set is taken from /home/wjyan/rest-workspace/rest/basis-set-pool/def2-SV(P)-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+N       -2.19883910      1.89737463      0.00000000
+H       -1.17883910      1.89737463      0.00000000
+H       -2.53883540      1.09254601     -0.52635864
+H       -2.53884003      2.75562717     -0.43382247
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+=========================================================
+the scf functional for 'xdh-pbe0' contains
+The density functional 'PBEH (PBE0)' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): C. Adamo and V. Barone.,  J. Chem. Phys. 110, 6158 (1999)
+(1): M. Ernzerhof and G. E. Scuseria.,  J. Chem. Phys. 110, 5029 (1999)
+the post-scf functional 'xdh-pbe0' is employed, which contains
+The density functional 'Perdew, Burke & Ernzerhof' belongs to the 'GGA' family and is defined in the reference(s):
+(0): J. P. Perdew, K. Burke, and M. Ernzerhof.,  Phys. Rev. Lett. 77, 3865 (1996)
+(1): J. P. Perdew, K. Burke, and M. Ernzerhof.,  Phys. Rev. Lett. 78, 1396 (1997)
+The density functional 'Perdew, Burke & Ernzerhof' belongs to the 'GGA' family and is defined in the reference(s):
+(0): J. P. Perdew, K. Burke, and M. Ernzerhof.,  Phys. Rev. Lett. 77, 3865 (1996)
+(1): J. P. Perdew, K. Burke, and M. Ernzerhof.,  Phys. Rev. Lett. 78, 1396 (1997)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 9, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 52,final natm: 8
+numbasis: 29, num_auxbas: 131
+Molecule_name: NH3
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (2655.21 MB) is more than required (1.26 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      11.84792373 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01677135 with the total number of basis functions:     29
+Grid size: 44118
+
+=======================
+Generating SAD for atom: N
+=======================
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (2612.16 MB) is more than required (0.17 MB).
+Using standard incore RI-J/K algorithms.
+SAD generation for N complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (2604.68 MB) is more than required (0.01 MB).
+Using standard incore RI-J/K algorithms.
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):     -56.4760753410912315
+The total energy:       -56.3499905010 Ha by the initial guess
+Energy:     -56.2845283882 Ha after    1 iterations (in       0.07 seconds).
+SCF Change: DM 6.44422e-2; eev  1.09358e0 Ha; etot 9.32656e-2 Ha
+Energy:     -56.1912628046 Ha after    2 iterations (in       0.07 seconds).
+SCF Change: DM 3.71602e-3; eev 5.03286e-2 Ha; etot -2.92162e-1 Ha
+Energy:     -56.4834250696 Ha after    3 iterations (in       0.07 seconds).
+SCF Change: DM 1.05433e-4; eev 1.82874e-3 Ha; etot -1.01571e-3 Ha
+Energy:     -56.4844407815 Ha after    4 iterations (in       0.07 seconds).
+SCF Change: DM 1.92033e-5; eev 3.69168e-4 Ha; etot -1.71596e-6 Ha
+Energy:     -56.4844424974 Ha after    5 iterations (in       0.07 seconds).
+SCF Change: DM 3.68926e-6; eev 4.08751e-5 Ha; etot -3.84617e-8 Ha
+Energy:     -56.4844425359 Ha after    6 iterations (in       0.07 seconds).
+SCF Change: DM 3.93924e-7; eev 6.01965e-6 Ha; etot -8.67786e-10 Ha
+Energy:     -56.4844425368 Ha after    7 iterations (in       0.07 seconds).
+SCF Change: DM 1.24665e-8; eev 2.72730e-7 Ha; etot -8.93152e-12 Ha
+Energy:     -56.4844425368 Ha after    8 iterations (in       0.07 seconds).
+SCF Change: DM 2.91302e-9; eev 5.65497e-8 Ha; etot -9.23706e-14 Ha
+Energy:     -56.4844425368 Ha after    9 iterations (in       0.07 seconds).
+SCF is converged after    9 iterations.
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.25588243,      -0.19716330,      -0.05871913
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.107020239717 Ha
+E[XDH-PBE0]=:     -56.46209839 Ha, Ex[HF]:      -7.67742736 Ha, Ec[PT2  ]:      -0.10702024 Ha
+Exc[KS-DFA]:      -1.44169149 Ha
+Mulliken population analysis:
+  0-N  :  -0.271402
+  1-H  :   0.090467
+  2-H  :   0.090467
+  3-H  :   0.090467
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -56.4844425368 Ha
+The (R)-xDH energy    :     -56.4620983860 Ha
+Detailed time report:
+SCF       |:    3.572 s for the scf procedure
+Overall   |:    3.647 s for the whole job
+PT2       |:    0.075 s for the PT2 evaluation
