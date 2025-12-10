@@ -1,7 +1,11 @@
+Use the default path (/opt/rest_workspace/rest/basis-set-pool/) as rest_basis_dir.
+The specified path for the basis sets: cc-pVDZ
+The specified path for the basis sets: def2-SV(P)-JKFIT
 =========================================================
       Input parameters for the REST calculation
 =========================================================
 Calculation type: Single-point energy
+Cube output: wavefunction
 The exchange-correlation method: scan
 Print level:                1
 The number of threads used for parallelism:      4
@@ -38,6 +42,9 @@ final nbas: 52,final natm: 8
 numbasis: 29, num_auxbas: 131
 Molecule_name: NH3
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (28183.76 MB) is more than required (1.26 MB).
+Using standard incore RI-J/K algorithms.
 Nuc_energy:      11.84792373 Hartree
 No ghost effective potential
 No ghost point charges
@@ -48,33 +55,39 @@ Grid size: 44118
 =======================
 Generating SAD for atom: N
 =======================
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (28075.64 MB) is more than required (0.17 MB).
+Using standard incore RI-J/K algorithms.
 SAD generation for N complete.
 
 =======================
 Generating SAD for atom: H
 =======================
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (28083.18 MB) is more than required (0.01 MB).
+Using standard incore RI-J/K algorithms.
 SAD generation for H complete.
-Initial guess energy using single atom density (SAD):     -56.5038294770925944
+Initial guess energy using single atom density (SAD):     -56.5038294770926157
 The total energy:       -56.3490603255 Ha by the initial guess
-Energy:     -56.1731520004 Ha after    1 iterations (in       0.13 seconds).
+Energy:     -56.1731520004 Ha after    1 iterations (in       0.01 seconds).
 SCF Change: DM 1.00503e-1; eev  1.53420e0 Ha; etot 2.92937e-1 Ha
-Energy:     -55.8802147742 Ha after    2 iterations (in       0.10 seconds).
+Energy:     -55.8802147742 Ha after    2 iterations (in       0.01 seconds).
 SCF Change: DM 8.64426e-3; eev 1.04390e-1 Ha; etot -6.39099e-1 Ha
-Energy:     -56.5193133668 Ha after    3 iterations (in       0.21 seconds).
+Energy:     -56.5193133668 Ha after    3 iterations (in       0.01 seconds).
 SCF Change: DM 2.46240e-4; eev 1.12467e-2 Ha; etot -5.23578e-3 Ha
-Energy:     -56.5245491472 Ha after    4 iterations (in       0.19 seconds).
+Energy:     -56.5245491472 Ha after    4 iterations (in       0.01 seconds).
 SCF Change: DM 4.69406e-5; eev 7.54018e-4 Ha; etot -3.33952e-6 Ha
-Energy:     -56.5245524867 Ha after    5 iterations (in       0.11 seconds).
+Energy:     -56.5245524867 Ha after    5 iterations (in       0.01 seconds).
 SCF Change: DM 6.07533e-6; eev 2.53401e-4 Ha; etot -2.33177e-7 Ha
-Energy:     -56.5245527199 Ha after    6 iterations (in       0.12 seconds).
-SCF Change: DM 2.79517e-7; eev 1.67338e-5 Ha; etot -3.36087e-9 Ha
-Energy:     -56.5245527232 Ha after    7 iterations (in       0.14 seconds).
-SCF Change: DM 6.97306e-8; eev 1.26962e-6 Ha; etot -4.31299e-12 Ha
-Energy:     -56.5245527233 Ha after    8 iterations (in       0.39 seconds).
-SCF Change: DM 2.53069e-8; eev 7.78488e-7 Ha; etot -2.98428e-13 Ha
-Energy:     -56.5245527233 Ha after    9 iterations (in       0.15 seconds).
-SCF Change: DM 2.73253e-9; eev 5.29055e-8 Ha; etot -2.20268e-13 Ha
-Energy:     -56.5245527233 Ha after   10 iterations (in       0.12 seconds).
+Energy:     -56.5245527199 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 2.79517e-7; eev 1.67338e-5 Ha; etot -3.36093e-9 Ha
+Energy:     -56.5245527232 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 6.97306e-8; eev 1.26962e-6 Ha; etot -4.39115e-12 Ha
+Energy:     -56.5245527233 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 2.53069e-8; eev 7.78488e-7 Ha; etot -3.33955e-13 Ha
+Energy:     -56.5245527233 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 2.73253e-9; eev 5.29055e-8 Ha; etot -2.48690e-13 Ha
+Energy:     -56.5245527233 Ha after   10 iterations (in       0.01 seconds).
 SCF is converged after   10 iterations.
 Mulliken population analysis:
   0-N  :  -0.271766
@@ -84,321 +97,373 @@ Mulliken population analysis:
 Now starts quasiparticle method computation!
 You are doing G0W0 calculations of entire energy spectrum
 calculated orbital indices:[2, 3, 4, 5, 6, 7]
+Orbital #2:
+QP energy:-0.5687092803944729
+GW Evaluation of orbital #2 took 9.862287ms
+Orbital #3:
+QP energy:-0.5687028839388539
+GW Evaluation of orbital #3 took 9.766353ms
+Orbital #4:
+QP energy:-0.3489639691433286
+GW Evaluation of orbital #4 took 5.843625ms
+Orbital #5:
+QP energy:0.17713866045108245
+GW Evaluation of orbital #5 took 8.549966ms
+Orbital #6:
+QP energy:0.26591290969287945
+GW Evaluation of orbital #6 took 6.239452ms
+Orbital #7:
+QP energy:0.2659051848987353
+GW Evaluation of orbital #7 took 7.233471ms
 Quasiparticle Energies from GW Approximation (in Hatree):
    Note that only energies around the Fermi surface within 0.3 Hatree are explicitly computed by solving the quasiparticle equation,
     while others are extrapolated using average energy shifts of the computed ones compared to corresponding SCF results
     You can set this threshold to be any other float value using the keyword "threshold"
- (extrapolated) QP Energy of Orbital #0:-14.286260319158032
- (extrapolated) QP Energy of Orbital #1:-0.9485129064597314
- (calculated) QP Energy of Orbital #2:-0.5687092803944661
- (calculated) QP Energy of Orbital #3:-0.568702883938849
- (calculated) QP Energy of Orbital #4:-0.3489639691433212
+ (extrapolated) QP Energy of Orbital #0:-14.28947305747212
+ (extrapolated) QP Energy of Orbital #1:-0.9517256447738172
+ (calculated) QP Energy of Orbital #2:-0.5687092803944729
+ (calculated) QP Energy of Orbital #3:-0.5687028839388539
+ (calculated) QP Energy of Orbital #4:-0.3489639691433286
 -------Fermi Surface--------
- (calculated) QP Energy of Orbital #5:0.17713866045109036
- (calculated) QP Energy of Orbital #6:0.26591290969288894
- (calculated) QP Energy of Orbital #7:0.2659051848987426
- (extrapolated) QP Energy of Orbital #8:0.2666280668638964
- (extrapolated) QP Energy of Orbital #9:0.6356371955349313
- (extrapolated) QP Energy of Orbital #10:0.6356735801043163
- (extrapolated) QP Energy of Orbital #11:0.7364207983275307
- (extrapolated) QP Energy of Orbital #12:0.8500613265508364
- (extrapolated) QP Energy of Orbital #13:0.9570655044882235
- (extrapolated) QP Energy of Orbital #14:0.9571354419047909
- (extrapolated) QP Energy of Orbital #15:1.1884149010127671
- (extrapolated) QP Energy of Orbital #16:1.188446736861704
- (extrapolated) QP Energy of Orbital #17:1.2757111746769352
- (extrapolated) QP Energy of Orbital #18:1.5851475447678955
- (extrapolated) QP Energy of Orbital #19:1.7928026658397203
- (extrapolated) QP Energy of Orbital #20:1.8162892754860702
- (extrapolated) QP Energy of Orbital #21:1.8163306913898962
- (extrapolated) QP Energy of Orbital #22:2.1295579862803855
- (extrapolated) QP Energy of Orbital #23:2.1297169784810306
- (extrapolated) QP Energy of Orbital #24:2.318273240243619
- (extrapolated) QP Energy of Orbital #25:2.6475426673981164
- (extrapolated) QP Energy of Orbital #26:2.6477326449203544
- (extrapolated) QP Energy of Orbital #27:2.8162154566558497
- (extrapolated) QP Energy of Orbital #28:3.0856856875817784
+ (calculated) QP Energy of Orbital #5:0.17713866045108245
+ (calculated) QP Energy of Orbital #6:0.26591290969287945
+ (calculated) QP Energy of Orbital #7:0.2659051848987353
+ (extrapolated) QP Energy of Orbital #8:0.6349143135697721
+ (extrapolated) QP Energy of Orbital #9:0.6349506981391589
+ (extrapolated) QP Energy of Orbital #10:0.7356979163623709
+ (extrapolated) QP Energy of Orbital #11:0.849338444585678
+ (extrapolated) QP Energy of Orbital #12:0.9563426225230593
+ (extrapolated) QP Energy of Orbital #13:0.9564125599396311
+ (extrapolated) QP Energy of Orbital #14:1.1876920190476077
+ (extrapolated) QP Energy of Orbital #15:1.187723854896544
+ (extrapolated) QP Energy of Orbital #16:1.2749882927117866
+ (extrapolated) QP Energy of Orbital #17:1.5844246628027354
+ (extrapolated) QP Energy of Orbital #18:1.792079783874587
+ (extrapolated) QP Energy of Orbital #19:1.8155663935209134
+ (extrapolated) QP Energy of Orbital #20:1.81560780942474
+ (extrapolated) QP Energy of Orbital #21:2.1288351043152245
+ (extrapolated) QP Energy of Orbital #22:2.1289940965158745
+ (extrapolated) QP Energy of Orbital #23:2.3175503582784645
+ (extrapolated) QP Energy of Orbital #24:2.6468197854329536
+ (extrapolated) QP Energy of Orbital #25:2.647009762955199
+ (extrapolated) QP Energy of Orbital #26:2.8154925746907096
+ (extrapolated) QP Energy of Orbital #27:3.0849628056166227
+ (extrapolated) QP Energy of Orbital #28:3.085125579865994
 One round of GW by extrapolated scheme has finished.
 Specific BSE calculations are triggered
 BSE Type:singlet
 starts contructing Full BSE hamiltonian!!!
+BSE Preparation Time:2.871757ms
+BSE DGEES Time:20.034153ms
 First 30 excitations:
-excitation energy=0.24385440241366446
-Dipole Moment Components:
-x:-0.14309762792001487, y:-0.021791298134246472, z:0.40541242810459777
-Transition Dipole Square:0.18531102865237628; Oscillator Strength:0.03012594010179111
-      #4->#5,amplitude=-0.7043793909835682
-      #4->#10,amplitude=-0.05934580758474634
-      #4->#29,amplitude=0.02658985868420604
-      #4->#16,amplitude=0.02210110539053625
-      #2->#7,amplitude=0.018960417340360202
-excitation energy=0.2665421788165975
-Dipole Moment Components:
-x:0.2769249569594174, y:-0.07200868930169269, z:0.10410375745715682
-Transition Dipole Square:0.09271027543862141; Oscillator Strength:0.016474132542731355
-      #4->#8,amplitude=0.60740464497884
-      #4->#6,amplitude=0.3480362064438409
-      #4->#7,amplitude=0.08093459551582134
-      #2->#8,amplitude=-0.043745537316299515
-      #4->#32,amplitude=-0.027632709216472717
-excitation energy=0.3210317910670108
-Dipole Moment Components:
-x:0.06029434262686569, y:0.28582711704902747, z:0.04339604629554344
-Transition Dipole Square:0.08721576542744926; Oscillator Strength:0.018666022256302876
-      #4->#7,amplitude=0.6800166003990323
-      #4->#6,amplitude=-0.16078202215141085
-      #4->#9,amplitude=-0.07196191912613568
-      #4->#12,amplitude=-0.060230760495872865
-      #3->#8,amplitude=-0.037282486702788234
-excitation energy=0.345574915028805
-Dipole Moment Components:
-x:0.14343562253468065, y:-0.035839518183476256, z:0.05022788941011797
-Transition Dipole Square:0.024381089750130154; Oscillator Strength:0.005616995345807264
-      #4->#6,amplitude=0.5902986605405954
-      #4->#8,amplitude=-0.35869944215375577
-      #4->#7,amplitude=0.14064819179952448
-      #4->#13,amplitude=0.05457921406749496
-      #4->#30,amplitude=-0.008666780040067296
-excitation energy=0.46396394388413076
-Dipole Moment Components:
-x:0.346692879803165, y:-0.640968986174263, z:0.09004631155221075
-Transition Dipole Square:0.5391455323676322; Oscillator Strength:0.16676272501653058
-      #3->#5,amplitude=0.6204615122261625
-      #2->#5,amplitude=-0.2876962053527999
-      #2->#8,amplitude=-0.14644300642339586
-      #2->#6,amplitude=-0.06416971052205728
-      #3->#8,amplitude=0.05219086571081254
-excitation energy=0.4647605393207063
-Dipole Moment Components:
-x:-0.6302574062948275, y:-0.3682722052363829, z:-0.2832149835980188
-Transition Dipole Square:0.6130595422735778; Oscillator Strength:0.1899505890018489
-      #2->#5,amplitude=-0.6313215266108638
-      #3->#5,amplitude=-0.29421026587744276
-      #3->#8,amplitude=0.09965375176522445
-      #2->#10,amplitude=-0.046951905829726415
-      #2->#8,amplitude=0.03005981486157881
-excitation energy=0.5001890616823702
-Dipole Moment Components:
-x:0.21575867283322728, y:-0.4993880595090429, z:0.05235403774988172
-Transition Dipole Square:0.29868118415167905; Oscillator Strength:0.0995980408286717
-      #2->#8,amplitude=0.44361745549737436
-      #2->#6,amplitude=0.3657566322349625
-      #3->#7,amplitude=-0.2987465346267604
-      #3->#8,amplitude=-0.19263383001573894
-      #3->#5,amplitude=0.1384254586430763
-excitation energy=0.5415366287902237
-Dipole Moment Components:
-x:0.8473019850607647, y:0.441930177272833, z:0.016649457812864022
-Transition Dipole Square:0.9135001399177723; Oscillator Strength:0.3297958574469787
-      #3->#8,amplitude=0.5028761850632696
-      #3->#6,amplitude=0.34641369525902777
-      #2->#8,amplitude=0.1969709430397007
-      #2->#6,amplitude=0.1755218309613021
-      #2->#7,amplitude=-0.15839722293279015
-excitation energy=0.5506449915027608
-Dipole Moment Components:
-x:0.4305239940414794, y:-0.7164228449273304, z:0.07728354652553968
-Transition Dipole Square:0.7045853487427628; Oscillator Strength:0.2586509289142856
-      #3->#7,amplitude=0.5423403993481687
-      #2->#7,amplitude=0.28651510523912077
-      #2->#6,amplitude=0.2192087418179129
-      #3->#6,amplitude=-0.20631358393542978
-      #2->#8,amplitude=0.1464397087259666
-excitation energy=0.5588869247571746
-Dipole Moment Components:
-x:0.21294396897829249, y:0.11536667545561734, z:0.33922062963031513
-Transition Dipole Square:0.17372523929669717; Oscillator Strength:0.06472850982882357
-      #2->#7,amplitude=-0.42437619525897574
-      #3->#8,amplitude=-0.3472226498064884
-      #3->#7,amplitude=0.259559536644449
-      #2->#6,amplitude=0.22726109586487978
-      #3->#6,amplitude=0.2248548731168887
-excitation energy=0.5698132638748202
-Dipole Moment Components:
-x:0.050872696340230394, y:-0.05410846719472056, z:0.01033883484251625
-Transition Dipole Square:0.005622648960988269; Oscillator Strength:0.002135906637388728
-      #2->#6,amplitude=-0.4666947062803378
-      #2->#8,amplitude=0.42848891650522936
-      #3->#6,amplitude=0.17448847061403902
-      #3->#8,amplitude=-0.1721243603594669
-      #3->#7,amplitude=0.16379742694829785
-excitation energy=0.6056383559236991
-Dipole Moment Components:
-x:0.03630533929488694, y:-0.014627571482288928, z:-0.4766626877558706
-Transition Dipole Square:0.22873936140743695; Oscillator Strength:0.0923555538518913
-      #3->#6,amplitude=0.4590532904512257
-      #2->#7,amplitude=0.4075237161702461
-      #4->#11,amplitude=0.2263623312528961
-      #3->#8,amplitude=-0.18722862426660608
-      #4->#10,amplitude=-0.12207159041493963
-excitation energy=0.6615048516212747
-Dipole Moment Components:
-x:0.07048225667325074, y:0.3453651973513871, z:0.0766713402952664
-Transition Dipole Square:0.1301233624699891; Oscillator Strength:0.05738482372211432
-      #4->#9,amplitude=-0.6870409165018428
-      #4->#10,amplitude=0.06997001971534075
-      #3->#8,amplitude=0.06996689057014023
-      #4->#12,amplitude=0.06102924692764893
-      #4->#7,amplitude=-0.05840569883953307
-excitation energy=0.6731261193223211
-Dipole Moment Components:
-x:-0.2115324364162405, y:-0.08221540360858583, z:0.4209650433468307
-Transition Dipole Square:0.22871691196671257; Oscillator Strength:0.10263688491702545
-      #4->#10,amplitude=0.683367918002325
-      #1->#5,amplitude=0.07993148248342556
-      #4->#11,amplitude=0.07510410964577069
-      #4->#9,amplitude=0.06361624267160826
-      #2->#7,amplitude=0.06214408437202042
-excitation energy=0.813279506050069
-Dipole Moment Components:
-x:0.015083831037885638, y:0.00544104237869419, z:-0.052923527992061084
-Transition Dipole Square:0.0030580267160727013; Oscillator Strength:0.0016580203047570142
-      #4->#11,amplitude=-0.5098730526713318
-      #1->#5,amplitude=0.45444401798023193
-      #2->#7,amplitude=0.1033770561803718
-      #3->#6,amplitude=0.10195250840080779
-      #1->#10,amplitude=0.05919722847229908
-excitation energy=0.8689134205615137
-Dipole Moment Components:
-x:-0.015366958096330487, y:-0.16496634021119044, z:-0.018982540265577417
-Transition Dipole Square:0.027810373638742874; Oscillator Strength:0.016109871257022547
-      #4->#12,amplitude=-0.6920028826670281
-      #4->#7,amplitude=-0.0635254525127556
-      #1->#8,amplitude=0.06348330585215746
-      #4->#9,amplitude=-0.05053915298155899
-      #1->#6,amplitude=0.050485966358280565
-excitation energy=0.8725972829883265
-Dipole Moment Components:
-x:0.019587032433929653, y:0.04659402377474753, z:-0.018584666862003593
-Transition Dipole Square:0.002900044733461204; Oscillator Strength:0.0016870474366419014
-      #1->#8,amplitude=0.5278652616646698
-      #1->#6,amplitude=0.3266847079824513
-      #3->#10,amplitude=0.2664660573568253
-      #3->#9,amplitude=0.13778080214792152
-      #4->#12,amplitude=0.07964750935974911
-excitation energy=0.8823996723358509
-Dipole Moment Components:
-x:-0.05277648225880084, y:0.1359673385422956, z:0.01756687033145728
-Transition Dipole Square:0.021581069163130972; Oscillator Strength:0.012695418905469403
-      #3->#9,amplitude=0.3887553361370689
-      #2->#10,amplitude=-0.37713040245338053
-      #3->#10,amplitude=0.2967866508392248
-      #2->#9,amplitude=0.2601687381982975
-      #1->#8,amplitude=-0.14962063399650524
-excitation energy=0.890566714418904
-Dipole Moment Components:
-x:0.019373502794123226, y:-0.01879349162773392, z:0.11974736350803733
-Transition Dipole Square:0.015067959005201635; Oscillator Strength:0.008946015162840772
-      #2->#10,amplitude=-0.40368007631577885
-      #3->#10,amplitude=-0.32965041274469303
-      #2->#9,amplitude=0.2974392350229812
-      #3->#9,amplitude=-0.24755712553770318
-      #1->#8,amplitude=0.2442508612322481
-excitation energy=0.9005311743595352
-Dipole Moment Components:
-x:0.06067808137667681, y:0.011374438984262712, z:-0.20523029308421853
-Transition Dipole Square:0.04593068062119557; Oscillator Strength:0.027574673172625328
-      #1->#5,amplitude=-0.5148583640443167
-      #4->#11,amplitude=-0.3689591016002535
-      #2->#12,amplitude=0.1843371332970121
-      #2->#7,amplitude=0.13750108348222687
-      #3->#6,amplitude=0.1326070401300124
-excitation energy=0.9087097608277189
-Dipole Moment Components:
-x:0.09155807189156376, y:-0.14294032619456482, z:0.11440001760394025
-Transition Dipole Square:0.041902181408891195; Oscillator Strength:0.02538461416415547
-      #3->#9,amplitude=-0.41186742841591467
-      #3->#10,amplitude=0.3976575413454565
-      #4->#14,amplitude=0.358244180187755
-      #3->#11,amplitude=-0.1173060067458179
-      #2->#9,amplitude=0.11320780369658388
-excitation energy=0.9245537889525615
-Dipole Moment Components:
-x:-0.12186239723286402, y:-0.45251516960201604, z:-0.15300081803673835
-Transition Dipole Square:0.2430296728991928; Oscillator Strength:0.14979600327123357
-      #1->#7,amplitude=0.4472484928226982
-      #2->#10,amplitude=-0.343308187929482
-      #2->#9,amplitude=-0.334214604798343
-      #2->#11,amplitude=0.19682972351149725
-      #1->#6,amplitude=-0.09542050508789729
-excitation energy=0.9350161659239694
-Dipole Moment Components:
-x:-0.13765420168360148, y:-0.10898825780935473, z:-0.13591226719642052
-Transition Dipole Square:0.04929926395593921; Oscillator Strength:0.03073040584463735
-      #1->#7,amplitude=-0.47252053843539565
-      #2->#9,amplitude=-0.3975046553946607
-      #1->#6,amplitude=0.18221604479522502
-      #2->#10,amplitude=-0.18072876103251387
-      #2->#11,amplitude=0.13520951077657473
-excitation energy=0.9443498482325001
-Dipole Moment Components:
-x:0.44323371357838764, y:-0.16632409517350985, z:0.1517981960603103
-Transition Dipole Square:0.24716252181493933; Oscillator Strength:0.15560525997646665
-      #1->#6,amplitude=-0.5178831161310209
-      #1->#8,amplitude=0.3290711608815032
-      #4->#14,amplitude=-0.21616503390790842
-      #1->#7,amplitude=-0.19768007000122928
-      #3->#10,amplitude=0.1238800498971645
-excitation energy=0.9542353330033155
-Dipole Moment Components:
-x:-0.11157046015710025, y:0.0276906768178465, z:-0.04702188794895605
-Transition Dipole Square:0.015425799108581693; Oscillator Strength:0.009813228366146466
-      #3->#11,amplitude=-0.6218927685323482
-      #2->#11,amplitude=-0.18766846701259307
-      #4->#13,amplitude=-0.18287440509989128
-      #1->#6,amplitude=0.14537384080164392
-      #4->#14,amplitude=-0.12544212987376077
-excitation energy=0.9591776607133002
-Dipole Moment Components:
-x:-0.08711632352845854, y:-0.38151531025259616, z:-0.07882568342434608
-Transition Dipole Square:0.15935667414956498; Oscillator Strength:0.10190090795322092
-      #2->#11,amplitude=-0.6284390342382181
-      #3->#11,amplitude=0.20500661135053774
-      #2->#9,amplitude=-0.1615807815108775
-      #2->#10,amplitude=-0.15180371977097387
-      #4->#15,amplitude=0.05177676646381855
-excitation energy=0.9772674828964742
-Dipole Moment Components:
-x:-0.19817287638752262, y:0.0249869878802815, z:-0.0663887037694509
-Transition Dipole Square:0.04430429848722156; Oscillator Strength:0.02886476684273406
-      #4->#13,amplitude=0.6779342032077569
-      #3->#11,amplitude=-0.1592299852680509
-      #2->#11,amplitude=-0.08613950693217748
-      #1->#6,amplitude=0.056060774124134516
-      #4->#6,amplitude=-0.045963430868898425
-excitation energy=1.012566182335456
-Dipole Moment Components:
-x:-0.6900089949795145, y:0.3210904275542068, z:-0.24904107922184163
-Transition Dipole Square:0.6412329349595626; Oscillator Strength:0.432860523293176
-      #4->#14,amplitude=0.5325167684385796
-      #3->#9,amplitude=0.26282914620767595
-      #1->#6,amplitude=-0.19782981187643522
-      #3->#10,amplitude=-0.19345179704931692
-      #2->#14,amplitude=0.13065819130945316
-excitation energy=1.0906825337061277
-Dipole Moment Components:
-x:0.0300580324914828, y:-0.1277902201074785, z:0.0021730601812393665
-Transition Dipole Square:0.01723854786292813; Oscillator Strength:0.01253452204036854
-      #3->#12,amplitude=0.6160325652220912
-      #2->#12,amplitude=0.3335807481825037
-      #3->#7,amplitude=0.05634186315003538
-      #3->#9,amplitude=0.0444994218691554
-      #2->#7,amplitude=0.027099393751307745
-excitation energy=1.133296030139304
-Dipole Moment Components:
-x:0.22267575055961727, y:0.03051903194801296, z:0.03422290021662518
-Transition Dipole Square:0.05168710809756981; Oscillator Strength:0.03905119627757129
-      #2->#12,amplitude=-0.5169695602649168
-      #3->#13,amplitude=-0.3093492069855033
-      #3->#12,amplitude=0.28141056414993265
-      #2->#13,amplitude=-0.16010565015446024
-      #4->#11,amplitude=-0.08527241491879099
-The first excitation obtained by BSE is 0.24385440241366446
+#0 Excitation energy=0.24466582838447576
+x_norm-y_norm=0.9947418083131145
+	Dipole Moment Components:
+	x:0.14530049073613321, y:0.022890055819247364, z:-0.41024671996718964
+Transition Dipole Square:0.1899385585074071; Oscillator Strength:0.03098098317291198
+      #4->#5,amplitude=0.7052928186088526
+      #4->#10,amplitude=0.047880098204078736
+      #4->#29,amplitude=-0.02633493450087957
+      #4->#16,amplitude=-0.020429863658179222
+      #3->#6,amplitude=-0.018938177638091955
+#1 Excitation energy=0.32238442938108114
+x_norm-y_norm=0.9962237678372857
+	Dipole Moment Components:
+	x:-0.2903405207312878, y:-0.06759420741270965, z:-0.10668138438732452
+Transition Dipole Square:0.10024751262906387; Oscillator Strength:0.021545491437195655
+      #4->#6,amplitude=-0.5422648026025665
+      #4->#7,amplitude=-0.44381900095552906
+      #4->#8,amplitude=-0.06402246151547605
+      #4->#13,amplitude=-0.04748560223097337
+      #4->#9,amplitude=0.03137086525827256
+#2 Excitation energy=0.3223871657405145
+x_norm-y_norm=0.9962237596013931
+	Dipole Moment Components:
+	x:-0.06920104085051954, y:0.30889571113669806, z:-0.007234830798096041
+Transition Dipole Square:0.10025768719011877; Oscillator Strength:0.02154786107794765
+      #4->#7,amplitude=0.5422665506753545
+      #4->#6,amplitude=-0.44381871826106983
+      #4->#9,amplitude=-0.06400373794454504
+      #4->#12,amplitude=-0.047489465036742375
+      #4->#8,amplitude=-0.03137847797626823
+#3 Excitation energy=0.46693159936222334
+x_norm-y_norm=0.9952401451632596
+	Dipole Moment Components:
+	x:0.6229106153026632, y:-0.5548474189877878, z:0.1896954469016426
+Transition Dipole Square:0.7318576555893661; Oscillator Strength:0.22781831041988662
+      #3->#5,amplitude=0.7033445355473287
+      #2->#5,amplitude=-0.050460167923635064
+      #3->#10,amplitude=0.038780653397172536
+      #3->#29,amplitude=-0.022120822602777476
+      #4->#6,amplitude=0.019653601736102567
+#4 Excitation energy=0.4669360903092884
+x_norm-y_norm=0.9952431934368728
+	Dipole Moment Components:
+	x:-0.5123190852205476, y:-0.6493167052866744, z:-0.21746881725726097
+Transition Dipole Square:0.7313757153248326; Oscillator Strength:0.22767047804062426
+      #2->#5,amplitude=-0.7033439789686154
+      #3->#5,amplitude=-0.05046049514321906
+      #2->#10,amplitude=-0.038782320528188176
+      #2->#29,amplitude=0.022110622847747032
+      #4->#7,amplitude=-0.01963878332292099
+#5 Excitation energy=0.5316874955977672
+x_norm-y_norm=0.9998397193524453
+	Dipole Moment Components:
+	x:-0.000011900814482463055, y:0.00012744772138921956, z:-0.00000739086321724136
+Transition Dipole Square:0.000000016439175931746107; Oscillator Strength:0.000000005827002853894119
+      #3->#7,amplitude=0.48762364643085526
+      #2->#6,amplitude=-0.48741025560941287
+      #2->#7,amplitude=0.08110599405530726
+      #3->#6,amplitude=0.08110199428796812
+      #3->#9,amplitude=-0.060112302133463434
+#6 Excitation energy=0.553001419196912
+x_norm-y_norm=0.9949195870612325
+	Dipole Moment Components:
+	x:-0.653130497964778, y:0.39109562596358427, z:-0.20950588460607514
+Transition Dipole Square:0.6234279517041408; Oscillator Strength:0.22983769470627588
+      #2->#6,amplitude=-0.49520240794482323
+      #3->#7,amplitude=-0.49499537966086965
+      #4->#8,amplitude=0.06585754516231986
+      #4->#6,amplitude=-0.033212694625987006
+      #2->#13,amplitude=-0.03194678096087749
+#7 Excitation energy=0.5530045276072366
+x_norm-y_norm=0.9949174834611574
+	Dipole Moment Components:
+	x:-0.3573322990461875, y:-0.6848843149922256, z:-0.1646321990129065
+Transition Dipole Square:0.6238566578158292; Oscillator Strength:0.22999703756671475
+      #3->#6,amplitude=-0.4951018149904728
+      #2->#7,amplitude=0.4950958425471121
+      #4->#9,amplitude=-0.06586559995355365
+      #4->#7,amplitude=-0.033220383087781614
+      #2->#12,amplitude=-0.031944129450356316
+#8 Excitation energy=0.6112094930034122
+x_norm-y_norm=0.9763823420404627
+	Dipole Moment Components:
+	x:-0.18052384675062133, y:-0.0283028635088521, z:0.5097827569051365
+Transition Dipole Square:0.29326837056624405; Oscillator Strength:0.11949894139182056
+      #2->#7,amplitude=-0.47383379458192
+      #3->#6,amplitude=-0.47382133488811756
+      #4->#11,amplitude=-0.176728035922051
+      #2->#6,amplitude=-0.07882777624831738
+      #3->#7,amplitude=0.0788254094712033
+#9 Excitation energy=0.659602484211336
+x_norm-y_norm=0.9981725481616982
+	Dipole Moment Components:
+	x:-0.2701165221779207, y:0.08378166112847608, z:-0.09098453242833293
+Transition Dipole Square:0.0882604874361443; Oscillator Strength:0.0388112245137228
+      #4->#8,amplitude=-0.6950880795913955
+      #4->#6,amplitude=0.0660030669833705
+      #2->#6,amplitude=-0.04882456834910017
+      #3->#7,amplitude=-0.048810847724105294
+      #4->#13,amplitude=0.04059517332464612
+#10 Excitation energy=0.6596422280629174
+x_norm-y_norm=0.9981717083808593
+	Dipole Moment Components:
+	x:0.07412389985585488, y:0.28468907667633847, z:0.04214562539644928
+Transition Dipole Square:0.08831847664872476; Oscillator Strength:0.038839064477125027
+      #4->#9,amplitude=-0.6950870069423807
+      #4->#7,amplitude=-0.06598344225553981
+      #3->#6,amplitude=0.048843114631745614
+      #2->#7,amplitude=-0.04880431507164309
+      #4->#12,amplitude=0.04060602034197667
+#11 Excitation energy=0.7686924637749399
+x_norm-y_norm=0.9983276077254586
+	Dipole Moment Components:
+	x:0.16119100256105345, y:0.025371454374517714, z:-0.4550551235509068
+Transition Dipole Square:0.23370141547364684; Oscillator Strength:0.11976301123208564
+      #4->#10,amplitude=-0.6835707668420082
+      #1->#5,amplitude=-0.15627700872483224
+      #4->#5,amplitude=0.048283572075318845
+      #3->#8,amplitude=-0.03494142873558575
+      #2->#9,amplitude=0.03491489459944741
+#12 Excitation energy=0.8558347115767619
+x_norm-y_norm=0.9953906983417639
+	Dipole Moment Components:
+	x:-0.004108018161694088, y:-0.0006904547802641533, z:0.011575716627215776
+Transition Dipole Square:0.00015134975645399786; Oscillator Strength:0.00008635358344134694
+      #1->#5,amplitude=0.6257283958147504
+      #4->#11,amplitude=-0.2975544774496557
+      #4->#10,amplitude=-0.13152016119385251
+      #1->#10,amplitude=0.03681853278192711
+      #2->#15,amplitude=-0.02239119234773001
+#13 Excitation energy=0.8767224001011374
+x_norm-y_norm=0.999882896331004
+	Dipole Moment Components:
+	x:-0.00007808716215356778, y:0.00015379211946073387, z:-0.0000332451935868623
+Transition Dipole Square:0.00000003085486379805018; Oscillator Strength:0.00000001803410016254683
+      #2->#8,amplitude=-0.4570468796099614
+      #3->#9,amplitude=-0.4567776528372245
+      #3->#8,amplitude=0.19047703124793205
+      #2->#9,amplitude=-0.19040934297090528
+      #2->#6,amplitude=0.06201492675252626
+#14 Excitation energy=0.9103639606216167
+x_norm-y_norm=0.996336238685496
+	Dipole Moment Components:
+	x:-0.11011554683985943, y:-0.017545409704985703, z:0.3067958565869444
+Transition Dipole Square:0.10655697267647404; Oscillator Strength:0.0646704184517362
+      #3->#8,amplitude=-0.4561154504721309
+      #2->#9,amplitude=0.45444786322052344
+      #2->#8,amplitude=-0.19028269886083432
+      #3->#9,amplitude=-0.18924337014114584
+      #4->#10,amplitude=0.05552513727866756
+#15 Excitation energy=0.9146292854869247
+x_norm-y_norm=0.9967826991616252
+	Dipole Moment Components:
+	x:0.3628419966962422, y:0.39108038288707053, z:0.15097969326169952
+Transition Dipole Square:0.3073930482230104; Oscillator Strength:0.18743378937323985
+      #1->#7,amplitude=-0.39770365997628127
+      #2->#9,amplitude=0.3722310638768066
+      #3->#8,amplitude=0.3703079770458024
+      #2->#10,amplitude=-0.19858119300335464
+      #1->#6,amplitude=-0.12999187561201703
+#16 Excitation energy=0.9146419179433977
+x_norm-y_norm=0.9967817303294664
+	Dipole Moment Components:
+	x:0.37590236657587855, y:-0.3919786079346858, z:0.11173267997402557
+Transition Dipole Square:0.3074340100499383; Oscillator Strength:0.18746135506207026
+      #1->#6,amplitude=-0.39782001178908727
+      #3->#9,amplitude=-0.3715597072166752
+      #2->#8,amplitude=0.37083463480527595
+      #3->#10,amplitude=-0.198578963411032
+      #1->#7,amplitude=0.1300626622389971
+#17 Excitation energy=0.941608313573246
+x_norm-y_norm=0.9945760136062377
+	Dipole Moment Components:
+	x:-0.07735132787929337, y:-0.14436886610854646, z:-0.03550549987972983
+Transition Dipole Square:0.028086237947866858; Oscillator Strength:0.017630823432471878
+      #1->#7,amplitude=-0.5526644731938828
+      #2->#9,amplitude=-0.2625028778283013
+      #3->#8,amplitude=-0.26227721855240366
+      #2->#10,amplitude=0.13921116544974807
+      #4->#12,amplitude=-0.1002172861903065
+#18 Excitation energy=0.9416191703145003
+x_norm-y_norm=0.994573993754467
+	Dipole Moment Components:
+	x:0.13773774673318143, y:-0.0848912456519863, z:0.044161482189963214
+Transition Dipole Square:0.028128446972694354; Oscillator Strength:0.01765752326710925
+      #1->#6,amplitude=0.552615914414186
+      #3->#9,amplitude=-0.26253605995811097
+      #2->#8,amplitude=0.26239542511804353
+      #3->#10,amplitude=-0.13927802786380875
+      #4->#13,amplitude=-0.09992037761120981
+#19 Excitation energy=0.9678773065128415
+x_norm-y_norm=0.9702242145846539
+	Dipole Moment Components:
+	x:-0.0628045804241108, y:-0.01001979871254361, z:0.17837211251986734
+Transition Dipole Square:0.03586142221328871; Oscillator Strength:0.023139637826345108
+      #4->#11,amplitude=0.5744762109228019
+      #1->#5,amplitude=0.2556096871291843
+      #2->#12,amplitude=-0.16703660869703627
+      #3->#13,amplitude=0.16697035845146477
+      #3->#6,amplitude=-0.12273367989074882
+#20 Excitation energy=0.9751993336013406
+x_norm-y_norm=0.999492201866959
+	Dipole Moment Components:
+	x:-0.02430352086935278, y:-0.1758756710167737, z:-0.018525296523435538
+Transition Dipole Square:0.0318660993935287; Oscillator Strength:0.020717199262028845
+      #4->#12,amplitude=-0.6907867872447297
+      #1->#7,amplitude=0.08401838878629612
+      #2->#10,amplitude=-0.07209468254069973
+      #4->#7,amplitude=-0.049850137315710454
+      #2->#11,amplitude=0.04232262393270096
+#21 Excitation energy=0.9752661815867996
+x_norm-y_norm=0.9994938489658433
+	Dipole Moment Components:
+	x:0.1667300838113178, y:-0.029011293559936594, z:0.05751135371603652
+Transition Dipole Square:0.03194813180800094; Oscillator Strength:0.020771955011480568
+      #4->#13,amplitude=-0.6908390563331326
+      #1->#6,amplitude=-0.0837909012317871
+      #3->#10,amplitude=0.07209611064983276
+      #4->#6,amplitude=0.049857832509836116
+      #3->#11,amplitude=-0.04236831469668466
+#22 Excitation energy=1.0100961424669377
+x_norm-y_norm=0.9916600302660631
+	Dipole Moment Components:
+	x:0.2961111616666745, y:-0.3018420988704125, z:0.08795253096431233
+Transition Dipole Square:0.18652612041711164; Oscillator Strength:0.12560620980176532
+      #3->#10,amplitude=0.6357907672591434
+      #3->#9,amplitude=-0.15849297838753143
+      #2->#8,amplitude=0.1584741592694629
+      #4->#14,amplitude=0.12425127174816163
+      #3->#11,amplitude=-0.11170127958519319
+#23 Excitation energy=1.0101141087128012
+x_norm-y_norm=0.9916595754760671
+	Dipole Moment Components:
+	x:-0.2794922517668489, y:-0.30814882826818746, z:-0.11617842559851939
+Transition Dipole Square:0.18656904573531125; Oscillator Strength:0.12563735023088116
+      #2->#10,amplitude=-0.6358021446639189
+      #2->#9,amplitude=-0.1584754159990268
+      #3->#8,amplitude=-0.15843743205785477
+      #4->#15,amplitude=0.12424899027862432
+      #2->#11,amplitude=0.11176187551131503
+#24 Excitation energy=1.0698846606602086
+x_norm-y_norm=0.9989267657052378
+	Dipole Moment Components:
+	x:0.18906862604499478, y:-0.19104479090701462, z:0.05635339436629106
+Transition Dipole Square:0.07542076254384975; Oscillator Strength:0.053794344627307235
+      #3->#11,amplitude=0.6877560462457724
+      #2->#11,amplitude=-0.09364269710114655
+      #3->#10,amplitude=0.09307841296305988
+      #4->#14,amplitude=0.05375526792199327
+      #3->#9,amplitude=-0.03929416496009409
+#25 Excitation energy=1.06989167564651
+x_norm-y_norm=0.9989261104607814
+	Dipole Moment Components:
+	x:0.17698624919523792, y:0.19685327706935607, z:0.07362209106300163
+Transition Dipole Square:0.07549555738963243; Oscillator Strength:0.05384804559964074
+      #2->#11,amplitude=0.6877480311314714
+      #3->#11,amplitude=0.09363407716857236
+      #2->#10,amplitude=0.09312921725587421
+      #4->#15,amplitude=-0.05377540917612769
+      #3->#8,amplitude=0.0392963826183202
+#26 Excitation energy=1.1931670967964092
+x_norm-y_norm=0.9999056047180721
+	Dipole Moment Components:
+	x:0.00031075325455045047, y:-0.0005760084083264709, z:0.000033376925257148216
+Transition Dipole Square:0.0000004294672908161127; Oscillator Strength:0.0000003416174937013869
+      #3->#12,amplitude=0.44170811071030125
+      #2->#13,amplitude=0.4344060293221784
+      #2->#12,amplitude=0.2367748320493996
+      #3->#13,amplitude=-0.23325499463731353
+      #3->#7,amplitude=0.04214316637025335
+#27 Excitation energy=1.1978246150205394
+x_norm-y_norm=0.9990250609076464
+	Dipole Moment Components:
+	x:0.040071097715235066, y:0.0017854992886662895, z:0.014200677623119244
+Transition Dipole Square:0.0018105401247695042; Oscillator Strength:0.0014458063519541804
+      #2->#12,amplitude=-0.37633655444935654
+      #3->#13,amplitude=-0.37534825449730397
+      #2->#13,amplitude=-0.30552996942420835
+      #3->#12,amplitude=0.30396433544186846
+      #4->#14,amplitude=0.13789936403682504
+#28 Excitation energy=1.1978347616995062
+x_norm-y_norm=0.999026343449955
+	Dipole Moment Components:
+	x:-0.002316817248031969, y:0.042835871162461854, z:0.0016300891315411568
+Transition Dipole Square:0.001842936690984578; Oscillator Strength:0.0014716890880485257
+      #2->#13,amplitude=0.3794218569321463
+      #3->#12,amplitude=-0.37230741648627785
+      #3->#13,amplitude=-0.3067041084885269
+      #2->#12,amplitude=-0.30290364352171234
+      #4->#15,amplitude=-0.13747841606905814
+#29 Excitation energy=1.2160174259900662
+x_norm-y_norm=0.9932182058159581
+	Dipole Moment Components:
+	x:-0.6627638065291099, y:0.43117945755272996, z:-0.21077417830757128
+Transition Dipole Square:0.6695973421016538; Oscillator Strength:0.5428280242614952
+      #4->#14,amplitude=0.6348990982237027
+      #1->#8,amplitude=-0.14673981607458833
+      #2->#13,amplitude=0.10379376847987125
+      #3->#12,amplitude=-0.10349771747889396
+      #4->#15,amplitude=0.09329260900845274
+
+
+The first excitation obtained by BSE is 0.24466582838447576
 
 ====================================================
               REST: Mission accomplished
 ====================================================
 The SCF energy        :     -56.5245527233 Ha
 Detailed time report:
-Overall   |:    3.786 s for the whole job
-SCF       |:    2.706 s for the scf procedure
+Overall   |:    0.398 s for the whole job
+SCF       |:    0.301 s for the scf procedure
