@@ -1,8 +1,11 @@
 [ctrl]
-    print_level =               1
+    print_level =               2
     num_threads =               2
     job_type =                  "energy"
-    xc       =                  "b2plyp"
+    # Case for DSD-PBEP86 paramters fitted with d3bj, other similar functionals includes DSD-BLYP and DSD-PBEB95 
+    xc       =                  "dsdpbep86"
+    # to activate d3bj, uncomment the following line   
+    # empirical_dispersion =      "d3bj"
     basis_path =                "cc-pVDZ"
     auxbas_path =               "def2-SV(P)-JKFIT" 
     charge =                    0.0
