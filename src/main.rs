@@ -330,7 +330,9 @@ fn main() -> anyhow::Result<()> {
     let mut npass: usize = 0;
     let mut nfail: usize = 0;
     
-    for entry in WalkDir::new(input_folder).into_iter().filter_map(|e| e.ok())
+    for entry in WalkDir::new(input_folder)
+        .sort_by(|a, b| a.file_name().cmp(b.file_name()))
+        .into_iter().filter_map(|e| e.ok())
         .filter(|e| e.file_type().is_dir() 
             && is_file_exist_in_dir(e.path(), &"reference.log").unwrap()
             //&& is_file_exist_in_dir(e.path(), &"ctrl.in").unwrap()
