@@ -1,0 +1,830 @@
+The REST_BASIS_DIR environment variable is not set.
+Use the default path (/opt/rest_workspace/rest/basis-set-pool/) as rest_basis_dir.
+The specified path for the basis sets: /opt/rest_workspace/rest/basis-set-pool/STO-3G
+The specified path for the basis sets: /opt/rest_workspace/rest/basis-set-pool/def2-SV(P)-JKFIT
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: xygjos
+Print level:                2
+The number of threads used for parallelism:      1
+The spheric-GTO basis set is taken from /opt/rest_workspace/rest/basis-set-pool/STO-3G
+The spheric-GTO auxiliary basis set is taken from /opt/rest_workspace/rest/basis-set-pool/def2-SV(P)-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: On
+Input molecular structure (in Angstrom): ----------
+C       -0.00004000      1.01733000      0.00000000
+C        1.01730000     -0.00006000      0.00000000
+C        0.00006000     -1.01730000      0.00000000
+C       -1.01733000      0.00004000      0.00000000
+H       -0.00003000      2.09421000      0.00000000
+H        2.09418000     -0.00006000      0.00000000
+H        0.00006000     -2.09418000      0.00000000
+H       -2.09421000      0.00003000      0.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+Turn on the basis pair symmetry for RI 3D-tensors
+The pruning method is nwchem
+The radial grid generation method is treutler
+min_num_angular_points: 110
+max_num_angular_points: 590
+hardness: 3
+Grid generation level: 3
+Even tempered basis generation: false
+The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+Initial guess is prepared by (sad).
+Initial guess mixing enabled: HOMO-LUMO rotated with theta = 15.0° (alpha), 15.0° (beta) to induce symmetry breaking
+=========================================================
+the scf functional for 'xygjos' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+the post-scf functional 'xygjos' is employed, which contains
+The density functional 'Slater exchange' belongs to the 'LDA' family and is defined in the reference(s):
+(0): P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+(1): F. Bloch.,  Z. Phys. 57, 545 (1929)
+The density functional 'Becke 88' belongs to the 'GGA' family and is defined in the reference(s):
+(0): A. D. Becke.,  Phys. Rev. A 38, 3098 (1988)
+The density functional 'Vosko, Wilk & Nusair (VWN5_RPA)' belongs to the 'LDA' family and is defined in the reference(s):
+(0): S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+The density functional 'Lee, Yang & Parr' belongs to the 'GGA' family and is defined in the reference(s):
+(0): C. Lee, W. Yang, and R. G. Parr.,  Phys. Rev. B 37, 785 (1988)
+(1): B. Miehlich, A. Savin, H. Stoll, and H. Preuss.,  Chem. Phys. Lett. 157, 200 (1989)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 16, natm: 8 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 140,final natm: 16
+numbasis: 24, num_auxbas: 372
+Molecule_name: 1
+job_type = "SinglePoint"
+print_level = 2
+basis_path = "/opt/rest_workspace/rest/basis-set-pool/STO-3G"
+basis_type = "spheric"
+auxbas_path = "/opt/rest_workspace/rest/basis-set-pool/def2-SV(P)-JKFIT"
+auxbas_type = "spheric"
+use_auxbas = true
+even_tempered_basis = false
+etb_start_atom_number = 37
+etb_beta = 2.0
+ri_k_only = false
+auxbasis_response = true
+numerical_force = false
+use_isdf = false
+isdf_k_only = false
+isdf_k_mu = 8
+isdf_new = false
+eri_type = "ri_v"
+use_ri_symm = true
+xc = "xygjos"
+xc_type = "Standard"
+post_xc = []
+post_correlation = []
+post_ai_correction = "none"
+charge = 0.0
+spin = 1.0
+use_int_nelec = true
+spin_channel = 2
+spin_polarization = true
+frozen_core_postscf = 0
+frequency_points = 20
+lambda_points = 20
+freq_grid_type = 0
+freq_cut_off = 10.0
+radial_precision = 0.000000000001
+min_num_angular_points = 110
+max_num_angular_points = 590
+grid_gen_level = 3
+hardness = 3
+pruning = "nwchem"
+rad_grid_method = "treutler"
+external_grids = "grids"
+mixer = "diis"
+mix_param = 0.2
+num_max_diis = 8
+start_diis_cycle = 1
+start_check_oscillation = 20
+max_scf_cycle = 100
+scf_acc_rho = 0.00000001
+scf_acc_eev = 0.000001
+scf_acc_etot = 0.00000001
+restart = false
+chkfile = "none"
+chkfile_type = "hdf5"
+guessfile = "none"
+guessfile_type = "none"
+external_init_guess = false
+initial_guess = "sad"
+noiter = false
+check_stab = false
+use_dm_only = false
+algorithm_jk = "default"
+algorithm_j = "default"
+algorithm_k = "default"
+fciqmc_dump = false
+outputs = []
+cube_orb_setting = [3.0, 80.0]
+cube_orb_indices = []
+cube_orb_type = "wavefunction"
+atom_sad = false
+occupation_type = "INTEGER"
+frac_tolerant = 0.001
+deep_pot = false
+bench_eps = false
+num_threads = 1
+batch_size = 64
+nforce_displacement = 0.0013
+ndipole_displacement = 0.0003
+force_state_occupation = []
+auxiliary_reference_states = []
+pt2_mpi_mode = 0
+abort_on_mem_exceed = true
+guess_mix = true
+guess_mix_theta_deg = [15.0, 15.0]
+spin_correction_scheme = "yamaguchi"
+yamaguchi_triplet_type = "ro"
+
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (1153.30 MB) is more than required (2.45 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      99.44417504 Hartree
+no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Detailed time report:
+prim ri   |:    0.013 s for for the pure three-center integrals
+inv_sqrt  |:    0.029 s for for the sqrt inverse of aux_ij
+ri_v      |:    0.001 s for for RI dot aux_v^{-1/2}
+aux_ij    |:    0.007 s for for the coulomb matrix of auxiliary basis
+all ri    |:    0.050 s for for the total evaluations of ri3fn
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.16900746 with the total number of basis functions:     24
+Grid size: 95704
+
+=======================
+Generating SAD for atom: C
+=======================
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 3, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 28,final natm: 2
+numbasis:  5, num_auxbas: 75
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (1070.82 MB) is more than required (0.02 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.75163760 with the total number of basis functions:      5
+Grid size: 13902
+Initial guess from SAP
+The evaluation of vmat costs             0.01 seconds
+The total energy:       -36.7620628048 Ha by the initial guess
+Energy:     -36.7620628048 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 8.70116e-17; eev 3.02141e-16 Ha; etot  0.00000e0 Ha
+Energy:     -36.7620628048 Ha after    2 iterations (in       0.00 seconds).
+SCF is converged after    2 iterations.
+the job costs             0.09 seconds
+SAD generation for C complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 1, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 7,final natm: 2
+numbasis:  1, num_auxbas: 18
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (1070.56 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       1.00000000 with the total number of basis functions:      1
+Grid size: 10024
+Initial guess from SAP
+The evaluation of vmat costs             0.01 seconds
+The total energy:        -0.4665818504 Ha by the initial guess
+Energy:      -0.4665818504 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.00 seconds).
+SCF Change: DM ( 0.00000e0, 0.00000e0); eev  0.00000e0 Ha; etot  0.00000e0 Ha
+Energy:      -0.4665818504 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    2 iterations (in       0.00 seconds).
+SCF is converged after    2 iterations.
+the job costs             0.05 seconds
+SAD generation for H complete.
+electron number in alpha-channel:  15.99998844
+electron number in beta-channel:   11.99999472
+Exc:     -19.05468491, Vxc:     -12.20696002
+Initial guess energy using single atom density (SAD):    -152.9664359136444318
+Detailed time report:
+ISDF      |:    0.000 s for ISDF initialization
+Overall   |:    1.143 s for SCF Preparation
+InitGuess |:    0.369 s for Prepare initial guess
+DFT Grids |:    0.695 s for Initialization of the tabulated Grids and AOs
+CInt      |:    0.080 s for Two, Three, and Four-center integrals
+electron number in alpha-channel:  13.99999229
+electron number in beta-channel:   13.99999284
+Exc:     -18.75342192, Vxc:     -12.01680134
+The total energy:      -152.6745016563 Ha by the initial guess
+electron number in alpha-channel:  13.99999238
+electron number in beta-channel:   13.99999257
+Exc:     -18.71346701, Vxc:     -11.99037199
+Spin  0: HOMO:      -0.094690, LUMO:      -0.007367, H-L Gap:       0.08732267
+Spin  1: HOMO:      -0.097134, LUMO:      -0.010006, H-L Gap:       0.08712831
+Energy:    -152.7180405218 Ha with <S^2> =  0.652 and <2S+1> =  1.899 after    1 iterations (in       0.20 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.19s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999249
+electron number in beta-channel:   13.99999256
+Exc:     -18.74199419, Vxc:     -12.00921364
+Spin  0: HOMO:      -0.097127, LUMO:       0.020841, H-L Gap:       0.11796769
+Spin  1: HOMO:      -0.098354, LUMO:       0.019659, H-L Gap:       0.11801274
+SCF Change: DM (9.69027e-3,9.93803e-3); eev 9.61378e-2 Ha; etot -2.56752e-2 Ha
+Energy:    -152.7437157441 Ha with <S^2> =  0.915 and <2S+1> =  2.159 after    2 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999249
+electron number in beta-channel:   13.99999252
+Exc:     -18.74560224, Vxc:     -12.01139099
+Spin  0: HOMO:      -0.145002, LUMO:       0.061852, H-L Gap:       0.20685388
+Spin  1: HOMO:      -0.143803, LUMO:       0.062481, H-L Gap:       0.20628386
+SCF Change: DM (1.31582e-2,1.30561e-2); eev 9.92341e-2 Ha; etot -1.52725e-2 Ha
+Energy:    -152.7589882789 Ha with <S^2> =  1.102 and <2S+1> =  2.325 after    3 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999253
+electron number in beta-channel:   13.99999251
+Exc:     -18.76484646, Vxc:     -12.02396585
+Spin  0: HOMO:      -0.120593, LUMO:       0.041860, H-L Gap:       0.16245336
+Spin  1: HOMO:      -0.120816, LUMO:       0.042056, H-L Gap:       0.16287205
+SCF Change: DM (3.05019e-3,2.90893e-3); eev 4.99942e-2 Ha; etot -7.37216e-3 Ha
+Energy:    -152.7663604388 Ha with <S^2> =  1.069 and <2S+1> =  2.297 after    4 iterations (in       0.18 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.18s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75837812, Vxc:     -12.01974368
+Spin  0: HOMO:      -0.122861, LUMO:       0.044999, H-L Gap:       0.16785954
+Spin  1: HOMO:      -0.122623, LUMO:       0.044757, H-L Gap:       0.16737991
+SCF Change: DM (9.83382e-4,9.55656e-4); eev 5.96712e-3 Ha; etot -5.82435e-4 Ha
+Energy:    -152.7669428734 Ha with <S^2> =  1.074 and <2S+1> =  2.301 after    5 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75893502, Vxc:     -12.02010904
+Spin  0: HOMO:      -0.122936, LUMO:       0.045069, H-L Gap:       0.16800527
+Spin  1: HOMO:      -0.122991, LUMO:       0.045116, H-L Gap:       0.16810710
+SCF Change: DM (6.41560e-5,8.11100e-5); eev 1.23434e-3 Ha; etot -6.90638e-5 Ha
+Energy:    -152.7670119372 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    6 iterations (in       0.15 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.15s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75899698, Vxc:     -12.02014971
+Spin  0: HOMO:      -0.123010, LUMO:       0.045119, H-L Gap:       0.16812918
+Spin  1: HOMO:      -0.123010, LUMO:       0.045119, H-L Gap:       0.16812895
+SCF Change: DM (1.68143e-5,1.37134e-5); eev 2.15825e-4 Ha; etot -6.52811e-7 Ha
+Energy:    -152.7670125900 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    7 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75900969, Vxc:     -12.02015809
+Spin  0: HOMO:      -0.122989, LUMO:       0.045095, H-L Gap:       0.16808349
+Spin  1: HOMO:      -0.122989, LUMO:       0.045095, H-L Gap:       0.16808338
+SCF Change: DM (3.24739e-6,3.58470e-6); eev 4.94893e-5 Ha; etot -1.78271e-8 Ha
+Energy:    -152.7670126078 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    8 iterations (in       0.13 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.13s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75900326, Vxc:     -12.02015388
+Spin  0: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807433
+Spin  1: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807433
+SCF Change: DM (9.81224e-7,1.07589e-6); eev 9.64652e-6 Ha; etot -2.06705e-9 Ha
+Energy:    -152.7670126099 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after    9 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.13s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75900180, Vxc:     -12.02015292
+Spin  0: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807406
+Spin  1: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807406
+SCF Change: DM (7.60832e-8,8.10546e-8); eev 5.26042e-7 Ha; etot -9.13474e-11 Ha
+Energy:    -152.7670126100 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   10 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75900171, Vxc:     -12.02015286
+Spin  0: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807406
+Spin  1: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807406
+SCF Change: DM (3.64845e-8,2.40413e-8); eev 4.64236e-7 Ha; etot -2.24532e-12 Ha
+Energy:    -152.7670126100 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   11 iterations (in       0.13 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.13s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75900172, Vxc:     -12.02015287
+Spin  0: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807405
+Spin  1: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807405
+SCF Change: DM (8.93508e-9,5.11568e-9); eev 1.88998e-7 Ha; etot -5.68434e-13 Ha
+Energy:    -152.7670126100 Ha with <S^2> =  1.074 and <2S+1> =  2.302 after   12 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+SCF is converged after   12 iterations.
+electron number in alpha-channel:  13.99999251
+electron number in beta-channel:   13.99999251
+Exc:     -18.75900170, Vxc:     -12.02015285
+Spin  0: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807405
+Spin  1: HOMO:      -0.122984, LUMO:       0.045090, H-L Gap:       0.16807405
+Eigenvalues in Unrestricted HF (or KS) calculation:
+Spin-up eigenvalues
+ 
+   State    Occupation        Eigenvalue
+       0       1.00000         -9.996001
+       1       1.00000         -9.995959
+       2       1.00000         -9.984490
+       3       1.00000         -9.984383
+       4       1.00000         -0.822634
+       5       1.00000         -0.605817
+       6       1.00000         -0.575393
+       7       1.00000         -0.480529
+       8       1.00000         -0.467450
+       9       1.00000         -0.336199
+      10       1.00000         -0.312041
+      11       1.00000         -0.309163
+      12       1.00000         -0.303584
+      13       1.00000         -0.122984
+      14       0.00000          0.045090
+      15       0.00000          0.214236
+      16       0.00000          0.388030
+ 
+Spin-down eigenvalues
+ 
+   State    Occupation        Eigenvalue
+       0       1.00000         -9.996001
+       1       1.00000         -9.995959
+       2       1.00000         -9.984490
+       3       1.00000         -9.984383
+       4       1.00000         -0.822634
+       5       1.00000         -0.605817
+       6       1.00000         -0.575393
+       7       1.00000         -0.480529
+       8       1.00000         -0.467450
+       9       1.00000         -0.336199
+      10       1.00000         -0.312041
+      11       1.00000         -0.309163
+      12       1.00000         -0.303584
+      13       1.00000         -0.122984
+      14       0.00000          0.045090
+      15       0.00000          0.214236
+      16       0.00000          0.388030
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+generate RI3MO only for occ_range:0..14, vir_range:14..24
+Finish the RI3MO generation
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.28785523,      -0.23594766,      -0.05190757
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.102967559250 Ha
+E[XYGJOS]=:    -152.17113365 Ha, Ex[HF]:     -22.23910427 Ha, Ec[PT2  ]:      -0.10296756 Ha
+Exc[KS-DFA]:      -5.31492452 Ha
+Detailed time report:
+xc_energy |:    0.129 s for for x_hf, xc_scf, xc_xdh
+c_r5dft   |:    0.002 s for for advanced correlations
+ao2mo     |:    0.003 s for for the generation of RI3MO
+==========================================
+Now apply the Yamaguchi spin correction.
+==========================================
+Applying ROHF method (with level shift) for triplet energy calculation.
+Computing the triplet energy...
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (1047.99 MB) is more than required (2.45 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      99.44417504 Hartree
+no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Detailed time report:
+all ri    |:    0.023 s for for the total evaluations of ri3fn
+prim ri   |:    0.010 s for for the pure three-center integrals
+inv_sqrt  |:    0.009 s for for the sqrt inverse of aux_ij
+aux_ij    |:    0.002 s for for the coulomb matrix of auxiliary basis
+ri_v      |:    0.001 s for for RI dot aux_v^{-1/2}
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.16900746 with the total number of basis functions:     24
+Grid size: 95704
+Detailed time report:
+CInt      |:    0.035 s for Two, Three, and Four-center integrals
+InitGuess |:    0.001 s for Prepare initial guess
+Overall   |:    0.667 s for SCF Preparation
+DFT Grids |:    0.631 s for Initialization of the tabulated Grids and AOs
+ISDF      |:    0.000 s for ISDF initialization
+electron number in alpha-channel:  14.99999304
+electron number in beta-channel:   12.99999199
+Exc:     -18.74395924, Vxc:     -12.00692639
+The total energy:      -152.7105840625 Ha by the initial guess
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.75033710, Vxc:     -12.01458672
+Spin  0: HOMO:       0.272308, LUMO:       0.698677, H-L Gap:       0.42636929
+Spin  1: HOMO:      -0.288013, LUMO:       0.147953, H-L Gap:       0.43596563
+Energy:    -152.6792141813 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    1 iterations (in       0.23 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.19s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.04s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73952835, Vxc:     -12.00762867
+Spin  0: HOMO:       0.223676, LUMO:       0.705117, H-L Gap:       0.48144079
+Spin  1: HOMO:      -0.297714, LUMO:       0.195153, H-L Gap:       0.49286698
+SCF Change: DM (4.01469e-3,4.01469e-3); eev 2.65841e-1 Ha; etot -6.93073e-2 Ha
+Energy:    -152.7485214692 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    2 iterations (in       0.19 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.18s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73918056, Vxc:     -12.00741427
+Spin  0: HOMO:       0.213304, LUMO:       0.704898, H-L Gap:       0.49159412
+Spin  1: HOMO:      -0.297328, LUMO:       0.205687, H-L Gap:       0.50301541
+SCF Change: DM (9.50397e-4,9.50396e-4); eev 5.86291e-2 Ha; etot -4.36669e-3 Ha
+Energy:    -152.7528881613 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    3 iterations (in       0.15 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.15s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73917516, Vxc:     -12.00741077
+Spin  0: HOMO:       0.210305, LUMO:       0.704992, H-L Gap:       0.49468752
+Spin  1: HOMO:      -0.297424, LUMO:       0.208684, H-L Gap:       0.50610790
+SCF Change: DM (3.14834e-4,3.14834e-4); eev 1.64187e-2 Ha; etot -3.24082e-4 Ha
+Energy:    -152.7532122430 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    4 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73918470, Vxc:     -12.00741698
+Spin  0: HOMO:       0.209742, LUMO:       0.704988, H-L Gap:       0.49524615
+Spin  1: HOMO:      -0.297422, LUMO:       0.209244, H-L Gap:       0.50666613
+SCF Change: DM (9.78676e-5,9.78673e-5); eev 2.93228e-3 Ha; etot -3.68990e-5 Ha
+Energy:    -152.7532491419 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    5 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73918907, Vxc:     -12.00741976
+Spin  0: HOMO:       0.209543, LUMO:       0.704990, H-L Gap:       0.49544719
+Spin  1: HOMO:      -0.297425, LUMO:       0.209442, H-L Gap:       0.50686700
+SCF Change: DM (5.48748e-5,5.48742e-5); eev 9.25066e-4 Ha; etot -7.22260e-6 Ha
+Energy:    -152.7532563645 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    6 iterations (in       0.13 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.13s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919105, Vxc:     -12.00742102
+Spin  0: HOMO:       0.209529, LUMO:       0.704990, H-L Gap:       0.49546077
+Spin  1: HOMO:      -0.297426, LUMO:       0.209455, H-L Gap:       0.50688049
+SCF Change: DM (2.66757e-5,2.66756e-5); eev 9.29716e-5 Ha; etot -1.88735e-6 Ha
+Energy:    -152.7532582519 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    7 iterations (in       0.13 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.13s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919190, Vxc:     -12.00742156
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546626
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688594
+SCF Change: DM (1.50214e-5,1.50210e-5); eev 6.71942e-5 Ha; etot -5.37916e-7 Ha
+Energy:    -152.7532587898 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    8 iterations (in       0.13 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.13s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919227, Vxc:     -12.00742179
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546620
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688586
+SCF Change: DM (8.00761e-6,8.00754e-6); eev 5.25474e-6 Ha; etot -1.56705e-7 Ha
+Energy:    -152.7532589465 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after    9 iterations (in       0.13 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.13s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919242, Vxc:     -12.00742189
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546628
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (4.38910e-6,4.38884e-6); eev 5.77510e-6 Ha; etot -4.59214e-8 Ha
+Energy:    -152.7532589924 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   10 iterations (in       0.13 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.13s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919249, Vxc:     -12.00742193
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546628
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (2.37568e-6,2.37563e-6); eev 3.70228e-7 Ha; etot -1.34824e-8 Ha
+Energy:    -152.7532590059 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   11 iterations (in       0.15 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.15s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919252, Vxc:     -12.00742195
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688594
+SCF Change: DM (1.29288e-6,1.29269e-6); eev 7.55234e-7 Ha; etot -3.96230e-9 Ha
+Energy:    -152.7532590099 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   12 iterations (in       0.17 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.17s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919253, Vxc:     -12.00742196
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (7.01546e-7,7.01501e-7); eev 2.15395e-7 Ha; etot -1.16458e-9 Ha
+Energy:    -152.7532590110 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   13 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919253, Vxc:     -12.00742196
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (3.81142e-7,3.80996e-7); eev 1.14688e-7 Ha; etot -3.42567e-10 Ha
+Energy:    -152.7532590114 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   14 iterations (in       0.15 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.15s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919254, Vxc:     -12.00742196
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (2.06874e-7,2.06824e-7); eev 3.49280e-8 Ha; etot -1.01466e-10 Ha
+Energy:    -152.7532590115 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   15 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919254, Vxc:     -12.00742196
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (1.12389e-7,1.12266e-7); eev 1.15029e-8 Ha; etot -2.90754e-11 Ha
+Energy:    -152.7532590115 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   16 iterations (in       0.16 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.15s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.01s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919254, Vxc:     -12.00742196
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (6.10189e-8,6.09612e-8); eev 3.26651e-9 Ha; etot -8.64020e-12 Ha
+Energy:    -152.7532590115 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   17 iterations (in       0.18 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.18s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919254, Vxc:     -12.00742196
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (3.32024e-8,3.30927e-8); eev 9.84854e-10 Ha; etot -2.67164e-12 Ha
+Energy:    -152.7532590115 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   18 iterations (in       0.15 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.15s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919254, Vxc:     -12.00742197
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (1.80568e-8,1.79921e-8); eev 2.72109e-10 Ha; etot -1.08002e-12 Ha
+Energy:    -152.7532590115 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   19 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919254, Vxc:     -12.00742197
+Spin  0: HOMO:       0.209524, LUMO:       0.704990, H-L Gap:       0.49546629
+Spin  1: HOMO:      -0.297426, LUMO:       0.209460, H-L Gap:       0.50688593
+SCF Change: DM (9.88132e-9,9.77994e-9); eev 8.56870e-11 Ha; etot 4.26326e-13 Ha
+Energy:    -152.7532590115 Ha with <S^2> =  2.000 and <2S+1> =  3.000 after   20 iterations (in       0.14 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.14s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+SCF is converged after   20 iterations.
+electron number in alpha-channel:  14.99999303
+electron number in beta-channel:   12.99999199
+Exc:     -18.73919254, Vxc:     -12.00742197
+Spin  0: HOMO:      -0.040476, LUMO:       0.204990, H-L Gap:       0.24546629
+Spin  1: HOMO:      -0.297426, LUMO:      -0.040540, H-L Gap:       0.25688593
+Eigenvalues in Rrestricted Openshell HF (or KS) calculation:
+   State    Occupation        Eigenvalue
+       0       2.00000         -9.991679
+       1       2.00000         -9.991026
+       2       2.00000         -9.991025
+       3       2.00000         -9.990223
+       4       2.00000         -0.822010
+       5       2.00000         -0.590821
+       6       2.00000         -0.590777
+       7       2.00000         -0.476203
+       8       2.00000         -0.472827
+       9       2.00000         -0.336121
+      10       2.00000         -0.310621
+      11       2.00000         -0.310566
+      12       2.00000         -0.297426
+      13       1.00000         -0.040540
+      14       1.00000         -0.040476
+      15       0.00000          0.204990
+      16       0.00000          0.391656
+      17       0.00000          0.403863
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+generate RI3MO only for occ_range:0..15, vir_range:13..24
+Finish the RI3MO generation
+WARNING: The RO-PT2 method has been implemented.  
+        The contribution parameter of singly excited states has been set to match 'para_mp2_ss': 0.  
+        As a result, the contribution of singly excited states is      -0.00064598 * 0 =      -0.00000000 Ha, with alpha:      -0.00032364 * 0 =      -0.00000000 Ha, beta:      -0.00032234 * 0 =      -0.00000000 Ha.  
+        However, this contribution is not yet included in the final total energy.
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.34345611,      -0.28021659,      -0.06259354
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.122286519141 Ha
+E[XYGJOS]=:    -152.15316851 Ha, Ex[HF]:     -22.16878113 Ha, Ec[PT2  ]:      -0.12228652 Ha
+Exc[KS-DFA]:      -5.31188706 Ha
+Detailed time report:
+c_r5dft   |:    0.004 s for for advanced correlations
+ao2mo     |:    0.003 s for for the generation of RI3MO
+xc_energy |:    0.133 s for for x_hf, xc_scf, xc_xdh
+----------------------------------------------------------------------
+Report for Yamaguchi spin correction: 
+Open-shell singlet: scf_energy =    -152.7670126100 Ha, tot_energy =    -152.1711336477 Ha, <s^2> =  1.074.
+Triplet: scf_energy =    -152.7532590115 Ha, tot_energy =    -152.1531685146 Ha, <s^2> =  2.000.
+Corrected: scf_energy =    -152.7829737406 Ha, tot_energy =    -152.1919822886 Ha.
+----------------------------------------------------------------------
+Mulliken population analysis:
+  0-C  :  -0.081369
+  1-C  :  -0.081374
+  2-C  :  -0.081374
+  3-C  :  -0.081369
+  4-H  :   0.081372
+  5-H  :   0.081372
+  6-H  :   0.081372
+  7-H  :   0.081372
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :    -152.7829737406 Ha
+The (R)-xDH energy    :    -152.1919822886 Ha
+Detailed time report:
+SCF       |:    6.789 s for the scf procedure
+Overall   |:    7.755 s for the whole job
+PT2       |:    0.281 s for the PT2 evaluation
+spin_correction|:    4.292 s for the whole job
