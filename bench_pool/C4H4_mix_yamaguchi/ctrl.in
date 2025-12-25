@@ -1,8 +1,7 @@
 [ctrl]
      print_level =          2
      xc =                   "xygjos"
-     basis_path =           "./STO-3G"
-     auxbas_path =          "./def2-SV(P)-JKFIT"
+     basis_path =           "STO-3G"
      charge =               0.0
      spin =                 1.0
      spin_polarization =    true
