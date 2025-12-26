@@ -1,0 +1,24 @@
+[ctrl]
+     print_level =          2
+     xc =                   "xygjos"
+     basis_path =           "STO-3G"
+     charge =               0.0
+     spin =                 1.0
+     spin_polarization =    true
+     num_threads =          1
+     guess_mix = true
+     spin_correction_scheme = "Yamaguchi"
+     yamaguchi_triplet_type = "RO"
+ [geom]
+     name = "1"
+     unit = "Angstrom"
+     position = '''
+ C                    -0.00004   1.01733   0.0
+ C                     1.0173   -0.00006   0.0
+ C                     0.00006  -1.0173    0.0
+ C                    -1.01733   0.00004   0.0
+ H                    -0.00003   2.09421   0.0
+ H                     2.09418  -0.00006   0.0
+ H                     0.00006  -2.09418   0.0
+ H                    -2.09421   0.00003   0.0
+'''
