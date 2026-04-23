@@ -10,6 +10,9 @@
      spin_polarization =    false
      num_threads =          16
 
+[ctrl.ri_pt2]
+fp_mode = "FP64"
+
 [geom]
     name = "NH3"
     unit = "Angstrom"
