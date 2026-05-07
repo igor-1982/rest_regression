@@ -183,6 +183,31 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("hoco_luco_gap".to_string(),vec![gap_energy]);
     }
 
+    // TDDFT excitation energies: extract first 3 excitation energies
+    // Format from REST:
+    // State       Energy (Ha)   Energy (eV)  Wavelength (nm)         Osc. Strength
+    // --------------------------------------------------------------------------------
+    //    1        0.11186693        3.0441
+    //    2        0.12576545        3.4223
+    //    3        0.13821993        3.7612
+    let re_tddft = Regex::new(
+        r"(?m)^\s*(?P<idx>\d+)\s+(?P<energy>[\+-]?\d+\.\d+)\s+(?P<ev>[\+-]?\d+\.\d+)\s+(?P<nm>[\+-]?\d+\.\d+)\s+(?P<osc>[\+-]?\d+\.\d+)"
+    ).unwrap();
+
+    let mut tddft_energies: Vec<f64> = vec![];
+    let mut tddft_osc: Vec<f64> = vec![];
+    for cap in re_tddft.captures_iter(&buf) {
+        let idx = cap["idx"].parse::<usize>().unwrap_or(99);
+        if idx <= 6 {
+            tddft_energies.push(cap["energy"].parse::<f64>().unwrap());
+            tddft_osc.push(cap["osc"].parse::<f64>().unwrap());
+        }
+    }
+    if !tddft_energies.is_empty() {
+        result.insert("tddft_energies".to_string(), tddft_energies);
+        result.insert("tddft_osc".to_string(), tddft_osc);
+    }
+
     Ok(result)
 }
 
@@ -234,6 +259,42 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                     println!("WARNNING: {:20}:{:20.10} != {:20.10}", key, out_value[0], ref_value[0]);
                 } else {
                     println!("Pass    : {:20}:{:20.10}  = {:20.10}", key, out_value[0], ref_value[0]);
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key.eq("tddft_energies") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let n_states = ref_value.len().min(out_value.len());
+                for i in 0..n_states {
+                    let dev = (ref_value[i] - out_value[i]).abs();
+                    if dev > 5.0e-5 {
+                        is_same = false;
+                        println!("WARNNING: TDDFT State {}: {:20.10} != {:20.10} (dev={:.2e})",
+                            i+1, out_value[i], ref_value[i], dev);
+                    } else {
+                        println!("Pass    : TDDFT State {}: {:20.10}  = {:20.10} (dev={:.2e})",
+                            i+1, out_value[i], ref_value[i], dev);
+                    }
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key.eq("tddft_osc") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let n_states = ref_value.len().min(out_value.len());
+                for i in 0..n_states {
+                    let dev = (ref_value[i] - out_value[i]).abs();
+                    if dev > 1.0e-4 {
+                        is_same = false;
+                        println!("WARNNING: TDDFT Osc {}: {:20.10} != {:20.10} (dev={:.2e})",
+                            i+1, out_value[i], ref_value[i], dev);
+                    } else {
+                        println!("Pass    : TDDFT Osc {}: {:20.10}  = {:20.10} (dev={:.2e})",
+                            i+1, out_value[i], ref_value[i], dev);
+                    }
                 }
             } else {
                 is_same = false;
