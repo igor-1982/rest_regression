@@ -1,0 +1,24 @@
+[ctrl]
+    print_level =          1
+    xc =                   "cam-b3lyp"
+    basis_path =           "def2-svp"
+    auxbas_path =          "def2-universal-jkfit"
+    eri_type =             "ri-v"
+    charge =               1.0
+    algorithm_jk =         "ri-incore"
+    spin =                 2
+    spin_polarization =    true
+    initial_guess =        "sad"
+    num_threads =          4
+    max_scf_cycle =        50
+
+[geom]
+    name = "NH3"
+    unit = "Angstrom"
+    position = """
+        N  0.0  0.0  0.0
+        H  1.0  0.0  0.0
+        H  0.0  1.0  0.0
+        H  0.0  0.0  1.0
+    """
+

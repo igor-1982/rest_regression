@@ -1,0 +1,25 @@
+[ctrl]
+    print_level =          1
+    xc =                   "wb97x-d3bj"
+    xc_parser =            "parse_xc"  # This case must use parse_xc
+    basis_path =           "def2-svp"
+    auxbas_path =          "def2-universal-jkfit"
+    eri_type =             "ri-v"
+    charge =               0.0
+    algorithm_jk =         "ri-incore"
+    spin =                 1
+    spin_polarization =    false
+    initial_guess =        "sad"
+    num_threads =          4
+    max_scf_cycle =        50
+
+[geom]
+    name = "NH3"
+    unit = "Angstrom"
+    position = """
+        N  0.0  0.0  0.0
+        H  1.0  0.0  0.0
+        H  0.0  1.0  0.0
+        H  0.0  0.0  1.0
+    """
+
