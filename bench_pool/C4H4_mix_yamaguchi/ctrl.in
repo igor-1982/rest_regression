@@ -5,7 +5,7 @@
      charge =               0.0
      spin =                 1.0
      spin_polarization =    true
-     num_threads =          1
+     num_threads =          4
      guess_mix = true
      spin_correction_scheme = "Yamaguchi"
      yamaguchi_triplet_type = "RO"
