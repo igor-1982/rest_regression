@@ -1,0 +1,26 @@
+[ctrl]
+    print_level =          2
+    num_threads =          16
+    job_type =             "force"
+    xc =                   "cam-b3lyp"
+    basis_path =           "def2-tzvp"
+    auxbas_path =          "def2-universal-jkfit"
+    eri_type =             "ri-v"
+    charge =               0.0
+    spin =                 1.0
+    spin_polarization =    false
+    auxbasis_response =    true
+
+[ctrl.j2c_decomp]
+policy = "cholesky"
+
+[geom]
+    name = "NH3"
+    unit = "Angstrom"
+    position = """
+        N   0.0         0.0         0.0       
+        H   1.0         0.0         0.0       
+        H  -0.34202014  0.0         0.93969262
+        H  -0.34202014  0.81379768 -0.46984631
+    """
+
