@@ -1,7 +1,6 @@
 [ctrl]
      xc =                        "b3lyp"
-     basis_path =                "6-31G*"
-     auxbas_path =               "def2-SV(P)-JKFIT"
+     basis_path =                "6-31Gs"
      spin =                      1.0
      charge =                    0.0
      pbc_eigenval =              "reference.eigenval"
