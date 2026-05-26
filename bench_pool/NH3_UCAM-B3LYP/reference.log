@@ -1,0 +1,139 @@
+Add the alternative default path (/Users/ajz34/rest_pack/rest/basis-set-pool/) to rest_basis_dir.
+The specified path for the basis sets is: def2-svp (lowercase), try to find it from the rest_basis_dir
+Found: /Users/ajz34/rest_pack/rest/basis-set-pool/def2-svp
+The specified path for the auxiliary basis sets is: def2-universal-jkfit (lowercase), try to find it from the rest_basis_dir
+Found: /Users/ajz34/rest_pack/rest/basis-set-pool/def2-universal-jkfit
+WARNING: No solvent epsilon provided, use epsilon of vacuum.
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: cam-b3lyp
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /Users/ajz34/rest_pack/rest/basis-set-pool/def2-svp
+The spheric-GTO auxiliary basis set is taken from /Users/ajz34/rest_pack/rest/basis-set-pool/def2-universal-jkfit
+Charge:   1; Spin:   2
+Spin polarization: On
+Input molecular structure (in Angstrom): ----------
+N        0.00000000      0.00000000      0.00000000
+H        1.00000000      0.00000000      0.00000000
+H        0.00000000      1.00000000      0.00000000
+H        0.00000000      0.00000000      1.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      50
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+=========================================================
+Using xc_parser parse_xc
+Parsing xc: cam-b3lyp
+SCF components:
+  type: Libxc, factor: 1, func: CAM_B3LYP, id: 433, func_full_name: HYB_GGA_XC_CAM_B3LYP, 
+    reference: ["T. Yanai, D. P. Tew, and N. C. Handy.,  Chem. Phys. Lett. 393, 51 (2004)"]
+  Total hybrid: 0.65
+
+==== DFA Summary (legacy) ====
+Spin channel: 2
+SCF DFA components: [433]
+SCF DFA parameters: [1.0]
+SCF DFA hybrid coeff:       0.19000000
+Range-Separated Hybrid parameters:
+  omega:       0.33000000
+  alpha (LR-HF coeff):       0.65000000
+Post-SCF DFA: None
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 15, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 58,final natm: 8
+numbasis: 29, num_auxbas: 131
+Molecule_name: NH3
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      12.23527575 Hartree
+No ghost effective potential
+No ghost point charges
+Building long-range 3c RI integrals for RSH (omega = 0.3300)
+  LR 3c integrals built.
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.02144044 with the total number of basis functions:     29
+Grid size: 44118
+
+=======================
+Generating SAD for atom: N
+=======================
+Using xc_parser parse_xc
+Parsing xc: hf
+SCF components:
+  type: HF, factor: 1, func: HF, 
+    reference: Not available yet
+  Total hybrid: 1
+
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       1.00000000
+Post-SCF DFA: None
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (3203.66 MB) is more than required (0.09 MB).
+Using standard incore RI-J/K algorithms.
+SAD generation for N complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+Using xc_parser parse_xc
+Parsing xc: hf
+SCF components:
+  type: HF, factor: 1, func: HF, 
+    reference: Not available yet
+  Total hybrid: 1
+
+==== DFA Summary (legacy) ====
+Spin channel: 2
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       1.00000000
+Post-SCF DFA: None
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (3203.66 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):     -56.8635602189981100
+The total energy:       -55.9709460855 Ha by the initial guess
+Energy:     -56.0108577336 Ha with <S^2> =  0.752 and <2S+1> =  2.002 after    1 iterations (in       0.01 seconds).
+SCF Change: DM (1.25446e-3,1.96966e-3); eev 1.98850e-1 Ha; etot -6.60469e-3 Ha
+Energy:     -56.0174624226 Ha with <S^2> =  0.751 and <2S+1> =  2.001 after    2 iterations (in       0.01 seconds).
+SCF Change: DM (1.20689e-3,9.06553e-4); eev 3.67934e-2 Ha; etot -3.69721e-3 Ha
+Energy:     -56.0211596373 Ha with <S^2> =  0.752 and <2S+1> =  2.002 after    3 iterations (in       0.01 seconds).
+SCF Change: DM (2.59260e-4,2.94177e-4); eev 1.41096e-2 Ha; etot -7.49716e-4 Ha
+Energy:     -56.0219093528 Ha with <S^2> =  0.752 and <2S+1> =  2.002 after    4 iterations (in       0.01 seconds).
+SCF Change: DM (4.06108e-5,3.57602e-5); eev 1.38195e-3 Ha; etot -4.44214e-5 Ha
+Energy:     -56.0219537742 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    5 iterations (in       0.01 seconds).
+SCF Change: DM (3.05186e-6,1.94962e-6); eev 1.04492e-4 Ha; etot -7.84913e-7 Ha
+Energy:     -56.0219545591 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    6 iterations (in       0.01 seconds).
+SCF Change: DM (1.20008e-7,1.57064e-7); eev 2.56897e-5 Ha; etot -4.05232e-9 Ha
+Energy:     -56.0219545631 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    7 iterations (in       0.01 seconds).
+SCF Change: DM (5.25863e-8,2.15189e-8); eev 3.86348e-6 Ha; etot -2.18705e-11 Ha
+Energy:     -56.0219545632 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    8 iterations (in       0.01 seconds).
+SCF Change: DM (7.88173e-9,3.33687e-9); eev 1.81077e-7 Ha; etot -1.18661e-12 Ha
+Energy:     -56.0219545632 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    9 iterations (in       0.01 seconds).
+SCF is converged after    9 iterations.
+Mulliken population analysis:
+  0-N  :   0.373037
+  1-H  :   0.208988
+  2-H  :   0.208988
+  3-H  :   0.208988
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -56.0219545632 Ha
+Detailed time report:
+Overall   |:    0.169 s for the whole job
+SCF       |:    0.169 s for the scf procedure

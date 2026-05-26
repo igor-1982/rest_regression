@@ -1,0 +1,34 @@
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     xc =                        "svwn"
+     basis_path =                "def2-tzvp"
+     auxbas_path =               "def2-tzvp-rifit"
+     eri_type =                  "ri-v"
+     use_ri_symm =               true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+     mixer =                     "diis"
+     max_scf_cycle =             100
+     scf_acc_rho =               1.0e-8
+     initial_guess =             "sad"
+
+[tddft]
+     tddft_method =              "tda"
+     tddft_spin =                "singlet"
+     nroots =                    3
+     davidson_tol =              1.0e-6
+     davidson_max_iter =         50
+
+[quasiparticle_methods]
+     bse_cutoff_energy =         1000000.0
+     bse_davidson_solver =       true
+
+[geom]
+     name = "H2"
+     unit = "angstrom"
+     position = '''
+        H  0.0  0.0  0.0
+        H  0.0  0.0  0.74
+     '''

@@ -1,9 +1,11 @@
 [ctrl]
     print_level =               2
-    num_threads =               2
+    num_threads =               4
     job_type =                  "energy"
     # Case for DSD-PBEP86 paramters fitted with d3bj, other similar functionals includes DSD-BLYP and DSD-PBEB95 
+    # Note: of xc parser: this test only applies to legacy parser
     xc       =                  "dsdpbep86"
+    xc_parser =                 "legacy"
     # to activate d3bj, uncomment the following line   
     # empirical_dispersion =      "d3bj"
     basis_path =                "cc-pVDZ"
