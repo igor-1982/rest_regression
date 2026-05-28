@@ -3,8 +3,8 @@
      print_level =               2
      xc =                        "b3lyp" 
      frozen_core_postscf =       0
-     basis_path =                "/home/msy_b/rest_workspace/basis/def2-TZVP" 
-     auxbas_path =               "/home/msy_b/rest_workspace/basis/def2-SV(P)-JKFIT"
+     basis_path =                "def2-TZVP" 
+     auxbas_path =               "def2-SV(P)-JKFIT"
      even_tempered_basis =       false
      etb_start_atom_number =     1
      etb_beta =                  1.0
