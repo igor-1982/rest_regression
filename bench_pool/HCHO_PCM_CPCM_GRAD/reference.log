@@ -1,0 +1,712 @@
+The REST_BASIS_DIR environment variable is not set.
+Add the alternative default path (/home/msy_b/rest_workspace/rest/basis-set-pool/) to rest_basis_dir.
+The specified path for the basis sets: /home/msy_b/rest_workspace/basis/def2-TZVP
+The specified path for the basis sets: /home/msy_b/rest_workspace/basis/def2-SV(P)-JKFIT
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Force calculation
+Cube output: wavefunction
+The exchange-correlation method: b3lyp
+Print level:                2
+The number of threads used for parallelism:      8
+The spheric-GTO basis set is taken from /home/msy_b/rest_workspace/basis/def2-TZVP
+The spheric-GTO auxiliary basis set is taken from /home/msy_b/rest_workspace/basis/def2-SV(P)-JKFIT
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+C        0.00000000      0.00000000     -0.54200000
+O        0.00000000      0.00000000      0.67700000
+H        0.00000000      0.93500000     -1.08200000
+H        0.00000000     -0.93500000     -1.08200000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-8 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      250
+It is a finite cluster calculation
+The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
+It will be updated after the SCF procedure 
+(none)
+Turn on the basis pair symmetry for RI 3D-tensors
+The pruning method is nwchem
+The radial grid generation method is treutler
+min_num_angular_points: 110
+max_num_angular_points: 590
+hardness: 3
+Grid generation level: 3
+Even tempered basis generation: false
+The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+Initial guess is prepared by (sad).
+Current solvent model is CPCM.
+=========================================================
+the functional of 'b3lyp' contains
+The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
+(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 30, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 92,final natm: 8
+numbasis: 74, num_auxbas: 188
+Molecule_name: hcho
+job_type = "Force"
+print_level = 2
+basis_path = "/home/msy_b/rest_workspace/basis/def2-TZVP"
+basis_type = "spheric"
+auxbas_path = "/home/msy_b/rest_workspace/basis/def2-SV(P)-JKFIT"
+auxbas_type = "spheric"
+use_auxbas = true
+even_tempered_basis = false
+etb_start_atom_number = 1
+etb_beta = 1.0
+ri_k_only = false
+auxbasis_response = true
+numerical_force = false
+use_isdf = false
+isdf_k_only = false
+isdf_k_mu = 8
+isdf_new = false
+eri_type = "ri_v"
+use_ri_symm = true
+xc = "b3lyp"
+xc_type = "Standard"
+post_xc = []
+post_correlation = []
+post_ai_correction = "none"
+charge = 0.0
+spin = 1.0
+use_int_nelec = true
+spin_channel = 1
+spin_polarization = false
+frozen_core_postscf = 0
+frequency_points = 20
+lambda_points = 20
+freq_grid_type = 0
+freq_cut_off = 10.0
+radial_precision = 0.000000000001
+min_num_angular_points = 110
+max_num_angular_points = 590
+grid_gen_level = 3
+hardness = 3
+pruning = "nwchem"
+rad_grid_method = "treutler"
+external_grids = "grids"
+mixer = "diis"
+mix_param = 0.2
+num_max_diis = 8
+start_diis_cycle = 1
+start_check_oscillation = 20
+max_scf_cycle = 250
+scf_acc_rho = 0.00000001
+scf_acc_eev = 0.00000001
+scf_acc_etot = 0.00000001
+restart = false
+solvent_enabled = true
+solvent_ri = false
+solv_epsilon = 78.3553
+solvent_model = "CPCM"
+solv_chunk = 64
+chkfile = "none"
+chkfile_type = "hdf5"
+guessfile = "none"
+guessfile_type = "none"
+external_init_guess = false
+initial_guess = "sad"
+noiter = false
+check_stab = false
+use_dm_only = false
+algorithm_jk = "default"
+algorithm_j = "default"
+algorithm_k = "default"
+fciqmc_dump = false
+outputs = []
+cube_orb_setting = [3.0, 80.0]
+cube_orb_indices = []
+cube_orb_type = "wavefunction"
+atom_sad = false
+occupation_type = "INTEGER"
+frac_tolerant = 0.001
+deep_pot = false
+bench_eps = false
+num_threads = 8
+batch_size = 64
+nforce_displacement = 0.0013
+ndipole_displacement = 0.0003
+force_state_occupation = []
+auxiliary_reference_states = []
+pt2_mpi_mode = 0
+abort_on_mem_exceed = true
+guess_mix = false
+guess_mix_theta_deg = [15.0, 15.0]
+start_mix_cycle = 0
+
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (13841.48 MB) is more than required (11.78 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      31.25163530 Hartree
+no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Detailed time report:
+inv_sqrt  |:    0.063 s for for the sqrt inverse of aux_ij
+ri_v      |:    0.007 s for for RI dot aux_v^{-1/2}
+prim ri   |:    0.027 s for for the pure three-center integrals
+all ri    |:    0.100 s for for the total evaluations of ri3fn
+aux_ij    |:    0.002 s for for the coulomb matrix of auxiliary basis
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00152653 with the total number of basis functions:     74
+Grid size: 48212
+
+=======================
+Generating SAD for atom: C
+=======================
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 11, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 36,final natm: 2
+numbasis: 31, num_auxbas: 75
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (13400.05 MB) is more than required (0.82 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.02859941 with the total number of basis functions:     31
+Grid size: 13902
+Initial guess from SAP
+The evaluation of vmat costs             0.03 seconds
+The total energy:       -37.3118631552 Ha by the initial guess
+Energy:     -37.3534544776 Ha after    1 iterations (in       0.03 seconds).
+SCF Change: DM 2.19957e-3; eev 1.98117e-1 Ha; etot 1.39255e-2 Ha
+Energy:     -37.3395289986 Ha after    2 iterations (in       0.04 seconds).
+SCF Change: DM 2.75898e-4; eev 8.27411e-2 Ha; etot 4.91166e-3 Ha
+Energy:     -37.3346173426 Ha after    3 iterations (in       0.03 seconds).
+SCF Change: DM 7.48385e-4; eev 5.26451e-2 Ha; etot -5.83989e-3 Ha
+Energy:     -37.3404572308 Ha after    4 iterations (in       0.04 seconds).
+SCF Change: DM 1.50994e-4; eev 3.25359e-2 Ha; etot -1.32711e-3 Ha
+Energy:     -37.3417843366 Ha after    5 iterations (in       0.04 seconds).
+SCF Change: DM 2.39738e-4; eev 1.55190e-2 Ha; etot 1.96241e-3 Ha
+Energy:     -37.3398219292 Ha after    6 iterations (in       0.04 seconds).
+SCF Change: DM 6.22195e-5; eev 1.20159e-2 Ha; etot 2.64520e-4 Ha
+Energy:     -37.3395574095 Ha after    7 iterations (in       0.04 seconds).
+SCF Change: DM 5.69283e-5; eev 2.75140e-3 Ha; etot -5.52643e-4 Ha
+Energy:     -37.3401100521 Ha after    8 iterations (in       0.04 seconds).
+SCF Change: DM 1.64934e-5; eev 2.56091e-3 Ha; etot -6.07626e-7 Ha
+Energy:     -37.3401106598 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 1.87824e-6; eev 2.26777e-5 Ha; etot -1.25578e-7 Ha
+Energy:     -37.3401107853 Ha after   10 iterations (in       0.01 seconds).
+SCF Change: DM 3.76649e-7; eev 1.74992e-5 Ha; etot -4.21394e-10 Ha
+Energy:     -37.3401107858 Ha after   11 iterations (in       0.02 seconds).
+SCF Change: DM 1.30812e-8; eev 2.79743e-7 Ha; etot -1.88578e-11 Ha
+Energy:     -37.3401107858 Ha after   12 iterations (in       0.02 seconds).
+SCF Change: DM 2.33061e-9; eev 2.95397e-8 Ha; etot -2.84217e-14 Ha
+Energy:     -37.3401107858 Ha after   13 iterations (in       0.02 seconds).
+SCF Change: DM 5.18787e-12; eev 3.12525e-10 Ha; etot 5.68434e-14 Ha
+Energy:     -37.3401107858 Ha after   14 iterations (in       0.01 seconds).
+SCF is converged after   14 iterations.
+the job costs             0.60 seconds
+SAD generation for C complete.
+
+=======================
+Generating SAD for atom: O
+=======================
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 11, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 36,final natm: 2
+numbasis: 31, num_auxbas: 77
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (13403.09 MB) is more than required (0.85 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03024690 with the total number of basis functions:     31
+Grid size: 14262
+Initial guess from SAP
+The evaluation of vmat costs             0.03 seconds
+The total energy:       -74.2820198992 Ha by the initial guess
+Energy:     -74.2872999342 Ha after    1 iterations (in       0.02 seconds).
+SCF Change: DM 9.02252e-4; eev 6.31761e-2 Ha; etot -8.74496e-3 Ha
+Energy:     -74.2960448967 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 2.08873e-4; eev 6.44051e-2 Ha; etot -1.92038e-3 Ha
+Energy:     -74.2979652749 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 3.22454e-4; eev 2.58484e-2 Ha; etot 5.04814e-3 Ha
+Energy:     -74.2929171387 Ha after    4 iterations (in       0.02 seconds).
+SCF Change: DM 1.07550e-4; eev 2.73102e-2 Ha; etot 5.28350e-4 Ha
+Energy:     -74.2923887888 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.18276e-4; eev 7.85281e-3 Ha; etot -2.09252e-3 Ha
+Energy:     -74.2944813093 Ha after    6 iterations (in       0.02 seconds).
+SCF Change: DM 5.25462e-5; eev 1.14238e-2 Ha; etot -4.01433e-5 Ha
+Energy:     -74.2945214526 Ha after    7 iterations (in       0.02 seconds).
+SCF Change: DM 2.08690e-5; eev 4.54780e-4 Ha; etot 5.63383e-4 Ha
+Energy:     -74.2939580697 Ha after    8 iterations (in       0.02 seconds).
+SCF Change: DM 6.19281e-6; eev 1.33109e-3 Ha; etot -1.07044e-7 Ha
+Energy:     -74.2939581768 Ha after    9 iterations (in       0.02 seconds).
+SCF Change: DM 4.83224e-7; eev 3.12969e-5 Ha; etot -3.14562e-8 Ha
+Energy:     -74.2939582082 Ha after   10 iterations (in       0.03 seconds).
+SCF Change: DM 9.21400e-8; eev 1.80770e-6 Ha; etot -2.43432e-11 Ha
+Energy:     -74.2939582083 Ha after   11 iterations (in       0.03 seconds).
+SCF Change: DM 4.50030e-9; eev 4.91248e-7 Ha; etot -7.81597e-13 Ha
+Energy:     -74.2939582083 Ha after   12 iterations (in       0.05 seconds).
+SCF Change: DM 5.73443e-10; eev 2.73511e-8 Ha; etot -5.68434e-14 Ha
+Energy:     -74.2939582083 Ha after   13 iterations (in       0.03 seconds).
+SCF Change: DM 1.34557e-11; eev 6.17530e-10 Ha; etot -1.13687e-13 Ha
+Energy:     -74.2939582083 Ha after   14 iterations (in       0.04 seconds).
+SCF is converged after   14 iterations.
+the job costs             0.52 seconds
+SAD generation for O complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+the functional of 'hf' contains
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 4, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 10,final natm: 2
+numbasis:  6, num_auxbas: 18
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for RI integrals (13400.77 MB) is more than required (0.01 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.10940728 with the total number of basis functions:      6
+Grid size: 10024
+Initial guess from SAP
+The evaluation of vmat costs             0.02 seconds
+The total energy:        -0.4746750264 Ha by the initial guess
+Energy:      -0.4947605578 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.03 seconds).
+SCF Change: DM (5.66606e-3, 0.00000e0); eev 6.41525e-2 Ha; etot -7.45427e-3 Ha
+Energy:      -0.5022148265 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    2 iterations (in       0.04 seconds).
+SCF Change: DM (1.14143e-3, 0.00000e0); eev 2.70485e-2 Ha; etot 1.31784e-3 Ha
+Energy:      -0.5008969838 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    3 iterations (in       0.03 seconds).
+SCF Change: DM (1.43377e-4, 0.00000e0); eev 6.80169e-3 Ha; etot 9.31515e-4 Ha
+Energy:      -0.4999654685 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    4 iterations (in       0.04 seconds).
+SCF Change: DM (7.91559e-5, 0.00000e0); eev 7.98714e-4 Ha; etot 1.87791e-4 Ha
+Energy:      -0.4997776776 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    5 iterations (in       0.04 seconds).
+SCF Change: DM (3.24521e-5, 0.00000e0); eev 2.50494e-4 Ha; etot -4.66356e-6 Ha
+Energy:      -0.4997823411 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    6 iterations (in       0.04 seconds).
+SCF Change: DM (7.56118e-6, 0.00000e0); eev 1.69321e-4 Ha; etot -1.82058e-5 Ha
+Energy:      -0.4998005469 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    7 iterations (in       0.03 seconds).
+SCF Change: DM (7.54890e-7, 0.00000e0); eev 6.23136e-5 Ha; etot -9.28526e-6 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    8 iterations (in       0.03 seconds).
+SCF Change: DM (3.24600e-7, 0.00000e0); eev 2.84947e-6 Ha; etot -2.91857e-11 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    9 iterations (in       0.03 seconds).
+SCF Change: DM (1.12497e-7, 0.00000e0); eev 3.95120e-7 Ha; etot -2.64572e-12 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   10 iterations (in       0.03 seconds).
+SCF Change: DM (9.37716e-14, 0.00000e0); eev 1.80190e-12 Ha; etot -5.78426e-14 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   11 iterations (in       0.04 seconds).
+SCF is converged after   11 iterations.
+the job costs             0.54 seconds
+SAD generation for H complete.
+total electron number:      15.99999481
+Exc:     -11.59478966, Vxc:      -7.42473139
+Initial guess energy using single atom density (SAD):    -114.7230100733671350
+Detailed time report:
+Overall   |:    5.220 s for SCF Preparation
+CInt      |:    0.116 s for Two, Three, and Four-center integrals
+ISDF      |:    0.000 s for ISDF initialization
+InitGuess |:    1.956 s for Prepare initial guess
+Solvent Calculation|:    1.592 s for Initialization of the solvent calculation
+DFT Grids |:    1.556 s for Initialization of the tabulated Grids and AOs
+total electron number:      15.99999656
+Exc:     -12.24451130, Vxc:      -7.84725852
+The total energy:      -114.4135434579 Ha by the initial guess
+total electron number:      16.00000173
+Exc:     -11.39956052, Vxc:      -7.29698135
+nao= 262
+Parallel computation of v_grids_e costs       0.14 seconds.
+v_grids_e costs       0.14 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.10 seconds.
+Computation of eng costs       0.10 seconds.
+HOMO:      -0.38712640, LUMO:      -0.163008, H-L Gap:       0.22411860
+Energy:    -113.9759936905 Ha after    1 iterations (in       0.70 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.15s
+diagonalize_hamiltonian:       0.01s
+generate_density_matrix:       0.54s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.54s
+total electron number:      15.99999297
+Exc:     -12.77472719, Vxc:      -8.19287540
+nao= 262
+Parallel computation of v_grids_e costs       0.12 seconds.
+v_grids_e costs       0.13 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.30367547, LUMO:      -0.092389, H-L Gap:       0.21128663
+SCF Change: DM 1.62134e-2; eev  2.73859e0 Ha; etot 7.95332e-1 Ha
+Energy:    -113.1806615409 Ha after    2 iterations (in       0.74 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.16s
+diagonalize_hamiltonian:       0.04s
+generate_density_matrix:       0.53s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.53s
+total electron number:      15.99999720
+Exc:     -11.93007109, Vxc:      -7.64247422
+nao= 262
+Parallel computation of v_grids_e costs       0.13 seconds.
+v_grids_e costs       0.13 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.26901879, LUMO:      -0.045942, H-L Gap:       0.22307669
+SCF Change: DM 2.29021e-3; eev 3.97756e-1 Ha; etot -1.37393e0 Ha
+Energy:    -114.5545889071 Ha after    3 iterations (in       0.75 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.18s
+diagonalize_hamiltonian:       0.03s
+generate_density_matrix:       0.54s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.54s
+total electron number:      15.99999736
+Exc:     -11.89467513, Vxc:      -7.61905906
+nao= 262
+Parallel computation of v_grids_e costs       0.12 seconds.
+v_grids_e costs       0.13 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.28 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.27909738, LUMO:      -0.058675, H-L Gap:       0.22042247
+SCF Change: DM 7.99529e-4; eev 1.26609e-1 Ha; etot -3.99259e-3 Ha
+Energy:    -114.5585814999 Ha after    4 iterations (in       0.75 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.17s
+diagonalize_hamiltonian:       0.04s
+generate_density_matrix:       0.54s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.53s
+total electron number:      15.99999740
+Exc:     -11.91803156, Vxc:      -7.63434092
+nao= 262
+Parallel computation of v_grids_e costs       0.12 seconds.
+v_grids_e costs       0.12 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.27777448, LUMO:      -0.055966, H-L Gap:       0.22180823
+SCF Change: DM 1.53932e-4; eev 2.48753e-2 Ha; etot -1.22323e-3 Ha
+Energy:    -114.5598047346 Ha after    5 iterations (in       0.74 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.18s
+diagonalize_hamiltonian:       0.03s
+generate_density_matrix:       0.53s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.53s
+total electron number:      15.99999736
+Exc:     -11.91427455, Vxc:      -7.63189442
+nao= 262
+Parallel computation of v_grids_e costs       0.13 seconds.
+v_grids_e costs       0.14 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.27804953, LUMO:      -0.056150, H-L Gap:       0.22189966
+SCF Change: DM 1.74520e-5; eev 1.79494e-3 Ha; etot -6.66908e-5 Ha
+Energy:    -114.5598714254 Ha after    6 iterations (in       0.74 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.16s
+diagonalize_hamiltonian:       0.04s
+generate_density_matrix:       0.54s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.54s
+total electron number:      15.99999736
+Exc:     -11.91462366, Vxc:      -7.63212145
+nao= 262
+Parallel computation of v_grids_e costs       0.13 seconds.
+v_grids_e costs       0.13 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.10 seconds.
+Computation of eng costs       0.10 seconds.
+HOMO:      -0.27802949, LUMO:      -0.056118, H-L Gap:       0.22191183
+SCF Change: DM 3.28881e-6; eev 2.89096e-4 Ha; etot -2.84527e-7 Ha
+Energy:    -114.5598717099 Ha after    7 iterations (in       0.76 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.18s
+diagonalize_hamiltonian:       0.04s
+generate_density_matrix:       0.53s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.53s
+total electron number:      15.99999736
+Exc:     -11.91456463, Vxc:      -7.63208290
+nao= 262
+Parallel computation of v_grids_e costs       0.13 seconds.
+v_grids_e costs       0.13 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.27803031, LUMO:      -0.056120, H-L Gap:       0.22191067
+SCF Change: DM 4.50690e-7; eev 2.08749e-5 Ha; etot -9.70404e-9 Ha
+Energy:    -114.5598717196 Ha after    8 iterations (in       0.77 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.19s
+diagonalize_hamiltonian:       0.03s
+generate_density_matrix:       0.54s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.54s
+total electron number:      15.99999736
+Exc:     -11.91456774, Vxc:      -7.63208493
+nao= 262
+Parallel computation of v_grids_e costs       0.12 seconds.
+v_grids_e costs       0.12 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.27803047, LUMO:      -0.056120, H-L Gap:       0.22191083
+SCF Change: DM 4.56712e-8; eev 1.28866e-6 Ha; etot -1.08784e-10 Ha
+Energy:    -114.5598717197 Ha after    9 iterations (in       0.74 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.16s
+diagonalize_hamiltonian:       0.04s
+generate_density_matrix:       0.54s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.53s
+total electron number:      15.99999736
+Exc:     -11.91456768, Vxc:      -7.63208489
+nao= 262
+Parallel computation of v_grids_e costs       0.13 seconds.
+v_grids_e costs       0.14 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.10 seconds.
+Computation of eng costs       0.10 seconds.
+HOMO:      -0.27803054, LUMO:      -0.056120, H-L Gap:       0.22191089
+SCF Change: DM 5.89516e-9; eev 5.77116e-7 Ha; etot -1.26477e-12 Ha
+Energy:    -114.5598717197 Ha after   10 iterations (in       0.76 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.18s
+diagonalize_hamiltonian:       0.04s
+generate_density_matrix:       0.54s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.54s
+total electron number:      15.99999736
+Exc:     -11.91456784, Vxc:      -7.63208500
+nao= 262
+Parallel computation of v_grids_e costs       0.13 seconds.
+v_grids_e costs       0.14 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.27 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.27803053, LUMO:      -0.056120, H-L Gap:       0.22191088
+SCF Change: DM 1.35104e-9; eev 1.07635e-7 Ha; etot 1.42109e-14 Ha
+Energy:    -114.5598717197 Ha after   11 iterations (in       0.76 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.17s
+diagonalize_hamiltonian:       0.05s
+generate_density_matrix:       0.54s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.54s
+total electron number:      15.99999736
+Exc:     -11.91456781, Vxc:      -7.63208498
+nao= 262
+Parallel computation of v_grids_e costs       0.12 seconds.
+v_grids_e costs       0.12 seconds.
+v_grids costs       0.00 seconds.
+Solving linear equations costs       0.28 seconds.
+Symmetrization of q costs       0.02 seconds.
+Parallel computation of veff costs       0.11 seconds.
+Computation of eng costs       0.11 seconds.
+HOMO:      -0.27803053, LUMO:      -0.056120, H-L Gap:       0.22191088
+SCF Change: DM 1.00048e-10; eev 9.47524e-9 Ha; etot 8.52651e-14 Ha
+Energy:    -114.5598717197 Ha after   12 iterations (in       0.74 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.17s
+diagonalize_hamiltonian:       0.04s
+generate_density_matrix:       0.53s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.53s
+SCF is converged after   12 iterations.
+total electron number:      15.99999736
+Exc:     -11.91456781, Vxc:      -7.63208498
+A:
+full length: 662
+max: 0.6816575475986818
+min: 0.0005055380983581962
+vec of A:[0.15959759234513243, 0.15959759234513243, 0.007703887542200726, 0.007703887542200726, 0.15959759234513243, 0.00607599449946442, 0.5129247290474567, 0.00607599449946442, 0.5129247290474567, 0.00607599449946442, 0.5129247290474559, 0.00607599449946442, 0.5129247290474559, 0.642054297234284, 0.642054297234284, 0.6420542972342836, 0.6420542972342836, 0.6365306242245636, 0.6365306242245636, 0.6365306242245636, 0.6365306242245636, 0.6365306242245636, 0.6365306242245643, 0.644258850697373, 0.644258850697373, 0.6365306242245636, 0.6365306242245643, 0.644258850697373, 0.644258850697373, 0.6457281842536601, 0.6524133295831228, 0.6457281842536601, 0.6524133295831228, 0.6457281842536601, 0.6524133295831224, 0.6457281842536601, 0.6524133295831224, 0.6732119714344431, 0.6732119714344431, 0.6732119714344431, 0.6732119714344431, 0.5506643451515315, 0.5506643451515315, 0.5506643451515315, 0.5506643451515315, 0.3112876438838052, 0.3112876438838052, 0.004997734952621165, 0.004997734952621165, 0.3112876438838052, 0.3112876438838052, 0.004997734952621165, 0.004997734952621165, 0.3112876438838052, 0.3112876438838052, 0.6679655264926332, 0.6679655264926332, 0.3112876438838052, 0.3112876438838052, 0.6679655264926332, 0.6679655264926332, 0.43926234514274287, 0.43926234514274287, 0.43926234514274287, 0.43926234514274287, 0.242016917744646, 0.242016917744646, 0.24201691774464665, 0.24201691774464665, 0.43926234514274287, 0.43926234514274287, 0.43926234514274287, 0.43926234514274287, 0.43926234514274287, 0.43926234514274287, 0.43926234514274287, 0.43926234514274287, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.5806067848701167, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.6816575475986818, 0.15495794059659673, 0.15495794059659673, 0.15495794059659673, 0.15495794059659673, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.5569623124765467, 0.6724646471104134, 0.6724646471104134, 0.6724646471104134, 0.6724646471104134, 0.6724646471104134, 0.6724646471104134, 0.6724646471104134, 0.6724646471104134, 0.6724646471104134, 0.6724646471104134, 0.010229536476310025, 0.6724646471104134, 0.010229536476310025, 0.6724646471104134, 0.010229536476310025, 0.010229536476310025, 0.05181849779548733, 0.05181849779548733, 0.05181849779548771, 0.05181849779548771, 0.01734120329702176, 0.01734120329702176, 0.017341203297022028, 0.017341203297022028, 0.05181849779548771, 0.6669964443335035, 0.05181849779548771, 0.6669964443335035, 0.05181849779548771, 0.6669964443335035, 0.05181849779548771, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.6669964443335035, 0.30474349647473736, 0.6669964443335035, 0.30474349647473736, 0.6669964443335035, 0.30474349647473625, 0.6669964443335035, 0.30474349647473625, 0.3561236370115617, 0.3561236370115617, 0.3561236370115617, 0.3561236370115617, 0.5190974424624769, 0.5190974424624769, 0.5190974424624765, 0.5190974424624765, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.12806422654183425, 0.6335249857659034, 0.12806422654183425, 0.6335249857659034, 0.12806422654183425, 0.6335249857659034, 0.12806422654183425, 0.5190974424624765, 0.6335249857659034, 0.5190974424624765, 0.6335249857659034, 0.5190974424624765, 0.6335249857659034, 0.5190974424624765, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.6335249857659034, 0.12444360962365691, 0.12444360962365691, 0.12444360962365691, 0.12444360962365691, 0.127589715347472, 0.537345364483131, 0.537345364483131, 0.537345364483131, 0.537345364483131, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5150503974571663, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5381968646374179, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.5340026132901661, 0.35116668588850974, 0.35116668588850974, 0.35116668588850974, 0.35116668588850974, 0.35116668588850974, 0.35116668588850974, 0.25567648109570884, 0.25567648109570884, 0.35116668588850974, 0.35116668588850974, 0.2556764810957086, 0.2556764810957086, 0.35116668588850974, 0.35116668588850974, 0.25567648109570884, 0.25567648109570884, 0.35116668588850974, 0.35116668588850974, 0.25567648109570884, 0.25567648109570884, 0.4641639846933972, 0.4641639846933972, 0.4641639846933972, 0.4641639846933972, 0.4641639846933972, 0.4641639846933972, 0.08359707902504868, 0.08359707902504868, 0.4641639846933972, 0.4641639846933972, 0.08359707902504868, 0.08359707902504868, 0.4641639846933972, 0.4641639846933972, 0.08359707902504868, 0.08359707902504868, 0.4641639846933972, 0.4641639846933972, 0.08359707902504868, 0.08359707902504868, 0.5449486498172992, 0.3196224277672312, 0.5449486498172992, 0.3196224277672312, 0.5449486498172992, 0.3196224277672312, 0.5449486498172992, 0.3196224277672312, 0.5449486498172992, 0.5449486498172992, 0.5449486498172992, 0.5449486498172992, 0.5449486498172992, 0.5449486498172992, 0.5449486498172992, 0.5449486498172992, 0.4342822443025059, 0.4342822443025059, 0.4342822443025059, 0.4342822443025059, 0.4342822443025059, 0.4342822443025059, 0.43428224430250617, 0.43428224430250617, 0.44526149714388014, 0.44526149714388014, 0.44526149714388014, 0.026241560649335856, 0.44526149714388014, 0.026241560649335856, 0.44526149714388014, 0.44526149714388014, 0.44526149714388014, 0.026241560649335856, 0.44526149714388014, 0.026241560649335856, 0.524343298674272, 0.524343298674272, 0.524343298674272, 0.524343298674272, 0.524343298674272, 0.524343298674272, 0.5243432986742718, 0.5243432986742718, 0.5375994189217644, 0.5375994189217644, 0.5375994189217644, 0.5375994189217644, 0.5375994189217644, 0.5375994189217644, 0.5375994189217644, 0.5375994189217644, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.04802112553037959, 0.5332278840789365, 0.04802112553037959, 0.5332278840789365, 0.04802112553037959, 0.5332278840789365, 0.04802112553037959, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.5332278840789365, 0.04802112553037959, 0.5332278840789365, 0.04802112553037959, 0.5332278840789365, 0.04802112553037959, 0.5332278840789365, 0.04802112553037959, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.3104558590636461, 0.5064692481361742, 0.3104558590636461, 0.5064692481361742, 0.3104558590636461, 0.5064692481361742, 0.3104558590636461, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.5064692481361742, 0.3104558590636461, 0.5064692481361742, 0.3104558590636461, 0.5064692481361742, 0.3104558590636461, 0.5064692481361742, 0.3104558590636461, 0.06682113727944994, 0.045491211611420355, 0.0045118491549242055, 0.28141788912075344, 0.004511849154924312, 0.28141788912075344, 0.26953825672248855, 0.26953825672248855, 0.2309726638226527, 0.26974159492865796, 0.2309726638226527, 0.26974159492865796, 0.16880215096853143, 0.1688021509685317, 0.09579352241100783, 0.2818409087831689, 0.09579352241100783, 0.2818409087831689, 0.270733929167447, 0.27073392916744676, 0.0113981962044406, 0.011398196204440507, 0.2818638357908915, 0.2818638357908915, 0.27966722735504723, 0.27966722735504723, 0.11481225245201652, 0.27966722735504723, 0.11481225245201652, 0.27966722735504723, 0.0005055380983582096, 0.0005055380983581962, 0.26765949273032763, 0.26765949273032763, 0.15859991907040707, 0.07817572019109996, 0.15859991907040707, 0.07817572019109996, 0.18391260817395122, 0.18391260817395122, 0.18391260817395122, 0.18391260817395122, 0.23690307236019872, 0.024374717160364552, 0.23690307236019872, 0.024374717160364552, 0.2418795823717295, 0.24309142203904552, 0.2418795823717295, 0.24309142203904552, 0.03388497957793406, 0.0338849795779342, 0.2246480956293512, 0.2790522309835115, 0.2246480956293513, 0.27905223098351173, 0.16407046522530597, 0.011101485213782201, 0.16407046522530597, 0.011101485213782201, 0.01712634653195081, 0.01712634653195081, 0.28539987287003643, 0.28539987287003643, 0.2331918332514262, 0.2331918332514262, 0.00686125921470008, 0.006861259214700211, 0.14728794404554324, 0.14728794404554324, 0.23203642607469327, 0.013030131536307232, 0.231474199398972, 0.2331918332514262, 0.2800891124796143, 0.2800891124796144, 0.18793850480763344, 0.18793850480763394, 0.11807281640203124, 0.11807281640203124, 0.029920217833017206, 0.029920217833017206, 0.2815509422157787, 0.12988875924046803, 0.2815509422157787, 0.12547846206101285, 0.2792614870738891, 0.1254784620610131, 0.2792614870738891, 0.2792614870738891, 0.2792614870738891, 0.18227436456333668, 0.18227436456333704, 0.06689926172249035, 0.24981980404450269, 0.06689926172249035, 0.24981980404450269, 0.25810823918979986, 0.0010661905363844634, 0.25810823918979986, 0.0010661905363844857, 0.23465499963350775, 0.2792614870738891, 0.23465499963350775, 0.2792614870738891, 0.2652474853898766, 0.2652474853898766, 0.22688412039116787, 0.2652474853898766, 0.22688412039116787, 0.2652474853898766, 0.21789727273756584, 0.062328805384714955, 0.21789727273756543, 0.062328805384714955, 0.26442420965873015, 0.2652474853898766, 0.26442420965873015, 0.2652474853898766, 0.04261343073040042, 0.04261343073040042, 0.0330167039636222, 0.11823917290238191, 0.0330167039636222, 0.11823917290238191, 0.06682113727944994, 0.045491211611420355, 0.0045118491549242055, 0.28141788912075344, 0.004511849154924312, 0.28141788912075344, 0.26953825672248855, 0.26953825672248855, 0.2309726638226527, 0.26974159492865796, 0.2309726638226527, 0.26974159492865796, 0.16880215096853143, 0.1688021509685317, 0.09579352241100783, 0.2818409087831689, 0.09579352241100783, 0.2818409087831689, 0.270733929167447, 0.27073392916744676, 0.0113981962044406, 0.011398196204440507, 0.2818638357908915, 0.2818638357908915, 0.27966722735504723, 0.27966722735504723, 0.11481225245201652, 0.27966722735504723, 0.11481225245201652, 0.27966722735504723, 0.0005055380983582096, 0.0005055380983581962, 0.26765949273032763, 0.26765949273032763, 0.07817572019109996, 0.15859991907040707, 0.07817572019109996, 0.15859991907040707, 0.18391260817395122, 0.18391260817395122, 0.18391260817395122, 0.18391260817395122, 0.024374717160364552, 0.23690307236019872, 0.024374717160364552, 0.23690307236019872, 0.2418795823717295, 0.24309142203904552, 0.2418795823717295, 0.24309142203904552, 0.03388497957793406, 0.0338849795779342, 0.2246480956293512, 0.2790522309835115, 0.2246480956293513, 0.27905223098351173, 0.011101485213782201, 0.16407046522530597, 0.011101485213782201, 0.16407046522530597, 0.01712634653195081, 0.01712634653195081, 0.28539987287003643, 0.28539987287003643, 0.2331918332514262, 0.2331918332514262, 0.00686125921470008, 0.006861259214700211, 0.14728794404554324, 0.14728794404554324, 0.013030131536307232, 0.23203642607469327, 0.231474199398972, 0.2331918332514262, 0.2800891124796143, 0.2800891124796144, 0.18793850480763344, 0.18793850480763394, 0.11807281640203124, 0.11807281640203124, 0.029920217833017206, 0.029920217833017206, 0.2815509422157787, 0.12988875924046803, 0.2815509422157787, 0.12547846206101285, 0.2792614870738891, 0.1254784620610131, 0.2792614870738891, 0.2792614870738891, 0.2792614870738891, 0.18227436456333668, 0.18227436456333704, 0.06689926172249035, 0.24981980404450269, 0.06689926172249035, 0.24981980404450269, 0.0010661905363844634, 0.25810823918979986, 0.0010661905363844857, 0.25810823918979986, 0.23465499963350775, 0.2792614870738891, 0.23465499963350775, 0.2792614870738891, 0.2652474853898766, 0.2652474853898766, 0.22688412039116787, 0.2652474853898766, 0.22688412039116787, 0.2652474853898766, 0.062328805384714955, 0.21789727273756584, 0.062328805384714955, 0.21789727273756543, 0.26442420965873015, 0.2652474853898766, 0.26442420965873015, 0.2652474853898766, 0.04261343073040042, 0.04261343073040042, 0.0330167039636222, 0.11823917290238191, 0.0330167039636222, 0.11823917290238191]
+D:
+size of matrix: 662x662
+full length: 438244
+max: 9.370395420310766
+min: -10.608260757550164
+S:
+size of matrix: 662x662
+full length: 438244
+max: 4093.9664413204664
+min: 0.10320881866318005
+K:
+size of matrix: 662x662
+full length: 438244
+max: 4093.9664413204664
+min: 0.10320881866318005
+R:
+size of matrix: 662x662
+full length: 438244
+max: -0
+min: -0.9872376214499848
+v_grids_n:
+full length: 662
+max: 4.539227402229887
+min: 3.2117382413671063
+v_grids_e:
+full length: 662
+max: 4.571402735723293
+min: 3.1657459618824553
+q_sym:
+size of matrix: 662x1
+full length: 662
+max: 0.0019150408932361435
+min: -0.0011498423169789217
+abs(q_sym):
+full length: 662
+max: 0.0019150408932361435
+min: 0.000002354661294160018
+v_grids:
+full length: 662
+max: 0.055170806584637244
+min: -0.058420255902585705
+veff:
+full length: 2775
+max: 0.02711769669878065
+min: -0.019904436482929215
+eng:
+-0.008904782061114072
+HOMO:      -0.27803053, LUMO:      -0.056120, H-L Gap:       0.22191088
+Eigenvalues in Restricted HF (or KS) calculation:
+   State    Occupation        Eigenvalue
+       0       2.00000        -19.145400
+       1       2.00000        -10.266977
+       2       2.00000         -1.059899
+       3       2.00000         -0.638931
+       4       2.00000         -0.504173
+       5       2.00000         -0.458800
+       6       2.00000         -0.404433
+       7       2.00000         -0.278031
+       8       0.00000         -0.056120
+       9       0.00000          0.074460
+      10       0.00000          0.110653
+Force calculation invoked
+Gradient evaluation using Analytical differentiation
+Detailed time report:
+de-jk batch 3|:    0.008 s for de-jk batch 3
+de-jk batch 2|:    0.001 s for de-jk batch 2
+de-jk preparation 1|:    0.198 s for de-jk preparation 1
+de-jk preparation power|:    0.077 s for de-jk preparation power
+de-jk batch 4|:    0.106 s for de-jk batch 4
+de-jk batch int|:    0.069 s for de-jk batch int
+de-jk preparation 2|:    0.032 s for de-jk preparation 2
+de-jk batch 1|:    0.010 s for de-jk batch 1
+de-jk batch 5|:    0.008 s for de-jk batch 5
+--- PCM gradient components ---
+  grad_nuc    done  (min=-2.702086e-2, max= 2.783005e-2, rms= 1.445292e-2)
+  grad_qv     done  (min=-3.642869e-2, max= 3.113695e-2, rms= 1.772804e-2)
+  grad_solver done  (min=-6.852477e-4, max= 8.319328e-4, rms= 3.437755e-4)
+--- de_solvent.nuc ---  (min=-2.702086e-2, max= 2.783005e-2, rms= 1.445292e-2)
+    C      0.00000000      0.00000000      0.02783005
+    O     -0.00000000      0.00000000     -0.00625394
+    H      0.00000000      0.02702086     -0.01078805
+    H      0.00000000     -0.02702086     -0.01078805
+
+--- de_solvent.qv ---  (min=-3.642869e-2, max= 3.113695e-2, rms= 1.772804e-2)
+    C     -0.00000000     -0.00000000     -0.03642869
+    O      0.00000000     -0.00000000      0.00566313
+    H     -0.00000000     -0.03113695      0.01538278
+    H      0.00000000      0.03113695      0.01538278
+
+--- de_solvent.solver ---  (min=-6.852477e-4, max= 8.319328e-4, rms= 3.437755e-4)
+    C     -0.00000000     -0.00000000     -0.00068525
+    O     -0.00000000      0.00000000      0.00083193
+    H      0.00000000     -0.00035053     -0.00007334
+    H     -0.00000000      0.00035053     -0.00007334
+
+--- de_solvent.total ---  (min=-9.283892e-3, max= 4.521384e-3, rms= 3.730908e-3)
+    C     -0.00000000     -0.00000000     -0.00928389
+    O     -0.00000000      0.00000000      0.00024112
+    H      0.00000000     -0.00446662      0.00452138
+    H      0.00000000      0.00446662      0.00452138
+
+PCM gradient total: 11.77 sec
+Detailed time report:
+rks grad calc_de_ovlp|:    0.013 s for rks grad calc_de_ovlp
+rks grad calc_de_jk|:    0.439 s for rks grad calc_de_jk
+rks grad calc_de_nuc|:    0.006 s for rks grad calc_de_nuc
+rks grad  |:   16.645 s for rks grad
+rks grad calc_de_xc|:    4.359 s for rks grad calc_de_xc
+rks grad calc_de_hcore|:    0.063 s for rks grad calc_de_hcore
+rks grad calc_de_solvent|:   11.765 s for rks grad calc_de_solvent
+rhf grad calc_de_qmmm|:    0.000 s for 
+------ Output gradient [a.u.] ------
+C        0.00000000     -0.00000000     -0.03413802
+O        0.00000000      0.00000000      0.01273598
+H       -0.00000000     -0.00949922      0.01069487
+H       -0.00000000      0.00949922      0.01069487
+
+------------------------------------
+force                  16.645 s for force calculation
+Mulliken population analysis:
+  0-C  :   0.094919
+  1-O  :  -0.345808
+  2-H  :   0.125445
+  3-H  :   0.125445
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The solvent energy    :      -0.0089047821 Ha
+The SCF energy        :    -114.5598717197 Ha
+Detailed time report:
+SCF       |:   14.582 s for the scf procedure
+force     |:   16.645 s for force calculation
+Overall   |:   31.229 s for the whole job
