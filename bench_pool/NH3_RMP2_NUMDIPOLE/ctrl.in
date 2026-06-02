@@ -8,7 +8,7 @@
      charge =               0.0
      spin =                 1.0
      spin_polarization =    false
-     num_threads =          16
+     num_threads =          4
 
 [ctrl.ri_pt2]
 fp_mode = "FP64"
