@@ -17,10 +17,10 @@ The spheric-GTO auxiliary basis set is taken from def2-SVP-JKFIT
 Charge:   0; Spin:   1
 Spin polarization: Off
 Input molecular structure (in Angstrom): ----------
-N        0.00000000      0.00000000      0.00000000
-H        1.00000000      0.00000000      0.00000000
-H        0.00000000      1.00000000      0.00000000
-H        0.00000000      0.00000000      1.00000000
+N        0.99937000      0.10722000     -0.07906000
+H        2.01670000      0.05042000     -0.06566000
+H        0.68777000     -0.21994000      0.83431000
+H        0.68777000     -0.59378000     -0.74977000
 End of molecular structure ------------------------
 ERI Type: ri_v
 SCF convergency thresholds: 1e-8 for density matrix
@@ -168,14 +168,14 @@ fp_mode = "FP64"
 
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43402.07 MB) is more than required (1.80 MB).
+Memory available for 1.5 times of RI integrals (43368.96 MB) is more than required (1.80 MB).
 Using standard incore RI-J/K algorithms.
-Nuc_energy:      12.23527575 Hartree
+Nuc_energy:      11.88089400 Hartree
 no empirical dispersion correction is employed
 No ghost effective potential
 No ghost point charges
 Overlap matrix is nonsigular:
-  Lowest eigenvalue:       0.00431228 with the total number of basis functions:     49
+  Lowest eigenvalue:       0.00504583 with the total number of basis functions:     49
 
 =======================
 Generating SAD for atom: N
@@ -196,7 +196,7 @@ final nbas: 36,final natm: 2
 numbasis: 31, num_auxbas: 77
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43398.26 MB) is more than required (0.42 MB).
+Memory available for 1.5 times of RI integrals (43364.68 MB) is more than required (0.42 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -222,18 +222,18 @@ SCF Change: DM 2.02111e-5; eev 4.81361e-3 Ha; etot 1.35480e-4 Ha
 Energy:     -53.8478198834 Ha after    7 iterations (in       0.00 seconds).
 SCF Change: DM 1.90645e-5; eev 1.05291e-3 Ha; etot -2.57972e-4 Ha
 Energy:     -53.8480778557 Ha after    8 iterations (in       0.00 seconds).
-SCF Change: DM 5.67555e-6; eev 1.04679e-3 Ha; etot -8.23884e-8 Ha
+SCF Change: DM 5.67555e-6; eev 1.04679e-3 Ha; etot -8.23885e-8 Ha
 Energy:     -53.8480779380 Ha after    9 iterations (in       0.00 seconds).
-SCF Change: DM 4.23969e-7; eev 2.93907e-5 Ha; etot -2.16979e-8 Ha
+SCF Change: DM 4.23969e-7; eev 2.93907e-5 Ha; etot -2.16980e-8 Ha
 Energy:     -53.8480779597 Ha after   10 iterations (in       0.00 seconds).
-SCF Change: DM 9.63283e-8; eev 3.44007e-6 Ha; etot -2.17426e-11 Ha
+SCF Change: DM 9.63283e-8; eev 3.44007e-6 Ha; etot -2.19131e-11 Ha
 Energy:     -53.8480779598 Ha after   11 iterations (in       0.00 seconds).
-SCF Change: DM 5.09525e-9; eev 5.63697e-7 Ha; etot -1.44951e-12 Ha
+SCF Change: DM 5.09525e-9; eev 5.63697e-7 Ha; etot -1.32161e-12 Ha
 Energy:     -53.8480779598 Ha after   12 iterations (in       0.00 seconds).
-SCF Change: DM 5.08879e-11; eev 3.50694e-9 Ha; etot -1.42109e-14 Ha
+SCF Change: DM 5.08873e-11; eev 3.50696e-9 Ha; etot 1.42109e-14 Ha
 Energy:     -53.8480779598 Ha after   13 iterations (in       0.00 seconds).
 SCF is converged after   13 iterations.
-the job costs             0.09 seconds
+the job costs             0.11 seconds
 SAD generation for N complete.
 
 =======================
@@ -255,7 +255,7 @@ final nbas: 10,final natm: 2
 numbasis:  6, num_auxbas: 18
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43373.01 MB) is more than required (0.00 MB).
+Memory available for 1.5 times of RI integrals (43337.06 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -264,7 +264,7 @@ Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.10940728 with the total number of basis functions:      6
 Grid size: 10024
 Initial guess from SAP
-The evaluation of vmat costs             0.02 seconds
+The evaluation of vmat costs             0.01 seconds
 The total energy:        -0.4746750264 Ha by the initial guess
 Energy:      -0.4947605578 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.00 seconds).
 SCF Change: DM (5.66606e-3, 0.00000e0); eev 6.41525e-2 Ha; etot -7.45427e-3 Ha
@@ -305,19 +305,19 @@ SCF is converged after   18 iterations.
 the job costs             0.04 seconds
 SAD generation for H complete.
 Exc:       0.00000000, Vxc:       0.00000000
-Initial guess energy using single atom density (SAD):     -56.3305382779644788
+Initial guess energy using single atom density (SAD):     -56.2274057289858433
 Detailed time report:
-DFT Grids |:    0.000 s for Initialization of the tabulated Grids and AOs
+InitGuess |:    0.157 s for Prepare initial guess
 Solvent Calculation|:    0.000 s for Initialization of the solvent calculation
-InitGuess |:    0.144 s for Prepare initial guess
-CInt      |:    0.016 s for Two, Three, and Four-center integrals
-Overall   |:    0.160 s for SCF Preparation
+DFT Grids |:    0.000 s for Initialization of the tabulated Grids and AOs
 ISDF      |:    0.000 s for ISDF initialization
+Overall   |:    0.175 s for SCF Preparation
+CInt      |:    0.018 s for Two, Three, and Four-center integrals
 Exc:       0.00000000, Vxc:       0.00000000
-The total energy:       -56.1485164194 Ha by the initial guess
+The total energy:       -56.1726033299 Ha by the initial guess
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.52909238, LUMO (  5):       0.115987, H-L Gap:       0.64507895
-Energy:     -56.1847219940 Ha after    1 iterations (in       0.01 seconds).
+HOMO (  4):      -0.47863598, LUMO (  5):       0.121117, H-L Gap:       0.59975328
+Energy:     -56.2060200201 Ha after    1 iterations (in       0.01 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.01s
 diagonalize_hamiltonian:       0.00s
@@ -326,20 +326,9 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 solvent_model.refresh:         0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47837735, LUMO (  5):       0.119870, H-L Gap:       0.59824743
-SCF Change: DM 1.36754e-3; eev 3.60012e-1 Ha; etot -8.68799e-3 Ha
-Energy:     -56.1934099817 Ha after    2 iterations (in       0.01 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.00s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-solvent_model.refresh:         0.00s
-Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47837696, LUMO (  5):       0.119908, H-L Gap:       0.59828538
-SCF Change: DM 3.01973e-4; eev 7.27116e-3 Ha; etot -3.96878e-3 Ha
-Energy:     -56.1973787656 Ha after    3 iterations (in       0.01 seconds).
+HOMO (  4):      -0.42971784, LUMO (  5):       0.127294, H-L Gap:       0.55701160
+SCF Change: DM 1.27165e-3; eev 3.58069e-1 Ha; etot -7.98331e-3 Ha
+Energy:     -56.2140033262 Ha after    2 iterations (in       0.01 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.01s
 diagonalize_hamiltonian:       0.00s
@@ -348,9 +337,9 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 solvent_model.refresh:         0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47881400, LUMO (  5):       0.119938, H-L Gap:       0.59875238
-SCF Change: DM 9.09638e-5; eev 1.44574e-3 Ha; etot -5.84169e-5 Ha
-Energy:     -56.1974371826 Ha after    4 iterations (in       0.01 seconds).
+HOMO (  4):      -0.42924393, LUMO (  5):       0.127701, H-L Gap:       0.55694454
+SCF Change: DM 2.34582e-4; eev 1.00978e-2 Ha; etot -3.65061e-3 Ha
+Energy:     -56.2176539321 Ha after    3 iterations (in       0.01 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.01s
 diagonalize_hamiltonian:       0.00s
@@ -359,9 +348,9 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 solvent_model.refresh:         0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47897813, LUMO (  5):       0.119874, H-L Gap:       0.59885173
-SCF Change: DM 2.84759e-5; eev 7.48632e-4 Ha; etot -3.94031e-6 Ha
-Energy:     -56.1974411229 Ha after    5 iterations (in       0.01 seconds).
+HOMO (  4):      -0.42958826, LUMO (  5):       0.127689, H-L Gap:       0.55727761
+SCF Change: DM 5.73655e-5; eev 1.22142e-3 Ha; etot -3.70391e-5 Ha
+Energy:     -56.2176909712 Ha after    4 iterations (in       0.01 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.01s
 diagonalize_hamiltonian:       0.00s
@@ -370,9 +359,9 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 solvent_model.refresh:         0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47897503, LUMO (  5):       0.119878, H-L Gap:       0.59885275
-SCF Change: DM 3.52389e-6; eev 2.23934e-4 Ha; etot -2.69067e-7 Ha
-Energy:     -56.1974413920 Ha after    6 iterations (in       0.01 seconds).
+HOMO (  4):      -0.42971534, LUMO (  5):       0.127646, H-L Gap:       0.55736131
+SCF Change: DM 2.85137e-5; eev 4.32249e-4 Ha; etot -1.88456e-6 Ha
+Energy:     -56.2176928558 Ha after    5 iterations (in       0.01 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.01s
 diagonalize_hamiltonian:       0.00s
@@ -381,9 +370,9 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 solvent_model.refresh:         0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47897540, LUMO (  5):       0.119877, H-L Gap:       0.59885277
-SCF Change: DM 3.04151e-7; eev 7.38241e-6 Ha; etot -5.28925e-9 Ha
-Energy:     -56.1974413973 Ha after    7 iterations (in       0.01 seconds).
+HOMO (  4):      -0.42971680, LUMO (  5):       0.127650, H-L Gap:       0.55736641
+SCF Change: DM 6.73551e-6; eev 2.04302e-4 Ha; etot -2.40258e-7 Ha
+Energy:     -56.2176930960 Ha after    6 iterations (in       0.01 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.01s
 diagonalize_hamiltonian:       0.00s
@@ -392,9 +381,9 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 solvent_model.refresh:         0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47897511, LUMO (  5):       0.119877, H-L Gap:       0.59885259
-SCF Change: DM 5.40855e-8; eev 2.87958e-6 Ha; etot -2.56364e-11 Ha
-Energy:     -56.1974413973 Ha after    8 iterations (in       0.01 seconds).
+HOMO (  4):      -0.42971689, LUMO (  5):       0.127649, H-L Gap:       0.55736613
+SCF Change: DM 7.79725e-7; eev 8.48023e-6 Ha; etot -8.92983e-9 Ha
+Energy:     -56.2176931050 Ha after    7 iterations (in       0.01 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.01s
 diagonalize_hamiltonian:       0.00s
@@ -403,9 +392,20 @@ check_scf_convergence:         0.00s
 scf_records.update:            0.00s
 solvent_model.refresh:         0.00s
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47897510, LUMO (  5):       0.119877, H-L Gap:       0.59885259
-SCF Change: DM 5.90751e-10; eev 1.56739e-7 Ha; etot -5.11591e-13 Ha
-Energy:     -56.1974413973 Ha after    9 iterations (in       0.01 seconds).
+HOMO (  4):      -0.42971642, LUMO (  5):       0.127649, H-L Gap:       0.55736584
+SCF Change: DM 1.13300e-7; eev 3.77412e-6 Ha; etot -7.35554e-11 Ha
+Energy:     -56.2176931050 Ha after    8 iterations (in       0.01 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.01s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+Exc:       0.00000000, Vxc:       0.00000000
+HOMO (  4):      -0.42971640, LUMO (  5):       0.127649, H-L Gap:       0.55736582
+SCF Change: DM 3.53404e-9; eev 1.75321e-7 Ha; etot -1.94689e-12 Ha
+Energy:     -56.2176931050 Ha after    9 iterations (in       0.01 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.01s
 diagonalize_hamiltonian:       0.00s
@@ -415,68 +415,68 @@ scf_records.update:            0.00s
 solvent_model.refresh:         0.00s
 SCF is converged after    9 iterations.
 Exc:       0.00000000, Vxc:       0.00000000
-HOMO (  4):      -0.47897514, LUMO (  5):       0.119877, H-L Gap:       0.59885263
+HOMO (  4):      -0.42971642, LUMO (  5):       0.127649, H-L Gap:       0.55736584
 Eigenvalues in Restricted HF (or KS) calculation:
    State    Occupation        Eigenvalue
-       0       2.00000        -15.545313
-       1       2.00000         -1.181883
-       2       2.00000         -0.603894
-       3       2.00000         -0.603894
-       4       2.00000         -0.478975
-       5       0.00000          0.119877
-       6       0.00000          0.215411
-       7       0.00000          0.215411
+       0       2.00000        -15.540377
+       1       2.00000         -1.138075
+       2       2.00000         -0.623145
+       3       2.00000         -0.623142
+       4       2.00000         -0.429716
+       5       0.00000          0.127649
+       6       0.00000          0.212765
+       7       0.00000          0.212765
 ==========================================
 Now evaluate the    PT2 correlation energy
 ==========================================
 ----------------------------------------------------------------------
 Methods         :       Total Corr,          OS Corr,          SS Corr
 ----------------------------------------------------------------------
-PT2             :      -0.24544291,      -0.19172801,      -0.05371490
+PT2             :      -0.24375090,      -0.19084500,      -0.05290590
 ----------------------------------------------------------------------
-Fifth-rung correlation energy :      -0.245442907100 Ha
-E[MP2  ]=:     -56.44288430 Ha, Ex[HF]:      -7.69166524 Ha, Ec[PT2  ]:      -0.24544291 Ha
+Fifth-rung correlation energy :      -0.243750900155 Ha
+E[MP2  ]=:     -56.46144401 Ha, Ex[HF]:      -7.66281741 Ha, Ec[PT2  ]:      -0.24375090 Ha
 Exc[KS-DFA]:      -0.00000000 Ha
 Detailed time report:
-c_r5dft   |:    0.002 s for for advanced correlations
 ao2mo     |:    0.002 s for for the generation of RI3MO
-xc_energy |:    0.004 s for for x_hf, xc_scf, xc_xdh
+c_r5dft   |:    0.002 s for for advanced correlations
+xc_energy |:    0.008 s for for x_hf, xc_scf, xc_xdh
 Numerical dipole calculation invoked
 Evaluating Numerical Dipole
 Stencil index: 0|Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43371.41 MB) is more than required (1.80 MB).
+Memory available for 1.5 times of RI integrals (43333.90 MB) is more than required (1.80 MB).
 Using standard incore RI-J/K algorithms.
 1|Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43376.35 MB) is more than required (1.80 MB).
+Memory available for 1.5 times of RI integrals (43337.85 MB) is more than required (1.80 MB).
 Using standard incore RI-J/K algorithms.
 2|Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43374.76 MB) is more than required (1.80 MB).
+Memory available for 1.5 times of RI integrals (43338.63 MB) is more than required (1.80 MB).
 Using standard incore RI-J/K algorithms.
 3|Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43373.57 MB) is more than required (1.80 MB).
+Memory available for 1.5 times of RI integrals (43337.05 MB) is more than required (1.80 MB).
 Using standard incore RI-J/K algorithms.
 4|Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43371.20 MB) is more than required (1.80 MB).
+Memory available for 1.5 times of RI integrals (43333.41 MB) is more than required (1.80 MB).
 Using standard incore RI-J/K algorithms.
 5|Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (43369.62 MB) is more than required (1.80 MB).
+Memory available for 1.5 times of RI integrals (43331.03 MB) is more than required (1.80 MB).
 Using standard incore RI-J/K algorithms.
 
-Dipole Moment in A.U. :       0.53699796,       0.53699796,       0.53699796
-Dipole Moment in DEBYE:       1.36491265,       1.36491265,       1.36491265
+Dipole Moment in A.U. :       0.23370043,      -0.64333509,       0.15182794
+Dipole Moment in DEBYE:       0.59400723,      -1.63519467,       0.38590813
 Mulliken population analysis:
-  0-N  :  -0.607625
-  1-H  :   0.202542
-  2-H  :   0.202542
-  3-H  :   0.202542
+  0-N  :  -0.709378
+  1-H  :   0.236460
+  2-H  :   0.236460
+  3-H  :   0.236458
 
 ====================================================
               REST: Mission accomplished
 ====================================================
-The SCF energy        :     -56.1974413973 Ha
-The (R)-xDH energy    :     -56.4428843044 Ha
+The SCF energy        :     -56.2176931050 Ha
+The (R)-xDH energy    :     -56.4614440052 Ha
 Detailed time report:
-SCF       |:    0.231 s for the scf procedure
-PT2       |:    0.009 s for the PT2 evaluation
+PT2       |:    0.014 s for the PT2 evaluation
 numerical dipole|:    0.000 s for 
-Overall   |:    0.742 s for the whole job
+Overall   |:    0.874 s for the whole job
+SCF       |:    0.253 s for the scf procedure
