@@ -1,0 +1,21 @@
+[ctrl]
+     print_level =          2
+     num_threads =          4
+     xc =                   "hf" 
+     basis_path =           "cc-pVDZ"
+     auxbas_path =          "def2-SV(P)-JKFIT" 
+     charge =               0.0
+     spin =                 1.0
+     spin_polarization =    false
+     job_type =             "force"
+     numerical_force =      false
+     outputs =              ["dipole"]
+
+[geom]
+     name = "CO"
+     unit = "angstrom"
+     position = '''
+        C  0.00000000000      0.0000000000      0.0000000000
+        O  1.30000000000      0.0000000000      0.0000000000
+     '''
+     ext_field_dipole = [0.0, 0.1, 0.0]
