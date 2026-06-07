@@ -54,6 +54,10 @@ pub fn parse_input() -> ArgMatches {
              .long("filter")
              .help("Comma-separated list of test names to run (e.g. \"H2O_guessfile,NH3_SCAN\")")
         )
+        .arg(Arg::new("skip")
+             .long("skip")
+             .help("Comma-separated list of test names to skip (e.g. \"NH3_SCAN,NH3_SVWN\")")
+        )
         //.arg(Arg::new("task_status")
         //     .short('s')
         //     .long("task_status")
@@ -430,6 +434,18 @@ fn main() -> anyhow::Result<()> {
         println!("Filter: running only {:?}", set.iter().collect::<Vec<_>>());
     }
 
+    let skip_set: Option<std::collections::HashSet<String>> = {
+        let matches = parse_input();
+        matches.get_one::<String>("skip").map(|s| {
+            s.split(',').map(|n| n.trim().to_string()).collect()
+        })
+    };
+    let mut skip_unmatched = skip_set.clone();
+
+    if let Some(ref set) = skip_set {
+        println!("Skip: skipping {:?}", set.iter().collect::<Vec<_>>());
+    }
+
 
     fs::create_dir(work_path).unwrap_or(());
     //fs::create_dir(work_path).unwrap_err();
@@ -472,6 +488,16 @@ fn main() -> anyhow::Result<()> {
             }
             if let Some(ref mut unmatched) = filter_unmatched {
                 unmatched.remove(name);
+            }
+        }
+
+        if let Some(ref set) = skip_set {
+            let name = entry.path().file_name().unwrap().to_str().unwrap();
+            if set.contains(name) {
+                if let Some(ref mut unmatched) = skip_unmatched {
+                    unmatched.remove(name);
+                }
+                continue;
             }
         }
 
@@ -590,6 +616,12 @@ fn main() -> anyhow::Result<()> {
     if let Some(ref unmatched) = filter_unmatched {
         if !unmatched.is_empty() {
             panic!("Filtered tests not found: {:?}", unmatched.iter().collect::<Vec<_>>());
+        }
+    }
+
+    if let Some(ref unmatched) = skip_unmatched {
+        if !unmatched.is_empty() {
+            panic!("Skipped tests not found: {:?}", unmatched.iter().collect::<Vec<_>>());
         }
     }
 
