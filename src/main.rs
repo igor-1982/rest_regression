@@ -56,6 +56,7 @@ pub fn parse_input() -> ArgMatches {
         )
         .arg(Arg::new("skip")
              .long("skip")
+             .conflicts_with("filter")
              .help("Comma-separated list of test names to skip (e.g. \"NH3_SCAN,NH3_SVWN\")")
         )
         //.arg(Arg::new("task_status")
