@@ -20,6 +20,9 @@ Options:
   -f, --filter <filter>
           Comma-separated list of test names to run (e.g. "H2O_guessfile,NH3_SCAN"). Panics if any name
           matches no test directory.
+      --skip <skip>
+          Comma-separated list of test names to skip (e.g. "NH3_SCAN,NH3_SVWN"). Panics if any name
+          matches no test directory.
   -h, --help
           Print help
   -V, --version
