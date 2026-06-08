@@ -1,0 +1,112 @@
+Add the alternative default path (/Users/yanwenjie/MyWorkspace/rest_workspace/rest/basis-set-pool/) to rest_basis_dir.
+The specified path for the basis sets is: def2-svp (lowercase), try to find it from the rest_basis_dir
+Found: /Users/yanwenjie/MyWorkspace/rest_workspace/rest/basis-set-pool/def2-svp
+The specified path for the auxiliary basis sets is: def2-universal-jkfit (lowercase), try to find it from the rest_basis_dir
+Found: /Users/yanwenjie/MyWorkspace/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+WARNING: No solvent epsilon provided, use epsilon of vacuum.
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Force calculation
+Cube output: wavefunction
+The exchange-correlation method: hf
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /Users/yanwenjie/MyWorkspace/rest_workspace/rest/basis-set-pool/def2-svp
+The spheric-GTO auxiliary basis set is taken from /Users/yanwenjie/MyWorkspace/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+H        0.00000000      0.00000000      0.00000000
+I        0.00000000      0.00000000      1.20000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      125
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
+<start_mo> for the frozen-core post-SCF methods 0 is smaller than the number of ecp orbitals 14. Set <start_mo> = 0
+Libxc version used in REST: 7.0.0
+nbas: 13, natm: 2 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 65,final natm: 4
+numbasis: 31, num_auxbas: 236
+Molecule_name: CO
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (4832.59 MB) is more than required (1.30 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      11.08121696 Hartree
+External dipole field contribution to nuc energy exists:       0.05669178 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.02192997 with the total number of basis functions:     31
+
+=======================
+Generating SAD for atom: H
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (4822.50 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+SAD generation for H complete.
+
+=======================
+Generating SAD for atom: I
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (4822.53 MB) is more than required (0.84 MB).
+Using standard incore RI-J/K algorithms.
+SAD generation for I complete.
+Initial guess energy using single atom density (SAD):    -297.4736345112218601
+The total energy:      -297.0919544786 Ha by the initial guess
+Energy:    -297.1032788220 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 1.00844e-3; eev 1.63592e-2 Ha; etot -1.00938e-3 Ha
+Energy:    -297.1042882070 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 5.76414e-4; eev 4.66888e-3 Ha; etot -1.08893e-4 Ha
+Energy:    -297.1043970995 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 5.50225e-5; eev 8.15107e-4 Ha; etot -1.85361e-5 Ha
+Energy:    -297.1044156356 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 1.04174e-5; eev 3.17438e-4 Ha; etot -1.48498e-7 Ha
+Energy:    -297.1044157841 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 2.42641e-6; eev 3.51077e-5 Ha; etot -5.56940e-9 Ha
+Energy:    -297.1044157897 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 1.12451e-7; eev 6.42953e-7 Ha; etot -2.41243e-10 Ha
+Energy:    -297.1044157899 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 1.33633e-9; eev 1.25480e-8 Ha; etot -1.02318e-12 Ha
+Energy:    -297.1044157899 Ha after    8 iterations (in       0.00 seconds).
+SCF is converged after    8 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+H        0.00000000     -0.00000000      0.45794487
+I       -0.00000000      0.00000000     -0.45794487
+
+------------------------------------
+force                   0.183 s for force calculation
+Mulliken population analysis:
+  0-H  :  -0.123279
+  1-I  :   0.123279
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :    -297.1044157899 Ha
+Detailed time report:
+force     |:    0.183 s for force calculation
+Overall   |:    0.495 s for the whole job
+SCF       |:    0.311 s for the scf procedure
