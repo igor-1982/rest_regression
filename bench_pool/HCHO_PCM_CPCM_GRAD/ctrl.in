@@ -9,7 +9,6 @@
      etb_start_atom_number =     1
      etb_beta =                  1.0
      initial_guess =             "sad"
-     chkfile_type =              "hdf5"
      fchk =                      false
      pruning =                   "nwchem"
      radial_grid_method =        "treutler"

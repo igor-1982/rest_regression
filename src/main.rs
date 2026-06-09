@@ -1,6 +1,7 @@
 use clap::{Arg, ArgMatches, Command};
 use anyhow;
 use regex::Regex;
+use serde::Deserialize;
 //use core::num;
 use std::{collections::HashMap, env, fs::{self, File}, io::{BufRead, Read, Write}, path::Path};
 use std::process::Command as ProcessCommand;
@@ -42,6 +43,21 @@ pub fn parse_input() -> ArgMatches {
              .long("n_mpi")
              .default_value("1")
              .help("The number of mpi tasks")
+        )
+        .arg(Arg::new("num_threads")
+             .short('t')
+             .long("num_threads")
+             .help("The number of threads (overrides ctrl.in settings, ignored for special tests)")
+        )
+        .arg(Arg::new("filter")
+             .short('f')
+             .long("filter")
+             .help("Comma-separated list of test names to run (e.g. \"H2O_guessfile,NH3_SCAN\")")
+        )
+        .arg(Arg::new("skip")
+             .long("skip")
+             .conflicts_with("filter")
+             .help("Comma-separated list of test names to skip (e.g. \"NH3_SCAN,NH3_SVWN\")")
         )
         //.arg(Arg::new("task_status")
         //     .short('s')
@@ -335,6 +351,42 @@ pub fn timing(dt0: &DateTime<Local>, iprint: Option<&str>) -> DateTime<Local> {
     }
 }
 
+#[derive(Deserialize, Debug)]
+struct SpecialTestConfig {
+    num_mpi: Option<usize>,
+    num_threads: Option<usize>,
+}
+
+type SpecialTests = HashMap<String, SpecialTestConfig>;
+
+fn load_special_tests() -> SpecialTests {
+    let config_path = Path::new("special_tests.toml");
+    if config_path.is_file() {
+        let content = fs::read_to_string(config_path).unwrap();
+        toml::from_str(&content).unwrap_or_default()
+    } else {
+        HashMap::new()
+    }
+}
+
+fn set_num_threads_in_file(file_path: &Path, num_threads: usize) -> anyhow::Result<()> {
+    let content = fs::read_to_string(file_path)?;
+    let re = Regex::new(r"(?m)^\s*num_threads\s*=\s*\d+").unwrap();
+    let new_content = if re.is_match(&content) {
+        re.replace(&content, format!("num_threads = {}", num_threads)).to_string()
+    } else {
+        let re_ctrl = Regex::new(r"(?m)^\[ctrl\]").unwrap();
+        if re_ctrl.is_match(&content) {
+            re_ctrl.replace(&content, format!("[ctrl]\nnum_threads = {}", num_threads)).to_string()
+        } else {
+            content
+        }
+    };
+    let mut f = File::create(file_path)?;
+    f.write_all(new_content.as_bytes())?;
+    Ok(())
+}
+
 fn main() -> anyhow::Result<()> {
 
     let s_time = init_timing();
@@ -346,18 +398,19 @@ fn main() -> anyhow::Result<()> {
     let curr_path = Path::new(&current_directory);
     
 
-    let rest_home = match env::var_os("REST_HOME") {
-        Some(val) => val,
-        _ => panic!("REST_HOME not defined in the environment."),
-    };
+    let rest_home = env::var_os("REST_HOME").map(|v| v.to_string_lossy().to_string());
 
     let input_folder = parse_input().get_one::<String>("regression_directory")
-        .unwrap_or({
-            let mut default_path = rest_home.clone();
-            default_path.push("/rest_regression/bench_pool");
-            &default_path.to_str().unwrap().to_string()
-        }
-        ).to_string();
+        .cloned()
+        .unwrap_or_else(|| {
+            let local = Path::new("./bench_pool");
+            if local.is_dir() {
+                return local.to_string_lossy().to_string();
+            }
+            let home = rest_home.as_ref()
+                .expect("REST_HOME not defined. Either set REST_HOME, provide -r/--regression_directory, or create ./bench_pool.");
+            format!("{}/rest_regression/bench_pool", home)
+        });
     
     let work_folder = parse_input().get_one::<String>("working_directory").unwrap().to_string();
     let work_path = Path::new(&work_folder);
@@ -365,18 +418,48 @@ fn main() -> anyhow::Result<()> {
     let num_mpi = parse_input().get_one::<String>("n_mpi").unwrap().parse::<usize>().unwrap();
     println!("num_mpi = {}", num_mpi);
 
+    let num_threads: Option<usize> = parse_input().get_one::<String>("num_threads")
+        .map(|s| s.parse::<usize>().expect("num_threads must be a positive integer"));
+
+    let special_tests = load_special_tests();
+
+    let filter_set: Option<std::collections::HashSet<String>> = {
+        let matches = parse_input();
+        matches.get_one::<String>("filter").map(|s| {
+            s.split(',').map(|n| n.trim().to_string()).collect()
+        })
+    };
+    let mut filter_unmatched = filter_set.clone();
+
+    if let Some(ref set) = filter_set {
+        println!("Filter: running only {:?}", set.iter().collect::<Vec<_>>());
+    }
+
+    let skip_set: Option<std::collections::HashSet<String>> = {
+        let matches = parse_input();
+        matches.get_one::<String>("skip").map(|s| {
+            s.split(',').map(|n| n.trim().to_string()).collect()
+        })
+    };
+    let mut skip_unmatched = skip_set.clone();
+
+    if let Some(ref set) = skip_set {
+        println!("Skip: skipping {:?}", set.iter().collect::<Vec<_>>());
+    }
+
 
     fs::create_dir(work_path).unwrap_or(());
     //fs::create_dir(work_path).unwrap_err();
 
-    let rest_mode = parse_input().get_one::<String>("rest_mode").unwrap().to_string();
-    let rest_default_cmd = format!("{}/target/{}/rest", rest_home.to_str().unwrap(), &rest_mode);
-
-    let rest_cmd = parse_input().get_one::<String>("rest_path").unwrap_or(&rest_default_cmd).to_string();
-    //} else {
-    //    let rest_cmd_pure = parse_input().get_one::<String>("rest_path").unwrap_or(&rest_default_cmd).to_string();
-    //    format!("mpirun -n {} {}", &num_mpi, &rest_cmd_pure)
-    //};
+    let rest_cmd = {
+        let from_cli = parse_input().get_one::<String>("rest_path").cloned();
+        from_cli.unwrap_or_else(|| {
+            let rest_mode = parse_input().get_one::<String>("rest_mode").unwrap().to_string();
+            let home = rest_home.as_ref()
+                .expect("REST_HOME not defined. Either set REST_HOME or provide -p/--rest_path.");
+            format!("{}/target/{}/rest", home, rest_mode)
+        })
+    };
     if ! std::path::Path::new(&rest_cmd).is_file() {
         panic!("The REST binary \'{}\' does not exist", &rest_cmd);
     }
@@ -399,6 +482,25 @@ fn main() -> anyhow::Result<()> {
             //&& is_file_exist_in_dir(e.path(), &"ctrl.in").unwrap()
         ) {
 
+        if let Some(ref set) = filter_set {
+            let name = entry.path().file_name().unwrap().to_str().unwrap();
+            if !set.contains(name) {
+                continue;
+            }
+            if let Some(ref mut unmatched) = filter_unmatched {
+                unmatched.remove(name);
+            }
+        }
+
+        if let Some(ref set) = skip_set {
+            let name = entry.path().file_name().unwrap().to_str().unwrap();
+            if set.contains(name) {
+                if let Some(ref mut unmatched) = skip_unmatched {
+                    unmatched.remove(name);
+                }
+                continue;
+            }
+        }
 
         println!("====================================================");
         println!("Start regression task: {}", entry.path().display());
@@ -448,16 +550,35 @@ fn main() -> anyhow::Result<()> {
         let job_work_dir = work_path.join(entry.path().file_name().unwrap());
         copy_dir_all(entry.path(), &job_work_dir)?;
 
+        let test_name = entry.path().file_name().unwrap().to_str().unwrap();
+        let (effective_num_mpi, effective_num_threads) = match special_tests.get(test_name) {
+            Some(config) => {
+                println!("Special test config: num_mpi={:?}, num_threads={:?}", config.num_mpi, config.num_threads);
+                (config.num_mpi.unwrap_or(num_mpi), config.num_threads)
+            },
+            None => (num_mpi, num_threads),
+        };
+
+        if let Some(nt) = effective_num_threads {
+            for job_file_name in &job_list {
+                let job_file_path = job_work_dir.join(job_file_name);
+                if job_file_path.is_file() {
+                    set_num_threads_in_file(&job_file_path, nt)?;
+                    println!("Set num_threads = {} in {}", nt, job_file_name);
+                }
+            }
+        }
+
         // enter the job folder
         env::set_current_dir(&job_work_dir)?;
 
         let mut output_string = String::new();
         for job in job_list {
-            let output = if num_mpi == 1 {
+            let output = if effective_num_mpi == 1 {
                 ProcessCommand::new(rest_cmd.as_str())
                     .arg("-i").arg(job).output().unwrap()
             } else {
-                ProcessCommand::new("mpirun").arg("-n").arg(format!("{}",&num_mpi).as_str())
+                ProcessCommand::new("mpirun").arg("-n").arg(format!("{}",&effective_num_mpi).as_str())
                     .arg(rest_cmd.as_str())
                     .arg("-i").arg(job).output().unwrap()
             };
@@ -491,6 +612,18 @@ fn main() -> anyhow::Result<()> {
         timing(&j_time, Some(&format!("Job {:3}", job_index)));
         job_index += 1;
 
+    }
+
+    if let Some(ref unmatched) = filter_unmatched {
+        if !unmatched.is_empty() {
+            panic!("Filtered tests not found: {:?}", unmatched.iter().collect::<Vec<_>>());
+        }
+    }
+
+    if let Some(ref unmatched) = skip_unmatched {
+        if !unmatched.is_empty() {
+            panic!("Skipped tests not found: {:?}", unmatched.iter().collect::<Vec<_>>());
+        }
     }
 
     println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
