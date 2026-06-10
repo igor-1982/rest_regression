@@ -1,0 +1,10 @@
+{
+    "potentials": [
+        {
+            "angular_momentum": [0],
+            "coefficients": [["0.3"]],
+            "r_exponents": [0],
+            "gaussian_exponents": ["1.0"]
+        }
+    ]
+}
