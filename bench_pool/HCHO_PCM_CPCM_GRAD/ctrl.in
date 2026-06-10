@@ -12,14 +12,14 @@
      fchk =                      false
      pruning =                   "nwchem"
      radial_grid_method =        "treutler"
-     scf_acc_rho =               1.0e-8
-     scf_acc_eev =               1.0e-8
      max_scf_cycle =             250
      solvent_model=              "cpcm"
      solv_epsilon=               78.3553
      solv_chunk=                 64
      solvent_ri =                false
-    num_threads =           4
+     pcm_cavity_radii =          "bondi"
+
+    num_threads =          4 
     charge = 0.0000  
     spin   = 1       
     spin_polarization = false
