@@ -1,0 +1,25 @@
+[ctrl]
+print_level            = 1 
+num_threads            = 4
+job_type               = "Force"
+numerical_force        = true
+xc                     = "hf"
+basis_path             = "def2-svp"
+auxbas_path            = "def2-universal-jkfit"
+auxbasis_response      = "true"
+eri_type               = "ri-v"
+mixer                  = "diis"
+max_scf_cycle          = 125
+scf_acc_rho            = 1e-08
+scf_acc_etot           = 1e-08
+spin                   = 1.0
+charge                 = 0.0
+
+[geom]
+name = "CO"
+unit = "angstrom"
+position = '''
+    H   0.0  0.0  0.0
+    I   0.0  0.0  1.2
+'''
+ext_field_dipole = [0.0, 0.0, 0.001]
