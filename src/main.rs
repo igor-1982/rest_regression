@@ -59,6 +59,12 @@ pub fn parse_input() -> ArgMatches {
              .conflicts_with("filter")
              .help("Comma-separated list of test names to skip (e.g. \"NH3_SCAN,NH3_SVWN\")")
         )
+        .arg(Arg::new("durations")
+             .long("durations")
+             .num_args(0..=1)
+             .default_missing_value("5")
+             .help("Show the slowest N tests [default: 5, use 0/off/false to disable]")
+        )
         //.arg(Arg::new("task_status")
         //     .short('s')
         //     .long("task_status")
@@ -447,6 +453,20 @@ fn main() -> anyhow::Result<()> {
         println!("Skip: skipping {:?}", set.iter().collect::<Vec<_>>());
     }
 
+    let durations_n: usize = {
+        let matches = parse_input();
+        if matches.contains_id("durations") {
+            let val = matches.get_one::<String>("durations").map(|s| s.to_lowercase()).unwrap_or_default();
+            match val.as_str() {
+                "0" | "off" | "false" => 0,
+                _ => val.parse::<usize>().expect("--durations must be a positive integer, 0, off, or false"),
+            }
+        } else {
+            5
+        }
+    };
+    let mut durations: Vec<(String, f64)> = vec![];
+
 
     fs::create_dir(work_path).unwrap_or(());
     //fs::create_dir(work_path).unwrap_err();
@@ -587,6 +607,13 @@ fn main() -> anyhow::Result<()> {
                 output_string.push_str(line.unwrap().as_str());
                 output_string.push_str("\n");
             }
+            if !output.stderr.is_empty() {
+                output_string.push_str("--- stderr ---\n");
+                for line in output.stderr.lines() {
+                    output_string.push_str(line.unwrap().as_str());
+                    output_string.push_str("\n");
+                }
+            }
         }
         // leave the job folder
         env::set_current_dir(curr_path)?;
@@ -609,7 +636,11 @@ fn main() -> anyhow::Result<()> {
 
         is_pass = is_pass && is_pass_current;
 
-        timing(&j_time, Some(&format!("Job {:3}", job_index)));
+        let dt1 = timing(&j_time, Some(&format!("Job {:3}", job_index)));
+        if durations_n > 0 {
+            let elapsed = (dt1.timestamp_millis() - j_time.timestamp_millis()) as f64 / 1000.0;
+            durations.push((test_name.to_string(), elapsed));
+        }
         job_index += 1;
 
     }
@@ -623,6 +654,18 @@ fn main() -> anyhow::Result<()> {
     if let Some(ref unmatched) = skip_unmatched {
         if !unmatched.is_empty() {
             panic!("Skipped tests not found: {:?}", unmatched.iter().collect::<Vec<_>>());
+        }
+    }
+
+    if durations_n > 0 {
+        durations.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap());
+        let n = durations_n.min(durations.len());
+        if n > 0 {
+            println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            println!("Slowest {} tests:", n);
+            for (i, (name, secs)) in durations.iter().take(n).enumerate() {
+                println!("{:3}: {:30} {:8.2}s", i + 1, name, secs);
+            }
         }
     }
 
