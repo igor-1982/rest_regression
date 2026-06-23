@@ -1,65 +1,197 @@
+The REST_BASIS_DIR environment variable is not set.
+Add the default path (/opt/rest_workspace/rest/basis-set-pool/) to rest_basis_dir.
+The specified path for the basis sets is: cc-pvdz (lowercase), try to find it from the rest_basis_dir
+Found: /opt/rest_workspace/rest/basis-set-pool/cc-pvdz
+The basis set name def2-sv(p)-jkfit is an alias to def2-universal-jkfit
+The specified path for the auxiliary basis sets is: def2-universal-jkfit (lowercase), try to find it from the rest_basis_dir
+Found: /opt/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+WARNING: No solvent epsilon provided, use epsilon of vacuum.
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: xyg3
 Print level:                2
 The number of threads used for parallelism:      4
-The spheric-GTO basis set is taken from cc-pVDZ
-The pruning method will be nwchem
-The radial grid generation method will be treutler
-ERI Type: ri_v
-Turn on the basis pair symmetry for RI 3D-tensors
-The spheric-GTO auxiliary basis set is taken from def2-SV(P)-JKFIT
-The exchange-correlation method: b3lyp
-Spin polarization: On
+The spheric-GTO basis set is taken from /opt/rest_workspace/rest/basis-set-pool/cc-pvdz
+The spheric-GTO auxiliary basis set is taken from /opt/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
 Charge:   0; Spin:   1
+Spin polarization: On
+Input molecular structure (in Angstrom): ----------
+O        0.45569000     -0.85514700     -1.07744500
+H        0.17079400     -1.68909000     -1.47145500
+H        1.41652100     -0.93877000     -1.03645800
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The initial guess is prepared by reading chkfile (restart)
+Turn on the basis pair symmetry for RI 3D-tensors
+The pruning method is nwchem
+The radial grid generation method is treutler
 min_num_angular_points: 110
 max_num_angular_points: 590
 hardness: 3
 Grid generation level: 3
 Even tempered basis generation: false
-SCF convergency thresholds: 1e-8 for density matrix
-                            1e-6 Ha. for sum of eigenvalues
-                            1e-8 Ha. for total energy
-Max. SCF cycle number:      100
 The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
 Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
-The initial guess will be obtained from the existing checkfile 
-(restart)
-Initial guess is prepared by (sad).
-It is a cluster calculation for finite molecules
-the functional of 'b3lyp' contains
-The density functional 'B3LYP' belongs to the 'Hybrid GGA' family and is defined in the reference(s):
-(0): P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch, J. Phys. Chem. 98, 11623 (1994)
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 2
+SCF DFA components: [402]
+SCF DFA parameters: [1.0]
+SCF DFA hybrid coeff:       0.20000000
+Post-SCF DFA family: PT2
+Post-SCF DFA components: [1, 106, 8, 131]
+Post-SCF DFA parameters: [-0.014, 0.2107, 0.0, 0.6789]
+Post-SCF DFA hybrid coeff:       0.80330000
+Advanced DFA parameters: [0.3211, 0.3211]
+==== detailed info of the scf functional ====
+ID Number       : 402
+Identifier      : hyb_gga_xc_b3lyp
+Description     : B3LYP
+Attributes
+    Kind        : ExchangeCorrelation
+    Family      : HybGGA
+    Spin        : Polarized
+Flags
+    Derivative  : HaveEXC | HaveVXC | HaveFXC
+    Dimension   : Dim3
+    CAM         : <empty>
+    VV10        : <empty>
+    MGGA        : EnforceFHC
+    Device      : <empty>
+Hybrid Functional (non-CAM-type)
+    hyb_exx_coef: 0.2
+External Parameters
+    -       _a0 =    0.2               Fraction of exact exchange
+    -       _ax =    0.72              Fraction of GGA exchange correction
+    -       _ac =    0.81              Fraction of GGA correlation correction
+References
+    - P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+      DOI: 10.1021/j100096a001
+==== detailed info of the post-scf functional ====
+ID Number       : 1
+Identifier      : lda_x
+Description     : Slater exchange
+Attributes
+    Kind        : Exchange
+    Family      : LDA
+    Spin        : Polarized
+Flags
+    Derivative  : HaveEXC | HaveVXC | HaveFXC
+    Dimension   : Dim3
+    CAM         : <empty>
+    VV10        : <empty>
+    MGGA        : EnforceFHC
+    Device      : <empty>
+References
+    - P. A. M. Dirac.,  Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+      DOI: 10.1017/S0305004100016108
+    - F. Bloch.,  Z. Phys. 57, 545 (1929)
+      DOI: 10.1007/BF01340281
+ID Number       : 106
+Identifier      : gga_x_b88
+Description     : Becke 88
+Attributes
+    Kind        : Exchange
+    Family      : GGA
+    Spin        : Polarized
+Flags
+    Derivative  : HaveEXC | HaveVXC | HaveFXC
+    Dimension   : Dim3
+    CAM         : <empty>
+    VV10        : <empty>
+    MGGA        : EnforceFHC
+    Device      : <empty>
+External Parameters
+    -     _beta =    0.0042            beta/X_FACTOR_C is the coefficient of the gradient expansion
+    -    _gamma =    6                 gamma should be 6 to get the right asymptotics of Ex
+References
+    - A. D. Becke.,  Phys. Rev. A 38, 3098 (1988)
+      DOI: 10.1103/PhysRevA.38.3098
+ID Number       : 8
+Identifier      : lda_c_vwn_rpa
+Description     : Vosko, Wilk & Nusair (VWN5_RPA)
+Attributes
+    Kind        : Correlation
+    Family      : LDA
+    Spin        : Polarized
+Flags
+    Derivative  : HaveEXC | HaveVXC | HaveFXC
+    Dimension   : Dim3
+    CAM         : <empty>
+    VV10        : <empty>
+    MGGA        : EnforceFHC
+    Device      : <empty>
+References
+    - S. H. Vosko, L. Wilk, and M. Nusair.,  Can. J. Phys. 58, 1200 (1980)
+      DOI: 10.1139/p80-159
+ID Number       : 131
+Identifier      : gga_c_lyp
+Description     : Lee, Yang & Parr
+Attributes
+    Kind        : Correlation
+    Family      : GGA
+    Spin        : Polarized
+Flags
+    Derivative  : HaveEXC | HaveVXC | HaveFXC
+    Dimension   : Dim3
+    CAM         : <empty>
+    VV10        : <empty>
+    MGGA        : EnforceFHC
+    Device      : <empty>
+External Parameters
+    -        _a =    0.04918           Parameter a of LYP
+    -        _b =    0.132             Parameter b of LYP
+    -        _c =    0.2533            Parameter c of LYP
+    -        _d =    0.349             Parameter d of LYP
+References
+    - C. Lee, W. Yang, and R. G. Parr.,  Phys. Rev. B 37, 785 (1988)
+      DOI: 10.1103/PhysRevB.37.785
+    - B. Miehlich, A. Savin, H. Stoll, and H. Preuss.,  Chem. Phys. Lett. 157, 200 (1989)
+      DOI: 10.1016/0009-2614(89)87234-3
+==== End of Summary ====
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
-Libxc version used in REST: 5.2.3
+Libxc version used in REST: 7.0.0
 nbas: 7, natm: 3 for standard basis sets
 First valence state for the frozen-core algorithm:     0
-local elements are ["H", "O"]
-ctrl elements are ["O", "H"]
 final nbas: 44,final natm: 6
 numbasis: 24, num_auxbas: 113
 Molecule_name: H2O
 job_type = "SinglePoint"
 print_level = 2
-basis_path = "cc-pVDZ"
+basis_path = "/opt/rest_workspace/rest/basis-set-pool/cc-pvdz"
 basis_type = "spheric"
-auxbas_path = "def2-SV(P)-JKFIT"
+auxbas_path = "/opt/rest_workspace/rest/basis-set-pool/def2-universal-jkfit"
 auxbas_type = "spheric"
 use_auxbas = true
 even_tempered_basis = false
 etb_start_atom_number = 37
 etb_beta = 2.0
 ri_k_only = false
-auxbasis_response = false
+auxbasis_response = true
+numerical_force = false
 use_isdf = false
 isdf_k_only = false
 isdf_k_mu = 8
 isdf_new = false
 eri_type = "ri_v"
 use_ri_symm = true
-xc = "b3lyp"
+xc = "xyg3"
+xc_type = "Standard"
 post_xc = []
 post_correlation = []
 post_ai_correction = "none"
 charge = 0.0
 spin = 1.0
+use_int_nelec = true
 spin_channel = 2
 spin_polarization = true
 frozen_core_postscf = 0
@@ -84,35 +216,59 @@ max_scf_cycle = 100
 scf_acc_rho = 0.00000001
 scf_acc_eev = 0.000001
 scf_acc_etot = 0.00000001
-restart = true
+has_chkfile = true
+solvent_enabled = false
+solvent_ri = true
+solv_epsilon = 1.0
+solvent_model = "CPCM"
+solv_chunk = 8
+pcm_cavity_radii = "UFF"
 chkfile = "restart"
 chkfile_type = "hdf5"
 guessfile = "none"
-guessfile_type = "none"
-external_init_guess = false
+guessfile_type = "hdf5"
+external_init_guess = "chkfile"
 initial_guess = "sad"
 noiter = false
 check_stab = false
 use_dm_only = false
-use_ri_vj = true
+vxc_screen_threshold = 0.000000000000001
+ao_cutoff = 0.000000000001
+non0tab_blksize = 0
+drop_dense_ao = false
+algorithm_jk = "default"
+algorithm_j = "default"
+algorithm_k = "default"
 fciqmc_dump = false
 outputs = []
 cube_orb_setting = [3.0, 80.0]
 cube_orb_indices = []
+cube_orb_type = "wavefunction"
 atom_sad = false
 occupation_type = "INTEGER"
 frac_tolerant = 0.001
 deep_pot = false
+run_lib_rint = false
 bench_eps = false
 num_threads = 4
 batch_size = 64
 nforce_displacement = 0.0013
+ndipole_displacement = 0.0003
+nhessian_displacement = 0.005
 auxiliary_reference_states = []
+abort_on_mem_exceed = true
+smear_anneal = false
+guess_mix = false
+guess_mix_theta_deg = [15.0, 15.0]
+start_mix_cycle = 0
+xc_parser = "legacy"
+use_fxc_opt = false
 
 [[force_state_occupation]]
 ref_index = "restart"
 prev_state = 4
 prev_spin = 0
+target_spin = 0
 force_occ = 0.0
 curr_state = 0
 force_check_min = 0
@@ -123,32 +279,44 @@ ovlp = 0.0
 ref_index = "restart"
 prev_state = 5
 prev_spin = 0
+target_spin = 0
 force_occ = 1.0
 curr_state = 0
 force_check_min = 4
 force_check_max = 8
 ovlp = 0.0
 
+[j2c_decomp]
+policy = "eig"
+threshold = 0.0000000000001
+uplo = "Upper"
+
+[ri_pt2]
+mpi_mode = 0
+fp_mode = "FP32"
+
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (4122.10 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
 Nuc_energy:       9.11951004 Hartree
-no empirical dispersion correction
+no empirical dispersion correction is employed
 No ghost effective potential
-Detailed time report:
-all ri    |:    0.008 s for for the total evaluations of ri3fn
-prim ri   |:    0.003 s for for the pure three-center integrals
-inv_sqrt  |:    0.004 s for for the sqrt inverse of aux_ij
-aux_ij    |:    0.001 s for for the coulomb matrix of auxiliary basis
-ri_v      |:    0.000 s for for RI dot aux_v^{-1/2}
+No ghost point charges
 Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.01769163 with the total number of basis functions:     24
 Grid size: 34310
-HDF5 Group: <HDF5 group: "/scf" (7 members)> 
-Members: ["e_tot", "mo_coeff", "mo_energy", "mo_occupation", "num_basis", "num_state", "spin_channel"]
-E_tot from chkfile:     -76.4206081479
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=95.9% → skipping (AO too dense), falling back to dense
+Read MO coefficients from chkfile: restart
+However, the chkfile will be overwritten in the SCF procedure.
+To prevent that, use `guessfile = your_chkfile` instead
+HDF5 Group: <HDF5 group: "/scf" (8 members)> 
+Members: ["e_tot", "mo_coeff", "mo_energy", "mo_occ", "mo_occupation", "num_basis", "num_states", "spin_channel"]
+E_tot from chkfile:     -76.1417392700
+ Prev. State: 4; Prev. Spin: 0; Target Spin: 0; Force Occ.       0.00000000
  State Window: (0, 12)
  Curr. State: 4 with OVLP of       1.00000000
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
+ Prev. State: 5; Prev. Spin: 0; Target Spin: 0; Force Occ.       1.00000000
  State Window: (4, 8)
  Curr. State: 5 with OVLP of       1.00000000
 Occupation in Alpha Channel (0-12):
@@ -160,89 +328,22 @@ Occupation in Beta Channel: (0-12):
  (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
  (  10,  0.000) (  11,  0.000)
 Detailed time report:
+Solvent Calculation|:    0.000 s for Initialization of the solvent calculation
+InitGuess |:    0.046 s for Prepare initial guess
+Overall   |:    1.051 s for SCF Preparation
+CInt      |:    0.021 s for Two, Three, and Four-center integrals
 ISDF      |:    0.000 s for ISDF initialization
-InitGuess |:    0.005 s for Prepare initial guess
-Overall   |:    1.962 s for SCF Preparation
-CInt      |:    0.009 s for Two, Three, and Four-center integrals
-DFT Grids |:    1.948 s for Initialization of the tabulated Grids and AOs
-electron number in alpha-channel:   4.99999911
-electron number in beta-channel:    4.99999990
-Exc: -7.27605104803058, Vxc: -4.660129199356417
-The total energy:       -76.0769476112 Ha by the initial guess
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
- State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99728504
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
- State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.98668573
-Occupation in Alpha Channel (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
- (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-Occupation in Beta Channel: (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
- (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-electron number in alpha-channel:   4.99999926
-electron number in beta-channel:    4.99999994
-Exc: -7.6562877031066385, Vxc: -4.908012405199409
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
- State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99571608
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
- State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99952064
-Occupation in Alpha Channel (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
- (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-Occupation in Beta Channel: (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
- (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.0741046153 Ha with <S^2> =  7.500 and <Sz> =  0.000 after    1 iterations (in       0.24 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.23s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:   4.99999914
-electron number in beta-channel:    4.99999990
-Exc: -7.24624683116196, Vxc: -4.640858961223904
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
- State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99992973
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
- State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99635755
-Occupation in Alpha Channel (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
- (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-Occupation in Beta Channel: (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
- (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-SCF Change: DM (2.26222e-2,1.85787e-2); eev 8.48065e-1 Ha; etot 1.68995e-2 Ha
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.0572051152 Ha with <S^2> =  7.500 and <Sz> =  0.000 after    2 iterations (in       0.25 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.24s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
+DFT Grids |:    0.985 s for Initialization of the tabulated Grids and AOs
 electron number in alpha-channel:   4.99999920
 electron number in beta-channel:    4.99999992
-Exc: -7.451601539762592, Vxc: -4.774589574000342
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
+Exc:      -7.45910683, Vxc:      -4.77948381
+The total energy:       -76.1417392700 Ha by the initial guess
+ Prev. State: 4; Prev. Spin: 0; Target Spin: 0; Force Occ.       0.00000000
  State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99995109
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
+ Curr. State: 4 with OVLP of       1.00000000
+ Prev. State: 5; Prev. Spin: 0; Target Spin: 0; Force Occ.       1.00000000
  State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99618580
+ Curr. State: 5 with OVLP of       1.00000000
 Occupation in Alpha Channel (0-12):
  (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
  (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
@@ -251,24 +352,15 @@ Occupation in Beta Channel: (0-12):
  (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
  (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
  (  10,  0.000) (  11,  0.000)
-SCF Change: DM (5.74676e-4,8.54166e-4); eev 2.50917e-2 Ha; etot -8.44322e-2 Ha
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.1416373210 Ha with <S^2> =  7.500 and <Sz> = -0.000 after    3 iterations (in       0.25 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.24s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
 electron number in alpha-channel:   4.99999920
 electron number in beta-channel:    4.99999992
-Exc: -7.458913525269001, Vxc: -4.779355881463539
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
+Exc:      -7.45910683, Vxc:      -4.77948381
+ Prev. State: 4; Prev. Spin: 0; Target Spin: 0; Force Occ.       0.00000000
  State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99995078
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
+ Curr. State: 4 with OVLP of       1.00000000
+ Prev. State: 5; Prev. Spin: 0; Target Spin: 0; Force Occ.       1.00000000
  State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99618244
+ Curr. State: 5 with OVLP of       1.00000000
 Occupation in Alpha Channel (0-12):
  (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
  (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
@@ -277,24 +369,25 @@ Occupation in Beta Channel: (0-12):
  (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
  (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
  (  10,  0.000) (  11,  0.000)
-SCF Change: DM (7.80084e-5,7.51749e-5); eev 9.39146e-4 Ha; etot -1.01141e-4 Ha
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.1417384622 Ha with <S^2> =  7.500 and <Sz> =  0.000 after    4 iterations (in       0.24 seconds).
+Spin  0: HOMO (  5):      -0.069374, LUMO (  4):      -0.286455, H-L Gap:      -0.21708115
+Spin  1: HOMO (  4):      -0.534682, LUMO (  5):       0.015509, H-L Gap:       0.55019129
+Energy:     -76.1417392700 Ha with <S^2> =  1.003 and <2S+1> =  2.239 after    1 iterations (in       0.09 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.24s
+prepare_next_input:            0.09s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
 electron number in alpha-channel:   4.99999920
 electron number in beta-channel:    4.99999992
-Exc: -7.459132895204332, Vxc: -4.779500151357581
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
+Exc:      -7.45910683, Vxc:      -4.77948381
+ Prev. State: 4; Prev. Spin: 0; Target Spin: 0; Force Occ.       0.00000000
  State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99995010
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
+ Curr. State: 4 with OVLP of       1.00000000
+ Prev. State: 5; Prev. Spin: 0; Target Spin: 0; Force Occ.       1.00000000
  State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99618913
+ Curr. State: 5 with OVLP of       1.00000000
 Occupation in Alpha Channel (0-12):
  (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
  (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
@@ -303,24 +396,27 @@ Occupation in Beta Channel: (0-12):
  (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
  (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
  (  10,  0.000) (  11,  0.000)
-SCF Change: DM (3.35627e-5,2.58083e-5); eev 5.15195e-4 Ha; etot -7.39049e-7 Ha
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.1417392013 Ha with <S^2> =  7.500 and <Sz> =  0.000 after    5 iterations (in       0.25 seconds).
+Spin  0: HOMO (  5):      -0.069374, LUMO (  4):      -0.286455, H-L Gap:      -0.21708115
+Spin  1: HOMO (  4):      -0.534682, LUMO (  5):       0.015509, H-L Gap:       0.55019129
+SCF Change: DM (5.63010e-15,3.09234e-15); eev 9.76031e-14 Ha; etot 9.94760e-14 Ha
+Energy:     -76.1417392700 Ha with <S^2> =  1.003 and <2S+1> =  2.239 after    2 iterations (in       0.08 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.25s
+prepare_next_input:            0.07s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+SCF is converged after    2 iterations.
 electron number in alpha-channel:   4.99999920
 electron number in beta-channel:    4.99999992
-Exc: -7.459073692159366, Vxc: -4.77946217333646
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
+Exc:      -7.45910683, Vxc:      -4.77948381
+ Prev. State: 4; Prev. Spin: 0; Target Spin: 0; Force Occ.       0.00000000
  State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99995022
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
+ Curr. State: 4 with OVLP of       1.00000000
+ Prev. State: 5; Prev. Spin: 0; Target Spin: 0; Force Occ.       1.00000000
  State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99618833
+ Curr. State: 5 with OVLP of       1.00000000
 Occupation in Alpha Channel (0-12):
  (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
  (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
@@ -329,94 +425,9 @@ Occupation in Beta Channel: (0-12):
  (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
  (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
  (  10,  0.000) (  11,  0.000)
-SCF Change: DM (5.32592e-6,5.45573e-6); eev 1.31096e-4 Ha; etot -6.62374e-8 Ha
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.1417392675 Ha with <S^2> =  7.500 and <Sz> = -0.000 after    6 iterations (in       0.24 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.23s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:   4.99999920
-electron number in beta-channel:    4.99999992
-Exc: -7.4591072913832885, Vxc: -4.779484107186489
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
- State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99995022
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
- State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99618834
-Occupation in Alpha Channel (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
- (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-Occupation in Beta Channel: (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
- (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-SCF Change: DM (3.71725e-7,5.01246e-7); eev 9.73782e-6 Ha; etot -2.50299e-9 Ha
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.1417392700 Ha with <S^2> =  7.500 and <Sz> = -0.000 after    7 iterations (in       0.25 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.24s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:   4.99999920
-electron number in beta-channel:    4.99999992
-Exc: -7.459106814127063, Vxc: -4.779483797580146
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
- State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99995022
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
- State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99618834
-Occupation in Alpha Channel (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
- (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-Occupation in Beta Channel: (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
- (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-SCF Change: DM (5.21906e-8,3.67208e-8); eev 4.08547e-7 Ha; etot -8.86757e-12 Ha
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.1417392700 Ha with <S^2> =  7.500 and <Sz> = -0.000 after    8 iterations (in       0.24 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.24s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-electron number in alpha-channel:   4.99999920
-electron number in beta-channel:    4.99999992
-Exc: -7.45910683978966, Vxc: -4.779483813672256
- Prev. State: 4; Prev. Spin: 0; Force Occ.       0.00000000
- State Window: (0, 12)
- Curr. State: 4 with OVLP of       0.99995022
- Prev. State: 5; Prev. Spin: 0; Force Occ.       1.00000000
- State Window: (4, 8)
- Curr. State: 5 with OVLP of       0.99618834
-Occupation in Alpha Channel (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  0.000)
- (   5,  1.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-Occupation in Beta Channel: (0-12):
- (   0,  1.000) (   1,  1.000) (   2,  1.000) (   3,  1.000) (   4,  1.000)
- (   5,  0.000) (   6,  0.000) (   7,  0.000) (   8,  0.000) (   9,  0.000)
- (  10,  0.000) (  11,  0.000)
-SCF Change: DM (6.20479e-9,4.15007e-9); eev 7.99074e-8 Ha; etot -2.41585e-13 Ha
-debug Tr[P.O]:       5.00000000,       5.00000000
-Energy:     -76.1417392700 Ha with <S^2> =  7.500 and <Sz> =  0.000 after    9 iterations (in       0.25 seconds).
-Detailed timing info in this SCF step:
-prepare_next_input:            0.25s
-diagonalize_hamiltonian:       0.00s
-generate_density_matrix:       0.00s
-check_scf_convergence:         0.00s
-scf_records.update:            0.00s
-SCF is converged after    9 iterations.
+Spin  0: HOMO (  5):      -0.069374, LUMO (  4):      -0.286455, H-L Gap:      -0.21708115
+Spin  1: HOMO (  4):      -0.534682, LUMO (  5):       0.015509, H-L Gap:       0.55019129
+Eigenvalues in Unrestricted HF (or KS) calculation:
 Spin-up eigenvalues
  
    State    Occupation        Eigenvalue
@@ -442,9 +453,32 @@ Spin-down eigenvalues
        6       0.00000          0.089388
        7       0.00000          0.495186
        8       0.00000          0.554332
+==========================================
+Now evaluate the    PT2 correlation energy
+==========================================
+debug-lyyu UHF: num_mo=24, idx_core=0, idx_lumo=[4, 5]
+debug-lyyu UHF: occ_lists[A] (len=5) = [0, 1, 2, 3, 5]
+debug-lyyu UHF: occ_lists[B] (len=5) = [0, 1, 2, 3, 4]
+debug-lyyu UHF: vir_lists[A] (len=19) = [4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+debug-lyyu UHF: vir_lists[B] (len=19) = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+debug-lyyu UHF: occ_energy[A] shape=[5], vir_energy[A] shape=[19]
+debug-lyyu UHF: occ_energy[B] shape=[5], vir_energy[B] shape=[19]
+----------------------------------------------------------------------
+Methods         :       Total Corr,          OS Corr,          SS Corr
+----------------------------------------------------------------------
+PT2             :      -0.22857133,      -0.17155228,      -0.05701905
+----------------------------------------------------------------------
+Fifth-rung correlation energy :      -0.073394255521 Ha
+E[XYG3 ]=:     -76.07508651 Ha, Ex[HF]:      -8.85212990 Ha, Ec[PT2  ]:      -0.07339426 Ha
+Exc[KS-DFA]:      -1.97856985 Ha
+Detailed time report:
+ao2mo     |:    0.002 s for for the generation of RI3MO
+xc_energy |:    0.078 s for for x_hf, xc_scf, xc_xdh
+c_r5dft   |:    0.009 s for for advanced correlations
 now save the converged SCF results
+write chkfile: restart
 Mulliken population analysis:
-  0-O  :   0.448327
+  0-O  :   0.448326
   1-H  :  -0.224165
   2-H  :  -0.224162
 
@@ -452,6 +486,8 @@ Mulliken population analysis:
               REST: Mission accomplished
 ====================================================
 The SCF energy        :     -76.1417392700 Ha
+The (R)-xDH energy    :     -76.0750865129 Ha
 Detailed time report:
-Overall   |:    4.438 s for the whole job
-SCF       |:    4.388 s for the scf procedure
+SCF       |:    1.393 s for the scf procedure
+PT2       |:    0.096 s for the PT2 evaluation
+Overall   |:    1.498 s for the whole job

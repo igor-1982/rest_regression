@@ -4,7 +4,7 @@
      # 设置Rayon和OpenMP的并行数，缺省为1
      num_threads =               4
      # 设置使用的电子结构方法，缺省为HF
-     xc =                        "b3lyp"
+     xc =                        "xyg3"
      occupation_type =           "integer"
      basis_path =                "cc-pVDZ"
      auxbas_path =               "def2-SV(P)-JKFIT" 
