@@ -1,7 +1,6 @@
 use clap::{Arg, ArgMatches, Command};
 use anyhow;
 use regex::Regex;
-use serde::Deserialize;
 //use core::num;
 use std::{collections::HashMap, env, fs::{self, File}, io::{BufRead, Read, Write}, path::Path};
 use std::process::Command as ProcessCommand;
@@ -9,6 +8,8 @@ use walkdir::WalkDir;
 use chrono::{DateTime, Local};
 
 mod parse_grad;
+
+mod filter;
 
 pub fn parse_input() -> ArgMatches {
     Command::new("rest_regression")
@@ -64,6 +65,11 @@ pub fn parse_input() -> ArgMatches {
              .num_args(0..=1)
              .default_missing_value("5")
              .help("Show the slowest N tests [default: 5, use 0/off/false to disable]")
+        )
+        .arg(Arg::new("dry_run")
+             .long("dry-run")
+             .action(clap::ArgAction::SetTrue)
+             .help("List tests that would be run without executing them")
         )
         //.arg(Arg::new("task_status")
         //     .short('s')
@@ -357,24 +363,6 @@ pub fn timing(dt0: &DateTime<Local>, iprint: Option<&str>) -> DateTime<Local> {
     }
 }
 
-#[derive(Deserialize, Debug)]
-struct SpecialTestConfig {
-    num_mpi: Option<usize>,
-    num_threads: Option<usize>,
-}
-
-type SpecialTests = HashMap<String, SpecialTestConfig>;
-
-fn load_special_tests() -> SpecialTests {
-    let config_path = Path::new("special_tests.toml");
-    if config_path.is_file() {
-        let content = fs::read_to_string(config_path).unwrap();
-        toml::from_str(&content).unwrap_or_default()
-    } else {
-        HashMap::new()
-    }
-}
-
 fn set_num_threads_in_file(file_path: &Path, num_threads: usize) -> anyhow::Result<()> {
     let content = fs::read_to_string(file_path)?;
     let re = Regex::new(r"(?m)^\s*num_threads\s*=\s*\d+").unwrap();
@@ -427,12 +415,10 @@ fn main() -> anyhow::Result<()> {
     let num_threads: Option<usize> = parse_input().get_one::<String>("num_threads")
         .map(|s| s.parse::<usize>().expect("num_threads must be a positive integer"));
 
-    let special_tests = load_special_tests();
-
     let filter_set: Option<std::collections::HashSet<String>> = {
         let matches = parse_input();
         matches.get_one::<String>("filter").map(|s| {
-            s.split(',').map(|n| n.trim().to_string()).collect()
+            s.split(',').map(|n| n.trim().to_lowercase()).collect()
         })
     };
     let mut filter_unmatched = filter_set.clone();
@@ -444,7 +430,7 @@ fn main() -> anyhow::Result<()> {
     let skip_set: Option<std::collections::HashSet<String>> = {
         let matches = parse_input();
         matches.get_one::<String>("skip").map(|s| {
-            s.split(',').map(|n| n.trim().to_string()).collect()
+            s.split(',').map(|n| n.trim().to_lowercase()).collect()
         })
     };
     let mut skip_unmatched = skip_set.clone();
@@ -466,6 +452,17 @@ fn main() -> anyhow::Result<()> {
         }
     };
     let mut durations: Vec<(String, f64)> = vec![];
+    let dry_run: bool = parse_input().get_flag("dry_run");
+
+    let test_config = filter::load_test_config();
+    let all_names = filter::build_all_names(&input_folder, &test_config);
+
+    if let Some(ref mut unmatched) = filter_unmatched {
+        unmatched.retain(|n| all_names.contains(n));
+    }
+    if let Some(ref mut unmatched) = skip_unmatched {
+        unmatched.retain(|n| all_names.contains(n));
+    }
 
 
     fs::create_dir(work_path).unwrap_or(());
@@ -494,7 +491,7 @@ fn main() -> anyhow::Result<()> {
     let mut npass: usize = 0;
     let mut nfail: usize = 0;
     
-    for entry in WalkDir::new(input_folder)
+    for entry in WalkDir::new(&input_folder)
         .sort_by(|a, b| a.file_name().cmp(b.file_name()))
         .into_iter().filter_map(|e| e.ok())
         .filter(|e| e.file_type().is_dir() 
@@ -503,23 +500,28 @@ fn main() -> anyhow::Result<()> {
         ) {
 
         if let Some(ref set) = filter_set {
-            let name = entry.path().file_name().unwrap().to_str().unwrap();
-            if !set.contains(name) {
+            if !filter::entry_matches(&entry, &input_folder, set, &test_config) {
                 continue;
             }
             if let Some(ref mut unmatched) = filter_unmatched {
-                unmatched.remove(name);
+                filter::remove_matched(&entry, &input_folder, set, &test_config, unmatched);
             }
         }
 
         if let Some(ref set) = skip_set {
-            let name = entry.path().file_name().unwrap().to_str().unwrap();
-            if set.contains(name) {
+            if filter::entry_matches(&entry, &input_folder, set, &test_config) {
                 if let Some(ref mut unmatched) = skip_unmatched {
-                    unmatched.remove(name);
+                    filter::remove_matched(&entry, &input_folder, set, &test_config, unmatched);
                 }
                 continue;
             }
+        }
+
+        if dry_run {
+            println!("Would run: {}", entry.path().display());
+            njob += 1;
+            job_index += 1;
+            continue;
         }
 
         println!("====================================================");
@@ -571,12 +573,12 @@ fn main() -> anyhow::Result<()> {
         copy_dir_all(entry.path(), &job_work_dir)?;
 
         let test_name = entry.path().file_name().unwrap().to_str().unwrap();
-        let (effective_num_mpi, effective_num_threads) = match special_tests.get(test_name) {
-            Some(config) => {
+        let (effective_num_mpi, effective_num_threads) = match test_config.get(test_name) {
+            Some(config) if config.num_mpi.is_some() || config.num_threads.is_some() => {
                 println!("Special test config: num_mpi={:?}, num_threads={:?}", config.num_mpi, config.num_threads);
                 (config.num_mpi.unwrap_or(num_mpi), config.num_threads)
             },
-            None => (num_mpi, num_threads),
+            _ => (num_mpi, num_threads),
         };
 
         if let Some(nt) = effective_num_threads {
@@ -670,13 +672,17 @@ fn main() -> anyhow::Result<()> {
     }
 
     println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-    println!("Regression summary: {}/{} passed, {}/{} failed", npass, njob, nfail, njob);
-    if is_pass {
-        println!("All regression tasks passed");
+    if dry_run {
+        println!("Dry run: {} tests would be run", njob);
     } else {
-        println!("Regression failed for");
-        for job in fail_list {
-            println!("X: \"{}\"", job);
+        println!("Regression summary: {}/{} passed, {}/{} failed", npass, njob, nfail, njob);
+        if is_pass {
+            println!("All regression tasks passed");
+        } else {
+            println!("Regression failed for");
+            for job in fail_list {
+                println!("X: \"{}\"", job);
+            }
         }
     }
     println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
