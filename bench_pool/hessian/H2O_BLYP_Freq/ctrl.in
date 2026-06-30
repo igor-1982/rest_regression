@@ -19,7 +19,7 @@
     max_scf_cycle =      100
 
     [ctrl.hessian]
-        solver = "dense"
+        solver = "krylov"
         frequencies = true
         verbose = 1
 
