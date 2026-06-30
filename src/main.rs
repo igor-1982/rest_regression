@@ -201,6 +201,51 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("gradient".to_string(), grad);
     }
 
+    // ── Hessian regression ──
+    let re_hess_total = Regex::new(
+        r"Hessian total max_abs\s*=\s*(?P<val>[\+-]?\d+\.\d+e[+-]?\d+)"
+    ).unwrap();
+    if re_hess_total.is_match(&buf) {
+        let caps = re_hess_total.captures(&buf).unwrap();
+        let val = caps["val"].parse::<f64>().unwrap();
+        result.insert("hessian_total_max_abs".to_string(), vec![val]);
+    }
+
+    let re_hess_hpart = Regex::new(
+        r"h_partial max_abs\s*=\s*(?P<val>[\+-]?\d+\.\d+e[+-]?\d+)"
+    ).unwrap();
+    if re_hess_hpart.is_match(&buf) {
+        let caps = re_hess_hpart.captures(&buf).unwrap();
+        let val = caps["val"].parse::<f64>().unwrap();
+        result.insert("h_partial_max_abs".to_string(), vec![val]);
+    }
+
+    let re_hess_cphf = Regex::new(
+        r"cphf_contrib max_abs\s*=\s*(?P<val>[\+-]?\d+\.\d+e[+-]?\d+)"
+    ).unwrap();
+    if re_hess_cphf.is_match(&buf) {
+        let caps = re_hess_cphf.captures(&buf).unwrap();
+        let val = caps["val"].parse::<f64>().unwrap();
+        result.insert("cphf_contrib_max_abs".to_string(), vec![val]);
+    }
+
+    // ── Frequencies regression ──
+    // Parse the stdout frequency table: "  N    FREQ    ---" format
+    //   Vibrational Frequencies (cm):
+    //   Mode     Freq/cm    Symmetry
+    //   ----     ---------- ----------
+    //    1       -601.0371  ---
+    let re_freq = Regex::new(
+        r"(?m)^\s*(?P<idx>\d+)\s+(?P<freq>[\+-]?\d+\.\d+)\s+(?:---|[A-Z])"
+    ).unwrap();
+    let mut freqs: Vec<f64> = vec![];
+    for cap in re_freq.captures_iter(&buf) {
+        freqs.push(cap["freq"].parse::<f64>().unwrap());
+    }
+    if !freqs.is_empty() {
+        result.insert("frequencies_cm".to_string(), freqs);
+    }
+
     let re_hoco_luco_gap = Regex::new(
         r"HOCO-LUCO gap\s*:\s*(?P<energy>[-+]?\d+\.\d+)\s*eV"
         ).unwrap();
@@ -280,6 +325,50 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                 //break;
             }
             
+        } else if key.eq("hessian_total_max_abs") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let dev = (ref_value[0] - out_value[0]).abs();
+                if dev > 1.0e-5 {
+                    is_same = false;
+                    println!("WARNNING: {:20}:{:20.10} != {:20.10} (dev={:.2e})", key, out_value[0], ref_value[0], dev);
+                } else {
+                    println!("Pass    : {:20}:{:20.10}  = {:20.10} (dev={:.2e})", key, out_value[0], ref_value[0], dev);
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key.eq("h_partial_max_abs") || key.eq("cphf_contrib_max_abs") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let dev = (ref_value[0] - out_value[0]).abs();
+                if dev > 1.0e-4 {
+                    is_same = false;
+                    println!("WARNNING: {:20}:{:20.10} != {:20.10} (dev={:.2e})", key, out_value[0], ref_value[0], dev);
+                } else {
+                    println!("Pass    : {:20}:{:20.10}  = {:20.10} (dev={:.2e})", key, out_value[0], ref_value[0], dev);
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key.eq("frequencies_cm") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let n_modes = ref_value.len().min(out_value.len());
+                for i in 0..n_modes {
+                    let dev = (ref_value[i] - out_value[i]).abs();
+                    if dev > 2.0 {
+                        is_same = false;
+                        println!("WARNNING: Frequency Mode {}: {:12.4} != {:12.4} (dev={:.2e} cm⁻¹)",
+                            i + 1, out_value[i], ref_value[i], dev);
+                    } else {
+                        println!("Pass    : Frequency Mode {}: {:12.4}  = {:12.4} (dev={:.2e} cm⁻¹)",
+                            i + 1, out_value[i], ref_value[i], dev);
+                    }
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
         } else if key.eq("hoco_luco_gap") {
             if let Some(out_value) = out_hashmap.get(key) {
                 if (ref_value[0] - out_value[0]).abs() > 1e-5 {
@@ -617,6 +706,17 @@ fn main() -> anyhow::Result<()> {
                 }
             }
         }
+        // Save Hessian/Frequencies output files before leaving & deleting the job dir
+        for artifact_name in &["HessianMatrix.txt", "EigenModes.txt"] {
+            let src = job_work_dir.join(artifact_name);
+            if src.exists() {
+                let mut dst_name = test_name.to_string();
+                dst_name.push('_');
+                dst_name.push_str(artifact_name);
+                let _ = fs::copy(&src, work_path.join(&dst_name));
+            }
+        }
+
         // leave the job folder
         env::set_current_dir(curr_path)?;
         // remove the tmp job folder
