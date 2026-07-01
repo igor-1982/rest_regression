@@ -2,8 +2,8 @@
      print_level =               2
      num_threads =               4
      xc =                        "hf" 
-     basis_path =                "./cc-pVDZ"
-     auxbas_path =               "./def2-SV(P)-JKFIT" 
+     basis_path =                "cc-pVDZ"
+     auxbas_path =               "def2-universal-jkfit" 
      charge =                    0.0
      spin =                      1.0
      spin_polarize =             false

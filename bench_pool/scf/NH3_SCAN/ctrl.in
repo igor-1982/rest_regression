@@ -6,7 +6,7 @@
      # 设置使用的电子结构方法，缺省为HF
      xc =                        "scan" 
      basis_path =                "cc-pVDZ"
-     #auxbas_path =               "def2-SV(P)-JKFIT" 
+     #auxbas_path =               "def2-universal-jkfit" 
      # 使用resolution-of-identity (RI)技术处理四中心积分（缺省）
      eri_type =                  "ri_v"
      #use_ri_vj =                 "false"

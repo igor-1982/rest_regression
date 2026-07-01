@@ -2,7 +2,7 @@
   print_level = 2
   num_threads = 4
   basis_path = "def2-TZVP"
-  auxbas_path = "def2-SV(P)-JKFIT"
+  auxbas_path = "def2-universal-jkfit"
   charge = 0
   spin = 1
   xc = "b3lyp"

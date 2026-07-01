@@ -6,7 +6,7 @@
      frozen_core_postscf =       0
      frequency_points =          40
      basis_path =                "cc-pVDZ"
-     auxbas_path =               "def2-SV(P)-JKFIT" 
+     auxbas_path =               "def2-universal-jkfit" 
      charge =                    0.0
      spin =                      3.0
      spin_polarization =         true

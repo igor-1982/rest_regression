@@ -3,7 +3,7 @@
      job_type =             "energy"
      xc =                   "mp2"
      basis_path =           "def2-TZVP"
-     auxbas_path =          "def2-SVP-JKFIT"
+     auxbas_path =          "def2-universal-jkfit"
      guessfile =            "none"
      charge =               0.0
      spin =                 1.0
