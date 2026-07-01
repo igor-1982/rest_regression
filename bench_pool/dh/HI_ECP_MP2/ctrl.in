@@ -5,8 +5,8 @@
      num_threads =               4
      # 设置使用的电子结构方法，缺省为HF
      xc =                        "mp2" 
-      basis_path =                "./cc-pVDZ"
-      auxbas_path =               "./def2-SV(P)-JKFIT" 
+     basis_path =                "./cc-pVDZ"
+     auxbas_path =               "./def2-SV(P)-JKFIT" 
      charge =                    0.0
      spin =                      1.0
      spin_polarization =         false
