@@ -4,7 +4,7 @@
      print_level =          1              # print level: 1 for the simplest output
      xc =                   "ZRPS"        # indicating that the MP2 method is invoked
      basis_path =           "cc-pVDZ"
-     auxbas_path =          "def2-SV(P)-JKFIT"
+     auxbas_path =          "def2-universal-jkfit"
      initial_guess =        "sad"
      charge =               0.0
      spin =                 3.0

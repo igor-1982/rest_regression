@@ -6,7 +6,7 @@
      xc =                        "xygjos" 
      numerical_force =           true
      basis_path =                "cc-pVDZ"
-     auxbas_path =               "def2-SV(P)-JKFIT" 
+     auxbas_path =               "def2-universal-jkfit" 
      charge =                    0.0
      spin =                      1.0
      spin_polarization =         false

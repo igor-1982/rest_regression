@@ -4,7 +4,7 @@
      print_level =          2            # print level: 1 for the simplest output
      xc =                   "mp2"        # indicating that the MP2 method is invoked
      basis_path =           "cc-pVDZ"
-     auxbas_path =          "def2-SV(P)-JKFIT"
+     auxbas_path =          "def2-universal-jkfit"
      charge =               0.0
      spin =                 1.0
      spin_polarization =    false

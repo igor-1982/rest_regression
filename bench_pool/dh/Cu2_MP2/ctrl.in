@@ -3,7 +3,7 @@
      print_level =               2
      xc =                        "mp2"
      basis_path =                "def2-SVP"
-     auxbas_path =               "def2-SV(P)-JKFIT"
+     auxbas_path =               "def2-universal-jkfit"
      eri_type =                  "ri-v"
      initial_guess =             "sad"
      charge =                    0.0

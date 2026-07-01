@@ -6,7 +6,7 @@
      # 设置使用的电子结构方法，缺省为HF
      xc =                        "mp2" 
      basis_path =                "def2-TZVP"
-     auxbas_path =               "def2-SVP-JKFIT" 
+     auxbas_path =               "def2-universal-jkfit" 
      # 使用resolution-of-identity (RI)技术处理四中心积分（缺省）
      eri_type =                  "ri_v"
      use_ri_symm =               true

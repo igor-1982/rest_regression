@@ -6,7 +6,7 @@
      frozen_core_postscf =       0
      frequency_points =          40
      basis_path =                "cc-pVDZ"
-     auxbas_path =               "def2-SV(P)-JKFIT" 
+     auxbas_path =               "def2-universal-jkfit" 
      # 使用resolution-of-identity (RI)技术处理四中心积分（缺省）
      eri_type =                  "ri_v"
      use_ri_symm =               true
