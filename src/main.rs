@@ -257,24 +257,27 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
     }
 
     // TDDFT excitation energies: extract first 3 excitation energies
-    // Format from REST:
-    // State       Energy (Ha)   Energy (eV)  Wavelength (nm)         Osc. Strength
-    // --------------------------------------------------------------------------------
-    //    1        0.11186693        3.0441
-    //    2        0.12576545        3.4223
-    //    3        0.13821993        3.7612
-    let re_tddft = Regex::new(
-        r"(?m)^\s*(?P<idx>\d+)\s+(?P<energy>[\+-]?\d+\.\d+)\s+(?P<ev>[\+-]?\d+\.\d+)\s+(?P<nm>[\+-]?\d+\.\d+)\s+(?P<osc>[\+-]?\d+\.\d+)"
+    // New BSE-like format from REST:
+    // First 3 Singlet Excitations:
+    // #0 Excitation energy=0.11186693, norm=1.000000
+    // 	Transition Dipole Square:0.XXXX; Oscillator Strength:0.XXXX
+    let re_tddft_energy = Regex::new(
+        r"(?m)^#(?P<idx>\d+) Excitation energy=(?P<energy>[\+-]?\d+\.\d+)"
+    ).unwrap();
+    let re_tddft_osc = Regex::new(
+        r"(?m)Oscillator Strength:(?P<osc>[\+-]?\d+\.\d+)"
     ).unwrap();
 
     let mut tddft_energies: Vec<f64> = vec![];
     let mut tddft_osc: Vec<f64> = vec![];
-    for cap in re_tddft.captures_iter(&buf) {
+    for cap in re_tddft_energy.captures_iter(&buf) {
         let idx = cap["idx"].parse::<usize>().unwrap_or(99);
         if idx <= 6 {
             tddft_energies.push(cap["energy"].parse::<f64>().unwrap());
-            tddft_osc.push(cap["osc"].parse::<f64>().unwrap());
         }
+    }
+    for cap in re_tddft_osc.captures_iter(&buf) {
+        tddft_osc.push(cap["osc"].parse::<f64>().unwrap());
     }
     if !tddft_energies.is_empty() {
         result.insert("tddft_energies".to_string(), tddft_energies);
