@@ -1,0 +1,943 @@
+The REST_BASIS_DIR environment variable is not set.
+Detected CONDA_PREFIX: /home/a/miniconda3/envs/pyscf-pip, inside_conda: false
+Add the alternative default path (/home/a/rest_pack/rest/basis-set-pool/) to rest_basis_dir.
+The specified path for the basis sets is: def2-tzvp (lowercase), try to find it from the rest_basis_dir
+Found: /home/a/rest_pack/rest/basis-set-pool/def2-tzvp
+The specified path for the auxiliary basis sets is: def2-universal-jkfit (lowercase), try to find it from the rest_basis_dir
+Found: /home/a/rest_pack/rest/basis-set-pool/def2-universal-jkfit
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: hf
+Print level:                2
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/a/rest_pack/rest/basis-set-pool/def2-tzvp
+The spheric-GTO auxiliary basis set is taken from /home/a/rest_pack/rest/basis-set-pool/def2-universal-jkfit
+Charge:   1; Spin:   2
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+N        0.99937000      0.10722000     -0.07906000
+H        2.01670000      0.05042000     -0.06566000
+H        0.68777000     -0.21994000      0.83431000
+H        0.68777000     -0.59378000     -0.74977000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+Turn on the basis pair symmetry for RI 3D-tensors
+The pruning method is nwchem
+The radial grid generation method is treutler
+min_num_angular_points: 110
+max_num_angular_points: 590
+hardness: 3
+Grid generation level: 3
+Even tempered basis generation: false
+The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== detailed info of the scf functional ====
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 23, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 66,final natm: 8
+numbasis: 49, num_auxbas: 131
+Molecule_name: NH3
+job_type = "SinglePoint"
+print_level = 2
+basis_path = "/home/a/rest_pack/rest/basis-set-pool/def2-tzvp"
+basis_type = "spheric"
+auxbas_path = "/home/a/rest_pack/rest/basis-set-pool/def2-universal-jkfit"
+auxbas_type = "spheric"
+use_auxbas = true
+even_tempered_basis = false
+etb_start_atom_number = 37
+etb_beta = 2.0
+ri_k_only = false
+auxbasis_response = true
+numerical_force = false
+use_isdf = false
+isdf_k_only = false
+isdf_k_mu = 8
+isdf_new = false
+eri_type = "ri_v"
+use_ri_symm = true
+xc = "hf"
+xc_type = "Standard"
+post_xc = []
+post_correlation = []
+post_ai_correction = "none"
+charge = 1.0
+spin = 2.0
+use_int_nelec = true
+spin_channel = 1
+spin_polarization = false
+frozen_core_postscf = 0
+frequency_points = 20
+lambda_points = 20
+freq_grid_type = 0
+freq_cut_off = 10.0
+radial_precision = 0.000000000001
+min_num_angular_points = 110
+max_num_angular_points = 590
+grid_gen_level = 3
+hardness = 3
+pruning = "nwchem"
+rad_grid_method = "treutler"
+external_grids = "grids"
+mixer = "diis"
+mix_param = 0.2
+num_max_diis = 8
+start_diis_cycle = 1
+start_check_oscillation = 20
+max_scf_cycle = 100
+scf_acc_rho = 0.00000001
+scf_acc_eev = 0.000001
+scf_acc_etot = 0.00000001
+has_chkfile = false
+solvent_enabled = false
+solvent_ri = true
+solv_epsilon = 1.0
+solvent_model = "CPCM"
+solv_chunk = 8
+pcm_cavity_radii = "UFF"
+solvent_name = ""
+chkfile = "none"
+chkfile_type = "hdf5"
+guessfile = "none"
+guessfile_type = "hdf5"
+initial_guess = "sad"
+noiter = false
+check_stab = false
+use_dm_only = false
+vxc_screen_threshold = 0.000000000000001
+ao_cutoff = 0.000000000001
+non0tab_blksize = 0
+drop_dense_ao = false
+algorithm_jk = "ri-direct"
+algorithm_j = "default"
+algorithm_k = "default"
+fciqmc_dump = false
+outputs = []
+cube_orb_setting = [3.0, 80.0]
+cube_orb_indices = []
+cube_orb_type = "wavefunction"
+atom_sad = false
+occupation_type = "INTEGER"
+frac_tolerant = 0.001
+deep_pot = false
+run_lib_rint = false
+bench_eps = false
+num_threads = 4
+batch_size = 64
+nforce_displacement = 0.0013
+ndipole_displacement = 0.0003
+nhessian_displacement = 0.005
+force_state_occupation = []
+auxiliary_reference_states = []
+abort_on_mem_exceed = true
+smear_anneal = false
+guess_mix = false
+guess_mix_theta_deg = [15.0, 15.0]
+start_mix_cycle = 0
+xc_parser = "legacy"
+use_fxc_opt = false
+rel = "None"
+
+[j2c_decomp]
+policy = "eig"
+threshold = 0.0000000000001
+uplo = "Upper"
+
+[ri_pt2]
+mpi_mode = 0
+fp_mode = "FP32"
+
+Restricted open shell Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Nuc_energy:      11.88089400 Hartree
+no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00504583 with the total number of basis functions:     49
+
+=======================
+Generating SAD for atom: N
+=======================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 11, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 36,final natm: 2
+numbasis: 31, num_auxbas: 77
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (45723.38 MB) is more than required (0.42 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.02949996 with the total number of basis functions:     31
+Grid size: 14046
+Initial guess from SAP
+The evaluation of vmat costs             0.01 seconds
+The total energy:       -53.8354235512 Ha by the initial guess
+Energy:     -53.8576417636 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 6.14822e-4; eev 7.37777e-2 Ha; etot 8.67403e-3 Ha
+Energy:     -53.8489677319 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 8.59929e-5; eev 2.59797e-2 Ha; etot 2.99527e-3 Ha
+Energy:     -53.8459724647 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 2.16807e-4; eev 1.87431e-2 Ha; etot -2.26129e-3 Ha
+Energy:     -53.8482337587 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 4.25404e-5; eev 1.16453e-2 Ha; etot -5.79871e-4 Ha
+Energy:     -53.8488136295 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 7.50932e-5; eev 5.84409e-3 Ha; etot 8.58266e-4 Ha
+Energy:     -53.8479553630 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 2.02111e-5; eev 4.81361e-3 Ha; etot 1.35480e-4 Ha
+Energy:     -53.8478198834 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 1.90645e-5; eev 1.05291e-3 Ha; etot -2.57972e-4 Ha
+Energy:     -53.8480778557 Ha after    8 iterations (in       0.00 seconds).
+SCF Change: DM 5.67555e-6; eev 1.04679e-3 Ha; etot -8.23884e-8 Ha
+Energy:     -53.8480779381 Ha after    9 iterations (in       0.00 seconds).
+SCF Change: DM 4.23969e-7; eev 2.93907e-5 Ha; etot -2.16980e-8 Ha
+Energy:     -53.8480779597 Ha after   10 iterations (in       0.00 seconds).
+SCF Change: DM 9.63283e-8; eev 3.44007e-6 Ha; etot -2.18137e-11 Ha
+Energy:     -53.8480779598 Ha after   11 iterations (in       0.00 seconds).
+SCF Change: DM 5.09525e-9; eev 5.63697e-7 Ha; etot -1.37845e-12 Ha
+Energy:     -53.8480779598 Ha after   12 iterations (in       0.00 seconds).
+SCF Change: DM 5.08879e-11; eev 3.50693e-9 Ha; etot 1.42109e-14 Ha
+Energy:     -53.8480779598 Ha after   13 iterations (in       0.00 seconds).
+SCF is converged after   13 iterations.
+the job costs             0.07 seconds
+SAD generation for N complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 2
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 4, natm: 1 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 10,final natm: 2
+numbasis:  6, num_auxbas: 18
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (45722.29 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.10940728 with the total number of basis functions:      6
+Grid size: 10024
+Initial guess from SAP
+The evaluation of vmat costs             0.01 seconds
+The total energy:        -0.4746750264 Ha by the initial guess
+Energy:      -0.4947605578 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.00 seconds).
+SCF Change: DM (5.66606e-3, 0.00000e0); eev 6.41525e-2 Ha; etot -7.45427e-3 Ha
+Energy:      -0.5022148265 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    2 iterations (in       0.00 seconds).
+SCF Change: DM (1.14143e-3, 0.00000e0); eev 2.70485e-2 Ha; etot 1.31784e-3 Ha
+Energy:      -0.5008969838 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    3 iterations (in       0.00 seconds).
+SCF Change: DM (1.43377e-4, 0.00000e0); eev 6.80169e-3 Ha; etot 9.31515e-4 Ha
+Energy:      -0.4999654685 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    4 iterations (in       0.00 seconds).
+SCF Change: DM (7.91559e-5, 0.00000e0); eev 7.98714e-4 Ha; etot 1.87791e-4 Ha
+Energy:      -0.4997776776 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    5 iterations (in       0.00 seconds).
+SCF Change: DM (3.24521e-5, 0.00000e0); eev 2.50494e-4 Ha; etot -4.66356e-6 Ha
+Energy:      -0.4997823411 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    6 iterations (in       0.00 seconds).
+SCF Change: DM (7.56118e-6, 0.00000e0); eev 1.69321e-4 Ha; etot -1.82058e-5 Ha
+Energy:      -0.4998005469 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    7 iterations (in       0.00 seconds).
+SCF Change: DM (7.54890e-7, 0.00000e0); eev 6.23136e-5 Ha; etot -9.28526e-6 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    8 iterations (in       0.00 seconds).
+SCF Change: DM (3.09235e-7, 0.00000e0); eev 2.71460e-6 Ha; etot -2.91856e-11 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    9 iterations (in       0.00 seconds).
+SCF Change: DM (3.08847e-8, 0.00000e0); eev 1.31737e-7 Ha; etot -2.62218e-12 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   10 iterations (in       0.00 seconds).
+SCF Change: DM (1.35249e-8, 0.00000e0); eev 5.73257e-8 Ha; etot -3.66374e-14 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   11 iterations (in       0.00 seconds).
+SCF Change: DM (8.28407e-9, 0.00000e0); eev 3.50021e-8 Ha; etot -1.15463e-14 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   12 iterations (in       0.00 seconds).
+SCF Change: DM (5.80476e-9, 0.00000e0); eev 2.44763e-8 Ha; etot -7.54952e-15 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   13 iterations (in       0.00 seconds).
+SCF Change: DM (4.38484e-9, 0.00000e0); eev 1.84616e-8 Ha; etot -4.16334e-15 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   14 iterations (in       0.00 seconds).
+SCF Change: DM (3.47659e-9, 0.00000e0); eev 1.46208e-8 Ha; etot -2.55351e-15 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   15 iterations (in       0.00 seconds).
+SCF Change: DM (3.06014e-8, 0.00000e0); eev 1.32359e-7 Ha; etot -2.22045e-15 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   16 iterations (in       0.00 seconds).
+SCF Change: DM (2.60932e-8, 0.00000e0); eev 1.05239e-7 Ha; etot -1.37113e-14 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   17 iterations (in       0.00 seconds).
+SCF Change: DM (4.46733e-11, 0.00000e0); eev 1.01941e-10 Ha; etot -3.71925e-15 Ha
+Energy:      -0.4998098322 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   18 iterations (in       0.00 seconds).
+SCF is converged after   18 iterations.
+the job costs             0.03 seconds
+SAD generation for H complete.
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3423821
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 217842
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.147 MB
+       fixed   =      0.168 MB
+       thread  =      0.000 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Initial guess energy using single atom density (SAD):     -56.7759537838907562
+Detailed time report:
+Solvent Calculation|:    0.000 s for Initialization of the solvent calculation
+CInt      |:    0.001 s for Two, Three, and Four-center integrals
+InitGuess |:    0.231 s for Prepare initial guess
+Overall   |:    0.232 s for SCF Preparation
+ISDF      |:    0.000 s for ISDF initialization
+DFT Grids |:    0.000 s for Initialization of the tabulated Grids and AOs
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3424469
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3424562
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+The total energy:       -54.4409423106 Ha by the initial guess
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3424658
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3424890
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.565332, LUMO (  5):      -0.110465, H-L Gap:       0.45486681
+Spin  1: HOMO (  3):      -0.981820, LUMO (  4):      -0.565332, H-L Gap:       0.41648853
+Energy:     -55.8035808252 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3424984
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425027
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.618901, LUMO (  5):      -0.124187, H-L Gap:       0.49471362
+Spin  1: HOMO (  3):      -1.041443, LUMO (  4):      -0.618901, H-L Gap:       0.42254267
+SCF Change: DM (2.05443e-3,8.44051e-4); eev 4.15181e-1 Ha; etot -5.96441e-2 Ha
+Energy:     -55.8632248761 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    2 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425255
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425191
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.596638, LUMO (  5):      -0.119345, H-L Gap:       0.47729374
+Spin  1: HOMO (  3):      -1.024544, LUMO (  4):      -0.596638, H-L Gap:       0.42790594
+SCF Change: DM (4.53740e-4,2.90247e-4); eev 1.39212e-1 Ha; etot -4.60724e-3 Ha
+Energy:     -55.8678321145 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    3 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425049
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3424987
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.607291, LUMO (  5):      -0.120207, H-L Gap:       0.48708382
+Spin  1: HOMO (  3):      -1.031953, LUMO (  4):      -0.607291, H-L Gap:       0.42466159
+SCF Change: DM (1.68794e-4,9.49058e-5); eev 5.93216e-2 Ha; etot -5.34442e-4 Ha
+Energy:     -55.8683665562 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    4 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3424998
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3424880
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.602575, LUMO (  5):      -0.119618, H-L Gap:       0.48295694
+Spin  1: HOMO (  3):      -1.028967, LUMO (  4):      -0.602575, H-L Gap:       0.42639164
+SCF Change: DM (5.00131e-5,4.67686e-5); eev 2.51755e-2 Ha; etot -7.64154e-5 Ha
+Energy:     -55.8684429716 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    5 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425382
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425108
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604826, LUMO (  5):      -0.119763, H-L Gap:       0.48506276
+Spin  1: HOMO (  3):      -1.030324, LUMO (  4):      -0.604826, H-L Gap:       0.42549798
+SCF Change: DM (3.09867e-5,1.59894e-5); eev 1.14268e-2 Ha; etot -1.20924e-5 Ha
+Energy:     -55.8684550639 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    6 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425098
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425482
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.603820, LUMO (  5):      -0.119663, H-L Gap:       0.48415681
+Spin  1: HOMO (  3):      -1.029715, LUMO (  4):      -0.603820, H-L Gap:       0.42589501
+SCF Change: DM (1.03727e-5,8.43721e-6); eev 5.16111e-3 Ha; etot -2.04280e-6 Ha
+Energy:     -55.8684571067 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    7 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.10s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425201
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425268
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604295, LUMO (  5):      -0.119695, H-L Gap:       0.48460040
+Spin  1: HOMO (  3):      -1.029994, LUMO (  4):      -0.604295, H-L Gap:       0.42569881
+SCF Change: DM (6.24949e-6,3.13879e-6); eev 2.37321e-3 Ha; etot -3.62276e-7 Ha
+Energy:     -55.8684574690 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    8 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.10s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3424894
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3424516
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604081, LUMO (  5):      -0.119676, H-L Gap:       0.48440566
+Spin  1: HOMO (  3):      -1.029866, LUMO (  4):      -0.604081, H-L Gap:       0.42578473
+SCF Change: DM (2.32738e-6,1.62700e-6); eev 1.08683e-3 Ha; etot -6.70551e-8 Ha
+Energy:     -55.8684575361 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    9 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.10s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3424248
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3424535
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604182, LUMO (  5):      -0.119683, H-L Gap:       0.48449896
+Spin  1: HOMO (  3):      -1.029925, LUMO (  4):      -0.604182, H-L Gap:       0.42574318
+SCF Change: DM (1.28190e-6,6.50467e-7); eev 5.00738e-4 Ha; etot -1.28510e-8 Ha
+Energy:     -55.8684575489 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   10 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.10s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425220
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425219
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604136, LUMO (  5):      -0.119679, H-L Gap:       0.48445737
+Spin  1: HOMO (  3):      -1.029898, LUMO (  4):      -0.604136, H-L Gap:       0.42576157
+SCF Change: DM (5.12968e-7,3.27094e-7); eev 2.30108e-4 Ha; etot -2.53334e-9 Ha
+Energy:     -55.8684575515 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   11 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.10s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425179
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425134
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604157, LUMO (  5):      -0.119680, H-L Gap:       0.48447703
+Spin  1: HOMO (  3):      -1.029910, LUMO (  4):      -0.604157, H-L Gap:       0.42575281
+SCF Change: DM (2.65478e-7,1.37425e-7); eev 1.06016e-4 Ha; etot -5.10241e-10 Ha
+Energy:     -55.8684575520 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   12 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425239
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425207
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604148, LUMO (  5):      -0.119680, H-L Gap:       0.48446817
+Spin  1: HOMO (  3):      -1.029904, LUMO (  4):      -0.604148, H-L Gap:       0.42575673
+SCF Change: DM (1.11375e-7,6.73281e-8); eev 4.87687e-5 Ha; etot -1.04350e-10 Ha
+Energy:     -55.8684575521 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   13 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425188
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425081
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604152, LUMO (  5):      -0.119680, H-L Gap:       0.48447232
+Spin  1: HOMO (  3):      -1.029907, LUMO (  4):      -0.604152, H-L Gap:       0.42575488
+SCF Change: DM (5.53695e-8,2.92128e-8); eev 2.24640e-5 Ha; etot -2.13589e-11 Ha
+Energy:     -55.8684575521 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   14 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425062
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425049
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604150, LUMO (  5):      -0.119680, H-L Gap:       0.48447044
+Spin  1: HOMO (  3):      -1.029906, LUMO (  4):      -0.604150, H-L Gap:       0.42575571
+SCF Change: DM (2.39657e-8,1.40368e-8); eev 1.03377e-5 Ha; etot -4.69669e-12 Ha
+Energy:     -55.8684575521 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   15 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425424
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3425352
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604151, LUMO (  5):      -0.119680, H-L Gap:       0.48447132
+Spin  1: HOMO (  3):      -1.029906, LUMO (  4):      -0.604151, H-L Gap:       0.42575532
+SCF Change: DM (1.16074e-8,6.21756e-9); eev 4.76098e-6 Ha; etot -9.09495e-13 Ha
+Energy:     -55.8684575521 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   16 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.10s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3426182
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3426046
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604151, LUMO (  5):      -0.119680, H-L Gap:       0.48447092
+Spin  1: HOMO (  3):      -1.029906, LUMO (  4):      -0.604151, H-L Gap:       0.42575550
+SCF Change: DM (5.12920e-9,2.94679e-9); eev 2.19134e-6 Ha; etot -2.62901e-13 Ha
+Energy:     -55.8684575521 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   17 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.10s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3425816
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3426237
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604151, LUMO (  5):      -0.119680, H-L Gap:       0.48447110
+Spin  1: HOMO (  3):      -1.029906, LUMO (  4):      -0.604151, H-L Gap:       0.42575542
+SCF Change: DM (2.44210e-9,1.32278e-9); eev 1.00910e-6 Ha; etot -1.27898e-13 Ha
+Energy:     -55.8684575521 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   18 iterations (in       0.10 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.10s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3426231
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3426277
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604151, LUMO (  5):      -0.119680, H-L Gap:       0.48447102
+Spin  1: HOMO (  3):      -1.029906, LUMO (  4):      -0.604151, H-L Gap:       0.42575546
+SCF Change: DM (1.09408e-9,6.21021e-10); eev 4.64508e-7 Ha; etot 2.27374e-13 Ha
+Energy:     -55.8684575521 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   19 iterations (in       0.09 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.09s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+SCF is converged after   19 iterations.
+[INFO] in generate_vj_ri_direct, available memory: inf MB
+[INFO] in generate_vj_ri_direct, batch size      : 3426234
+[INFO] in generate_vj_ri_direct, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.188 MB
+       thread  =      0.000 MB
+[INFO] in generate_vk_ri_direct_dm, using semi-direct algorithm for vk computation.
+[INFO] in generate_vk_ri_direct_dm, available memory: inf MB
+[INFO] in generate_vk_ri_direct_dm, batch size      : 3426175
+[INFO] in generate_vk_ri_direct_dm, memory estimation
+[INFO] MemEstimate debug print:
+       dtype   = type f64 with 8 bytes
+       batched =      0.009 MB
+       fixed   =      0.304 MB
+       thread  =      0.018 MB
+Exc:       0.00000000, Vxc:       0.00000000
+Spin  0: HOMO (  4):      -0.604151, LUMO (  5):      -0.119680, H-L Gap:       0.48447106
+Spin  1: HOMO (  3):      -1.029906, LUMO (  4):      -0.604151, H-L Gap:       0.42575544
+Eigenvalues in Rrestricted Openshell HF (or KS) calculation:
+   State    Occupation        Eigenvalue
+       0       2.00000        -16.002719
+       1       2.00000         -1.537446
+       2       2.00000         -1.029909
+       3       2.00000         -1.029906
+       4       1.00000         -0.604151
+       5       0.00000         -0.119680
+       6       0.00000         -0.037070
+       7       0.00000         -0.037068
+Mulliken population analysis:
+  0-N  :  -0.109804
+  1-H  :   0.369936
+  2-H  :   0.369937
+  3-H  :   0.369931
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -55.8684575521 Ha
+Detailed time report:
+SCF       |:    2.257 s for the scf procedure
+Overall   |:    2.258 s for the whole job

@@ -1,0 +1,21 @@
+[ctrl]
+     print_level =          2
+     job_type =             "energy"
+     xc =                   "hf"
+     basis_path =           "def2-TZVP"
+     auxbas_path =          "def2-universal-jkfit"
+     charge =               1.0
+     spin =                 2.0
+     spin_polarization =    false
+     num_threads =          4
+     algorithm_jk =         "ri-direct"
+
+[geom]
+    name = "NH3"
+    unit = "Angstrom"
+    position = """
+N          0.99937        0.10722       -0.07906
+H          2.01670        0.05042       -0.06566
+H          0.68777       -0.21994        0.83431
+H          0.68777       -0.59378       -0.74977
+    """
