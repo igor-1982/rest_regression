@@ -246,6 +246,27 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("frequencies_cm".to_string(), freqs);
     }
 
+    // ── Geometry optimization: final bond length (diatomic) ──
+    // "Geometry after relaxation [Ang]:" block contains atomic coordinates.
+    // For diatomic molecules, compute the distance between atom 1 and atom 2.
+    let re_geom = Regex::new(
+        r"Geometry after relaxation \[Ang\]:\n(?P<atom1>[A-Z][a-z]?)\s+(?P<x1>[\+-]?\d+\.\d+)\s+(?P<y1>[\+-]?\d+\.\d+)\s+(?P<z1>[\+-]?\d+\.\d+)\s*\n(?P<atom2>[A-Z][a-z]?)\s+(?P<x2>[\+-]?\d+\.\d+)\s+(?P<y2>[\+-]?\d+\.\d+)\s+(?P<z2>[\+-]?\d+\.\d+)"
+    ).unwrap();
+
+    if let Some(caps) = re_geom.captures(&buf) {
+        let x1 = caps["x1"].parse::<f64>().unwrap();
+        let y1 = caps["y1"].parse::<f64>().unwrap();
+        let z1 = caps["z1"].parse::<f64>().unwrap();
+        let x2 = caps["x2"].parse::<f64>().unwrap();
+        let y2 = caps["y2"].parse::<f64>().unwrap();
+        let z2 = caps["z2"].parse::<f64>().unwrap();
+        let dx = x2 - x1;
+        let dy = y2 - y1;
+        let dz = z2 - z1;
+        let bond_length = (dx*dx + dy*dy + dz*dz).sqrt();
+        result.insert("bond_length".to_string(), vec![bond_length]);
+    }
+
     let re_hoco_luco_gap = Regex::new(
         r"HOCO-LUCO gap\s*:\s*(?P<energy>[-+]?\d+\.\d+)\s*eV"
         ).unwrap();
@@ -379,6 +400,21 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                     println!("WARNNING: {:20}:{:20.10} != {:20.10}", key, out_value[0], ref_value[0]);
                 } else {
                     println!("Pass    : {:20}:{:20.10}  = {:20.10}", key, out_value[0], ref_value[0]);
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key.eq("bond_length") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let dev = (ref_value[0] - out_value[0]).abs();
+                if dev > 5.0e-4 {
+                    is_same = false;
+                    println!("WARNNING: {:20}:{:12.8} != {:12.8} (dev={:.2e} Ang)",
+                        key, out_value[0], ref_value[0], dev);
+                } else {
+                    println!("Pass    : {:20}:{:12.8}  = {:12.8} (dev={:.2e} Ang)",
+                        key, out_value[0], ref_value[0], dev);
                 }
             } else {
                 is_same = false;

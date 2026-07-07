@@ -1,0 +1,466 @@
+Add the default path (/opt/rest_workspace/rest/basis-set-pool/) to rest_basis_dir.
+The specified path for the basis sets is: cc-pvdz (lowercase), try to find it from the rest_basis_dir
+Found: /opt/rest_workspace/rest/basis-set-pool/cc-pvdz
+The basis set name def2-sv(p)-jkfit is an alias to def2-universal-jkfit
+The specified path for the auxiliary basis sets is: def2-universal-jkfit (lowercase), try to find it from the rest_basis_dir
+Found: /opt/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Geometry optimization
+Optimization engine: geometric_pyo3
+Geometric_pyo3 is used for geometry optimization
+Standard geometry optimization is enabled
+Cube output: wavefunction
+The exchange-correlation method: hf
+Print level:                1
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /opt/rest_workspace/rest/basis-set-pool/cc-pvdz
+The spheric-GTO auxiliary basis set is taken from /opt/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 6, natm: 2 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 56,final natm: 4
+numbasis: 28, num_auxbas: 152
+Molecule_name: CO
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26517.37 MB) is more than required (0.68 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      21.16708833 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+
+=======================
+Generating SAD for atom: C
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26516.66 MB) is more than required (0.08 MB).
+Using standard incore RI-J/K algorithms.
+SAD generation for C complete.
+
+=======================
+Generating SAD for atom: O
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26510.94 MB) is more than required (0.09 MB).
+Using standard incore RI-J/K algorithms.
+SAD generation for O complete.
+Initial guess energy using single atom density (SAD):    -112.7344408004424423
+The total energy:      -112.6778450067 Ha by the initial guess
+Energy:    -112.6885821429 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 1.81763e-2; eev 4.70466e-1 Ha; etot -6.97255e-3 Ha
+Energy:    -112.6955546908 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 8.60847e-4; eev 1.82414e-2 Ha; etot -3.62678e-2 Ha
+Energy:    -112.7318225354 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 2.85353e-4; eev 5.63360e-3 Ha; etot -4.66367e-5 Ha
+Energy:    -112.7318691721 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 3.57703e-5; eev 6.21184e-4 Ha; etot -2.80768e-6 Ha
+Energy:    -112.7318719798 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 1.76699e-5; eev 1.50480e-4 Ha; etot -8.58225e-8 Ha
+Energy:    -112.7318720656 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 5.18640e-6; eev 4.13205e-5 Ha; etot -1.49321e-8 Ha
+Energy:    -112.7318720806 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 4.76842e-7; eev 3.20176e-6 Ha; etot -8.79282e-10 Ha
+Energy:    -112.7318720814 Ha after    8 iterations (in       0.00 seconds).
+SCF Change: DM 7.19804e-9; eev 1.64154e-7 Ha; etot -3.49587e-12 Ha
+Energy:    -112.7318720815 Ha after    9 iterations (in       0.00 seconds).
+SCF is converged after    9 iterations.
+Geometry optimization invoked using the optimization engine of geometric_pyo3
+  Computing analytical Hessian for geomeTRIC initial guess...
+  >> Entering h_partial (ej_ek) stage ...
+  >> Entering CP-HF contribution stage ...
+  CP-HF: using Krylov solver (max_cycle=50, tol=1.0e-12)
+    CP-HF iteration 0: residual=8.0982e-2 (n_active=3/3)
+    CP-HF iteration 1: residual=3.8537e-2 (n_active=3/3)
+    CP-HF iteration 2: residual=7.4487e-3 (n_active=3/3)
+    CP-HF iteration 3: residual=8.4619e-4 (n_active=3/3)
+    CP-HF iteration 4: residual=7.7783e-5 (n_active=3/3)
+    CP-HF iteration 5: residual=6.9849e-6 (n_active=3/3)
+    CP-HF iteration 6: residual=6.9609e-7 (n_active=3/1)
+    CP-HF iteration 7: residual=0.0000e0 (n_active=1/0)
+    krylov_batched: n_rhs=6, cycles=8, shared subspace size=22, total matvecs=22
+  >> Entering hess_nuc stage ...
+  Analytical Hessian saved to /tmp/rest_hess_analytic_565908.txt
+geometric-optimize called with the following command line:
+
+
+                                        ())))))))))))))))/                     
+                                    ())))))))))))))))))))))))),                
+                                *)))))))))))))))))))))))))))))))))             
+                        #,    ()))))))))/                .)))))))))),          
+                      #%%%%,  ())))))                        .))))))))*        
+                      *%%%%%%,  ))              ..              ,))))))).      
+                        *%%%%%%,         ***************/.        .)))))))     
+                #%%/      (%%%%%%,    /*********************.       )))))))    
+              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
+                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
+          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
+        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
+      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
+    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
+    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
+        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
+          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
+                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
+              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
+                #%%/      (%%%%%%,    *********************/        )))))))    
+                        *%%%%%%,         ,**************/         ,))))))/     
+                      (%%%%%%   ()                              ))))))))       
+                      #%%%%,  ())))))                        ,)))))))),        
+                        #,    ())))))))))                ,)))))))))).          
+                                 ()))))))))))))))))))))))))))))))/             
+                                    ())))))))))))))))))))))))).                
+                                         ())))))))))))))),                     
+
+-=#  geomeTRIC started. Version: 1.1  #=-
+Current date and time: 2026-07-07 17:02:13
+#========================================================#
+#|     Arguments passed to driver run_optimizer():      |#
+#========================================================#
+convergence_dmax          0.0018 
+convergence_drms          0.0012 
+convergence_energy        1e-06 
+convergence_gmax          0.00045 
+convergence_grms          0.0001 
+coordsys                  tric 
+customengine              <__main__.PyO3Engine object at 0x7473f2a957b0> 
+epsilon                   1e-05 
+frequency                 True 
+hessian                   file:/tmp/rest_hess_analytic_565908.txt 
+input                     /tmp/.tmpyJxQYc 
+irc                       False 
+irc_direction             both 
+maxiter                   100 
+prefix                    GeomeTRIC 
+reset                     True 
+subfrctor                 1 
+thermo                    [300.0, 1.0] 
+tmax                      0.3 
+tmin                      0.0001 
+transition                False 
+trust                     0.1 
+usedmax                   False 
+verbose                   0 
+----------------------------------------------------------
+ Hessian data will be read from file: /tmp/rest_hess_analytic_565908.txt
+Custom engine selected.
+Bonds will be generated from interatomic distances less than 1.20 times sum of covalent radii
+6 internal coordinates being used (instead of 6 Cartesians)
+Internal coordinate system (atoms numbered from 1):
+Distance 1-2
+Translation-X 1-2
+Translation-Y 1-2
+Translation-Z 1-2
+Rotation-A 1-2
+Rotation-B 1-2
+Rotation-C 1-2
+<class 'geometric.internal.Distance'> : 1
+<class 'geometric.internal.TranslationX'> : 1
+<class 'geometric.internal.TranslationY'> : 1
+<class 'geometric.internal.TranslationZ'> : 1
+<class 'geometric.internal.RotationA'> : 1
+<class 'geometric.internal.RotationB'> : 1
+<class 'geometric.internal.RotationC'> : 1
+> ===== Optimization Info: ====
+> Job type: Energy minimization
+> Maximum number of optimization cycles: 100
+> Initial / maximum trust radius (Angstrom): 0.100 / 0.300
+> Convergence Criteria:
+> Will converge when all 5 criteria are reached:
+>  |Delta-E| < 1.00e-06
+>  RMS-Grad  < 1.00e-04
+>  Max-Grad  < 4.50e-04
+>  RMS-Disp  < 1.20e-03
+>  Max-Disp  < 1.80e-03
+> === End Optimization Info ===
+Input geometry in this round is:
+C        0.00000000      0.00000000      0.00000000
+O        1.20000000      0.00000000      0.00000000
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26401.24 MB) is more than required (0.68 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      21.16708833 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01459173 with the total number of basis functions:     28
+The total energy:      -112.7318720813 Ha by the initial guess
+Energy:    -112.7318720814 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 3.03950e-9; eev 7.82407e-8 Ha; etot -2.84217e-13 Ha
+Energy:    -112.7318720814 Ha after    2 iterations (in       0.00 seconds).
+SCF is converged after    2 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.19387868      0.00000000      0.00000000
+O        0.19387868     -0.00000000     -0.00000000
+
+------------------------------------
+force                   0.010 s for 
+>> Using Hessian data provided via params...
+>> Initial Cartesian Hessian Eigenvalues
+Hessian Eigenvalues: -4.11750e-08 2.60159e-08 2.62714e-08 ... 1.70994e-01 1.70994e-01 1.62698e+00
+
+== Summary of harmonic free energy analysis ==
+Note: Rotational symmetry is set to 1 regardless of true symmetry
+No Imaginary Frequencies
+
+Free energy contributions calculated at @ 300.00 K:
+Zero-point vibrational energy:                                    2.5305 kcal/mol 
+H   (Trans + Rot + Vib = Tot):   1.4904 +   0.5962 +   0.0010 =   2.0876 kcal/mol 
+S   (Trans + Rot + Vib = Tot):  35.9815 +  11.5369 +   0.0039 =  47.5223 cal/mol/K
+TS  (Trans + Rot + Vib = Tot):  10.7944 +   3.4611 +   0.0012 =  14.2567 kcal/mol 
+
+Ground State Electronic Energy    : E0                        =  -112.73187208 au (    -70740.3178 kcal/mol)
+Free Energy Correction (Harmonic) : ZPVE + [H-TS]_T,R,V       =    -0.01536004 au (        -9.6386 kcal/mol)
+Gibbs Free Energy (Harmonic)      : E0 + ZPVE + [H-TS]_T,R,V  =  -112.74723212 au (    -70749.9563 kcal/mol)
+
+Vibrational analysis written to GeomeTRIC.vdata_first
+Step    0 : Gradient = 1.939e-01/1.939e-01 (rms/max) Energy = -112.7318720814
+Hessian Eigenvalues: -8.23500e-08 -6.22167e-08 -6.17836e-08 ... 5.02346e-07 5.02846e-07 8.13490e-01
+Input geometry in this round is:
+C        0.06217053     -0.00000000     -0.00000000
+O        1.13605362      0.00000000      0.00000000
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26401.00 MB) is more than required (0.68 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      23.65295269 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01317666 with the total number of basis functions:     28
+The total energy:      -112.9540363552 Ha by the initial guess
+Energy:    -112.7423016884 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 4.21518e-3; eev 1.36977e-1 Ha; etot -2.26692e-3 Ha
+Energy:    -112.7445686100 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 8.02431e-4; eev 1.76187e-2 Ha; etot -1.54148e-3 Ha
+Energy:    -112.7461100870 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 2.09048e-4; eev 2.67789e-3 Ha; etot -2.01000e-5 Ha
+Energy:    -112.7461301871 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 5.08388e-5; eev 6.06895e-4 Ha; etot -1.64669e-6 Ha
+Energy:    -112.7461318338 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 8.62442e-6; eev 7.36681e-5 Ha; etot -9.70706e-8 Ha
+Energy:    -112.7461319308 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 7.66105e-7; eev 8.27057e-6 Ha; etot -2.38188e-9 Ha
+Energy:    -112.7461319332 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 6.92608e-8; eev 5.29570e-7 Ha; etot -1.21645e-11 Ha
+Energy:    -112.7461319332 Ha after    8 iterations (in       0.00 seconds).
+SCF Change: DM 1.43080e-9; eev 1.83893e-8 Ha; etot 8.52651e-14 Ha
+Energy:    -112.7461319332 Ha after    9 iterations (in       0.00 seconds).
+SCF is converged after    9 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C        0.11903289      0.00000000      0.00000000
+O       -0.11903289     -0.00000000     -0.00000000
+
+------------------------------------
+force                   0.021 s for 
+Step    1 : Displace = 6.306e-02/6.306e-02 (rms/max) Trust = 1.000e-01 (=) Grad = 1.190e-01/1.190e-01 (rms/max) E (change) = -112.7461319332 (-1.426e-02) Quality = 0.617
+Eigenvalues below 1.0000e-05 (-8.2350e-08) - returning guess
+Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 5.00000e-02 5.00000e-02 1.04823e+00
+Input geometry in this round is:
+C        0.03212490     -0.00000000     -0.00000000
+O        1.16609925      0.00000000      0.00000000
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26400.79 MB) is more than required (0.68 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      22.39954202 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01390255 with the total number of basis functions:     28
+The total energy:      -112.6562157735 Ha by the initial guess
+Energy:    -112.7474810397 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 2.43014e-3; eev 7.45130e-2 Ha; etot -5.14163e-4 Ha
+Energy:    -112.7479952028 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 4.18299e-4; eev 9.38187e-3 Ha; etot -5.75882e-4 Ha
+Energy:    -112.7485710853 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 1.17839e-4; eev 1.28770e-3 Ha; etot -5.84250e-6 Ha
+Energy:    -112.7485769278 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 3.05901e-5; eev 3.47894e-4 Ha; etot -5.55089e-7 Ha
+Energy:    -112.7485774829 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 5.90719e-6; eev 4.58479e-5 Ha; etot -3.89401e-8 Ha
+Energy:    -112.7485775218 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 4.63617e-7; eev 4.88075e-6 Ha; etot -1.07414e-9 Ha
+Energy:    -112.7485775229 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 4.46915e-9; eev 3.35537e-8 Ha; etot -3.97904e-12 Ha
+Energy:    -112.7485775229 Ha after    8 iterations (in       0.00 seconds).
+SCF is converged after    8 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.06371613     -0.00000000     -0.00000000
+O        0.06371613      0.00000000      0.00000000
+
+------------------------------------
+force                   0.031 s for 
+Step    2 : Displace = 3.005e-02/3.005e-02 (rms/max) Trust = 1.000e-01 (=) Grad = 6.372e-02/6.372e-02 (rms/max) E (change) = -112.7485775229 (-2.446e-03) Quality = 0.362
+Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 5.00000e-02 5.00000e-02 1.60933e+00
+Input geometry in this round is:
+C        0.04260042     -0.00000000     -0.00000000
+O        1.15562373      0.00000000      0.00000000
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26400.79 MB) is more than required (0.68 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      22.82118073 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01366136 with the total number of basis functions:     28
+The total energy:      -112.7834189311 Ha by the initial guess
+Energy:    -112.7499026876 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 7.96991e-4; eev 2.49678e-2 Ha; etot -6.43928e-5 Ha
+Energy:    -112.7499670804 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 1.41158e-4; eev 3.16194e-3 Ha; etot -5.92750e-5 Ha
+Energy:    -112.7500263553 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 3.86188e-5; eev 4.43813e-4 Ha; etot -6.50416e-7 Ha
+Energy:    -112.7500270058 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 9.66785e-6; eev 1.12183e-4 Ha; etot -5.80126e-8 Ha
+Energy:    -112.7500270638 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 1.82720e-6; eev 1.46467e-5 Ha; etot -3.79032e-9 Ha
+Energy:    -112.7500270676 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 1.49066e-7; eev 1.65099e-6 Ha; etot -1.04791e-10 Ha
+Energy:    -112.7500270677 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 1.10643e-8; eev 1.01254e-7 Ha; etot -2.55795e-13 Ha
+Energy:    -112.7500270677 Ha after    8 iterations (in       0.00 seconds).
+SCF Change: DM 1.99709e-10; eev 4.22593e-9 Ha; etot -1.13687e-13 Ha
+Energy:    -112.7500270677 Ha after    9 iterations (in       0.00 seconds).
+SCF is converged after    9 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.00818795     -0.00000000     -0.00000000
+O        0.00818795      0.00000000      0.00000000
+
+------------------------------------
+force                   0.041 s for 
+Step    3 : Displace = 1.048e-02/1.048e-02 (rms/max) Trust = 1.000e-01 (=) Grad = 8.188e-03/8.188e-03 (rms/max) E (change) = -112.7500270677 (-1.450e-03) Quality = 1.149
+Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 5.00000e-02 5.00000e-02 1.40252e+00
+Input geometry in this round is:
+C        0.04414510     -0.00000000     -0.00000000
+O        1.15407905      0.00000000      0.00000000
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26400.79 MB) is more than required (0.68 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      22.88470039 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01362475 with the total number of basis functions:     28
+The total energy:      -112.7549541252 Ha by the initial guess
+Energy:    -112.7500463521 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 1.17117e-4; eev 3.67117e-3 Ha; etot -1.39917e-6 Ha
+Energy:    -112.7500477513 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 2.08008e-5; eev 4.62817e-4 Ha; etot -1.28168e-6 Ha
+Energy:    -112.7500490330 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 5.66130e-6; eev 6.64665e-5 Ha; etot -1.39409e-8 Ha
+Energy:    -112.7500490469 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 1.42114e-6; eev 1.64139e-5 Ha; etot -1.24408e-9 Ha
+Energy:    -112.7500490481 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 2.63419e-7; eev 2.12054e-6 Ha; etot -8.06040e-11 Ha
+Energy:    -112.7500490482 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 2.15901e-8; eev 2.33066e-7 Ha; etot -2.30216e-12 Ha
+Energy:    -112.7500490482 Ha after    7 iterations (in       0.00 seconds).
+SCF Change: DM 1.62656e-9; eev 1.40187e-8 Ha; etot  0.00000e0 Ha
+Energy:    -112.7500490482 Ha after    8 iterations (in       0.00 seconds).
+SCF is converged after    8 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C        0.00068864      0.00000000      0.00000000
+O       -0.00068864     -0.00000000     -0.00000000
+
+------------------------------------
+force                   0.052 s for 
+Step    4 : Displace = 1.545e-03/1.545e-03 (rms/max) Trust = 1.414e-01 (+) Grad = 6.886e-04/6.886e-04 (rms/max) E (change) = -112.7500490482 (-2.198e-05) Quality = 0.920
+Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 5.00000e-02 5.00000e-02 1.52048e+00
+Input geometry in this round is:
+C        0.04402526     -0.00000000     -0.00000000
+O        1.15419889      0.00000000      0.00000000
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (26400.79 MB) is more than required (0.68 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      22.87975995 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01362760 with the total number of basis functions:     28
+The total energy:      -112.7496691541 Ha by the initial guess
+Energy:    -112.7500491864 Ha after    1 iterations (in       0.00 seconds).
+SCF Change: DM 9.09566e-6; eev 2.84982e-4 Ha; etot -8.41587e-9 Ha
+Energy:    -112.7500491948 Ha after    2 iterations (in       0.00 seconds).
+SCF Change: DM 1.61487e-6; eev 3.58973e-5 Ha; etot -7.73926e-9 Ha
+Energy:    -112.7500492025 Ha after    3 iterations (in       0.00 seconds).
+SCF Change: DM 4.39607e-7; eev 5.16578e-6 Ha; etot -8.40714e-11 Ha
+Energy:    -112.7500492026 Ha after    4 iterations (in       0.00 seconds).
+SCF Change: DM 1.10476e-7; eev 1.27464e-6 Ha; etot -7.41807e-12 Ha
+Energy:    -112.7500492026 Ha after    5 iterations (in       0.00 seconds).
+SCF Change: DM 2.04569e-8; eev 1.64579e-7 Ha; etot -4.83169e-13 Ha
+Energy:    -112.7500492026 Ha after    6 iterations (in       0.00 seconds).
+SCF Change: DM 1.67570e-9; eev 1.80393e-8 Ha; etot -2.84217e-14 Ha
+Energy:    -112.7500492026 Ha after    7 iterations (in       0.00 seconds).
+SCF is converged after    7 iterations.
+Force calculation invoked
+------ Output gradient [a.u.] ------
+C       -0.00000664     -0.00000000      0.00000000
+O        0.00000664      0.00000000     -0.00000000
+
+------------------------------------
+force                   0.061 s for 
+Step    5 : Displace = 1.198e-04/1.198e-04 (rms/max) Trust = 2.000e-01 (+) Grad = 6.635e-06/6.635e-06 (rms/max) E (change) = -112.7500492026 (-1.544e-07) Quality = 0.990
+Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 5.00000e-02 5.00000e-02 1.52048e+00
+Converged! =D
+
+    #==========================================================================#
+    #| If this code has benefited your research, please support us by citing: |#
+    #|                                                                        |#
+    #| Wang, L.-P.; Song, C.C. (2016) "Geometry optimization made simple with |#
+    #| translation and rotation coordinates", J. Chem, Phys. 144, 214108.     |#
+    #| http://dx.doi.org/10.1063/1.4952956                                    |#
+    #==========================================================================#
+    Time elapsed since start of run_optimizer: 0.122 seconds
+Geometry after relaxation [Ang]:
+C        0.04402526     -0.00000000     -0.00000000
+O        1.15419889      0.00000000      0.00000000
+geom_opt                0.500 s for geometry optimization
+Mulliken population analysis:
+  0-C  :   0.082302
+  1-O  :  -0.082302
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :    -112.7500492026 Ha
+Detailed time report:
+Overall   |:    0.534 s for the whole job
+force     |:    0.061 s for 
+geom_opt  |:    0.500 s for geometry optimization
+SCF       |:    0.057 s for the scf procedure

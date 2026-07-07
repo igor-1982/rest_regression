@@ -1,0 +1,17 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Geometry optimization
+Optimization engine: geometric_pyo3
+The exchange-correlation method: hf
+  analytic_hessian = true (REST analytical Hessian used instead of numerical finite-difference)
+  convergence_grms = 1.0e-4
+Converged! =D
+Geometry after relaxation [Ang]:
+C        0.04402785     -0.00000000     -0.00000000
+O        1.15420147      0.00000000      0.00000000
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :    -112.7500492026 Ha
+====================================================

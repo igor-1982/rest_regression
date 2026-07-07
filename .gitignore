@@ -2,3 +2,6 @@ bench_pyscf
 work_pool
 restart
 *rchk
+
+# GeomeTRIC temporary files
+GeomeTRIC*

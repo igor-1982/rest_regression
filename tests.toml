@@ -70,3 +70,9 @@ tags = ["gga"]
 
 [H2O_BLYP_Freq]
 tags = ["frequencies", "gga"]
+
+[CO_HF_OPT_TRIC]
+tags = ["hf", "opt"]
+
+[CO_HF_OPT_TRIC_ANALYTIC_HESS]
+tags = ["hf", "opt"]
