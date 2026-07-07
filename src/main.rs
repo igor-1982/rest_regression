@@ -826,3 +826,53 @@ pub fn test_env() -> anyhow::Result<()>{
     Ok(())
 }
 
+#[test]
+pub fn test_tddft_collect_results() -> anyhow::Result<()> {
+    // Use CARGO_MANIFEST_DIR (compile-time constant) to locate bench_pool regardless of
+    // where cargo test is invoked from.
+    let bench_pool = Path::new(env!("CARGO_MANIFEST_DIR")).join("bench_pool");
+
+    // Test each TDDFT reference log
+    for test_name in &["H2_PBE0_TDA", "H2_PBE_TDA", "H2_SVWN_TDA"] {
+        let ref_log = bench_pool.join("tddft").join(test_name).join("reference.log");
+        let ref_log_str = ref_log.to_str().unwrap();
+        println!("\n=== Testing {} ===", test_name);
+        let result = collect_results(ref_log_str)?;
+
+        // Check scf_energy is extracted
+        assert!(result.contains_key("scf_energy"),
+            "{}: scf_energy not found in reference.log", test_name);
+        println!("  scf_energy = {:?}", result.get("scf_energy"));
+
+        // Check tddft_energies is extracted
+        assert!(result.contains_key("tddft_energies"),
+            "{}: tddft_energies not found in reference.log", test_name);
+        let energies = result.get("tddft_energies").unwrap();
+        assert_eq!(energies.len(), 3,
+            "{}: expected 3 excitation energies, got {}", test_name, energies.len());
+        println!("  tddft_energies = {:?}", energies);
+
+        // Check tddft_osc is extracted
+        assert!(result.contains_key("tddft_osc"),
+            "{}: tddft_osc not found in reference.log", test_name);
+        let osc = result.get("tddft_osc").unwrap();
+        assert_eq!(osc.len(), 3,
+            "{}: expected 3 oscillator strengths, got {}", test_name, osc.len());
+        println!("  tddft_osc = {:?}", osc);
+
+        // Verify energy values look reasonable (between 0 and 2 Ha for valence excitations)
+        for (i, &e) in energies.iter().enumerate() {
+            assert!(e > 0.0 && e < 2.0,
+                "{}: excitation energy {} (state {}) out of range [0, 2]", test_name, e, i);
+        }
+
+        // Verify oscillator strengths are non-negative
+        for (i, &o) in osc.iter().enumerate() {
+            assert!(o >= 0.0,
+                "{}: oscillator strength {} (state {}) is negative", test_name, o, i);
+        }
+    }
+
+    Ok(())
+}
+

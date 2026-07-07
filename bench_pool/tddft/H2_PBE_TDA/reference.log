@@ -3,7 +3,6 @@ The specified path for the basis sets is: def2-tzvp (lowercase), try to find it 
 Found: /opt/rest_workspace/rest/basis-set-pool/def2-tzvp
 The specified path for the auxiliary basis sets is: def2-tzvp-rifit (lowercase), try to find it from the rest_basis_dir
 Found: /opt/rest_workspace/rest/basis-set-pool/def2-tzvp-rifit
-WARNING: No solvent epsilon provided, use epsilon of vacuum.
 =========================================================
       Input parameters for the REST calculation
 =========================================================
@@ -26,17 +25,16 @@ SCF convergency thresholds: 1e-8 for density matrix
                             1e-8 Ha. for total energy
 Max. SCF cycle number:      100
 It is a finite cluster calculation
-The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
-It will be updated after the SCF procedure 
-(none)
+Initial guess is prepared by (sad).
 =========================================================
-the functional of 'pbe' contains
-The density functional 'Perdew, Burke & Ernzerhof' belongs to the 'GGA' family and is defined in the reference(s):
-(0): J. P. Perdew, K. Burke, and M. Ernzerhof.,  Phys. Rev. Lett. 77, 3865 (1996)
-(1): J. P. Perdew, K. Burke, and M. Ernzerhof.,  Phys. Rev. Lett. 78, 1396 (1997)
-The density functional 'Perdew, Burke & Ernzerhof' belongs to the 'GGA' family and is defined in the reference(s):
-(0): J. P. Perdew, K. Burke, and M. Ernzerhof.,  Phys. Rev. Lett. 77, 3865 (1996)
-(1): J. P. Perdew, K. Burke, and M. Ernzerhof.,  Phys. Rev. Lett. 78, 1396 (1997)
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [101, 130]
+SCF DFA parameters: [1.0, 1.0]
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
 Libxc version used in REST: 7.0.0
 nbas: 8, natm: 2 for standard basis sets
@@ -46,7 +44,7 @@ numbasis: 12, num_auxbas: 30
 Molecule_name: H2
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for RI integrals (26427.09 MB) is more than required (0.05 MB).
+Memory available for 1.5 times of RI integrals (26897.79 MB) is more than required (0.02 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.71510434 Hartree
 No ghost effective potential
@@ -54,31 +52,33 @@ No ghost point charges
 Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.01820279 with the total number of basis functions:     12
 Grid size: 20048
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=93.9% → skipping (AO too dense), falling back to dense
 
 =======================
 Generating SAD for atom: H
 =======================
+Using xc_parser legacy
+==== End of Summary ====
 Checking memory requirement for RI J/K algorithms...
-Memory available for RI integrals (26420.52 MB) is more than required (0.01 MB).
+Memory available for 1.5 times of RI integrals (26886.99 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
 SAD generation for H complete.
-Initial guess energy using single atom density (SAD):      -0.9766773767280168
+Initial guess energy using single atom density (SAD):      -0.9766773766788970
 The total energy:        -1.1616616947 Ha by the initial guess
 Energy:      -1.1653239710 Ha after    1 iterations (in       0.00 seconds).
-SCF Change: DM 8.61253e-4; eev 2.87802e-2 Ha; etot -4.46536e-4 Ha
+SCF Change: DM 8.60984e-4; eev 2.87713e-2 Ha; etot -4.46536e-4 Ha
 Energy:      -1.1657705073 Ha after    2 iterations (in       0.00 seconds).
-SCF Change: DM 2.19529e-6; eev 8.50703e-5 Ha; etot -6.05098e-5 Ha
+SCF Change: DM 2.47216e-6; eev 9.43837e-5 Ha; etot -6.05097e-5 Ha
 Energy:      -1.1658310170 Ha after    3 iterations (in       0.00 seconds).
-SCF Change: DM 2.99517e-8; eev 6.46527e-7 Ha; etot -2.48119e-10 Ha
+SCF Change: DM 2.46131e-8; eev 7.69560e-7 Ha; etot -3.28011e-10 Ha
 Energy:      -1.1658310173 Ha after    4 iterations (in       0.00 seconds).
-SCF Change: DM 4.10877e-10; eev 1.54481e-8 Ha; etot -7.19425e-14 Ha
+SCF Change: DM 3.16983e-12; eev 6.85506e-11 Ha; etot -8.72635e-14 Ha
 Energy:      -1.1658310173 Ha after    5 iterations (in       0.00 seconds).
 SCF is converged after    5 iterations.
 Mulliken population analysis:
   0-H  :  -0.000000
   1-H  :   0.000000
-Now starts quasiparticle method computation!
-Warning: You entered an invalid quasiparticle method. No quasiparticle methods Were triggered.
+
 === TDDFT Calculation ===
 Method: TDA
 Spin: Singlet
@@ -92,31 +92,45 @@ TDDFT RI Tensor: V-V, Size=[30, 121], naux=30
 num_auxbas = 30
 Diagonal preconditioner built, min gap = 0.424744
 Initial guess generated: 3 vectors
-    GGA fxc tensor max asymmetry = 4.44e-16
+    GGA fxc tensor max asymmetry = 8.88e-16
   A matrix diagnostic: first 6×6 submatrix
-    Max asymmetry |A[i,j]-A[j,i]| = 4.57e-16
+    Max asymmetry |A[i,j]-A[j,i]| = 8.33e-17
     Max off-diagonal element = 0.084676
-    A[0,0] = 0.4912196806 (gap=0.4247439249, kernel=0.0664757557)
-    A[1,1] = 0.6428614230 (gap=0.5648478164, kernel=0.0780136066)
-    A[2,2] = 0.9159447197 (gap=0.8245827781, kernel=0.0913619417)
+    A[0,0] = 0.4912196808 (gap=0.4247439251, kernel=0.0664757557)
+    A[1,1] = 0.6428614232 (gap=0.5648478166, kernel=0.0780136066)
+    A[2,2] = 0.9159447199 (gap=0.8245827782, kernel=0.0913619417)
 Small system (dim=11), building full A matrix for diagnosis...
-  A·e0 [0] = 0.4912196806 (gap=0.4247439249, kernel=0.0664757557)
+  A·e0 [0] = 0.4912196808 (gap=0.4247439251, kernel=0.0664757557)
 
-3 singlet excitations found (requested 3)
-
---------------------------------------------------------------------------------
-State       Energy (Ha)   Energy (eV)  Wavelength (nm)         Osc. Strength
---------------------------------------------------------------------------------
+First 3 Singlet Excitations:
+#0 Excitation energy=0.47399275245989425, norm=1.000000
 	Dipole Moment Components:
-	x:-0.00000000000000005190336242333645, y:0.00000000000000019939753716803453, z:-1.2706806920905702
-   1        0.47399275       12.8980         96.13            0.51021510
+	x:-0.00000000000000004045649784648739, y:0.00000000000000010181844576803972, z:1.270680691668858
+	Transition Dipole Square:1.6146294201800473; Oscillator Strength:0.5102150953825758
+      #0->#1,amplitude=0.6948243341947975
+      #0->#3,amplitude=-0.13029185098381582
+      #0->#9,amplitude=-0.01483703579557414
+      #0->#11,amplitude=-0.00480005695469279
+      #0->#2,amplitude=-0.00000000000000348738132638484
+#1 Excitation energy=0.6385981089671259, norm=1.000000
 	Dipole Moment Components:
-	x:0.0000000000000004793469082740995, y:-0.00000000000000014823393091258026, z:0.000000000000022965562041985553
-   2        0.63859811       17.3771         71.35            0.00000000
+	x:0.0000000000000002289630131258612, y:-0.00000000000000006368448683683142, z:0.00000000000002547826763912006
+	Transition Dipole Square:0.0000000000000000000000000006491986016658758; Oscillator Strength:0.00000000000000000000000000027638466624528714
+      #0->#2,amplitude=0.7060426002965877
+      #0->#6,amplitude=-0.037294589538924346
+      #0->#10,amplitude=0.010628271616608877
+      #0->#3,amplitude=0.000000000000004527549303634526
+      #0->#1,amplitude=0.000000000000004330366994490419
+#2 Excitation energy=0.9269811280784612, norm=1.000000
 	Dipole Moment Components:
-	x:0.00000000000000005789720858087183, y:0.0000000000000001561830862700232, z:0.7118792170053062
-   3        0.92698113       25.2245         49.15            0.31317873
---------------------------------------------------------------------------------
+	x:0.00000000000000047917319342383695, y:-0.00000000000000010645048269173407, z:-0.7118792169943564
+	Transition Dipole Square:0.5067720195884979; Oscillator Strength:0.3131787322644973
+      #0->#3,amplitude=-0.6939870130350008
+      #0->#1,amplitude=-0.12921344853832242
+      #0->#9,amplitude=0.03927273695381798
+      #0->#11,amplitude=0.011981760628055636
+      #0->#2,amplitude=0.000000000000004895862700205142
+The first excitation obtained by TDDFT is 0.47399275245989425
 TDDFT calculation completed successfully.
 
 ====================================================
@@ -124,6 +138,6 @@ TDDFT calculation completed successfully.
 ====================================================
 The SCF energy        :      -1.1658310173 Ha
 Detailed time report:
-SCF       |:    0.224 s for the scf procedure
-TDDFT     |:    0.061 s for the TDDFT calculation
-Overall   |:    0.285 s for the whole job
+TDDFT     |:    0.087 s for the TDDFT eigenvalue calculation
+SCF       |:    0.029 s for the scf procedure
+Overall   |:    0.116 s for the whole job

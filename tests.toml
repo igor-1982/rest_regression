@@ -66,7 +66,7 @@ tags = ["gga"]
 tags = ["hessian", "hf"]
 
 [H2O_BLYP_Hessian]
-tags = ["hessian", "blyp", "dft"]
+tags = ["gga"]
 
 [H2O_BLYP_Freq]
-tags = ["hessian", "frequencies", "blyp", "dft"]
+tags = ["frequencies", "gga"]
