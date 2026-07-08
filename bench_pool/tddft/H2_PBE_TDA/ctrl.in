@@ -21,10 +21,6 @@
      davidson_tol =              1.0e-6
      davidson_max_iter =         50
 
-[quasiparticle_methods]
-     bse_cutoff_energy =         1000000.0
-     bse_davidson_solver =       true
-
 [geom]
      name = "H2"
      unit = "angstrom"

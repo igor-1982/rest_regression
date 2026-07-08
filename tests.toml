@@ -61,3 +61,18 @@ tags = ["gga"]
 tags = ["gga"]
 [H4O2_X3LYP_D3BJ_GRAD]
 tags = ["gga"]
+
+[H2O_HF_Hessian]
+tags = ["hessian", "hf"]
+
+[H2O_BLYP_Hessian]
+tags = ["gga"]
+
+[H2O_BLYP_Freq]
+tags = ["frequencies", "gga"]
+
+[CO_HF_OPT_TRIC]
+tags = ["hf", "opt"]
+
+[CO_HF_OPT_TRIC_ANALYTIC_HESS]
+tags = ["hf", "opt"]

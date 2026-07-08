@@ -201,6 +201,72 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("gradient".to_string(), grad);
     }
 
+    // ── Hessian regression ──
+    let re_hess_total = Regex::new(
+        r"Hessian total max_abs\s*=\s*(?P<val>[\+-]?\d+\.\d+e[+-]?\d+)"
+    ).unwrap();
+    if re_hess_total.is_match(&buf) {
+        let caps = re_hess_total.captures(&buf).unwrap();
+        let val = caps["val"].parse::<f64>().unwrap();
+        result.insert("hessian_total_max_abs".to_string(), vec![val]);
+    }
+
+    let re_hess_hpart = Regex::new(
+        r"h_partial max_abs\s*=\s*(?P<val>[\+-]?\d+\.\d+e[+-]?\d+)"
+    ).unwrap();
+    if re_hess_hpart.is_match(&buf) {
+        let caps = re_hess_hpart.captures(&buf).unwrap();
+        let val = caps["val"].parse::<f64>().unwrap();
+        result.insert("h_partial_max_abs".to_string(), vec![val]);
+    }
+
+    let re_hess_cphf = Regex::new(
+        r"cphf_contrib max_abs\s*=\s*(?P<val>[\+-]?\d+\.\d+e[+-]?\d+)"
+    ).unwrap();
+    if re_hess_cphf.is_match(&buf) {
+        let caps = re_hess_cphf.captures(&buf).unwrap();
+        let val = caps["val"].parse::<f64>().unwrap();
+        result.insert("cphf_contrib_max_abs".to_string(), vec![val]);
+    }
+
+    // ── Frequencies regression ──
+    // Parse the stdout frequency table: "  N    FREQ    ---" format
+    //   Vibrational Frequencies (cm):
+    //   Mode     Freq/cm    Symmetry
+    //   ----     ---------- ----------
+    //    1       -601.0371  ---
+    let re_freq = Regex::new(
+        r"(?m)^\s*(?P<idx>\d+)\s+(?P<freq>[\+-]?\d+\.\d+)\s+(?:---|[A-Z])"
+    ).unwrap();
+    let mut freqs: Vec<f64> = vec![];
+    for cap in re_freq.captures_iter(&buf) {
+        freqs.push(cap["freq"].parse::<f64>().unwrap());
+    }
+    if !freqs.is_empty() {
+        result.insert("frequencies_cm".to_string(), freqs);
+    }
+
+    // ── Geometry optimization: final bond length (diatomic) ──
+    // "Geometry after relaxation [Ang]:" block contains atomic coordinates.
+    // For diatomic molecules, compute the distance between atom 1 and atom 2.
+    let re_geom = Regex::new(
+        r"Geometry after relaxation \[Ang\]:\n(?P<atom1>[A-Z][a-z]?)\s+(?P<x1>[\+-]?\d+\.\d+)\s+(?P<y1>[\+-]?\d+\.\d+)\s+(?P<z1>[\+-]?\d+\.\d+)\s*\n(?P<atom2>[A-Z][a-z]?)\s+(?P<x2>[\+-]?\d+\.\d+)\s+(?P<y2>[\+-]?\d+\.\d+)\s+(?P<z2>[\+-]?\d+\.\d+)"
+    ).unwrap();
+
+    if let Some(caps) = re_geom.captures(&buf) {
+        let x1 = caps["x1"].parse::<f64>().unwrap();
+        let y1 = caps["y1"].parse::<f64>().unwrap();
+        let z1 = caps["z1"].parse::<f64>().unwrap();
+        let x2 = caps["x2"].parse::<f64>().unwrap();
+        let y2 = caps["y2"].parse::<f64>().unwrap();
+        let z2 = caps["z2"].parse::<f64>().unwrap();
+        let dx = x2 - x1;
+        let dy = y2 - y1;
+        let dz = z2 - z1;
+        let bond_length = (dx*dx + dy*dy + dz*dz).sqrt();
+        result.insert("bond_length".to_string(), vec![bond_length]);
+    }
+
     let re_hoco_luco_gap = Regex::new(
         r"HOCO-LUCO gap\s*:\s*(?P<energy>[-+]?\d+\.\d+)\s*eV"
         ).unwrap();
@@ -212,24 +278,27 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
     }
 
     // TDDFT excitation energies: extract first 3 excitation energies
-    // Format from REST:
-    // State       Energy (Ha)   Energy (eV)  Wavelength (nm)         Osc. Strength
-    // --------------------------------------------------------------------------------
-    //    1        0.11186693        3.0441
-    //    2        0.12576545        3.4223
-    //    3        0.13821993        3.7612
-    let re_tddft = Regex::new(
-        r"(?m)^\s*(?P<idx>\d+)\s+(?P<energy>[\+-]?\d+\.\d+)\s+(?P<ev>[\+-]?\d+\.\d+)\s+(?P<nm>[\+-]?\d+\.\d+)\s+(?P<osc>[\+-]?\d+\.\d+)"
+    // New BSE-like format from REST:
+    // First 3 Singlet Excitations:
+    // #0 Excitation energy=0.11186693, norm=1.000000
+    // 	Transition Dipole Square:0.XXXX; Oscillator Strength:0.XXXX
+    let re_tddft_energy = Regex::new(
+        r"(?m)^#(?P<idx>\d+) Excitation energy=(?P<energy>[\+-]?\d+\.\d+)"
+    ).unwrap();
+    let re_tddft_osc = Regex::new(
+        r"(?m)Oscillator Strength:(?P<osc>[\+-]?\d+\.\d+)"
     ).unwrap();
 
     let mut tddft_energies: Vec<f64> = vec![];
     let mut tddft_osc: Vec<f64> = vec![];
-    for cap in re_tddft.captures_iter(&buf) {
+    for cap in re_tddft_energy.captures_iter(&buf) {
         let idx = cap["idx"].parse::<usize>().unwrap_or(99);
         if idx <= 6 {
             tddft_energies.push(cap["energy"].parse::<f64>().unwrap());
-            tddft_osc.push(cap["osc"].parse::<f64>().unwrap());
         }
+    }
+    for cap in re_tddft_osc.captures_iter(&buf) {
+        tddft_osc.push(cap["osc"].parse::<f64>().unwrap());
     }
     if !tddft_energies.is_empty() {
         result.insert("tddft_energies".to_string(), tddft_energies);
@@ -280,6 +349,50 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                 //break;
             }
             
+        } else if key.eq("hessian_total_max_abs") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let dev = (ref_value[0] - out_value[0]).abs();
+                if dev > 1.0e-5 {
+                    is_same = false;
+                    println!("WARNNING: {:20}:{:20.10} != {:20.10} (dev={:.2e})", key, out_value[0], ref_value[0], dev);
+                } else {
+                    println!("Pass    : {:20}:{:20.10}  = {:20.10} (dev={:.2e})", key, out_value[0], ref_value[0], dev);
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key.eq("h_partial_max_abs") || key.eq("cphf_contrib_max_abs") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let dev = (ref_value[0] - out_value[0]).abs();
+                if dev > 1.0e-4 {
+                    is_same = false;
+                    println!("WARNNING: {:20}:{:20.10} != {:20.10} (dev={:.2e})", key, out_value[0], ref_value[0], dev);
+                } else {
+                    println!("Pass    : {:20}:{:20.10}  = {:20.10} (dev={:.2e})", key, out_value[0], ref_value[0], dev);
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key.eq("frequencies_cm") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let n_modes = ref_value.len().min(out_value.len());
+                for i in 0..n_modes {
+                    let dev = (ref_value[i] - out_value[i]).abs();
+                    if dev > 2.0 {
+                        is_same = false;
+                        println!("WARNNING: Frequency Mode {}: {:12.4} != {:12.4} (dev={:.2e} cm⁻¹)",
+                            i + 1, out_value[i], ref_value[i], dev);
+                    } else {
+                        println!("Pass    : Frequency Mode {}: {:12.4}  = {:12.4} (dev={:.2e} cm⁻¹)",
+                            i + 1, out_value[i], ref_value[i], dev);
+                    }
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
         } else if key.eq("hoco_luco_gap") {
             if let Some(out_value) = out_hashmap.get(key) {
                 if (ref_value[0] - out_value[0]).abs() > 1e-5 {
@@ -287,6 +400,21 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                     println!("WARNNING: {:20}:{:20.10} != {:20.10}", key, out_value[0], ref_value[0]);
                 } else {
                     println!("Pass    : {:20}:{:20.10}  = {:20.10}", key, out_value[0], ref_value[0]);
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key.eq("bond_length") {
+            if let Some(out_value) = out_hashmap.get(key) {
+                let dev = (ref_value[0] - out_value[0]).abs();
+                if dev > 5.0e-4 {
+                    is_same = false;
+                    println!("WARNNING: {:20}:{:12.8} != {:12.8} (dev={:.2e} Ang)",
+                        key, out_value[0], ref_value[0], dev);
+                } else {
+                    println!("Pass    : {:20}:{:12.8}  = {:12.8} (dev={:.2e} Ang)",
+                        key, out_value[0], ref_value[0], dev);
                 }
             } else {
                 is_same = false;
@@ -617,6 +745,17 @@ fn main() -> anyhow::Result<()> {
                 }
             }
         }
+        // Save Hessian/Frequencies output files before leaving & deleting the job dir
+        for artifact_name in &["HessianMatrix.txt", "EigenModes.txt"] {
+            let src = job_work_dir.join(artifact_name);
+            if src.exists() {
+                let mut dst_name = test_name.to_string();
+                dst_name.push('_');
+                dst_name.push_str(artifact_name);
+                let _ = fs::copy(&src, work_path.join(&dst_name));
+            }
+        }
+
         // leave the job folder
         env::set_current_dir(curr_path)?;
         // remove the tmp job folder
@@ -718,6 +857,56 @@ pub fn test_env() -> anyhow::Result<()>{
             }
         },
         None => println!("{} not defined in the environment.", key),
+    }
+
+    Ok(())
+}
+
+#[test]
+pub fn test_tddft_collect_results() -> anyhow::Result<()> {
+    // Use CARGO_MANIFEST_DIR (compile-time constant) to locate bench_pool regardless of
+    // where cargo test is invoked from.
+    let bench_pool = Path::new(env!("CARGO_MANIFEST_DIR")).join("bench_pool");
+
+    // Test each TDDFT reference log
+    for test_name in &["H2_PBE0_TDA", "H2_PBE_TDA", "H2_SVWN_TDA"] {
+        let ref_log = bench_pool.join("tddft").join(test_name).join("reference.log");
+        let ref_log_str = ref_log.to_str().unwrap();
+        println!("\n=== Testing {} ===", test_name);
+        let result = collect_results(ref_log_str)?;
+
+        // Check scf_energy is extracted
+        assert!(result.contains_key("scf_energy"),
+            "{}: scf_energy not found in reference.log", test_name);
+        println!("  scf_energy = {:?}", result.get("scf_energy"));
+
+        // Check tddft_energies is extracted
+        assert!(result.contains_key("tddft_energies"),
+            "{}: tddft_energies not found in reference.log", test_name);
+        let energies = result.get("tddft_energies").unwrap();
+        assert_eq!(energies.len(), 3,
+            "{}: expected 3 excitation energies, got {}", test_name, energies.len());
+        println!("  tddft_energies = {:?}", energies);
+
+        // Check tddft_osc is extracted
+        assert!(result.contains_key("tddft_osc"),
+            "{}: tddft_osc not found in reference.log", test_name);
+        let osc = result.get("tddft_osc").unwrap();
+        assert_eq!(osc.len(), 3,
+            "{}: expected 3 oscillator strengths, got {}", test_name, osc.len());
+        println!("  tddft_osc = {:?}", osc);
+
+        // Verify energy values look reasonable (between 0 and 2 Ha for valence excitations)
+        for (i, &e) in energies.iter().enumerate() {
+            assert!(e > 0.0 && e < 2.0,
+                "{}: excitation energy {} (state {}) out of range [0, 2]", test_name, e, i);
+        }
+
+        // Verify oscillator strengths are non-negative
+        for (i, &o) in osc.iter().enumerate() {
+            assert!(o >= 0.0,
+                "{}: oscillator strength {} (state {}) is negative", test_name, o, i);
+        }
     }
 
     Ok(())
