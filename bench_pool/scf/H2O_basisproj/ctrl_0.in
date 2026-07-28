@@ -2,19 +2,13 @@
      print_level =               2
      num_threads =               4
      xc =                        "b3lyp"
-     occupation_type =           "integer"
      basis_path =                "cc-pVDZ"
      auxbas_path =               "def2-universal-JKFIT" 
      charge =                    0.0
      spin =                      1.0
      spin_polarization =         true
-     initial_guess =             "sad"
-     guessfile =                 "restart.rchk"
-     chkfile =                   "dscf.rchk"
+     chkfile =                   "restart.rchk"
      chkfile_type =              "hdf5"
-                                  #态文件序号 原轨道 自旋 电子占据数  轨道投影窗口  
-     force_state_occupation =     [["restart.rchk",    4,   0,       0.0,    0,    12], 
-                                   ["restart.rchk",    5,   0,       1.0,    4,     8]]
 
 [geom]
      name = "H2O"
