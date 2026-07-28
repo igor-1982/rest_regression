@@ -1,0 +1,380 @@
+[DEBUG ctrl_io::path_util] The REST_BASIS_DIR environment variable is not set.
+[DEBUG ctrl_io::path_util] Detected CONDA_PREFIX: /home/wsr/miniconda3/envs/cf, inside_conda: false
+[DEBUG ctrl_io::path_util] Add the alternative default path (/home/wsr/rest_workspace/rest/basis-set-pool/) to rest_basis_dir.
+[DEBUG ctrl_io::path_util] The specified path for the basis sets is: cc-pvtz (lowercase), try to find it from the rest_basis_dir
+[DEBUG ctrl_io::path_util] Found: /home/wsr/rest_workspace/rest/basis-set-pool/cc-pvtz
+[DEBUG ctrl_io::path_util] The specified path for the auxiliary basis sets is: def2-universal-jkfit (lowercase), try to find it from the rest_basis_dir
+[DEBUG ctrl_io::path_util] Found: /home/wsr/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: b3lyp
+Print level:   2    max log level: DEBUG
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/wsr/rest_workspace/rest/basis-set-pool/cc-pvtz
+The spheric-GTO auxiliary basis set is taken from /home/wsr/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+Charge:   0; Spin:   1
+Spin polarization: On
+Input molecular structure (in Angstrom): ----------
+O        0.45569000     -0.85514700     -1.07744500
+H        0.17079400     -1.68909000     -1.47145500
+H        1.41652100     -0.93877000     -1.03645800
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The initial guess is prepared by reading guessfile (restart.rchk)
+[DEBUG ctrl_io] Turn on the basis pair symmetry for RI 3D-tensors
+[DEBUG ctrl_io] The pruning method is nwchem
+[DEBUG ctrl_io] The radial grid generation method is treutler
+[DEBUG ctrl_io] min_num_angular_points: 110
+[DEBUG ctrl_io] max_num_angular_points: 590
+[DEBUG ctrl_io] hardness: 3
+[DEBUG ctrl_io] Grid generation level: 3
+[DEBUG ctrl_io] Even tempered basis generation: false
+[DEBUG ctrl_io] The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 2
+SCF DFA components: [402]
+SCF DFA parameters: [1.0]
+SCF DFA hybrid coeff:       0.20000000
+Post-SCF DFA: None
+==== detailed info of the scf functional ====
+ID Number       : 402
+Identifier      : hyb_gga_xc_b3lyp
+Description     : B3LYP
+Attributes
+    Kind        : ExchangeCorrelation
+    Family      : HybGGA
+    Spin        : Polarized
+Flags
+    Derivative  : HaveEXC | HaveVXC | HaveFXC | HaveKXC
+    Dimension   : Dim3
+    CAM         : <empty>
+    VV10        : <empty>
+    MGGA        : EnforceFHC
+    Device      : <empty>
+Hybrid Functional (non-CAM-type)
+    hyb_exx_coef: 0.2
+External Parameters
+    -       _a0 =    0.2               Fraction of exact exchange
+    -       _ax =    0.72              Fraction of GGA exchange correction
+    -       _ac =    0.81              Fraction of GGA correlation correction
+References
+    - P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)
+      DOI: 10.1021/j100096a001
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 10, natm: 3 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 47,final natm: 6
+numbasis: 58, num_auxbas: 113
+Molecule_name: H2O
+job_type = "SinglePoint"
+print_level = 2
+basis_path = "/home/wsr/rest_workspace/rest/basis-set-pool/cc-pvtz"
+basis_type = "spheric"
+auxbas_path = "/home/wsr/rest_workspace/rest/basis-set-pool/def2-universal-jkfit"
+auxbas_type = "spheric"
+use_auxbas = true
+even_tempered_basis = false
+etb_start_atom_number = 37
+etb_beta = 2.0
+ri_k_only = false
+auxbasis_response = true
+numerical_force = false
+use_isdf = false
+isdf_k_only = false
+isdf_k_mu = 8
+isdf_new = false
+eri_type = "ri_v"
+use_ri_symm = true
+xc = "b3lyp"
+xc_type = "Standard"
+post_xc = []
+post_correlation = []
+post_ai_correction = "none"
+charge = 0.0
+spin = 1.0
+use_int_nelec = true
+spin_channel = 2
+spin_polarization = true
+frozen_core_postscf = 0
+frequency_points = 20
+lambda_points = 20
+freq_grid_type = 0
+freq_cut_off = 10.0
+radial_precision = 0.000000000001
+min_num_angular_points = 110
+max_num_angular_points = 590
+grid_gen_level = 3
+hardness = 3
+pruning = "nwchem"
+rad_grid_method = "treutler"
+external_grids = "grids"
+mixer = "diis"
+mix_param = 0.2
+num_max_diis = 8
+start_diis_cycle = 1
+start_check_oscillation = 20
+max_scf_cycle = 100
+scf_acc_rho = 0.00000001
+scf_acc_eev = 0.000001
+scf_acc_etot = 0.00000001
+scf_conv_criteria = "dm,eev"
+scf_acc_g = 0.00001
+has_chkfile = false
+solvent_enabled = false
+solvent_ri = true
+solv_epsilon = 1.0
+solvent_model = "CPCM"
+solv_chunk = 8
+pcm_cavity_radii = "UFF"
+solvent_name = ""
+chkfile = "none"
+chkfile_type = "hdf5"
+guessfile = "restart.rchk"
+guessfile_type = "hdf5"
+external_init_guess = "guessfile"
+initial_guess = "sad"
+noiter = false
+check_stab = false
+use_dm_only = false
+vxc_screen_threshold = 0.000000000000001
+ao_cutoff = 0.000000000001
+non0tab_blksize = 0
+drop_dense_ao = false
+algorithm_jk = "default"
+algorithm_j = "default"
+algorithm_k = "default"
+fciqmc_dump = false
+outputs = []
+cube_orb_setting = [3.0, 80.0]
+cube_orb_indices = []
+cube_orb_type = "wavefunction"
+atom_sad = false
+occupation_type = "INTEGER"
+frac_tolerant = 0.001
+deep_pot = false
+run_lib_rint = false
+bench_eps = false
+num_threads = 4
+batch_size = 64
+nforce_displacement = 0.0013
+ndipole_displacement = 0.0003
+nhessian_displacement = 0.005
+force_state_occupation = []
+auxiliary_reference_states = []
+abort_on_mem_exceed = true
+smear_anneal = false
+guess_mix = false
+guess_mix_theta_deg = [15.0, 15.0]
+start_mix_cycle = 0
+xc_parser = "legacy"
+use_fxc_opt = false
+rel = "None"
+analdrv_tasks = []
+
+[j2c_decomp]
+policy = "eig"
+threshold = 0.0000000000001
+uplo = "Upper"
+
+[ri_pt2]
+mpi_mode = 0
+fp_mode = "FP32"
+new_driver = false
+streaming = true
+
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (9157.34 MB) is more than required (2.18 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.11951008 Hartree
+[DEBUG scf_io] no empirical dispersion correction is employed
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00262646 with the total number of basis functions:     58
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.6% → skipping (AO too dense), falling back to dense
+Read MO coefficients from guessfile: restart.rchk
+HDF5 Group: <HDF5 group: "/scf" (10 members)> 
+Members: ["charge", "e_tot", "mo_coeff", "mo_energy", "mo_occ", "mo_occupation", "num_basis", "num_states", "spin", "spin_channel"]
+E_tot from chkfile:     -76.4206081478
+The basis set in chkfile does not match the input basis set (loaded: 24 basis, 24 MOs; target: 58 basis, 58 MOs),
+trying to project ...
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+projection completed.
+Detailed time report:
+Overall   |:    0.165 s for SCF Preparation
+CInt      |:    0.008 s for Two, Three, and Four-center integrals
+DFT Grids |:    0.154 s for Initialization of the tabulated Grids and AOs
+ISDF      |:    0.000 s for ISDF initialization
+Solvent Calculation|:    0.000 s for Initialization of the solvent calculation
+InitGuess |:    0.003 s for Prepare initial guess
+[DEBUG scf_io] electron number in alpha-channel:   5.00000006
+[DEBUG scf_io] electron number in beta-channel:    5.00000006
+[DEBUG scf_io] Exc:      -7.57235250, Vxc:      -4.85469392
+The total energy:       -76.4376214419 Ha by the initial guess
+Initial grad_dm l2: (2.54642e-1,2.54642e-1) Ha
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] electron number in alpha-channel:   5.00000005
+[DEBUG scf_io] electron number in beta-channel:    5.00000005
+[DEBUG scf_io] Exc:      -7.54706230, Vxc:      -4.83759182
+Spin  0: HOMO (  4):      -0.318854, LUMO (  5):       0.021989, H-L Gap:       0.34084280
+Spin  1: HOMO (  4):      -0.318854, LUMO (  5):       0.021989, H-L Gap:       0.34084280
+SCF Change: DM (8.57103e-4,8.57103e-4); eev 1.80693e-1 Ha; etot -2.18912e-2 Ha; grad (5.96556e-2,5.96556e-2) Ha
+Energy:     -76.4595126371 Ha with <S^2> = -0.000 and <2S+1> =  1.000 after    1 iterations (in       0.05 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.04s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] electron number in alpha-channel:   5.00000005
+[DEBUG scf_io] electron number in beta-channel:    5.00000005
+[DEBUG scf_io] Exc:      -7.57491558, Vxc:      -4.85580635
+Spin  0: HOMO (  4):      -0.309651, LUMO (  5):       0.023340, H-L Gap:       0.33299052
+Spin  1: HOMO (  4):      -0.309651, LUMO (  5):       0.023340, H-L Gap:       0.33299052
+SCF Change: DM (5.14109e-4,5.14109e-4); eev 7.22940e-2 Ha; etot 2.06360e-4 Ha; grad (6.92448e-2,6.92448e-2) Ha
+Energy:     -76.4593062775 Ha with <S^2> =  0.000 and <2S+1> =  1.000 after    2 iterations (in       0.05 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.05s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] electron number in alpha-channel:   5.00000005
+[DEBUG scf_io] electron number in beta-channel:    5.00000005
+[DEBUG scf_io] Exc:      -7.55687499, Vxc:      -4.84403204
+Spin  0: HOMO (  4):      -0.309557, LUMO (  5):       0.023107, H-L Gap:       0.33266489
+Spin  1: HOMO (  4):      -0.309557, LUMO (  5):       0.023107, H-L Gap:       0.33266489
+SCF Change: DM (3.89235e-5,3.89235e-5); eev 4.12731e-3 Ha; etot -5.26303e-4 Ha; grad (3.94779e-3,3.94779e-3) Ha
+Energy:     -76.4598325809 Ha with <S^2> = -0.000 and <2S+1> =  1.000 after    3 iterations (in       0.05 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.05s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] electron number in alpha-channel:   5.00000005
+[DEBUG scf_io] electron number in beta-channel:    5.00000005
+[DEBUG scf_io] Exc:      -7.55721405, Vxc:      -4.84425132
+Spin  0: HOMO (  4):      -0.309407, LUMO (  5):       0.023195, H-L Gap:       0.33260145
+Spin  1: HOMO (  4):      -0.309407, LUMO (  5):       0.023195, H-L Gap:       0.33260145
+SCF Change: DM (8.40846e-6,8.40846e-6); eev 1.49717e-3 Ha; etot -1.08319e-6 Ha; grad (1.21930e-3,1.21930e-3) Ha
+Energy:     -76.4598336641 Ha with <S^2> =  0.000 and <2S+1> =  1.000 after    4 iterations (in       0.05 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.05s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] electron number in alpha-channel:   5.00000005
+[DEBUG scf_io] electron number in beta-channel:    5.00000005
+[DEBUG scf_io] Exc:      -7.55705598, Vxc:      -4.84414818
+Spin  0: HOMO (  4):      -0.309432, LUMO (  5):       0.023187, H-L Gap:       0.33261949
+Spin  1: HOMO (  4):      -0.309432, LUMO (  5):       0.023187, H-L Gap:       0.33261949
+SCF Change: DM (1.30451e-6,1.30451e-6); eev 2.17637e-4 Ha; etot -8.30310e-8 Ha; grad (1.79196e-4,1.79197e-4) Ha
+Energy:     -76.4598337471 Ha with <S^2> = -0.000 and <2S+1> =  1.000 after    5 iterations (in       0.05 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.05s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] electron number in alpha-channel:   5.00000005
+[DEBUG scf_io] electron number in beta-channel:    5.00000005
+[DEBUG scf_io] Exc:      -7.55709617, Vxc:      -4.84417447
+Spin  0: HOMO (  4):      -0.309432, LUMO (  5):       0.023187, H-L Gap:       0.33261890
+Spin  1: HOMO (  4):      -0.309432, LUMO (  5):       0.023187, H-L Gap:       0.33261890
+SCF Change: DM (5.54276e-8,5.54275e-8); eev 3.86474e-6 Ha; etot -2.86083e-9 Ha; grad (5.01716e-6,5.01716e-6) Ha
+Energy:     -76.4598337500 Ha with <S^2> = -0.000 and <2S+1> =  1.000 after    6 iterations (in       0.05 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.05s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] electron number in alpha-channel:   5.00000005
+[DEBUG scf_io] electron number in beta-channel:    5.00000005
+[DEBUG scf_io] Exc:      -7.55709553, Vxc:      -4.84417405
+Spin  0: HOMO (  4):      -0.309431, LUMO (  5):       0.023187, H-L Gap:       0.33261887
+Spin  1: HOMO (  4):      -0.309431, LUMO (  5):       0.023187, H-L Gap:       0.33261887
+SCF Change: DM (4.06953e-9,4.06955e-9); eev 9.62888e-7 Ha; etot -2.95586e-12 Ha; grad (4.22564e-7,4.22562e-7) Ha
+Energy:     -76.4598337500 Ha with <S^2> = -0.000 and <2S+1> =  1.000 after    7 iterations (in       0.04 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.04s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+SCF is converged after    7 iterations.
+[DEBUG scf_io] electron number in alpha-channel:   5.00000005
+[DEBUG scf_io] electron number in beta-channel:    5.00000005
+[DEBUG scf_io] Exc:      -7.55709545, Vxc:      -4.84417400
+Energy:       -76.4598337500 Ha
+grad_dm l2: 2.15846e-8 Ha
+Spin  0: HOMO (  4):      -0.309431, LUMO (  5):       0.023187, H-L Gap:       0.33261886
+Spin  1: HOMO (  4):      -0.309431, LUMO (  5):       0.023187, H-L Gap:       0.33261886
+Eigenvalues in Unrestricted HF (or KS) calculation:
+Spin-up eigenvalues
+ 
+   State    Occupation        Eigenvalue
+       0       1.00000        -19.122158
+       1       1.00000         -1.007238
+       2       1.00000         -0.524619
+       3       1.00000         -0.386792
+       4       1.00000         -0.309431
+       5       0.00000          0.023187
+       6       0.00000          0.095651
+       7       0.00000          0.363591
+ 
+Spin-down eigenvalues
+ 
+   State    Occupation        Eigenvalue
+       0       1.00000        -19.122158
+       1       1.00000         -1.007238
+       2       1.00000         -0.524619
+       3       1.00000         -0.386792
+       4       1.00000         -0.309431
+       5       0.00000          0.023187
+       6       0.00000          0.095651
+       7       0.00000          0.363591
+Mulliken population analysis:
+  0-O  :  -0.437179
+  1-H  :   0.218590
+  2-H  :   0.218589
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -76.4598337500 Ha
+Detailed time report:
+Overall   |:    0.611 s for the whole job
+SCF       |:    0.611 s for the scf procedure
