@@ -28,6 +28,10 @@ Options:
           Show the slowest N tests at the end [default: 5, use 0/off/false to disable]
   --dry-run
           List tests that would be run without executing them
+  --timeout <timeout>
+          Per-job timeout in seconds (0 = no timeout, default: no timeout).
+          When set, each REST job is killed if it exceeds this duration.
+          Tests can override the global timeout via tests.toml (see below).
   -h, --help
           Print help
   -V, --version
@@ -35,6 +39,7 @@ Options:
 
 Special tests and tags:
   tests.toml stores per-test configuration: num_mpi, num_threads (locked values, cannot be
-  overridden by CLI), and tags (cross-folder filter labels).
+  overridden by CLI), timeout (per-test override in seconds; 0 = no timeout), and tags
+  (cross-folder filter labels).
   Available tags: mp2, ecp, dipole, ext-field, rsh, lda, ro, gga, meta-gga
   Usage: rest_regression -f mp2,ext-field

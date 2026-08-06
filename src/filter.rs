@@ -9,6 +9,7 @@ pub struct TestEntry {
     pub num_mpi: Option<usize>,
     pub num_threads: Option<usize>,
     pub tags: Option<Vec<String>>,
+    pub timeout: Option<u64>,
 }
 
 pub type TestConfig = HashMap<String, TestEntry>;

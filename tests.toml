@@ -84,3 +84,6 @@ tags = ["hf", "opt"]
 
 [CO_HF_OPT_TRIC_ANALYTIC_HESS]
 tags = ["hf", "opt"]
+
+[NH3_BSE]
+timeout = 300

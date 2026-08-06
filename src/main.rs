@@ -2,8 +2,10 @@ use clap::{Arg, ArgMatches, Command};
 use anyhow;
 use regex::Regex;
 //use core::num;
-use std::{collections::HashMap, env, fs::{self, File}, io::{BufRead, Read, Write}, path::Path};
+use std::{collections::HashMap, env, fs::{self, File}, io::{Read, Write}, path::Path, sync::mpsc};
 use std::process::Command as ProcessCommand;
+use std::time::Duration;
+
 use walkdir::WalkDir;
 use chrono::{DateTime, Local};
 
@@ -67,10 +69,14 @@ pub fn parse_input() -> ArgMatches {
              .help("Show the slowest N tests [default: 5, use 0/off/false to disable]")
         )
         .arg(Arg::new("dry_run")
-             .long("dry-run")
-             .action(clap::ArgAction::SetTrue)
-             .help("List tests that would be run without executing them")
-        )
+              .long("dry-run")
+              .action(clap::ArgAction::SetTrue)
+              .help("List tests that would be run without executing them")
+          )
+          .arg(Arg::new("timeout")
+              .long("timeout")
+              .help("Per-job timeout in seconds (0 = no timeout, default: no timeout)")
+          )
         //.arg(Arg::new("task_status")
         //     .short('s')
         //     .long("task_status")
@@ -543,6 +549,10 @@ fn main() -> anyhow::Result<()> {
     let num_threads: Option<usize> = parse_input().get_one::<String>("num_threads")
         .map(|s| s.parse::<usize>().expect("num_threads must be a positive integer"));
 
+    let global_timeout: Option<u64> = parse_input().get_one::<String>("timeout")
+        .map(|s| s.parse::<u64>().expect("timeout must be a positive integer"))
+        .filter(|&t| t > 0);
+
     let filter_set: Option<std::collections::HashSet<String>> = {
         let matches = parse_input();
         matches.get_one::<String>("filter").map(|s| {
@@ -671,14 +681,9 @@ fn main() -> anyhow::Result<()> {
 
 
         // initialize the output file
-        let mut store_file = work_path.as_os_str().to_os_string();
-        store_file.push("/");
-        store_file.push(entry.path()
-              .file_name()
-              .ok_or(format!("job_{}", job_index)).unwrap()
-            );
-        store_file.push(".log");
-        println!("output file: {}", store_file.clone().into_string().unwrap());
+        let file_name = entry.path().file_name().unwrap();
+        let store_file = curr_path.join(&work_folder).join(file_name).with_extension("log");
+        println!("output file: {}", store_file.display());
 
         // collect the job list, which will be performed in sequence
         let mut job_list = vec![];
@@ -701,13 +706,18 @@ fn main() -> anyhow::Result<()> {
         copy_dir_all(entry.path(), &job_work_dir)?;
 
         let test_name = entry.path().file_name().unwrap().to_str().unwrap();
-        let (effective_num_mpi, effective_num_threads) = match test_config.get(test_name) {
-            Some(config) if config.num_mpi.is_some() || config.num_threads.is_some() => {
-                println!("Special test config: num_mpi={:?}, num_threads={:?}", config.num_mpi, config.num_threads);
-                (config.num_mpi.unwrap_or(num_mpi), config.num_threads)
+        let (effective_num_mpi, effective_num_threads, effective_timeout) = match test_config.get(test_name) {
+            Some(config) if config.num_mpi.is_some() || config.num_threads.is_some() || config.timeout.is_some() => {
+                println!("Special test config: num_mpi={:?}, num_threads={:?}, timeout={:?}", config.num_mpi, config.num_threads, config.timeout);
+                let t = match config.timeout {
+                    Some(0) | None => global_timeout,
+                    Some(s) => Some(s),
+                };
+                (config.num_mpi.unwrap_or(num_mpi), config.num_threads, t)
             },
-            _ => (num_mpi, num_threads),
+            _ => (num_mpi, num_threads, global_timeout),
         };
+        let effective_duration = effective_timeout.map(Duration::from_secs);
 
         if let Some(nt) = effective_num_threads {
             for job_file_name in &job_list {
@@ -722,27 +732,44 @@ fn main() -> anyhow::Result<()> {
         // enter the job folder
         env::set_current_dir(&job_work_dir)?;
 
-        let mut output_string = String::new();
         for job in job_list {
-            let output = if effective_num_mpi == 1 {
-                ProcessCommand::new(rest_cmd.as_str())
-                    .arg("-i").arg(job).output().unwrap()
-            } else {
-                ProcessCommand::new("mpirun").arg("-n").arg(format!("{}",&effective_num_mpi).as_str())
-                    .arg(rest_cmd.as_str())
-                    .arg("-i").arg(job).output().unwrap()
+            let log_file = File::create(&store_file)?;
+
+            let (tx, rx) = mpsc::channel();
+            let cmd_clone = rest_cmd.clone();
+            let job_clone = job.clone();
+            let n_mpi = effective_num_mpi;
+
+            std::thread::spawn(move || {
+                let result = if n_mpi == 1 {
+                    ProcessCommand::new(&cmd_clone)
+                        .stdout(log_file.try_clone().unwrap())
+                        .stderr(log_file)
+                        .arg("-i").arg(&job_clone).status()
+                } else {
+                    ProcessCommand::new("mpirun").arg("-n").arg(format!("{}", n_mpi))
+                        .arg(&cmd_clone)
+                        .stdout(log_file.try_clone().unwrap())
+                        .stderr(log_file)
+                        .arg("-i").arg(&job_clone).status()
+                };
+                let _ = tx.send(result);
+            });
+
+            let status = match effective_duration {
+                Some(dur) => match rx.recv_timeout(dur) {
+                    Ok(result) => result?,
+                    Err(mpsc::RecvTimeoutError::Timeout) => {
+                        anyhow::bail!("timeout: job '{}' in test '{}' exceeded {} seconds",
+                            job, test_name, dur.as_secs());
+                    }
+                    Err(_) => unreachable!(),
+                },
+                None => rx.recv().unwrap()?,
             };
-            output_string = String::new();
-            for line in output.stdout.lines() {
-                output_string.push_str(line.unwrap().as_str());
-                output_string.push_str("\n");
-            }
-            if !output.stderr.is_empty() {
-                output_string.push_str("--- stderr ---\n");
-                for line in output.stderr.lines() {
-                    output_string.push_str(line.unwrap().as_str());
-                    output_string.push_str("\n");
-                }
+
+            if !status.success() {
+                anyhow::bail!("process '{}' in test '{}' exited with {}", job, test_name, status);
             }
         }
         // Save Hessian/Frequencies output files before leaving & deleting the job dir
@@ -760,9 +787,6 @@ fn main() -> anyhow::Result<()> {
         env::set_current_dir(curr_path)?;
         // remove the tmp job folder
         fs::remove_dir_all(&job_work_dir)?;
-
-        let mut ff = File::create(store_file.to_str().unwrap()).unwrap();
-        ff.write(output_string.as_bytes())?;
 
         let out_hashmap = collect_results(store_file.to_str().unwrap())?;
         let is_pass_current = compare_results(&ref_hashmap, &out_hashmap);
