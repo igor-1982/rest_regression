@@ -18,7 +18,7 @@
      tddft_method =              "tda"
      tddft_spin =                "singlet"
      nroots =                    3
-     davidson_tol =              1.0e-6
+     #davidson_tol =              1.0e-6
      davidson_max_iter =         50
 
 [geom]

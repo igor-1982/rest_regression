@@ -6,6 +6,3 @@
 
 体系：H2O 分子。
 
-参考结果：
-- Hessian total max_abs ≈ 7.0228e-1
-- 与 PySCF 参考值差异 < 1e-4
