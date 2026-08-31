@@ -77,6 +77,11 @@ pub fn parse_input() -> ArgMatches {
               .long("timeout")
               .help("Per-job timeout in seconds (0 = no timeout, default: no timeout)")
           )
+          .arg(Arg::new("scalapack")
+              .long("scalapack")
+              .action(clap::ArgAction::SetTrue)
+              .help("Force-enable the ScaLAPACK (distributed) paths: injects hamiltonian_distributed = \"on\" into [ctrl] and distributed = \"on\" into [ctrl.j2c_decomp] of every ctrl.in (or rest_jobs input) before running. Requires --n_mpi >= 2 (a warning is printed otherwise).")
+          )
         //.arg(Arg::new("task_status")
         //     .short('s')
         //     .long("task_status")
@@ -515,6 +520,79 @@ fn set_num_threads_in_file(file_path: &Path, num_threads: usize) -> anyhow::Resu
     Ok(())
 }
 
+/// Force-enable the ScaLAPACK (distributed) paths in a ctrl.in file:
+///   - `hamiltonian_distributed = "on"` into the `[ctrl]` section,
+///   - `distributed = "on"` into the `[ctrl.j2c_decomp]` section
+///     (creating the section when absent, appended at the end of the file).
+fn set_scalapack_in_file(file_path: &Path) -> anyhow::Result<()> {
+    let content = fs::read_to_string(file_path)?;
+    let mut lines: Vec<&str> = content.lines().collect();
+
+    // 1) inject hamiltonian_distributed into [ctrl] (first key line of the section)
+    if let Some(ctrl_idx) = lines.iter().position(|l| l.trim() == "[ctrl]") {
+        let mut insert_at: Option<usize> = None;
+        for (i, l) in lines.iter().enumerate().skip(ctrl_idx + 1) {
+            let t = l.trim();
+            if t.starts_with('[') {
+                break; // next section header
+            }
+            if t.is_empty() || t.starts_with('#') || t.starts_with("//") {
+                continue;
+            }
+            if t.starts_with("hamiltonian_distributed") {
+                insert_at = None; // already present
+                break;
+            }
+            insert_at = Some(i);
+            break;
+        }
+        if let Some(idx) = insert_at {
+            lines.insert(idx, "hamiltonian_distributed = \"on\"");
+        }
+    } else {
+        lines.insert(0, "hamiltonian_distributed = \"on\"");
+        lines.insert(0, "[ctrl]");
+    }
+
+    // 2) inject distributed into [ctrl.j2c_decomp]
+    let j2c_section = lines.iter().position(|l| l.trim() == "[ctrl.j2c_decomp]");
+    match j2c_section {
+        Some(j2c_idx) => {
+            let mut insert_at: Option<usize> = None;
+            for (i, l) in lines.iter().enumerate().skip(j2c_idx + 1) {
+                let t = l.trim();
+                if t.starts_with('[') {
+                    break;
+                }
+                if t.is_empty() || t.starts_with('#') || t.starts_with("//") {
+                    continue;
+                }
+                if t.starts_with("distributed") {
+                    insert_at = None;
+                    break;
+                }
+                insert_at = Some(i);
+                break;
+            }
+            if let Some(idx) = insert_at {
+                lines.insert(idx, "distributed = \"on\"");
+            }
+        }
+        None => {
+            // append a new section at the end of the file
+            lines.push("");
+            lines.push("[ctrl.j2c_decomp]");
+            lines.push("distributed = \"on\"");
+        }
+    }
+
+    let mut new_content = lines.join("\n");
+    new_content.push('\n');
+    let mut f = File::create(file_path)?;
+    f.write_all(new_content.as_bytes())?;
+    Ok(())
+}
+
 fn main() -> anyhow::Result<()> {
 
     let s_time = init_timing();
@@ -591,6 +669,11 @@ fn main() -> anyhow::Result<()> {
     };
     let mut durations: Vec<(String, f64)> = vec![];
     let dry_run: bool = parse_input().get_flag("dry_run");
+    let use_scalapack: bool = parse_input().get_flag("scalapack");
+    if use_scalapack && num_mpi < 2 {
+        println!("WARNING: --scalapack forces the distributed (ScaLAPACK) paths, which require MPI.");
+        println!("         --n_mpi is {} (< 2); the injected keywords will have no effect.", num_mpi);
+    }
 
     let test_config = filter::load_test_config();
     let all_names = filter::build_all_names(&input_folder, &test_config);
@@ -725,6 +808,16 @@ fn main() -> anyhow::Result<()> {
                 if job_file_path.is_file() {
                     set_num_threads_in_file(&job_file_path, nt)?;
                     println!("Set num_threads = {} in {}", nt, job_file_name);
+                }
+            }
+        }
+
+        if use_scalapack {
+            for job_file_name in &job_list {
+                let job_file_path = job_work_dir.join(job_file_name);
+                if job_file_path.is_file() {
+                    set_scalapack_in_file(&job_file_path)?;
+                    println!("Force-enabled ScaLAPACK keywords in {}", job_file_name);
                 }
             }
         }
