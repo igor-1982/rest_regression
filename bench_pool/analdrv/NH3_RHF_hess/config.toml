@@ -1,0 +1,12 @@
+# json-reference mode for this test: compare reference.json against the
+# json dumped by REST (requires outname = "reference" in ctrl.in).
+# See docs/config-toml.md for the full rules.
+
+[config]
+reference = "json"
+fields = [
+    "scf_energy",
+    "analdrv/frequencies_cm",
+    "thermo/zpe",
+    "thermo/cv_vib",
+]
