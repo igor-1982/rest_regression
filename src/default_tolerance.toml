@@ -1,0 +1,32 @@
+# Default tolerances for json-reference comparison, keyed by json field path
+# ("/" navigates nested objects). Comparison follows numpy's isclose:
+#   |out - ref| <= atol + rtol * |ref|
+# A single value sets atol (rtol then takes its default 1e-5); a pair sets
+# [atol, rtol]. Values are carried over from the log-mode tolerances in
+# compare_results (src/main.rs) for the observables that exist there; any
+# path not listed here falls back to (atol 1e-8, rtol 1e-5) in
+# default_tolerance() (src/json_ref.rs).
+#
+# This file is embedded into the binary at compile time (include_str!) and
+# parsed once on first use; it is not read from disk at runtime.
+#
+# Maintainers: extend the table when a new observable gets a json field whose
+# log-mode counterpart has an established tolerance. Run `cargo test` after
+# editing -- the json_ref unit tests check the table entries.
+
+[tolerance]
+"scf_energy" = 1.0e-5
+"energies/xdh_energy" = 1.0e-5
+"dipole_debye" = 1.0e-4
+"gradient" = 1.0e-4
+"hoco_luco_gap_ev" = 1.0e-5
+"gw/homo_qp" = 1.0e-5
+"gw/lumo_qp" = 1.0e-5
+"bse/first_excitation" = 1.0e-5
+"tddft/energies" = 5.0e-5
+"tddft/osc" = 1.0e-4
+"hessian/total_max_abs" = 1.0e-5
+"hessian/h_partial_max_abs" = 1.0e-4
+"hessian/cphf_contrib_max_abs" = 1.0e-4
+"hessian/frequencies_cm" = 2.0
+"analdrv/frequencies_cm" = 0.1

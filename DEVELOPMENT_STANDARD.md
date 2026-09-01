@@ -40,8 +40,9 @@ cd $REST_HOME/rest_regression
 
 - [ ] `./validate.sh`（rayon-only 全量）全部通过
 - [ ] `./validate.sh --mpi`（MPI 范围内全量）全部通过
-- [ ] 若新功能引入了新物理量/输出格式，已为 rest_regression 的 `collect_results()`/`compare_results()`
-      添加对应解析与对比逻辑，并补充测试
+- [ ] 若新功能引入了新物理量/输出格式，已选择一种方式为其建立对比：为 rest_regression 的
+      `collect_results()`/`compare_results()` 添加解析与对比逻辑，**或**采用 json 参考模式
+      （测试目录放置 `config.toml`，见 [docs/config-toml.md](./docs/config-toml.md)），并补充测试
 - [ ] 新功能已提供 rest_regression 测试例子（见第 2 节）
 - [ ] 提交时附上验证结果（`Regression summary: N/N passed`）
 
@@ -60,7 +61,10 @@ bench_pool/<category>/<TestName>/
 ├── reference.log    # [必须] 参考输出（由通过验证的 REST 版本生成）
 ├── rest_jobs        # [可选] 多步测试：每行一个输入卡名（按序执行，输出合并对比）
 ├── prompt.md        # [可选] 中文说明：被测功能点、覆盖清单
-└── README           # [可选] 英文说明
+├── README           # [可选] 英文说明
+├── config.toml      # [可选] json 参考模式：声明 reference = "json" 与容许误差覆盖
+│                   #      （此时 ctrl.in 需设 outname = "reference"，并提供 reference.json）
+└── reference.json   # [config.toml 声明 json 模式时必须] REST 自动写出的参考结果
 ```
 
 ### 2.2 命名规范
@@ -75,7 +79,7 @@ bench_pool/<category>/<TestName>/
 | **逻辑简单** | 单点能 / 梯度 / 一个物性为主；避免一次测试混杂过多功能 |
 | **覆盖方方面面** | 被测功能的每个代码分支 / 参数组合都要有对应例子或输入卡组合 |
 | **可复现** | 基组用名称（`cc-pVDZ` 等）而非绝对路径；不依赖网络（除 BSE 下载 fallback） |
-| **参考值精度** | `reference.log` 浮点数 ≥ 10 位小数，确保 1e-5 容差对比可靠 |
+| **参考值精度** | `reference.log` 浮点数 ≥ 10 位小数，确保 1e-5 容许误差对比可靠 |
 
 ### 2.4 覆盖清单（prompt.md 应写明）
 
@@ -127,7 +131,10 @@ tags = ["mp2"]     # 供 -f 按 tag 过滤
 |---|---|
 | `rest_regression/validate.sh` | 标准验证入口（rayon-only 全量 / MPI 范围验证） |
 | `rest_regression/MPI_TEST_SCOPE.md` | MPI 测试范围声明（执行 MPI 前必须阅读） |
-| `rest_regression/src/main.rs` | 回归工具主程序（collect_results / compare_results） |
+| `rest_regression/docs/config-toml.md` | json 参考模式规则（config.toml 语法、容许误差表、比较语义） |
+| `rest_regression/src/main.rs` | 回归工具主程序（collect_results / compare_results，log 参考模式） |
+| `rest_regression/src/json_ref.rs` | json 参考模式实现（config.toml 解析、默认容许误差表、比较） |
+| `rest_regression/src/default_tolerance.toml` | 默认容许误差表资源文件（编译期 `include_str!` 嵌入二进制） |
 | `rest_regression/src/filter.rs` | 测试过滤与 tests.toml 配置 |
 | `rest_regression/tests.toml` | 特殊测试并行配置 |
 | `rest-dev-ai-agent/skills/rest-regression-guide/SKILL.md` | 回归测试添加/维护指南 |

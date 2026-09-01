@@ -41,5 +41,25 @@ Special tests and tags:
   tests.toml stores per-test configuration: num_mpi, num_threads (locked values, cannot be
   overridden by CLI), timeout (per-test override in seconds; 0 = no timeout), and tags
   (cross-folder filter labels).
-  Available tags: mp2, ecp, dipole, ext-field, rsh, lda, ro, gga, meta-gga
+  Available tags: mp2, ecp, dipole, ext-field, rsh, lda, ro, gga, meta-gga, parsexc, chkfile,
+  hessian, hf, frequencies, opt, analdrv, thermo
   Usage: rest_regression -f mp2,ext-field
+
+JSON reference mode (config.toml):
+  A test folder may carry a config.toml that switches it from the default log scraping to
+  comparing the json result file dumped by REST (reference.json vs the freshly generated one):
+
+    [config]
+    reference = "json"            # or "log" (default): exactly the legacy behavior
+    fields = [ "scf_energy", "thermo/cv_vib" ]   # required field paths, "/" = json nesting
+
+    [tolerance]                   # optional user overrides of the default tolerance table
+    "thermo/zpe" = 1.0
+
+  Only fields present in BOTH json files are compared (new fields of future REST versions are
+  ignored); fields and tolerance keys must be present in both or the test fails. Numbers compare
+  numpy-isclose style: |out - ref| <= atol + rtol * |ref|, where a single tolerance value sets
+  atol (default 1e-8) and a pair [atol, rtol] sets both (default rtol 1e-5); arrays are compared
+  elementwise under the same rule and must match in length, strings case-insensitively.
+  The input card must set outname = "reference" so that REST writes reference.json.
+  See docs/config-toml.md for the full rules (Chinese).
