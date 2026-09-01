@@ -105,13 +105,13 @@ fields = [
 
 ## 5. 默认容许误差表（维护者指南）
 
-默认容许误差由 `src/json_ref.rs` 中的 `default_tolerance(path)` 给出，取值逐项沿用 log 模式 `compare_results`（`src/main.rs`）中已有的判据（atol 部分与原先的绝对容许误差一致；唯一例外是 `analdrv/frequencies_cm`，atol 0.1，较 log 模式的 2.0 有意收紧）。表本身写在独立的资源文件 `src/default_tolerance.toml` 中，经 `include_str!` 在**编译期**嵌入二进制（运行时不读取磁盘），首次使用时解析一次。当前条目清单以该文件为准，本文档不再罗列，以免两处失同步。
+默认容许误差由 `src/json_ref.rs` 中的 `default_tolerance(path)` 给出，取值逐项沿用 log 模式 `compare_results`（`src/main.rs`）中已有的判据（唯一例外是 `analdrv/frequencies_cm`，atol 0.1，较 log 模式的 2.0 有意收紧）。表本身写在独立的资源文件 `src/default_tolerance.toml` 中，经 `include_str!` 在**编译期**嵌入二进制（运行时不读取磁盘），首次使用时解析一次。当前条目清单以该文件为准，本文档不再罗列，以免两处失同步。
 
-资源文件的表项只写 atol，rtol 一律取默认值 1e-5；如有需要，表项也可以写成 `[atol, rtol]`。未登记的路径一律落入兜底（atol 1e-8、rtol 1e-5）。
+沿用 log 模式判据的表项一律写成 `[atol, 0.0]`，即 rtol = 0 的纯绝对判据，与原先的绝对容许误差严格等价；唯一例外是 `analdrv/frequencies_cm`，只写 atol（rtol 取默认值 1e-5）。未登记的路径一律落入兜底（atol 1e-8、rtol 1e-5）。
 
 维护约定：
 
-- 新观测量若在 log 模式中已有判据，应把 json 路径与 atol 一并登记进 `src/default_tolerance.toml`。
+- 新观测量若在 log 模式中已有判据，应把 json 路径与 `[atol, 0.0]` 一并登记进 `src/default_tolerance.toml`。
 - 判据自带相对项（默认 rtol = 1e-5）：只要参考值明显超过 atol/rtol（默认判据下约 1e-3），**大数值**字段（如 `thermo/q_trans` ~1e30）就由 rtol 项控制，自动获得合适的相对容许误差，一般无需逐字段设置；只有当某字段的数值噪声天然超出相对判据（例如对频率敏感的热力学量）时，才在 `[tolerance]` 中显式给出 `[atol, rtol]`。
 - 反之，**小数值字段必然通过**：当字段量级远小于 atol（兜底 1e-8，如 `thermo/q_vib_bot` ~1e-17）时，绝对项完全主导判据，比较实际不起甄别作用；若确需检验这类小量级字段，应在 `[tolerance]` 中显式设置 `atol = 0`，使判据退化为纯相对比较（注意此时若参考值恰为 0，则要求输出严格相等）。
 - 修改 `src/default_tolerance.toml` 后需要**重新编译** rest_regression（表在编译期嵌入）；改完运行 `cargo test`，`json_ref` 的单元测试会核对表中的条目数与数值。

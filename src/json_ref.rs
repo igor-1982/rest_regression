@@ -298,16 +298,18 @@ mod tests {
 
     #[test]
     fn test_default_tolerance() {
-        assert_eq!(default_tolerance("scf_energy"), TolSpec::Atol(1.0e-5));
-        assert_eq!(default_tolerance("dipole_debye"), TolSpec::Atol(1.0e-4));
-        assert_eq!(default_tolerance("gradient"), TolSpec::Atol(1.0e-4));
-        assert_eq!(default_tolerance("hoco_luco_gap_ev"), TolSpec::Atol(1.0e-5));
-        assert_eq!(default_tolerance("gw/homo_qp"), TolSpec::Atol(1.0e-5));
-        assert_eq!(default_tolerance("bse/first_excitation"), TolSpec::Atol(1.0e-5));
-        assert_eq!(default_tolerance("tddft/energies"), TolSpec::Atol(5.0e-5));
-        assert_eq!(default_tolerance("tddft/osc"), TolSpec::Atol(1.0e-4));
-        assert_eq!(default_tolerance("hessian/total_max_abs"), TolSpec::Atol(1.0e-5));
-        assert_eq!(default_tolerance("hessian/frequencies_cm"), TolSpec::Atol(2.0));
+        // entries carried over from log mode are pure absolute criteria: rtol = 0
+        assert_eq!(default_tolerance("scf_energy"), TolSpec::AtolRtol([1.0e-5, 0.0]));
+        assert_eq!(default_tolerance("dipole_debye"), TolSpec::AtolRtol([1.0e-4, 0.0]));
+        assert_eq!(default_tolerance("gradient"), TolSpec::AtolRtol([1.0e-4, 0.0]));
+        assert_eq!(default_tolerance("hoco_luco_gap_ev"), TolSpec::AtolRtol([1.0e-5, 0.0]));
+        assert_eq!(default_tolerance("gw/homo_qp"), TolSpec::AtolRtol([1.0e-5, 0.0]));
+        assert_eq!(default_tolerance("bse/first_excitation"), TolSpec::AtolRtol([1.0e-5, 0.0]));
+        assert_eq!(default_tolerance("tddft/energies"), TolSpec::AtolRtol([5.0e-5, 0.0]));
+        assert_eq!(default_tolerance("tddft/osc"), TolSpec::AtolRtol([1.0e-4, 0.0]));
+        assert_eq!(default_tolerance("hessian/total_max_abs"), TolSpec::AtolRtol([1.0e-5, 0.0]));
+        assert_eq!(default_tolerance("hessian/frequencies_cm"), TolSpec::AtolRtol([2.0, 0.0]));
+        // no log-mode counterpart: bare atol, keeps the default rtol
         assert_eq!(default_tolerance("analdrv/frequencies_cm"), TolSpec::Atol(0.1));
         // not present in the log-mode tolerance table -> fallback (atol only, default rtol)
         assert_eq!(default_tolerance("thermo/cv_vib"), TolSpec::Atol(DEFAULT_ATOL));
@@ -508,7 +510,7 @@ fields = ["scf_energy", "thermo/zpe"]
         let cfg = load_per_test_config(&tmp)?.expect("config should parse");
         assert_eq!(cfg.reference_mode(), ReferenceMode::Log);
         assert_eq!(cfg.required_fields(), vec!["scf_energy".to_string()]);
-        assert_eq!(default_tolerance("scf_energy"), TolSpec::Atol(1.0e-5)); // table wins, not the override
+        assert_eq!(default_tolerance("scf_energy"), TolSpec::AtolRtol([1.0e-5, 0.0])); // table wins, not the override
 
         fs::remove_file(tmp.join("config.toml")).ok();
         Ok(())
