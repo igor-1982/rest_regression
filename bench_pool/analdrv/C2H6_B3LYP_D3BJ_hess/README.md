@@ -5,8 +5,7 @@ ethane at a fixed hand-built D3d (staggered) geometry, with RRHO
 thermochemistry at 298.15 K / 1 atm, compared in json-reference mode
 (auto-detected `reference.json`; `config.toml` pins the required fields, see
 `docs/config-toml.md`). The dispersion suffix `-d3bj` in `xc` requires
-`xc_parser = "parse_xc"`; apart from that, this case and `C2H6_B3LYP_hess`
-share the identical input.
+`xc_parser = "parse_xc"`.
 
 The empirical dispersion correction enters the Hessian as a nuclear-like term
 (zeroth order in the density matrix, no CP-KS response). The dftd libraries
@@ -51,9 +50,10 @@ Frequencies agree within 1.2 cm-1 and the D3(BJ) energy to 1e-6 Ha
 spectrum (the fixed geometry is not exactly stationary); the tabulated
 `Frequencies --` values are the projected true vibrations compared here.
 
-## Effect of the D3(BJ) correction (vs `C2H6_B3LYP_hess`)
+## Effect of the D3(BJ) correction (vs plain B3LYP)
 
-Same geometry and basis; the only difference is the `-d3bj` suffix of `xc`.
+Same geometry and basis; the B3LYP reference values are from an identical
+calculation with `xc = "b3lyp"` (no dispersion suffix).
 Dispersion stabilizes the staggered conformation, so the methyl torsion is
 **stiffened** by about +2.5 cm-1, while the C-H stretches are slightly
 **softened** (about -0.2 to -0.3 cm-1); the skeletal/CH bending modes move by

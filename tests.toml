@@ -14,8 +14,6 @@ tags = ["analdrv", "thermo", "hessian", "hf"]
 tags = ["analdrv", "thermo", "hessian", "meta-gga", "parsexc"]
 [NH3_UB3LYP_hess]
 tags = ["analdrv", "thermo", "hessian", "gga"]
-[C2H6_B3LYP_hess]
-tags = ["analdrv", "thermo", "hessian", "gga"]
 [C2H6_B3LYP_D3BJ_hess]
 tags = ["analdrv", "thermo", "hessian", "gga", "parsexc", "dftd"]
 
