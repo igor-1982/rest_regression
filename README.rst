@@ -45,12 +45,15 @@ Special tests and tags:
   hessian, hf, frequencies, opt, analdrv, thermo
   Usage: rest_regression -f mp2,ext-field
 
-JSON reference mode (config.toml):
-  A test folder may carry a config.toml that switches it from the default log scraping to
-  comparing the json result file dumped by REST (reference.json vs the freshly generated one):
+Reference mode (config.toml):
+  Each test is compared either by the default log scraping or in json mode, against the json
+  result file dumped by REST (reference.json vs the freshly generated one). The default mode
+  is "auto": json comparison when the test folder contains reference.json, log scraping
+  otherwise, so most tests need no config.toml at all. An optional config.toml pins the mode
+  explicitly and adds required fields / tolerance overrides:
 
     [config]
-    reference = "json"            # or "log" (default): exactly the legacy behavior
+    reference = "auto"          # "auto" (default), "json" or "log"; explicit values override detection
     fields = [ "scf_energy", "thermo/cv_vib" ]   # required field paths, "/" = json nesting
 
     [tolerance]                   # optional user overrides of the default tolerance table
@@ -61,5 +64,7 @@ JSON reference mode (config.toml):
   numpy-isclose style: |out - ref| <= atol + rtol * |ref|, where a single tolerance value sets
   atol (default 1e-8) and a pair [atol, rtol] sets both (default rtol 1e-5); arrays are compared
   elementwise under the same rule and must match in length, strings case-insensitively.
-  The input card must set outname = "reference" so that REST writes reference.json.
+  The input card must set outname = "reference" so that REST writes reference.json; generating
+  reference.log (rest -i ctrl.in > reference.log) then leaves reference.json in the folder too,
+  which auto-detection picks up without any config.toml.
   See docs/config-toml.md for the full rules (Chinese).

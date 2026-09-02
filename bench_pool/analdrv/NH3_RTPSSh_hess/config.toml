@@ -1,9 +1,8 @@
-# json-reference mode for this test: compare reference.json against the
-# json dumped by REST (requires outname = "reference" in ctrl.in).
-# See docs/config-toml.md for the full rules.
+# json-reference mode for this test: auto-detected from the presence of
+# reference.json (requires outname = "reference" in ctrl.in); this file only
+# pins the required fields. See docs/config-toml.md for the full rules.
 
 [config]
-reference = "json"
 fields = [
     "scf_energy",
     "analdrv/frequencies_cm",

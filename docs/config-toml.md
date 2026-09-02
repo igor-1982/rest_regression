@@ -1,6 +1,6 @@
 # 测试参考模式与 `config.toml` 配置
 
-本文档定义 rest_regression 的 **json 参考模式**：测试目录可以通过一个可选的 `config.toml`，声明该测试用哪种方式与参考结果比较。文档面向两类读者：想为新物理量建立回归测试的测试编写者（第 1–4 节），以及需要扩展默认容许误差表或比较规则的 rest_regression 维护者（第 5 节）。
+本文档定义 rest_regression 的 **json 参考模式**：参考模式的缺省值为 **auto**——目录中存在 `reference.json` 即按 json 比较，否则按 log 比较；测试目录也可以通过一个可选的 `config.toml`，显式声明参考模式并指定必查字段与容许误差覆盖。文档面向两类读者：想为新物理量建立回归测试的测试编写者（第 1–4 节），以及需要扩展默认容许误差表或比较规则的 rest_regression 维护者（第 5 节）。
 
 ## 1. 背景与目的
 
@@ -12,20 +12,23 @@ REST 程序本身会在计算结束时自动写出机器可读的 json 结果文
 - 未来 REST 版本向 json 中新增字段，不会破坏已有参考（见第 4 节的交集规则）；
 - 数值、字符串、数组都有统一的比较语义。
 
+参考模式缺省为 `auto`（见第 3 节）：`ctrl.in` 设置 `outname = "reference"` 后，按常规方式生成 `reference.log` 的同时就会得到 `reference.json`，测试即自动按 json 比较。因此**新测试通常无需 `config.toml`**。
+
 ## 2. 测试目录约定
 
-json 参考模式的测试目录在原有文件的基础上多了三个：
+json 参考模式的测试目录在原有文件的基础上多了两个可选文件：
 
 | 文件 | 必需 | 说明 |
 |---|---|---|
-| `ctrl.in`（或 `rest_jobs`） | 是 | REST 输入卡；**必须**设置 `outname = "reference"`，使结果 json 输出为 `reference.json` |
+| `ctrl.in`（或 `rest_jobs`） | 是 | REST 输入卡；json 比较要求设置 `outname = "reference"`，使结果 json 输出为 `reference.json` |
 | `reference.log` | 是 | 参考日志；测试发现的依据仍然是目录中存在 `reference.log` |
-| `reference.json` | json 模式下必须 | 参考结果，由 REST 自动写出 |
-| `config.toml` | json 模式下必须 | 声明参考模式与容许误差覆盖（见第 3 节） |
+| `reference.json` | json 比较时必须 | 参考结果，由 REST 自动写出；auto 模式（缺省）凭它的存在自动选用 json 比较 |
+| `config.toml` | 可选 | 仅在需要显式声明参考模式、必查字段或容许误差覆盖时提供（见第 3 节） |
 | `prompt.md` / `README` | 可选 | 测试说明 |
 
 注意：
 
+- 缺省参考模式为 auto：只要 `ctrl.in` 设置了 `outname = "reference"`，按下述方式生成 `reference.log` 时 `reference.json` 会同时落在目录中，测试即自动按 json 比较；仅当需要必查字段、容许误差覆盖或强制 log 模式时才需要写 `config.toml`。
 - REST 默认的 json 文件名是 `rest_results.json`；`outname = "reference"` 只是约定，程序并不强制。但若要求使用 `json` 格式的数值结果比对，则必须要这么设置：若输入卡漏写这一项，测试会带着明确的 `REST did not produce reference.json` 信息失败。
 - 参考文件在测试目录内生成：
 
@@ -41,9 +44,11 @@ $REST_HOME/target/release/rest -i ctrl.in > reference.log
 
 ```toml
 [config]
-# 参考类型："json" 或 "log"。缺省为 "log"（完全等价于没有 config.toml 的
-# 既有行为，此时本文件其余字段均被忽略）。
-reference = "json"
+# 参考类型："auto"、"json" 或 "log"。缺省为 "auto"：目录中存在
+# reference.json 时按 json 比较，否则按 log 比较（后者完全等价于没有
+# config.toml 的既有行为，此时本文件其余字段均被忽略）。显式 "json"/"log"
+# 优先于自动检测。
+reference = "auto"
 
 # 必查字段列表（可选）。每个字段必须同时存在于 reference.json 与本次
 # 运行输出的 json 中，否则测试失败。路径以 "/" 表示 json 嵌套，
@@ -134,6 +139,8 @@ JSON fields: 47 compared, 1 failed
 | `required field not found in reference.json` / `in output json` | 必查字段在对应文档中不存在（REST 改名或未输出该字段，或 `fields` 拼写错误） |
 | `REST did not produce reference.json in the job dir` | ctrl.in 未设置 `outname = "reference"` |
 | 数组 `!=` 且长度不同 | REST 输出的数组长度与参考不一致（结构变化） |
-| `config.toml: [config].reference must be "json" or "log"` | 配置取值错误，整个运行终止 |
+| `config.toml: [config].reference must be "auto", "json" or "log"` | 配置取值错误，整个运行终止 |
+
+另有一条不影响判定的提示：若 `config.toml` 写了 `fields` 或 `[tolerance]`，但测试实际运行在 log 模式（例如漏放了 `reference.json`），会打印 `WARNING : config.toml carries fields/tolerance ...`，提醒这些设置未生效。
 
 运行结束后，本次输出的 json 保留在 `work_pool/<TestName>.json`，日志保留在 `work_pool/<TestName>.log`，便于人工比对。

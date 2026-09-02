@@ -754,20 +754,34 @@ fn main() -> anyhow::Result<()> {
 
 
         // at first, collect the reference results
-        // a config.toml in the test folder switches the test to json-reference comparison
+        // a config.toml in the test folder can pin the reference mode and tune the
+        // json comparison; by default ("auto") the test is compared against
+        // reference.json when that file is present, and by log scraping otherwise
         let test_cfg = json_ref::load_per_test_config(entry.path())?;
-        let ref_mode = test_cfg.as_ref().map(json_ref::TestConfigFile::reference_mode)
-            .unwrap_or(json_ref::ReferenceMode::Log);
+        let ref_mode = match &test_cfg {
+            Some(cfg) => cfg.reference_mode(entry.path()),
+            None => json_ref::ReferenceMode::auto(entry.path()),
+        };
         let ref_log = format!("{}/reference.log", entry.path().to_str().unwrap());
         let (ref_hashmap, ref_json): (Option<HashMap<String, Vec<f64>>>, Option<serde_json::Value>) = match ref_mode {
             json_ref::ReferenceMode::Json => {
-                println!("Reference mode: json (config.toml)");
+                let explicit_json = matches!(&test_cfg, Some(cfg) if cfg.declared_reference().as_deref() == Some("json"));
+                let how = if explicit_json {
+                    "declares reference = \"json\" in config.toml"
+                } else {
+                    "auto-detected reference.json in the test folder"
+                };
+                println!("Reference mode: json ({})", how);
                 let v = json_ref::load_json_file(&entry.path().join("reference.json"))
-                    .with_context(|| format!("test '{}' declares reference = \"json\" in config.toml, \
-                                             but reference.json is missing or unreadable", entry.path().display()))?;
+                    .with_context(|| format!("test '{}' {}, \
+                                             but reference.json is missing or unreadable", entry.path().display(), how))?;
                 (None, Some(v))
             }
             json_ref::ReferenceMode::Log => {
+                if test_cfg.as_ref().is_some_and(|cfg| !cfg.required_fields().is_empty()) {
+                    println!("WARNING : config.toml carries fields/tolerance, which only apply to json-reference mode; \
+                              this test is compared in log mode");
+                }
                 (Some(collect_results(&ref_log)?), None)
             }
         };

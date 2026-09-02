@@ -2,8 +2,8 @@
 
 Analytical unrestricted B3LYP (UKS) Hessian (`analdrv_tasks = ["hessian"]`) of the
 NH3+ cation (charge +1, spin multiplicity 2, doublet) with RRHO thermochemistry at
-298.15 K / 1 atm, compared in json-reference mode (`config.toml`, see
-`docs/config-toml.md`).
+298.15 K / 1 atm, compared in json-reference mode (auto-detected `reference.json`;
+`config.toml` pins the required fields, see `docs/config-toml.md`).
 
 ## Cross-validation against Gaussian 16
 

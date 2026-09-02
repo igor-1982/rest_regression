@@ -2,7 +2,8 @@
 
 Analytical restricted TPSSh (meta-GGA hybrid, 10% exact exchange) Kohn-Sham Hessian
 (`analdrv_tasks = ["hessian"]`) with RRHO thermochemistry at 298.15 K / 1 atm,
-compared in json-reference mode (`config.toml`, see `docs/config-toml.md`).
+compared in json-reference mode (auto-detected `reference.json`; `config.toml`
+pins the required fields, see `docs/config-toml.md`).
 `xc_parser = "parse_xc"` resolves the TPSSh functional through REST's parser.
 
 ## Cross-validation against Gaussian 16

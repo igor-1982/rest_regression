@@ -1,10 +1,14 @@
 //! JSON-reference comparison mode, configured by an optional per-test `config.toml`.
 //!
-//! A test folder switches from the default log scraping (`collect_results`/
-//! `compare_results` in `main.rs`) to json comparison by providing
+//! A test folder is compared either by log scraping (`collect_results`/
+//! `compare_results` in `main.rs`) or against the json result file dumped by
+//! REST. The default mode is `auto`: json comparison when the folder contains
+//! `reference.json`, log scraping otherwise, so most tests need no
+//! `config.toml` at all. When one is provided, it can pin the mode explicitly
+//! and add required fields / tolerance overrides:
 //! ```toml
 //! [config]
-//! reference = "json"
+//! reference = "auto"                           // "auto" (default), "json" or "log"
 //! fields = [ "scf_energy", "thermo/cv_vib" ]   // required paths, optional
 //!
 //! [tolerance]                                   // user overrides, optional
@@ -39,6 +43,18 @@ use std::sync::LazyLock;
 pub enum ReferenceMode {
     Log,
     Json,
+}
+
+impl ReferenceMode {
+    /// The default `auto` selection for a test directory: json comparison
+    /// when the folder contains `reference.json`, log scraping otherwise.
+    pub fn auto(test_dir: &Path) -> ReferenceMode {
+        if test_dir.join("reference.json").is_file() {
+            ReferenceMode::Json
+        } else {
+            ReferenceMode::Log
+        }
+    }
 }
 
 /// A tolerance specification: a single value sets `atol` (with `rtol` at its
@@ -88,16 +104,20 @@ pub struct ConfigSection {
 }
 
 impl TestConfigFile {
-    /// `log` unless `[config].reference = "json"`.
-    pub fn reference_mode(&self) -> ReferenceMode {
-        if let Some(cfg) = &self.config {
-            if let Some(r) = &cfg.reference {
-                if r.eq_ignore_ascii_case("json") {
-                    return ReferenceMode::Json;
-                }
-            }
+    /// Reference mode of the test: an explicit `[config].reference` ("json"
+    /// or "log") wins; the default `auto` (or explicit "auto") picks json
+    /// when the folder contains `reference.json`, log otherwise.
+    pub fn reference_mode(&self, test_dir: &Path) -> ReferenceMode {
+        match self.declared_reference().as_deref() {
+            Some("json") => ReferenceMode::Json,
+            Some("log") => ReferenceMode::Log,
+            _ => ReferenceMode::auto(test_dir),
         }
-        ReferenceMode::Log
+    }
+
+    /// The explicit `[config].reference` value, lowercased, if any.
+    pub fn declared_reference(&self) -> Option<String> {
+        self.config.as_ref().and_then(|cfg| cfg.reference.as_deref()).map(|r| r.to_ascii_lowercase())
     }
 
     /// `[config].fields` united with the `[tolerance]` keys (which are
@@ -123,7 +143,7 @@ impl TestConfigFile {
 }
 
 /// Read `<test_dir>/config.toml`. `Ok(None)` if the file does not exist.
-/// Parse errors, or `reference` outside {json, log}, abort the run: a
+/// Parse errors, or `reference` outside {auto, json, log}, abort the run: a
 /// malformed test should be reported loudly, like a missing `ctrl.in`.
 pub fn load_per_test_config(test_dir: &Path) -> anyhow::Result<Option<TestConfigFile>> {
     let path = test_dir.join("config.toml");
@@ -135,8 +155,8 @@ pub fn load_per_test_config(test_dir: &Path) -> anyhow::Result<Option<TestConfig
     let cfg: TestConfigFile = toml::from_str(&content).with_context(|| format!("cannot parse {}", path.display()))?;
     if let Some(cfg_sec) = &cfg.config {
         if let Some(r) = &cfg_sec.reference {
-            if !r.eq_ignore_ascii_case("json") && !r.eq_ignore_ascii_case("log") {
-                anyhow::bail!("{}: [config].reference must be \"json\" or \"log\", got \"{}\"", path.display(), r);
+            if !r.eq_ignore_ascii_case("json") && !r.eq_ignore_ascii_case("log") && !r.eq_ignore_ascii_case("auto") {
+                anyhow::bail!("{}: [config].reference must be \"auto\", \"json\" or \"log\", got \"{}\"", path.display(), r);
             }
         }
     }
@@ -486,7 +506,7 @@ fields = ["scf_energy", "thermo/zpe"]
 "#,
         )?;
         let cfg = load_per_test_config(&tmp)?.expect("config should parse");
-        assert_eq!(cfg.reference_mode(), ReferenceMode::Json);
+        assert_eq!(cfg.reference_mode(&tmp), ReferenceMode::Json);
         assert_eq!(cfg.required_fields(), vec!["scf_energy".to_string(), "thermo/cp_total".to_string(), "thermo/zpe".to_string()]);
         assert_eq!(cfg.tolerance_overrides().get("thermo/zpe"), Some(&TolSpec::Atol(1.0)));
         assert_eq!(cfg.tolerance_overrides().get("thermo/cp_total"), Some(&TolSpec::AtolRtol([1.0e-3, 1.0e-6])));
@@ -505,14 +525,52 @@ fields = ["scf_energy", "thermo/zpe"]
         fs::write(tmp.join("config.toml"), "[tolerance]\n\"scf_energy\" = -1e-5\n")?;
         assert!(load_per_test_config(&tmp).is_err());
 
-        // no [config] section -> log mode
+        // no [config] section and no reference.json -> auto resolves to log mode
+        // (the tmp dir never gets a reference.json in this test; see
+        // test_reference_mode_auto for the file-presence cases)
         fs::write(tmp.join("config.toml"), "[tolerance]\n\"scf_energy\" = 1e-4\n")?;
         let cfg = load_per_test_config(&tmp)?.expect("config should parse");
-        assert_eq!(cfg.reference_mode(), ReferenceMode::Log);
+        assert_eq!(cfg.reference_mode(&tmp), ReferenceMode::Log);
         assert_eq!(cfg.required_fields(), vec!["scf_energy".to_string()]);
         assert_eq!(default_tolerance("scf_energy"), TolSpec::AtolRtol([1.0e-5, 0.0])); // table wins, not the override
 
         fs::remove_file(tmp.join("config.toml")).ok();
+        Ok(())
+    }
+
+    #[test]
+    fn test_reference_mode_auto() -> anyhow::Result<()> {
+        let tmp = std::env::temp_dir().join("rest_regression_json_ref_auto");
+        fs::create_dir_all(&tmp)?;
+
+        // no config.toml, no reference.json -> log; reference.json alone -> json
+        fs::remove_file(tmp.join("config.toml")).ok();
+        fs::remove_file(tmp.join("reference.json")).ok();
+        assert_eq!(ReferenceMode::auto(&tmp), ReferenceMode::Log);
+        fs::write(tmp.join("reference.json"), "{}")?;
+        assert_eq!(ReferenceMode::auto(&tmp), ReferenceMode::Json);
+
+        // reference = "auto" behaves exactly like no declaration
+        fs::write(tmp.join("config.toml"), "[config]\nreference = \"auto\"\n")?;
+        let cfg = load_per_test_config(&tmp)?.expect("config should parse");
+        assert_eq!(cfg.declared_reference().as_deref(), Some("auto"));
+        assert_eq!(cfg.reference_mode(&tmp), ReferenceMode::Json);
+        fs::remove_file(tmp.join("reference.json"))?;
+        assert_eq!(cfg.reference_mode(&tmp), ReferenceMode::Log);
+
+        // an explicit declaration wins over detection, in both directions
+        fs::write(tmp.join("config.toml"), "[config]\nreference = \"log\"\n")?;
+        let cfg = load_per_test_config(&tmp)?.expect("config should parse");
+        assert_eq!(cfg.reference_mode(&tmp), ReferenceMode::Log);
+        fs::write(tmp.join("reference.json"), "{}")?;
+        assert_eq!(cfg.reference_mode(&tmp), ReferenceMode::Log);
+        fs::write(tmp.join("config.toml"), "[config]\nreference = \"JSON\"\n")?;
+        let cfg = load_per_test_config(&tmp)?.expect("config should parse");
+        assert_eq!(cfg.declared_reference().as_deref(), Some("json"));
+        assert_eq!(cfg.reference_mode(&tmp), ReferenceMode::Json);
+
+        fs::remove_file(tmp.join("config.toml")).ok();
+        fs::remove_file(tmp.join("reference.json")).ok();
         Ok(())
     }
 
@@ -525,7 +583,7 @@ fields = ["scf_energy", "thermo/zpe"]
             return Ok(()); // example test not present (e.g. partial checkout)
         }
         let cfg = load_per_test_config(&dir)?.expect("example test must carry a config.toml");
-        assert_eq!(cfg.reference_mode(), ReferenceMode::Json);
+        assert_eq!(cfg.reference_mode(&dir), ReferenceMode::Json);
         let reference = load_json_file(&dir.join("reference.json"))?;
 
         // self-comparison passes

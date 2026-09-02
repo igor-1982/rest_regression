@@ -42,7 +42,8 @@ cd $REST_HOME/rest_regression
 - [ ] `./validate.sh --mpi`（MPI 范围内全量）全部通过
 - [ ] 若新功能引入了新物理量/输出格式，已选择一种方式为其建立对比：为 rest_regression 的
       `collect_results()`/`compare_results()` 添加解析与对比逻辑，**或**采用 json 参考模式
-      （测试目录放置 `config.toml`，见 [docs/config-toml.md](./docs/config-toml.md)），并补充测试
+      （ctrl.in 设 `outname = "reference"` 并提供 `reference.json`，即自动按 json 比较；如需
+      必查字段或容许误差覆盖，再放置 `config.toml`，见 [docs/config-toml.md](./docs/config-toml.md)），并补充测试
 - [ ] 新功能已提供 rest_regression 测试例子（见第 2 节）
 - [ ] 提交时附上验证结果（`Regression summary: N/N passed`）
 
@@ -62,9 +63,10 @@ bench_pool/<category>/<TestName>/
 ├── rest_jobs        # [可选] 多步测试：每行一个输入卡名（按序执行，输出合并对比）
 ├── prompt.md        # [可选] 中文说明：被测功能点、覆盖清单
 ├── README           # [可选] 英文说明
-├── config.toml      # [可选] json 参考模式：声明 reference = "json" 与容许误差覆盖
-│                   #      （此时 ctrl.in 需设 outname = "reference"，并提供 reference.json）
-└── reference.json   # [config.toml 声明 json 模式时必须] REST 自动写出的参考结果
+├── config.toml      # [可选] json 参考模式的必查字段与容许误差覆盖；参考模式缺省为 auto：
+│                   #      目录含 reference.json 即按 json 比较（此时 ctrl.in 需设
+│                   #      outname = "reference"），显式 reference = "json"/"log" 可覆盖检测
+└── reference.json   # [json 比较时必须] REST 自动写出的参考结果；存在即自动选用 json 比较
 ```
 
 ### 2.2 命名规范
