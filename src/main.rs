@@ -188,6 +188,19 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("GW LUMO QP".to_string(), vec![energy]);
     }
 
+    // Restricted GW prints the explicitly calculated QP energies within the
+    // extrapolation window:
+    //   (calculated) QP Energy of Orbital #4:-0.3489639702360369
+    let re_gw_qp = Regex::new(
+        r"(?m)^\s*\(calculated\)\s+QP Energy of Orbital #\d+:\s*([+-]?\d+\.\d+)"
+    ).unwrap();
+    let gw_qp: Vec<f64> = re_gw_qp.captures_iter(&buf)
+        .map(|m| m[1].parse::<f64>().unwrap())
+        .collect();
+    if !gw_qp.is_empty() {
+        result.insert("GW QP".to_string(), gw_qp);
+    }
+
     let re_bse=Regex::new(
         r"The\sfirst\sexcitation\sobtained\sby\sBSE\sis\s*(?P<bse>[\+-]?\d+\.\d+)"
     ).unwrap();
@@ -197,6 +210,32 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         let energy = caps.name("bse").unwrap().as_str().parse::<f64>().unwrap();
         result.insert("BSE 1st Excitation".to_string(), vec![energy]);
     }
+
+    let re_ubse=Regex::new(
+        r"The\sfirst\sunrestricted\sBSE\s\((?P<spin>\w+)\)\sexcitation\sis\s*(?P<bse>[\+-]?\d+\.\d+)"
+    ).unwrap();
+
+    if re_ubse.is_match(&buf) {
+        let caps = re_ubse.captures(&buf).unwrap();
+        let energy = caps.name("bse").unwrap().as_str().parse::<f64>().unwrap();
+        result.insert("BSE 1st Excitation".to_string(), vec![energy]);
+    }
+
+    // Unrestricted GW prints the explicitly solved QP energies:
+    //   Spin 0 orbital #2: QP energy = -1.0368404888837797
+    let re_spin_qp = Regex::new(
+        r"(?m)^Spin (?P<spin>\d+) orbital #\d+: QP energy = ([+-]?\d+\.\d+)"
+    ).unwrap();
+    for spin in 0..2 {
+        let values: Vec<f64> = re_spin_qp.captures_iter(&buf)
+            .filter(|caps| caps.name("spin").unwrap().as_str() == &spin.to_string())
+            .map(|caps| caps[2].parse::<f64>().unwrap())
+            .collect();
+        if !values.is_empty() {
+            result.insert(format!("UGW spin {} QP", spin), values);
+        }
+    }
+
     let re_grad = Regex::new(
         r"[-]{3,} *Output gradient *\[[a-zA-Z.]*\] *[-]{3,}\n+(?P<grad>[\S\s]*)\n+[-]{3,}"
     ).unwrap();
@@ -456,6 +495,28 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                     } else {
                         println!("Pass    : TDDFT Osc {}: {:20.10}  = {:20.10} (dev={:.2e})",
                             i+1, out_value[i], ref_value[i], dev);
+                    }
+                }
+            } else {
+                is_same = false;
+                println!("{:20} not found in output", key);
+            }
+        } else if key == "GW QP" || (key.starts_with("UGW spin ") && key.ends_with(" QP")) {
+            if let Some(out_value) = out_hashmap.get(key) {
+                if out_value.len() != ref_value.len() {
+                    is_same = false;
+                    println!("WARNNING: {:20}: length {} != {}", key, out_value.len(), ref_value.len());
+                } else {
+                    for (i, (r, o)) in ref_value.iter().zip(out_value.iter()).enumerate() {
+                        let dev = (r - o).abs();
+                        if dev > 1.0e-5 {
+                            is_same = false;
+                            println!("WARNNING: {} MO {}: {:20.10} != {:20.10} (dev={:.2e})",
+                                key, i, o, r, dev);
+                        } else {
+                            println!("Pass    : {} MO {}: {:20.10}  = {:20.10} (dev={:.2e})",
+                                key, i, o, r, dev);
+                        }
                     }
                 }
             } else {

@@ -87,3 +87,9 @@ tags = ["hf", "opt"]
 
 [NH3_BSE]
 timeout = 300
+
+[NH3_UGW]
+timeout = 300
+
+[NH3_UBSE]
+timeout = 300
