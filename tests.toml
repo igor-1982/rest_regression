@@ -80,23 +80,25 @@ tags = ["gga"]
 tags = ["gga", "parsexc"]
 [H2O_basisproj]
 tags = ["chkfile"]
+[H2O_CHKBASIS]
+tags = ["chkfile"]
+[O2_ROKS_basisproj]
+tags = ["ro", "chkfile"]
 [H2O_dSCF_B3LYP]
 tags = ["chkfile"]
 
-[H2O_HF_Hessian]
-tags = ["hessian", "hf"]
 
 [H2O_BLYP_Hessian]
 tags = ["gga"]
 
 [H2O_BLYP_Freq]
-tags = ["frequencies", "gga"]
+tags = ["freq", "gga"]
 
 [CO_HF_OPT_TRIC]
-tags = ["hf", "opt"]
+tags = ["opt"]
 
 [CO_HF_OPT_TRIC_ANALYTIC_HESS]
-tags = ["hf", "opt"]
+tags = ["opt"]
 
 [NH3_BSE]
 timeout = 300

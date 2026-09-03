@@ -1,0 +1,19 @@
+[ctrl]
+     print_level =               2
+     num_threads =               4
+     xc =                        "b3lyp"
+     basis_path =                "cc-pVTZ"
+     auxbas_path =               "def2-universal-JKFIT"
+     charge =                    0.0
+     spin =                      3.0
+     spin_polarization =         false
+     guessfile =                 "restart.rchk"
+     guessfile_type =            "hdf5"
+
+[geom]
+     name = "O2"
+     unit = "angstrom"
+     position = '''
+        O      0.000000      0.000000      0.000000
+        O      0.000000      0.000000      1.207500
+    '''
