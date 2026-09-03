@@ -101,7 +101,12 @@ if [[ "$N_MPI" -ge 2 ]]; then
     fi
 
     if [[ -n "$FILTER" ]]; then
-        # 逐项检查 filter 中的任务是否位于声明范围内
+        # 逐项检查 filter 中的任务是否位于声明范围内（目录级 或 按用例 tag 级）
+        # 按用例扩展：tests.toml 中带 tags=["mpi"] 的用例视为已纳入 MPI 范围
+        MPI_TAGGED=()
+        while IFS= read -r tname; do
+            [[ -n "$tname" ]] && MPI_TAGGED+=("$tname")
+        done < <(awk -F'[][]' '!/^[[:space:]]*#/ && /^\[[^]]+\]/ {name=$2} !/^[[:space:]]*#/ && /tags *=/ && /"mpi"/ {print name}' "$SCRIPT_DIR/tests.toml" 2>/dev/null)
         IFS=',' read -ra items <<< "$FILTER"
         for item in "${items[@]}"; do
             item="$(echo "$item" | xargs)"   # trim
@@ -118,17 +123,32 @@ if [[ "$N_MPI" -ge 2 ]]; then
                 for s in "${SCOPE_DIRS[@]:-}"; do
                     if [[ "$found" == "$s"* ]]; then in_scope=1; break; fi
                 done
+                # 按用例 tag 判入范围（目录不在范围、但该用例带 mpi tag）
                 if [[ "$in_scope" -eq 0 ]]; then
-                    echo "WARNING: MPI test '$item' ($found) is OUTSIDE the declared scope in $SCOPE_FILE ($(IFS=,; echo "${SCOPE_DIRS[*]}"))."
+                    for t in "${MPI_TAGGED[@]:-}"; do
+                        if [[ "$item" == "$t" ]]; then in_scope=1; break; fi
+                    done
+                fi
+                if [[ "$in_scope" -eq 0 ]]; then
+                    echo "WARNING: MPI test '$item' ($found) is OUTSIDE the declared scope in $SCOPE_FILE (dirs: $(IFS=,; echo "${SCOPE_DIRS[*]}"); tagged: $(IFS=,; echo "${MPI_TAGGED[*]}"))."
                 fi
             else
-                echo "WARNING: MPI filter item '$item' matches no bench_pool task dir; it may be a tag selecting tasks outside the declared scope."
+                # filter 项可能本身就是一个 tag（如 mpi）：按 tag 判是否属于范围
+                is_tag_in_scope=0
+                if [[ "$item" == "mpi" && ${#MPI_TAGGED[@]} -gt 0 ]]; then is_tag_in_scope=1; fi
+                if [[ "$is_tag_in_scope" -eq 0 ]]; then
+                    echo "WARNING: MPI filter item '$item' matches no bench_pool task dir; it may be a tag selecting tasks outside the declared scope."
+                fi
             fi
         done
     else
-        # 未指定 filter：MPI 模式自动限定在声明范围内
-        FILTER="$(IFS=,; echo "${SCOPE_DIRS[*]}" | sed 's|bench_pool/||g; s|/$||g')"
-        echo "MPI mode: scope-limited to: $FILTER (per $SCOPE_FILE)"
+        # 未指定 filter：MPI 模式自动限定在声明范围内（目录 + 按用例 mpi tag）
+        SCOPE_FILTER="$(IFS=,; echo "${SCOPE_DIRS[*]}" | sed 's|bench_pool/||g; s|/$||g')"
+        if grep -q '"mpi"' "$SCRIPT_DIR/tests.toml" 2>/dev/null; then
+            SCOPE_FILTER="${SCOPE_FILTER:+$SCOPE_FILTER,}mpi"
+        fi
+        FILTER="$SCOPE_FILTER"
+        echo "MPI mode: scope-limited to: $FILTER (dirs per $SCOPE_FILE + per-test tags=[\"mpi\"])"
     fi
 fi
 

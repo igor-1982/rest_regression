@@ -27,11 +27,27 @@ MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时�
 这些任务在 MPI 模式下可能尚未验证或不支持 MPI（例如 `hessian/CO_HF_OPT_TRIC_ANALYTIC_HESS` 在 `-n 2` 下会触发
 `ri_jk/pure_decompose.rs` 的 naux 断言失败）。它们仍应通过 **rayon-only（`-n 1`）** 模式验证。
 
+## 按用例扩展范围（Per-Test Scope，tags=["mpi"]）
+
+除目录级范围外，允许**目录未整体纳入、但个别用例已验证支持 MPI** 的情形（如 `dh/` 下的新功能用例）。
+这类用例通过在 `tests.toml` 中给该测试条目加 `tags = ["mpi"]` 声明：
+
+```toml
+[C6H6p_ZRPS_UHF]
+tags = ["mpi"]
+```
+
+- **语义**：`tags=["mpi"]` = 该用例支持 MPI **且已在目标 MPI 配置下全量验证通过**（数值与串行一致）。
+- **生效方式**：`validate.sh --mpi`（自动限定模式）会把此类用例与声明目录一并纳入；定向 `--mpi -f <用例名>` 不再告警。
+- 范围外目录（gw_bse/hessian/pbc/solvent/tddft 等）下的用例**即使打上 mpi tag 也不得静默运行**——必须先经人工核验后按「更新规则」将其目录整体纳入或明确列为按用例范围。
+- 打 tag 不锁定线程/进程数：若用例需特殊并行参数，仍按 DEVELOPMENT_STANDARD §2.6 在 `tests.toml` 中配置 `num_mpi`/`num_threads`。
+
 ## 更新规则
 
 - 只有当一个目录下的任务在 MPI 模式下经过完整验证并全部通过后，才允许将其加入“当前 MPI 测试范围”表格。
-- 更新本文件时，必须同步更新 `validate.sh` 中的范围检查逻辑（`SCOPE_DIRS`），保持两者一致。
-- 缩小范围（移除目录）无需修改 `validate.sh`，但应更新本文件并说明原因。
+- 按用例纳入：只有当一个用例在目标 MPI 配置（如 `-n 2`）下与串行结果一致并通过验证后，才允许在 `tests.toml` 中加 `tags=["mpi"]`，并须在本文件记录。
+- 更新本文件时，必须同步更新 `validate.sh` 中的范围检查逻辑（`SCOPE_DIRS` 与 mpi tag 解析），保持两者一致。
+- 缩小范围（移除目录或移除 tag）无需修改 `validate.sh`，但应更新本文件并说明原因。
 
 ## 标准验证命令速查
 
@@ -39,7 +55,7 @@ MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时�
 # rayon-only 全量（60 个任务，MPI 范围声明不影响本模式）
 ./validate.sh
 
-# MPI 模式（自动限定在声明范围内：scf + gradient）
+# MPI 模式（自动限定在声明范围内：scf + gradient + tests.toml 中带 tags=["mpi"] 的用例）
 ./validate.sh --mpi
 
 # MPI + 强制 ScaLAPACK 分布式路径（自动限定在声明范围内）
@@ -49,4 +65,5 @@ MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时�
 
 # MPI 定向测试（若超出声明范围，脚本会打印 warning）
 ./validate.sh --mpi -f "NH3_SCAN"
+./validate.sh --mpi -f "C6H6p_ZRPS_UHF"   # 按用例纳入（tags=["mpi"]），不告警
 ```
