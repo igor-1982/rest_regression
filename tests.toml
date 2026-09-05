@@ -106,9 +106,9 @@ timeout = 300
 # --- 按用例扩展的 MPI 范围（见 MPI_TEST_SCOPE.md §按用例扩展）---
 # tags=["mpi"] 表示该用例支持 MPI 且已在目标 MPI 配置下全量验证通过；
 # validate.sh --mpi 会把此类用例与声明目录（scf/gradient）一并纳入范围。
-[C6H6_ZRPS]
-tags = ["mpi"]
-[C6H6p_ZRPS_UHF]
-tags = ["mpi"]
-[C6H6p_ZRPS_ROHF]
-tags = ["mpi"]
+
+
+
+
+
+

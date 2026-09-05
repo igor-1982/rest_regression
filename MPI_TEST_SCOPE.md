@@ -6,12 +6,13 @@
 
 ## 当前 MPI 测试范围（Temporary Scope）
 
-MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时仅限**以下两个目录：
+MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**仅限**以下目录：
 
 | 目录 | 内容 |
 |---|---|
 | `bench_pool/scf/` | SCF 相关任务（单点能、偶极、BSSE、开壳层、RSH、meta-GGA 等） |
 | `bench_pool/gradient/` | 解析梯度任务（RHF/UHF/UKS/RMP2/RSH 梯度、外场梯度、数值梯度优化等） |
+| `bench_pool/dh/` | 双杂化/后 SCF 相关（MP2、XYG3、ZRPS、R-xDH7、RPA、SCC15；2026-09 起全目录 MPI 验证通过，含 2.5D 路径用例） |
 
 ## 范围外目录（Out of Scope，暂不纳入 MPI 批处理验证）
 
@@ -29,16 +30,17 @@ MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时�
 
 ## 按用例扩展范围（Per-Test Scope，tags=["mpi"]）
 
-除目录级范围外，允许**目录未整体纳入、但个别用例已验证支持 MPI** 的情形（如 `dh/` 下的新功能用例）。
+除目录级范围外，允许**目录未整体纳入、但个别用例已验证支持 MPI** 的情形（如未来 gw_bse/tddft 等目录下的单例）。
 这类用例通过在 `tests.toml` 中给该测试条目加 `tags = ["mpi"]` 声明：
 
 ```toml
-[C6H6p_ZRPS_UHF]
+[某个范围外目录用例]
 tags = ["mpi"]
 ```
 
 - **语义**：`tags=["mpi"]` = 该用例支持 MPI **且已在目标 MPI 配置下全量验证通过**（数值与串行一致）。
 - **生效方式**：`validate.sh --mpi`（自动限定模式）会把此类用例与声明目录一并纳入；定向 `--mpi -f <用例名>` 不再告警。
+- **目录级优先原则**：当某目录内按用例纳入的用例达到全部（或明确策略约定）时，应将目录整体提升为目录级范围（移入上表、删除冗余 tag），而非长期维护逐例 tag——避免新用例漏 tag 导致的静默缺席。
 - 范围外目录（gw_bse/hessian/pbc/solvent/tddft 等）下的用例**即使打上 mpi tag 也不得静默运行**——必须先经人工核验后按「更新规则」将其目录整体纳入或明确列为按用例范围。
 - 打 tag 不锁定线程/进程数：若用例需特殊并行参数，仍按 DEVELOPMENT_STANDARD §2.6 在 `tests.toml` 中配置 `num_mpi`/`num_threads`。
 
@@ -52,10 +54,10 @@ tags = ["mpi"]
 ## 标准验证命令速查
 
 ```bash
-# rayon-only 全量（60 个任务，MPI 范围声明不影响本模式）
+# rayon-only 全量（77 个任务，MPI 范围声明不影响本模式）
 ./validate.sh
 
-# MPI 模式（自动限定在声明范围内：scf + gradient + tests.toml 中带 tags=["mpi"] 的用例）
+# MPI 模式（自动限定在声明范围内：scf + gradient + dh + tests.toml 中带 tags=["mpi"] 的用例）
 ./validate.sh --mpi
 
 # MPI + 强制 ScaLAPACK 分布式路径（自动限定在声明范围内）
@@ -65,5 +67,5 @@ tags = ["mpi"]
 
 # MPI 定向测试（若超出声明范围，脚本会打印 warning）
 ./validate.sh --mpi -f "NH3_SCAN"
-./validate.sh --mpi -f "C6H6p_ZRPS_UHF"   # 按用例纳入（tags=["mpi"]），不告警
+./validate.sh --mpi -f "C6H6_ZRPS"   # dh 目录级范围内，不告警
 ```

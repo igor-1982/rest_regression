@@ -154,6 +154,16 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("(R)-xDH energy".to_string(), vec![energy]);
     }
 
+    let re_rpa_eny = Regex::new(
+      r"The RPA energy\s*:\s*(?P<energy>[\+-]?\d+.\d+)\s*"
+    ).unwrap();
+
+    if re_rpa_eny.is_match(&buf) {
+        let caps = re_rpa_eny.captures(&buf).unwrap();
+        let energy = caps.name("energy").unwrap().as_str().parse::<f64>().unwrap();
+        result.insert("RPA energy".to_string(), vec![energy]);
+    }
+
     let re_dipole = Regex::new(
       r"Dipole Moment in DEBYE:\s*(?P<dx>[\+-]?\d+.\d+),\s*(?P<dy>[\+-]?\d+.\d+),\s*(?P<dz>[\+-]?\d+.\d+)"
     ).unwrap();
