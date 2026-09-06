@@ -567,6 +567,30 @@ fn set_scalapack_in_file(file_path: &Path) -> anyhow::Result<()> {
         lines.insert(0, "[ctrl]");
     }
 
+    // 1b) inject rpa_distributed into [ctrl] (same section; skip if hamiltonian_distributed
+    //     was already present and inserted right before it)
+    if let Some(ctrl_idx) = lines.iter().position(|l| l.trim() == "[ctrl]") {
+        let mut insert_at: Option<usize> = None;
+        for (i, l) in lines.iter().enumerate().skip(ctrl_idx + 1) {
+            let t = l.trim();
+            if t.starts_with('[') {
+                break;
+            }
+            if t.is_empty() || t.starts_with('#') || t.starts_with("//") {
+                continue;
+            }
+            if t.starts_with("rpa_distributed") {
+                insert_at = None;
+                break;
+            }
+            insert_at = Some(i);
+            break;
+        }
+        if let Some(idx) = insert_at {
+            lines.insert(idx, "rpa_distributed = \"on\"");
+        }
+    }
+
     // 2) inject distributed into [ctrl.j2c_decomp]
     let j2c_section = lines.iter().position(|l| l.trim() == "[ctrl.j2c_decomp]");
     match j2c_section {
