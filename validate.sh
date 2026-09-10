@@ -184,12 +184,74 @@ echo "============================================================"
 if [[ "$DRY_RUN" -eq 1 ]]; then
     cargo run --quiet -- "${ARGS[@]}" --dry-run
 else
-    cargo run --quiet -- "${ARGS[@]}"
+    cargo run --quiet -- "${ARGS[@]}" 2>&1 | tee /tmp/rest_validate_output.txt
+    rc=${PIPESTATUS[0]}
 fi
-rc=$?
 if [[ $rc -eq 0 ]]; then
     echo "VALIDATION PASSED (exit 0)"
 else
     echo "VALIDATION FAILED (exit $rc)"
+    # ---------------- 瞬态取证：scalapack 模式失败时自动保存现场并分类 ----------------
+    if [[ "$SCALAPACK" -eq 1 ]]; then
+        EV_DIR="work_pool_failed_$(date +%H%M%S)"
+        mkdir -p "$EV_DIR"
+        cp -r work_pool/* "$EV_DIR/" 2>/dev/null
+        cp /tmp/rest_validate_output.txt "$EV_DIR/validate_output.txt" 2>/dev/null
+        echo "=== 瞬态取证: 失败现场已保存至 $EV_DIR ==="
+        # 提取失败用例名并做 5 次单例分类（确定 vs 抖动）
+        FAILED_CASES=$(grep -A2 "Regression failed for" /tmp/rest_validate_output.txt | grep -oP '"\S+"' | tr -d '"' | while read -r p; do basename "$p"; done | head -5)
+        for CASE in $FAILED_CASES; do
+            DIR=$(find "$BENCH_ROOT" -maxdepth 2 -name "$CASE" -type d 2>/dev/null | head -1)
+            [[ -z "$DIR" ]] && continue
+            TRIAGE="$EV_DIR/triage_$CASE"
+            mkdir -p "$TRIAGE"
+            cp -r "$DIR"/* "$TRIAGE/" 2>/dev/null
+            # 重放注入（与 runner 的 set_scalapack_in_file 一致）
+            python3 - "$TRIAGE/ctrl.in" << 'PYINJ'
+import sys
+p = sys.argv[1]
+lines = open(p).read().splitlines()
+ci = lines.index('[ctrl]') if '[ctrl]' in lines else 0
+ins = None
+for i in range(ci+1, len(lines)):
+    t = lines[i].strip()
+    if t.startswith('['): break
+    if not t or t.startswith('#') or t.startswith('//'): continue
+    ins = i; break
+if ins is not None:
+    lines.insert(ins, 'hamiltonian_distributed = "on"')
+    lines.insert(ins, 'rpa_distributed = "on"')
+j2c = None
+for i, l in enumerate(lines):
+    if l.strip() == '[ctrl.j2c_decomp]': j2c = i; break
+if j2c is not None:
+    ins = None
+    for i in range(j2c+1, len(lines)):
+        t = lines[i].strip()
+        if t.startswith('['): break
+        if not t or t.startswith('#'): continue
+        if t.startswith('distributed'): ins = None; break
+        ins = i; break
+    if ins is not None: lines.insert(ins, 'distributed = "on"')
+else:
+    lines += ['', '[ctrl.j2c_decomp]', 'distributed = "on"']
+open(p.replace('.in', '_gate.in'), 'w').write('\n'.join(lines) + '\n')
+PYINJ
+            echo "  --- 瞬态分类: $CASE × 5 单例（同注入同线程）---"
+            for i in 1 2 3 4 5; do
+                (cd "$TRIAGE" && timeout 900 mpirun --allow-run-as-root -n "$N_MPI" "$REST_BIN" -i ctrl_gate.in > solo_$i.log 2>&1)
+                v=$(grep -oP 'The \(R\)-xDH energy\s*:\s*\K[-0-9.]+' "$TRIAGE/solo_$i.log" 2>/dev/null | head -1)
+                r=$(grep -oP 'The RPA energy\s*:\s*\K[-0-9.]+' "$TRIAGE/solo_$i.log" 2>/dev/null | head -1)
+                echo "    solo $i: xdh=$v rpa=$r"
+            done
+            # 分类判定
+            UNIQ=$(grep -ohP 'The \(R\)-xDH energy\s*:\s*\K[-0-9.]+|The RPA energy\s*:\s*\K[-0-9.]+' "$TRIAGE/solo_"*.log 2>/dev/null | sort -u | wc -l)
+            if [[ "$UNIQ" -le 1 ]]; then
+                echo "  分类: 确定（非瞬态）→ 需查代码/注入逻辑"
+            else
+                echo "  分类: 抖动（$UNIQ 个不同值/5 次）→ 瞬态，需查竞态/未初始化"
+            fi
+        done
+    fi
 fi
 exit $rc

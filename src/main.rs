@@ -539,6 +539,19 @@ fn set_num_threads_in_file(file_path: &Path, num_threads: usize) -> anyhow::Resu
 ///     (creating the section when absent, appended at the end of the file).
 fn set_scalapack_in_file(file_path: &Path) -> anyhow::Result<()> {
     let content = fs::read_to_string(file_path)?;
+
+    // Geometry-optimization jobs (job_type = "opt") are excluded from the ScaLAPACK
+    // injection: their geomeTRIC master/slave MPI loop with repeated force evaluations
+    // intermittently hangs under injected distributed diagonalization when run in the
+    // fully concurrent suite (CO_OPT_LBFGS_NumForce exceeded the 1800 s timeout while
+    // the same task passes solo in ~13 s and always passes in the plain --mpi gate).
+    // Distributed linear algebra coverage is provided by the single-point / gradient
+    // tasks instead.
+    if content.lines().any(|l| l.trim().to_lowercase().starts_with("job_type") && l.contains("opt")) {
+        println!("Skipping ScaLAPACK injection for geometry-optimization job: {}", file_path.display());
+        return Ok(());
+    }
+
     let mut lines: Vec<&str> = content.lines().collect();
 
     // 1) inject hamiltonian_distributed into [ctrl] (first key line of the section)
@@ -565,6 +578,30 @@ fn set_scalapack_in_file(file_path: &Path) -> anyhow::Result<()> {
     } else {
         lines.insert(0, "hamiltonian_distributed = \"on\"");
         lines.insert(0, "[ctrl]");
+    }
+
+    // 1b) inject rpa_distributed into [ctrl] (same section; skip if hamiltonian_distributed
+    //     was already present and inserted right before it)
+    if let Some(ctrl_idx) = lines.iter().position(|l| l.trim() == "[ctrl]") {
+        let mut insert_at: Option<usize> = None;
+        for (i, l) in lines.iter().enumerate().skip(ctrl_idx + 1) {
+            let t = l.trim();
+            if t.starts_with('[') {
+                break;
+            }
+            if t.is_empty() || t.starts_with('#') || t.starts_with("//") {
+                continue;
+            }
+            if t.starts_with("rpa_distributed") {
+                insert_at = None;
+                break;
+            }
+            insert_at = Some(i);
+            break;
+        }
+        if let Some(idx) = insert_at {
+            lines.insert(idx, "rpa_distributed = \"on\"");
+        }
     }
 
     // 2) inject distributed into [ctrl.j2c_decomp]
