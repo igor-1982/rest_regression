@@ -17,6 +17,9 @@
     outname =              "reference"
     analdrv_tasks =        ["multipole"]
 
+[ctrl.ri_pt2]
+    fp_mode =              "FP64"
+
 [geom]
     name = "H2O"
     unit = "Angstrom"

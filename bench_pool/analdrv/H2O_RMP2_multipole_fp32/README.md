@@ -7,8 +7,10 @@ driver in FP32 (`[ctrl.ri_pt2] new_driver = true`, `fp_mode = "FP32"`),
 compared in json-reference mode (auto-detected `reference.json`; `config.toml`
 pins the required fields, see `docs/config-toml.md`).
 
-The FP32 mode applies to the PT2 energy contraction; the multipole density
-increments are contracted in f64. The example covers the combination of the
+The FP32 mode applies to both the PT2 energy contraction and the multipole
+density increments (all reported quantities remain f64; FP32 is the working
+type of the incore electronic-derivative kernel only). The example covers the
+combination of the
 new driver (which retains `rimatr`) with the analdrv multipole task on a
 PT2-family post-SCF method, with the full per-part decomposition
 (nuc/scf/corr/resp/tot) of every order.
