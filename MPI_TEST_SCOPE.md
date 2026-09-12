@@ -12,6 +12,8 @@ MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**仅限**
 |---|---|
 | `bench_pool/scf/` | SCF 相关任务（单点能、偶极、BSSE、开壳层、RSH、meta-GGA 等） |
 | `bench_pool/gradient/` | 解析梯度任务（RHF/UHF/UKS/RMP2/RSH 梯度、外场梯度、数值梯度优化等） |
+| `bench_pool/dispersion/` | 色散校正任务（D3BJ 能量与解析梯度，2026-09 验证通过） |
+| `bench_pool/solvent/` | 溶剂模型任务（COSMO/CPCM 梯度，2026-09 验证通过） |
 | `bench_pool/dh/` | 双杂化/后 SCF 相关（MP2、XYG3、ZRPS、R-xDH7、RPA、SCC15；2026-09 起全目录 MPI 验证通过，含 2.5D 路径用例） |
 
 ## 范围外目录（Out of Scope，暂不纳入 MPI 批处理验证）
@@ -21,7 +23,6 @@ MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**仅限**
 - `bench_pool/gw_bse/` — GW/BSE 任务
 - `bench_pool/hessian/` — Hessian 与频率任务
 - `bench_pool/pbc/` — 周期边界任务
-- `bench_pool/solvent/` — 溶剂模型任务
 - `bench_pool/tddft/` — TDDFT 任务
 - 其他未在“当前 MPI 测试范围”表格中列出的目录
 
