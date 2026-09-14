@@ -6,5 +6,4 @@ restart
 # GeomeTRIC temporary files
 GeomeTRIC*
 
-# REST default json output (regression compares via reference.log / reference.json)
 **/rest_results.json
