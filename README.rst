@@ -41,5 +41,30 @@ Special tests and tags:
   tests.toml stores per-test configuration: num_mpi, num_threads (locked values, cannot be
   overridden by CLI), timeout (per-test override in seconds; 0 = no timeout), and tags
   (cross-folder filter labels).
-  Available tags: mp2, ecp, dipole, ext-field, rsh, lda, ro, gga, meta-gga
+  Available tags: mp2, ecp, dipole, ext-field, rsh, lda, ro, gga, meta-gga, parsexc, chkfile,
+  hessian, hf, frequencies, opt, analdrv, thermo
   Usage: rest_regression -f mp2,ext-field
+
+Reference mode (config.toml):
+  Each test is compared either by the default log scraping or in json mode, against the json
+  result file dumped by REST (reference.json vs the freshly generated one). The default mode
+  is "auto": json comparison when the test folder contains reference.json, log scraping
+  otherwise, so most tests need no config.toml at all. An optional config.toml pins the mode
+  explicitly and adds required fields / tolerance overrides:
+
+    [config]
+    reference = "auto"          # "auto" (default), "json" or "log"; explicit values override detection
+    fields = [ "scf_energy", "thermo/cv_vib" ]   # required field paths, "/" = json nesting
+
+    [tolerance]                   # optional user overrides of the default tolerance table
+    "thermo/zpe" = 1.0
+
+  Only fields present in BOTH json files are compared (new fields of future REST versions are
+  ignored); fields and tolerance keys must be present in both or the test fails. Numbers compare
+  numpy-isclose style: |out - ref| <= atol + rtol * |ref|, where a single tolerance value sets
+  atol (default 1e-8) and a pair [atol, rtol] sets both (default rtol 1e-5); arrays are compared
+  elementwise under the same rule and must match in length, strings case-insensitively.
+  The input card must set outname = "reference" so that REST writes reference.json; generating
+  reference.log (rest -i ctrl.in > reference.log) then leaves reference.json in the folder too,
+  which auto-detection picks up without any config.toml.
+  See docs/config-toml.md for the full rules (Chinese).

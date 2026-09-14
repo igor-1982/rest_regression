@@ -1,0 +1,19 @@
+[ctrl]
+     print_level =               2
+     num_threads =               4
+     xc =                        "b3lyp"
+     basis_path =                "chkfile"
+     auxbas_path =               "def2-universal-JKFIT"
+     charge =                    0.0
+     spin =                      1.0
+     guessfile =                 "restart.rchk"
+     guessfile_type =            "hdf5"
+
+[geom]
+     name = "H2O"
+     unit = "angstrom"
+     position = '''
+        O      0.455690      -0.855147      -1.077445
+        H      0.170794      -1.689090      -1.471455
+        H      1.416521      -0.938770      -1.036458
+    '''

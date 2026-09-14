@@ -8,6 +8,19 @@ tags = ["mp2", "ecp"]
 tags = ["mp2"]
 [HI_ECP_MP2]
 tags = ["mp2", "ecp"]
+[NH3_RHF_hess]
+tags = ["analdrv", "thermo", "hessian", "hf"]
+[NH3_RTPSSh_hess]
+tags = ["analdrv", "thermo", "hessian", "meta-gga", "parsexc"]
+[NH3_UB3LYP_hess]
+tags = ["analdrv", "thermo", "hessian", "gga"]
+[C2H6_B3LYP_D3BJ_hess]
+tags = ["analdrv", "thermo", "hessian", "gga", "parsexc", "dftd"]
+[NH3_CAM-B3LYP_hess]
+tags = ["analdrv", "thermo", "hessian", "gga", "rsh"]
+[NH3_UCAM-B3LYP_hess]
+tags = ["analdrv", "thermo", "hessian", "gga", "rsh"]
+
 [NH3_RMP2_EXT_FIELD_DIPOLE]
 tags = ["mp2", "dipole", "ext-field"]
 [NH3_RMP2_NUMDIPOLE]
@@ -67,23 +80,35 @@ tags = ["gga"]
 tags = ["gga", "parsexc"]
 [H2O_basisproj]
 tags = ["chkfile"]
+[H2O_CHKBASIS]
+tags = ["chkfile"]
+[O2_ROKS_basisproj]
+tags = ["ro", "chkfile"]
 [H2O_dSCF_B3LYP]
 tags = ["chkfile"]
 
-[H2O_HF_Hessian]
-tags = ["hessian", "hf"]
 
 [H2O_BLYP_Hessian]
 tags = ["gga"]
 
 [H2O_BLYP_Freq]
-tags = ["frequencies", "gga"]
+tags = ["freq", "gga"]
 
 [CO_HF_OPT_TRIC]
-tags = ["hf", "opt"]
+tags = ["opt"]
 
 [CO_HF_OPT_TRIC_ANALYTIC_HESS]
-tags = ["hf", "opt"]
+tags = ["opt"]
 
 [NH3_BSE]
 timeout = 300
+
+# --- 按用例扩展的 MPI 范围（见 MPI_TEST_SCOPE.md §按用例扩展）---
+# tags=["mpi"] 表示该用例支持 MPI 且已在目标 MPI 配置下全量验证通过；
+# validate.sh --mpi 会把此类用例与声明目录（scf/gradient）一并纳入范围。
+
+
+
+
+
+
