@@ -6,12 +6,15 @@
 
 ## 当前 MPI 测试范围（Temporary Scope）
 
-MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时仅限**以下两个目录：
+MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时仅限**以下目录：
 
 | 目录 | 内容 |
 |---|---|
 | `bench_pool/scf/` | SCF 相关任务（单点能、偶极、BSSE、开壳层、RSH、meta-GGA 等） |
 | `bench_pool/gradient/` | 解析梯度任务（RHF/UHF/UKS/RMP2/RSH 梯度、外场梯度、数值梯度优化等） |
+| `bench_pool/solvent/` | 溶剂模型任务（PCM/SMD 能量与梯度：静电 MPI + 梯度点分片，CDS 仍每 rank 冗余） |
+
+> 上表溶剂目录于 2026-09-15 经 `validate.sh --mpi -f solvent`（n=2，6/6 PASS）验证后纳入。
 
 ## 范围外目录（Out of Scope，暂不纳入 MPI 批处理验证）
 
@@ -20,7 +23,6 @@ MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时�
 - `bench_pool/gw_bse/` — GW/BSE 任务
 - `bench_pool/hessian/` — Hessian 与频率任务
 - `bench_pool/pbc/` — 周期边界任务
-- `bench_pool/solvent/` — 溶剂模型任务
 - `bench_pool/tddft/` — TDDFT 任务
 - 其他未在“当前 MPI 测试范围”表格中列出的目录
 
@@ -39,7 +41,7 @@ MPI 模式（`--n_mpi >= 2`，即 `mpirun -n N rest`）的回归测试**暂时�
 # rayon-only 全量（60 个任务，MPI 范围声明不影响本模式）
 ./validate.sh
 
-# MPI 模式（自动限定在声明范围内：scf + gradient）
+# MPI 模式（自动限定在声明范围内：scf + gradient + solvent）
 ./validate.sh --mpi
 
 # MPI + 强制 ScaLAPACK 分布式路径（自动限定在声明范围内）

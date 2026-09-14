@@ -141,6 +141,18 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("scf_energy".to_string(), vec![energy]);
     }
 
+    // Solvent energy (electrostatic + SMD CDS). Printed only for solvent jobs,
+    // so this key simply does not appear for gas-phase tests.
+    let re_solvent_eny = Regex::new(
+      r"The solvent energy\s*:\s*(?P<energy>[\+-]?\d+.\d+)\s*"
+    ).unwrap();
+
+    if re_solvent_eny.is_match(&buf) {
+        let caps = re_solvent_eny.captures(&buf).unwrap();
+        let energy = caps.name("energy").unwrap().as_str().parse::<f64>().unwrap();
+        result.insert("solvent_energy".to_string(), vec![energy]);
+    }
+
     let re_post_scf_eny = Regex::new(
       r"The \(R\)-xDH energy\s*:\s*(?P<energy>[\+-]?\d+.\d+)\s*"
     ).unwrap();

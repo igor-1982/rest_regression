@@ -1,0 +1,35 @@
+[ctrl]
+     job_type =                  "force"
+     print_level =               2
+     xc =                        "b3lyp" 
+     frozen_core_postscf =       0
+     basis_path =                "def2-TZVP" 
+     auxbas_path =               "def2-universal-jkfit"
+     even_tempered_basis =       false
+     etb_start_atom_number =     1
+     etb_beta =                  1.0
+     initial_guess =             "sad"
+     fchk =                      false
+     pruning =                   "nwchem"
+     radial_grid_method =        "treutler"
+     max_scf_cycle =             250
+     solvent_model=              "iefpcm"
+     solv_epsilon=               78.3553
+     solv_chunk=                 64
+     solvent_ri =                false
+     pcm_cavity_radii =          "bondi"
+
+    num_threads =           4
+    charge = 0.0000  
+    spin   = 1       
+    spin_polarization = false
+
+[geom]
+    name = "hcho"
+    unit = "angstrom"
+    position = '''
+     C  0.0    0.0     -0.542
+     O  0.0    0.0      0.677
+     H  0.0    0.935   -1.082
+     H  0.0   -0.935   -1.082
+    '''
