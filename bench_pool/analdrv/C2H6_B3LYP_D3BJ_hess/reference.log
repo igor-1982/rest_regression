@@ -1,0 +1,367 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: b3lyp-d3bj
+Print level:   1    max log level: INFO
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/a/rest_pack/rest/basis-set-pool/def2-svp
+The spheric-GTO auxiliary basis set is taken from /home/a/rest_pack/rest/basis-set-pool/def2-universal-jkfit
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+C        0.00000000      0.00000000      0.76750000
+C        0.00000000      0.00000000     -0.76750000
+H        1.02040000      0.00000000      1.15920000
+H       -0.51020000      0.88378700      1.15920000
+H       -0.51020000     -0.88378700      1.15920000
+H        0.51020000      0.88378700     -1.15920000
+H       -1.02040000      0.00000000     -1.15920000
+H        0.51020000     -0.88378700     -1.15920000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+=========================================================
+Using xc_parser parse_xc
+Parsing xc: b3lyp-d3bj
+Detected current working directory: "/scratch/rest_pack/rest_regression/bench_pool/analdrv/C2H6_B3LYP_D3BJ_hess"
+Detected dispersion suffix -d3bj. Convert xc to b3lyp + D3(version=bj, xc=b3lyp)
+SCF components:
+  type: Libxc, factor: 1, func: B3LYP, id: 402, func_full_name: HYB_GGA_XC_B3LYP, 
+    reference: ["P. J. Stephens, F. J. Devlin, C. F. Chabalowski, and M. J. Frisch.,  J. Phys. Chem. 98, 11623 (1994)"]
+  type: Disp, factor: 1, func: DFTD3, 
+    param_keyword: {"version": String("bj"), "xc": String("b3lyp")}, reference: Not available yet
+  Total hybrid: 0.2
+
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [402]
+SCF DFA parameters: [1.0]
+SCF DFA hybrid coeff:       0.20000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 30, natm: 8 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 116,final natm: 16
+numbasis: 58, num_auxbas: 258
+Molecule_name: C2H6
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (53059.64 MB) is more than required (4.97 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      42.14083387 Hartree
+Empirical dispersion is specified in xc. Use the dispersion from parse_xc.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.00452398 with the total number of basis functions:     58
+Grid size: 87948
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=96.9% → skipping (AO too dense), falling back to dense
+
+=======================
+Generating SAD for atom: C
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (52823.58 MB) is more than required (0.08 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.18133134 with the total number of basis functions:     14
+Grid size: 13902
+Initial guess from SAP
+SCF Change: DM 6.67093e-3; eev 7.89731e-2 Ha; etot -1.97082e-2 Ha; grad 7.97350e-2 Ha
+SCF Change: DM 2.09648e-3; eev 7.15091e-2 Ha; etot 5.25024e-3 Ha; grad 2.04136e-2 Ha
+SCF Change: DM 8.84828e-5; eev 1.40546e-2 Ha; etot 2.76066e-3 Ha; grad 6.88931e-3 Ha
+SCF Change: DM 7.95353e-4; eev 1.62139e-2 Ha; etot -1.61119e-3 Ha; grad 4.23098e-3 Ha
+SCF Change: DM 1.15883e-4; eev 4.79418e-3 Ha; etot -5.87158e-4 Ha; grad 2.17772e-3 Ha
+SCF Change: DM 1.97631e-4; eev 4.50547e-3 Ha; etot 4.83565e-4 Ha; grad 1.10862e-3 Ha
+SCF Change: DM 2.10018e-5; eev 1.34323e-3 Ha; etot 1.64580e-4 Ha; grad 5.25257e-4 Ha
+SCF Change: DM 5.62514e-5; eev 1.20740e-3 Ha; etot -1.36345e-4 Ha; grad 3.30499e-4 Ha
+SCF Change: DM 1.13987e-5; eev 5.78757e-4 Ha; etot -8.42216e-8 Ha; grad 9.57206e-5 Ha
+SCF Change: DM 1.35328e-6; eev 8.43906e-6 Ha; etot -8.66377e-9 Ha; grad 6.06762e-6 Ha
+SCF Change: DM 3.76165e-8; eev 3.97546e-7 Ha; etot -2.85993e-11 Ha; grad 9.40535e-7 Ha
+SCF Change: DM 2.32343e-8; eev 2.47846e-7 Ha; etot -2.41585e-13 Ha; grad 7.91408e-7 Ha
+SCF Change: DM 1.62709e-8; eev 1.74664e-7 Ha; etot -9.94760e-14 Ha; grad 6.99160e-7 Ha
+SCF Change: DM 1.22482e-8; eev 1.32101e-7 Ha; etot -6.39488e-14 Ha; grad 6.34492e-7 Ha
+SCF Change: DM 9.66761e-9; eev 1.04655e-7 Ha; etot -6.39488e-14 Ha; grad 5.85774e-7 Ha
+SCF Change: DM 1.32156e-7; eev 1.43060e-6 Ha; etot -2.13163e-14 Ha; grad 5.47297e-7 Ha
+SCF Change: DM 4.90615e-9; eev 9.64032e-8 Ha; etot -2.62901e-13 Ha; grad 2.27560e-8 Ha
+SCF Change: DM 1.98059e-10; eev 3.28569e-9 Ha; etot -2.13163e-14 Ha; grad 8.14669e-10 Ha
+SCF is converged after   18 iterations.
+Energy:       -37.2844607808 Ha
+grad_dm l2: 1.71420e-9 Ha
+SAD generation for C complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (52823.58 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.31520018 with the total number of basis functions:      5
+Grid size: 10024
+Initial guess from SAP
+SCF Change: DM (1.85353e-2, 0.00000e0); eev 3.05132e-2 Ha; etot -1.52374e-2 Ha; grad (9.77637e-2, 0.00000e0) Ha
+SCF Change: DM (4.68253e-3, 0.00000e0); eev 4.22690e-2 Ha; etot -4.93006e-3 Ha; grad (3.44292e-2, 0.00000e0) Ha
+SCF Change: DM (3.71739e-4, 0.00000e0); eev 1.77983e-2 Ha; etot 1.36043e-3 Ha; grad (6.37969e-3, 0.00000e0) Ha
+SCF Change: DM (2.76501e-4, 0.00000e0); eev 4.18731e-3 Ha; etot 7.54429e-4 Ha; grad (3.62675e-4, 0.00000e0) Ha
+SCF Change: DM (1.62871e-4, 0.00000e0); eev 3.28476e-4 Ha; etot 1.20845e-4 Ha; grad (7.76088e-4, 0.00000e0) Ha
+SCF Change: DM (4.87152e-5, 0.00000e0); eev 2.98184e-4 Ha; etot -2.17091e-5 Ha; grad (3.23165e-4, 0.00000e0) Ha
+SCF Change: DM (6.92480e-6, 0.00000e0); eev 1.56066e-4 Ha; etot -2.13982e-5 Ha; grad (7.49624e-5, 0.00000e0) Ha
+SCF Change: DM (2.11446e-6, 0.00000e0); eev 5.02064e-5 Ha; etot -9.09432e-6 Ha; grad (6.00162e-6, 0.00000e0) Ha
+SCF Change: DM (2.06960e-7, 0.00000e0); eev 7.30878e-7 Ha; etot -4.31449e-11 Ha; grad (2.19419e-6, 0.00000e0) Ha
+SCF Change: DM (1.16694e-7, 0.00000e0); eev 4.12103e-7 Ha; etot -2.06890e-12 Ha; grad (1.82152e-6, 0.00000e0) Ha
+SCF Change: DM (7.86691e-8, 0.00000e0); eev 2.77818e-7 Ha; etot -9.97424e-13 Ha; grad (1.61140e-6, 0.00000e0) Ha
+SCF Change: DM (5.81021e-8, 0.00000e0); eev 2.05187e-7 Ha; etot -6.03406e-13 Ha; grad (1.46974e-6, 0.00000e0) Ha
+SCF Change: DM (4.53937e-8, 0.00000e0); eev 1.60307e-7 Ha; etot -4.09894e-13 Ha; grad (1.36512e-6, 0.00000e0) Ha
+SCF Change: DM (3.68506e-8, 0.00000e0); eev 1.30137e-7 Ha; etot -2.99427e-13 Ha; grad (1.28338e-6, 0.00000e0) Ha
+SCF Change: DM (3.07611e-8, 0.00000e0); eev 1.08632e-7 Ha; etot -2.29483e-13 Ha; grad (1.21702e-6, 0.00000e0) Ha
+SCF Change: DM (3.23072e-7, 0.00000e0); eev 1.14092e-6 Ha; etot -1.82077e-13 Ha; grad (1.16163e-6, 0.00000e0) Ha
+SCF Change: DM (3.70478e-8, 0.00000e0); eev 1.30834e-7 Ha; etot -1.40088e-12 Ha; grad (5.79889e-7, 0.00000e0) Ha
+SCF Change: DM (2.68788e-8, 0.00000e0); eev 9.49220e-8 Ha; etot -1.00919e-13 Ha; grad (5.13178e-7, 0.00000e0) Ha
+SCF Change: DM (2.32637e-8, 0.00000e0); eev 8.21554e-8 Ha; etot -6.51701e-14 Ha; grad (4.64779e-7, 0.00000e0) Ha
+SCF Change: DM (2.23206e-8, 0.00000e0); eev 7.88248e-8 Ha; etot -5.15699e-14 Ha; grad (4.22889e-7, 0.00000e0) Ha
+SCF Change: DM (2.32075e-8, 0.00000e0); eev 8.19567e-8 Ha; etot -4.45199e-14 Ha; grad (3.82697e-7, 0.00000e0) Ha
+SCF Change: DM (2.60445e-8, 0.00000e0); eev 9.19756e-8 Ha; etot -4.19109e-14 Ha; grad (3.40908e-7, 0.00000e0) Ha
+SCF Change: DM (3.18430e-8, 0.00000e0); eev 1.12453e-7 Ha; etot -4.13003e-14 Ha; grad (2.94011e-7, 0.00000e0) Ha
+SCF Change: DM (4.35944e-8, 0.00000e0); eev 1.53953e-7 Ha; etot -4.20775e-14 Ha; grad (2.36672e-7, 0.00000e0) Ha
+SCF Change: DM (9.29551e-9, 0.00000e0); eev 3.28269e-8 Ha; etot -4.27436e-14 Ha; grad (1.58174e-7, 0.00000e0) Ha
+SCF Change: DM (8.27720e-9, 0.00000e0); eev 2.92308e-8 Ha; etot -6.99441e-15 Ha; grad (1.41436e-7, 0.00000e0) Ha
+SCF Change: DM (8.00671e-9, 0.00000e0); eev 2.82755e-8 Ha; etot -5.44009e-15 Ha; grad (1.26531e-7, 0.00000e0) Ha
+SCF Change: DM (8.03786e-9, 0.00000e0); eev 2.83855e-8 Ha; etot -4.99600e-15 Ha; grad (1.12114e-7, 0.00000e0) Ha
+SCF Change: DM (8.18795e-9, 0.00000e0); eev 2.89156e-8 Ha; etot -4.10783e-15 Ha; grad (9.76405e-8, 0.00000e0) Ha
+SCF Change: DM (8.26207e-9, 0.00000e0); eev 2.91773e-8 Ha; etot -3.55271e-15 Ha; grad (8.28968e-8, 0.00000e0) Ha
+SCF Change: DM (7.88949e-9, 0.00000e0); eev 2.78616e-8 Ha; etot -3.10862e-15 Ha; grad (6.80196e-8, 0.00000e0) Ha
+SCF Change: DM (6.32870e-9, 0.00000e0); eev 2.23497e-8 Ha; etot -2.44249e-15 Ha; grad (5.38133e-8, 0.00000e0) Ha
+SCF Change: DM (2.74203e-9, 0.00000e0); eev 9.68343e-9 Ha; etot -1.49880e-15 Ha; grad (4.24175e-8, 0.00000e0) Ha
+SCF is converged after   33 iterations.
+Energy:        -0.4992784057 Ha
+grad_dm l2: 3.74800e-8 Ha
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):     -79.9142302913943610
+The total energy:       -79.5753155781 Ha by the initial guess
+Initial grad_dm l2:  1.87172e0 Ha
+SCF Change: DM 2.67828e-2; eev  2.07091e0 Ha; etot 1.21760e-1 Ha; grad  1.33929e0 Ha
+Energy:     -79.4535558462 Ha after    1 iterations (in       0.08 seconds).
+SCF Change: DM 1.31191e-2; eev  1.30199e0 Ha; etot -3.88463e-1 Ha; grad 5.63651e-1 Ha
+Energy:     -79.8420185612 Ha after    2 iterations (in       0.08 seconds).
+SCF Change: DM 7.78725e-3; eev 6.89578e-1 Ha; etot 8.03663e-2 Ha; grad 5.33558e-1 Ha
+Energy:     -79.7616522565 Ha after    3 iterations (in       0.08 seconds).
+SCF Change: DM 4.25829e-3; eev 3.11278e-1 Ha; etot 6.76721e-3 Ha; grad 6.43884e-1 Ha
+Energy:     -79.7548850488 Ha after    4 iterations (in       0.08 seconds).
+SCF Change: DM 8.93893e-5; eev 2.94717e-3 Ha; etot -2.18231e-2 Ha; grad 1.11755e-2 Ha
+Energy:     -79.7767081596 Ha after    5 iterations (in       0.08 seconds).
+SCF Change: DM 1.82811e-5; eev 8.06163e-4 Ha; etot -5.32446e-6 Ha; grad 2.40181e-3 Ha
+Energy:     -79.7767134840 Ha after    6 iterations (in       0.08 seconds).
+SCF Change: DM 1.21340e-6; eev 1.59657e-4 Ha; etot -2.09951e-7 Ha; grad 1.59420e-4 Ha
+Energy:     -79.7767136940 Ha after    7 iterations (in       0.08 seconds).
+SCF Change: DM 9.54624e-8; eev 8.68399e-6 Ha; etot -1.31803e-9 Ha; grad 7.55788e-6 Ha
+Energy:     -79.7767136953 Ha after    8 iterations (in       0.08 seconds).
+SCF Change: DM 8.51956e-11; eev 8.41016e-9 Ha; etot -4.71800e-12 Ha; grad 7.05469e-7 Ha
+Energy:     -79.7767136953 Ha after    9 iterations (in       0.08 seconds).
+SCF is converged after    9 iterations.
+Energy:       -79.7767136953 Ha
+grad_dm l2: 6.94958e-7 Ha
+Mulliken population analysis:
+  0-C  :  -0.036812
+  1-C  :  -0.036812
+  2-H  :   0.012256
+  3-H  :   0.012278
+  4-H  :   0.012278
+  5-H  :   0.012278
+  6-H  :   0.012256
+  7-H  :   0.012278
+[WARN] You are using analdrv module, which is still under development.
+[WARN] Keywords of analdrv will be updated in future versions.
+=============== Vibrational Analysis (in analdrv) ===============
+
+Inactive modes:
+TR  Freq [cm^-1]: 0.0288i
+TR  Freq [cm^-1]: 0.0216i
+TR  Freq [cm^-1]: 0.0064
+TR  Freq [cm^-1]: 0.0192
+TR  Freq [cm^-1]: 0.0501
+TR  Freq [cm^-1]: 0.0523
+
+Active modes:
+  Vibration                       1                   2                   3           
+  Freq [cm^-1]                 178.4349            779.6739            780.0851       
+  Reduced mass [u]              1.0080              1.0578              1.0578        
+  Force const [mDyne/A]         0.0189              0.3789              0.3792        
+  Turning point v=0 [a0]        0.8182              0.3821              0.3820        
+  RMS dev v=0 [a0 u^1/2]        0.5808              0.2779              0.2778        
+  Char temp [K]                256.7279           1121.7768           1122.3684       
+  ----------------------------------------------------------------------------------
+      1   C                0.00  0.00  0.00   -0.00  0.05  0.00    0.05  0.00 -0.00   
+      2   C               -0.00  0.00  0.00   -0.00  0.05 -0.00    0.05  0.00 -0.00   
+      3   H                0.00  0.41  0.00    0.00 -0.23 -0.00   -0.15 -0.00  0.51   
+      4   H               -0.35 -0.20  0.00   -0.03 -0.17  0.44   -0.21 -0.03 -0.25   
+      5   H                0.35 -0.20 -0.00    0.03 -0.17 -0.44   -0.21  0.03 -0.25   
+      6   H                0.35 -0.20 -0.00    0.03 -0.17 -0.44   -0.21  0.03 -0.25   
+      7   H                0.00  0.41  0.00    0.00 -0.23 -0.00   -0.15 -0.00  0.51   
+      8   H               -0.35 -0.20  0.00   -0.03 -0.17  0.44   -0.21 -0.03 -0.25   
+
+  Vibration                       4                   5                   6           
+  Freq [cm^-1]                 997.5840           1185.3013           1185.5795       
+  Reduced mass [u]              3.1673              1.4649              1.4647        
+  Force const [mDyne/A]         1.8571              1.2126              1.2130        
+  Turning point v=0 [a0]        0.1952              0.2633              0.2633        
+  RMS dev v=0 [a0 u^1/2]        0.2457              0.2254              0.2253        
+  Char temp [K]               1435.3008           1705.3841           1705.7843       
+  ----------------------------------------------------------------------------------
+      1   C                0.00 -0.00  0.31   -0.00  0.14  0.00    0.14  0.00 -0.00   
+      2   C               -0.00 -0.00 -0.31    0.00 -0.14  0.00   -0.14 -0.00  0.00   
+      3   H               -0.01  0.00  0.37    0.00 -0.27 -0.00   -0.05 -0.00  0.49   
+      4   H                0.01 -0.01  0.37   -0.10 -0.11  0.43   -0.22 -0.10 -0.25   
+      5   H                0.01  0.01  0.37    0.10 -0.11 -0.43   -0.22  0.10 -0.25   
+      6   H               -0.01 -0.01 -0.37   -0.10  0.11  0.43    0.22 -0.10  0.25   
+      7   H                0.01  0.00 -0.37   -0.00  0.27  0.00    0.05  0.00 -0.49   
+      8   H               -0.01  0.01 -0.37    0.10  0.11 -0.43    0.22  0.10  0.25   
+
+  Vibration                       7                   8                   9           
+  Freq [cm^-1]                1361.5146           1385.4487           1465.6750       
+  Reduced mass [u]              1.1986              1.2702              1.0156        
+  Force const [mDyne/A]         1.3091              1.4365              1.2854        
+  Turning point v=0 [a0]        0.2716              0.2616              0.2844        
+  RMS dev v=0 [a0 u^1/2]        0.2103              0.2084              0.2027        
+  Char temp [K]               1958.9156           1993.3515           2108.7793       
+  ----------------------------------------------------------------------------------
+      1   C                0.00  0.00 -0.09    0.00  0.00  0.11   -0.02  0.00 -0.00   
+      2   C                0.00 -0.00 -0.09   -0.00  0.00 -0.11    0.02  0.00  0.00   
+      3   H               -0.16  0.00  0.37    0.17 -0.00 -0.36   -0.12  0.00  0.30   
+      4   H                0.08 -0.14  0.37   -0.09  0.15 -0.37    0.33  0.26 -0.15   
+      5   H                0.08  0.14  0.37   -0.09 -0.15 -0.37    0.33 -0.26 -0.15   
+      6   H                0.08  0.14  0.37    0.09  0.15  0.37   -0.33  0.26  0.15   
+      7   H               -0.16 -0.00  0.37   -0.17 -0.00  0.36    0.12 -0.00 -0.30   
+      8   H                0.08 -0.14  0.37    0.09 -0.15  0.37   -0.33 -0.26  0.15   
+
+  Vibration                       10                  11                  12          
+  Freq [cm^-1]                1466.1330           1466.9857           1467.3408       
+  Reduced mass [u]              1.0155              1.0608              1.0607        
+  Force const [mDyne/A]         1.2861              1.3450              1.3456        
+  Turning point v=0 [a0]        0.2844              0.2782              0.2781        
+  RMS dev v=0 [a0 u^1/2]        0.2026              0.2026              0.2025        
+  Char temp [K]               2109.4382           2110.6651           2111.1760       
+  ----------------------------------------------------------------------------------
+      1   C                0.00 -0.02  0.00   -0.05 -0.00 -0.00    0.00 -0.05  0.00   
+      2   C                0.00  0.02  0.00   -0.05 -0.00 -0.00    0.00 -0.05 -0.00   
+      3   H                0.00  0.48 -0.00   -0.13  0.00  0.23    0.00  0.51 -0.00   
+      4   H                0.26  0.03  0.26    0.35  0.28 -0.11    0.28  0.03  0.20   
+      5   H               -0.26  0.03 -0.26    0.35 -0.28 -0.11   -0.28  0.03 -0.20   
+      6   H                0.26 -0.03  0.26    0.35 -0.28 -0.11   -0.28  0.03 -0.20   
+      7   H                0.00 -0.48 -0.00   -0.13 -0.00  0.23    0.00  0.51 -0.00   
+      8   H               -0.26 -0.03 -0.26    0.35  0.28 -0.11    0.28  0.03  0.20   
+
+  Vibration                       13                  14                  15          
+  Freq [cm^-1]                3103.1697           3104.1321           3180.8297       
+  Reduced mass [u]              1.0341              1.0369              1.1040        
+  Force const [mDyne/A]         5.8670              5.8867              6.5813        
+  Turning point v=0 [a0]        0.1937              0.1934              0.1852        
+  RMS dev v=0 [a0 u^1/2]        0.1393              0.1393              0.1376        
+  Char temp [K]               4464.7688           4466.1534           4576.5042       
+  ----------------------------------------------------------------------------------
+      1   C                0.00 -0.00 -0.03    0.00 -0.00 -0.04    0.00 -0.07  0.00   
+      2   C                0.00  0.00 -0.03   -0.00 -0.00  0.04   -0.00  0.07  0.00   
+      3   H                0.38 -0.00  0.14    0.38  0.00  0.14   -0.00 -0.01 -0.00   
+      4   H               -0.19  0.33  0.14   -0.19  0.33  0.14   -0.24  0.40  0.17   
+      5   H               -0.19 -0.33  0.14   -0.19 -0.33  0.14    0.24  0.40 -0.17   
+      6   H               -0.19 -0.33  0.14    0.19  0.33 -0.14   -0.24 -0.40  0.17   
+      7   H                0.38 -0.00  0.14   -0.38  0.00 -0.14    0.00  0.01  0.00   
+      8   H               -0.19  0.33  0.14    0.19 -0.33 -0.14    0.24 -0.40 -0.17   
+
+  Vibration                       16                  17                  18          
+  Freq [cm^-1]                3181.2812           3200.9922           3201.4015       
+  Reduced mass [u]              1.1040              1.1046              1.1046        
+  Force const [mDyne/A]         6.5831              6.6685              6.6701        
+  Turning point v=0 [a0]        0.1851              0.1845              0.1845        
+  RMS dev v=0 [a0 u^1/2]        0.1376              0.1371              0.1371        
+  Char temp [K]               4577.1537           4605.5135           4606.1024       
+  ----------------------------------------------------------------------------------
+      1   C               -0.07 -0.00 -0.00    0.00 -0.07  0.00   -0.07 -0.00 -0.00   
+      2   C                0.07  0.00  0.00    0.00 -0.07 -0.00   -0.07 -0.00 -0.00   
+      3   H                0.54 -0.00  0.20   -0.00 -0.01 -0.00    0.54 -0.00  0.21   
+      4   H                0.12 -0.24 -0.10   -0.24  0.40  0.18    0.13 -0.24 -0.10   
+      5   H                0.12  0.24 -0.10    0.24  0.40 -0.18    0.13  0.24 -0.10   
+      6   H               -0.12 -0.24  0.10    0.24  0.40 -0.18    0.13  0.24 -0.10   
+      7   H               -0.54  0.00 -0.20   -0.00 -0.01 -0.00    0.54 -0.00  0.21   
+      8   H               -0.12  0.24  0.10   -0.24  0.40  0.18    0.13 -0.24 -0.10   
+
+
+=============== End of Vibrational Analysis (in analdrv) ===============
+
+  Auto-detected point group: D3d (rotational symmetry number sigma = 6)
+
+=== Thermochemistry Calculation [RRHO] ===
+[DEBUG] t.ln 110.22335714354885
+[DEBUG] mom[0].ln -105.87413290539044
+[DEBUG] mom[1].ln -104.47858818856088
+[DEBUG] mom[2].ln -104.47856165219193
+[DEBUG] intermediate 8.491759285176357
+
+=== Thermochemistry [RRHO]  T=298.150 K  P=1.0000 atm ===
+  Atoms: 8   Molecular mass: 30.070000 amu
+  Principal moments of inertia (amu*Bohr^2):    22.490388    90.797589    90.799998
+  Rotational constants (GHz):                  80.245001    19.876532    19.876005
+  Rotational temperatures (K):                  3.851153     0.953923     0.953898
+  Linear molecule: false   sigma = 6
+  Point group (auto-detected): D3d
+  Vibrational modes used: 18 real (0 imaginary ignored)
+
+  Partition functions:  q_trans=3.903058e30  q_rot=8.124057e2  q_vib(V=0)=1.853565e0  q_vib(bot)=1.025800e-34  q_ele=1.000000
+
+                        kJ/mol     kcal/mol           a.u.
+  ZPE                  195.539       46.735       0.074477
+  U_trans                3.718        0.889       0.001416
+  U_rot                  3.718        0.889       0.001416
+  U_vib(T)-U(0)          2.300        0.550       0.000876
+  U_corr(T)            205.276       49.062       0.078185
+  H_corr(T)            207.755       49.655       0.079130
+  G_corr(T)            138.519       33.107       0.052759
+
+                       J/mol/K    cal/mol/K
+  S_trans              151.194       36.136
+  S_rot                 68.179       16.295
+  S_vib                 12.845        3.070
+  S_ele                  0.000        0.000
+  S_total              232.218       55.501
+  CV                    44.256       10.578
+  CP                    52.571       12.565
+
+  Electronic energy: -79.776714 a.u.
+  Sum E + ZPE    (= U/H/G at 0 K)  : -79.702237 a.u.
+  Sum E + U_corr (= U at 298 K)    : -79.698528 a.u.
+  Sum E + H_corr (= H at 298 K)    : -79.697584 a.u.
+  Sum E + G_corr (= G at 298 K)    : -79.723955 a.u.
+
+  Thermochemistry elapsed: 0.000 s
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -79.7767136953 Ha
+Detailed time report:
+Overall   |:   19.444 s for the whole job
+SCF       |:    3.220 s for the scf procedure
+AnalDrv   |:   16.224 s for analytical derivative module
