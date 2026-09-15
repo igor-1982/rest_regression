@@ -1,0 +1,38 @@
+[ctrl]
+     job_type =                  "force"
+     print_level =               2
+     xc =                        "b3lyp" 
+     frozen_core_postscf =       0
+     basis_path =                "def2-TZVP" 
+     auxbas_path =               "def2-universal-jkfit"
+     even_tempered_basis =       false
+     etb_start_atom_number =     1
+     etb_beta =                  1.0
+     initial_guess =             "sad"
+     fchk =                      false
+     pruning =                   "nwchem"
+     radial_grid_method =        "treutler"
+     max_scf_cycle =             250
+     solvent_model=              "SMD"
+     solvent=                    "water"
+     solv_chunk=                 64
+     solvent_ri =                false
+     pcm_cavity_radii =          "bondi"
+
+    num_threads =           4
+    charge = 0.0000  
+    spin   = 1       
+    spin_polarization = false
+
+[geom]
+    name = "ch3nh2"
+    unit = "angstrom"
+    position = '''
+     C        0.000000       0.000000      -0.721000
+     N        0.000000       0.000000       0.749000
+     H        0.000000       0.941000      -1.213000
+     H        0.814982      -0.470500      -1.213000
+     H       -0.814982      -0.470500      -1.213000
+     H        0.000000       0.832000       1.196000
+     H        0.000000      -0.832000       1.196000
+    '''

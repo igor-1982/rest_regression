@@ -5,3 +5,5 @@ restart
 
 # GeomeTRIC temporary files
 GeomeTRIC*
+
+**/rest_results.json
