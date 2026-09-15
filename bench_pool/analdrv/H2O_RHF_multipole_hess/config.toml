@@ -1,0 +1,20 @@
+# json-reference mode for this test: auto-detected from the presence of
+# reference.json (requires outname = "reference" in ctrl.in); this file only
+# pins the required fields. See docs/config-toml.md for the full rules.
+
+[config]
+fields = [
+    "scf_energy",
+    "analdrv/multipole/origin",
+    "analdrv/multipole/dipole/nuc",
+    "analdrv/multipole/dipole/scf",
+    "analdrv/multipole/dipole/tot",
+    "analdrv/multipole/quadrupole/tot",
+    "analdrv/multipole/quadrupole/traceless",
+    "analdrv/multipole/octupole/tot",
+    "analdrv/multipole/hexadecapole/tot",
+    "analdrv/frequencies_cm",
+    "analdrv/modes_trv",
+    "thermo/zpe",
+    "thermo/cv_vib",
+]

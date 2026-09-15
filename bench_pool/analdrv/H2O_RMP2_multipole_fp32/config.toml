@@ -1,0 +1,41 @@
+# json-reference mode for this test: auto-detected from the presence of
+# reference.json (requires outname = "reference" in ctrl.in); this file only
+# pins the required fields. See docs/config-toml.md for the full rules.
+
+[config]
+fields = [
+    "scf_energy",
+    "energies/xdh_energy",
+    "energies/pt2",
+    "analdrv/multipole/origin",
+    "analdrv/multipole/dipole/nuc",
+    "analdrv/multipole/dipole/scf",
+    "analdrv/multipole/dipole/corr",
+    "analdrv/multipole/dipole/resp",
+    "analdrv/multipole/dipole/tot",
+    "analdrv/multipole/quadrupole/tot",
+    "analdrv/multipole/quadrupole/traceless",
+    "analdrv/multipole/octupole/tot",
+    "analdrv/multipole/hexadecapole/tot",
+]
+
+# The PT2 density increments (corr/resp, and their contributions to tot) are contracted in the
+# FP32 working type (ctrl.ri_pt2 fp_mode = "FP32"), whose pair-accumulation order depends on the
+# thread partition; the reference was generated at num_threads = 4. Relax the tolerance for the
+# fp32-sensitive fields accordingly (the nuc/scf parts and the energies are pure f64 and keep the
+# default criteria).
+[tolerance]
+"energies/pt2" = [1e-6, 1e-5]
+"analdrv/multipole/dipole/corr" = [1e-6, 1e-5]
+"analdrv/multipole/dipole/resp" = [1e-5, 1e-4]
+"analdrv/multipole/dipole/tot" = [1e-6, 1e-5]
+"analdrv/multipole/quadrupole/corr" = [1e-6, 1e-5]
+"analdrv/multipole/quadrupole/resp" = [1e-6, 1e-5]
+"analdrv/multipole/quadrupole/tot" = [1e-5, 1e-5]
+"analdrv/multipole/quadrupole/traceless" = [1e-5, 1e-5]
+"analdrv/multipole/octupole/corr" = [1e-6, 1e-5]
+"analdrv/multipole/octupole/resp" = [1e-6, 1e-5]
+"analdrv/multipole/octupole/tot" = [1e-5, 1e-5]
+"analdrv/multipole/hexadecapole/corr" = [1e-6, 1e-5]
+"analdrv/multipole/hexadecapole/resp" = [1e-6, 1e-5]
+"analdrv/multipole/hexadecapole/tot" = [1e-5, 1e-5]

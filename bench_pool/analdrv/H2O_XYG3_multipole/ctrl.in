@@ -1,0 +1,30 @@
+[ctrl]
+    print_level =          2
+    num_threads =          4
+    xc =                   "xyg3"
+    basis_path =           "def2-tzvp"
+    auxbas_path =          "def2-universal-jkfit"
+    eri_type =             "ri-v"
+    charge =               0.0
+    spin =                 1.0
+    spin_polarization =    false
+    auxbasis_response =    true
+    mixer =                "diis"
+    num_max_diis =         8
+    start_diis_cycle =     3
+    mix_param =            0.8
+    max_scf_cycle =        100
+    outname =              "reference"
+    analdrv_tasks =        ["multipole"]
+
+[ctrl.ri_pt2]
+    fp_mode =              "FP64"
+
+[geom]
+    name = "H2O"
+    unit = "Angstrom"
+    position = """
+O   0.00000000   0.00000000   0.11537521
+H   0.75036929   0.00000000  -0.45898737
+H  -0.75036929   0.00000000  -0.45898737
+    """
