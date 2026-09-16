@@ -1,0 +1,359 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: scan
+Print level:   1    max log level: INFO
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/qiruigao/rest_workspace/rest/basis-set-pool/cc-pvdz
+The spheric-GTO auxiliary basis set is taken from /home/qiruigao/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+N       -2.19883910      1.89737463      0.00000000
+H       -1.17883910      1.89737463      0.00000000
+H       -2.53883540      1.09254601     -0.52635864
+H       -2.53884003      2.75562717     -0.43382247
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [263, 267]
+SCF DFA parameters: [1.0, 1.0]
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 9, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 52,final natm: 8
+numbasis: 29, num_auxbas: 131
+Molecule_name: NH3
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (25969.88 MB) is more than required (0.63 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      11.84792379 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.01677135 with the total number of basis functions:     29
+Grid size: 44118
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=97.6% → skipping (AO too dense), falling back to dense
+
+=======================
+Generating SAD for atom: N
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (25907.80 MB) is more than required (0.09 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.04514111 with the total number of basis functions:     14
+Grid size: 14046
+Initial guess from SAP
+SCF Change: DM 8.71264e-3; eev 1.08134e-2 Ha; etot -7.40676e-3 Ha; grad 5.48708e-2 Ha
+SCF Change: DM 2.27978e-3; eev 4.87972e-3 Ha; etot -4.28859e-4 Ha; grad 8.65564e-3 Ha
+SCF Change: DM 3.50442e-4; eev 4.04138e-3 Ha; etot 4.85959e-4 Ha; grad 1.97335e-3 Ha
+SCF Change: DM 8.16143e-5; eev 3.76905e-4 Ha; etot 3.50232e-4 Ha; grad 6.99398e-4 Ha
+SCF Change: DM 9.08879e-5; eev 1.12885e-3 Ha; etot -3.17968e-5 Ha; grad 1.19978e-4 Ha
+SCF Change: DM 3.97485e-5; eev 5.32169e-5 Ha; etot -7.70329e-5 Ha; grad 1.66189e-4 Ha
+SCF Change: DM 2.39735e-5; eev 3.58422e-4 Ha; etot 2.08980e-5 Ha; grad 3.85363e-5 Ha
+SCF Change: DM 1.42739e-6; eev 8.37123e-5 Ha; etot 1.38655e-5 Ha; grad 3.36408e-6 Ha
+SCF Change: DM 2.13041e-7; eev 3.15600e-6 Ha; etot -7.01306e-12 Ha; grad 5.65115e-7 Ha
+SCF Change: DM 8.19875e-8; eev 8.84654e-7 Ha; etot -3.55271e-13 Ha; grad 1.83870e-7 Ha
+SCF Change: DM 1.50816e-9; eev 2.54583e-9 Ha; etot -2.13163e-14 Ha; grad 2.59909e-8 Ha
+SCF is converged after   11 iterations.
+Energy:       -53.8286035073 Ha
+grad_dm l2: 2.43123e-8 Ha
+SAD generation for N complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (25907.09 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.09631310 with the total number of basis functions:      5
+Grid size: 10024
+Initial guess from SAP
+SCF Change: DM (4.64758e-2, 0.00000e0); eev 3.03801e-2 Ha; etot -1.52311e-2 Ha; grad (5.74368e-2, 0.00000e0) Ha
+SCF Change: DM (1.26941e-2, 0.00000e0); eev 4.03746e-2 Ha; etot -4.92660e-3 Ha; grad (2.02250e-2, 0.00000e0) Ha
+SCF Change: DM (1.02272e-3, 0.00000e0); eev 1.69718e-2 Ha; etot 1.36028e-3 Ha; grad (3.74676e-3, 0.00000e0) Ha
+SCF Change: DM (7.61967e-4, 0.00000e0); eev 3.99250e-3 Ha; etot 7.54061e-4 Ha; grad (2.13473e-4, 0.00000e0) Ha
+SCF Change: DM (4.48061e-4, 0.00000e0); eev 3.22229e-4 Ha; etot 1.20736e-4 Ha; grad (4.55976e-4, 0.00000e0) Ha
+SCF Change: DM (1.33888e-4, 0.00000e0); eev 2.85320e-4 Ha; etot -2.17183e-5 Ha; grad (1.89815e-4, 0.00000e0) Ha
+SCF Change: DM (1.90126e-5, 0.00000e0); eev 1.48790e-4 Ha; etot -2.13903e-5 Ha; grad (4.40123e-5, 0.00000e0) Ha
+SCF Change: DM (5.81595e-6, 0.00000e0); eev 4.78372e-5 Ha; etot -9.08690e-6 Ha; grad (3.52794e-6, 0.00000e0) Ha
+SCF Change: DM (5.69163e-7, 0.00000e0); eev 7.04365e-7 Ha; etot -4.31666e-11 Ha; grad (1.28968e-6, 0.00000e0) Ha
+SCF Change: DM (3.20927e-7, 0.00000e0); eev 3.97161e-7 Ha; etot -2.06996e-12 Ha; grad (1.07064e-6, 0.00000e0) Ha
+SCF Change: DM (2.16354e-7, 0.00000e0); eev 2.67748e-7 Ha; etot -9.97535e-13 Ha; grad (9.47137e-7, 0.00000e0) Ha
+SCF Change: DM (1.59792e-7, 0.00000e0); eev 1.97749e-7 Ha; etot -6.03517e-13 Ha; grad (8.63874e-7, 0.00000e0) Ha
+SCF Change: DM (1.24842e-7, 0.00000e0); eev 1.54497e-7 Ha; etot -4.10227e-13 Ha; grad (8.02379e-7, 0.00000e0) Ha
+SCF Change: DM (1.01347e-7, 0.00000e0); eev 1.25421e-7 Ha; etot -2.99538e-13 Ha; grad (7.54335e-7, 0.00000e0) Ha
+SCF Change: DM (8.45994e-8, 0.00000e0); eev 1.04695e-7 Ha; etot -2.29261e-13 Ha; grad (7.15332e-7, 0.00000e0) Ha
+SCF Change: DM (8.88583e-7, 0.00000e0); eev 1.09966e-6 Ha; etot -1.82410e-13 Ha; grad (6.82774e-7, 0.00000e0) Ha
+SCF Change: DM (1.01876e-7, 0.00000e0); eev 1.26076e-7 Ha; etot -1.40121e-12 Ha; grad (3.40810e-7, 0.00000e0) Ha
+SCF Change: DM (7.39139e-8, 0.00000e0); eev 9.14712e-8 Ha; etot -1.01030e-13 Ha; grad (3.01603e-7, 0.00000e0) Ha
+SCF Change: DM (6.39732e-8, 0.00000e0); eev 7.91693e-8 Ha; etot -6.53921e-14 Ha; grad (2.73158e-7, 0.00000e0) Ha
+SCF Change: DM (6.13802e-8, 0.00000e0); eev 7.59603e-8 Ha; etot -5.11813e-14 Ha; grad (2.48538e-7, 0.00000e0) Ha
+SCF Change: DM (6.38197e-8, 0.00000e0); eev 7.89792e-8 Ha; etot -4.48530e-14 Ha; grad (2.24917e-7, 0.00000e0) Ha
+SCF Change: DM (7.16226e-8, 0.00000e0); eev 8.86356e-8 Ha; etot -4.17999e-14 Ha; grad (2.00356e-7, 0.00000e0) Ha
+SCF Change: DM (8.75707e-8, 0.00000e0); eev 1.08372e-7 Ha; etot -4.11338e-14 Ha; grad (1.72793e-7, 0.00000e0) Ha
+SCF Change: DM (1.19893e-7, 0.00000e0); eev 1.48372e-7 Ha; etot -4.21330e-14 Ha; grad (1.39092e-7, 0.00000e0) Ha
+SCF Change: DM (2.55590e-8, 0.00000e0); eev 3.16302e-8 Ha; etot -4.30767e-14 Ha; grad (9.29520e-8, 0.00000e0) Ha
+SCF Change: DM (2.27593e-8, 0.00000e0); eev 2.81655e-8 Ha; etot -6.71685e-15 Ha; grad (8.31158e-8, 0.00000e0) Ha
+SCF Change: DM (2.20158e-8, 0.00000e0); eev 2.72453e-8 Ha; etot -5.77316e-15 Ha; grad (7.43570e-8, 0.00000e0) Ha
+SCF Change: DM (2.21017e-8, 0.00000e0); eev 2.73517e-8 Ha; etot -4.44089e-15 Ha; grad (6.58844e-8, 0.00000e0) Ha
+SCF Change: DM (2.25148e-8, 0.00000e0); eev 2.78629e-8 Ha; etot -4.32987e-15 Ha; grad (5.73788e-8, 0.00000e0) Ha
+SCF Change: DM (2.27190e-8, 0.00000e0); eev 2.81156e-8 Ha; etot -3.33067e-15 Ha; grad (4.87141e-8, 0.00000e0) Ha
+SCF Change: DM (2.16949e-8, 0.00000e0); eev 2.68482e-8 Ha; etot -3.21965e-15 Ha; grad (3.99709e-8, 0.00000e0) Ha
+SCF Change: DM (1.74029e-8, 0.00000e0); eev 2.15366e-8 Ha; etot -2.72005e-15 Ha; grad (3.16218e-8, 0.00000e0) Ha
+SCF Change: DM (7.53886e-9, 0.00000e0); eev 9.32960e-9 Ha; etot -1.27676e-15 Ha; grad (2.49244e-8, 0.00000e0) Ha
+SCF is converged after   33 iterations.
+Energy:        -0.4992784034 Ha
+grad_dm l2: 2.20232e-8 Ha
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):     -56.5038295008680151
+The total energy:       -56.3490603120 Ha by the initial guess
+Initial grad_dm l2:  1.51235e0 Ha
+SCF Change: DM 1.43592e-1; eev  2.41445e0 Ha; etot 1.75908e-1 Ha; grad  2.30891e0 Ha
+Energy:     -56.1731519790 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 8.96671e-2; eev  1.34632e0 Ha; etot 2.92937e-1 Ha; grad  2.67595e0 Ha
+Energy:     -55.8802147492 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 4.36013e-3; eev 9.78422e-2 Ha; etot -6.42211e-1 Ha; grad 1.95932e-1 Ha
+Energy:     -56.5224257599 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 4.29167e-4; eev 8.64660e-3 Ha; etot -2.12114e-3 Ha; grad 7.44620e-3 Ha
+Energy:     -56.5245469020 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 6.41558e-5; eev 5.11986e-4 Ha; etot -5.39071e-6 Ha; grad 3.02117e-3 Ha
+Energy:     -56.5245522927 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 8.44470e-6; eev 2.84507e-4 Ha; etot -4.23769e-7 Ha; grad 3.49164e-4 Ha
+Energy:     -56.5245527165 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 3.30543e-7; eev 1.02749e-5 Ha; etot -6.85723e-9 Ha; grad 9.34943e-6 Ha
+Energy:     -56.5245527234 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 3.36191e-8; eev 3.82975e-7 Ha; etot -4.39826e-12 Ha; grad 2.63780e-6 Ha
+Energy:     -56.5245527234 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 1.23699e-7; eev 4.28521e-7 Ha; etot 4.33431e-13 Ha; grad 4.00595e-6 Ha
+Energy:     -56.5245527234 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 2.41190e-7; eev 1.73778e-6 Ha; etot 2.89191e-12 Ha; grad 8.84837e-6 Ha
+Energy:     -56.5245527234 Ha after   10 iterations (in       0.01 seconds).
+SCF Change: DM 2.98112e-8; eev 1.30734e-7 Ha; etot -3.53850e-12 Ha; grad 1.16466e-6 Ha
+Energy:     -56.5245527234 Ha after   11 iterations (in       0.01 seconds).
+SCF Change: DM 2.23028e-9; eev 6.45196e-8 Ha; etot -7.10543e-14 Ha; grad 7.44682e-8 Ha
+Energy:     -56.5245527234 Ha after   12 iterations (in       0.01 seconds).
+SCF is converged after   12 iterations.
+Energy:       -56.5245527234 Ha
+grad_dm l2: 6.07110e-9 Ha
+Mulliken population analysis:
+  0-N  :  -0.271766
+  1-H  :   0.090542
+  2-H  :   0.090649
+  3-H  :   0.090575
+Now starts quasiparticle method computation!
+Starts renormalized singles calculations!
+You are doing full-space renormalized singles GW calculations:
+The full HF Hamiltonian in MO basis is diagonalized, and its orbital coefficients are used.
+RS orbital coefficients built: C_rs = C_ks * U, size=[29,29]
+The renormalized-singles orbital coefficients have been written to rs_orbitals.dat
+  (blocks: nao/nmo, e_rs, C_rs, e_ks, C_ks, U = C_ks^T C_rs; see the file header)
+The RI three-centre integrals will be recombined from the AO basis with the renormalized-singles orbital coefficients.
+Renormalized Singles particles:[
+    -15.505960325968244,
+    -1.1163033749197409,
+    -0.6106141617372033,
+    -0.6106105469099403,
+    -0.4033258676466561,
+    0.1878373400532168,
+    0.27129689551301256,
+    0.27129911300230847,
+    0.7373697433531567,
+    0.7373729289970568,
+    0.8600028166062418,
+    1.0003375785074655,
+    1.0761505187507758,
+    1.0761522206787453,
+    1.3366417772234518,
+    1.3366436843424925,
+    1.3936596632872709,
+    1.73839427441754,
+    1.9359159714253493,
+    1.9507408569723517,
+    1.950742353101167,
+    2.3186251710663273,
+    2.318629502652108,
+    2.4893355325395583,
+    2.833876708959594,
+    2.8338777834817,
+    3.00353934145526,
+    3.292757788537459,
+    3.2927602798991615,
+]
+RI-OV Shape=[131, 120]
+V Matrix Constructed. This step took 359.522µs
+Evaluation of W_c for omega=0.009172247378306849 has finished. This step took 3.641676ms
+Evaluation of W_c for omega=0.0017237725698468571 has finished. This step took 3.716952ms
+Evaluation of W_c for omega=2.2476579568003734 has finished. This step took 3.780156ms
+Evaluation of W_c for omega=0.11122688807859561 has finished. This step took 3.824793ms
+Evaluation of W_c for omega=145.03073338857598 has finished. This step took 3.551789ms
+Evaluation of W_c for omega=0.5828681309044502 has finished. This step took 3.850834ms
+Evaluation of W_c for omega=0.2279577547298493 has finished. This step took 6.365287ms
+Evaluation of W_c for omega=1.5444337306792566 has finished. This step took 6.777943ms
+Evaluation of W_c for omega=10.893989466206694 has finished. This step took 6.921093ms
+Evaluation of W_c for omega=0.7949775673994122 has finished. This step took 7.482309ms
+Evaluation of W_c for omega=0.16187162649578213 has finished. This step took 7.482249ms
+Evaluation of W_c for omega=0.0726288320683665 has finished. This step took 7.484834ms
+Evaluation of W_c for omega=0.4289134827324821 has finished. This step took 7.504383ms
+Evaluation of W_c for omega=3.4421591657245934 has finished. This step took 7.490605ms
+Evaluation of W_c for omega=5.7156960328653605 has finished. This step took 7.758278ms
+Evaluation of W_c for omega=27.25613360486454 has finished. This step took 7.762907ms
+Evaluation of W_c for omega=0.043739204912664226 has finished. This step took 7.804649ms
+Evaluation of W_c for omega=1.0966944304933726 has finished. This step took 7.838134ms
+Evaluation of W_c for omega=0.31447428235971236 has finished. This step took 7.985653ms
+Evaluation of W_c for omega=0.022948434159543063 has finished. This step took 8.413278ms
+calculated orbital indices:[2, 3, 4, 5, 6, 7, 8, 9]
+Exchange=-0.7972963551710063,V_xc=-0.6035853770968724
+Orbital #2 (first round, no Fourier self-energy):
+First round QP energy (no FSE): -0.5928898267346149
+GW Evaluation of orbital #2 took 3.422537ms
+Exchange=-0.7972941213200947,V_xc=-0.6035724366753117
+Orbital #3 (first round, no Fourier self-energy):
+First round QP energy (no FSE): -0.5928875416776109
+GW Evaluation of orbital #3 took 3.198359ms
+Exchange=-0.8162624493209495,V_xc=-0.624347126079146
+Orbital #4 (first round, no Fourier self-energy):
+First round QP energy (no FSE): -0.3669566951816208
+GW Evaluation of orbital #4 took 199.019µs
+Exchange=-0.08864880142334741,V_xc=-0.2573057028923104
+Orbital #5 (first round, no Fourier self-energy):
+First round QP energy (no FSE): 0.22703788746635356
+GW Evaluation of orbital #5 took 2.457592ms
+Exchange=-0.08729258552358868,V_xc=-0.2762237165614291
+Orbital #6 (first round, no Fourier self-energy):
+First round QP energy (no FSE): 0.3379331278422468
+GW Evaluation of orbital #6 took 4.16642ms
+Exchange=-0.08729443363385973,V_xc=-0.2761763548152334
+Orbital #7 (first round, no Fourier self-energy):
+First round QP energy (no FSE): 0.337904795357707
+GW Evaluation of orbital #7 took 4.279742ms
+Exchange=-0.18163017026902933,V_xc=-0.3538869955718751
+Orbital #8 (first round, no Fourier self-energy):
+First round QP energy (no FSE): 0.66670597679202
+GW Evaluation of orbital #8 took 5.613989ms
+Exchange=-0.1816295283437378,V_xc=-0.35384510421216303
+Orbital #9 (first round, no Fourier self-energy):
+First round QP energy (no FSE): 0.6667009668486555
+GW Evaluation of orbital #9 took 5.973411ms
+Quasiparticle Energies from GW Approximation (in Hatree):
+   Note that only energies around the Fermi surface within 0.5 Hatree below HOMO and 0.5 Hatree above LUMO are explicitly computed by solving the quasiparticle equation,
+    while others are extrapolated using average energy shifts of the computed ones compared to corresponding SCF results
+    You can set these thresholds using the keywords "gw_extrapolate_occ_threshold" and "gw_extrapolate_vir_threshold"
+ (extrapolated) QP Energy of Orbital #0:-14.313653602176755
+ (extrapolated) QP Energy of Orbital #1:-0.9759061918864204
+ (calculated) QP Energy of Orbital #2:-0.5928898267346149
+ (calculated) QP Energy of Orbital #3:-0.5928875416776109
+ (calculated) QP Energy of Orbital #4:-0.3669566951816208
+-------Fermi Surface--------
+ (calculated) QP Energy of Orbital #5:0.22703788746635356
+ (calculated) QP Energy of Orbital #6:0.3379331278422468
+ (calculated) QP Energy of Orbital #7:0.337904795357707
+ (calculated) QP Energy of Orbital #8:0.66670597679202
+ (calculated) QP Energy of Orbital #9:0.6667009668486555
+ (extrapolated) QP Energy of Orbital #10:0.7674481876942484
+ (extrapolated) QP Energy of Orbital #11:0.8810887117486874
+ (extrapolated) QP Energy of Orbital #12:0.9880928909618514
+ (extrapolated) QP Energy of Orbital #13:0.9881628283952609
+ (extrapolated) QP Energy of Orbital #14:1.219442286236375
+ (extrapolated) QP Energy of Orbital #15:1.2194741221146908
+ (extrapolated) QP Energy of Orbital #16:1.3067385595619965
+ (extrapolated) QP Energy of Orbital #17:1.6161749347445213
+ (extrapolated) QP Energy of Orbital #18:1.8238300545909922
+ (extrapolated) QP Energy of Orbital #19:1.847316665190161
+ (extrapolated) QP Energy of Orbital #20:1.8473580810897174
+ (extrapolated) QP Energy of Orbital #21:2.160585380052299
+ (extrapolated) QP Energy of Orbital #22:2.1607443722446544
+ (extrapolated) QP Energy of Orbital #23:2.349300632095541
+ (extrapolated) QP Energy of Orbital #24:2.6785700594671873
+ (extrapolated) QP Energy of Orbital #25:2.6787600370159894
+ (extrapolated) QP Energy of Orbital #26:2.847242852084242
+ (extrapolated) QP Energy of Orbital #27:3.116713078548208
+ (extrapolated) QP Energy of Orbital #28:3.116875852777156
+One round of GW by extrapolated scheme has finished.
+BSE orbital representation: renormalized-singles (RS) orbitals.
+  v, W, the dipole matrix and the transition amplitudes are all expanded in the RS MO basis
+  (C_rs = C_ks * U); the RS coefficients and eigenvalues are in rs_orbitals.dat.
+Specific BSE calculations are triggered
+BSE Type:singlet
+BSE screening: using the renormalized-singles eigenvalues (RS representation).
+BSE Preparation Time:613.168µs
+    Davidson solver: tol ||r|| < 1.00e-5, tol |de| < 1.00e-10, nroots=3, dim=120
+    iter 1: space=6, converged=0/3
+    iter 2: space=12, converged=0/3
+    iter 3: space=18, converged=0/3
+    iter 4: space=24, converged=0/3
+    iter 5: space=30, converged=0/3
+    iter 6: space=36, converged=0/3
+    iter 7: space=42, converged=2/3
+    iter 8: space=42, converged=3/3
+Davidson Solver has converged.
+Davidson Solver took 6.930912ms
+3 excitations within the window:
+#0 Excitation energy=0.32411061993569634, norm=1.000000
+	Dipole Moment Components:
+	x:0.16491960028618768, y:0.025927742480083334, z:-0.4657171165777218
+	Transition Dipole Square:0.24476315506213675; Oscillator Strength:0.05288689194973741
+      #4->#5,amplitude=0.7043587847982787
+      #4->#10,amplitude=0.04556381686073966
+      #4->#16,amplitude=-0.023333995874457114
+      #3->#7,amplitude=0.018386918171428634
+      #2->#6,amplitude=0.01838511728039367
+#1 Excitation energy=0.4318081425853937, norm=1.000000
+	Dipole Moment Components:
+	x:0.30584269205385917, y:-0.14081616686692347, z:0.10045486598201495
+	Transition Dipole Square:0.12346012523330954; Oscillator Strength:0.03554072490690366
+      #4->#7,amplitude=0.6992249136274656
+      #4->#8,amplitude=-0.06405614826153672
+      #4->#13,amplitude=-0.060087961644275364
+      #4->#9,amplitude=0.039336098152062564
+      #4->#12,amplitude=0.01609935185989812
+#2 Excitation energy=0.4318356889371086, norm=1.000000
+	Dipole Moment Components:
+	x:0.12729163458721635, y:0.32136382720292733, z:0.06293944313680025
+	Transition Dipole Square:0.12343924317276886; Oscillator Strength:0.035536980411591944
+      #4->#6,amplitude=0.6992228619925975
+      #4->#9,amplitude=-0.06406568185215784
+      #4->#12,amplitude=-0.06009801283293967
+      #4->#8,amplitude=-0.03934093123811586
+      #4->#13,amplitude=-0.016097982956446922
+The first excitation obtained by BSE is 0.32411061993569634
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -56.5245527234 Ha
+Detailed time report:
+Overall   |:    0.365 s for the whole job
+SCF       |:    0.304 s for the scf procedure

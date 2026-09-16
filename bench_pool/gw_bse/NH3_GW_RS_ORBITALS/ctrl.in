@@ -1,0 +1,31 @@
+[ctrl]
+     # 覆盖 renormalized singles 的两个新选项：完整轨道空间HF对角化（rs_full_space）
+     # 与将RS轨道系数用于RI AO2MO（rs_use_rs_orbitals），并令W也使用RS粒子能量。
+     print_level =               1
+     num_threads =               4
+     xc =                        "scan"
+     basis_path =                "cc-pVDZ"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+[quasiparticle_methods]
+     gw_or_bse=                  "gw"
+     gw_scheme=                  "extrapolated"
+     gw_extrapolate_occ_threshold= 0.5
+     gw_extrapolate_vir_threshold= 0.5
+     renormalized_singles =      true
+     rs_full_space =             true
+     rs_use_rs_orbitals =        true
+     w_rs =                      true
+
+[geom]
+     name = "NH3"
+     unit = "angstrom"
+     position = '''
+        N  -2.1988391019      1.8973746268      0.0000000000
+        H  -1.1788391019      1.8973746268      0.0000000000
+        H  -2.5388353987      1.0925460144     -0.5263586446
+        H  -2.5388400276      2.7556271745     -0.4338224694'''

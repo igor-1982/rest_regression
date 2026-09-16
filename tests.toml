@@ -109,6 +109,15 @@ timeout = 300
 [NH3_UBSE]
 timeout = 300
 
+# rsGW：完整轨道空间HF对角化（rs_full_space）+ RS轨道系数用于RI AO2MO
+# （rs_use_rs_orbitals）+ W也使用RS粒子能量（w_rs）。
+[NH3_GW_RS_ORBITALS]
+timeout = 300
+
+# rsGW 后的 BSE：v/W/偶极矩阵/跃迁振幅与屏蔽能量都在 RS 分子轨道表象中。
+[NH3_BSE_RS_ORBITALS]
+timeout = 300
+
 # --- 按用例扩展的 MPI 范围（见 MPI_TEST_SCOPE.md §按用例扩展）---
 # tags=["mpi"] 表示该用例支持 MPI 且已在目标 MPI 配置下全量验证通过；
 # validate.sh --mpi 会把此类用例与声明目录（scf/gradient）一并纳入范围。

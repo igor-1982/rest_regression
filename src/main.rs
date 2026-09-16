@@ -229,8 +229,11 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("BSE 1st Excitation".to_string(), vec![energy]);
     }
 
+    // Unrestricted BSE has no spin channel any more, so the label dropped the
+    // former "(singlet)"/"(triplet)" marker.  Accept both forms: older
+    // reference.log files still carry the parenthetical.
     let re_ubse=Regex::new(
-        r"The\sfirst\sunrestricted\sBSE\s\((?P<spin>\w+)\)\sexcitation\sis\s*(?P<bse>[\+-]?\d+\.\d+)"
+        r"The\sfirst\sunrestricted\sBSE\s(?:\(\w+\)\s)?excitation\sis\s*(?P<bse>[\+-]?\d+\.\d+)"
     ).unwrap();
 
     if re_ubse.is_match(&buf) {
