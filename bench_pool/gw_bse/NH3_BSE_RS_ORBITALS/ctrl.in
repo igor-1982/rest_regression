@@ -1,0 +1,35 @@
+[ctrl]
+     # rsGW 后的 BSE：RS 轨道系数用于 RI AO2MO，BSE 的 v/W/偶极/跃迁振幅
+     # 与屏蔽能量都在 RS 分子轨道表象中。
+     print_level =               1
+     num_threads =               4
+     xc =                        "scan"
+     basis_path =                "cc-pVDZ"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+[quasiparticle_methods]
+     gw_or_bse=                  "bse"
+     gw_scheme=                  "extrapolated"
+     gw_extrapolate_occ_threshold= 0.5
+     gw_extrapolate_vir_threshold= 0.5
+     renormalized_singles =      true
+     rs_full_space =             true
+     rs_use_rs_orbitals =        true
+     w_rs =                      true
+     bse_tda =                   true
+     bse_spin =                  "singlet"
+     davidson_target_excitations = 3
+     bse_davidson_solver =       true
+
+[geom]
+     name = "NH3"
+     unit = "angstrom"
+     position = '''
+        N  -2.1988391019      1.8973746268      0.0000000000
+        H  -1.1788391019      1.8973746268      0.0000000000
+        H  -2.5388353987      1.0925460144     -0.5263586446
+        H  -2.5388400276      2.7556271745     -0.4338224694'''

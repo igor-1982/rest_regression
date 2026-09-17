@@ -1,17 +1,19 @@
-The REST_BASIS_DIR environment variable is not set.
-Use the default path (/opt/rest_workspace/rest/basis-set-pool/) as rest_basis_dir.
-The specified path for the basis sets: cc-pVDZ
-The specified path for the basis sets: def2-SV(P)-JKFIT
+[DEBUG ctrl_io::path_util] The REST_BASIS_DIR environment variable is not set.
+[DEBUG ctrl_io::path_util] Add the alternative default path (/home/qiruigao/rest_workspace/rest/basis-set-pool/) to rest_basis_dir.
+[DEBUG ctrl_io::path_util] The specified path for the basis sets is: cc-pvdz (lowercase), try to find it from the rest_basis_dir
+[DEBUG ctrl_io::path_util] Found: /home/qiruigao/rest_workspace/rest/basis-set-pool/cc-pvdz
+[DEBUG ctrl_io::path_util] The specified path for the auxiliary basis sets is: def2-universal-jkfit (lowercase), try to find it from the rest_basis_dir
+[DEBUG ctrl_io::path_util] Found: /home/qiruigao/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
 =========================================================
       Input parameters for the REST calculation
 =========================================================
 Calculation type: Single-point energy
 Cube output: wavefunction
 The exchange-correlation method: scan
-Print level:                2
+Print level:   2    max log level: DEBUG
 The number of threads used for parallelism:      4
-The spheric-GTO basis set is taken from cc-pVDZ
-The spheric-GTO auxiliary basis set is taken from def2-SV(P)-JKFIT
+The spheric-GTO basis set is taken from /home/qiruigao/rest_workspace/rest/basis-set-pool/cc-pvdz
+The spheric-GTO auxiliary basis set is taken from /home/qiruigao/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
 Charge:   0; Spin:   1
 Spin polarization: Off
 Input molecular structure (in Angstrom): ----------
@@ -24,28 +26,70 @@ ERI Type: ri_v
 SCF convergency thresholds: 1e-8 for density matrix
                             1e-6 Ha. for sum of eigenvalues
                             1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
 Max. SCF cycle number:      100
 It is a finite cluster calculation
-The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
-It will be updated after the SCF procedure 
-(none)
-Turn on the basis pair symmetry for RI 3D-tensors
-The pruning method is nwchem
-The radial grid generation method is treutler
-min_num_angular_points: 110
-max_num_angular_points: 590
-hardness: 3
-Grid generation level: 3
-Even tempered basis generation: false
-The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
-Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
 Initial guess is prepared by (sad).
+[DEBUG ctrl_io] Turn on the basis pair symmetry for RI 3D-tensors
+[DEBUG ctrl_io] The pruning method is nwchem
+[DEBUG ctrl_io] The radial grid generation method is treutler
+[DEBUG ctrl_io] min_num_angular_points: 110
+[DEBUG ctrl_io] max_num_angular_points: 590
+[DEBUG ctrl_io] hardness: 3
+[DEBUG ctrl_io] Grid generation level: 3
+[DEBUG ctrl_io] Even tempered basis generation: false
+[DEBUG ctrl_io] The diis mixing with (param, max_vec_len) = (0.2, 8) is employed for the SCF procedure
+Turn on the diis mixing after 1 step(s) of SCF iteractions with the linear mixing
 =========================================================
-the functional of 'scan' contains
-The density functional 'SCAN exchange of Sun, Ruzsinszky, and Perdew' belongs to the 'MGGA' family and is defined in the reference(s):
-(0): J. Sun, A. Ruzsinszky, and J. P. Perdew.,  Phys. Rev. Lett. 115, 036402 (2015)
-The density functional 'SCAN correlation of Sun, Ruzsinszky, and Perdew' belongs to the 'MGGA' family and is defined in the reference(s):
-(0): J. Sun, A. Ruzsinszky, and J. P. Perdew.,  Phys. Rev. Lett. 115, 036402 (2015)
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [263, 267]
+SCF DFA parameters: [1.0, 1.0]
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== detailed info of the scf functional ====
+ID Number       : 263
+Identifier      : mgga_x_scan
+Description     : SCAN exchange of Sun, Ruzsinszky, and Perdew
+Attributes
+    Kind        : Exchange
+    Family      : MGGA
+    Spin        : Unpolarized
+Flags
+    Derivative  : HaveEXC | HaveVXC | HaveFXC
+    Dimension   : Dim3
+    CAM         : <empty>
+    VV10        : <empty>
+    MGGA        : NeedsTau | EnforceFHC
+    Device      : <empty>
+External Parameters
+    -       _c1 =    0.667             c1 parameter
+    -       _c2 =    0.8               c2 parameter
+    -        _d =    1.24              d parameter
+    -       _k1 =    0.065             k1 parameter
+References
+    - J. Sun, A. Ruzsinszky, and J. P. Perdew.,  Phys. Rev. Lett. 115, 036402 (2015)
+      DOI: 10.1103/PhysRevLett.115.036402
+ID Number       : 267
+Identifier      : mgga_c_scan
+Description     : SCAN correlation of Sun, Ruzsinszky, and Perdew
+Attributes
+    Kind        : Correlation
+    Family      : MGGA
+    Spin        : Unpolarized
+Flags
+    Derivative  : HaveEXC | HaveVXC | HaveFXC
+    Dimension   : Dim3
+    CAM         : <empty>
+    VV10        : <empty>
+    MGGA        : NeedsTau | EnforceFHC
+    Device      : <empty>
+References
+    - J. Sun, A. Ruzsinszky, and J. P. Perdew.,  Phys. Rev. Lett. 115, 036402 (2015)
+      DOI: 10.1103/PhysRevLett.115.036402
+==== End of Summary ====
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
 Libxc version used in REST: 7.0.0
 nbas: 9, natm: 4 for standard basis sets
@@ -55,9 +99,9 @@ numbasis: 29, num_auxbas: 131
 Molecule_name: NH3
 job_type = "SinglePoint"
 print_level = 2
-basis_path = "cc-pVDZ"
+basis_path = "/home/qiruigao/rest_workspace/rest/basis-set-pool/cc-pvdz"
 basis_type = "spheric"
-auxbas_path = "def2-SV(P)-JKFIT"
+auxbas_path = "/home/qiruigao/rest_workspace/rest/basis-set-pool/def2-universal-jkfit"
 auxbas_type = "spheric"
 use_auxbas = true
 even_tempered_basis = false
@@ -104,16 +148,29 @@ max_scf_cycle = 100
 scf_acc_rho = 0.00000001
 scf_acc_eev = 0.000001
 scf_acc_etot = 0.00000001
-restart = false
+scf_conv_criteria = "dm,eev"
+scf_acc_g = 0.00001
+has_chkfile = false
+solvent_enabled = false
+solvent_ri = true
+solv_epsilon = 1.0
+solvent_model = "CPCM"
+solv_chunk = 8
+pcm_cavity_radii = "UFF"
+solvent_name = ""
 chkfile = "none"
 chkfile_type = "hdf5"
 guessfile = "none"
-guessfile_type = "none"
-external_init_guess = false
+guessfile_type = "hdf5"
 initial_guess = "sad"
+basis_projection = "occupied"
 noiter = false
 check_stab = false
 use_dm_only = false
+vxc_screen_threshold = 0.000000000000001
+ao_cutoff = 0.000000000001
+non0tab_blksize = 0
+drop_dense_ao = false
 algorithm_jk = "default"
 algorithm_j = "default"
 algorithm_k = "default"
@@ -126,31 +183,41 @@ atom_sad = false
 occupation_type = "INTEGER"
 frac_tolerant = 0.001
 deep_pot = false
+run_lib_rint = false
 bench_eps = false
 num_threads = 4
 batch_size = 64
 nforce_displacement = 0.0013
 ndipole_displacement = 0.0003
+nhessian_displacement = 0.005
 force_state_occupation = []
 auxiliary_reference_states = []
-pt2_mpi_mode = 0
 abort_on_mem_exceed = true
+smear_anneal = false
 guess_mix = false
 guess_mix_theta_deg = [15.0, 15.0]
+start_mix_cycle = 0
+xc_parser = "legacy"
+hamiltonian_distributed = "auto"
+use_fxc_opt = false
+rel = "None"
+analdrv_tasks = []
 
 [quasiparticle_methods]
-gw_scheme = "no gw"
-homo_lumo_gw_qp = true
+gw_scheme = "extrapolated"
+gw_variant = "cd"
+homo_lumo_gw_qp = false
 x_alpha = 0.5
 save_qp = false
 bse_davidson_solver = false
 davidson_target_excitations = 6
-davidson_converge_threshold = 0.000001
+davidson_converge_threshold = 0.0000000001
 davidson_maximum_subspace_size = 18
 davidson_restart_dimensions = 9
 davidson_max_iter = 20
 davidson_add_dimensions = 9
 bse_tda = false
+print_nto = false
 bse_spin = "none"
 bse_cutoff_energy = 1000000.0
 save_bse_terms = false
@@ -161,48 +228,138 @@ gw_linearize_shift = 0.01
 gw_linearize_derivative_h = 0.0000000001
 renormalized_singles = false
 w_rs = false
+rs_full_space = false
 scgw = "g0w0"
 gw = false
 bse_exchange_rescaling = 1.0
 save_bse_excitations = false
 evgw_rounds = 0
 save_gw_homo_lumo_qp = false
-save_single_qp_path = "single_qp_save.txt"
+save_qp_path = "single_qp_save.txt"
 save_first_excitation = false
 save_first_excitation_path = "first_excitation_save.txt"
+use_low_rank_contour = false
+low_rank_grid_type = "linear"
+nomega_chi_real = 6
+low_rank_tolerance = 0.001
+omega_chi_max = 0.0
+nomega_sigma = 10
+step_sigma = 0.05
+fourier_self_energy = false
+fse_sin_coeff_path = "fse_sin_coeff.txt"
+fse_cos_coeff_path = "fse_cos_coeff.txt"
+hermite_self_energy = false
+hermite_coeff_path = "hermite_coeff.txt"
 parse_qp_path = "./qp_energies"
 bse_qp_polarization = false
-threshold = 0.1
+gw_extrapolate_occ_threshold = 0.5
+gw_extrapolate_vir_threshold = 0.5
+external_field_freq = 0.5
+lifetime_gamma = 0.001
 gw_or_bse = "gw"
 gw_span_energy = 0.1
 gw_search_grid = 21
 bse_max_ang_momentum = 10
 gw_rootfinder = "newton"
 simplified_bse = false
+self_energy_spectrum_test = false
+spectrum_test_start = -1.0
+spectrum_test_end = 0.0
+spectrum_test_step = 0.01
 pysoc = false
+gw_imag_rayon = true
+bse_feast_renormalized_doubles = false
+bse_renormalized_doubles_extra_width = 0.5
+bse_feast_precondition_type = "diagonal"
+bse_feast_inner_gmres_tol = 0.0001
+bse_feast_inner_gmres_restart = 50
+bse_feast_inner_gmres_max_iter = 100
+qsgw_max_iter = 50
+qsgw_energy_tol = 0.00001
+qsgw_mix_param = 0.5
+qsgw_eta = 0.001
+cdgw_eta = 0.0
+cdgw_res_tol = 0.001
+ac_num_samples = 16
+ac_omega_max = 5.0
+ac_eta = 0.001
+selfenergy_state_range = 100000
+response_bse_x_start = 0.0
+response_bse_x_end = 1.0
+response_bse_x_points = 2
+response_bse_y_start = 0.0
+response_bse_y_end = 1.0
+response_bse_y_points = 2
+response_bse_z_start = 0.0
+response_bse_z_end = 1.0
+response_bse_z_points = 2
+response_bse_grids = [[0.0, 0.0, 0.0], [0.0, 0.0, 1.0], [0.0, 1.0, 0.0], [0.0, 1.0, 1.0], [1.0, 0.0, 0.0], [1.0, 0.0, 1.0], [1.0, 1.0, 0.0], [1.0, 1.0, 1.0]]
+response_bse_solver = "klopper"
+response_bse_tol = 0.000001
+response_bse_max_iter = 200
+bse_feast_solver = false
+bse_eigenrange_min = 0.0
+bse_eigenrange_max = 0.5
+bse_m_expected = 20
+bse_max_feast_iter = 30
+bse_tol_feast = 0.00000001
+bse_feast_cg_max_iter = 100
+bse_feast_cg_tol = 0.00000001
+bse_feast_gmres_restart = 200
+bse_feast_gmres_max_iter = 500
+bse_feast_init_guess_type = "random"
+bse_feast_gaussian_width_factor = 0.5
+bse_feast_contour_rayon = true
+bse_feast_n_quad = 8
+nonlinear_bse = false
+nlfeast_centre = 0.0
+nlfeast_radius = 0.5
+nlfeast_m0 = 20
+nlfeast_n_quad = 12
+nlfeast_max_iter = 20
+nlfeast_tol = 0.00000001
+nlfeast_gmres_restart = 200
+nlfeast_gmres_max_it = 500
+nlfeast_gmres_tol = 0.000001
+export_matvec_count = false
+gw_switch_fallback_threshold = 1000000.0
+
+[j2c_decomp]
+policy = "eig"
+threshold = 0.0000000000001
+uplo = "Upper"
+distributed = "auto"
+
+[ri_pt2]
+mpi_mode = 0
+fp_mode = "FP32"
+new_driver = false
+streaming = true
 
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for RI integrals (28167.30 MB) is more than required (1.26 MB).
+Memory available for 1.5 times of RI integrals (25637.44 MB) is more than required (0.63 MB).
 Using standard incore RI-J/K algorithms.
-Nuc_energy:      11.84792373 Hartree
-no empirical dispersion correction is employed
+Nuc_energy:      11.84792379 Hartree
+[DEBUG scf_io] no empirical dispersion correction is employed
 No ghost effective potential
 No ghost point charges
-Detailed time report:
-all ri    |:    0.004 s for for the total evaluations of ri3fn
-prim ri   |:    0.002 s for for the pure three-center integrals
-aux_ij    |:    0.000 s for for the coulomb matrix of auxiliary basis
-inv_sqrt  |:    0.002 s for for the sqrt inverse of aux_ij
-ri_v      |:    0.000 s for for RI dot aux_v^{-1/2}
 Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.01677135 with the total number of basis functions:     29
 Grid size: 44118
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=97.6% → skipping (AO too dense), falling back to dense
 
 =======================
 Generating SAD for atom: N
 =======================
-the functional of 'hf' contains
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
 Libxc version used in REST: 7.0.0
 nbas: 3, natm: 1 for standard basis sets
@@ -211,7 +368,7 @@ final nbas: 28,final natm: 2
 numbasis: 14, num_auxbas: 77
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for RI integrals (28066.83 MB) is more than required (0.17 MB).
+Memory available for 1.5 times of RI integrals (25585.93 MB) is more than required (0.09 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -220,39 +377,48 @@ Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.04514111 with the total number of basis functions:     14
 Grid size: 14046
 Initial guess from SAP
-The evaluation of vmat costs             0.00 seconds
+The evaluation of vmat costs             0.02 seconds
 The total energy:       -53.8215300135 Ha by the initial guess
+Initial grad_dm l2: 1.07409e-1 Ha
+SCF Change: DM 8.71264e-3; eev 1.08134e-2 Ha; etot -7.40676e-3 Ha; grad 5.48708e-2 Ha
 Energy:     -53.8289367734 Ha after    1 iterations (in       0.00 seconds).
-SCF Change: DM 2.27978e-3; eev 4.87972e-3 Ha; etot -4.28859e-4 Ha
+SCF Change: DM 2.27978e-3; eev 4.87972e-3 Ha; etot -4.28859e-4 Ha; grad 8.65564e-3 Ha
 Energy:     -53.8293656325 Ha after    2 iterations (in       0.00 seconds).
-SCF Change: DM 3.50442e-4; eev 4.04138e-3 Ha; etot 4.85959e-4 Ha
+SCF Change: DM 3.50442e-4; eev 4.04138e-3 Ha; etot 4.85959e-4 Ha; grad 1.97335e-3 Ha
 Energy:     -53.8288796732 Ha after    3 iterations (in       0.00 seconds).
-SCF Change: DM 8.16143e-5; eev 3.76905e-4 Ha; etot 3.50232e-4 Ha
+SCF Change: DM 8.16143e-5; eev 3.76905e-4 Ha; etot 3.50232e-4 Ha; grad 6.99398e-4 Ha
 Energy:     -53.8285294412 Ha after    4 iterations (in       0.00 seconds).
-SCF Change: DM 9.08879e-5; eev 1.12885e-3 Ha; etot -3.17968e-5 Ha
+SCF Change: DM 9.08879e-5; eev 1.12885e-3 Ha; etot -3.17968e-5 Ha; grad 1.19978e-4 Ha
 Energy:     -53.8285612380 Ha after    5 iterations (in       0.00 seconds).
-SCF Change: DM 3.97485e-5; eev 5.32169e-5 Ha; etot -7.70329e-5 Ha
+SCF Change: DM 3.97485e-5; eev 5.32169e-5 Ha; etot -7.70329e-5 Ha; grad 1.66189e-4 Ha
 Energy:     -53.8286382708 Ha after    6 iterations (in       0.00 seconds).
-SCF Change: DM 2.39735e-5; eev 3.58422e-4 Ha; etot 2.08980e-5 Ha
+SCF Change: DM 2.39735e-5; eev 3.58422e-4 Ha; etot 2.08980e-5 Ha; grad 3.85363e-5 Ha
 Energy:     -53.8286173728 Ha after    7 iterations (in       0.00 seconds).
-SCF Change: DM 1.42739e-6; eev 8.37123e-5 Ha; etot 1.38655e-5 Ha
+SCF Change: DM 1.42739e-6; eev 8.37123e-5 Ha; etot 1.38655e-5 Ha; grad 3.36408e-6 Ha
 Energy:     -53.8286035073 Ha after    8 iterations (in       0.00 seconds).
-SCF Change: DM 2.06579e-7; eev 3.06027e-6 Ha; etot -6.97753e-12 Ha
+SCF Change: DM 2.13041e-7; eev 3.15600e-6 Ha; etot -7.05569e-12 Ha; grad 5.65115e-7 Ha
 Energy:     -53.8286035073 Ha after    9 iterations (in       0.00 seconds).
-SCF Change: DM 8.73960e-8; eev 8.17252e-7 Ha; etot -4.26326e-13 Ha
+SCF Change: DM 8.19875e-8; eev 8.84654e-7 Ha; etot -3.69482e-13 Ha; grad 1.83870e-7 Ha
 Energy:     -53.8286035073 Ha after   10 iterations (in       0.00 seconds).
-SCF Change: DM 1.81119e-8; eev 9.88027e-8 Ha; etot -2.13163e-14 Ha
+SCF Change: DM 1.50816e-9; eev 2.54582e-9 Ha; etot -2.13163e-14 Ha; grad 2.59909e-8 Ha
 Energy:     -53.8286035073 Ha after   11 iterations (in       0.00 seconds).
-SCF Change: DM 3.49374e-15; eev 1.56715e-14 Ha; etot  0.00000e0 Ha
-Energy:     -53.8286035073 Ha after   12 iterations (in       0.00 seconds).
-SCF is converged after   12 iterations.
-the job costs             0.02 seconds
+SCF is converged after   11 iterations.
+Energy:       -53.8286035073 Ha
+grad_dm l2: 2.43123e-8 Ha
+the job costs             0.07 seconds
 SAD generation for N complete.
 
 =======================
 Generating SAD for atom: H
 =======================
-the functional of 'hf' contains
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 2
+SCF DFA components: []
+SCF DFA parameters: []
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
 Libxc version used in REST: 7.0.0
 nbas: 2, natm: 1 for standard basis sets
@@ -261,7 +427,7 @@ final nbas: 8,final natm: 2
 numbasis:  5, num_auxbas: 18
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for RI integrals (28070.83 MB) is more than required (0.01 MB).
+Memory available for 1.5 times of RI integrals (25582.65 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -270,155 +436,256 @@ Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.09631310 with the total number of basis functions:      5
 Grid size: 10024
 Initial guess from SAP
-The evaluation of vmat costs             0.00 seconds
+The evaluation of vmat costs             0.01 seconds
 The total energy:        -0.4813036137 Ha by the initial guess
+Initial grad_dm l2: (6.61183e-2, 0.00000e0) Ha
+SCF Change: DM (4.64758e-2, 0.00000e0); eev 3.03801e-2 Ha; etot -1.52311e-2 Ha; grad (5.74368e-2, 0.00000e0) Ha
 Energy:      -0.4965346785 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    1 iterations (in       0.00 seconds).
-SCF Change: DM (1.26941e-2, 0.00000e0); eev 4.03746e-2 Ha; etot -4.92660e-3 Ha
+SCF Change: DM (1.26941e-2, 0.00000e0); eev 4.03746e-2 Ha; etot -4.92660e-3 Ha; grad (2.02250e-2, 0.00000e0) Ha
 Energy:      -0.5014612802 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    2 iterations (in       0.00 seconds).
-SCF Change: DM (1.02272e-3, 0.00000e0); eev 1.69718e-2 Ha; etot 1.36028e-3 Ha
+SCF Change: DM (1.02272e-3, 0.00000e0); eev 1.69718e-2 Ha; etot 1.36028e-3 Ha; grad (3.74676e-3, 0.00000e0) Ha
 Energy:      -0.5001010045 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    3 iterations (in       0.00 seconds).
-SCF Change: DM (7.61967e-4, 0.00000e0); eev 3.99250e-3 Ha; etot 7.54061e-4 Ha
+SCF Change: DM (7.61967e-4, 0.00000e0); eev 3.99250e-3 Ha; etot 7.54061e-4 Ha; grad (2.13473e-4, 0.00000e0) Ha
 Energy:      -0.4993469436 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    4 iterations (in       0.00 seconds).
-SCF Change: DM (4.48061e-4, 0.00000e0); eev 3.22229e-4 Ha; etot 1.20736e-4 Ha
+SCF Change: DM (4.48061e-4, 0.00000e0); eev 3.22229e-4 Ha; etot 1.20736e-4 Ha; grad (4.55976e-4, 0.00000e0) Ha
 Energy:      -0.4992262079 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    5 iterations (in       0.00 seconds).
-SCF Change: DM (1.33888e-4, 0.00000e0); eev 2.85320e-4 Ha; etot -2.17183e-5 Ha
+SCF Change: DM (1.33888e-4, 0.00000e0); eev 2.85320e-4 Ha; etot -2.17183e-5 Ha; grad (1.89815e-4, 0.00000e0) Ha
 Energy:      -0.4992479261 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    6 iterations (in       0.00 seconds).
-SCF Change: DM (1.90126e-5, 0.00000e0); eev 1.48790e-4 Ha; etot -2.13903e-5 Ha
+SCF Change: DM (1.90126e-5, 0.00000e0); eev 1.48790e-4 Ha; etot -2.13903e-5 Ha; grad (4.40123e-5, 0.00000e0) Ha
 Energy:      -0.4992693165 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    7 iterations (in       0.00 seconds).
-SCF Change: DM (5.81595e-6, 0.00000e0); eev 4.78372e-5 Ha; etot -9.08690e-6 Ha
+SCF Change: DM (5.81595e-6, 0.00000e0); eev 4.78372e-5 Ha; etot -9.08690e-6 Ha; grad (3.52794e-6, 0.00000e0) Ha
 Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    8 iterations (in       0.00 seconds).
-SCF Change: DM (3.35119e-6, 0.00000e0); eev 4.14724e-6 Ha; etot -4.31666e-11 Ha
+SCF Change: DM (5.69163e-7, 0.00000e0); eev 7.04365e-7 Ha; etot -4.31666e-11 Ha; grad (1.28968e-6, 0.00000e0) Ha
 Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after    9 iterations (in       0.00 seconds).
-SCF Change: DM (5.09403e-16, 0.00000e0); eev 1.48564e-11 Ha; etot -6.65884e-12 Ha
+SCF Change: DM (3.20927e-7, 0.00000e0); eev 3.97161e-7 Ha; etot -2.06996e-12 Ha; grad (1.07064e-6, 0.00000e0) Ha
 Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   10 iterations (in       0.00 seconds).
-SCF is converged after   10 iterations.
-the job costs             0.01 seconds
+SCF Change: DM (2.16354e-7, 0.00000e0); eev 2.67748e-7 Ha; etot -9.97535e-13 Ha; grad (9.47137e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   11 iterations (in       0.00 seconds).
+SCF Change: DM (1.59792e-7, 0.00000e0); eev 1.97749e-7 Ha; etot -6.03517e-13 Ha; grad (8.63874e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   12 iterations (in       0.00 seconds).
+SCF Change: DM (1.24842e-7, 0.00000e0); eev 1.54497e-7 Ha; etot -4.10227e-13 Ha; grad (8.02379e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   13 iterations (in       0.00 seconds).
+SCF Change: DM (1.01347e-7, 0.00000e0); eev 1.25421e-7 Ha; etot -2.99538e-13 Ha; grad (7.54335e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   14 iterations (in       0.00 seconds).
+SCF Change: DM (8.45994e-8, 0.00000e0); eev 1.04695e-7 Ha; etot -2.29261e-13 Ha; grad (7.15332e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   15 iterations (in       0.00 seconds).
+SCF Change: DM (8.88583e-7, 0.00000e0); eev 1.09966e-6 Ha; etot -1.82410e-13 Ha; grad (6.82774e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   16 iterations (in       0.00 seconds).
+SCF Change: DM (1.01876e-7, 0.00000e0); eev 1.26076e-7 Ha; etot -1.40121e-12 Ha; grad (3.40810e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   17 iterations (in       0.00 seconds).
+SCF Change: DM (7.39139e-8, 0.00000e0); eev 9.14712e-8 Ha; etot -1.01030e-13 Ha; grad (3.01603e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   18 iterations (in       0.00 seconds).
+SCF Change: DM (6.39732e-8, 0.00000e0); eev 7.91693e-8 Ha; etot -6.53921e-14 Ha; grad (2.73158e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   19 iterations (in       0.00 seconds).
+SCF Change: DM (6.13802e-8, 0.00000e0); eev 7.59603e-8 Ha; etot -5.11813e-14 Ha; grad (2.48538e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   20 iterations (in       0.00 seconds).
+SCF Change: DM (6.38197e-8, 0.00000e0); eev 7.89792e-8 Ha; etot -4.48530e-14 Ha; grad (2.24917e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   21 iterations (in       0.00 seconds).
+SCF Change: DM (7.16226e-8, 0.00000e0); eev 8.86356e-8 Ha; etot -4.17999e-14 Ha; grad (2.00356e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   22 iterations (in       0.00 seconds).
+SCF Change: DM (8.75707e-8, 0.00000e0); eev 1.08372e-7 Ha; etot -4.11338e-14 Ha; grad (1.72793e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   23 iterations (in       0.00 seconds).
+SCF Change: DM (1.19893e-7, 0.00000e0); eev 1.48372e-7 Ha; etot -4.21330e-14 Ha; grad (1.39092e-7, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   24 iterations (in       0.00 seconds).
+SCF Change: DM (2.55590e-8, 0.00000e0); eev 3.16302e-8 Ha; etot -4.30767e-14 Ha; grad (9.29520e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   25 iterations (in       0.00 seconds).
+SCF Change: DM (2.27593e-8, 0.00000e0); eev 2.81655e-8 Ha; etot -6.71685e-15 Ha; grad (8.31158e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   26 iterations (in       0.00 seconds).
+SCF Change: DM (2.20158e-8, 0.00000e0); eev 2.72453e-8 Ha; etot -5.77316e-15 Ha; grad (7.43570e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   27 iterations (in       0.00 seconds).
+SCF Change: DM (2.21017e-8, 0.00000e0); eev 2.73517e-8 Ha; etot -4.44089e-15 Ha; grad (6.58844e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   28 iterations (in       0.00 seconds).
+SCF Change: DM (2.25148e-8, 0.00000e0); eev 2.78629e-8 Ha; etot -4.32987e-15 Ha; grad (5.73788e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   29 iterations (in       0.00 seconds).
+SCF Change: DM (2.27190e-8, 0.00000e0); eev 2.81156e-8 Ha; etot -3.33067e-15 Ha; grad (4.87141e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   30 iterations (in       0.00 seconds).
+SCF Change: DM (2.16949e-8, 0.00000e0); eev 2.68482e-8 Ha; etot -3.21965e-15 Ha; grad (3.99709e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   31 iterations (in       0.00 seconds).
+SCF Change: DM (1.74029e-8, 0.00000e0); eev 2.15366e-8 Ha; etot -2.72005e-15 Ha; grad (3.16218e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   32 iterations (in       0.00 seconds).
+SCF Change: DM (7.53886e-9, 0.00000e0); eev 9.32960e-9 Ha; etot -1.27676e-15 Ha; grad (2.49244e-8, 0.00000e0) Ha
+Energy:      -0.4992784034 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   33 iterations (in       0.00 seconds).
+SCF is converged after   33 iterations.
+Energy:        -0.4992784034 Ha
+grad_dm l2: 2.20232e-8 Ha
+the job costs             0.04 seconds
 SAD generation for H complete.
-total electron number:      10.00000004
-Exc:      -7.71601730, Vxc:      -5.20024804
-Initial guess energy using single atom density (SAD):     -56.5038294770925731
+[DEBUG scf_io] total electron number:      10.00000004
+[DEBUG scf_io] Exc:      -7.71601726, Vxc:      -5.20024801
+Initial guess energy using single atom density (SAD):     -56.5038295008680365
 Detailed time report:
-DFT Grids |:    0.108 s for Initialization of the tabulated Grids and AOs
+Overall   |:    1.548 s for SCF Preparation
 ISDF      |:    0.000 s for ISDF initialization
-CInt      |:    0.007 s for Two, Three, and Four-center integrals
-InitGuess |:    0.056 s for Prepare initial guess
-Overall   |:    0.170 s for SCF Preparation
-total electron number:       9.99999958
-Exc:      -8.36573866, Vxc:      -5.65271580
-The total energy:       -56.3490603255 Ha by the initial guess
-total electron number:       9.99999942
-Exc:      -7.57506469, Vxc:      -5.09073453
-HOMO:      -0.56899674, LUMO:      -0.029754, H-L Gap:       0.53924278
-Energy:     -56.1731520004 Ha after    1 iterations (in       0.01 seconds).
+DFT Grids |:    1.359 s for Initialization of the tabulated Grids and AOs
+Solvent Calculation|:    0.000 s for Initialization of the solvent calculation
+CInt      |:    0.008 s for Two, Three, and Four-center integrals
+InitGuess |:    0.180 s for Prepare initial guess
+[DEBUG scf_io] total electron number:       9.99999958
+[DEBUG scf_io] Exc:      -8.36573868, Vxc:      -5.65271581
+The total energy:       -56.3490603120 Ha by the initial guess
+Initial grad_dm l2:  1.51235e0 Ha
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999942
+[DEBUG scf_io] Exc:      -7.57506468, Vxc:      -5.09073452
+HOMO (  4):      -0.56899675, LUMO (  5):      -0.029754, H-L Gap:       0.53924279
+SCF Change: DM 1.43592e-1; eev  2.41445e0 Ha; etot 1.75908e-1 Ha; grad  2.30891e0 Ha
+Energy:     -56.1731519790 Ha after    1 iterations (in       0.05 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999968
-Exc:      -8.71952500, Vxc:      -5.89743109
-HOMO:      -0.18403132, LUMO:       0.082660, H-L Gap:       0.26669163
-SCF Change: DM 1.00503e-1; eev  1.53420e0 Ha; etot 2.92937e-1 Ha
-Energy:     -55.8802147742 Ha after    2 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999968
+[DEBUG scf_io] Exc:      -8.71952502, Vxc:      -5.89743110
+HOMO (  4):      -0.22713658, LUMO (  5):       0.068514, H-L Gap:       0.29565104
+SCF Change: DM 8.96671e-2; eev  1.34632e0 Ha; etot 2.92937e-1 Ha; grad  2.67595e0 Ha
+Energy:     -55.8802147492 Ha after    2 iterations (in       0.05 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999948
-Exc:      -7.96057708, Vxc:      -5.36217438
-HOMO:      -0.20337515, LUMO:       0.076469, H-L Gap:       0.27984462
-SCF Change: DM 8.64426e-3; eev 1.04390e-1 Ha; etot -6.39099e-1 Ha
-Energy:     -56.5193133668 Ha after    3 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999950
+[DEBUG scf_io] Exc:      -8.05003641, Vxc:      -5.42640132
+HOMO (  4):      -0.20350961, LUMO (  5):       0.076665, H-L Gap:       0.28017448
+SCF Change: DM 4.36013e-3; eev 9.78422e-2 Ha; etot -6.42211e-1 Ha; grad 1.95932e-1 Ha
+Energy:     -56.5224257599 Ha after    3 iterations (in       0.05 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999951
-Exc:      -8.01351060, Vxc:      -5.40056526
-HOMO:      -0.20450654, LUMO:       0.074349, H-L Gap:       0.27885527
-SCF Change: DM 2.46240e-4; eev 1.12467e-2 Ha; etot -5.23578e-3 Ha
-Energy:     -56.5245491472 Ha after    4 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01194385, Vxc:      -5.39943856
+HOMO (  4):      -0.20413897, LUMO (  5):       0.074530, H-L Gap:       0.27866854
+SCF Change: DM 4.29167e-4; eev 8.64660e-3 Ha; etot -2.12114e-3 Ha; grad 7.44620e-3 Ha
+Energy:     -56.5245469020 Ha after    4 iterations (in       0.05 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999951
-Exc:      -8.01306193, Vxc:      -5.40027895
-HOMO:      -0.20448289, LUMO:       0.074416, H-L Gap:       0.27889857
-SCF Change: DM 4.69406e-5; eev 7.54018e-4 Ha; etot -3.33952e-6 Ha
-Energy:     -56.5245524867 Ha after    5 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01260463, Vxc:      -5.39994820
+HOMO (  4):      -0.20438188, LUMO (  5):       0.074480, H-L Gap:       0.27886167
+SCF Change: DM 6.41558e-5; eev 5.11986e-4 Ha; etot -5.39071e-6 Ha; grad 3.02117e-3 Ha
+Energy:     -56.5245522927 Ha after    5 iterations (in       0.05 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999951
-Exc:      -8.01279100, Vxc:      -5.40008827
-HOMO:      -0.20443356, LUMO:       0.074437, H-L Gap:       0.27887015
-SCF Change: DM 6.07533e-6; eev 2.53401e-4 Ha; etot -2.33177e-7 Ha
-Energy:     -56.5245527199 Ha after    6 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01270586, Vxc:      -5.40002680
+HOMO (  4):      -0.20443002, LUMO (  5):       0.074438, H-L Gap:       0.27886840
+SCF Change: DM 8.44470e-6; eev 2.84507e-4 Ha; etot -4.23770e-7 Ha; grad 3.49164e-4 Ha
+Energy:     -56.5245527165 Ha after    6 iterations (in       0.05 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999951
-Exc:      -8.01276465, Vxc:      -5.40006935
-HOMO:      -0.20443089, LUMO:       0.074437, H-L Gap:       0.27886812
-SCF Change: DM 2.79517e-7; eev 1.67338e-5 Ha; etot -3.36069e-9 Ha
-Energy:     -56.5245527232 Ha after    7 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01276493, Vxc:      -5.40006952
+HOMO (  4):      -0.20443147, LUMO (  5):       0.074437, H-L Gap:       0.27886827
+SCF Change: DM 3.30543e-7; eev 1.02749e-5 Ha; etot -6.85730e-9 Ha; grad 9.34943e-6 Ha
+Energy:     -56.5245527234 Ha after    7 iterations (in       0.06 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.06s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999951
-Exc:      -8.01276538, Vxc:      -5.40006985
-HOMO:      -0.20443112, LUMO:       0.074437, H-L Gap:       0.27886811
-SCF Change: DM 6.97306e-8; eev 1.26962e-6 Ha; etot -4.33431e-12 Ha
-Energy:     -56.5245527233 Ha after    8 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01276613, Vxc:      -5.40007040
+HOMO (  4):      -0.20443154, LUMO (  5):       0.074437, H-L Gap:       0.27886832
+SCF Change: DM 3.36191e-8; eev 3.82975e-7 Ha; etot -4.33431e-12 Ha; grad 2.63780e-6 Ha
+Energy:     -56.5245527234 Ha after    8 iterations (in       0.05 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999951
-Exc:      -8.01276566, Vxc:      -5.40007006
-HOMO:      -0.20443127, LUMO:       0.074437, H-L Gap:       0.27886813
-SCF Change: DM 2.53069e-8; eev 7.78488e-7 Ha; etot -5.89750e-13 Ha
-Energy:     -56.5245527233 Ha after    9 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01276623, Vxc:      -5.40007047
+HOMO (  4):      -0.20443152, LUMO (  5):       0.074437, H-L Gap:       0.27886833
+SCF Change: DM 1.23699e-7; eev 4.28521e-7 Ha; etot 4.54747e-13 Ha; grad 4.00595e-6 Ha
+Energy:     -56.5245527234 Ha after    9 iterations (in       0.06 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-total electron number:       9.99999951
-Exc:      -8.01276581, Vxc:      -5.40007017
-HOMO:      -0.20443128, LUMO:       0.074437, H-L Gap:       0.27886813
-SCF Change: DM 2.73253e-9; eev 5.29055e-8 Ha; etot -2.84217e-14 Ha
-Energy:     -56.5245527233 Ha after   10 iterations (in       0.01 seconds).
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01276623, Vxc:      -5.40007047
+HOMO (  4):      -0.20443126, LUMO (  5):       0.074437, H-L Gap:       0.27886816
+SCF Change: DM 2.41190e-7; eev 1.73778e-6 Ha; etot 2.94165e-12 Ha; grad 8.84837e-6 Ha
+Energy:     -56.5245527234 Ha after   10 iterations (in       0.05 seconds).
 Detailed timing info in this SCF step:
-prepare_next_input:            0.01s
+prepare_next_input:            0.05s
 diagonalize_hamiltonian:       0.00s
 generate_density_matrix:       0.00s
 check_scf_convergence:         0.00s
 scf_records.update:            0.00s
-SCF is converged after   10 iterations.
-total electron number:       9.99999951
-Exc:      -8.01276583, Vxc:      -5.40007018
-HOMO:      -0.20443128, LUMO:       0.074437, H-L Gap:       0.27886813
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01276583, Vxc:      -5.40007018
+HOMO (  4):      -0.20443127, LUMO (  5):       0.074437, H-L Gap:       0.27886814
+SCF Change: DM 2.98112e-8; eev 1.30734e-7 Ha; etot -3.63798e-12 Ha; grad 1.16466e-6 Ha
+Energy:     -56.5245527234 Ha after   11 iterations (in       0.05 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.05s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+[DEBUG scf_io::scfrecord] using diis mixer
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01276582, Vxc:      -5.40007018
+HOMO (  4):      -0.20443128, LUMO (  5):       0.074437, H-L Gap:       0.27886813
+SCF Change: DM 2.23028e-9; eev 6.45196e-8 Ha; etot -4.26326e-14 Ha; grad 7.44682e-8 Ha
+Energy:     -56.5245527234 Ha after   12 iterations (in       0.06 seconds).
+Detailed timing info in this SCF step:
+prepare_next_input:            0.05s
+diagonalize_hamiltonian:       0.00s
+generate_density_matrix:       0.00s
+check_scf_convergence:         0.00s
+scf_records.update:            0.00s
+solvent_model.refresh:         0.00s
+SCF is converged after   12 iterations.
+[DEBUG scf_io] total electron number:       9.99999951
+[DEBUG scf_io] Exc:      -8.01276583, Vxc:      -5.40007019
+Energy:       -56.5245527234 Ha
+grad_dm l2: 6.07111e-9 Ha
+HOMO (  4):      -0.20443128, LUMO (  5):       0.074437, H-L Gap:       0.27886813
 Eigenvalues in Restricted HF (or KS) calculation:
    State    Occupation        Eigenvalue
        0       2.00000        -14.135295
@@ -435,24 +702,238 @@ Mulliken population analysis:
   2-H  :   0.090649
   3-H  :   0.090575
 Now starts quasiparticle method computation!
+Current XC data:
+dfa_compnt_scf=[263, 267]
+dfa_paramr_scf=[1.0, 1.0]
+dfa_hybrid_scf=0
+1th occupied orbital, energy=-14.135295254239718
+2th occupied orbital, energy=-0.7975478439493784
+3th occupied orbital, energy=-0.4145314787975698
+4th occupied orbital, energy=-0.4145181850374801
+5th occupied orbital, energy=-0.20443127888263563
+1th virtual orbital, energy=0.0744368546581144
+2th virtual orbital, energy=0.16532335459016817
+3th virtual orbital, energy=0.1653438274758866
+4th virtual orbital, energy=0.5343529557354149
+5th virtual orbital, energy=0.5343893403271637
+6th virtual orbital, energy=0.6351365611727605
+7th virtual orbital, energy=0.7487770852271979
+8th virtual orbital, energy=0.8557812644403627
+9th virtual orbital, energy=0.8558512018737842
+10th virtual orbital, energy=1.0871306597148933
+11th virtual orbital, energy=1.087162495593208
+12th virtual orbital, energy=1.1744269330404729
+13th virtual orbital, energy=1.4838633082230395
+14th virtual orbital, energy=1.6915184280694917
+15th virtual orbital, energy=1.7150050386686766
+16th virtual orbital, energy=1.7150464545682365
+17th virtual orbital, energy=2.028273753530815
+18th virtual orbital, energy=2.0284327457231757
+19th virtual orbital, energy=2.216989005574056
+20th virtual orbital, energy=2.5462584329457005
+21th virtual orbital, energy=2.5464484104945053
+22th virtual orbital, energy=2.7149312255627476
+23th virtual orbital, energy=2.9844014520267095
+24th virtual orbital, energy=2.984564226255674
+homo:4,lumo:5,occ_size:5,vir_size:24,start_mo:0,num_state:29
+You are doing G0W0 calculations of entire energy spectrum
+Allocated RI Tensor: O-V, Size=[131, 5, 24], For Response=Y, AuxBas Type=Regular
+RI-OV Shape=[131, 120]
+V Matrix Constructed. This step took 1.653597ms
 The frequency integration is tabulated by  20 grids using the modified Gauss-Legendre grids
-for n=4,exchange=-0.8236472755705195
-newton now:n=4,x_curr=-0.2244312782431688,y_curr=-0.13887022683325342,derivative=-1.1046801425274033,shift=-0.12571080214724556
-newton now:n=4,x_curr=-0.3501420803904144,y_curr=0.0013324210226985933,derivative=-1.1311841346950402,shift=0.0011778993196875107
-newton now:n=4,x_curr=-0.34896418107072685,y_curr=0.0000002396428475104351,derivative=-1.1307780334313122,shift=0.00000021192739903449132
-convergence: x_curr=-0.34896396914332783,shift=0.00000021192739903449132, y_curr=0.000000000000007549516567451064
-The QP energy of HOMO obtained by GWA is -0.34896396914332783
-for n=5,exchange=-0.1259410602022246
-newton now:n=5,x_curr=0.09443685305338738,y_curr=0.08581145744379819,derivative=-1.0356883951984086,shift=0.08285451284539994
-newton now:n=5,x_curr=0.1772913658987873,y_curr=-0.00015818039422435537,derivative=-1.0360211707138856,shift=-0.0001526806581716461
-newton now:n=5,x_curr=0.17713868524061566,y_curr=-0.00000002567408480258493,derivative=-1.0356825869417552,shift=-0.0000000247895302347386
-convergence: x_curr=0.17713866045108542,shift=-0.0000000247895302347386, y_curr=-0.0000000000000006938893903907228
-The QP energy of LUMO obtained by GWA is 0.17713866045108542
+Evaluation of W_c for omega=0.31447428235971236 has finished. This step took 8.227ms
+Evaluation of W_c for omega=3.4421591657245934 has finished. This step took 8.775788ms
+Evaluation of W_c for omega=1.0966944304933726 has finished. This step took 13.449347ms
+Evaluation of W_c for omega=0.043739204912664226 has finished. This step took 13.443405ms
+Evaluation of W_c for omega=27.25613360486454 has finished. This step took 13.521784ms
+Evaluation of W_c for omega=0.0726288320683665 has finished. This step took 13.531462ms
+Evaluation of W_c for omega=0.0017237725698468571 has finished. This step took 13.576898ms
+Evaluation of W_c for omega=0.009172247378306849 has finished. This step took 13.559325ms
+Evaluation of W_c for omega=0.11122688807859561 has finished. This step took 13.645267ms
+Evaluation of W_c for omega=1.5444337306792566 has finished. This step took 13.611413ms
+Evaluation of W_c for omega=0.16187162649578213 has finished. This step took 12.306887ms
+Evaluation of W_c for omega=0.022948434159543063 has finished. This step took 13.627053ms
+Evaluation of W_c for omega=145.03073338857598 has finished. This step took 13.625259ms
+Evaluation of W_c for omega=5.7156960328653605 has finished. This step took 13.632023ms
+Evaluation of W_c for omega=2.2476579568003734 has finished. This step took 13.649566ms
+Evaluation of W_c for omega=10.893989466206694 has finished. This step took 13.610862ms
+Evaluation of W_c for omega=0.2279577547298493 has finished. This step took 13.654585ms
+Evaluation of W_c for omega=0.7949775673994122 has finished. This step took 13.67828ms
+Evaluation of W_c for omega=0.4289134827324821 has finished. This step took 13.688229ms
+Evaluation of W_c for omega=0.5828681309044502 has finished. This step took 13.702616ms
+[DBG KS] occ_size=5 start_mo=0 num_state=29 e_homo=-2.044312788826e-1 e_lumo=7.443685465811e-2
+[DBG KS] num_elec=[10.0, 5.0, 5.0] scf_homo=[4, 0] scf_lumo=[5, 0]
+[DBG KS] n=0 e=-1.413529525424e1
+[DBG KS] n=1 e=-7.975478439494e-1
+[DBG KS] n=2 e=-4.145314787976e-1
+[DBG KS] n=3 e=-4.145181850375e-1
+[DBG KS] n=4 e=-2.044312788826e-1
+[DBG KS] n=5 e=7.443685465811e-2
+[DBG KS] n=6 e=1.653233545902e-1
+[DBG KS] n=7 e=1.653438274759e-1
+[DBG KS] n=8 e=5.343529557354e-1
+[DBG KS] n=9 e=5.343893403272e-1
+[DBG KS] n=10 e=6.351365611728e-1
+[DBG KS] n=11 e=7.487770852272e-1
+[DBG KS] n=12 e=8.557812644404e-1
+[DBG KS] n=13 e=8.558512018738e-1
+[DBG KS] n=14 e=1.087130659715e0
+[DBG KS] n=15 e=1.087162495593e0
+[DBG KS] n=16 e=1.174426933040e0
+[DBG KS] n=17 e=1.483863308223e0
+[DBG KS] n=18 e=1.691518428069e0
+[DBG KS] n=19 e=1.715005038669e0
+[DBG KS] n=20 e=1.715046454568e0
+[DBG KS] n=21 e=2.028273753531e0
+[DBG KS] n=22 e=2.028432745723e0
+[DBG KS] n=23 e=2.216989005574e0
+[DBG KS] n=24 e=2.546258432946e0
+calculated orbital indices:[2, 3, 4, 5, 6, 7, 8, 9]
+Exchange=-0.7991776376236538,V_xc=-0.6035853770968742
+Orbital #2 (first round, no Fourier self-energy):
+newton now:n=2,x_curr=-0.4345314787975698,y_curr=-0.15454882220498767,derivative=-1.1054827453449434,shift=-0.13980211166187298
+newton now:n=2,x_curr=-0.5743335904594428,y_curr=0.008175911022993976,derivative=-1.5410108356039842,shift=0.005305550638642659
+newton now:n=2,x_curr=-0.5690280398208001,y_curr=0.00044225381655649265,derivative=-1.3906332593238702,shift=0.00031802332756769943
+newton now:n=2,x_curr=-0.5687100164932324,y_curr=0.0000010158268415327854,derivative=-1.3842818004650148,shift=0.0000007338295144756969
+convergence: x_curr=-0.5687092826637179,shift=0.0000007338295144756969, y_curr=0.000000000005284661597215745
+First round QP energy (no FSE): -0.5687092826637179
+GW Evaluation of orbital #2 took 11.982823ms
+Shift = -0.1541778038661481
+Exchange=-0.7991743963127134,V_xc=-0.603572436675312
+Orbital #3 (first round, no Fourier self-energy):
+newton now:n=3,x_curr=-0.43451818503748013,y_curr=-0.1545604208691123,derivative=-1.105485606445189,shift=-0.13981224175873116
+newton now:n=3,x_curr=-0.5743304267962113,y_curr=0.008183026286936346,derivative=-1.5416655410604996,shift=0.005307912818306431
+newton now:n=3,x_curr=-0.5690225139779048,y_curr=0.00044355194883050064,derivative=-1.390929433020549,shift=0.00031888889421750254
+newton now:n=3,x_curr=-0.5687036250836873,y_curr=0.0000010229324891586344,derivative=-1.3845510252186166,shift=0.0000007388189171266666
+convergence: x_curr=-0.5687028862647702,shift=0.0000007388189171266666, y_curr=0.000000000005364375610383831
+First round QP energy (no FSE): -0.5687028862647702
+GW Evaluation of orbital #3 took 11.498297ms
+Shift = -0.15418470122729006
+Exchange=-0.8236472763763485,V_xc=-0.6243471260791483
+Orbital #4 (first round, no Fourier self-energy):
+newton now:n=4,x_curr=-0.22443127888263562,y_curr=-0.13887022721445566,derivative=-1.1046801417502472,shift=-0.12571080258076395
+newton now:n=4,x_curr=-0.35014208146339953,y_curr=0.0013324209987155555,derivative=-1.1311841332239947,shift=0.001177899300017597
+newton now:n=4,x_curr=-0.34896418216338193,y_curr=0.00000023964278278443274,derivative=-1.1307780319047556,shift=0.00000021192734208035768
+convergence: x_curr=-0.34896397023603987,shift=0.00000021192734208035768, y_curr=0.000000000000007993605777301127
+First round QP energy (no FSE): -0.34896397023603987
+GW Evaluation of orbital #4 took 7.190599ms
+Shift = -0.14453269135340424
+Exchange=-0.12594105895361693,V_xc=-0.25730570289230636
+Orbital #5 (first round, no Fourier self-energy):
+newton now:n=5,x_curr=0.09443685465811441,y_curr=0.08581145664868806,derivative=-1.035688394587786,shift=0.08285451212653769
+newton now:n=5,x_curr=0.1772913667846521,y_curr=-0.0001581803878620558,derivative=-1.0360211682436393,shift=-0.00015268065239460124
+newton now:n=5,x_curr=0.1771386861322575,y_curr=-0.000000025674083997673236,derivative=-1.0356825844576312,shift=-0.000000024789529517017325
+convergence: x_curr=0.177138661342728,shift=-0.000000024789529517017325, y_curr=-0.0000000000000006938893903907228
+First round QP energy (no FSE): 0.177138661342728
+GW Evaluation of orbital #5 took 8.668585ms
+Shift = 0.10270180668461358
+Exchange=-0.14061102983074011,V_xc=-0.2762237165614283
+Orbital #6 (first round, no Fourier self-energy):
+newton now:n=6,x_curr=0.18532335459016816,y_curr=0.08461160139206306,derivative=-1.0465805875270462,shift=0.08084575846375183
+newton now:n=6,x_curr=0.26616911305392,y_curr=-0.0002701060015786183,derivative=-1.0542840933047692,shift=-0.0002561984983876038
+newton now:n=6,x_curr=0.2659129145555324,y_curr=-0.000000004326604463589234,derivative=-1.0542503300348116,shift=-0.000000004103963110399376
+convergence: x_curr=0.2659129104515693,shift=-0.000000004103963110399376, y_curr=-0.00000000000000005551115123125783
+First round QP energy (no FSE): 0.2659129104515693
+GW Evaluation of orbital #6 took 9.103377ms
+Shift = 0.10058955586140111
+Exchange=-0.14059542217157914,V_xc=-0.2761763548152282
+Orbital #7 (first round, no Fourier self-energy):
+newton now:n=7,x_curr=0.1853438274758866,y_curr=0.08458154036583357,derivative=-1.0465762784739319,shift=0.08081736812262397
+newton now:n=7,x_curr=0.2661611955985106,y_curr=-0.00026990073361832234,derivative=-1.0542758667186902,shift=-0.00025600579709593154
+newton now:n=7,x_curr=0.26590518980141464,y_curr=-0.000000004318656765534001,derivative=-1.0542421401693591,shift=-0.000000004096456213408647
+convergence: x_curr=0.2659051857049584,shift=-0.000000004096456213408647, y_curr=0.00000000000000011102230246251565
+First round QP energy (no FSE): 0.2659051857049584
+GW Evaluation of orbital #7 took 9.071788ms
+Shift = 0.1005613582290718
+Exchange=-0.1628298866962258,V_xc=-0.35388699557187575
+Orbital #8 (first round, no Fourier self-energy):
+newton now:n=8,x_curr=0.5543529557354149,y_curr=0.11796183964728213,derivative=-2.9094995087630693,shift=0.0405436877689771
+newton now:n=8,x_curr=0.594896643504392,y_curr=0.10507160914587388,derivative=-17.27559808528678,shift=0.006082082288969254
+newton now:n=8,x_curr=0.6009787257933612,y_curr=0.07891134908482744,derivative=-1.7154802204322195,shift=0.045999568018887174
+newton now:n=8,x_curr=0.6469782938122484,y_curr=0.025202684881504678,derivative=-1.094860842820733,shift=0.023019075937151988
+newton now:n=8,x_curr=0.6699973697494004,y_curr=-0.0004228677998793229,derivative=-1.153541444920414,shift=-0.00036658223399029904
+newton now:n=8,x_curr=0.66963078751541,y_curr=-0.0000005876730120313312,derivative=-1.150373998670684,shift=-0.0000005108538724887883
+convergence: x_curr=0.6696302766615375,shift=-0.0000005108538724887883, y_curr=-0.0000000000010866862965031032
+First round QP energy (no FSE): 0.6696302766615375
+GW Evaluation of orbital #8 took 29.058078ms
+Shift = 0.13527732092612266
+Exchange=-0.16282092415938126,V_xc=-0.35384510421216736
+Orbital #9 (first round, no Fourier self-energy):
+newton now:n=9,x_curr=0.5543893403271637,y_curr=0.11786096997317075,derivative=-2.965553183242875,shift=0.03974333376961666
+newton now:n=9,x_curr=0.5941326740967804,y_curr=0.1308224489899371,derivative=-66.96257836358299,shift=0.0019536650497479014
+newton now:n=9,x_curr=0.5960863391465283,y_curr=0.0929993078599115,derivative=-6.148053086962868,shift=0.0151266273313611
+newton now:n=9,x_curr=0.6112129664778894,y_curr=0.06513715111490914,derivative=-1.1893885376035307,shift=0.054765242017677726
+newton now:n=9,x_curr=0.6659782084955671,y_curr=0.004161241008134531,derivative=-1.128250747217674,shift=0.0036882235783103814
+newton now:n=9,x_curr=0.6696664320738774,y_curr=-0.00003699188265382514,derivative=-1.1507423692824759,shift=-0.00003214610293430904
+newton now:n=9,x_curr=0.6696342859709431,y_curr=-0.000000004331283331993063,derivative=-1.150473180833167,shift=-0.000000003764784268031671
+convergence: x_curr=0.6696342822061588,shift=-0.000000003764784268031671, y_curr=-0.00000000000000011102230246251565
+First round QP energy (no FSE): 0.6696342822061588
+GW Evaluation of orbital #9 took 33.068092ms
+Shift = 0.13524494187899516
+low extrapolations:2
+calculated orbitals:8
+high extrapolations:19
+Occ Shift=-0.1541778038661481, Vir Shift=0.13524494187899516
+Quasiparticle Energies from GW Approximation (in Hatree):
+   Note that only energies around the Fermi surface within 0.5 Hatree below HOMO and 0.5 Hatree above LUMO are explicitly computed by solving the quasiparticle equation,
+    while others are extrapolated using average energy shifts of the computed ones compared to corresponding SCF results
+    You can set these thresholds using the keywords "gw_extrapolate_occ_threshold" and "gw_extrapolate_vir_threshold"
+ (extrapolated) QP Energy of Orbital #0:-14.289473058105866
+ (extrapolated) QP Energy of Orbital #1:-0.9517256478155265
+ (calculated) QP Energy of Orbital #2:-0.5687092826637179
+ (calculated) QP Energy of Orbital #3:-0.5687028862647702
+ (calculated) QP Energy of Orbital #4:-0.34896397023603987
+-------Fermi Surface--------
+ (calculated) QP Energy of Orbital #5:0.177138661342728
+ (calculated) QP Energy of Orbital #6:0.2659129104515693
+ (calculated) QP Energy of Orbital #7:0.2659051857049584
+ (calculated) QP Energy of Orbital #8:0.6696302766615375
+ (calculated) QP Energy of Orbital #9:0.6696342822061588
+ (extrapolated) QP Energy of Orbital #10:0.7703815030517557
+ (extrapolated) QP Energy of Orbital #11:0.884022027106193
+ (extrapolated) QP Energy of Orbital #12:0.9910262063193579
+ (extrapolated) QP Energy of Orbital #13:0.9910961437527793
+ (extrapolated) QP Energy of Orbital #14:1.2223756015938885
+ (extrapolated) QP Energy of Orbital #15:1.2224074374722032
+ (extrapolated) QP Energy of Orbital #16:1.309671874919468
+ (extrapolated) QP Energy of Orbital #17:1.6191082501020346
+ (extrapolated) QP Energy of Orbital #18:1.8267633699484869
+ (extrapolated) QP Energy of Orbital #19:1.8502499805476718
+ (extrapolated) QP Energy of Orbital #20:1.8502913964472316
+ (extrapolated) QP Energy of Orbital #21:2.1635186954098105
+ (extrapolated) QP Energy of Orbital #22:2.1636776876021706
+ (extrapolated) QP Energy of Orbital #23:2.352233947453051
+ (extrapolated) QP Energy of Orbital #24:2.681503374824696
+ (extrapolated) QP Energy of Orbital #25:2.6816933523735003
+ (extrapolated) QP Energy of Orbital #26:2.8501761674417425
+ (extrapolated) QP Energy of Orbital #27:3.119646393905705
+ (extrapolated) QP Energy of Orbital #28:3.119809168134669
+One round of GW by extrapolated scheme has finished.
+Allocated RI Tensor: O-V, Size=[131, 5, 24], For Response=N, AuxBas Type=Regular
+Allocated RI Tensor: V-V, Size=[131, 24, 24], For Response=N, AuxBas Type=Regular
+Allocated RI Tensor: O-O, Size=[131, 5, 5], For Response=N, AuxBas Type=Regular
+Allocated RI Tensor: O-V, Size=[131, 5, 24], For Response=Y, AuxBas Type=Regular
+occ_size=5,vir_size(for response)=24
+Vz Exact:-0.0000015547165407228236
+Wz Exact:-0.0013172617286917243,0.00000038873538524427124
+Vz Implicit:-0.0016586669085431206,-0.0000015547165407212672
+Allocated RI Tensor: V-V, Size=[131, 24, 24], For Response=N, AuxBas Type=Regular
+Serial W contribution time=63.584939ms
+Wz Implicit:-0.0013172617286917256,0.0000003887353852487356
+DGEMM Prep Time=121.88µs
+DGEMM W contribution time=63.889065ms
+Wz DGEMM:-0.001317261728691726,0.00000038873538525316387
+Wz_B Implicit:-0.0005606951468240616,-0.000007779869948715582
+B Block Rayon Time=8.232099ms
+Reshape Time=1.563µs
+Wz_B Exact:[-0.0005606951468240641, 0.018742551926054608, -7.779869948716254e-6, -3.786857590177082e-7, -0.008389392317210092, 4.342121760905622e-7, 1.8184939949694173e-7, -0.0018703891973656972, -0.0112433550669156, 7.628000379847084e-7, 1.6662394662863253e-6, -1.901686451218003e-6, -0.011243117545539257, 0.0018705234243495844, 4.253152371596806e-6, 1.868649766372123e-7, 3.3459362485586713e-7, -0.0016988741619443648, -0.004073579605213899, 6.612929095469334e-7, -1.878287103594569e-7, -4.67550830416868e-6, 0.004074837761345065, -0.001698944166010207, 9.818301750201257e-7, 2.212141197775434e-5, 0.014145512367757082, -2.9335075457221846e-6, -2.834986623333771e-6, -0.009022052751795812, -0.003143853424583839, -0.0040106765425287, -2.707690292383763e-7, 1.0294753945816838e-7, 0.009057525191328294, -2.0538736068263345e-6, -2.1969401333938156e-6, 0.01085630221876419, -0.005824266738343212, 6.484749938975593e-8, 8.194650071895979e-7, -3.7508224728579934e-7, -0.005824504538986013, -0.01085725498129775, 2.7208706529354385e-6, -1.0817716783748703e-7, -1.997498426035069e-7, -0.0007296726770887945, -0.003190025689682963, -6.51629174175915e-8, -5.361611135004475e-7, 3.911234249035495e-6, 0.003193640279241464, -0.000732732355872822, 4.019478298671822e-8, 0.0021287714347843533, -0.008895115390737283, 4.199828198491087e-6, -2.5394990236216438e-6, 8.118624272811473e-5, 7.102822806266637e-8, -2.5197703583570637e-7, 1.046241285990973e-8, -8.192996084200874e-7, 1.5981021256013762e-7, -0.0013905214345144837, 0.007189421417336521, -2.627920069025465e-6, -6.790967454563912e-7, -0.002683937819610258, 2.699215261140864e-6, -1.4884560208332628e-5, -0.001173779431885154, 0.00012699600730763463, 5.812906542853059e-6, 1.3177425066825103e-6, -6.356880310977404e-6, -0.000129143287468768, -0.0011747506294016335, 2.047917475089552e-6, 4.741981832888565e-7, 1.3505740720687314e-7, 0.001044373736572921, -0.0007089168691560619, 1.0482596348570183e-6, -1.7081083466675182e-7, 1.004424720146784e-7, -0.0007074680035983941, -0.0010466895331879692, -2.6793949770862466e-6, -0.0006793389539434659, 0.005414468278096626, 3.2798473230870414e-7, -8.208378091486856e-7, -0.00755393834087816, 1.0656987792336623e-7, -1.0478848451391262e-6, 0.00476892657911104, -0.0006095938264103506, 1.0927665064006622e-6, 1.8885805311836107e-7, 2.635753423713042e-7, 0.0006102806320543056, 0.0047674220622751125, -6.709132996902296e-7, -0.0020666771220599956, 0.001981402997072431, -5.012761326147748e-7, 2.2909338017312817e-6, 0.0030960620693837705, -1.1942146125586926e-6, -2.843586973243191e-7, 0.004615703348048065, -0.0006442903720668061, 1.6657399331452254e-6, 1.4407716679190147e-7, -5.219854056268907e-7, 0.0006432028845163508, 0.004616286956507393, -3.8960765347071994e-7]
+B Block DGEMM Time=85.181µs
+Wz_B DGEMM:[-0.0005606951468240615, 0.01874255192605463, -7.779869948715842e-6, -3.786857590164011e-7, -0.008389392317210089, 4.3421217609066485e-7, 1.8184939949814245e-7, -0.0018703891973656994, -0.0112433550669156, 7.628000379866686e-7, 1.6662394662864344e-6, -1.9016864512172741e-6, -0.011243117545539257, 0.0018705234243495826, 4.2531523715968545e-6, 1.8686497663714143e-7, 3.3459362485614014e-7, -0.0016988741619443652, -0.0040735796052139, 6.612929095473107e-7, -1.8782871035949676e-7, -4.675508304168496e-6, 0.004074837761345066, -0.0016989441660102077, 9.818301750202495e-7, 2.2121411977755892e-5, 0.014145512367757074, -2.933507545721699e-6, -2.8349866233333323e-6, -0.009022052751795809, -0.0031438534245838397, -0.004010676542528699, -2.707690292376658e-7, 1.0294753945659912e-7, 0.009057525191328297, -2.053873606826401e-6, -2.196940133393976e-6, 0.010856302218764187, -0.005824266738343216, 6.484749938989883e-8, 8.194650071895399e-7, -3.7508224728314415e-7, -0.005824504538986015, -0.010857254981297752, 2.7208706529364664e-6, -1.0817716783752918e-7, -1.9974984260336288e-7, -0.0007296726770887938, -0.0031900256896829626, -6.516291741756001e-8, -5.361611135004295e-7, 3.911234249035422e-6, 0.003193640279241463, -0.0007327323558728215, 4.019478298613352e-8, 0.002128771434784352, -0.008895115390737278, 4.199828198491319e-6, -2.5394990236221994e-6, 8.118624272811334e-5, 7.102822806268229e-8, -2.5197703583656203e-7, 1.0462412860005009e-8, -8.192996084195831e-7, 1.59810212560247e-7, -0.0013905214345144806, 0.007189421417336519, -2.6279200690251998e-6, -6.7909674545633e-7, -0.0026839378196102607, 2.699215261140851e-6, -1.4884560208333717e-5, -0.0011737794318851546, 0.0001269960073076343, 5.8129065428534036e-6, 1.3177425066825128e-6, -6.356880310976138e-6, -0.0001291432874687684, -0.0011747506294016335, 2.047917475089475e-6, 4.741981832888894e-7, 1.3505740720676663e-7, 0.0010443737365729228, -0.0007089168691560622, 1.0482596348569293e-6, -1.708108346664788e-7, 1.0044247201372938e-7, -0.0007074680035983942, -0.001046689533187969, -2.679394977085116e-6, -0.0006793389539434672, 0.005414468278096621, 3.2798473230909436e-7, -8.208378091479403e-7, -0.007553938340878158, 1.065698779233276e-7, -1.0478848451393578e-6, 0.004768926579111037, -0.0006095938264103511, 1.0927665064006646e-6, 1.8885805311828242e-7, 2.6357534237125965e-7, 0.0006102806320543068, 0.0047674220622751125, -6.709132996895973e-7, -0.00206667712205999, 0.001981402997072424, -5.01276132615228e-7, 2.290933801731747e-6, 0.0030960620693837727, -1.1942146125585348e-6, -2.8435869732515114e-7, 0.004615703348048072, -0.0006442903720668062, 1.665739933145549e-6, 1.4407716679204399e-7, -5.21985405628261e-7, 0.0006432028845163518, 0.004616286956507393, -3.8960765347034656e-7]
 
 ====================================================
               REST: Mission accomplished
 ====================================================
-The SCF energy        :     -56.5245527233 Ha
+The SCF energy        :     -56.5245527234 Ha
 Detailed time report:
-SCF       |:    0.324 s for the scf procedure
-Overall   |:    0.358 s for the whole job
+Overall   |:    2.552 s for the whole job
+SCF       |:    2.280 s for the scf procedure
