@@ -1,0 +1,9 @@
+OpenMM version: 8.6.0.dev-c6173db
+Pure-MM run: 3 particles from water.gro, engine = OpenMM (SOL residues typed as TIP3P)
+Potential Energy = 0.000007219 a.u.
+Max force = 0.001291357 a.u.
+------ Output forces [a.u.] ------
+O     -0.000887867     0.001291357     0.000000002
+H      0.000444207    -0.000646080     0.001043303
+H      0.000444207    -0.000646080    -0.001043305
+--------------------------------------

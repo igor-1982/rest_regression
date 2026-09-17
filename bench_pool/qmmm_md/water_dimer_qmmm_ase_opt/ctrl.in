@@ -1,0 +1,37 @@
+# Water-dimer QM/MM optimization.
+# QM region = [geom] (the first water, 3 atoms); the second water is a real,
+# movable MM molecule in init.gro/system_qmmm.xml. No qmmm_links (non-covalent
+# embedding), so ensemble="opt" relaxes both the QM and the MM water.
+[ctrl]
+num_threads   = 4
+job_type      = "md"
+xc            = "b3lyp"
+basis_path    = "def2-svp"
+auxbas_path   = "def2-universal-jkfit"
+empirical_dispersion = "d3bj"
+auxbasis_response = "true"
+chkfile       = "restart"
+charge        = 0.0
+spin          = 1
+
+[geom]
+name = "water_dimer_qmmm_opt"
+unit = "angstrom"
+position = """
+O   -1.6554   -0.1233    0.0000
+H   -0.7041    0.0319    0.0000
+H   -2.0387    0.7537    0.0000
+"""
+
+[md]
+ensemble        = "opt"
+opt_fmax        = 0.02
+opt_steps       = 200
+dt              = 0.5
+temperature     = 300.0
+qmmm_mm_file    = "init.gro"
+qmmm_system_xml = "system_qmmm.xml"
+qmmm_gro_skip   = 3
+qmmm_pbc        = false
+qmmm_mm_cutoff  = 10.0
+outputs         = ["restart"]

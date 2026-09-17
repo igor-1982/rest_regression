@@ -1,0 +1,7 @@
+[ctrl]
+num_threads = 8
+job_type = "force"
+pure_mm = true
+
+[md]
+mm_file        = "water.gro"

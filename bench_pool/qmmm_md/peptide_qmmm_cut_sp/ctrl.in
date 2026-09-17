@@ -1,0 +1,60 @@
+# ACE-ALA-NME (alanine dipeptide) QM/MM cut-bond single point.
+# Standard residues (amber14): QM = 24 backbone atoms of [geom] (indices given
+# by qmmm_qm_atoms), MM = the two ALA CB groups + TIP3P water. system_qmmm.xml
+# is generated internally from peptide.pdb with amber14-all.xml/amber14/tip3p.xml.
+[ctrl]
+num_threads = 8
+job_type = "md"
+xc = "b3lyp"
+basis_path = "def2-svp"
+auxbas_path = "def2-universal-jkfit"
+auxbasis_response = "true"
+eri_type = "ri-v"
+mixer = "diis"
+charge = 0
+spin = 1
+
+[geom]
+unit = "angstrom"
+position = """
+H       20.640000      14.800000      12.710000
+C       20.200000      15.700000      13.130000
+H       19.330000      15.990000      12.530000
+H       20.930000      16.520000      13.070000
+C       19.810000      15.430000      14.570000
+O       19.990000      14.340000      15.120000
+N       19.250000      16.490000      15.220000
+H       19.010000      17.350000      14.750000
+C       18.750000      16.380000      16.580000
+H       18.200000      15.430000      16.670000
+C       17.780000      17.550000      16.780000
+O       17.690000      18.470000      15.970000
+N       17.050000      17.490000      17.920000
+H       17.170000      16.760000      18.610000
+C       16.170000      18.570000      18.320000
+H       16.680000      19.530000      18.120000
+C       15.940000      18.410000      19.830000
+O       16.250000      17.370000      20.410000
+N       15.370000      19.470000      20.440000
+H       15.160000      20.290000      19.890000
+C       15.020000      19.480000      21.860000
+H       15.320000      18.510000      22.270000
+H       15.560000      20.270000      22.390000
+H       13.950000      19.620000      22.000000
+H       19.250000      16.380000      16.580000
+H       16.670000      18.570000      18.320000
+"""
+
+[md]
+ensemble = "sp"
+steps = 1
+qmmm_build_system = true
+qmmm_ff = ["amber14-all.xml", "amber14/tip3p.xml"]
+qmmm_mm_pdb = "peptide.pdb"
+qmmm_qm_atoms = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16, 17, 18, 19, 24, 25, 26, 27, 28, 29, 30, 31]
+qmmm_links = [[8, 10], [18, 20]]
+qmmm_frontier = [10, 20]
+qmmm_frontier_rescale = "residue"
+qmmm_pbc = true
+qmmm_mm_cutoff = 999.0
+outputs = ["energy_force"]

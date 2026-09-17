@@ -1,0 +1,1 @@
+Title: Pure-MM single point of one TIP3P water (pure_mm=true): prints the OpenMM version and checks the pure-MM pipeline connectivity (GRO -> OpenMM TIP3P engine -> energy + per-atom forces).
