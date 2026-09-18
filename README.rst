@@ -68,3 +68,9 @@ Reference mode (config.toml):
   reference.log (rest -i ctrl.in > reference.log) then leaves reference.json in the folder too,
   which auto-detection picks up without any config.toml.
   See docs/config-toml.md for the full rules (Chinese).
+
+MD / QM-MM tests (bench_pool/qmmm_md):
+  Tests with job_type = "md" (AIMD, QM/MM, pure MM) require the Python runtime used by the
+  REST binary to provide numpy, ase and openmm (including openmm.app). Pure-QM AIMD only needs
+  ASE/numpy; QM/MM and pure-MM additionally need OpenMM. Tested with Python 3.10, numpy 2.2,
+  ASE 3.29, OpenMM 8.6.

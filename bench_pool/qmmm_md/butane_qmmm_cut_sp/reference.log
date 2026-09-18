@@ -6,8 +6,8 @@ Cube output: wavefunction
 The exchange-correlation method: b3lyp
 Print level:   1    max log level: INFO
 The number of threads used for parallelism:      8
-The spheric-GTO basis set is taken from /home/sanae/rest/basis-set-pool/6-31gs
-The spheric-GTO auxiliary basis set is taken from /home/sanae/rest/basis-set-pool/def2-universal-jkfit
+The spheric-GTO basis set is taken from /work/rest/basis-set-pool/6-31gs
+The spheric-GTO auxiliary basis set is taken from /work/rest/basis-set-pool/def2-universal-jkfit
 Charge:   0; Spin:   1
 Spin polarization: Off
 Input molecular structure (in Angstrom): ----------
@@ -47,7 +47,7 @@ numbasis: 40, num_auxbas: 258
 Molecule_name: butane_cut_sp
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (4983.62 MB) is more than required (2.36 MB).
+Memory available for 1.5 times of RI integrals (5146.13 MB) is more than required (2.36 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:      42.72586177 Hartree
 No ghost effective potential
@@ -55,7 +55,7 @@ No ghost point charges
 Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.00868208 with the total number of basis functions:     40
 Grid size: 87948
- [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=98.6% → skipping (AO too dense), falling back to dense
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=97.9% → skipping (AO too dense), falling back to dense
 
 =======================
 Generating SAD for atom: C
@@ -64,7 +64,7 @@ Using xc_parser legacy
 ==== End of Summary ====
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (4764.02 MB) is more than required (0.08 MB).
+Memory available for 1.5 times of RI integrals (4991.59 MB) is more than required (0.08 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -82,18 +82,18 @@ SCF Change: DM 6.18720e-5; eev 1.83723e-3 Ha; etot 1.59201e-4 Ha; grad 3.43223e-
 SCF Change: DM 1.08417e-5; eev 3.06641e-4 Ha; etot 7.30978e-5 Ha; grad 2.45210e-4 Ha
 SCF Change: DM 1.83455e-5; eev 5.08749e-4 Ha; etot -4.54547e-5 Ha; grad 1.30052e-4 Ha
 SCF Change: DM 3.68997e-6; eev 2.09412e-4 Ha; etot -1.21837e-8 Ha; grad 3.38631e-5 Ha
-SCF Change: DM 2.87764e-7; eev 2.95034e-6 Ha; etot -1.02259e-9 Ha; grad 1.87361e-6 Ha
-SCF Change: DM 7.64392e-9; eev 1.23433e-7 Ha; etot -2.08189e-12 Ha; grad 2.84724e-7 Ha
-SCF Change: DM 4.77537e-9; eev 7.76041e-8 Ha; etot  0.00000e0 Ha; grad 2.40942e-7 Ha
-SCF Change: DM 3.36666e-9; eev 5.49478e-8 Ha; etot -1.42109e-14 Ha; grad 2.13564e-7 Ha
-SCF Change: DM 2.54593e-9; eev 4.16862e-8 Ha; etot -3.55271e-14 Ha; grad 1.94249e-7 Ha
-SCF Change: DM 2.01633e-9; eev 3.30983e-8 Ha; etot 6.39488e-14 Ha; grad 1.79635e-7 Ha
-SCF Change: DM 2.78675e-8; eev 4.54249e-7 Ha; etot -4.26326e-14 Ha; grad 1.68056e-7 Ha
-SCF Change: DM 1.36298e-9; eev 3.49470e-8 Ha; etot -2.84217e-14 Ha; grad 8.56217e-9 Ha
-SCF Change: DM 6.93146e-11; eev 1.50656e-9 Ha; etot 1.42109e-14 Ha; grad 2.60903e-10 Ha
+SCF Change: DM 2.87764e-7; eev 2.95034e-6 Ha; etot -1.02256e-9 Ha; grad 1.87361e-6 Ha
+SCF Change: DM 7.64392e-9; eev 1.23433e-7 Ha; etot -2.10321e-12 Ha; grad 2.84724e-7 Ha
+SCF Change: DM 4.77537e-9; eev 7.76041e-8 Ha; etot -1.42109e-14 Ha; grad 2.40942e-7 Ha
+SCF Change: DM 3.36666e-9; eev 5.49478e-8 Ha; etot -7.10543e-15 Ha; grad 2.13564e-7 Ha
+SCF Change: DM 2.54593e-9; eev 4.16863e-8 Ha; etot -2.84217e-14 Ha; grad 1.94249e-7 Ha
+SCF Change: DM 2.01633e-9; eev 3.30983e-8 Ha; etot 3.55271e-14 Ha; grad 1.79635e-7 Ha
+SCF Change: DM 2.78675e-8; eev 4.54249e-7 Ha; etot -2.84217e-14 Ha; grad 1.68056e-7 Ha
+SCF Change: DM 1.36297e-9; eev 3.49470e-8 Ha; etot -2.13163e-14 Ha; grad 8.56217e-9 Ha
+SCF Change: DM 6.93150e-11; eev 1.50657e-9 Ha; etot 5.68434e-14 Ha; grad 2.60900e-10 Ha
 SCF is converged after   18 iterations.
 Energy:       -37.3153734840 Ha
-grad_dm l2: 6.91176e-10 Ha
+grad_dm l2: 6.91181e-10 Ha
 SAD generation for C complete.
 
 =======================
@@ -103,7 +103,7 @@ Using xc_parser legacy
 ==== End of Summary ====
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (4755.32 MB) is more than required (0.00 MB).
+Memory available for 1.5 times of RI integrals (4991.22 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -148,7 +148,7 @@ SCF is converged after   32 iterations.
 Energy:        -0.4982329092 Ha
 grad_dm l2: 2.83261e-8 Ha
 SAD generation for H complete.
-Initial guess energy using single atom density (SAD):     -80.0120098080464999
+Initial guess energy using single atom density (SAD):     -80.0120098080465993
 The total energy:       -79.6373300013 Ha by the initial guess
 Initial grad_dm l2:  1.44874e0 Ha
 SCF Change: DM 4.31791e-2; eev  2.30362e0 Ha; etot 6.04335e-2 Ha; grad  1.66911e0 Ha
@@ -158,15 +158,15 @@ Energy:     -79.4973648825 Ha after    2 iterations (in       0.06 seconds).
 SCF Change: DM 9.68106e-4; eev 6.04333e-2 Ha; etot -3.21323e-1 Ha; grad 4.78320e-2 Ha
 Energy:     -79.8186874123 Ha after    3 iterations (in       0.06 seconds).
 SCF Change: DM 2.05121e-4; eev 5.78318e-3 Ha; etot -2.07204e-4 Ha; grad 1.60876e-2 Ha
-Energy:     -79.8188946165 Ha after    4 iterations (in       0.07 seconds).
+Energy:     -79.8188946165 Ha after    4 iterations (in       0.06 seconds).
 SCF Change: DM 5.57907e-5; eev 1.85492e-3 Ha; etot -1.57331e-5 Ha; grad 5.04092e-3 Ha
 Energy:     -79.8189103496 Ha after    5 iterations (in       0.06 seconds).
 SCF Change: DM 6.83407e-6; eev 4.14610e-4 Ha; etot -1.94043e-6 Ha; grad 5.75722e-4 Ha
 Energy:     -79.8189122900 Ha after    6 iterations (in       0.06 seconds).
 SCF Change: DM 2.44904e-7; eev 4.24399e-6 Ha; etot -2.13177e-8 Ha; grad 1.55582e-5 Ha
-Energy:     -79.8189123114 Ha after    7 iterations (in       0.06 seconds).
-SCF Change: DM 3.61051e-9; eev 4.87313e-8 Ha; etot -2.02363e-11 Ha; grad 1.93775e-6 Ha
-Energy:     -79.8189123114 Ha after    8 iterations (in       0.05 seconds).
+Energy:     -79.8189123114 Ha after    7 iterations (in       0.05 seconds).
+SCF Change: DM 3.61051e-9; eev 4.87313e-8 Ha; etot -2.01510e-11 Ha; grad 1.93775e-6 Ha
+Energy:     -79.8189123114 Ha after    8 iterations (in       0.06 seconds).
 SCF is converged after    8 iterations.
 Energy:       -79.8189123114 Ha
 grad_dm l2: 2.18490e-6 Ha
@@ -179,6 +179,7 @@ MD outputs: energy_force
 =========================================================
 Warning: skipped malformed water residue with 0 O and 14 H atoms
 QM/MM: 1229 GRO atoms (7 skipped as QM duplicates), box 2.500 x 2.500 x 2.500 nm
+OpenMM version: 8.6.0.dev-c6173db
 Link H  1: geom atom   7 (frozen), qm_bdry =   4, mm_host = GRO atom   7
 MD engine: ASE VelocityVerlet (friction = 0.02 ase -> 0.0000 1/fs, tau = inf fs)
 Input geometry in this round is:
@@ -189,75 +190,75 @@ H       14.21000000     11.99000000     13.87000000
 C       13.13000000     12.50000000     12.08000000
 H       13.13000000     13.37000000     11.42000000
 H       13.13000000     11.63000000     11.42000000
-H       12.29794971     13.13000000     13.68470020
+H       12.29216100     13.11051537     13.67556958
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (4774.97 MB) is more than required (2.36 MB).
+Memory available for 1.5 times of RI integrals (5029.41 MB) is more than required (2.36 MB).
 Using standard incore RI-J/K algorithms.
-Nuc_energy:      41.61891857 Hartree
-External potential due to point charges exists:       0.75346717 Hartree
+Nuc_energy:      41.20062204 Hartree
+External potential due to point charges exists:       0.32189896 Hartree
 No ghost effective potential
 There are 1219 point charges specified
 Overlap matrix is nonsigular:
-  Lowest eigenvalue:       0.00945263 with the total number of basis functions:     40
+  Lowest eigenvalue:       0.00944677 with the total number of basis functions:     40
 Grid size: 87948
- [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=98.5% → skipping (AO too dense), falling back to dense
-The total energy:       -79.4682089735 Ha by the initial guess
-Initial grad_dm l2:  1.63153e0 Ha
-SCF Change: DM 1.74138e-2; eev 7.04027e-1 Ha; etot -1.87472e-1 Ha; grad 4.99371e-1 Ha
-Energy:     -79.6556807085 Ha after    1 iterations (in       0.06 seconds).
-SCF Change: DM 1.09608e-2; eev 1.07693e-1 Ha; etot -1.20912e-3 Ha; grad 4.59965e-1 Ha
-Energy:     -79.6568898242 Ha after    2 iterations (in       0.06 seconds).
-SCF Change: DM 3.76634e-3; eev 9.27990e-2 Ha; etot -1.45588e-2 Ha; grad 3.18245e-1 Ha
-Energy:     -79.6714486429 Ha after    3 iterations (in       0.06 seconds).
-SCF Change: DM 3.13459e-4; eev 4.03390e-3 Ha; etot -8.58382e-3 Ha; grad 1.78588e-2 Ha
-Energy:     -79.6800324586 Ha after    4 iterations (in       0.06 seconds).
-SCF Change: DM 7.85485e-5; eev 3.03058e-3 Ha; etot -2.00892e-5 Ha; grad 5.59591e-3 Ha
-Energy:     -79.6800525478 Ha after    5 iterations (in       0.06 seconds).
-SCF Change: DM 1.43427e-5; eev 6.03141e-4 Ha; etot -2.72822e-6 Ha; grad 1.07030e-3 Ha
-Energy:     -79.6800552761 Ha after    6 iterations (in       0.06 seconds).
-SCF Change: DM 4.00479e-6; eev 1.08198e-4 Ha; etot -8.47129e-8 Ha; grad 2.82011e-4 Ha
-Energy:     -79.6800553608 Ha after    7 iterations (in       0.06 seconds).
-SCF Change: DM 8.60718e-7; eev 1.66340e-5 Ha; etot -6.36818e-9 Ha; grad 5.74497e-5 Ha
-Energy:     -79.6800553671 Ha after    8 iterations (in       0.05 seconds).
-SCF Change: DM 1.21037e-7; eev 1.41011e-6 Ha; etot -2.50637e-10 Ha; grad 8.37498e-6 Ha
-Energy:     -79.6800553674 Ha after    9 iterations (in       0.06 seconds).
-SCF Change: DM 2.20391e-8; eev 2.84479e-7 Ha; etot -5.03064e-12 Ha; grad 1.46402e-6 Ha
-Energy:     -79.6800553674 Ha after   10 iterations (in       0.05 seconds).
-SCF Change: DM 2.98906e-9; eev 6.52149e-8 Ha; etot -9.09495e-13 Ha; grad 1.87909e-7 Ha
-Energy:     -79.6800553674 Ha after   11 iterations (in       0.06 seconds).
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=97.9% → skipping (AO too dense), falling back to dense
+The total energy:       -79.4745144177 Ha by the initial guess
+Initial grad_dm l2:  1.62391e0 Ha
+SCF Change: DM 2.42693e-2; eev 5.86272e-1 Ha; etot -1.61591e-1 Ha; grad 6.52479e-1 Ha
+Energy:     -79.6361051354 Ha after    1 iterations (in       0.06 seconds).
+SCF Change: DM 1.63977e-2; eev 2.47370e-1 Ha; etot 4.54882e-2 Ha; grad 9.20019e-1 Ha
+Energy:     -79.5906169124 Ha after    2 iterations (in       0.07 seconds).
+SCF Change: DM 3.83630e-3; eev 1.21421e-1 Ha; etot -8.23264e-2 Ha; grad 3.30372e-1 Ha
+Energy:     -79.6729432670 Ha after    3 iterations (in       0.06 seconds).
+SCF Change: DM 4.03980e-4; eev 5.60885e-3 Ha; etot -8.33915e-3 Ha; grad 2.56211e-2 Ha
+Energy:     -79.6812824189 Ha after    4 iterations (in       0.06 seconds).
+SCF Change: DM 1.23967e-4; eev 2.93765e-3 Ha; etot -4.44392e-5 Ha; grad 8.11289e-3 Ha
+Energy:     -79.6813268581 Ha after    5 iterations (in       0.06 seconds).
+SCF Change: DM 1.86489e-5; eev 7.13685e-4 Ha; etot -6.12840e-6 Ha; grad 1.11517e-3 Ha
+Energy:     -79.6813329865 Ha after    6 iterations (in       0.06 seconds).
+SCF Change: DM 5.90112e-6; eev 2.14272e-4 Ha; etot -1.02886e-7 Ha; grad 4.63362e-4 Ha
+Energy:     -79.6813330894 Ha after    7 iterations (in       0.06 seconds).
+SCF Change: DM 1.21266e-6; eev 2.10484e-5 Ha; etot -1.74181e-8 Ha; grad 6.38974e-5 Ha
+Energy:     -79.6813331068 Ha after    8 iterations (in       0.07 seconds).
+SCF Change: DM 2.08036e-7; eev 1.53256e-6 Ha; etot -3.48237e-10 Ha; grad 1.60758e-5 Ha
+Energy:     -79.6813331072 Ha after    9 iterations (in       0.05 seconds).
+SCF Change: DM 4.29509e-8; eev 5.29104e-7 Ha; etot -2.17426e-11 Ha; grad 2.76876e-6 Ha
+Energy:     -79.6813331072 Ha after   10 iterations (in       0.06 seconds).
+SCF Change: DM 4.53689e-9; eev 1.12732e-7 Ha; etot -5.68434e-13 Ha; grad 2.19757e-7 Ha
+Energy:     -79.6813331072 Ha after   11 iterations (in       0.06 seconds).
 SCF is converged after   11 iterations.
-Energy:       -79.6800553674 Ha
-grad_dm l2: 1.28052e-8 Ha
+Energy:       -79.6813331072 Ha
+grad_dm l2: 6.52651e-8 Ha
 Force calculation invoked
 WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
 ------ Output gradient [a.u.] ------
-C        0.00022318      0.00347293      0.00342233
-H        0.00602935      0.00516334     -0.00865422
-H       -0.01288393      0.00431479     -0.00248028
-H       -0.01316903      0.00076875      0.00456365
-C       -0.01003880     -0.04638683     -0.05251613
-H        0.01208059     -0.00351702     -0.00420547
-H        0.02696628      0.01496745     -0.01084599
-H       -0.00680644      0.02582587      0.06767481
+C        0.00200660      0.00189423     -0.00081267
+H       -0.00263099      0.00080162     -0.00344765
+H       -0.01044484      0.00251660      0.00151114
+H       -0.00905123      0.00171574      0.00291900
+C       -0.01709943     -0.04149541     -0.04754136
+H        0.01214119     -0.00390050     -0.00551153
+H        0.02995130      0.01235951     -0.01416478
+H       -0.00524338      0.02632440      0.06653574
 
 ------------------------------------
-force                   1.309 s for 
-Single point: E_QM = -2168.204762704 eV, E_MM = 53.220901591 eV, E_tot = -2114.983861113 eV, max|F| = 3.580802 eV/A
+force                   1.211 s for 
+Single point: E_QM = -2168.239531775 eV, E_MM = -210.510216620 eV, E_tot = -2378.749748395 eV, max|F| = 2.350814 eV/A
 Mulliken population analysis:
-  0-C  :  -0.429949
-  1-H  :   0.145706
-  2-H  :   0.147030
-  3-H  :   0.228733
-  4-C  :  -0.323712
-  5-H  :   0.137235
-  6-H  :   0.049691
-  7-H  :   0.045266
+  0-C  :  -0.428916
+  1-H  :   0.167277
+  2-H  :   0.127763
+  3-H  :   0.163663
+  4-C  :  -0.298074
+  5-H  :   0.154614
+  6-H  :   0.153563
+  7-H  :  -0.039889
 
 ====================================================
               REST: Mission accomplished
 ====================================================
-The SCF energy        :     -79.6800553674 Ha
+The SCF energy        :     -79.6813331072 Ha
 Detailed time report:
-SCF       |:    2.220 s for the scf procedure
-Overall   |:    5.654 s for the whole job
-force     |:    1.309 s for 
+Overall   |:    5.713 s for the whole job
+force     |:    1.211 s for 
+SCF       |:    2.185 s for the scf procedure
