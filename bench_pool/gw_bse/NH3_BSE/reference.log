@@ -1,16 +1,13 @@
-Use the default path (/opt/rest_workspace/rest/basis-set-pool/) as rest_basis_dir.
-The specified path for the basis sets: cc-pVDZ
-The specified path for the basis sets: def2-SV(P)-JKFIT
 =========================================================
       Input parameters for the REST calculation
 =========================================================
 Calculation type: Single-point energy
 Cube output: wavefunction
 The exchange-correlation method: scan
-Print level:                1
+Print level:   1    max log level: INFO
 The number of threads used for parallelism:      4
-The spheric-GTO basis set is taken from cc-pVDZ
-The spheric-GTO auxiliary basis set is taken from def2-SV(P)-JKFIT
+The spheric-GTO basis set is taken from /home/qiruigao/rest_workspace/rest/basis-set-pool/cc-pvdz
+The spheric-GTO auxiliary basis set is taken from /home/qiruigao/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
 Charge:   0; Spin:   1
 Spin polarization: Off
 Input molecular structure (in Angstrom): ----------
@@ -23,17 +20,20 @@ ERI Type: ri_v
 SCF convergency thresholds: 1e-8 for density matrix
                             1e-6 Ha. for sum of eigenvalues
                             1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
 Max. SCF cycle number:      100
 It is a finite cluster calculation
-The specified checkfile exists but is not loaded because the keyword 'external_init_guess' is specified
-It will be updated after the SCF procedure 
-(none)
+Initial guess is prepared by (sad).
 =========================================================
-the functional of 'scan' contains
-The density functional 'SCAN exchange of Sun, Ruzsinszky, and Perdew' belongs to the 'MGGA' family and is defined in the reference(s):
-(0): J. Sun, A. Ruzsinszky, and J. P. Perdew.,  Phys. Rev. Lett. 115, 036402 (2015)
-The density functional 'SCAN correlation of Sun, Ruzsinszky, and Perdew' belongs to the 'MGGA' family and is defined in the reference(s):
-(0): J. Sun, A. Ruzsinszky, and J. P. Perdew.,  Phys. Rev. Lett. 115, 036402 (2015)
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [263, 267]
+SCF DFA parameters: [1.0, 1.0]
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
 Libxc version used in REST: 7.0.0
 nbas: 9, natm: 4 for standard basis sets
@@ -43,52 +43,131 @@ numbasis: 29, num_auxbas: 131
 Molecule_name: NH3
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for RI integrals (28183.76 MB) is more than required (1.26 MB).
+Memory available for 1.5 times of RI integrals (25565.52 MB) is more than required (0.63 MB).
 Using standard incore RI-J/K algorithms.
-Nuc_energy:      11.84792373 Hartree
+Nuc_energy:      11.84792379 Hartree
 No ghost effective potential
 No ghost point charges
 Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.01677135 with the total number of basis functions:     29
 Grid size: 44118
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=97.6% → skipping (AO too dense), falling back to dense
 
 =======================
 Generating SAD for atom: N
 =======================
+Using xc_parser legacy
+==== End of Summary ====
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for RI integrals (28075.64 MB) is more than required (0.17 MB).
+Memory available for 1.5 times of RI integrals (25519.83 MB) is more than required (0.09 MB).
 Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.04514111 with the total number of basis functions:     14
+Grid size: 14046
+Initial guess from SAP
+SCF Change: DM 8.71264e-3; eev 1.08134e-2 Ha; etot -7.40676e-3 Ha; grad 5.48708e-2 Ha
+SCF Change: DM 2.27978e-3; eev 4.87972e-3 Ha; etot -4.28859e-4 Ha; grad 8.65564e-3 Ha
+SCF Change: DM 3.50442e-4; eev 4.04138e-3 Ha; etot 4.85959e-4 Ha; grad 1.97335e-3 Ha
+SCF Change: DM 8.16143e-5; eev 3.76905e-4 Ha; etot 3.50232e-4 Ha; grad 6.99398e-4 Ha
+SCF Change: DM 9.08879e-5; eev 1.12885e-3 Ha; etot -3.17968e-5 Ha; grad 1.19978e-4 Ha
+SCF Change: DM 3.97485e-5; eev 5.32169e-5 Ha; etot -7.70329e-5 Ha; grad 1.66189e-4 Ha
+SCF Change: DM 2.39735e-5; eev 3.58422e-4 Ha; etot 2.08980e-5 Ha; grad 3.85363e-5 Ha
+SCF Change: DM 1.42739e-6; eev 8.37123e-5 Ha; etot 1.38655e-5 Ha; grad 3.36408e-6 Ha
+SCF Change: DM 2.13041e-7; eev 3.15600e-6 Ha; etot -6.99885e-12 Ha; grad 5.65115e-7 Ha
+SCF Change: DM 8.19875e-8; eev 8.84654e-7 Ha; etot -3.76588e-13 Ha; grad 1.83870e-7 Ha
+SCF Change: DM 1.50816e-9; eev 2.54582e-9 Ha; etot -1.42109e-14 Ha; grad 2.59909e-8 Ha
+SCF is converged after   11 iterations.
+Energy:       -53.8286035073 Ha
+grad_dm l2: 2.43123e-8 Ha
 SAD generation for N complete.
 
 =======================
 Generating SAD for atom: H
 =======================
+Using xc_parser legacy
+==== End of Summary ====
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for RI integrals (28083.18 MB) is more than required (0.01 MB).
+Memory available for 1.5 times of RI integrals (25521.27 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.09631310 with the total number of basis functions:      5
+Grid size: 10024
+Initial guess from SAP
+SCF Change: DM (4.64758e-2, 0.00000e0); eev 3.03801e-2 Ha; etot -1.52311e-2 Ha; grad (5.74368e-2, 0.00000e0) Ha
+SCF Change: DM (1.26941e-2, 0.00000e0); eev 4.03746e-2 Ha; etot -4.92660e-3 Ha; grad (2.02250e-2, 0.00000e0) Ha
+SCF Change: DM (1.02272e-3, 0.00000e0); eev 1.69718e-2 Ha; etot 1.36028e-3 Ha; grad (3.74676e-3, 0.00000e0) Ha
+SCF Change: DM (7.61967e-4, 0.00000e0); eev 3.99250e-3 Ha; etot 7.54061e-4 Ha; grad (2.13473e-4, 0.00000e0) Ha
+SCF Change: DM (4.48061e-4, 0.00000e0); eev 3.22229e-4 Ha; etot 1.20736e-4 Ha; grad (4.55976e-4, 0.00000e0) Ha
+SCF Change: DM (1.33888e-4, 0.00000e0); eev 2.85320e-4 Ha; etot -2.17183e-5 Ha; grad (1.89815e-4, 0.00000e0) Ha
+SCF Change: DM (1.90126e-5, 0.00000e0); eev 1.48790e-4 Ha; etot -2.13903e-5 Ha; grad (4.40123e-5, 0.00000e0) Ha
+SCF Change: DM (5.81595e-6, 0.00000e0); eev 4.78372e-5 Ha; etot -9.08690e-6 Ha; grad (3.52794e-6, 0.00000e0) Ha
+SCF Change: DM (5.69163e-7, 0.00000e0); eev 7.04365e-7 Ha; etot -4.31666e-11 Ha; grad (1.28968e-6, 0.00000e0) Ha
+SCF Change: DM (3.20927e-7, 0.00000e0); eev 3.97161e-7 Ha; etot -2.06996e-12 Ha; grad (1.07064e-6, 0.00000e0) Ha
+SCF Change: DM (2.16354e-7, 0.00000e0); eev 2.67748e-7 Ha; etot -9.97535e-13 Ha; grad (9.47137e-7, 0.00000e0) Ha
+SCF Change: DM (1.59792e-7, 0.00000e0); eev 1.97749e-7 Ha; etot -6.03517e-13 Ha; grad (8.63874e-7, 0.00000e0) Ha
+SCF Change: DM (1.24842e-7, 0.00000e0); eev 1.54497e-7 Ha; etot -4.10227e-13 Ha; grad (8.02379e-7, 0.00000e0) Ha
+SCF Change: DM (1.01347e-7, 0.00000e0); eev 1.25421e-7 Ha; etot -2.99538e-13 Ha; grad (7.54335e-7, 0.00000e0) Ha
+SCF Change: DM (8.45994e-8, 0.00000e0); eev 1.04695e-7 Ha; etot -2.29261e-13 Ha; grad (7.15332e-7, 0.00000e0) Ha
+SCF Change: DM (8.88583e-7, 0.00000e0); eev 1.09966e-6 Ha; etot -1.82410e-13 Ha; grad (6.82774e-7, 0.00000e0) Ha
+SCF Change: DM (1.01876e-7, 0.00000e0); eev 1.26076e-7 Ha; etot -1.40121e-12 Ha; grad (3.40810e-7, 0.00000e0) Ha
+SCF Change: DM (7.39139e-8, 0.00000e0); eev 9.14712e-8 Ha; etot -1.01030e-13 Ha; grad (3.01603e-7, 0.00000e0) Ha
+SCF Change: DM (6.39732e-8, 0.00000e0); eev 7.91693e-8 Ha; etot -6.53921e-14 Ha; grad (2.73158e-7, 0.00000e0) Ha
+SCF Change: DM (6.13802e-8, 0.00000e0); eev 7.59603e-8 Ha; etot -5.11813e-14 Ha; grad (2.48538e-7, 0.00000e0) Ha
+SCF Change: DM (6.38197e-8, 0.00000e0); eev 7.89792e-8 Ha; etot -4.48530e-14 Ha; grad (2.24917e-7, 0.00000e0) Ha
+SCF Change: DM (7.16226e-8, 0.00000e0); eev 8.86356e-8 Ha; etot -4.17999e-14 Ha; grad (2.00356e-7, 0.00000e0) Ha
+SCF Change: DM (8.75707e-8, 0.00000e0); eev 1.08372e-7 Ha; etot -4.11338e-14 Ha; grad (1.72793e-7, 0.00000e0) Ha
+SCF Change: DM (1.19893e-7, 0.00000e0); eev 1.48372e-7 Ha; etot -4.21330e-14 Ha; grad (1.39092e-7, 0.00000e0) Ha
+SCF Change: DM (2.55590e-8, 0.00000e0); eev 3.16302e-8 Ha; etot -4.30767e-14 Ha; grad (9.29520e-8, 0.00000e0) Ha
+SCF Change: DM (2.27593e-8, 0.00000e0); eev 2.81655e-8 Ha; etot -6.71685e-15 Ha; grad (8.31158e-8, 0.00000e0) Ha
+SCF Change: DM (2.20158e-8, 0.00000e0); eev 2.72453e-8 Ha; etot -5.77316e-15 Ha; grad (7.43570e-8, 0.00000e0) Ha
+SCF Change: DM (2.21017e-8, 0.00000e0); eev 2.73517e-8 Ha; etot -4.44089e-15 Ha; grad (6.58844e-8, 0.00000e0) Ha
+SCF Change: DM (2.25148e-8, 0.00000e0); eev 2.78629e-8 Ha; etot -4.32987e-15 Ha; grad (5.73788e-8, 0.00000e0) Ha
+SCF Change: DM (2.27190e-8, 0.00000e0); eev 2.81156e-8 Ha; etot -3.33067e-15 Ha; grad (4.87141e-8, 0.00000e0) Ha
+SCF Change: DM (2.16949e-8, 0.00000e0); eev 2.68482e-8 Ha; etot -3.21965e-15 Ha; grad (3.99709e-8, 0.00000e0) Ha
+SCF Change: DM (1.74029e-8, 0.00000e0); eev 2.15366e-8 Ha; etot -2.72005e-15 Ha; grad (3.16218e-8, 0.00000e0) Ha
+SCF Change: DM (7.53886e-9, 0.00000e0); eev 9.32960e-9 Ha; etot -1.27676e-15 Ha; grad (2.49244e-8, 0.00000e0) Ha
+SCF is converged after   33 iterations.
+Energy:        -0.4992784034 Ha
+grad_dm l2: 2.20232e-8 Ha
 SAD generation for H complete.
-Initial guess energy using single atom density (SAD):     -56.5038294770926157
-The total energy:       -56.3490603255 Ha by the initial guess
-Energy:     -56.1731520004 Ha after    1 iterations (in       0.01 seconds).
-SCF Change: DM 1.00503e-1; eev  1.53420e0 Ha; etot 2.92937e-1 Ha
-Energy:     -55.8802147742 Ha after    2 iterations (in       0.01 seconds).
-SCF Change: DM 8.64426e-3; eev 1.04390e-1 Ha; etot -6.39099e-1 Ha
-Energy:     -56.5193133668 Ha after    3 iterations (in       0.01 seconds).
-SCF Change: DM 2.46240e-4; eev 1.12467e-2 Ha; etot -5.23578e-3 Ha
-Energy:     -56.5245491472 Ha after    4 iterations (in       0.01 seconds).
-SCF Change: DM 4.69406e-5; eev 7.54018e-4 Ha; etot -3.33952e-6 Ha
-Energy:     -56.5245524867 Ha after    5 iterations (in       0.01 seconds).
-SCF Change: DM 6.07533e-6; eev 2.53401e-4 Ha; etot -2.33177e-7 Ha
-Energy:     -56.5245527199 Ha after    6 iterations (in       0.01 seconds).
-SCF Change: DM 2.79517e-7; eev 1.67338e-5 Ha; etot -3.36093e-9 Ha
-Energy:     -56.5245527232 Ha after    7 iterations (in       0.01 seconds).
-SCF Change: DM 6.97306e-8; eev 1.26962e-6 Ha; etot -4.39115e-12 Ha
-Energy:     -56.5245527233 Ha after    8 iterations (in       0.01 seconds).
-SCF Change: DM 2.53069e-8; eev 7.78488e-7 Ha; etot -3.33955e-13 Ha
-Energy:     -56.5245527233 Ha after    9 iterations (in       0.01 seconds).
-SCF Change: DM 2.73253e-9; eev 5.29055e-8 Ha; etot -2.48690e-13 Ha
-Energy:     -56.5245527233 Ha after   10 iterations (in       0.01 seconds).
-SCF is converged after   10 iterations.
+Initial guess energy using single atom density (SAD):     -56.5038295008680223
+The total energy:       -56.3490603120 Ha by the initial guess
+Initial grad_dm l2:  1.51235e0 Ha
+SCF Change: DM 1.43592e-1; eev  2.41445e0 Ha; etot 1.75908e-1 Ha; grad  2.30891e0 Ha
+Energy:     -56.1731519790 Ha after    1 iterations (in       0.05 seconds).
+SCF Change: DM 8.96671e-2; eev  1.34632e0 Ha; etot 2.92937e-1 Ha; grad  2.67595e0 Ha
+Energy:     -55.8802147492 Ha after    2 iterations (in       0.05 seconds).
+SCF Change: DM 4.36013e-3; eev 9.78422e-2 Ha; etot -6.42211e-1 Ha; grad 1.95932e-1 Ha
+Energy:     -56.5224257599 Ha after    3 iterations (in       0.05 seconds).
+SCF Change: DM 4.29167e-4; eev 8.64660e-3 Ha; etot -2.12114e-3 Ha; grad 7.44620e-3 Ha
+Energy:     -56.5245469020 Ha after    4 iterations (in       0.05 seconds).
+SCF Change: DM 6.41558e-5; eev 5.11986e-4 Ha; etot -5.39071e-6 Ha; grad 3.02117e-3 Ha
+Energy:     -56.5245522927 Ha after    5 iterations (in       0.05 seconds).
+SCF Change: DM 8.44470e-6; eev 2.84507e-4 Ha; etot -4.23770e-7 Ha; grad 3.49164e-4 Ha
+Energy:     -56.5245527165 Ha after    6 iterations (in       0.05 seconds).
+SCF Change: DM 3.30543e-7; eev 1.02749e-5 Ha; etot -6.85725e-9 Ha; grad 9.34943e-6 Ha
+Energy:     -56.5245527234 Ha after    7 iterations (in       0.05 seconds).
+SCF Change: DM 3.36191e-8; eev 3.82975e-7 Ha; etot -4.35563e-12 Ha; grad 2.63780e-6 Ha
+Energy:     -56.5245527234 Ha after    8 iterations (in       0.05 seconds).
+SCF Change: DM 1.23699e-7; eev 4.28521e-7 Ha; etot 5.25802e-13 Ha; grad 4.00595e-6 Ha
+Energy:     -56.5245527234 Ha after    9 iterations (in       0.05 seconds).
+SCF Change: DM 2.41190e-7; eev 1.73778e-6 Ha; etot 2.78533e-12 Ha; grad 8.84837e-6 Ha
+Energy:     -56.5245527234 Ha after   10 iterations (in       0.05 seconds).
+SCF Change: DM 2.98112e-8; eev 1.30734e-7 Ha; etot -3.60245e-12 Ha; grad 1.16466e-6 Ha
+Energy:     -56.5245527234 Ha after   11 iterations (in       0.05 seconds).
+SCF Change: DM 2.23027e-9; eev 6.45196e-8 Ha; etot 4.26326e-14 Ha; grad 7.44682e-8 Ha
+Energy:     -56.5245527234 Ha after   12 iterations (in       0.05 seconds).
+SCF is converged after   12 iterations.
+Energy:       -56.5245527234 Ha
+grad_dm l2: 6.07110e-9 Ha
 Mulliken population analysis:
   0-N  :  -0.271766
   1-H  :   0.090542
@@ -96,374 +175,144 @@ Mulliken population analysis:
   3-H  :   0.090575
 Now starts quasiparticle method computation!
 You are doing G0W0 calculations of entire energy spectrum
-calculated orbital indices:[2, 3, 4, 5, 6, 7]
-Orbital #2:
-QP energy:-0.5687092803944729
-GW Evaluation of orbital #2 took 9.862287ms
-Orbital #3:
-QP energy:-0.5687028839388539
-GW Evaluation of orbital #3 took 9.766353ms
-Orbital #4:
-QP energy:-0.3489639691433286
-GW Evaluation of orbital #4 took 5.843625ms
-Orbital #5:
-QP energy:0.17713866045108245
-GW Evaluation of orbital #5 took 8.549966ms
-Orbital #6:
-QP energy:0.26591290969287945
-GW Evaluation of orbital #6 took 6.239452ms
-Orbital #7:
-QP energy:0.2659051848987353
-GW Evaluation of orbital #7 took 7.233471ms
+RI-OV Shape=[131, 120]
+V Matrix Constructed. This step took 1.643559ms
+Evaluation of W_c for omega=0.11122688807859561 has finished. This step took 10.380343ms
+Evaluation of W_c for omega=3.4421591657245934 has finished. This step took 11.571387ms
+Evaluation of W_c for omega=2.2476579568003734 has finished. This step took 11.738543ms
+Evaluation of W_c for omega=0.043739204912664226 has finished. This step took 12.059279ms
+Evaluation of W_c for omega=5.7156960328653605 has finished. This step took 12.384525ms
+Evaluation of W_c for omega=10.893989466206694 has finished. This step took 12.88492ms
+Evaluation of W_c for omega=0.5828681309044502 has finished. This step took 13.232218ms
+Evaluation of W_c for omega=1.5444337306792566 has finished. This step took 14.249632ms
+Evaluation of W_c for omega=0.16187162649578213 has finished. This step took 14.422969ms
+Evaluation of W_c for omega=0.7949775673994122 has finished. This step took 14.436345ms
+Evaluation of W_c for omega=0.2279577547298493 has finished. This step took 14.457084ms
+Evaluation of W_c for omega=1.0966944304933726 has finished. This step took 14.46004ms
+Evaluation of W_c for omega=0.009172247378306849 has finished. This step took 14.479106ms
+Evaluation of W_c for omega=145.03073338857598 has finished. This step took 14.486319ms
+Evaluation of W_c for omega=0.0017237725698468571 has finished. This step took 14.542025ms
+Evaluation of W_c for omega=0.31447428235971236 has finished. This step took 14.494135ms
+Evaluation of W_c for omega=0.022948434159543063 has finished. This step took 14.558306ms
+Evaluation of W_c for omega=27.25613360486454 has finished. This step took 14.511638ms
+Evaluation of W_c for omega=0.4289134827324821 has finished. This step took 14.526706ms
+Evaluation of W_c for omega=0.0726288320683665 has finished. This step took 14.528029ms
+calculated orbital indices:[4, 5, 6, 7]
+Exchange=-0.8236472763763453,V_xc=-0.6243471260791462
+Orbital #4 (first round, no Fourier self-energy):
+First round QP energy (no FSE): -0.3489639702360369
+GW Evaluation of orbital #4 took 8.735152ms
+Exchange=-0.12594105895361987,V_xc=-0.25730570289231186
+Orbital #5 (first round, no Fourier self-energy):
+First round QP energy (no FSE): 0.17713866134273565
+GW Evaluation of orbital #5 took 9.867022ms
+Exchange=-0.1406110298307377,V_xc=-0.2762237165614233
+Orbital #6 (first round, no Fourier self-energy):
+First round QP energy (no FSE): 0.2659129104515687
+GW Evaluation of orbital #6 took 9.43715ms
+Exchange=-0.14059542217157966,V_xc=-0.27617635481522906
+Orbital #7 (first round, no Fourier self-energy):
+First round QP energy (no FSE): 0.26590518570495986
+GW Evaluation of orbital #7 took 9.031753ms
 Quasiparticle Energies from GW Approximation (in Hatree):
-   Note that only energies around the Fermi surface within 0.3 Hatree are explicitly computed by solving the quasiparticle equation,
+   Note that only energies around the Fermi surface within 0.1 Hatree below HOMO and 0.1 Hatree above LUMO are explicitly computed by solving the quasiparticle equation,
     while others are extrapolated using average energy shifts of the computed ones compared to corresponding SCF results
-    You can set this threshold to be any other float value using the keyword "threshold"
- (extrapolated) QP Energy of Orbital #0:-14.28947305747212
- (extrapolated) QP Energy of Orbital #1:-0.9517256447738172
- (calculated) QP Energy of Orbital #2:-0.5687092803944729
- (calculated) QP Energy of Orbital #3:-0.5687028839388539
- (calculated) QP Energy of Orbital #4:-0.3489639691433286
+    You can set these thresholds using the keywords "gw_extrapolate_occ_threshold" and "gw_extrapolate_vir_threshold"
+ (extrapolated) QP Energy of Orbital #0:-14.279827945593112
+ (extrapolated) QP Energy of Orbital #1:-0.9420805353027781
+ (extrapolated) QP Energy of Orbital #2:-0.5590641701509731
+ (extrapolated) QP Energy of Orbital #3:-0.5590508763908815
+ (calculated) QP Energy of Orbital #4:-0.3489639702360369
 -------Fermi Surface--------
- (calculated) QP Energy of Orbital #5:0.17713866045108245
- (calculated) QP Energy of Orbital #6:0.26591290969287945
- (calculated) QP Energy of Orbital #7:0.2659051848987353
- (extrapolated) QP Energy of Orbital #8:0.6349143135697721
- (extrapolated) QP Energy of Orbital #9:0.6349506981391589
- (extrapolated) QP Energy of Orbital #10:0.7356979163623709
- (extrapolated) QP Energy of Orbital #11:0.849338444585678
- (extrapolated) QP Energy of Orbital #12:0.9563426225230593
- (extrapolated) QP Energy of Orbital #13:0.9564125599396311
- (extrapolated) QP Energy of Orbital #14:1.1876920190476077
- (extrapolated) QP Energy of Orbital #15:1.187723854896544
- (extrapolated) QP Energy of Orbital #16:1.2749882927117866
- (extrapolated) QP Energy of Orbital #17:1.5844246628027354
- (extrapolated) QP Energy of Orbital #18:1.792079783874587
- (extrapolated) QP Energy of Orbital #19:1.8155663935209134
- (extrapolated) QP Energy of Orbital #20:1.81560780942474
- (extrapolated) QP Energy of Orbital #21:2.1288351043152245
- (extrapolated) QP Energy of Orbital #22:2.1289940965158745
- (extrapolated) QP Energy of Orbital #23:2.3175503582784645
- (extrapolated) QP Energy of Orbital #24:2.6468197854329536
- (extrapolated) QP Energy of Orbital #25:2.647009762955199
- (extrapolated) QP Energy of Orbital #26:2.8154925746907096
- (extrapolated) QP Energy of Orbital #27:3.0849628056166227
- (extrapolated) QP Energy of Orbital #28:3.085125579865994
+ (calculated) QP Energy of Orbital #5:0.17713866134273565
+ (calculated) QP Energy of Orbital #6:0.2659129104515687
+ (calculated) QP Energy of Orbital #7:0.26590518570495986
+ (extrapolated) QP Energy of Orbital #8:0.634914313964482
+ (extrapolated) QP Energy of Orbital #9:0.6349506985562355
+ (extrapolated) QP Energy of Orbital #10:0.7356979194018356
+ (extrapolated) QP Energy of Orbital #11:0.8493384434562772
+ (extrapolated) QP Energy of Orbital #12:0.9563426226694376
+ (extrapolated) QP Energy of Orbital #13:0.9564125601028524
+ (extrapolated) QP Energy of Orbital #14:1.1876920179439667
+ (extrapolated) QP Energy of Orbital #15:1.187723853822282
+ (extrapolated) QP Energy of Orbital #16:1.2749882912695762
+ (extrapolated) QP Energy of Orbital #17:1.5844246664521124
+ (extrapolated) QP Energy of Orbital #18:1.792079786298573
+ (extrapolated) QP Energy of Orbital #19:1.8155663968977498
+ (extrapolated) QP Energy of Orbital #20:1.8156078127973074
+ (extrapolated) QP Energy of Orbital #21:2.1288351117598894
+ (extrapolated) QP Energy of Orbital #22:2.1289941039522486
+ (extrapolated) QP Energy of Orbital #23:2.317550363803132
+ (extrapolated) QP Energy of Orbital #24:2.6468197911747753
+ (extrapolated) QP Energy of Orbital #25:2.647009768723579
+ (extrapolated) QP Energy of Orbital #26:2.8154925837918325
+ (extrapolated) QP Energy of Orbital #27:3.084962810255783
+ (extrapolated) QP Energy of Orbital #28:3.0851255844847394
 One round of GW by extrapolated scheme has finished.
 Specific BSE calculations are triggered
 BSE Type:singlet
 starts contructing Full BSE hamiltonian!!!
-BSE Preparation Time:2.871757ms
-BSE DGEES Time:20.034153ms
-First 30 excitations:
-#0 Excitation energy=0.24466582838447576
-x_norm-y_norm=0.9947418083131145
+BSE Preparation Time:24.805578ms
+BSE DGEES Time:17.923411ms
+5 excitations within the window:
+#0 Excitation energy=0.24463466354242472, norm=1.000000
+x_norm-y_norm=0.9947466719577026
 	Dipole Moment Components:
-	x:0.14530049073613321, y:0.022890055819247364, z:-0.41024671996718964
-Transition Dipole Square:0.1899385585074071; Oscillator Strength:0.03098098317291198
-      #4->#5,amplitude=0.7052928186088526
-      #4->#10,amplitude=0.047880098204078736
-      #4->#29,amplitude=-0.02633493450087957
-      #4->#16,amplitude=-0.020429863658179222
-      #3->#6,amplitude=-0.018938177638091955
-#1 Excitation energy=0.32238442938108114
-x_norm-y_norm=0.9962237678372857
+	x:-0.14512883511658897, y:-0.022862149686820238, z:0.409764070524527
+Transition Dipole Square:0.1894916501634302; Oscillator Strength:0.03090415072121973
+      #4->#5,amplitude=-0.705261871744966
+      #4->#10,amplitude=-0.04792913208990569
+      #5->#4,amplitude=0.02628533669728328
+      #4->#16,amplitude=0.020418625725918793
+      #3->#6,amplitude=0.019366864383628165
+#1 Excitation energy=0.3223369346437948, norm=1.000000
+x_norm-y_norm=0.9962392224280369
 	Dipole Moment Components:
-	x:-0.2903405207312878, y:-0.06759420741270965, z:-0.10668138438732452
-Transition Dipole Square:0.10024751262906387; Oscillator Strength:0.021545491437195655
-      #4->#6,amplitude=-0.5422648026025665
-      #4->#7,amplitude=-0.44381900095552906
-      #4->#8,amplitude=-0.06402246151547605
-      #4->#13,amplitude=-0.04748560223097337
-      #4->#9,amplitude=0.03137086525827256
-#2 Excitation energy=0.3223871657405145
-x_norm-y_norm=0.9962237596013931
+	x:0.2873652581543537, y:0.06629525271475828, z:0.10555525548217284
+Transition Dipole Square:0.0981157640865388; Oscillator Strength:0.021084223090592432
+      #4->#6,amplitude=0.5430195174078443
+      #4->#7,amplitude=0.44272615686602595
+      #4->#8,amplitude=0.06416747468844944
+      #4->#13,amplitude=0.04751126520642267
+      #4->#9,amplitude=-0.03129174158153964
+#2 Excitation energy=0.32233967277634634, norm=1.000000
+x_norm-y_norm=0.9962392119512665
 	Dipole Moment Components:
-	x:-0.06920104085051954, y:0.30889571113669806, z:-0.007234830798096041
-Transition Dipole Square:0.10025768719011877; Oscillator Strength:0.02154786107794765
-      #4->#7,amplitude=0.5422665506753545
-      #4->#6,amplitude=-0.44381871826106983
-      #4->#9,amplitude=-0.06400373794454504
-      #4->#12,amplitude=-0.047489465036742375
-      #4->#8,amplitude=-0.03137847797626823
-#3 Excitation energy=0.46693159936222334
-x_norm-y_norm=0.9952401451632596
+	x:-0.06791730309438491, y:0.3057203741391608, z:-0.006956722860083344
+Transition Dipole Square:0.09812610321635501; Oscillator Strength:0.021086624001051907
+      #4->#7,amplitude=0.5430213156605567
+      #4->#6,amplitude=-0.4427258353687053
+      #4->#9,amplitude=-0.06414874486160053
+      #4->#12,amplitude=-0.04751515812070939
+      #4->#8,amplitude=-0.03129932994231379
+#3 Excitation energy=0.4572471487989123, norm=1.000000
+x_norm-y_norm=0.9950712771592586
 	Dipole Moment Components:
-	x:0.6229106153026632, y:-0.5548474189877878, z:0.1896954469016426
-Transition Dipole Square:0.7318576555893661; Oscillator Strength:0.22781831041988662
-      #3->#5,amplitude=0.7033445355473287
-      #2->#5,amplitude=-0.050460167923635064
-      #3->#10,amplitude=0.038780653397172536
-      #3->#29,amplitude=-0.022120822602777476
-      #4->#6,amplitude=0.019653601736102567
-#4 Excitation energy=0.4669360903092884
-x_norm-y_norm=0.9952431934368728
+	x:0.644579898290114, y:-0.5260696620343892, z:0.1989664934842358
+Transition Dipole Square:0.7318202001220826; Oscillator Strength:0.22308179995951447
+      #3->#5,amplitude=0.7048883222679285
+      #3->#10,amplitude=0.0388877985825606
+      #5->#3,amplitude=-0.022656078198377404
+      #4->#6,amplitude=0.021032190910557764
+      #2->#5,amplitude=-0.019827285164309896
+#4 Excitation energy=0.45725852275030965, norm=1.000000
+x_norm-y_norm=0.9950746941895282
 	Dipole Moment Components:
-	x:-0.5123190852205476, y:-0.6493167052866744, z:-0.21746881725726097
-Transition Dipole Square:0.7313757153248326; Oscillator Strength:0.22767047804062426
-      #2->#5,amplitude=-0.7033439789686154
-      #3->#5,amplitude=-0.05046049514321906
-      #2->#10,amplitude=-0.038782320528188176
-      #2->#29,amplitude=0.022110622847747032
-      #4->#7,amplitude=-0.01963878332292099
-#5 Excitation energy=0.5316874955977672
-x_norm-y_norm=0.9998397193524453
-	Dipole Moment Components:
-	x:-0.000011900814482463055, y:0.00012744772138921956, z:-0.00000739086321724136
-Transition Dipole Square:0.000000016439175931746107; Oscillator Strength:0.000000005827002853894119
-      #3->#7,amplitude=0.48762364643085526
-      #2->#6,amplitude=-0.48741025560941287
-      #2->#7,amplitude=0.08110599405530726
-      #3->#6,amplitude=0.08110199428796812
-      #3->#9,amplitude=-0.060112302133463434
-#6 Excitation energy=0.553001419196912
-x_norm-y_norm=0.9949195870612325
-	Dipole Moment Components:
-	x:-0.653130497964778, y:0.39109562596358427, z:-0.20950588460607514
-Transition Dipole Square:0.6234279517041408; Oscillator Strength:0.22983769470627588
-      #2->#6,amplitude=-0.49520240794482323
-      #3->#7,amplitude=-0.49499537966086965
-      #4->#8,amplitude=0.06585754516231986
-      #4->#6,amplitude=-0.033212694625987006
-      #2->#13,amplitude=-0.03194678096087749
-#7 Excitation energy=0.5530045276072366
-x_norm-y_norm=0.9949174834611574
-	Dipole Moment Components:
-	x:-0.3573322990461875, y:-0.6848843149922256, z:-0.1646321990129065
-Transition Dipole Square:0.6238566578158292; Oscillator Strength:0.22999703756671475
-      #3->#6,amplitude=-0.4951018149904728
-      #2->#7,amplitude=0.4950958425471121
-      #4->#9,amplitude=-0.06586559995355365
-      #4->#7,amplitude=-0.033220383087781614
-      #2->#12,amplitude=-0.031944129450356316
-#8 Excitation energy=0.6112094930034122
-x_norm-y_norm=0.9763823420404627
-	Dipole Moment Components:
-	x:-0.18052384675062133, y:-0.0283028635088521, z:0.5097827569051365
-Transition Dipole Square:0.29326837056624405; Oscillator Strength:0.11949894139182056
-      #2->#7,amplitude=-0.47383379458192
-      #3->#6,amplitude=-0.47382133488811756
-      #4->#11,amplitude=-0.176728035922051
-      #2->#6,amplitude=-0.07882777624831738
-      #3->#7,amplitude=0.0788254094712033
-#9 Excitation energy=0.659602484211336
-x_norm-y_norm=0.9981725481616982
-	Dipole Moment Components:
-	x:-0.2701165221779207, y:0.08378166112847608, z:-0.09098453242833293
-Transition Dipole Square:0.0882604874361443; Oscillator Strength:0.0388112245137228
-      #4->#8,amplitude=-0.6950880795913955
-      #4->#6,amplitude=0.0660030669833705
-      #2->#6,amplitude=-0.04882456834910017
-      #3->#7,amplitude=-0.048810847724105294
-      #4->#13,amplitude=0.04059517332464612
-#10 Excitation energy=0.6596422280629174
-x_norm-y_norm=0.9981717083808593
-	Dipole Moment Components:
-	x:0.07412389985585488, y:0.28468907667633847, z:0.04214562539644928
-Transition Dipole Square:0.08831847664872476; Oscillator Strength:0.038839064477125027
-      #4->#9,amplitude=-0.6950870069423807
-      #4->#7,amplitude=-0.06598344225553981
-      #3->#6,amplitude=0.048843114631745614
-      #2->#7,amplitude=-0.04880431507164309
-      #4->#12,amplitude=0.04060602034197667
-#11 Excitation energy=0.7686924637749399
-x_norm-y_norm=0.9983276077254586
-	Dipole Moment Components:
-	x:0.16119100256105345, y:0.025371454374517714, z:-0.4550551235509068
-Transition Dipole Square:0.23370141547364684; Oscillator Strength:0.11976301123208564
-      #4->#10,amplitude=-0.6835707668420082
-      #1->#5,amplitude=-0.15627700872483224
-      #4->#5,amplitude=0.048283572075318845
-      #3->#8,amplitude=-0.03494142873558575
-      #2->#9,amplitude=0.03491489459944741
-#12 Excitation energy=0.8558347115767619
-x_norm-y_norm=0.9953906983417639
-	Dipole Moment Components:
-	x:-0.004108018161694088, y:-0.0006904547802641533, z:0.011575716627215776
-Transition Dipole Square:0.00015134975645399786; Oscillator Strength:0.00008635358344134694
-      #1->#5,amplitude=0.6257283958147504
-      #4->#11,amplitude=-0.2975544774496557
-      #4->#10,amplitude=-0.13152016119385251
-      #1->#10,amplitude=0.03681853278192711
-      #2->#15,amplitude=-0.02239119234773001
-#13 Excitation energy=0.8767224001011374
-x_norm-y_norm=0.999882896331004
-	Dipole Moment Components:
-	x:-0.00007808716215356778, y:0.00015379211946073387, z:-0.0000332451935868623
-Transition Dipole Square:0.00000003085486379805018; Oscillator Strength:0.00000001803410016254683
-      #2->#8,amplitude=-0.4570468796099614
-      #3->#9,amplitude=-0.4567776528372245
-      #3->#8,amplitude=0.19047703124793205
-      #2->#9,amplitude=-0.19040934297090528
-      #2->#6,amplitude=0.06201492675252626
-#14 Excitation energy=0.9103639606216167
-x_norm-y_norm=0.996336238685496
-	Dipole Moment Components:
-	x:-0.11011554683985943, y:-0.017545409704985703, z:0.3067958565869444
-Transition Dipole Square:0.10655697267647404; Oscillator Strength:0.0646704184517362
-      #3->#8,amplitude=-0.4561154504721309
-      #2->#9,amplitude=0.45444786322052344
-      #2->#8,amplitude=-0.19028269886083432
-      #3->#9,amplitude=-0.18924337014114584
-      #4->#10,amplitude=0.05552513727866756
-#15 Excitation energy=0.9146292854869247
-x_norm-y_norm=0.9967826991616252
-	Dipole Moment Components:
-	x:0.3628419966962422, y:0.39108038288707053, z:0.15097969326169952
-Transition Dipole Square:0.3073930482230104; Oscillator Strength:0.18743378937323985
-      #1->#7,amplitude=-0.39770365997628127
-      #2->#9,amplitude=0.3722310638768066
-      #3->#8,amplitude=0.3703079770458024
-      #2->#10,amplitude=-0.19858119300335464
-      #1->#6,amplitude=-0.12999187561201703
-#16 Excitation energy=0.9146419179433977
-x_norm-y_norm=0.9967817303294664
-	Dipole Moment Components:
-	x:0.37590236657587855, y:-0.3919786079346858, z:0.11173267997402557
-Transition Dipole Square:0.3074340100499383; Oscillator Strength:0.18746135506207026
-      #1->#6,amplitude=-0.39782001178908727
-      #3->#9,amplitude=-0.3715597072166752
-      #2->#8,amplitude=0.37083463480527595
-      #3->#10,amplitude=-0.198578963411032
-      #1->#7,amplitude=0.1300626622389971
-#17 Excitation energy=0.941608313573246
-x_norm-y_norm=0.9945760136062377
-	Dipole Moment Components:
-	x:-0.07735132787929337, y:-0.14436886610854646, z:-0.03550549987972983
-Transition Dipole Square:0.028086237947866858; Oscillator Strength:0.017630823432471878
-      #1->#7,amplitude=-0.5526644731938828
-      #2->#9,amplitude=-0.2625028778283013
-      #3->#8,amplitude=-0.26227721855240366
-      #2->#10,amplitude=0.13921116544974807
-      #4->#12,amplitude=-0.1002172861903065
-#18 Excitation energy=0.9416191703145003
-x_norm-y_norm=0.994573993754467
-	Dipole Moment Components:
-	x:0.13773774673318143, y:-0.0848912456519863, z:0.044161482189963214
-Transition Dipole Square:0.028128446972694354; Oscillator Strength:0.01765752326710925
-      #1->#6,amplitude=0.552615914414186
-      #3->#9,amplitude=-0.26253605995811097
-      #2->#8,amplitude=0.26239542511804353
-      #3->#10,amplitude=-0.13927802786380875
-      #4->#13,amplitude=-0.09992037761120981
-#19 Excitation energy=0.9678773065128415
-x_norm-y_norm=0.9702242145846539
-	Dipole Moment Components:
-	x:-0.0628045804241108, y:-0.01001979871254361, z:0.17837211251986734
-Transition Dipole Square:0.03586142221328871; Oscillator Strength:0.023139637826345108
-      #4->#11,amplitude=0.5744762109228019
-      #1->#5,amplitude=0.2556096871291843
-      #2->#12,amplitude=-0.16703660869703627
-      #3->#13,amplitude=0.16697035845146477
-      #3->#6,amplitude=-0.12273367989074882
-#20 Excitation energy=0.9751993336013406
-x_norm-y_norm=0.999492201866959
-	Dipole Moment Components:
-	x:-0.02430352086935278, y:-0.1758756710167737, z:-0.018525296523435538
-Transition Dipole Square:0.0318660993935287; Oscillator Strength:0.020717199262028845
-      #4->#12,amplitude=-0.6907867872447297
-      #1->#7,amplitude=0.08401838878629612
-      #2->#10,amplitude=-0.07209468254069973
-      #4->#7,amplitude=-0.049850137315710454
-      #2->#11,amplitude=0.04232262393270096
-#21 Excitation energy=0.9752661815867996
-x_norm-y_norm=0.9994938489658433
-	Dipole Moment Components:
-	x:0.1667300838113178, y:-0.029011293559936594, z:0.05751135371603652
-Transition Dipole Square:0.03194813180800094; Oscillator Strength:0.020771955011480568
-      #4->#13,amplitude=-0.6908390563331326
-      #1->#6,amplitude=-0.0837909012317871
-      #3->#10,amplitude=0.07209611064983276
-      #4->#6,amplitude=0.049857832509836116
-      #3->#11,amplitude=-0.04236831469668466
-#22 Excitation energy=1.0100961424669377
-x_norm-y_norm=0.9916600302660631
-	Dipole Moment Components:
-	x:0.2961111616666745, y:-0.3018420988704125, z:0.08795253096431233
-Transition Dipole Square:0.18652612041711164; Oscillator Strength:0.12560620980176532
-      #3->#10,amplitude=0.6357907672591434
-      #3->#9,amplitude=-0.15849297838753143
-      #2->#8,amplitude=0.1584741592694629
-      #4->#14,amplitude=0.12425127174816163
-      #3->#11,amplitude=-0.11170127958519319
-#23 Excitation energy=1.0101141087128012
-x_norm-y_norm=0.9916595754760671
-	Dipole Moment Components:
-	x:-0.2794922517668489, y:-0.30814882826818746, z:-0.11617842559851939
-Transition Dipole Square:0.18656904573531125; Oscillator Strength:0.12563735023088116
-      #2->#10,amplitude=-0.6358021446639189
-      #2->#9,amplitude=-0.1584754159990268
-      #3->#8,amplitude=-0.15843743205785477
-      #4->#15,amplitude=0.12424899027862432
-      #2->#11,amplitude=0.11176187551131503
-#24 Excitation energy=1.0698846606602086
-x_norm-y_norm=0.9989267657052378
-	Dipole Moment Components:
-	x:0.18906862604499478, y:-0.19104479090701462, z:0.05635339436629106
-Transition Dipole Square:0.07542076254384975; Oscillator Strength:0.053794344627307235
-      #3->#11,amplitude=0.6877560462457724
-      #2->#11,amplitude=-0.09364269710114655
-      #3->#10,amplitude=0.09307841296305988
-      #4->#14,amplitude=0.05375526792199327
-      #3->#9,amplitude=-0.03929416496009409
-#25 Excitation energy=1.06989167564651
-x_norm-y_norm=0.9989261104607814
-	Dipole Moment Components:
-	x:0.17698624919523792, y:0.19685327706935607, z:0.07362209106300163
-Transition Dipole Square:0.07549555738963243; Oscillator Strength:0.05384804559964074
-      #2->#11,amplitude=0.6877480311314714
-      #3->#11,amplitude=0.09363407716857236
-      #2->#10,amplitude=0.09312921725587421
-      #4->#15,amplitude=-0.05377540917612769
-      #3->#8,amplitude=0.0392963826183202
-#26 Excitation energy=1.1931670967964092
-x_norm-y_norm=0.9999056047180721
-	Dipole Moment Components:
-	x:0.00031075325455045047, y:-0.0005760084083264709, z:0.000033376925257148216
-Transition Dipole Square:0.0000004294672908161127; Oscillator Strength:0.0000003416174937013869
-      #3->#12,amplitude=0.44170811071030125
-      #2->#13,amplitude=0.4344060293221784
-      #2->#12,amplitude=0.2367748320493996
-      #3->#13,amplitude=-0.23325499463731353
-      #3->#7,amplitude=0.04214316637025335
-#27 Excitation energy=1.1978246150205394
-x_norm-y_norm=0.9990250609076464
-	Dipole Moment Components:
-	x:0.040071097715235066, y:0.0017854992886662895, z:0.014200677623119244
-Transition Dipole Square:0.0018105401247695042; Oscillator Strength:0.0014458063519541804
-      #2->#12,amplitude=-0.37633655444935654
-      #3->#13,amplitude=-0.37534825449730397
-      #2->#13,amplitude=-0.30552996942420835
-      #3->#12,amplitude=0.30396433544186846
-      #4->#14,amplitude=0.13789936403682504
-#28 Excitation energy=1.1978347616995062
-x_norm-y_norm=0.999026343449955
-	Dipole Moment Components:
-	x:-0.002316817248031969, y:0.042835871162461854, z:0.0016300891315411568
-Transition Dipole Square:0.001842936690984578; Oscillator Strength:0.0014716890880485257
-      #2->#13,amplitude=0.3794218569321463
-      #3->#12,amplitude=-0.37230741648627785
-      #3->#13,amplitude=-0.3067041084885269
-      #2->#12,amplitude=-0.30290364352171234
-      #4->#15,amplitude=-0.13747841606905814
-#29 Excitation energy=1.2160174259900662
-x_norm-y_norm=0.9932182058159581
-	Dipole Moment Components:
-	x:-0.6627638065291099, y:0.43117945755272996, z:-0.21077417830757128
-Transition Dipole Square:0.6695973421016538; Oscillator Strength:0.5428280242614952
-      #4->#14,amplitude=0.6348990982237027
-      #1->#8,amplitude=-0.14673981607458833
-      #2->#13,amplitude=0.10379376847987125
-      #3->#12,amplitude=-0.10349771747889396
-      #4->#15,amplitude=0.09329260900845274
+	x:-0.48472983782397316, y:-0.6728076322996118, z:-0.2090075498595558
+Transition Dipole Square:0.7313172816557596; Oscillator Strength:0.2229340399144565
+      #2->#5,amplitude=-0.704887692021518
+      #2->#10,amplitude=-0.03888968991646425
+      #5->#2,amplitude=0.02264511807777431
+      #4->#7,amplitude=-0.021015098628508276
+      #3->#5,amplitude=-0.019827575830820492
 
 
-The first excitation obtained by BSE is 0.24466582838447576
+The first excitation obtained by BSE is 0.24463466354242472
 
 ====================================================
               REST: Mission accomplished
 ====================================================
-The SCF energy        :     -56.5245527233 Ha
+The SCF energy        :     -56.5245527234 Ha
 Detailed time report:
-Overall   |:    0.398 s for the whole job
-SCF       |:    0.301 s for the scf procedure
+Overall   |:    2.450 s for the whole job
+SCF       |:    2.234 s for the scf procedure

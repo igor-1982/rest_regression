@@ -16,7 +16,9 @@
      spin_polarization =         false
 [quasiparticle_methods]
      gw_or_bse=      "gw"
-     homo_lumo_gw_qp=            true
+     gw_scheme=                  "extrapolated"
+     gw_extrapolate_occ_threshold= 0.5
+     gw_extrapolate_vir_threshold= 0.5
 
 [geom]
      name = "NH3"

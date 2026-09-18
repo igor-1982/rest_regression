@@ -1,0 +1,26 @@
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     xc =                        "scan" 
+     basis_path =                "cc-pVDZ"
+     auxbas_path =               "def2-universal-jkfit" 
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     charge =                    1.0
+     spin =                      2.0
+     spin_polarization =         true
+[quasiparticle_methods]
+     gw_or_bse=      "bse"
+     gw_scheme=                  "extrapolated"
+     gw_extrapolate_occ_threshold= 0.3
+     gw_extrapolate_vir_threshold= 0.3
+     bse_spin=                   "singlet"
+     threshold=                  0.3
+[geom]
+     name = "NH3"
+     unit = "angstrom"
+     position = '''
+        N  -2.1988391019      1.8973746268      0.0000000000
+        H  -1.1788391019      1.8973746268      0.0000000000
+        H  -2.5388353987      1.0925460144     -0.5263586446
+        H  -2.5388400276      2.7556271745     -0.4338224694'''
