@@ -1,0 +1,37 @@
+# Pure-QM NVT Langevin MD of a single water molecule (reproducible).
+# Preset seed = 12345, so md.log / dump_nvt.xyz are bit-reproducible.
+# Run:  rest -i ctrl.in
+
+[ctrl]
+num_threads          = 4
+job_type             = "md"
+xc                   = "pbe"
+basis_path           = "def2-svp"
+auxbas_path          = "def2-universal-jkfit"
+auxbasis_response    = "true"
+empirical_dispersion = "d3bj"
+eri_type             = "ri-v"
+mixer                = "diis"
+scf_acc_rho          = 1e-08
+scf_acc_etot         = 1e-08
+spin                 = 1
+charge               = 0.0
+
+[geom]
+name = "h2o_md"
+unit = "angstrom"
+position = """
+O    1.85492380    0.39363045    1.38338465
+H    1.23675940    0.87902243    0.77445847
+H    2.61559905    1.00581427    1.43603221
+"""
+
+[md]
+ensemble      = "nvt"
+dt            = 0.5
+steps         = 20
+temperature   = 300.0
+friction      = 0.02
+seed          = 12345
+traj_interval = 1
+outputs       = ["md_log", "traj", "restart"]

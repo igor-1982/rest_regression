@@ -1,0 +1,1130 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Molecular dynamics (MD) simulation
+Cube output: wavefunction
+The exchange-correlation method: pbe
+Print level:   1    max log level: INFO
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /work/rest/basis-set-pool/def2-svp
+The spheric-GTO auxiliary basis set is taken from /work/rest/basis-set-pool/def2-universal-jkfit
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+O        1.85492380      0.39363045      1.38338465
+H        1.23675940      0.87902243      0.77445847
+H        2.61559905      1.00581427      1.43603221
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [101, 130]
+SCF DFA parameters: [1.0, 1.0]
+SCF DFA hybrid coeff:       0.00000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 12, natm: 3 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 49,final natm: 6
+numbasis: 24, num_auxbas: 113
+Molecule_name: h2o_md
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5410.96 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.93211861 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03918851 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=91.8% → skipping (AO too dense), falling back to dense
+
+=======================
+Generating SAD for atom: O
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5331.72 MB) is more than required (0.09 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.18745226 with the total number of basis functions:     14
+Grid size: 14262
+Initial guess from SAP
+SCF Change: DM 2.40367e-3; eev 8.81871e-2 Ha; etot 2.98921e-3 Ha; grad 9.05390e-2 Ha
+SCF Change: DM 2.89417e-3; eev 5.94318e-2 Ha; etot -1.16719e-2 Ha; grad 3.95052e-2 Ha
+SCF Change: DM 3.45824e-4; eev 3.63594e-2 Ha; etot -2.88968e-3 Ha; grad 1.04410e-2 Ha
+SCF Change: DM 8.88389e-4; eev 1.98209e-2 Ha; etot 4.45656e-3 Ha; grad 1.40382e-2 Ha
+SCF Change: DM 1.75951e-4; eev 1.36813e-2 Ha; etot 7.66106e-4 Ha; grad 2.45012e-3 Ha
+SCF Change: DM 3.03236e-4; eev 6.02622e-3 Ha; etot -1.59766e-3 Ha; grad 5.01273e-3 Ha
+SCF Change: DM 7.91544e-5; eev 5.14691e-3 Ha; etot -1.76318e-4 Ha; grad 5.80262e-4 Ha
+SCF Change: DM 7.12807e-5; eev 1.03028e-3 Ha; etot 4.43803e-4 Ha; grad 9.49366e-4 Ha
+SCF Change: DM 1.99666e-5; eev 1.03488e-3 Ha; etot -1.76739e-7 Ha; grad 3.89277e-4 Ha
+SCF Change: DM 6.96811e-7; eev 3.52206e-6 Ha; etot -3.60356e-8 Ha; grad 6.45231e-6 Ha
+SCF Change: DM 2.61310e-8; eev 2.74971e-7 Ha; etot -1.60298e-11 Ha; grad 1.26841e-6 Ha
+SCF Change: DM 1.62090e-8; eev 1.71286e-7 Ha; etot -1.56319e-13 Ha; grad 1.07519e-6 Ha
+SCF Change: DM 1.14039e-8; eev 1.20846e-7 Ha; etot -1.27898e-13 Ha; grad 9.55284e-7 Ha
+SCF Change: DM 8.62129e-9; eev 9.15463e-8 Ha; etot 4.26326e-14 Ha; grad 8.70900e-7 Ha
+SCF Change: DM 6.83097e-9; eev 7.26510e-8 Ha; etot -1.70530e-13 Ha; grad 8.07092e-7 Ha
+SCF Change: DM 9.80168e-8; eev 9.96130e-7 Ha; etot 4.26326e-14 Ha; grad 7.56527e-7 Ha
+SCF Change: DM 4.54289e-9; eev 1.15593e-7 Ha; etot -2.98428e-13 Ha; grad 4.43953e-8 Ha
+SCF Change: DM 3.93217e-10; eev 1.36408e-8 Ha; etot 5.68434e-14 Ha; grad 4.55154e-9 Ha
+SCF Change: DM 1.80522e-11; eev 8.54216e-10 Ha; etot -7.10543e-14 Ha; grad 8.59096e-10 Ha
+SCF is converged after   19 iterations.
+Energy:       -74.1952255220 Ha
+grad_dm l2: 5.37322e-10 Ha
+SAD generation for O complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5331.49 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.31520018 with the total number of basis functions:      5
+Grid size: 10024
+Initial guess from SAP
+SCF Change: DM (1.85353e-2, 0.00000e0); eev 3.05132e-2 Ha; etot -1.52374e-2 Ha; grad (9.77637e-2, 0.00000e0) Ha
+SCF Change: DM (4.68253e-3, 0.00000e0); eev 4.22690e-2 Ha; etot -4.93006e-3 Ha; grad (3.44292e-2, 0.00000e0) Ha
+SCF Change: DM (3.71739e-4, 0.00000e0); eev 1.77983e-2 Ha; etot 1.36043e-3 Ha; grad (6.37969e-3, 0.00000e0) Ha
+SCF Change: DM (2.76501e-4, 0.00000e0); eev 4.18731e-3 Ha; etot 7.54429e-4 Ha; grad (3.62675e-4, 0.00000e0) Ha
+SCF Change: DM (1.62871e-4, 0.00000e0); eev 3.28476e-4 Ha; etot 1.20845e-4 Ha; grad (7.76088e-4, 0.00000e0) Ha
+SCF Change: DM (4.87152e-5, 0.00000e0); eev 2.98184e-4 Ha; etot -2.17091e-5 Ha; grad (3.23165e-4, 0.00000e0) Ha
+SCF Change: DM (6.92480e-6, 0.00000e0); eev 1.56066e-4 Ha; etot -2.13982e-5 Ha; grad (7.49624e-5, 0.00000e0) Ha
+SCF Change: DM (2.11446e-6, 0.00000e0); eev 5.02064e-5 Ha; etot -9.09432e-6 Ha; grad (6.00162e-6, 0.00000e0) Ha
+SCF Change: DM (2.06960e-7, 0.00000e0); eev 7.30878e-7 Ha; etot -4.31449e-11 Ha; grad (2.19419e-6, 0.00000e0) Ha
+SCF Change: DM (1.16694e-7, 0.00000e0); eev 4.12103e-7 Ha; etot -2.06890e-12 Ha; grad (1.82152e-6, 0.00000e0) Ha
+SCF Change: DM (7.86691e-8, 0.00000e0); eev 2.77818e-7 Ha; etot -9.97369e-13 Ha; grad (1.61140e-6, 0.00000e0) Ha
+SCF Change: DM (5.81021e-8, 0.00000e0); eev 2.05187e-7 Ha; etot -6.03462e-13 Ha; grad (1.46974e-6, 0.00000e0) Ha
+SCF Change: DM (4.53937e-8, 0.00000e0); eev 1.60307e-7 Ha; etot -4.09894e-13 Ha; grad (1.36512e-6, 0.00000e0) Ha
+SCF Change: DM (3.68506e-8, 0.00000e0); eev 1.30137e-7 Ha; etot -2.99427e-13 Ha; grad (1.28338e-6, 0.00000e0) Ha
+SCF Change: DM (3.07611e-8, 0.00000e0); eev 1.08632e-7 Ha; etot -2.29483e-13 Ha; grad (1.21702e-6, 0.00000e0) Ha
+SCF Change: DM (3.23072e-7, 0.00000e0); eev 1.14092e-6 Ha; etot -1.82188e-13 Ha; grad (1.16163e-6, 0.00000e0) Ha
+SCF Change: DM (3.70478e-8, 0.00000e0); eev 1.30834e-7 Ha; etot -1.40077e-12 Ha; grad (5.79889e-7, 0.00000e0) Ha
+SCF Change: DM (2.68788e-8, 0.00000e0); eev 9.49220e-8 Ha; etot -1.00919e-13 Ha; grad (5.13178e-7, 0.00000e0) Ha
+SCF Change: DM (2.32637e-8, 0.00000e0); eev 8.21554e-8 Ha; etot -6.51701e-14 Ha; grad (4.64779e-7, 0.00000e0) Ha
+SCF Change: DM (2.23206e-8, 0.00000e0); eev 7.88248e-8 Ha; etot -5.15699e-14 Ha; grad (4.22889e-7, 0.00000e0) Ha
+SCF Change: DM (2.32075e-8, 0.00000e0); eev 8.19567e-8 Ha; etot -4.45199e-14 Ha; grad (3.82697e-7, 0.00000e0) Ha
+SCF Change: DM (2.60445e-8, 0.00000e0); eev 9.19756e-8 Ha; etot -4.19664e-14 Ha; grad (3.40908e-7, 0.00000e0) Ha
+SCF Change: DM (3.18430e-8, 0.00000e0); eev 1.12453e-7 Ha; etot -4.13558e-14 Ha; grad (2.94011e-7, 0.00000e0) Ha
+SCF Change: DM (4.35944e-8, 0.00000e0); eev 1.53953e-7 Ha; etot -4.19664e-14 Ha; grad (2.36672e-7, 0.00000e0) Ha
+SCF Change: DM (9.29551e-9, 0.00000e0); eev 3.28269e-8 Ha; etot -4.27436e-14 Ha; grad (1.58174e-7, 0.00000e0) Ha
+SCF Change: DM (8.27720e-9, 0.00000e0); eev 2.92308e-8 Ha; etot -6.99441e-15 Ha; grad (1.41436e-7, 0.00000e0) Ha
+SCF Change: DM (8.00671e-9, 0.00000e0); eev 2.82755e-8 Ha; etot -5.44009e-15 Ha; grad (1.26531e-7, 0.00000e0) Ha
+SCF Change: DM (8.03786e-9, 0.00000e0); eev 2.83855e-8 Ha; etot -5.05151e-15 Ha; grad (1.12114e-7, 0.00000e0) Ha
+SCF Change: DM (8.18795e-9, 0.00000e0); eev 2.89156e-8 Ha; etot -4.05231e-15 Ha; grad (9.76405e-8, 0.00000e0) Ha
+SCF Change: DM (8.26207e-9, 0.00000e0); eev 2.91773e-8 Ha; etot -3.49720e-15 Ha; grad (8.28968e-8, 0.00000e0) Ha
+SCF Change: DM (7.88949e-9, 0.00000e0); eev 2.78616e-8 Ha; etot -3.05311e-15 Ha; grad (6.80196e-8, 0.00000e0) Ha
+SCF Change: DM (6.32870e-9, 0.00000e0); eev 2.23497e-8 Ha; etot -2.55351e-15 Ha; grad (5.38133e-8, 0.00000e0) Ha
+SCF Change: DM (2.74203e-9, 0.00000e0); eev 9.68343e-9 Ha; etot -1.49880e-15 Ha; grad (4.24175e-8, 0.00000e0) Ha
+SCF is converged after   33 iterations.
+Energy:        -0.4992784057 Ha
+grad_dm l2: 3.74800e-8 Ha
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):     -76.2606734692030699
+The total energy:       -76.1129725620 Ha by the initial guess
+Initial grad_dm l2:  1.65076e0 Ha
+SCF Change: DM 1.12467e-1; eev  2.89462e0 Ha; etot 3.78773e-1 Ha; grad  2.99623e0 Ha
+Energy:     -75.7341994484 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 6.10755e-2; eev  1.81444e0 Ha; etot 6.32594e-1 Ha; grad  4.04307e0 Ha
+Energy:     -75.1016056322 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 5.35018e-3; eev 1.17298e-1 Ha; etot -1.16727e0 Ha; grad 2.61437e-1 Ha
+Energy:     -76.2688776429 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 5.30426e-4; eev 5.38031e-3 Ha; etot -3.70544e-3 Ha; grad 2.75832e-2 Ha
+Energy:     -76.2725830837 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 8.81088e-5; eev 2.35896e-3 Ha; etot -4.46290e-5 Ha; grad 5.13206e-3 Ha
+Energy:     -76.2726277127 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.95684e-5; eev 3.53425e-4 Ha; etot -1.31429e-6 Ha; grad 1.11718e-3 Ha
+Energy:     -76.2726290270 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 3.42897e-6; eev 4.34982e-5 Ha; etot -6.87901e-8 Ha; grad 2.69576e-4 Ha
+Energy:     -76.2726290958 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 1.11052e-6; eev 2.45423e-5 Ha; etot -3.61517e-9 Ha; grad 8.32952e-5 Ha
+Energy:     -76.2726290994 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 7.49670e-8; eev 1.62301e-6 Ha; etot -3.75721e-10 Ha; grad 6.72528e-6 Ha
+Energy:     -76.2726290997 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 3.57156e-8; eev 9.77664e-7 Ha; etot -2.64322e-12 Ha; grad 1.95885e-6 Ha
+Energy:     -76.2726290997 Ha after   10 iterations (in       0.01 seconds).
+SCF Change: DM 3.78036e-9; eev 2.90447e-8 Ha; etot 1.42109e-13 Ha; grad 1.40362e-7 Ha
+Energy:     -76.2726290997 Ha after   11 iterations (in       0.01 seconds).
+SCF is converged after   11 iterations.
+Energy:       -76.2726290997 Ha
+grad_dm l2: 9.14689e-9 Ha
+=========================================================
+MD ensemble: nvt, dt = 0.5 fs, steps = 20, T = 300 K, friction = 0.02 ase (tau = 509.0 fs)
+MD engine: ASE (ase.md Langevin/VelocityVerlet)
+MD outputs: md_log, traj, restart
+=========================================================
+/usr/local/lib/python3.10/dist-packages/ase/md/langevin.py:102: FutureWarning: The implementation of `fixcm=True` in `Langevin` does not strictly sample the correct NVT distributions. The deviations are typically small for large systems but can be more pronounced for small systems. Use `fixcm=False` together with `ase.constraints.FixCom`. `fixcm` is deprecated since ASE 3.28.0 and will be removed in a future release.
+  warnings.warn(msg, FutureWarning)
+MD engine: ASE Langevin (friction = 0.02 ase -> 0.0020 1/fs, tau = 509.0 fs)
+Input geometry in this round is:
+O        1.85492380      0.39363045      1.38338465
+H        1.23675940      0.87902243      0.77445847
+H        2.61559905      1.00581427      1.43603221
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5313.38 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.93211861 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03918851 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=91.8% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2726290998 Ha by the initial guess
+Initial grad_dm l2: 5.68017e-9 Ha
+SCF Change: DM 3.07945e-10; eev 6.68207e-9 Ha; etot -1.13687e-13 Ha; grad 7.62964e-9 Ha
+Energy:     -76.2726290998 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.94120e-10; eev 4.39429e-9 Ha; etot 9.94760e-14 Ha; grad 1.29778e-8 Ha
+Energy:     -76.2726290998 Ha after    2 iterations (in       0.01 seconds).
+SCF is converged after    2 iterations.
+Energy:       -76.2726290998 Ha
+grad_dm l2: 7.56494e-10 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.00881716     -0.00895823      0.00985700
+H       -0.01144054      0.00780515     -0.01059101
+H        0.00262460      0.00115309      0.00073503
+
+------------------------------------
+force                   0.131 s for 
+Input geometry in this round is:
+O        1.85565676      0.39376824      1.38348747
+H        1.24023567      0.87187202      0.76650350
+H        2.60094552      1.01038040      1.44457248
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5216.80 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.97353504 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03880697 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=91.8% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2760847994 Ha by the initial guess
+Initial grad_dm l2: 7.54860e-2 Ha
+SCF Change: DM 3.88553e-4; eev 1.62355e-2 Ha; etot 3.47332e-3 Ha; grad 1.30501e-2 Ha
+Energy:     -76.2726114782 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.42013e-4; eev 5.85860e-3 Ha; etot 3.58905e-6 Ha; grad 1.44774e-2 Ha
+Energy:     -76.2726078892 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 5.28651e-5; eev 8.29272e-4 Ha; etot -1.04992e-5 Ha; grad 3.17213e-3 Ha
+Energy:     -76.2726183884 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 6.18326e-6; eev 7.11418e-5 Ha; etot -5.49221e-7 Ha; grad 3.12374e-4 Ha
+Energy:     -76.2726189376 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 8.50578e-7; eev 5.94277e-6 Ha; etot -4.97151e-9 Ha; grad 4.93642e-5 Ha
+Energy:     -76.2726189426 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 2.93314e-8; eev 1.13053e-6 Ha; etot -1.19059e-10 Ha; grad 1.92083e-6 Ha
+Energy:     -76.2726189427 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 3.49395e-9; eev 2.09777e-8 Ha; etot -1.13687e-13 Ha; grad 1.33175e-7 Ha
+Energy:     -76.2726189427 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2726189427 Ha
+grad_dm l2: 1.29496e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.01498734     -0.00409252      0.01069200
+H       -0.01100194      0.00791404     -0.01066663
+H       -0.00398357     -0.00382149     -0.00002429
+
+------------------------------------
+force                   0.261 s for 
+MD step      1 / 20 : Epot = -2075.483694 eV, T = 229.79 K, elapsed 1.0 s
+Input geometry in this round is:
+O        1.85612793      0.39408210      1.38347881
+H        1.24571645      0.86288709      0.75879606
+H        2.58728339      1.01404727      1.45216067
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5211.80 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.02427235 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03836854 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=91.8% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2768351398 Ha by the initial guess
+Initial grad_dm l2: 7.53297e-2 Ha
+SCF Change: DM 4.17497e-4; eev 1.98235e-2 Ha; etot 4.28915e-3 Ha; grad 1.38674e-2 Ha
+Energy:     -76.2725459872 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.66829e-4; eev 6.63570e-3 Ha; etot 6.40626e-6 Ha; grad 1.67595e-2 Ha
+Energy:     -76.2725395809 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 4.42962e-5; eev 6.36187e-4 Ha; etot -1.44231e-5 Ha; grad 2.73613e-3 Ha
+Energy:     -76.2725540040 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 4.52535e-6; eev 5.43146e-5 Ha; etot -3.98868e-7 Ha; grad 2.47420e-4 Ha
+Energy:     -76.2725544029 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 7.39520e-7; eev 4.07247e-6 Ha; etot -2.99103e-9 Ha; grad 4.01158e-5 Ha
+Energy:     -76.2725544059 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 3.11677e-8; eev 1.27145e-6 Ha; etot -8.11440e-11 Ha; grad 2.19330e-6 Ha
+Energy:     -76.2725544059 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.84222e-9; eev 2.38307e-8 Ha; etot -3.97904e-13 Ha; grad 8.02235e-8 Ha
+Energy:     -76.2725544059 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2725544059 Ha
+grad_dm l2: 1.03912e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.01974472      0.00189273      0.01039524
+H       -0.00931924      0.00704402     -0.00947200
+H       -0.01042297     -0.00893670     -0.00092227
+
+------------------------------------
+force                   0.416 s for 
+MD step      2 / 20 : Epot = -2075.481938 eV, T = 238.78 K, elapsed 1.3 s
+Input geometry in this round is:
+O        1.85653227      0.39442312      1.38362100
+H        1.25276456      0.85268234      0.75089190
+H        2.57502944      1.01814292      1.45892403
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5209.81 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.07383649 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03795224 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=91.9% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2765848988 Ha by the initial guess
+Initial grad_dm l2: 6.84252e-2 Ha
+SCF Change: DM 3.94854e-4; eev 1.92442e-2 Ha; etot 4.15634e-3 Ha; grad 1.32716e-2 Ha
+Energy:     -76.2724285573 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.52431e-4; eev 6.36265e-3 Ha; etot 5.78446e-6 Ha; grad 1.59721e-2 Ha
+Energy:     -76.2724227728 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 3.94745e-5; eev 5.74976e-4 Ha; etot -1.30826e-5 Ha; grad 2.48913e-3 Ha
+Energy:     -76.2724358554 Ha after    3 iterations (in       0.02 seconds).
+SCF Change: DM 3.05214e-6; eev 4.15759e-5 Ha; etot -3.28684e-7 Ha; grad 2.09870e-4 Ha
+Energy:     -76.2724361841 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 1.16079e-7; eev 3.13870e-6 Ha; etot -2.08961e-9 Ha; grad 6.68901e-6 Ha
+Energy:     -76.2724361862 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 2.95850e-8; eev 2.59554e-7 Ha; etot -2.03215e-12 Ha; grad 1.61612e-6 Ha
+Energy:     -76.2724361862 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.63996e-9; eev 2.13674e-8 Ha; etot 9.94760e-14 Ha; grad 6.81078e-8 Ha
+Energy:     -76.2724361862 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2724361862 Ha
+grad_dm l2: 8.61126e-9 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.02281443      0.00771397      0.00939938
+H       -0.00696938      0.00569950     -0.00754126
+H       -0.01584183     -0.01341331     -0.00185735
+
+------------------------------------
+force                   0.560 s for 
+MD step      3 / 20 : Epot = -2075.478721 eV, T = 228.92 K, elapsed 1.7 s
+Input geometry in this round is:
+O        1.85668464      0.39463213      1.38363060
+H        1.26128851      0.84218687      0.74406207
+H        2.56469763      1.02425756      1.46560484
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5207.88 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.11612495 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03760464 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=91.9% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2759125397 Ha by the initial guess
+Initial grad_dm l2: 5.79323e-2 Ha
+SCF Change: DM 3.61871e-4; eev 1.65314e-2 Ha; etot 3.53343e-3 Ha; grad 1.26027e-2 Ha
+Energy:     -76.2723791060 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.27042e-4; eev 5.72819e-3 Ha; etot 3.30549e-6 Ha; grad 1.39162e-2 Ha
+Energy:     -76.2723758006 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 4.61561e-5; eev 7.08716e-4 Ha; etot -9.64240e-6 Ha; grad 2.79815e-3 Ha
+Energy:     -76.2723854430 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 5.53905e-6; eev 5.76360e-5 Ha; etot -4.21726e-7 Ha; grad 2.91254e-4 Ha
+Energy:     -76.2723858647 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 7.54838e-7; eev 5.33596e-6 Ha; etot -4.23101e-9 Ha; grad 4.23174e-5 Ha
+Energy:     -76.2723858689 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 2.83381e-8; eev 1.14097e-6 Ha; etot -8.80220e-11 Ha; grad 1.95086e-6 Ha
+Energy:     -76.2723858690 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 3.91947e-9; eev 3.22454e-8 Ha; etot -2.13163e-13 Ha; grad 1.52701e-7 Ha
+Energy:     -76.2723858690 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2723858690 Ha
+grad_dm l2: 1.21102e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.02228847      0.01211623      0.00708002
+H       -0.00359214      0.00368525     -0.00443406
+H       -0.01869249     -0.01580114     -0.00264531
+
+------------------------------------
+force                   0.683 s for 
+MD step      4 / 20 : Epot = -2075.477352 eV, T = 225.83 K, elapsed 2.0 s
+Input geometry in this round is:
+O        1.85657182      0.39472923      1.38364664
+H        1.27052124      0.83200920      0.73777576
+H        2.55681486      1.03330401      1.47253696
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5207.13 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.14078071 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03739966 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=91.9% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2744975634 Ha by the initial guess
+Initial grad_dm l2: 5.56806e-2 Ha
+SCF Change: DM 3.24792e-4; eev 9.68591e-3 Ha; etot 2.03995e-3 Ha; grad 1.20085e-2 Ha
+Energy:     -76.2724576105 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.78243e-4; eev 4.11242e-3 Ha; etot -1.41798e-6 Ha; grad 9.67352e-3 Ha
+Energy:     -76.2724590285 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 5.64610e-5; eev 1.14881e-3 Ha; etot -4.00621e-6 Ha; grad 3.46178e-3 Ha
+Energy:     -76.2724630347 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 7.06461e-6; eev 9.87629e-5 Ha; etot -6.55877e-7 Ha; grad 3.85186e-4 Ha
+Energy:     -76.2724636905 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 5.23790e-7; eev 6.18777e-6 Ha; etot -7.78294e-9 Ha; grad 3.22138e-5 Ha
+Energy:     -76.2724636983 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 2.87422e-8; eev 8.10822e-7 Ha; etot -4.99085e-11 Ha; grad 1.63821e-6 Ha
+Energy:     -76.2724636984 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 4.09551e-9; eev 6.16145e-8 Ha; etot 1.56319e-13 Ha; grad 1.91303e-7 Ha
+Energy:     -76.2724636984 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2724636984 Ha
+grad_dm l2: 1.03488e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.01781889      0.01376145      0.00372488
+H        0.00019748      0.00138759     -0.00068525
+H       -0.01801205     -0.01514843     -0.00303896
+
+------------------------------------
+force                   0.820 s for 
+MD step      5 / 20 : Epot = -2075.479470 eV, T = 232.34 K, elapsed 2.3 s
+Input geometry in this round is:
+O        1.85625406      0.39457477      1.38347426
+H        1.27979126      0.82226870      0.73156066
+H        2.55124752      1.04494744      1.48066935
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5208.36 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.14509763 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03735572 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.0% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2729500281 Ha by the initial guess
+Initial grad_dm l2: 7.04720e-2 Ha
+SCF Change: DM 3.50841e-4; eev 1.60185e-3 Ha; etot 3.26972e-4 Ha; grad 1.31487e-2 Ha
+Energy:     -76.2726230563 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.38322e-4; eev 8.63186e-4 Ha; etot -4.81751e-6 Ha; grad 7.53198e-3 Ha
+Energy:     -76.2726278739 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 2.28628e-5; eev 5.09558e-4 Ha; etot -2.55793e-6 Ha; grad 9.33084e-4 Ha
+Energy:     -76.2726304318 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 9.94075e-6; eev 2.25435e-4 Ha; etot -2.37883e-8 Ha; grad 6.67119e-4 Ha
+Energy:     -76.2726304556 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 3.83885e-7; eev 3.07087e-6 Ha; etot -2.44653e-8 Ha; grad 1.65838e-5 Ha
+Energy:     -76.2726304800 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.59974e-8; eev 3.36029e-7 Ha; etot -1.98384e-11 Ha; grad 9.89305e-7 Ha
+Energy:     -76.2726304801 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 2.95156e-9; eev 3.44752e-8 Ha; etot -2.41585e-13 Ha; grad 1.95432e-7 Ha
+Energy:     -76.2726304801 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2726304801 Ha
+grad_dm l2: 2.65716e-9 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.01013297      0.01252597     -0.00038113
+H        0.00388526     -0.00098093      0.00327018
+H       -0.01401370     -0.01154414     -0.00288806
+
+------------------------------------
+force                   0.947 s for 
+MD step      6 / 20 : Epot = -2075.484008 eV, T = 247.82 K, elapsed 2.6 s
+Input geometry in this round is:
+O        1.85601699      0.39438557      1.38329118
+H        1.28784594      0.81285728      0.72569119
+H        2.54718401      1.05788592      1.48995617
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5208.84 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.13477391 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03743108 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.0% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2718291355 Ha by the initial guess
+Initial grad_dm l2: 7.98395e-2 Ha
+SCF Change: DM 3.95493e-4; eev 4.78797e-3 Ha; etot -9.14253e-4 Ha; grad 1.45103e-2 Ha
+Energy:     -76.2727433883 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.72553e-4; eev 2.35753e-3 Ha; etot -5.17215e-6 Ha; grad 9.18142e-3 Ha
+Energy:     -76.2727485604 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 4.50060e-5; eev 1.02644e-3 Ha; etot -3.61466e-6 Ha; grad 2.60713e-3 Ha
+Energy:     -76.2727521751 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 8.69975e-6; eev 1.69412e-4 Ha; etot -3.60810e-7 Ha; grad 5.32529e-4 Ha
+Energy:     -76.2727525359 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 4.59694e-7; eev 2.83438e-6 Ha; etot -1.54507e-8 Ha; grad 2.13938e-5 Ha
+Energy:     -76.2727525513 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 2.64377e-8; eev 5.01482e-7 Ha; etot -2.92317e-11 Ha; grad 1.56321e-6 Ha
+Energy:     -76.2727525514 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 3.54251e-9; eev 2.50725e-8 Ha; etot -2.84217e-13 Ha; grad 1.92156e-7 Ha
+Energy:     -76.2727525514 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2727525514 Ha
+grad_dm l2: 6.60031e-9 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.00145895      0.00963765     -0.00464550
+H        0.00694616     -0.00316703      0.00688666
+H       -0.00840066     -0.00646950     -0.00223976
+
+------------------------------------
+force                   1.087 s for 
+MD step      7 / 20 : Epot = -2075.487330 eV, T = 248.55 K, elapsed 2.9 s
+Input geometry in this round is:
+O        1.85574082      0.39411039      1.38321311
+H        1.29544015      0.80388287      0.71947428
+H        2.54423383      1.07126088      1.49962253
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5207.16 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.11382348 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03758215 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.0% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2708741569 Ha by the initial guess
+Initial grad_dm l2: 8.52045e-2 Ha
+SCF Change: DM 4.32861e-4; eev 9.43142e-3 Ha; etot -1.87389e-3 Ha; grad 1.55667e-2 Ha
+Energy:     -76.2727480457 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.16738e-4; eev 4.26721e-3 Ha; etot -4.07727e-6 Ha; grad 1.15459e-2 Ha
+Energy:     -76.2727521230 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.60554e-5; eev 1.42845e-3 Ha; etot -5.60873e-6 Ha; grad 4.11467e-3 Ha
+Energy:     -76.2727577317 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 7.57005e-6; eev 1.27030e-4 Ha; etot -9.27449e-7 Ha; grad 4.19032e-4 Ha
+Energy:     -76.2727586592 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 5.45213e-7; eev 5.40595e-6 Ha; etot -9.50719e-9 Ha; grad 3.04574e-5 Ha
+Energy:     -76.2727586687 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 3.42421e-8; eev 8.51736e-7 Ha; etot -4.96101e-11 Ha; grad 2.07809e-6 Ha
+Energy:     -76.2727586687 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 4.52655e-9; eev 5.90095e-8 Ha; etot -2.55795e-13 Ha; grad 2.24033e-7 Ha
+Energy:     -76.2727586687 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2727586687 Ha
+grad_dm l2: 1.09380e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O       -0.00724618      0.00566719     -0.00880203
+H        0.00937849     -0.00504354      0.01003419
+H       -0.00212815     -0.00062251     -0.00123039
+
+------------------------------------
+force                   1.243 s for 
+MD step      8 / 20 : Epot = -2075.487496 eV, T = 237.43 K, elapsed 3.2 s
+Input geometry in this round is:
+O        1.85542184      0.39387524      1.38310922
+H        1.30219636      0.79575207      0.71191221
+H        2.54178316      1.08368966      1.50931576
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.48 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.08493330 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03779777 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.0% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2700592457 Ha by the initial guess
+Initial grad_dm l2: 7.73139e-2 Ha
+SCF Change: DM 4.20745e-4; eev 1.29046e-2 Ha; etot -2.59149e-3 Ha; grad 1.48452e-2 Ha
+Energy:     -76.2726507403 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.35641e-4; eev 5.35353e-3 Ha; etot -1.09393e-6 Ha; grad 1.30079e-2 Ha
+Energy:     -76.2726518342 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 7.00507e-5; eev 1.37616e-3 Ha; etot -7.52876e-6 Ha; grad 4.32606e-3 Ha
+Energy:     -76.2726593630 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 7.19199e-6; eev 1.11312e-4 Ha; etot -1.02800e-6 Ha; grad 3.81104e-4 Ha
+Energy:     -76.2726603910 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 6.18450e-7; eev 6.95604e-6 Ha; etot -7.75725e-9 Ha; grad 3.80486e-5 Ha
+Energy:     -76.2726603987 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 3.64208e-8; eev 1.01697e-6 Ha; etot -7.01306e-11 Ha; grad 2.12910e-6 Ha
+Energy:     -76.2726603988 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 5.23614e-9; eev 7.61635e-8 Ha; etot -2.84217e-13 Ha; grad 2.42906e-7 Ha
+Energy:     -76.2726603988 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2726603988 Ha
+grad_dm l2: 1.21467e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O       -0.01420176      0.00130887     -0.01187542
+H        0.01054407     -0.00617674      0.01191024
+H        0.00366147      0.00486879     -0.00003282
+
+------------------------------------
+force                   1.370 s for 
+MD step      9 / 20 : Epot = -2075.484822 eV, T = 217.41 K, elapsed 3.5 s
+Input geometry in this round is:
+O        1.85547071      0.39355512      1.38314894
+H        1.30711163      0.78777421      0.70246205
+H        2.53824650      1.09519284      1.51818502
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.48 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.04936648 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03807851 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.0% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2693905954 Ha by the initial guess
+Initial grad_dm l2: 6.10419e-2 Ha
+SCF Change: DM 3.95334e-4; eev 1.56011e-2 Ha; etot -3.16492e-3 Ha; grad 1.35948e-2 Ha
+Energy:     -76.2725555108 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.41338e-4; eev 5.85176e-3 Ha; etot 2.39413e-6 Ha; grad 1.42010e-2 Ha
+Energy:     -76.2725531167 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 5.94959e-5; eev 9.92057e-4 Ha; etot -9.76115e-6 Ha; grad 3.56826e-3 Ha
+Energy:     -76.2725628778 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 6.84695e-6; eev 8.84802e-5 Ha; etot -6.95120e-7 Ha; grad 3.50763e-4 Ha
+Energy:     -76.2725635730 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 7.35485e-7; eev 7.15519e-6 Ha; etot -6.45097e-9 Ha; grad 4.44012e-5 Ha
+Energy:     -76.2725635794 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 3.38840e-8; eev 1.11899e-6 Ha; etot -9.47580e-11 Ha; grad 2.08005e-6 Ha
+Energy:     -76.2725635795 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 5.22137e-9; eev 6.72548e-8 Ha; etot -2.13163e-13 Ha; grad 2.25433e-7 Ha
+Energy:     -76.2725635795 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2725635795 Ha
+grad_dm l2: 1.11914e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O       -0.01791050     -0.00310570     -0.01268404
+H        0.00981119     -0.00603351      0.01156856
+H        0.00810276      0.00913993      0.00111747
+
+------------------------------------
+force                   1.513 s for 
+MD step     10 / 20 : Epot = -2075.482188 eV, T = 214.24 K, elapsed 3.8 s
+Input geometry in this round is:
+O        1.85554889      0.39333296      1.38322407
+H        1.31070578      0.78036116      0.69096883
+H        2.53362417      1.10571910      1.52652644
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.22 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.00805847 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03842346 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.0% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2688593397 Ha by the initial guess
+Initial grad_dm l2: 5.66319e-2 Ha
+SCF Change: DM 3.97801e-4; eev 1.78907e-2 Ha; etot -3.63519e-3 Ha; grad 1.32605e-2 Ha
+Energy:     -76.2724945271 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.53569e-4; eev 6.25890e-3 Ha; etot 5.39287e-6 Ha; grad 1.57571e-2 Ha
+Energy:     -76.2724891342 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 4.61904e-5; eev 6.57732e-4 Ha; etot -1.26599e-5 Ha; grad 2.77695e-3 Ha
+Energy:     -76.2725017941 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 5.59994e-6; eev 5.73572e-5 Ha; etot -4.14318e-7 Ha; grad 2.86829e-4 Ha
+Energy:     -76.2725022084 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 8.16806e-7; eev 5.50323e-6 Ha; etot -4.17006e-9 Ha; grad 4.49808e-5 Ha
+Energy:     -76.2725022126 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 3.03971e-8; eev 1.22799e-6 Ha; etot -1.01849e-10 Ha; grad 2.11335e-6 Ha
+Energy:     -76.2725022127 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 4.09228e-9; eev 3.32553e-8 Ha; etot -1.98952e-13 Ha; grad 1.58555e-7 Ha
+Energy:     -76.2725022127 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2725022127 Ha
+grad_dm l2: 1.11719e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O       -0.01891442     -0.00754518     -0.01141211
+H        0.00747944     -0.00484328      0.00921963
+H        0.01143819      0.01238906      0.00219440
+
+------------------------------------
+force                   1.644 s for 
+MD step     11 / 20 : Epot = -2075.480518 eV, T = 220.16 K, elapsed 4.1 s
+Input geometry in this round is:
+O        1.85578867      0.39311191      1.38370642
+H        1.31340576      0.77359061      0.67779668
+H        2.52742697      1.11493569      1.53404935
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.25 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.96460729 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03879836 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2686754357 Ha by the initial guess
+Initial grad_dm l2: 6.05953e-2 Ha
+SCF Change: DM 3.99163e-4; eev 1.86161e-2 Ha; etot -3.80803e-3 Ha; grad 1.30075e-2 Ha
+Energy:     -76.2724834610 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.57553e-4; eev 6.33774e-3 Ha; etot 6.66095e-6 Ha; grad 1.63025e-2 Ha
+Energy:     -76.2724768000 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 3.81006e-5; eev 5.35617e-4 Ha; etot -1.38163e-5 Ha; grad 2.38106e-3 Ha
+Energy:     -76.2724906163 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 3.00724e-6; eev 3.78682e-5 Ha; etot -3.01833e-7 Ha; grad 2.04069e-4 Ha
+Energy:     -76.2724909182 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 8.41421e-8; eev 3.30324e-6 Ha; etot -1.98249e-9 Ha; grad 5.75225e-6 Ha
+Energy:     -76.2724909202 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 8.44326e-9; eev 3.02819e-8 Ha; etot -1.40687e-12 Ha; grad 4.83957e-7 Ha
+Energy:     -76.2724909202 Ha after    6 iterations (in       0.01 seconds).
+SCF is converged after    6 iterations.
+Energy:       -76.2724909202 Ha
+grad_dm l2: 7.73553e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O       -0.01717051     -0.01162567     -0.00798650
+H        0.00382101     -0.00270167      0.00498517
+H        0.01335253      0.01432801      0.00300322
+
+------------------------------------
+force                   1.768 s for 
+MD step     12 / 20 : Epot = -2075.480210 eV, T = 217.34 K, elapsed 4.3 s
+Input geometry in this round is:
+O        1.85620922      0.39299354      1.38403222
+H        1.31501179      0.76728614      0.66382368
+H        2.51919357      1.12250547      1.54102934
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.50 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.92614096 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03915014 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2691572033 Ha by the initial guess
+Initial grad_dm l2: 6.62964e-2 Ha
+SCF Change: DM 3.82703e-4; eev 1.65500e-2 Ha; etot -3.33934e-3 Ha; grad 1.24728e-2 Ha
+Energy:     -76.2724965436 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.43410e-4; eev 5.88186e-3 Ha; etot 5.06030e-6 Ha; grad 1.49947e-2 Ha
+Energy:     -76.2724914833 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 4.43127e-5; eev 6.33867e-4 Ha; etot -1.15878e-5 Ha; grad 2.64657e-3 Ha
+Energy:     -76.2725030711 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 5.46817e-6; eev 5.24642e-5 Ha; etot -3.79258e-7 Ha; grad 2.77984e-4 Ha
+Energy:     -76.2725034504 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 7.95148e-7; eev 4.87243e-6 Ha; etot -3.89021e-9 Ha; grad 4.47075e-5 Ha
+Energy:     -76.2725034543 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 2.83339e-8; eev 1.17248e-6 Ha; etot -1.00115e-10 Ha; grad 1.97234e-6 Ha
+Energy:     -76.2725034544 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 2.56945e-9; eev 1.79460e-8 Ha; etot 2.84217e-14 Ha; grad 9.77873e-8 Ha
+Energy:     -76.2725034544 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2725034544 Ha
+grad_dm l2: 1.09539e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O       -0.01329876     -0.01453653     -0.00320864
+H       -0.00044598     -0.00018335     -0.00029380
+H        0.01374758      0.01472081      0.00350430
+
+------------------------------------
+force                   1.912 s for 
+MD step     13 / 20 : Epot = -2075.480551 eV, T = 233.13 K, elapsed 4.6 s
+Input geometry in this round is:
+O        1.85675174      0.39315052      1.38450897
+H        1.31533122      0.76070821      0.64955902
+H        2.50859786      1.12866055      1.54720949
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.54 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.89576583 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03944624 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2698855255 Ha by the initial guess
+Initial grad_dm l2: 7.63365e-2 Ha
+SCF Change: DM 3.73019e-4; eev 1.33509e-2 Ha; etot -2.61298e-3 Ha; grad 1.23630e-2 Ha
+Energy:     -76.2724985018 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.26867e-4; eev 5.27177e-3 Ha; etot 2.19481e-6 Ha; grad 1.30738e-2 Ha
+Energy:     -76.2724963070 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 5.68633e-5; eev 9.47834e-4 Ha; etot -8.41168e-6 Ha; grad 3.38227e-3 Ha
+Energy:     -76.2725047187 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 6.71568e-6; eev 7.89888e-5 Ha; etot -6.32482e-7 Ha; grad 3.41178e-4 Ha
+Energy:     -76.2725053512 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 6.79213e-7; eev 6.68292e-6 Ha; etot -6.14526e-9 Ha; grad 4.27000e-5 Ha
+Energy:     -76.2725053573 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 2.87206e-8; eev 1.00994e-6 Ha; etot -8.61320e-11 Ha; grad 1.75273e-6 Ha
+Energy:     -76.2725053574 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 4.35696e-9; eev 1.70765e-8 Ha; etot -2.27374e-13 Ha; grad 1.66994e-7 Ha
+Energy:     -76.2725053574 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2725053574 Ha
+grad_dm l2: 1.22273e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O       -0.00760958     -0.01588131      0.00257223
+H       -0.00499198      0.00244735     -0.00619944
+H        0.01260412      0.01343527      0.00362897
+
+------------------------------------
+force                   2.041 s for 
+MD step     14 / 20 : Epot = -2075.480603 eV, T = 249.72 K, elapsed 4.9 s
+Input geometry in this round is:
+O        1.85743027      0.39322310      1.38506145
+H        1.31593213      0.75380422      0.63551993
+H        2.49632793      1.13339975      1.55266604
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.32 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.87592221 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03964201 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2706968654 Ha by the initial guess
+Initial grad_dm l2: 8.06289e-2 Ha
+SCF Change: DM 3.49378e-4; eev 9.16311e-3 Ha; etot -1.74036e-3 Ha; grad 1.18859e-2 Ha
+Energy:     -76.2724372220 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.93964e-4; eev 4.14763e-3 Ha; etot -8.63469e-7 Ha; grad 1.02969e-2 Ha
+Energy:     -76.2724380854 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.00658e-5; eev 1.17068e-3 Ha; etot -4.77348e-6 Ha; grad 3.65485e-3 Ha
+Energy:     -76.2724428589 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 6.92984e-6; eev 9.46605e-5 Ha; etot -7.44649e-7 Ha; grad 3.67779e-4 Ha
+Energy:     -76.2724436036 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 4.90798e-7; eev 5.99301e-6 Ha; etot -7.33438e-9 Ha; grad 3.17627e-5 Ha
+Energy:     -76.2724436109 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 2.65393e-8; eev 7.67682e-7 Ha; etot -4.75637e-11 Ha; grad 1.45855e-6 Ha
+Energy:     -76.2724436109 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 4.79435e-9; eev 1.72005e-8 Ha; etot -2.84217e-14 Ha; grad 1.93880e-7 Ha
+Energy:     -76.2724436109 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2724436109 Ha
+grad_dm l2: 1.10858e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O       -0.00116403     -0.01565996      0.00849466
+H       -0.00912086      0.00481473     -0.01185114
+H        0.01028706      0.01084682      0.00335800
+
+------------------------------------
+force                   2.209 s for 
+MD step     15 / 20 : Epot = -2075.478923 eV, T = 237.24 K, elapsed 5.3 s
+Input geometry in this round is:
+O        1.85822114      0.39346600      1.38552144
+H        1.31750712      0.74674857      0.62332966
+H        2.48337578      1.13746287      1.55720316
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.21 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.87007095 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03969951 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2717656693 Ha by the initial guess
+Initial grad_dm l2: 7.23234e-2 Ha
+SCF Change: DM 2.78154e-4; eev 3.47034e-3 Ha; etot -5.71159e-4 Ha; grad 9.77152e-3 Ha
+Energy:     -76.2723368283 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.25197e-4; eev 1.91622e-3 Ha; etot -2.33628e-6 Ha; grad 6.27023e-3 Ha
+Energy:     -76.2723391645 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 3.83117e-5; eev 8.36759e-4 Ha; etot -1.71145e-6 Ha; grad 2.18179e-3 Ha
+Energy:     -76.2723408760 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 7.78050e-6; eev 1.36734e-4 Ha; etot -2.56071e-7 Ha; grad 4.67675e-4 Ha
+Energy:     -76.2723411321 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 2.69585e-7; eev 2.84229e-6 Ha; etot -1.21369e-8 Ha; grad 1.46375e-5 Ha
+Energy:     -76.2723411442 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.63124e-8; eev 4.03743e-7 Ha; etot -1.15961e-11 Ha; grad 9.51862e-7 Ha
+Energy:     -76.2723411442 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 3.76018e-9; eev 2.47998e-8 Ha; etot -2.13163e-13 Ha; grad 1.75378e-7 Ha
+Energy:     -76.2723411442 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2723411442 Ha
+grad_dm l2: 5.16470e-9 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.00475237     -0.01397530      0.01339130
+H       -0.01207301      0.00648216     -0.01615260
+H        0.00732237      0.00749484      0.00276245
+
+------------------------------------
+force                   2.340 s for 
+MD step     16 / 20 : Epot = -2075.476135 eV, T = 213.27 K, elapsed 5.6 s
+Input geometry in this round is:
+O        1.85892195      0.39384363      1.38590777
+H        1.32037669      0.73893790      0.61377046
+H        2.46938752      1.14134849      1.56175628
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5205.48 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.88058718 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03960834 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2731224072 Ha by the initial guess
+Initial grad_dm l2: 6.11026e-2 Ha
+SCF Change: DM 2.22131e-4; eev 3.35810e-3 Ha; etot 8.50211e-4 Ha; grad 8.01530e-3 Ha
+Energy:     -76.2722721958 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 9.73512e-5; eev 1.54832e-3 Ha; etot -1.74896e-6 Ha; grad 4.65621e-3 Ha
+Energy:     -76.2722739448 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 3.31975e-5; eev 7.23352e-4 Ha; etot -9.03172e-7 Ha; grad 1.84908e-3 Ha
+Energy:     -76.2722748479 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 7.65382e-6; eev 1.39055e-4 Ha; etot -1.80518e-7 Ha; grad 4.70160e-4 Ha
+Energy:     -76.2722750285 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 2.90838e-7; eev 2.97451e-6 Ha; etot -1.21228e-8 Ha; grad 1.69768e-5 Ha
+Energy:     -76.2722750406 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.50484e-8; eev 3.12778e-7 Ha; etot -1.36282e-11 Ha; grad 7.71581e-7 Ha
+Energy:     -76.2722750406 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 3.00977e-9; eev 1.64666e-8 Ha; etot -2.84217e-14 Ha; grad 1.21977e-7 Ha
+Energy:     -76.2722750406 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2722750406 Ha
+grad_dm l2: 5.97841e-9 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.00959520     -0.01088044      0.01666337
+H       -0.01356790      0.00727281     -0.01857995
+H        0.00397411      0.00360931      0.00191729
+
+------------------------------------
+force                   2.478 s for 
+MD step     17 / 20 : Epot = -2075.474336 eV, T = 208.08 K, elapsed 5.9 s
+Input geometry in this round is:
+O        1.85944678      0.39421686      1.38602256
+H        1.32484544      0.73021089      0.60738417
+H        2.45527201      1.14460618      1.56685231
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.30 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.90825296 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03938289 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2747185473 Ha by the initial guess
+Initial grad_dm l2: 5.37799e-2 Ha
+SCF Change: DM 2.48242e-4; eev 1.03976e-2 Ha; etot 2.41118e-3 Ha; grad 8.62637e-3 Ha
+Energy:     -76.2723073624 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 1.52377e-4; eev 3.69625e-3 Ha; etot 7.08690e-7 Ha; grad 8.64075e-3 Ha
+Energy:     -76.2723066537 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 3.89790e-5; eev 6.50533e-4 Ha; etot -3.64492e-6 Ha; grad 2.34474e-3 Ha
+Energy:     -76.2723102986 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 4.68010e-6; eev 4.06132e-5 Ha; etot -3.06575e-7 Ha; grad 2.48998e-4 Ha
+Energy:     -76.2723106052 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 5.75597e-7; eev 3.61764e-6 Ha; etot -3.09032e-9 Ha; grad 3.23105e-5 Ha
+Energy:     -76.2723106083 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.96008e-8; eev 7.39776e-7 Ha; etot -5.15286e-11 Ha; grad 1.35269e-6 Ha
+Energy:     -76.2723106083 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.17429e-9; eev 1.48038e-8 Ha; etot 1.84741e-13 Ha; grad 6.08579e-8 Ha
+Energy:     -76.2723106083 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2723106083 Ha
+grad_dm l2: 5.74049e-9 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.01286358     -0.00655336      0.01780030
+H       -0.01345418      0.00706248     -0.01874494
+H        0.00059185     -0.00050751      0.00094492
+
+------------------------------------
+force                   2.604 s for 
+MD step     18 / 20 : Epot = -2075.475304 eV, T = 206.72 K, elapsed 6.1 s
+Input geometry in this round is:
+O        1.86000924      0.39461579      1.38594245
+H        1.33052753      0.72073279      0.60393873
+H        2.44127763      1.14747554      1.57239711
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.31 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.94982952 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03905873 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2761011471 Ha by the initial guess
+Initial grad_dm l2: 5.88274e-2 Ha
+SCF Change: DM 3.30820e-4; eev 1.60977e-2 Ha; etot 3.68564e-3 Ha; grad 1.11422e-2 Ha
+Energy:     -76.2724155044 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.12252e-4; eev 5.27399e-3 Ha; etot 3.50970e-6 Ha; grad 1.30193e-2 Ha
+Energy:     -76.2724119947 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 3.94896e-5; eev 5.78076e-4 Ha; etot -8.64564e-6 Ha; grad 2.42228e-3 Ha
+Energy:     -76.2724206403 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 2.86033e-6; eev 3.83741e-5 Ha; etot -3.20945e-7 Ha; grad 1.91693e-4 Ha
+Energy:     -76.2724209613 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 1.74125e-7; eev 2.36359e-6 Ha; etot -1.76388e-9 Ha; grad 7.62689e-6 Ha
+Energy:     -76.2724209630 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 4.14891e-8; eev 4.93347e-7 Ha; etot -2.84217e-12 Ha; grad 2.24150e-6 Ha
+Energy:     -76.2724209630 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 1.83044e-9; eev 1.16067e-8 Ha; etot -4.54747e-13 Ha; grad 8.04602e-8 Ha
+Energy:     -76.2724209630 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2724209630 Ha
+grad_dm l2: 1.11054e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.01475404     -0.00129185      0.01707470
+H       -0.01202251      0.00605861     -0.01694207
+H       -0.00273035     -0.00476515     -0.00013276
+
+------------------------------------
+force                   2.733 s for 
+MD step     19 / 20 : Epot = -2075.478307 eV, T = 197.98 K, elapsed 6.4 s
+Input geometry in this round is:
+O        1.86041211      0.39514045      1.38570083
+H        1.33734680      0.71007876      0.60323823
+H        2.42755720      1.15074328      1.57757613
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5206.31 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.00323737 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03865663 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=92.1% → skipping (AO too dense), falling back to dense
+The total energy:       -76.2773206700 Ha by the initial guess
+Initial grad_dm l2: 7.04348e-2 Ha
+SCF Change: DM 4.28494e-4; eev 2.09430e-2 Ha; etot 4.75498e-3 Ha; grad 1.43516e-2 Ha
+Energy:     -76.2725656904 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 2.74145e-4; eev 6.84459e-3 Ha; etot 6.07535e-6 Ha; grad 1.70032e-2 Ha
+Energy:     -76.2725596150 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 5.19401e-5; eev 7.43604e-4 Ha; etot -1.46531e-5 Ha; grad 3.15218e-3 Ha
+Energy:     -76.2725742681 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 5.41576e-6; eev 7.55865e-5 Ha; etot -5.35625e-7 Ha; grad 2.76982e-4 Ha
+Energy:     -76.2725748037 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 9.28487e-7; eev 5.61775e-6 Ha; etot -3.92801e-9 Ha; grad 5.00013e-5 Ha
+Energy:     -76.2725748076 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 3.43548e-8; eev 1.23241e-6 Ha; etot -1.28495e-10 Ha; grad 2.39476e-6 Ha
+Energy:     -76.2725748078 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 4.64685e-9; eev 3.81173e-8 Ha; etot -4.12115e-13 Ha; grad 1.74972e-7 Ha
+Energy:     -76.2725748078 Ha after    7 iterations (in       0.01 seconds).
+SCF is converged after    7 iterations.
+Energy:       -76.2725748078 Ha
+grad_dm l2: 1.45464e-8 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.01479745      0.00443995      0.01414715
+H       -0.00914120      0.00425251     -0.01292587
+H       -0.00565512     -0.00869071     -0.00122185
+
+------------------------------------
+force                   2.868 s for 
+MD step     20 / 20 : Epot = -2075.482493 eV, T = 226.88 K, elapsed 6.7 s
+MD finished: 20 steps in 6.7 s; outputs: md.log, dump_nvt.xyz, md_restart
+Mulliken population analysis:
+  0-O  :  -0.290570
+  1-H  :   0.149994
+  2-H  :   0.140576
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -76.2725748078 Ha
+Detailed time report:
+force     |:    2.868 s for 
+SCF       |:    2.674 s for the scf procedure
+Overall   |:    7.360 s for the whole job

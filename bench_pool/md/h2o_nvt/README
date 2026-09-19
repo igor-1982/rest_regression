@@ -1,0 +1,1 @@
+Title: Pure-QM NVT Langevin MD of one water (seed=12345, PBE-D3BJ/def2-SVP): checks the built-in MD loop runs end-to-end and is bit-reproducible for a fixed seed.
