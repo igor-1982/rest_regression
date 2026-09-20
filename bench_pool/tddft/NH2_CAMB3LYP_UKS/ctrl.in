@@ -1,0 +1,27 @@
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     xc =                        "cam-b3lyp"
+     basis_path =                "def2-svp"
+     auxbas_path =               "def2-svp-rifit"
+     eri_type =                  "ri-v"
+     charge =                    0.0
+     spin =                      2.0
+     spin_polarization =         true
+     mixer =                     "diis"
+     max_scf_cycle =             100
+     scf_acc_rho =               1.0e-8
+     initial_guess =             "sad"
+
+[tddft]
+     tddft_method =              "tda"
+     nroots =                    3
+
+[geom]
+     name = "NH2"
+     unit = "angstrom"
+     position = '''
+        N   0.000000  0.000000  0.000000
+        H   0.000000  0.803600  0.634400
+        H   0.000000  -0.803600  0.634400
+     '''

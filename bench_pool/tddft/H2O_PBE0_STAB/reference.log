@@ -1,0 +1,208 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Single-point energy
+Cube output: wavefunction
+The exchange-correlation method: pbe0
+Print level:   1    max log level: INFO
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from /home/wsr/rest_workspace/rest/basis-set-pool/def2-svp
+The spheric-GTO auxiliary basis set is taken from /home/wsr/rest_workspace/rest/basis-set-pool/def2-svp-rifit
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+O        0.00000000      0.00000000      0.00000000
+H        0.75700000      0.58600000      0.00000000
+H       -0.75700000      0.58600000      0.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [406]
+SCF DFA parameters: [1.0]
+SCF DFA hybrid coeff:       0.25000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 12, natm: 3 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 40,final natm: 6
+numbasis: 24, num_auxbas: 76
+Molecule_name: H2O
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (4164.71 MB) is more than required (0.25 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       9.19391316 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03753732 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=90.8% → skipping (AO too dense), falling back to dense
+
+=======================
+Generating SAD for atom: O
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (4120.63 MB) is more than required (0.05 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.18745226 with the total number of basis functions:     14
+Grid size: 14262
+Initial guess from SAP
+SCF Change: DM 2.40032e-3; eev 8.93581e-2 Ha; etot 3.09195e-3 Ha; grad 9.08700e-2 Ha
+SCF Change: DM 2.92666e-3; eev 6.02559e-2 Ha; etot -1.18309e-2 Ha; grad 3.99394e-2 Ha
+SCF Change: DM 3.49343e-4; eev 3.68150e-2 Ha; etot -2.93633e-3 Ha; grad 1.05610e-2 Ha
+SCF Change: DM 8.99834e-4; eev 2.00827e-2 Ha; etot 4.50935e-3 Ha; grad 1.42081e-2 Ha
+SCF Change: DM 1.77882e-4; eev 1.38565e-2 Ha; etot 7.76271e-4 Ha; grad 2.48471e-3 Ha
+SCF Change: DM 3.07123e-4; eev 6.10728e-3 Ha; etot -1.61747e-3 Ha; grad 5.07423e-3 Ha
+SCF Change: DM 8.00609e-5; eev 5.21302e-3 Ha; etot -1.79075e-4 Ha; grad 5.88920e-4 Ha
+SCF Change: DM 7.22470e-5; eev 1.04575e-3 Ha; etot 4.49425e-4 Ha; grad 9.61986e-4 Ha
+SCF Change: DM 2.02368e-5; eev 1.04941e-3 Ha; etot -1.81527e-7 Ha; grad 3.94459e-4 Ha
+SCF Change: DM 7.06636e-7; eev 3.56016e-6 Ha; etot -3.70116e-8 Ha; grad 6.54092e-6 Ha
+SCF Change: DM 2.65250e-8; eev 2.79199e-7 Ha; etot -1.65130e-11 Ha; grad 1.28682e-6 Ha
+SCF Change: DM 1.64515e-8; eev 1.73903e-7 Ha; etot -2.41585e-13 Ha; grad 1.09075e-6 Ha
+SCF Change: DM 1.15739e-8; eev 1.22687e-7 Ha; etot -1.42109e-14 Ha; grad 9.69092e-7 Ha
+SCF Change: DM 8.74950e-9; eev 9.29377e-8 Ha; etot -7.10543e-14 Ha; grad 8.83480e-7 Ha
+SCF Change: DM 6.93240e-9; eev 7.37539e-8 Ha; etot -1.13687e-13 Ha; grad 8.18747e-7 Ha
+SCF Change: DM 9.94673e-8; eev 1.01120e-6 Ha; etot 8.52651e-14 Ha; grad 7.67449e-7 Ha
+SCF Change: DM 4.60818e-9; eev 1.17360e-7 Ha; etot -2.84217e-13 Ha; grad 4.50379e-8 Ha
+SCF Change: DM 3.98301e-10; eev 1.38274e-8 Ha; etot -2.84217e-14 Ha; grad 4.60873e-9 Ha
+SCF Change: DM 1.83088e-11; eev 8.67414e-10 Ha; etot -2.84217e-14 Ha; grad 8.71302e-10 Ha
+SCF is converged after   19 iterations.
+Energy:       -74.1977921811 Ha
+grad_dm l2: 5.44849e-10 Ha
+SAD generation for O complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (4117.69 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.31520018 with the total number of basis functions:      5
+Grid size: 10024
+Initial guess from SAP
+SCF Change: DM (1.85293e-2, 0.00000e0); eev 3.07574e-2 Ha; etot -1.52672e-2 Ha; grad (9.76600e-2, 0.00000e0) Ha
+SCF Change: DM (4.64642e-3, 0.00000e0); eev 4.23805e-2 Ha; etot -4.90874e-3 Ha; grad (3.42529e-2, 0.00000e0) Ha
+SCF Change: DM (3.46283e-4, 0.00000e0); eev 1.76904e-2 Ha; etot 1.37449e-3 Ha; grad (6.25400e-3, 0.00000e0) Ha
+SCF Change: DM (2.86496e-4, 0.00000e0); eev 4.12259e-3 Ha; etot 7.53580e-4 Ha; grad (4.19124e-4, 0.00000e0) Ha
+SCF Change: DM (1.64895e-4, 0.00000e0); eev 3.14172e-4 Ha; etot 1.17884e-4 Ha; grad (7.91640e-4, 0.00000e0) Ha
+SCF Change: DM (4.84544e-5, 0.00000e0); eev 3.04509e-4 Ha; etot -2.32080e-5 Ha; grad (3.24094e-4, 0.00000e0) Ha
+SCF Change: DM (6.51562e-6, 0.00000e0); eev 1.56445e-4 Ha; etot -2.18142e-5 Ha; grad (7.33627e-5, 0.00000e0) Ha
+SCF Change: DM (2.26231e-6, 0.00000e0); eev 4.91653e-5 Ha; etot -9.04072e-6 Ha; grad (6.40885e-6, 0.00000e0) Ha
+SCF Change: DM (2.20142e-7, 0.00000e0); eev 7.73392e-7 Ha; etot -4.92494e-11 Ha; grad (2.33518e-6, 0.00000e0) Ha
+SCF Change: DM (1.24207e-7, 0.00000e0); eev 4.36357e-7 Ha; etot -2.34202e-12 Ha; grad (1.93878e-6, 0.00000e0) Ha
+SCF Change: DM (8.37561e-8, 0.00000e0); eev 2.94247e-7 Ha; etot -1.13015e-12 Ha; grad (1.71513e-6, 0.00000e0) Ha
+SCF Change: DM (6.18677e-8, 0.00000e0); eev 2.17350e-7 Ha; etot -6.83731e-13 Ha; grad (1.56431e-6, 0.00000e0) Ha
+SCF Change: DM (4.83395e-8, 0.00000e0); eev 1.69823e-7 Ha; etot -4.64739e-13 Ha; grad (1.45291e-6, 0.00000e0) Ha
+SCF Change: DM (3.92438e-8, 0.00000e0); eev 1.37869e-7 Ha; etot -3.39284e-13 Ha; grad (1.36587e-6, 0.00000e0) Ha
+SCF Change: DM (3.27597e-8, 0.00000e0); eev 1.15089e-7 Ha; etot -2.60014e-13 Ha; grad (1.29520e-6, 0.00000e0) Ha
+SCF Change: DM (3.44934e-7, 0.00000e0); eev 1.21180e-6 Ha; etot -2.06390e-13 Ha; grad (1.23621e-6, 0.00000e0) Ha
+SCF Change: DM (3.92819e-8, 0.00000e0); eev 1.38003e-7 Ha; etot -1.58967e-12 Ha; grad (6.15103e-7, 0.00000e0) Ha
+SCF Change: DM (2.85113e-8, 0.00000e0); eev 1.00164e-7 Ha; etot -1.13687e-13 Ha; grad (5.44370e-7, 0.00000e0) Ha
+SCF Change: DM (2.46818e-8, 0.00000e0); eev 8.67107e-8 Ha; etot -7.34968e-14 Ha; grad (4.93031e-7, 0.00000e0) Ha
+SCF Change: DM (2.36870e-8, 0.00000e0); eev 8.32158e-8 Ha; etot -5.78981e-14 Ha; grad (4.48587e-7, 0.00000e0) Ha
+SCF Change: DM (2.46373e-8, 0.00000e0); eev 8.65543e-8 Ha; etot -5.03486e-14 Ha; grad (4.05935e-7, 0.00000e0) Ha
+SCF Change: DM (2.76650e-8, 0.00000e0); eev 9.71909e-8 Ha; etot -4.71290e-14 Ha; grad (3.61571e-7, 0.00000e0) Ha
+SCF Change: DM (3.38546e-8, 0.00000e0); eev 1.18936e-7 Ha; etot -4.65183e-14 Ha; grad (3.11756e-7, 0.00000e0) Ha
+SCF Change: DM (4.64169e-8, 0.00000e0); eev 1.63069e-7 Ha; etot -4.71845e-14 Ha; grad (2.50796e-7, 0.00000e0) Ha
+SCF Change: DM (9.82497e-9, 0.00000e0); eev 3.45165e-8 Ha; etot -4.84057e-14 Ha; grad (1.67214e-7, 0.00000e0) Ha
+SCF Change: DM (8.75195e-9, 0.00000e0); eev 3.07468e-8 Ha; etot -7.66054e-15 Ha; grad (1.49523e-7, 0.00000e0) Ha
+SCF Change: DM (8.46901e-9, 0.00000e0); eev 2.97528e-8 Ha; etot -6.38378e-15 Ha; grad (1.33764e-7, 0.00000e0) Ha
+SCF Change: DM (8.50572e-9, 0.00000e0); eev 2.98818e-8 Ha; etot -4.99600e-15 Ha; grad (1.18514e-7, 0.00000e0) Ha
+SCF Change: DM (8.66928e-9, 0.00000e0); eev 3.04564e-8 Ha; etot -5.16254e-15 Ha; grad (1.03198e-7, 0.00000e0) Ha
+SCF Change: DM (8.75327e-9, 0.00000e0); eev 3.07514e-8 Ha; etot -3.77476e-15 Ha; grad (8.75876e-8, 0.00000e0) Ha
+SCF Change: DM (8.36331e-9, 0.00000e0); eev 2.93814e-8 Ha; etot -3.66374e-15 Ha; grad (7.18259e-8, 0.00000e0) Ha
+SCF Change: DM (6.70735e-9, 0.00000e0); eev 2.35639e-8 Ha; etot -2.38698e-15 Ha; grad (5.67665e-8, 0.00000e0) Ha
+SCF Change: DM (2.88949e-9, 0.00000e0); eev 1.01512e-8 Ha; etot -1.83187e-15 Ha; grad (4.46888e-8, 0.00000e0) Ha
+SCF Change: DM (2.73788e-9, 0.00000e0); eev 9.61853e-9 Ha; etot -6.66134e-16 Ha; grad (3.94858e-8, 0.00000e0) Ha
+SCF is converged after   34 iterations.
+Energy:        -0.4992784057 Ha
+grad_dm l2: 3.45558e-8 Ha
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):     -76.2683194819791481
+The total energy:       -76.1679874209 Ha by the initial guess
+Initial grad_dm l2:  1.39162e0 Ha
+SCF Change: DM 5.78508e-2; eev  1.90082e0 Ha; etot 7.42357e-2 Ha; grad  1.81047e0 Ha
+Energy:     -76.0937517489 Ha after    1 iterations (in       0.01 seconds).
+SCF Change: DM 3.05663e-2; eev  1.06701e0 Ha; etot 9.49244e-2 Ha; grad  2.15343e0 Ha
+Energy:     -75.9988273397 Ha after    2 iterations (in       0.01 seconds).
+SCF Change: DM 6.05978e-4; eev 3.09692e-2 Ha; etot -2.82450e-1 Ha; grad 5.02875e-2 Ha
+Energy:     -76.2812772496 Ha after    3 iterations (in       0.01 seconds).
+SCF Change: DM 6.52413e-5; eev 1.19959e-3 Ha; etot -1.19946e-4 Ha; grad 2.68355e-3 Ha
+Energy:     -76.2813971961 Ha after    4 iterations (in       0.01 seconds).
+SCF Change: DM 9.12704e-6; eev 2.95686e-4 Ha; etot -4.78030e-7 Ha; grad 5.98431e-4 Ha
+Energy:     -76.2813976741 Ha after    5 iterations (in       0.01 seconds).
+SCF Change: DM 1.87693e-6; eev 7.92669e-6 Ha; etot -1.67192e-8 Ha; grad 5.64629e-5 Ha
+Energy:     -76.2813976909 Ha after    6 iterations (in       0.01 seconds).
+SCF Change: DM 2.12603e-8; eev 3.38652e-7 Ha; etot -2.72877e-10 Ha; grad 7.10441e-6 Ha
+Energy:     -76.2813976911 Ha after    7 iterations (in       0.01 seconds).
+SCF Change: DM 1.65771e-8; eev 2.66854e-7 Ha; etot -1.03739e-12 Ha; grad 6.54154e-6 Ha
+Energy:     -76.2813976911 Ha after    8 iterations (in       0.01 seconds).
+SCF Change: DM 2.11383e-7; eev 3.80773e-6 Ha; etot -5.82645e-13 Ha; grad 6.10096e-6 Ha
+Energy:     -76.2813976911 Ha after    9 iterations (in       0.01 seconds).
+SCF Change: DM 9.77693e-9; eev 1.02479e-7 Ha; etot -3.96483e-12 Ha; grad 3.14877e-7 Ha
+Energy:     -76.2813976911 Ha after   10 iterations (in       0.01 seconds).
+SCF is converged after   10 iterations.
+Energy:       -76.2813976911 Ha
+grad_dm l2: 1.53072e-8 Ha
+    Davidson solver: tol ||r|| < 1.00e-4, tol |de| < 1.00e-8, nroots=3, dim=95
+    iter 1: space=6, converged=0/3
+    iter 2: space=11, converged=0/3
+    iter 3: space=16, converged=0/3
+    iter 4: space=21, converged=1/3
+    iter 5: space=25, converged=2/3
+    iter 6: space=28, converged=2/3
+    iter 7: space=28, converged=3/3
+Davidson Solver has converged.
+RHF/RKS internal stability: lowest eigenvalues = [1.214358449933318, 1.4790812832221543, 1.553290233452094]
+RHF/RKS wavefunction is stable in the internal stability analysis
+    Davidson solver: tol ||r|| < 1.00e-4, tol |de| < 1.00e-8, nroots=3, dim=95
+    iter 1: space=6, converged=0/3
+    iter 2: space=11, converged=0/3
+    iter 3: space=16, converged=0/3
+    iter 4: space=21, converged=0/3
+    iter 5: space=26, converged=2/3
+    iter 6: space=26, converged=3/3
+Davidson Solver has converged.
+RHF/RKS -> UHF/UKS external stability: lowest eigenvalues = [0.2528672806989944, 0.314815419986368, 0.3310122914662932]
+RHF/RKS wavefunction is stable in the RHF/RKS -> UHF/UKS external stability analysis
+Mulliken population analysis:
+  0-O  :  -0.306480
+  1-H  :   0.153240
+  2-H  :   0.153240
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -76.2813976911 Ha
+Detailed time report:
+Overall   |:    3.650 s for the whole job
+SCF       |:    0.172 s for the scf procedure
+Stability |:    3.478 s for the SCF stability analysis (TDDFT Hessian)

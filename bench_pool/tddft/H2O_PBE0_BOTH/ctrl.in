@@ -1,0 +1,29 @@
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     xc =                        "pbe0"
+     basis_path =                "def2-svp"
+     auxbas_path =               "def2-svp-rifit"
+     eri_type =                  "ri-v"
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+     mixer =                     "diis"
+     max_scf_cycle =             100
+     scf_acc_rho =               1.0e-8
+     initial_guess =             "sad"
+
+[tddft]
+     tddft_method =              "tda"
+     tddft_spin =                "both"
+     tddft_mode =                "ao"
+     nroots =                    2
+
+[geom]
+     name = "H2O"
+     unit = "angstrom"
+     position = '''
+        O  0.0    0.0    0.0
+        H  0.757  0.586  0.0
+        H -0.757  0.586  0.0
+     '''

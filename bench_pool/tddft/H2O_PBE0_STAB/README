@@ -1,0 +1,5 @@
+SCF stability analysis via the top-level check_stab = "auto" keyword (no
+[tddft] section): internal + external checks on the RHF/RKS reference,
+TDDFT-Hessian-based with Davidson. The parsed quantity is the lowest internal
+Hessian eigenvalue (tolerance 1e-6, matching the PySCF STAB_TOL residual
+criterion).
