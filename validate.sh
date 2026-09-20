@@ -88,12 +88,14 @@ if [[ "$N_MPI" -ge 2 ]]; then
     if [[ ! -f "$SCOPE_FILE" ]]; then
         echo "WARNING: $SCOPE_FILE not found; cannot enforce MPI test scope." >&2
     else
-        # 从声明文件中提取范围内的目录（表格第一列, bench_pool/xxx 形式）
+        # 从声明文件中提取范围内的目录（"当前 MPI 测试范围" 一节表格第一列，bench_pool/xxx 形式）。
+        # 范围用 `^## ` 开头的标题行界定，避免正文里提到的 bench_pool/xxx 被误当成范围目录。
         SCOPE_DIRS=()
         while IFS= read -r line; do
             line="$(echo "$line" | sed 's|bench_pool/||; s|/$||')"
             [[ -n "$line" ]] && SCOPE_DIRS+=("$line")
-        done < <(sed -n '/当前 MPI 测试范围/,/范围外目录/p' "$SCOPE_FILE" \
+        done < <(sed -n '/^## 当前 MPI 测试范围/,/^## 范围外目录/p' "$SCOPE_FILE" \
+                 | grep -oE '^\| *`bench_pool/[a-z_]+/`' \
                  | grep -oE 'bench_pool/[a-z_]+/')
         if [[ ${#SCOPE_DIRS[@]} -eq 0 ]]; then
             echo "WARNING: could not parse scope dirs from $SCOPE_FILE" >&2
