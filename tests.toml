@@ -130,3 +130,21 @@ timeout = 300
 # --- 按用例扩展的 MPI 范围（见 MPI_TEST_SCOPE.md §按用例扩展）---
 # tags=["mpi"] 表示该用例支持 MPI 且已在目标 MPI 配置下全量验证通过；
 # validate.sh --mpi 会把此类用例与声明目录（scf/gradient）一并纳入范围。
+
+# --- 依赖 Python 运行时的用例（requires = [...]）---
+# requires 列出的 Python 包若在当前环境中不可导入，回归工具会自动跳过该用例
+# （计为 skipped，不算失败）。
+[h2o_nvt]
+requires = ["ase"]
+
+[butane_qmmm_cut_sp]
+requires = ["ase", "openmm"]
+
+[peptide_qmmm_cut_sp]
+requires = ["ase", "openmm"]
+
+[water_dimer_qmmm_ase_opt]
+requires = ["ase", "openmm"]
+
+[water_mm_sp]
+requires = ["openmm"]
