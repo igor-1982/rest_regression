@@ -1,2 +1,2 @@
 [config]
-fields = ["scf_energy", "stability_roots_internal", "stability_roots_external"]
+fields = ["scf_energy", "stability/roots_internal", "stability/roots_external"]
