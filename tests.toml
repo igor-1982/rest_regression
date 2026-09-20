@@ -39,6 +39,9 @@ tags = ["mp2"]
 [HI_Validate_ENXC_ECP_GEP]
 tags = ["ecp"]
 
+[NH3_RHF_RISCHWARTZ]
+num_mpi = 1
+
 [CO_HF_Dipole]
 tags = ["dipole"]
 [CO_HF_ext_field]
