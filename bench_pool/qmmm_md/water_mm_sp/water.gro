@@ -1,0 +1,6 @@
+flexible TIP3P water (MM single point regression)
+    3
+    1SOL     OW    1   0.125   0.010   0.000
+    1SOL    HW1    2   0.158  -0.038  -0.076
+    1SOL    HW2    3   0.158  -0.038   0.076
+    4.0000    4.0000    4.0000

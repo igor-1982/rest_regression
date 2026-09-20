@@ -1,0 +1,48 @@
+# QM/MM single point of the butane cut-bond system (C2-C3 cut, 1 link H).
+# QM = [geom] 7 atoms + link H at the end; MM coords from the external init.gro;
+# system_qmmm.xml is generated internally from topol.top + butane_ff.
+[ctrl]
+num_threads   = 8
+print_level   = 1
+job_type      = "md"
+xc            = "b3lyp"
+basis_path    = "6-31gs"
+auxbas_path   = "def2-universal-jkfit"
+auxbasis_response = "true"
+eri_type      = "ri-v"
+mixer         = "diis"
+scf_acc_rho   = 1e-08
+scf_acc_etot  = 1e-08
+spin          = 1
+charge        = 0.0
+
+[geom]
+name = "butane_cut_sp"
+unit = "angstrom"
+position = """
+C     14.40000000    12.50000000    12.92000000
+H     14.70000000    13.53000000    13.13000000
+H     15.20000000    11.99000000    12.39000000
+H     14.21000000    11.99000000    13.87000000
+C     13.13000000    12.50000000    12.08000000
+H     13.13000000    13.37000000    11.42000000
+H     13.13000000    11.63000000    11.42000000
+H     12.29794971    12.50000000    12.63470020
+"""
+
+[md]
+ensemble         = "sp"
+steps            = 1
+dt               = 0.5
+temperature      = 300.0
+qmmm_mm_file     = "init.gro"
+qmmm_top         = "topol.top"
+qmmm_ff_dir      = "butane_ff"
+qmmm_qm_atoms    = [0, 1, 2, 3, 4, 5, 6]
+qmmm_frontier    = [7, 8, 9]
+qmmm_gro_skip    = 7
+qmmm_links       = [[4, 7]]
+qmmm_link_r_eq   = 1.00
+qmmm_mm_cutoff   = 999.0
+qmmm_nb_cutoff   = 1.0
+outputs          = ["energy_force"]

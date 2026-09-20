@@ -1,0 +1,100 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Force calculation
+Cube output: wavefunction
+The exchange-correlation method: b3lyp
+Print level:   1    max log level: INFO
+The number of threads used for parallelism:      8
+The spheric-GTO basis set is taken from /opt/rest_workspace/rest/basis-set-pool/def2-svp
+The spheric-GTO auxiliary basis set is taken from /opt/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+O       -1.65540000     -0.12330000      0.00000000
+H       -0.70410000      0.03190000      0.00000000
+H       -2.03870000      0.75370000      0.00000000
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+The initial guess is prepared by reading chkfile (restart)
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [402]
+SCF DFA parameters: [1.0]
+SCF DFA hybrid coeff:       0.20000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 12, natm: 3 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 49,final natm: 6
+numbasis: 24, num_auxbas: 113
+Molecule_name: none
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (5059.71 MB) is more than required (0.37 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       8.94860028 Hartree
+External potential due to point charges exists:      -0.21539224 Hartree
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+No ghost effective potential
+There are 3 point charges specified
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.03773700 with the total number of basis functions:     24
+Grid size: 34310
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=97.4% → skipping (AO too dense), falling back to dense
+Read MO coefficients from chkfile: restart
+[WARN  initial_guess] However, the chkfile will be overwritten in the SCF procedure.
+[WARN  initial_guess] To prevent that, use `guessfile = your_chkfile` instead
+E_tot from chkfile:     -76.3687170724
+Importing MO coefficients in restricted format (RKS/RHF)
+The total energy:       -76.3687170724 Ha by the initial guess
+Initial grad_dm l2: 5.59816e-10 Ha
+SCF Change: DM 1.71381e-11; eev 4.89778e-10 Ha; etot 4.26326e-14 Ha; grad 5.29575e-10 Ha
+Energy:     -76.3687170724 Ha after    1 iterations (in       0.03 seconds).
+SCF Change: DM 9.82501e-12; eev 2.94669e-10 Ha; etot 2.41585e-13 Ha; grad 6.76773e-10 Ha
+Energy:     -76.3687170724 Ha after    2 iterations (in       0.03 seconds).
+SCF is converged after    2 iterations.
+Energy:       -76.3687170724 Ha
+grad_dm l2: 4.42075e-11 Ha
+now save the converged SCF results
+write chkfile: restart
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+Empirical dispersion is specified in empirical_dispersion. Use the dispersion from empirical_dispersion.
+------ Output gradient [a.u.] ------
+O        0.00210329      0.01165157      0.00000000
+H       -0.01079632     -0.00428814      0.00000000
+H        0.00145740     -0.00854130     -0.00000000
+
+------------------------------------
+force                   0.156 s for force calculation
+Mulliken population analysis:
+  0-O  :  -0.325722
+  1-H  :   0.185269
+  2-H  :   0.140453
+Calculating forces on ghost point charges
+------ Forces on point charges [a.u.] ------
+    Q0001        -0.01208495     0.00179170    -0.00000000
+    Q0002         0.00242466    -0.00148467    -0.00133430
+    Q0003         0.00242466    -0.00148467     0.00133430
+--------------------------------------------
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -76.3687170724 Ha
+Detailed time report:
+force     |:    0.156 s for force calculation
+SCF       |:    0.194 s for the scf procedure
+Overall   |:    0.353 s for the whole job

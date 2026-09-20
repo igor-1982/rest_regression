@@ -1,0 +1,10 @@
+#include "butane_ff/forcefield.itp"
+#include "butane.itp"
+#include "butane_ff/tip3p.itp"
+
+[ system ]
+butane in water
+
+[ molecules ]
+BUT 1
+SOL 405

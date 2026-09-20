@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<System openmmVersion="8.6" type="System" version="1">
+	<PeriodicBoxVectors>
+		<A x="2" y="0" z="0"/>
+		<B x="0" y="2" z="0"/>
+		<C x="0" y="0" z="2"/>
+	</PeriodicBoxVectors>
+	<Particles>
+		<Particle mass="1"/>
+		<Particle mass="1"/>
+		<Particle mass="1"/>
+		<Particle mass="1"/>
+		<Particle mass="1"/>
+		<Particle mass="1"/>
+	</Particles>
+	<Constraints/>
+	<Forces>
+		<Force alpha="0" cutoff="1" dispersionCorrection="0" ewaldTolerance=".0005" exceptionsUsePeriodic="0" forceGroup="0" includeDirectSpace="1" ljAlpha="0" ljnx="0" ljny="0" ljnz="0" method="0" name="NonbondedForce" nx="0" ny="0" nz="0" recipForceGroup="-1" rfDielectric="78.3" switchingDistance="-1" type="NonbondedForce" useSwitchingFunction="0" version="4">
+			<GlobalParameters/>
+			<ParticleOffsets/>
+			<ExceptionOffsets/>
+			<Particles>
+				<Particle eps=".6364" q="0" sig=".31506"/>
+				<Particle eps=".15" q="0" sig=".1"/>
+				<Particle eps=".15" q="0" sig=".1"/>
+				<Particle eps=".6364" q="-.834" sig=".31506"/>
+				<Particle eps=".15" q=".417" sig=".1"/>
+				<Particle eps=".15" q=".417" sig=".1"/>
+			</Particles>
+			<Exceptions>
+				<Exception eps="0" p1="0" p2="1" q="0" sig="1"/>
+				<Exception eps="0" p1="0" p2="2" q="0" sig="1"/>
+				<Exception eps="0" p1="1" p2="2" q="0" sig="1"/>
+				<Exception eps="0" p1="3" p2="4" q="0" sig="1"/>
+				<Exception eps="0" p1="3" p2="5" q="0" sig="1"/>
+				<Exception eps="0" p1="4" p2="5" q="0" sig="1"/>
+			</Exceptions>
+		</Force>
+		<Force forceGroup="0" name="HarmonicBondForce" type="HarmonicBondForce" usesPeriodic="0" version="2">
+			<Bonds>
+				<Bond d=".09572" k="502416" p1="3" p2="4"/>
+				<Bond d=".09572" k="502416" p1="3" p2="5"/>
+			</Bonds>
+		</Force>
+		<Force forceGroup="0" name="HarmonicAngleForce" type="HarmonicAngleForce" usesPeriodic="0" version="2">
+			<Angles>
+				<Angle a="1.8242181341844732" k="627.6" p1="4" p2="3" p3="5"/>
+			</Angles>
+		</Force>
+	</Forces>
+</System>
