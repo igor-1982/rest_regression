@@ -45,7 +45,7 @@ numbasis: 24, num_auxbas: 76
 Molecule_name: NH2
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (3839.88 MB) is more than required (0.50 MB).
+Memory available for 1.5 times of RI integrals (4470.39 MB) is more than required (0.50 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       7.56527092 Hartree
 No ghost effective potential
@@ -64,7 +64,7 @@ Using xc_parser legacy
 ==== End of Summary ====
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (3802.15 MB) is more than required (0.05 MB).
+Memory available for 1.5 times of RI integrals (4427.68 MB) is more than required (0.05 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -81,19 +81,19 @@ SCF Change: DM 3.65769e-5; eev 2.32821e-4 Ha; etot -1.50931e-4 Ha; grad 6.22594e
 SCF Change: DM 2.59666e-5; eev 8.86026e-4 Ha; etot 7.02750e-5 Ha; grad 1.89288e-4 Ha
 SCF Change: DM 6.94678e-6; eev 8.53614e-5 Ha; etot 5.56415e-5 Ha; grad 1.64552e-4 Ha
 SCF Change: DM 1.09512e-5; eev 3.15437e-4 Ha; etot -2.80062e-5 Ha; grad 1.02964e-4 Ha
-SCF Change: DM 2.75017e-6; eev 1.37719e-4 Ha; etot -3.90824e-9 Ha; grad 3.68595e-5 Ha
-SCF Change: DM 1.07523e-7; eev 3.13267e-7 Ha; etot -5.83519e-10 Ha; grad 6.94759e-7 Ha
-SCF Change: DM 3.85613e-9; eev 3.97252e-8 Ha; etot -2.20268e-13 Ha; grad 1.37283e-7 Ha
-SCF Change: DM 2.36987e-9; eev 2.46950e-8 Ha; etot -1.42109e-14 Ha; grad 1.15741e-7 Ha
-SCF Change: DM 1.65749e-9; eev 1.74029e-8 Ha; etot -2.13163e-14 Ha; grad 1.02474e-7 Ha
-SCF Change: DM 1.24768e-9; eev 1.31729e-8 Ha; etot 3.55271e-14 Ha; grad 9.31818e-8 Ha
-SCF Change: DM 9.85282e-10; eev 1.04475e-8 Ha; etot 7.10543e-15 Ha; grad 8.61800e-8 Ha
-SCF Change: DM 1.38210e-8; eev 1.45383e-7 Ha; etot -2.13163e-14 Ha; grad 8.06463e-8 Ha
-SCF Change: DM 4.74054e-10; eev 1.12220e-8 Ha; etot -1.42109e-14 Ha; grad 3.54777e-9 Ha
-SCF Change: DM 5.52464e-11; eev 1.23566e-9 Ha; etot 6.39488e-14 Ha; grad 1.04436e-10 Ha
+SCF Change: DM 2.75017e-6; eev 1.37719e-4 Ha; etot -3.90818e-9 Ha; grad 3.68595e-5 Ha
+SCF Change: DM 1.07523e-7; eev 3.13267e-7 Ha; etot -5.83498e-10 Ha; grad 6.94759e-7 Ha
+SCF Change: DM 3.85613e-9; eev 3.97252e-8 Ha; etot -2.62901e-13 Ha; grad 1.37283e-7 Ha
+SCF Change: DM 2.36987e-9; eev 2.46950e-8 Ha; etot 7.10543e-15 Ha; grad 1.15741e-7 Ha
+SCF Change: DM 1.65749e-9; eev 1.74029e-8 Ha; etot -4.26326e-14 Ha; grad 1.02474e-7 Ha
+SCF Change: DM 1.24768e-9; eev 1.31729e-8 Ha; etot 4.97380e-14 Ha; grad 9.31818e-8 Ha
+SCF Change: DM 9.85282e-10; eev 1.04475e-8 Ha; etot -7.10543e-15 Ha; grad 8.61800e-8 Ha
+SCF Change: DM 1.38210e-8; eev 1.45383e-7 Ha; etot -1.42109e-14 Ha; grad 8.06463e-8 Ha
+SCF Change: DM 4.74053e-10; eev 1.12219e-8 Ha; etot -7.10543e-15 Ha; grad 3.54776e-9 Ha
+SCF Change: DM 5.52508e-11; eev 1.23579e-9 Ha; etot 4.26326e-14 Ha; grad 1.04431e-10 Ha
 SCF is converged after   18 iterations.
 Energy:       -53.7728884061 Ha
-grad_dm l2: 5.22755e-10 Ha
+grad_dm l2: 5.22793e-10 Ha
 SAD generation for N complete.
 
 =======================
@@ -103,7 +103,7 @@ Using xc_parser legacy
 ==== End of Summary ====
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (3801.66 MB) is more than required (0.00 MB).
+Memory available for 1.5 times of RI integrals (4426.70 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -150,7 +150,7 @@ SCF is converged after   34 iterations.
 Energy:        -0.4992784057 Ha
 grad_dm l2: 3.45558e-8 Ha
 SAD generation for H complete.
-Initial guess energy using single atom density (SAD):     -55.8790925065065238
+Initial guess energy using single atom density (SAD):     -55.8790925065065451
 The total energy:       -55.7280425738 Ha by the initial guess
 Initial grad_dm l2: (3.38712e-1,5.88981e-1) Ha
 SCF Change: DM (1.63809e-2,1.17274e-2); eev  1.30194e0 Ha; etot -3.34580e-2 Ha; grad (4.46484e-1,2.89609e-1) Ha
@@ -165,11 +165,11 @@ SCF Change: DM (6.13948e-5,7.41753e-5); eev 1.34095e-3 Ha; etot -3.76446e-5 Ha; 
 Energy:     -55.8045506728 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    5 iterations (in       0.02 seconds).
 SCF Change: DM (1.59711e-5,2.16687e-5); eev 3.03848e-4 Ha; etot -7.93751e-7 Ha; grad (1.72806e-4,2.56033e-4) Ha
 Energy:     -55.8045514666 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    6 iterations (in       0.02 seconds).
-SCF Change: DM (3.64812e-6,4.59245e-6); eev 2.83161e-5 Ha; etot -4.61934e-8 Ha; grad (4.50537e-5,4.28808e-5) Ha
+SCF Change: DM (3.64812e-6,4.59245e-6); eev 2.83161e-5 Ha; etot -4.61933e-8 Ha; grad (4.50537e-5,4.28808e-5) Ha
 Energy:     -55.8045515128 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    7 iterations (in       0.02 seconds).
-SCF Change: DM (4.08861e-7,5.01699e-7); eev 4.70083e-6 Ha; etot -1.91633e-9 Ha; grad (6.90545e-6,6.49904e-6) Ha
+SCF Change: DM (4.08861e-7,5.01699e-7); eev 4.70083e-6 Ha; etot -1.91638e-9 Ha; grad (6.90545e-6,6.49904e-6) Ha
 Energy:     -55.8045515147 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    8 iterations (in       0.02 seconds).
-SCF Change: DM (5.24780e-9,4.06537e-9); eev 2.51086e-7 Ha; etot -3.40776e-11 Ha; grad (5.88126e-7,5.74476e-7) Ha
+SCF Change: DM (5.24780e-9,4.06537e-9); eev 2.51086e-7 Ha; etot -3.40847e-11 Ha; grad (5.88126e-7,5.74476e-7) Ha
 Energy:     -55.8045515147 Ha with <S^2> =  0.753 and <2S+1> =  2.003 after    9 iterations (in       0.02 seconds).
 SCF is converged after    9 iterations.
 Energy:       -55.8045515147 Ha
@@ -218,34 +218,34 @@ Solving unrestricted TDA eigenvalue problem...
 Davidson Solver has converged.
 
 First 3 Unrestricted Excitations:
-#0 Excitation energy=0.08295464388091586, norm=1.000000
+#0 Excitation energy=0.08295464388091767, norm=1.000000
 	Dipole Moment Components:
-	x:-0.2538651832041953, y:-0.000000000000000038494891533360906, z:-0.000000000000000169845409469355
-	Transition Dipole Square:0.06444753124329966; Oscillator Strength:0.003564148002194748
+	x:0.25386518320419477, y:-0.0000000000000003542184513908698, z:0.0000000000000002364688591117633
+	Transition Dipole Square:0.06444753124329937; Oscillator Strength:0.0035641480021948095
       #3b->4b,amplitude=0.9978156948035914
-      #3b->10b,amplitude=-0.04689905123053384
-      #1b->4b,amplitude=-0.022454376531125884
-      #3a->15a,amplitude=-0.014887178694305354
-      #4a->10a,amplitude=0.014358867341972661
-#1 Excitation energy=0.2896446120805581, norm=1.000000
+      #3b->10b,amplitude=0.04689905123053393
+      #1b->4b,amplitude=-0.022454376531126058
+      #3a->15a,amplitude=0.014887178694305331
+      #4a->10a,amplitude=-0.0143588673419729
+#1 Excitation energy=0.2896446120805627, norm=1.000000
 	Dipole Moment Components:
-	x:-0.0000000000000024472966314851265, y:0.0000000000000857019560129423, z:0.1749298343861918
-	Transition Dipole Square:0.030600446958380493; Oscillator Strength:0.005908836392501208
-      #3b->5b,amplitude=0.8645791381062946
-      #3a->5a,amplitude=-0.49123719724692033
-      #3b->8b,amplitude=0.05707630744811593
-      #2a->6a,amplitude=0.04610062912746182
-      #3a->8a,amplitude=-0.04524750542604625
-#2 Excitation energy=0.3022055292523028, norm=1.000000
+	x:0.0000000000000026816841477156764, y:-0.00000000000008309423744703886, z:-0.1749298343861561
+	Transition Dipole Square:0.030600446958368006; Oscillator Strength:0.005908836392498891
+      #3b->5b,amplitude=0.8645791381062696
+      #3a->5a,amplitude=0.4912371972469646
+      #3b->8b,amplitude=0.057076307448115
+      #2a->6a,amplitude=-0.04610062912745898
+      #3a->8a,amplitude=0.04524750542604783
+#2 Excitation energy=0.30220552925230065, norm=1.000000
 	Dipole Moment Components:
-	x:0.2251972883529444, y:0.000000000000005384067028080507, z:-0.0000000000000021726011834368927
-	Transition Dipole Square:0.05071381868151918; Oscillator Strength:0.010217330943369218
-      #4a->5a,amplitude=0.995001913974922
-      #1b->4b,amplitude=-0.06999911098555182
-      #4a->8a,amplitude=0.05716695327239325
-      #4a->11a,amplitude=-0.03658391923729257
-      #1b->10b,amplitude=0.015309604015189578
-The first excitation obtained by TDDFT is 0.08295464388091586
+	x:-0.2251972883529494, y:-0.000000000000004948311113190252, z:0.000000000000009225456497187737
+	Transition Dipole Square:0.05071381868152143; Oscillator Strength:0.010217330943369598
+      #4a->5a,amplitude=0.9950019139749219
+      #1b->4b,amplitude=-0.06999911098555468
+      #4a->8a,amplitude=0.057166953272392663
+      #4a->11a,amplitude=-0.03658391923729414
+      #1b->10b,amplitude=-0.015309604015190147
+The first excitation obtained by TDDFT is 0.08295464388091767
 TDDFT calculation completed successfully.
 
 ====================================================
@@ -253,6 +253,6 @@ TDDFT calculation completed successfully.
 ====================================================
 The SCF energy        :     -55.8045515147 Ha
 Detailed time report:
-SCF       |:    0.322 s for the scf procedure
-Overall   |:    9.578 s for the whole job
-TDDFT     |:    9.257 s for the TDDFT eigenvalue calculation
+SCF       |:    0.327 s for the scf procedure
+Overall   |:   10.173 s for the whole job
+TDDFT     |:    9.846 s for the TDDFT eigenvalue calculation

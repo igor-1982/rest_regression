@@ -343,7 +343,7 @@ mod tests {
         // asset integrity: every entry of default_tolerance.toml must parse and
         // be valid, and the table size must not shrink unnoticed (a dropped key
         // silently loosens the comparison to the fallback)
-        assert_eq!(DEFAULT_TOLERANCE.len(), 15);
+        assert_eq!(DEFAULT_TOLERANCE.len(), 17);
         for spec in DEFAULT_TOLERANCE.values() {
             assert!(spec.is_valid());
         }

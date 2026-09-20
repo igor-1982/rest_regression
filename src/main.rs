@@ -383,21 +383,6 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("tddft_osc".to_string(), tddft_osc);
     }
 
-    // SCF stability analysis: lowest eigenvalues of the internal orbital
-    // Hessian (ri_tddft::stability). Only the internal check is collected;
-    // "RHF/RKS internal stability: lowest eigenvalues = [1.2143584, ...]"
-    let re_stability = Regex::new(
-        r"(?m)internal stability: lowest eigenvalues = \[(?P<roots>[^\]]*)\]"
-    ).unwrap();
-    if let Some(cap) = re_stability.captures(&buf) {
-        let roots: Vec<f64> = cap["roots"].split(',')
-            .filter_map(|s| s.trim().parse::<f64>().ok())
-            .collect();
-        if !roots.is_empty() {
-            result.insert("stability_roots".to_string(), roots);
-        }
-    }
-
     Ok(result)
 }
 
@@ -542,24 +527,6 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                             i+1, out_value[i], ref_value[i], dev);
                     } else {
                         println!("Pass    : TDDFT Osc {}: {:20.10}  = {:20.10} (dev={:.2e})",
-                            i+1, out_value[i], ref_value[i], dev);
-                    }
-                }
-            } else {
-                is_same = false;
-                println!("{:20} not found in output", key);
-            }
-        } else if key.eq("stability_roots") {
-            if let Some(out_value) = out_hashmap.get(key) {
-                let n_roots = ref_value.len().min(out_value.len());
-                for i in 0..n_roots {
-                    let dev = (ref_value[i] - out_value[i]).abs();
-                    if dev > 1.0e-6 {
-                        is_same = false;
-                        println!("WARNNING: Stability Root {}: {:20.10} != {:20.10} (dev={:.2e})",
-                            i+1, out_value[i], ref_value[i], dev);
-                    } else {
-                        println!("Pass    : Stability Root {}: {:20.10}  = {:20.10} (dev={:.2e})",
                             i+1, out_value[i], ref_value[i], dev);
                     }
                 }

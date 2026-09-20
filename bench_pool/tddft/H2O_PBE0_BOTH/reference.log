@@ -42,7 +42,7 @@ numbasis: 24, num_auxbas: 76
 Molecule_name: H2O
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (3818.26 MB) is more than required (0.25 MB).
+Memory available for 1.5 times of RI integrals (4490.12 MB) is more than required (0.25 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       9.19391316 Hartree
 No ghost effective potential
@@ -59,7 +59,7 @@ Using xc_parser legacy
 ==== End of Summary ====
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (3770.62 MB) is more than required (0.05 MB).
+Memory available for 1.5 times of RI integrals (4449.51 MB) is more than required (0.05 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -78,18 +78,18 @@ SCF Change: DM 8.00609e-5; eev 5.21302e-3 Ha; etot -1.79075e-4 Ha; grad 5.88920e
 SCF Change: DM 7.22470e-5; eev 1.04575e-3 Ha; etot 4.49425e-4 Ha; grad 9.61986e-4 Ha
 SCF Change: DM 2.02368e-5; eev 1.04941e-3 Ha; etot -1.81527e-7 Ha; grad 3.94459e-4 Ha
 SCF Change: DM 7.06636e-7; eev 3.56016e-6 Ha; etot -3.70117e-8 Ha; grad 6.54092e-6 Ha
-SCF Change: DM 2.65250e-8; eev 2.79199e-7 Ha; etot -1.64846e-11 Ha; grad 1.28682e-6 Ha
-SCF Change: DM 1.64515e-8; eev 1.73903e-7 Ha; etot -2.27374e-13 Ha; grad 1.09075e-6 Ha
-SCF Change: DM 1.15739e-8; eev 1.22687e-7 Ha; etot -5.68434e-14 Ha; grad 9.69092e-7 Ha
-SCF Change: DM 8.74950e-9; eev 9.29377e-8 Ha; etot  0.00000e0 Ha; grad 8.83480e-7 Ha
-SCF Change: DM 6.93240e-9; eev 7.37539e-8 Ha; etot -1.42109e-13 Ha; grad 8.18747e-7 Ha
-SCF Change: DM 9.94673e-8; eev 1.01120e-6 Ha; etot 1.42109e-14 Ha; grad 7.67449e-7 Ha
-SCF Change: DM 4.60818e-9; eev 1.17360e-7 Ha; etot -2.27374e-13 Ha; grad 4.50379e-8 Ha
-SCF Change: DM 3.98300e-10; eev 1.38275e-8 Ha; etot 2.84217e-14 Ha; grad 4.60873e-9 Ha
-SCF Change: DM 1.83078e-11; eev 8.67404e-10 Ha; etot  0.00000e0 Ha; grad 8.71306e-10 Ha
+SCF Change: DM 2.65250e-8; eev 2.79199e-7 Ha; etot -1.64562e-11 Ha; grad 1.28682e-6 Ha
+SCF Change: DM 1.64515e-8; eev 1.73903e-7 Ha; etot -2.55795e-13 Ha; grad 1.09075e-6 Ha
+SCF Change: DM 1.15739e-8; eev 1.22687e-7 Ha; etot 4.26326e-14 Ha; grad 9.69092e-7 Ha
+SCF Change: DM 8.74950e-9; eev 9.29377e-8 Ha; etot -7.10543e-14 Ha; grad 8.83480e-7 Ha
+SCF Change: DM 6.93240e-9; eev 7.37539e-8 Ha; etot -1.70530e-13 Ha; grad 8.18747e-7 Ha
+SCF Change: DM 9.94673e-8; eev 1.01120e-6 Ha; etot 5.68434e-14 Ha; grad 7.67449e-7 Ha
+SCF Change: DM 4.60818e-9; eev 1.17360e-7 Ha; etot -2.70006e-13 Ha; grad 4.50379e-8 Ha
+SCF Change: DM 3.98302e-10; eev 1.38275e-8 Ha; etot -1.42109e-14 Ha; grad 4.60873e-9 Ha
+SCF Change: DM 1.83093e-11; eev 8.67424e-10 Ha; etot -2.84217e-14 Ha; grad 8.71306e-10 Ha
 SCF is converged after   19 iterations.
 Energy:       -74.1977921811 Ha
-grad_dm l2: 5.44862e-10 Ha
+grad_dm l2: 5.44852e-10 Ha
 SAD generation for O complete.
 
 =======================
@@ -99,7 +99,7 @@ Using xc_parser legacy
 ==== End of Summary ====
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (3767.30 MB) is more than required (0.00 MB).
+Memory available for 1.5 times of RI integrals (4448.53 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -146,7 +146,7 @@ SCF is converged after   34 iterations.
 Energy:        -0.4992784057 Ha
 grad_dm l2: 3.45558e-8 Ha
 SAD generation for H complete.
-Initial guess energy using single atom density (SAD):     -76.2683194819791197
+Initial guess energy using single atom density (SAD):     -76.2683194819792334
 The total energy:       -76.1679874209 Ha by the initial guess
 Initial grad_dm l2:  1.39162e0 Ha
 SCF Change: DM 5.78508e-2; eev  1.90082e0 Ha; etot 7.42357e-2 Ha; grad  1.81047e0 Ha
@@ -161,17 +161,17 @@ SCF Change: DM 9.12704e-6; eev 2.95686e-4 Ha; etot -4.78031e-7 Ha; grad 5.98431e
 Energy:     -76.2813976741 Ha after    5 iterations (in       0.01 seconds).
 SCF Change: DM 1.87693e-6; eev 7.92669e-6 Ha; etot -1.67191e-8 Ha; grad 5.64629e-5 Ha
 Energy:     -76.2813976909 Ha after    6 iterations (in       0.01 seconds).
-SCF Change: DM 2.12603e-8; eev 3.38652e-7 Ha; etot -2.72848e-10 Ha; grad 7.10441e-6 Ha
+SCF Change: DM 2.12603e-8; eev 3.38652e-7 Ha; etot -2.72905e-10 Ha; grad 7.10441e-6 Ha
 Energy:     -76.2813976911 Ha after    7 iterations (in       0.01 seconds).
-SCF Change: DM 1.65771e-8; eev 2.66854e-7 Ha; etot -1.06581e-12 Ha; grad 6.54154e-6 Ha
+SCF Change: DM 1.65771e-8; eev 2.66854e-7 Ha; etot -9.09495e-13 Ha; grad 6.54154e-6 Ha
 Energy:     -76.2813976911 Ha after    8 iterations (in       0.01 seconds).
-SCF Change: DM 2.11383e-7; eev 3.80773e-6 Ha; etot -5.68434e-13 Ha; grad 6.10096e-6 Ha
+SCF Change: DM 2.11383e-7; eev 3.80773e-6 Ha; etot -6.67910e-13 Ha; grad 6.10096e-6 Ha
 Energy:     -76.2813976911 Ha after    9 iterations (in       0.01 seconds).
-SCF Change: DM 9.77693e-9; eev 1.02479e-7 Ha; etot -3.83693e-12 Ha; grad 3.14877e-7 Ha
+SCF Change: DM 9.77693e-9; eev 1.02479e-7 Ha; etot -3.76588e-12 Ha; grad 3.14877e-7 Ha
 Energy:     -76.2813976911 Ha after   10 iterations (in       0.01 seconds).
 SCF is converged after   10 iterations.
 Energy:       -76.2813976911 Ha
-grad_dm l2: 1.53072e-8 Ha
+grad_dm l2: 1.53071e-8 Ha
 Mulliken population analysis:
   0-O  :  -0.306480
   1-H  :   0.153240
@@ -202,24 +202,24 @@ Solving TDA eigenvalue problem (AO-mode batched matvec)...
 Davidson Solver has converged.
 
 First 2 Singlet Excitations:
-#0 Excitation energy=0.29404093385523106, norm=1.000000
+#0 Excitation energy=0.29404093385523034, norm=1.000000
 	Dipole Moment Components:
-	x:0.000000000000013121173499203052, y:0.0000000000000010824409726283267, z:0.3149122694521548
-	Transition Dipole Square:0.09916973745150653; Oscillator Strength:0.01943997480694604
+	x:0.000000000000010826528838915149, y:0.0000000000000029031695192744944, z:0.31491226945214945
+	Transition Dipole Square:0.09916973745150318; Oscillator Strength:0.019439974806945336
       #4->#5,amplitude=0.7066753442894981
-      #4->#8,amplitude=-0.01482582637047218
-      #4->#9,amplitude=0.011760455603434368
-      #4->#12,amplitude=-0.008119313411689411
-      #4->#14,amplitude=0.005912804903175112
-#1 Excitation energy=0.3799849803996212, norm=1.000000
+      #4->#8,amplitude=0.014825826370472167
+      #4->#9,amplitude=-0.01176045560343433
+      #4->#12,amplitude=0.008119313411689774
+      #4->#14,amplitude=0.005912804903174907
+#1 Excitation energy=0.37998498039961576, norm=1.000000
 	Dipole Moment Components:
-	x:0.0000000000003886041092861639, y:0.5956801774498249, z:0.0000000000000017836256518613332
-	Transition Dipole Square:0.3548348738066549; Oscillator Strength:0.08988794837901588
-      #3->#5,amplitude=-0.7018967097523998
-      #2->#6,amplitude=-0.07154452734880959
-      #4->#10,amplitude=-0.025500637928881135
-      #2->#7,amplitude=-0.022048654372322243
-      #1->#5,amplitude=-0.019152153632324337
+	x:-0.0000000000003872514456524271, y:-0.595680177449827, z:-0.0000000000000010850379290980334
+	Transition Dipole Square:0.35483487380665746; Oscillator Strength:0.08988794837901525
+      #3->#5,amplitude=-0.7018967097524
+      #2->#6,amplitude=-0.07154452734880716
+      #4->#10,amplitude=-0.02550063792888189
+      #2->#7,amplitude=-0.022048654372322084
+      #1->#5,amplitude=0.019152153632324764
 
 --- Triplet ---
 Reftype: RKS
@@ -234,24 +234,24 @@ Solving TDA eigenvalue problem (AO-mode batched matvec)...
 Davidson Solver has converged.
 
 First 2 Triplet Excitations:
-#0 Excitation energy=0.2689291403927784, norm=1.000000
+#0 Excitation energy=0.26892914039277743, norm=1.000000
 	Dipole Moment Components:
-	x:0.00000000000001587480487498952, y:0.00000000000000547764374580579, z:0.2914375507952226
-	Transition Dipole Square:0.08493584601351795; Oscillator Strength:0.01522781603796585
-      #4->#5,amplitude=0.7050632868375202
-      #4->#8,amplitude=-0.0472167206716898
-      #4->#12,amplitude=-0.019522335589122145
-      #1->#10,amplitude=0.010293138334363634
-      #4->#18,amplitude=-0.008706151426649916
-#1 Excitation energy=0.3429946337185074, norm=1.000000
+	x:0.00000000000001320300691150051, y:0.00000000000000780166427928706, z:0.2914375507952165
+	Transition Dipole Square:0.0849358460135144; Oscillator Strength:0.015227816037965159
+      #4->#5,amplitude=0.70506328683752
+      #4->#8,amplitude=0.04721672067169016
+      #4->#12,amplitude=0.0195223355891225
+      #1->#10,amplitude=-0.01029313833436361
+      #4->#18,amplitude=0.008706151426649992
+#1 Excitation energy=0.3429946337185035, norm=1.000000
 	Dipole Moment Components:
-	x:0.0000000000004835137636449344, y:0.7622235114228342, z:0.0000000000000008213772371707232
-	Transition Dipole Square:0.5809846813657554; Oscillator Strength:0.13284975198740737
-      #3->#5,amplitude=-0.7031456208954656
-      #3->#8,amplitude=0.0481330386687173
-      #2->#6,amplitude=0.04349491553082685
-      #1->#5,amplitude=0.022483859527610513
-      #3->#12,amplitude=0.01645625183922697
+	x:0.0000000000004821995042685388, y:0.7622235114228323, z:0.0000000000000005251355657510934
+	Transition Dipole Square:0.5809846813657525; Oscillator Strength:0.1328497519874052
+      #3->#5,amplitude=0.7031456208954655
+      #3->#8,amplitude=0.048133038668717126
+      #2->#6,amplitude=-0.04349491553082534
+      #1->#5,amplitude=0.022483859527610145
+      #3->#12,amplitude=0.01645625183922702
 TDDFT (both spins) calculation completed successfully.
 TDDFT calculation completed successfully.
 
@@ -260,6 +260,6 @@ TDDFT calculation completed successfully.
 ====================================================
 The SCF energy        :     -76.2813976911 Ha
 Detailed time report:
-Overall   |:    1.350 s for the whole job
-SCF       |:    0.167 s for the scf procedure
-TDDFT     |:    1.183 s for the TDDFT eigenvalue calculation
+SCF       |:    0.169 s for the scf procedure
+Overall   |:    1.267 s for the whole job
+TDDFT     |:    1.097 s for the TDDFT eigenvalue calculation

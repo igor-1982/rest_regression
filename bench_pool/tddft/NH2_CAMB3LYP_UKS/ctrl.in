@@ -5,13 +5,10 @@
      basis_path =                "def2-svp"
      auxbas_path =               "def2-svp-rifit"
      eri_type =                  "ri-v"
-     charge =                    0.0
      spin =                      2.0
      spin_polarization =         true
-     mixer =                     "diis"
-     max_scf_cycle =             100
      scf_acc_rho =               1.0e-8
-     initial_guess =             "sad"
+     outname =                   "reference"
 
 [tddft]
      tddft_method =              "tda"
