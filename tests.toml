@@ -3,11 +3,11 @@ num_mpi = 1
 num_threads = 3
 
 [Cu2_MP2]
-tags = ["mp2", "ecp"]
+tags = ["mp2", "ecp", "mpi"]
 [H2_MP2]
-tags = ["mp2"]
+tags = ["mp2", "mpi"]
 [HI_ECP_MP2]
-tags = ["mp2", "ecp"]
+tags = ["mp2", "ecp", "mpi"]
 [NH3_RHF_hess]
 tags = ["analdrv", "thermo", "hessian", "hf"]
 [H2O_RHF_multipole_hess]
@@ -28,13 +28,13 @@ tags = ["analdrv", "thermo", "hessian", "gga", "rsh"]
 tags = ["analdrv", "thermo", "hessian", "gga", "rsh"]
 
 [NH3_RMP2_EXT_FIELD_DIPOLE]
-tags = ["mp2", "dipole", "ext-field"]
+tags = ["mp2", "dipole", "ext-field", "mpi"]
 [NH3_RMP2_NUMDIPOLE]
-tags = ["mp2", "dipole"]
+tags = ["mp2", "dipole", "mpi"]
 [NH3_RMP2_NGRAD]
 tags = ["mp2"]
 [O2_MP2]
-tags = ["mp2"]
+tags = ["mp2", "mpi"]
 
 [HI_Validate_ENXC_ECP_GEP]
 tags = ["ecp"]
@@ -68,11 +68,11 @@ tags = ["lda"]
 [NH3_roSCAN]
 tags = ["ro", "meta-gga"]
 [N2_roR-xDH7]
-tags = ["ro"]
+tags = ["ro", "mpi"]
 [N2_roXYG3]
-tags = ["ro"]
+tags = ["ro", "mpi"]
 [NH3_DSDDH_PARSEXC]
-tags = ["parsexc"]
+tags = ["parsexc", "mpi"]
 
 [NH3_SCAN]
 tags = ["meta-gga"]
@@ -127,6 +127,36 @@ timeout = 300
 [NH3_BSE_RS_ORBITALS]
 timeout = 300
 
-# --- 按用例扩展的 MPI 范围（见 MPI_TEST_SCOPE.md §按用例扩展）---
-# tags=["mpi"] 表示该用例支持 MPI 且已在目标 MPI 配置下全量验证通过；
-# validate.sh --mpi 会把此类用例与声明目录（scf/gradient）一并纳入范围。
+# --- 按用例扩展的 MPI 范围（见 MPI_TEST_SCOPE.md §按用例扩展范围）---
+# dh 目录已从目录级范围移出：目录里除后 SCF 能量用例外还新增了 rayon-only 的 multipole
+# 用例，整目录纳入会把范围外的 analdrv 用例一起选中（见 MPI_TEST_SCOPE.md）。
+# 下列 dh 用例已在 mpirun -n 2 下逐个验证通过，按用例打 tags=["mpi"]。
+# 其中 9 个在上文已有条目，已在上文补 "mpi"：Cu2_MP2、H2_MP2、HI_ECP_MP2、O2_MP2、
+# N2_roR-xDH7、N2_roXYG3、NH3_DSDDH_PARSEXC、NH3_RMP2_EXT_FIELD_DIPOLE、NH3_RMP2_NUMDIPOLE。
+# 其余 13 个是下面新增的条目。
+[C6H6p_R-xDH7_ROHF]
+tags = ["mpi"]
+[C6H6p_R-xDH7_UHF]
+tags = ["mpi"]
+[C6H6p_ZRPS_ROHF]
+tags = ["mpi"]
+[C6H6p_ZRPS_UHF]
+tags = ["mpi"]
+[C6H6_RPA]
+tags = ["mpi"]
+[C6H6_R-xDH7]
+tags = ["mpi"]
+[C6H6_ZRPS]
+tags = ["mpi"]
+[NH3_RPA]
+tags = ["mpi"]
+[NH3_R-xDH7]
+tags = ["mpi"]
+[NH3_R-xDH7_SCC15]
+tags = ["mpi"]
+[NH3_ZRPS]
+tags = ["mpi"]
+[O2_R-xDH7]
+tags = ["mpi"]
+[O2_ZRPS]
+tags = ["mpi"]
