@@ -39,11 +39,18 @@ Options:
 
 Special tests and tags:
   tests.toml stores per-test configuration: num_mpi, num_threads (locked values, cannot be
-  overridden by CLI), timeout (per-test override in seconds; 0 = no timeout), and tags
-  (cross-folder filter labels).
+  overridden by CLI), timeout (per-test override in seconds; 0 = no timeout), tags
+  (cross-folder filter labels), and requires (Python packages needed to run the test).
   Available tags: mp2, ecp, dipole, ext-field, rsh, lda, ro, gga, meta-gga, parsexc, chkfile,
   hessian, hf, frequencies, opt, analdrv, thermo
   Usage: rest_regression -f mp2,ext-field
+
+Dependency auto-skip:
+  A test may declare requires = ["ase", "openmm"] in tests.toml. When a listed package
+  cannot be imported, the test is skipped automatically with a WARNING line (counted as
+  skipped in the summary; neither passed nor failed). Importability is probed once per
+  package via a subprocess `python3 -c "import ..."` (falling back to `python`); set the
+  REST_REGRESSION_PYTHON environment variable to probe a specific interpreter.
 
 Reference mode (config.toml):
   Each test is compared either by the default log scraping or in json mode, against the json
@@ -69,8 +76,10 @@ Reference mode (config.toml):
   which auto-detection picks up without any config.toml.
   See docs/config-toml.md for the full rules (Chinese).
 
-MD / QM-MM tests (bench_pool/qmmm_md):
+MD / QM-MM tests (bench_pool/md, bench_pool/qmmm_md):
   Tests with job_type = "md" (AIMD, QM/MM, pure MM) require the Python runtime used by the
   REST binary to provide numpy, ase and openmm (including openmm.app). Pure-QM AIMD only needs
   ASE/numpy; QM/MM and pure-MM additionally need OpenMM. Tested with Python 3.10, numpy 2.2,
   ASE 3.29, OpenMM 8.6.
+  These tests declare their needs in tests.toml (requires = [...]); when ase/openmm are not
+  importable they are skipped with a warning instead of failing (see "Dependency auto-skip").
