@@ -65,6 +65,15 @@ tags = ["lda"]
 [H2_SVWN_TDA]
 tags = ["lda"]
 
+[NH2_CAMB3LYP_UKS]
+tags = ["tddft", "utddft", "rsh"]
+
+[H2O_PBE0_BOTH]
+tags = ["tddft"]
+
+[H2O_PBE0_STAB]
+tags = ["tddft", "stability"]
+
 [NH3_roSCAN]
 tags = ["ro", "meta-gga"]
 [N2_roR-xDH7]

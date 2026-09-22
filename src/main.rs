@@ -1146,33 +1146,6 @@ fn main() -> anyhow::Result<()> {
 }
 
 #[test]
-pub fn test_env() -> anyhow::Result<()>{
-    use std::env;
-    let key = "REST_HOME";
-    match env::var_os(key) {
-        Some(val) => {
-            let mut val2 = val.clone();
-            val2.push("/utilities/rest_regression/bench_pools");
-            //let val3 = format!("{:?}/utilities/bench_pools",val2);
-            println!("{}: {:?}", key, val2);
-            //for entry in fs::read_dir(format!("{:?}/utilities/bench_pools",val))? {
-            for entry in fs::read_dir(val2)? {
-                let entry = entry?;
-                let path = entry.path();
-                if path.is_dir() {
-                    println!("Directory: {}", path.display());
-                } else {
-                    println!("File: {}", path.display());
-                }
-            }
-        },
-        None => println!("{} not defined in the environment.", key),
-    }
-
-    Ok(())
-}
-
-#[test]
 pub fn test_tddft_collect_results() -> anyhow::Result<()> {
     // Use CARGO_MANIFEST_DIR (compile-time constant) to locate bench_pool regardless of
     // where cargo test is invoked from.

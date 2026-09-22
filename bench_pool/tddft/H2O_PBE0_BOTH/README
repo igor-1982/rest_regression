@@ -1,0 +1,3 @@
+AO-mode TDDFT with tddft_spin = "both": the singlet and triplet passes each
+prepare their own spin-adapted fxc kernel (per-channel preparation; the two
+root blocks must match the dedicated singlet/triplet decks to ~1e-12).

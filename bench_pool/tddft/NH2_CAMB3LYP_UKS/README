@@ -1,0 +1,4 @@
+Unrestricted TDDFT (uTDDFT, spin_polarization = true) on the NH2 doublet with
+the range-separated hybrid CAM-B3LYP. Covers the sector-generic unrestricted
+matvecs (per-sector MO RI bundles), the PySCF uhf.py post-processing
+convention, and the RSH response exchange split in the UKS reference.
