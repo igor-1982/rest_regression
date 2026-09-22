@@ -343,32 +343,49 @@ pub fn collect_results(file_name: &str) -> anyhow::Result<HashMap<String, Vec<f6
         result.insert("hoco_luco_gap".to_string(),vec![gap_energy]);
     }
 
-    // TDDFT excitation energies: extract first 3 excitation energies
-    // New BSE-like format from REST:
+    // Excitation energies & oscillator strengths: extract the first few states.
+    // REST prints BSE and TDDFT excitations in the very same "BSE-like" format:
     // First 3 Singlet Excitations:
     // #0 Excitation energy=0.11186693, norm=1.000000
     // 	Transition Dipole Square:0.XXXX; Oscillator Strength:0.XXXX
-    let re_tddft_energy = Regex::new(
+    // so the producing method must be taken from the surrounding log banners:
+    // BSE logs announce themselves with "Specific BSE calculations are
+    // triggered", "BSE Type:...", "The first excitation obtained by BSE is ..."
+    // or (unrestricted variant) "Unrestricted BSE ..."/"The first unrestricted
+    // BSE ... excitation is ...", while TDDFT logs carry "=== TDDFT Calculation ==="
+    // and "The first excitation obtained by TDDFT is ...".  The extracted arrays
+    // are tagged accordingly ("bse_*" vs "tddft_*"), so the comparison report
+    // labels each state with the method that actually produced it.
+    let re_excitation_energy = Regex::new(
         r"(?m)^#(?P<idx>\d+) Excitation energy=(?P<energy>[\+-]?\d+\.\d+)"
     ).unwrap();
-    let re_tddft_osc = Regex::new(
+    let re_excitation_osc = Regex::new(
         r"(?m)Oscillator Strength:(?P<osc>[\+-]?\d+\.\d+)"
     ).unwrap();
+    let re_bse_banner = Regex::new(
+        r"(Specific BSE calculations are triggered|BSE Type:|obtained by BSE|[Uu]nrestricted BSE)"
+    ).unwrap();
 
-    let mut tddft_energies: Vec<f64> = vec![];
-    let mut tddft_osc: Vec<f64> = vec![];
-    for cap in re_tddft_energy.captures_iter(&buf) {
+    let (energy_key, osc_key) = if re_bse_banner.is_match(&buf) {
+        ("bse_energies", "bse_osc")
+    } else {
+        ("tddft_energies", "tddft_osc")
+    };
+
+    let mut excitation_energies: Vec<f64> = vec![];
+    let mut excitation_osc: Vec<f64> = vec![];
+    for cap in re_excitation_energy.captures_iter(&buf) {
         let idx = cap["idx"].parse::<usize>().unwrap_or(99);
         if idx <= 6 {
-            tddft_energies.push(cap["energy"].parse::<f64>().unwrap());
+            excitation_energies.push(cap["energy"].parse::<f64>().unwrap());
         }
     }
-    for cap in re_tddft_osc.captures_iter(&buf) {
-        tddft_osc.push(cap["osc"].parse::<f64>().unwrap());
+    for cap in re_excitation_osc.captures_iter(&buf) {
+        excitation_osc.push(cap["osc"].parse::<f64>().unwrap());
     }
-    if !tddft_energies.is_empty() {
-        result.insert("tddft_energies".to_string(), tddft_energies);
-        result.insert("tddft_osc".to_string(), tddft_osc);
+    if !excitation_energies.is_empty() {
+        result.insert(energy_key.to_string(), excitation_energies);
+        result.insert(osc_key.to_string(), excitation_osc);
     }
 
     Ok(result)
@@ -486,36 +503,38 @@ pub fn compare_results(ref_hashmap: &HashMap<String, Vec<f64>>, out_hashmap: &Ha
                 is_same = false;
                 println!("{:20} not found in output", key);
             }
-        } else if key.eq("tddft_energies") {
+        } else if key.eq("tddft_energies") || key.eq("bse_energies") {
+            let method = if key.eq("bse_energies") { "BSE" } else { "TDDFT" };
             if let Some(out_value) = out_hashmap.get(key) {
                 let n_states = ref_value.len().min(out_value.len());
                 for i in 0..n_states {
                     let dev = (ref_value[i] - out_value[i]).abs();
                     if dev > 5.0e-5 {
                         is_same = false;
-                        println!("WARNNING: TDDFT State {}: {:20.10} != {:20.10} (dev={:.2e})",
-                            i+1, out_value[i], ref_value[i], dev);
+                        println!("WARNNING: {} State {}: {:20.10} != {:20.10} (dev={:.2e})",
+                            method, i+1, out_value[i], ref_value[i], dev);
                     } else {
-                        println!("Pass    : TDDFT State {}: {:20.10}  = {:20.10} (dev={:.2e})",
-                            i+1, out_value[i], ref_value[i], dev);
+                        println!("Pass    : {} State {}: {:20.10}  = {:20.10} (dev={:.2e})",
+                            method, i+1, out_value[i], ref_value[i], dev);
                     }
                 }
             } else {
                 is_same = false;
                 println!("{:20} not found in output", key);
             }
-        } else if key.eq("tddft_osc") {
+        } else if key.eq("tddft_osc") || key.eq("bse_osc") {
+            let method = if key.eq("bse_osc") { "BSE" } else { "TDDFT" };
             if let Some(out_value) = out_hashmap.get(key) {
                 let n_states = ref_value.len().min(out_value.len());
                 for i in 0..n_states {
                     let dev = (ref_value[i] - out_value[i]).abs();
                     if dev > 1.0e-4 {
                         is_same = false;
-                        println!("WARNNING: TDDFT Osc {}: {:20.10} != {:20.10} (dev={:.2e})",
-                            i+1, out_value[i], ref_value[i], dev);
+                        println!("WARNNING: {} Osc {}: {:20.10} != {:20.10} (dev={:.2e})",
+                            method, i+1, out_value[i], ref_value[i], dev);
                     } else {
-                        println!("Pass    : TDDFT Osc {}: {:20.10}  = {:20.10} (dev={:.2e})",
-                            i+1, out_value[i], ref_value[i], dev);
+                        println!("Pass    : {} Osc {}: {:20.10}  = {:20.10} (dev={:.2e})",
+                            method, i+1, out_value[i], ref_value[i], dev);
                     }
                 }
             } else {
@@ -1178,9 +1197,11 @@ pub fn test_tddft_collect_results() -> anyhow::Result<()> {
             "{}: scf_energy not found in reference.log", test_name);
         println!("  scf_energy = {:?}", result.get("scf_energy"));
 
-        // Check tddft_energies is extracted
+        // Check tddft_energies is extracted (and not misclassified as BSE)
         assert!(result.contains_key("tddft_energies"),
             "{}: tddft_energies not found in reference.log", test_name);
+        assert!(!result.contains_key("bse_energies"),
+            "{}: excitation energies misclassified as BSE", test_name);
         let energies = result.get("tddft_energies").unwrap();
         assert_eq!(energies.len(), 3,
             "{}: expected 3 excitation energies, got {}", test_name, energies.len());
@@ -1209,4 +1230,71 @@ pub fn test_tddft_collect_results() -> anyhow::Result<()> {
 
     Ok(())
 }
+
+#[test]
+pub fn test_bse_collect_results() -> anyhow::Result<()> {
+    // Use CARGO_MANIFEST_DIR (compile-time constant) to locate bench_pool regardless of
+    // where cargo test is invoked from.
+    let bench_pool = Path::new(env!("CARGO_MANIFEST_DIR")).join("bench_pool");
+
+    // (test name, expected number of excitation energies, expected number of
+    //  oscillator strengths; the unrestricted BSE printout has none)
+    let cases: [(&str, usize, usize); 7] = [
+        ("NH3_BSE", 5, 5),
+        ("NH3_BSE_Davidson", 1, 1),
+        ("NH3_BSE_Davidson_Nontda", 1, 1),
+        ("NH3_BSE_FEAST", 2, 2),
+        ("NH3_BSE_FEAST_Nontda", 2, 2),
+        ("NH3_BSE_RS_ORBITALS", 3, 3),
+        ("NH3_UBSE", 5, 0),
+    ];
+
+    for (test_name, n_energies, n_osc) in cases {
+        let ref_log = bench_pool.join("gw_bse").join(test_name).join("reference.log");
+        let ref_log_str = ref_log.to_str().unwrap();
+        println!("\n=== Testing {} ===", test_name);
+        let result = collect_results(ref_log_str)?;
+
+        // Check bse_energies is extracted (and not misclassified as TDDFT)
+        assert!(result.contains_key("bse_energies"),
+            "{}: bse_energies not found in reference.log", test_name);
+        assert!(!result.contains_key("tddft_energies"),
+            "{}: excitation energies misclassified as TDDFT", test_name);
+        let energies = result.get("bse_energies").unwrap();
+        assert_eq!(energies.len(), n_energies,
+            "{}: expected {} excitation energies, got {}", test_name, n_energies, energies.len());
+        println!("  bse_energies = {:?}", energies);
+
+        // Check bse_osc is extracted
+        assert!(result.contains_key("bse_osc"),
+            "{}: bse_osc not found in reference.log", test_name);
+        let osc = result.get("bse_osc").unwrap();
+        assert_eq!(osc.len(), n_osc,
+            "{}: expected {} oscillator strengths, got {}", test_name, n_osc, osc.len());
+        println!("  bse_osc = {:?}", osc);
+
+        // Verify energy values look reasonable (between 0 and 2 Ha for valence excitations)
+        for (i, &e) in energies.iter().enumerate() {
+            assert!(e > 0.0 && e < 2.0,
+                "{}: excitation energy {} (state {}) out of range [0, 2]", test_name, e, i);
+        }
+
+        // Verify oscillator strengths are non-negative
+        for (i, &o) in osc.iter().enumerate() {
+            assert!(o >= 0.0,
+                "{}: oscillator strength {} (state {}) is negative", test_name, o, i);
+        }
+    }
+
+    // Pure GW logs carry no excitation block at all
+    for test_name in &["NH3_GW", "NH3_GW_RS_ORBITALS"] {
+        let ref_log = bench_pool.join("gw_bse").join(test_name).join("reference.log");
+        let result = collect_results(ref_log.to_str().unwrap())?;
+        assert!(!result.contains_key("bse_energies") && !result.contains_key("tddft_energies"),
+            "{}: GW-only log must not carry excitation energies", test_name);
+    }
+
+    Ok(())
+}
+
 
