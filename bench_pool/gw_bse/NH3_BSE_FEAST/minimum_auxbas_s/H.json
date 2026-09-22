@@ -1,0 +1,29 @@
+{
+  "electron_shells": [
+    {
+      "function_type": "gto",
+      "region": "",
+      "angular_momentum": [
+        0
+      ],
+      "exponents": [
+        "0.19998280"
+      ],
+      "coefficients": [
+        [
+          "1.0000000"
+        ]
+      ]
+    }
+  ],
+  "references": [
+    {
+      "reference_description": "minimal_auxbasis",
+      "reference_keys": [
+        "ghosh2008"
+      ]
+    }
+  ],
+  "ecp_potentials": null,
+  "ecp_electrons": null
+}

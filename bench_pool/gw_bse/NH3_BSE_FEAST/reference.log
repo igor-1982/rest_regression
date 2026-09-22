@@ -43,7 +43,7 @@ numbasis: 29, num_auxbas: 131
 Molecule_name: NH3
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (26246.38 MB) is more than required (0.63 MB).
+Memory available for 1.5 times of RI integrals (22149.44 MB) is more than required (0.63 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:      11.84792379 Hartree
 No ghost effective potential
@@ -60,7 +60,7 @@ Using xc_parser legacy
 ==== End of Summary ====
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (26169.25 MB) is more than required (0.09 MB).
+Memory available for 1.5 times of RI integrals (22053.80 MB) is more than required (0.09 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -77,9 +77,9 @@ SCF Change: DM 9.08879e-5; eev 1.12885e-3 Ha; etot -3.17968e-5 Ha; grad 1.19978e
 SCF Change: DM 3.97485e-5; eev 5.32169e-5 Ha; etot -7.70329e-5 Ha; grad 1.66189e-4 Ha
 SCF Change: DM 2.39735e-5; eev 3.58422e-4 Ha; etot 2.08980e-5 Ha; grad 3.85363e-5 Ha
 SCF Change: DM 1.42739e-6; eev 8.37123e-5 Ha; etot 1.38655e-5 Ha; grad 3.36408e-6 Ha
-SCF Change: DM 2.13041e-7; eev 3.15600e-6 Ha; etot -7.00595e-12 Ha; grad 5.65115e-7 Ha
-SCF Change: DM 8.19875e-8; eev 8.84654e-7 Ha; etot -3.76588e-13 Ha; grad 1.83870e-7 Ha
-SCF Change: DM 1.50816e-9; eev 2.54583e-9 Ha; etot -7.10543e-15 Ha; grad 2.59909e-8 Ha
+SCF Change: DM 2.13041e-7; eev 3.15600e-6 Ha; etot -7.03437e-12 Ha; grad 5.65115e-7 Ha
+SCF Change: DM 8.19875e-8; eev 8.84654e-7 Ha; etot -3.97904e-13 Ha; grad 1.83870e-7 Ha
+SCF Change: DM 1.50816e-9; eev 2.54583e-9 Ha; etot  0.00000e0 Ha; grad 2.59909e-8 Ha
 SCF is converged after   11 iterations.
 Energy:       -53.8286035073 Ha
 grad_dm l2: 2.43123e-8 Ha
@@ -92,7 +92,7 @@ Using xc_parser legacy
 ==== End of Summary ====
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (26166.54 MB) is more than required (0.00 MB).
+Memory available for 1.5 times of RI integrals (22053.09 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -138,7 +138,7 @@ SCF is converged after   33 iterations.
 Energy:        -0.4992784034 Ha
 grad_dm l2: 2.20232e-8 Ha
 SAD generation for H complete.
-Initial guess energy using single atom density (SAD):     -56.5038295008681146
+Initial guess energy using single atom density (SAD):     -56.5038295008680720
 The total energy:       -56.3490603120 Ha by the initial guess
 Initial grad_dm l2:  1.51235e0 Ha
 SCF Change: DM 1.43592e-1; eev  2.41445e0 Ha; etot 1.75908e-1 Ha; grad  2.30891e0 Ha
@@ -153,21 +153,21 @@ SCF Change: DM 6.41558e-5; eev 5.11986e-4 Ha; etot -5.39071e-6 Ha; grad 3.02117e
 Energy:     -56.5245522927 Ha after    5 iterations (in       0.01 seconds).
 SCF Change: DM 8.44470e-6; eev 2.84507e-4 Ha; etot -4.23770e-7 Ha; grad 3.49164e-4 Ha
 Energy:     -56.5245527165 Ha after    6 iterations (in       0.01 seconds).
-SCF Change: DM 3.30543e-7; eev 1.02749e-5 Ha; etot -6.85728e-9 Ha; grad 9.34943e-6 Ha
+SCF Change: DM 3.30543e-7; eev 1.02749e-5 Ha; etot -6.85731e-9 Ha; grad 9.34943e-6 Ha
 Energy:     -56.5245527234 Ha after    7 iterations (in       0.01 seconds).
-SCF Change: DM 3.36191e-8; eev 3.82975e-7 Ha; etot -4.23483e-12 Ha; grad 2.63780e-6 Ha
+SCF Change: DM 3.36191e-8; eev 3.82975e-7 Ha; etot -4.11404e-12 Ha; grad 2.63780e-6 Ha
 Energy:     -56.5245527234 Ha after    8 iterations (in       0.01 seconds).
-SCF Change: DM 1.23699e-7; eev 4.28521e-7 Ha; etot 4.05009e-13 Ha; grad 4.00595e-6 Ha
+SCF Change: DM 1.23699e-7; eev 4.28521e-7 Ha; etot 2.77112e-13 Ha; grad 4.00595e-6 Ha
 Energy:     -56.5245527234 Ha after    9 iterations (in       0.01 seconds).
-SCF Change: DM 2.41190e-7; eev 1.73778e-6 Ha; etot 3.02691e-12 Ha; grad 8.84837e-6 Ha
+SCF Change: DM 2.41190e-7; eev 1.73778e-6 Ha; etot 2.91323e-12 Ha; grad 8.84837e-6 Ha
 Energy:     -56.5245527234 Ha after   10 iterations (in       0.01 seconds).
-SCF Change: DM 2.98112e-8; eev 1.30734e-7 Ha; etot -3.56692e-12 Ha; grad 1.16466e-6 Ha
+SCF Change: DM 2.98112e-8; eev 1.30734e-7 Ha; etot -3.46034e-12 Ha; grad 1.16466e-6 Ha
 Energy:     -56.5245527234 Ha after   11 iterations (in       0.01 seconds).
-SCF Change: DM 2.23027e-9; eev 6.45195e-8 Ha; etot -1.84741e-13 Ha; grad 7.44682e-8 Ha
+SCF Change: DM 2.23027e-9; eev 6.45196e-8 Ha; etot -2.91323e-13 Ha; grad 7.44682e-8 Ha
 Energy:     -56.5245527234 Ha after   12 iterations (in       0.01 seconds).
 SCF is converged after   12 iterations.
 Energy:       -56.5245527234 Ha
-grad_dm l2: 6.07112e-9 Ha
+grad_dm l2: 6.07110e-9 Ha
 Mulliken population analysis:
   0-N  :  -0.271766
   1-H  :   0.090542
@@ -176,219 +176,142 @@ Mulliken population analysis:
 Now starts quasiparticle method computation!
 You are doing G0W0 calculations of entire energy spectrum
 RI-OV Shape=Some([131, 120]) (AO route: None = never materialised)
-V Matrix Constructed. This step took 296.231µs
-Evaluation of W_c for omega=0.31447428235971236 has finished. This step took 5.634552ms
-Evaluation of W_c for omega=0.16187162649578213 has finished. This step took 5.755942ms
-Evaluation of W_c for omega=1.5444337306792566 has finished. This step took 7.529788ms
-Evaluation of W_c for omega=0.7949775673994122 has finished. This step took 7.530701ms
-Evaluation of W_c for omega=0.022948434159543063 has finished. This step took 7.61493ms
-Evaluation of W_c for omega=0.0017237725698468571 has finished. This step took 8.257105ms
-Evaluation of W_c for omega=145.03073338857598 has finished. This step took 7.982425ms
-Evaluation of W_c for omega=0.043739204912664226 has finished. This step took 8.308502ms
-Evaluation of W_c for omega=27.25613360486454 has finished. This step took 8.06961ms
-Evaluation of W_c for omega=10.893989466206694 has finished. This step took 8.08532ms
-Evaluation of W_c for omega=5.7156960328653605 has finished. This step took 8.698911ms
-Evaluation of W_c for omega=0.4289134827324821 has finished. This step took 8.944195ms
-Evaluation of W_c for omega=0.11122688807859561 has finished. This step took 8.959855ms
-Evaluation of W_c for omega=0.0726288320683665 has finished. This step took 8.953653ms
-Evaluation of W_c for omega=3.4421591657245934 has finished. This step took 8.715352ms
-Evaluation of W_c for omega=0.5828681309044502 has finished. This step took 8.978039ms
-Evaluation of W_c for omega=1.0966944304933726 has finished. This step took 8.955516ms
-Evaluation of W_c for omega=2.2476579568003734 has finished. This step took 8.97325ms
-Evaluation of W_c for omega=0.2279577547298493 has finished. This step took 8.957831ms
-Evaluation of W_c for omega=0.009172247378306849 has finished. This step took 8.990323ms
+V Matrix Constructed. This step took 299.387µs
+Evaluation of W_c for omega=0.0726288320683665 has finished. This step took 7.122707ms
+Evaluation of W_c for omega=0.7949775673994122 has finished. This step took 7.397979ms
+Evaluation of W_c for omega=0.11122688807859561 has finished. This step took 7.999088ms
+Evaluation of W_c for omega=10.893989466206694 has finished. This step took 8.025769ms
+Evaluation of W_c for omega=0.022948434159543063 has finished. This step took 8.024527ms
+Evaluation of W_c for omega=145.03073338857598 has finished. This step took 8.056096ms
+Evaluation of W_c for omega=27.25613360486454 has finished. This step took 8.057198ms
+Evaluation of W_c for omega=0.2279577547298493 has finished. This step took 8.433862ms
+Evaluation of W_c for omega=0.31447428235971236 has finished. This step took 8.441506ms
+Evaluation of W_c for omega=0.009172247378306849 has finished. This step took 8.452998ms
+Evaluation of W_c for omega=5.7156960328653605 has finished. This step took 8.515246ms
+Evaluation of W_c for omega=0.5828681309044502 has finished. This step took 8.567155ms
+Evaluation of W_c for omega=1.5444337306792566 has finished. This step took 8.966862ms
+Evaluation of W_c for omega=0.4289134827324821 has finished. This step took 8.990086ms
+Evaluation of W_c for omega=0.16187162649578213 has finished. This step took 8.999985ms
+Evaluation of W_c for omega=2.2476579568003734 has finished. This step took 8.995566ms
+Evaluation of W_c for omega=0.043739204912664226 has finished. This step took 8.992581ms
+Evaluation of W_c for omega=1.0966944304933726 has finished. This step took 9.043718ms
+Evaluation of W_c for omega=3.4421591657245934 has finished. This step took 9.157664ms
+Evaluation of W_c for omega=0.0017237725698468571 has finished. This step took 9.178263ms
 calculated orbital indices:[4, 5, 6, 7]
-Exchange=-0.8236472763763456,V_xc=-0.624347126079152
+Exchange=-0.823647276376343,V_xc=-0.6243471260791499
 Orbital #4 (first round, no Fourier self-energy):
-First round QP energy (no FSE): -0.34896397023604986
-GW Evaluation of orbital #4 took 3.57233ms
-Exchange=-0.12594105895361762,V_xc=-0.25730570289231
+First round QP energy (no FSE): -0.3489639702360379
+GW Evaluation of orbital #4 took 3.612596ms
+Exchange=-0.1259410589536197,V_xc=-0.2573057028923141
 Orbital #5 (first round, no Fourier self-energy):
-First round QP energy (no FSE): 0.17713866134272493
-GW Evaluation of orbital #5 took 5.452117ms
-Exchange=-0.1406110298307419,V_xc=-0.2762237165614343
+First round QP energy (no FSE): 0.1771386613427358
+GW Evaluation of orbital #5 took 5.180266ms
+Exchange=-0.1406110298307412,V_xc=-0.2762237165614335
 Orbital #6 (first round, no Fourier self-energy):
-First round QP energy (no FSE): 0.26591291045156895
-GW Evaluation of orbital #6 took 5.96087ms
-Exchange=-0.14059542217157933,V_xc=-0.27617635481523056
+First round QP energy (no FSE): 0.2659129104515736
+GW Evaluation of orbital #6 took 5.765426ms
+Exchange=-0.1405954221715823,V_xc=-0.2761763548152371
 Orbital #7 (first round, no Fourier self-energy):
-First round QP energy (no FSE): 0.26590518570495414
-GW Evaluation of orbital #7 took 5.837928ms
+First round QP energy (no FSE): 0.26590518570496474
+GW Evaluation of orbital #7 took 5.93669ms
 Quasiparticle Energies from GW Approximation (in Hatree):
    Note that only energies around the Fermi surface within 0.1 Hatree below HOMO and 0.1 Hatree above LUMO are explicitly computed by solving the quasiparticle equation,
     while others are extrapolated using average energy shifts of the computed ones compared to corresponding SCF results
     You can set these thresholds using the keywords "gw_extrapolate_occ_threshold" and "gw_extrapolate_vir_threshold"
- (extrapolated) QP Energy of Orbital #0:-14.27982794559314
- (extrapolated) QP Energy of Orbital #1:-0.9420805353027885
- (extrapolated) QP Energy of Orbital #2:-0.5590641701509855
- (extrapolated) QP Energy of Orbital #3:-0.5590508763908941
- (calculated) QP Energy of Orbital #4:-0.34896397023604986
+ (extrapolated) QP Energy of Orbital #0:-14.279827945593134
+ (extrapolated) QP Energy of Orbital #1:-0.9420805353027768
+ (extrapolated) QP Energy of Orbital #2:-0.5590641701509761
+ (extrapolated) QP Energy of Orbital #3:-0.5590508763908837
+ (calculated) QP Energy of Orbital #4:-0.3489639702360379
 -------Fermi Surface--------
- (calculated) QP Energy of Orbital #5:0.17713866134272493
- (calculated) QP Energy of Orbital #6:0.26591291045156895
- (calculated) QP Energy of Orbital #7:0.26590518570495414
- (extrapolated) QP Energy of Orbital #8:0.634914313964484
- (extrapolated) QP Energy of Orbital #9:0.634950698556221
- (extrapolated) QP Energy of Orbital #10:0.7356979194018313
- (extrapolated) QP Energy of Orbital #11:0.8493384434562634
- (extrapolated) QP Energy of Orbital #12:0.9563426226694115
- (extrapolated) QP Energy of Orbital #13:0.9564125601028377
- (extrapolated) QP Energy of Orbital #14:1.1876920179439518
- (extrapolated) QP Energy of Orbital #15:1.1877238538222645
- (extrapolated) QP Energy of Orbital #16:1.2749882912695492
- (extrapolated) QP Energy of Orbital #17:1.5844246664521013
- (extrapolated) QP Energy of Orbital #18:1.7920797862985665
- (extrapolated) QP Energy of Orbital #19:1.8155663968977371
- (extrapolated) QP Energy of Orbital #20:1.8156078127972974
- (extrapolated) QP Energy of Orbital #21:2.128835111759873
- (extrapolated) QP Energy of Orbital #22:2.1289941039522384
- (extrapolated) QP Energy of Orbital #23:2.317550363803124
- (extrapolated) QP Energy of Orbital #24:2.6468197911747655
- (extrapolated) QP Energy of Orbital #25:2.6470097687235703
- (extrapolated) QP Energy of Orbital #26:2.815492583791822
- (extrapolated) QP Energy of Orbital #27:3.084962810255769
- (extrapolated) QP Energy of Orbital #28:3.085125584484738
+ (calculated) QP Energy of Orbital #5:0.1771386613427358
+ (calculated) QP Energy of Orbital #6:0.2659129104515736
+ (calculated) QP Energy of Orbital #7:0.26590518570496474
+ (extrapolated) QP Energy of Orbital #8:0.6349143139644977
+ (extrapolated) QP Energy of Orbital #9:0.6349506985562474
+ (extrapolated) QP Energy of Orbital #10:0.735697919401844
+ (extrapolated) QP Energy of Orbital #11:0.8493384434562798
+ (extrapolated) QP Energy of Orbital #12:0.956342622669442
+ (extrapolated) QP Energy of Orbital #13:0.9564125601028501
+ (extrapolated) QP Energy of Orbital #14:1.1876920179439605
+ (extrapolated) QP Energy of Orbital #15:1.1877238538222747
+ (extrapolated) QP Energy of Orbital #16:1.2749882912695658
+ (extrapolated) QP Energy of Orbital #17:1.5844246664521104
+ (extrapolated) QP Energy of Orbital #18:1.792079786298575
+ (extrapolated) QP Energy of Orbital #19:1.8155663968977491
+ (extrapolated) QP Energy of Orbital #20:1.815607812797308
+ (extrapolated) QP Energy of Orbital #21:2.1288351117598823
+ (extrapolated) QP Energy of Orbital #22:2.128994103952248
+ (extrapolated) QP Energy of Orbital #23:2.3175503638031327
+ (extrapolated) QP Energy of Orbital #24:2.6468197911747753
+ (extrapolated) QP Energy of Orbital #25:2.647009768723579
+ (extrapolated) QP Energy of Orbital #26:2.8154925837918348
+ (extrapolated) QP Energy of Orbital #27:3.084962810255792
+ (extrapolated) QP Energy of Orbital #28:3.0851255844847576
 One round of GW by extrapolated scheme has finished.
-Preparing BSE-specific RI integrals with auxiliary basis: cc-pvdz-rifit
-auxbas_name = cc-pvdz-rifit from cc-pvdz-rifit
-cc-pvdz-rifit for ["N", "H"] has been successfully downloaded.
-debug required_elem_charge: ["7", "1"]
-Reloaded auxiliary basis: cc-pvdz-rifit
-New auxiliary basis size: 98
+Preparing BSE-specific RI integrals with auxiliary basis: minimum_auxbas_s
+Reloaded auxiliary basis: minimum_auxbas_s
+New auxiliary basis size: 4
 Reloaded auxiliary basis: /home/qiruigao/rest_workspace/rest/basis-set-pool/def2-universal-jkfit
 New auxiliary basis size: 131
 BSE-specific RI integrals prepared successfully
-BSE auxiliary basis size: 98, Regular auxiliary basis size: 131
+BSE auxiliary basis size: 4, Regular auxiliary basis size: 131
 BSE orbital representation: Kohn-Sham orbitals.
 Specific BSE calculations are triggered
 BSE Type:singlet
-Warning: Using FEAST solver for BSE (experimental). To use the Davidson solver instead, set bse_davidson_solver=true.
-Warning: bse_matvec_style = "ao" is not wired into the FEAST solver yet; the FEAST path still uses the MO-basis matvec.
 [DEBUG] feast_solve_bse_singlet: bse_feast_renormalized_doubles=true
 --- Round 1: BSE-specific RI integrals (s-only) for singlet, range=[0.180000,0.320000] ---
 BSE matvec style: "ao" (memory-efficient AO-basis matvec, bse_matvec_style = ao)
 BSE matvec AO pre-screening: kept 435/435 AO pairs (100.00%) at tol = 0.0e0
-BSE matvec (memory-efficient): 1 spin channel(s), 0.702 MB of AO folds; the [M,N,N] AO tensor is released after the build (no ri3mo, no ri_vv/ri_oo/ri_ov_tilde, no [OV,OV] matrices), built in 0.003 s
+BSE matvec (memory-efficient): 1 spin channel(s), 0.026 MB of AO folds; the [M,N,N] AO tensor is released after the build (no ri3mo, no ri_vv/ri_oo/ri_ov_tilde, no [OV,OV] matrices), built in 0.000 s
 === FEAST iteration 0 start ===
     [Phase GMRES] Starting contour integration (8 quadrature points × 6 columns = 48 total solves, rayon=true) ...
-  GMRES converged: 25 matvecs, 1 restart(s), residual 2.96e-9
-  GMRES converged: 26 matvecs, 1 restart(s), residual 3.24e-9
-  GMRES converged: 27 matvecs, 1 restart(s), residual 3.71e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 1.82e-9
-  GMRES converged: 25 matvecs, 1 restart(s), residual 2.81e-9
-  GMRES converged: 26 matvecs, 1 restart(s), residual 2.78e-9
-  GMRES converged: 27 matvecs, 1 restart(s), residual 2.96e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 8.66e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 1.54e-9
-  GMRES converged: 26 matvecs, 1 restart(s), residual 2.55e-9
-  GMRES converged: 27 matvecs, 1 restart(s), residual 3.69e-9
-  GMRES converged: 25 matvecs, 1 restart(s), residual 3.11e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 1.77e-9
-  GMRES converged: 26 matvecs, 1 restart(s), residual 3.18e-9
-  GMRES converged: 27 matvecs, 1 restart(s), residual 3.69e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 1.52e-9
-  GMRES converged: 25 matvecs, 1 restart(s), residual 3.71e-9
-  GMRES converged: 26 matvecs, 1 restart(s), residual 3.94e-9
-  GMRES converged: 27 matvecs, 1 restart(s), residual 3.64e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 1.50e-9
-  GMRES converged: 25 matvecs, 1 restart(s), residual 3.32e-9
-  GMRES converged: 26 matvecs, 1 restart(s), residual 3.46e-9
-  GMRES converged: 27 matvecs, 1 restart(s), residual 2.97e-9
-  GMRES converged: 20 matvecs, 1 restart(s), residual 3.13e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 1.21e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 3.00e-9
-  GMRES converged: 20 matvecs, 1 restart(s), residual 2.91e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 1.96e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 2.30e-9
-  GMRES converged: 19 matvecs, 1 restart(s), residual 4.59e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 2.75e-9
-  GMRES converged: 20 matvecs, 1 restart(s), residual 2.94e-9
-  GMRES converged: 17 matvecs, 1 restart(s), residual 1.94e-9
-  GMRES converged: 20 matvecs, 1 restart(s), residual 2.64e-9
-  GMRES converged: 15 matvecs, 1 restart(s), residual 4.35e-9
-  GMRES converged: 15 matvecs, 1 restart(s), residual 4.32e-9
-  GMRES converged: 16 matvecs, 1 restart(s), residual 8.95e-9
-  GMRES converged: 17 matvecs, 1 restart(s), residual 1.65e-9
-  GMRES converged: 15 matvecs, 1 restart(s), residual 3.40e-9
-  GMRES converged: 15 matvecs, 1 restart(s), residual 3.22e-9
-  GMRES converged: 16 matvecs, 1 restart(s), residual 4.20e-9
-  GMRES converged: 16 matvecs, 1 restart(s), residual 6.39e-9
-  GMRES converged: 15 matvecs, 1 restart(s), residual 2.58e-9
-  GMRES converged: 15 matvecs, 1 restart(s), residual 4.03e-9
-  GMRES converged: 17 matvecs, 1 restart(s), residual 1.78e-9
-  GMRES converged: 20 matvecs, 1 restart(s), residual 2.13e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 1.99e-9
-  GMRES converged: 24 matvecs, 1 restart(s), residual 2.28e-9
-    [Phase GMRES] Column GMRES matvecs: max=178, avg=177.2
-    [Phase GMRES] All quadrature GMRES solves done [20.366379ms]
-FEAST iter 0: subspace compressed from 6 to 3 [15.64µs]
+    [Phase GMRES] Column GMRES matvecs: max=184, avg=182.2
+    [Phase GMRES] All quadrature GMRES solves done [2.451295ms]
+FEAST iter 0: subspace compressed from 6 to 3 [16.571µs]
     [Phase B] Rayleigh–Ritz: computing A·Q and B·Q (m_eff=3) ...
-    [Phase B] A·Q and B·Q done [140.466µs], solving reduced EVP (m_eff=3) ...
+    [Phase B] A·Q and B·Q done [35.286µs], solving reduced EVP (m_eff=3) ...
     [Phase Y] Preparing Y for next iteration (m0=3) ...
-    [Phase Y] Y preparation done [3.206µs]
-=== FEAST iteration 0 done, total [20.565015ms] ===
+    [Phase Y] Y preparation done [2.665µs]
+=== FEAST iteration 0 done, total [2.544853ms] ===
 === FEAST iteration 1 start ===
     [Phase GMRES] Starting contour integration (8 quadrature points × 3 columns = 24 total solves, rayon=true) ...
-  GMRES converged: 15 matvecs, 1 restart(s), residual 2.14e-9
-  GMRES converged: 18 matvecs, 1 restart(s), residual 1.81e-9
-  GMRES converged: 20 matvecs, 1 restart(s), residual 4.48e-9
-  GMRES converged: 23 matvecs, 1 restart(s), residual 3.05e-9
-  GMRES converged: 16 matvecs, 1 restart(s), residual 1.18e-9
-  GMRES converged: 23 matvecs, 1 restart(s), residual 2.03e-9
-  GMRES converged: 23 matvecs, 1 restart(s), residual 2.95e-9
-  GMRES converged: 23 matvecs, 1 restart(s), residual 8.57e-9
-  GMRES converged: 16 matvecs, 1 restart(s), residual 1.17e-9
-  GMRES converged: 13 matvecs, 1 restart(s), residual 6.61e-9
-  GMRES converged: 23 matvecs, 1 restart(s), residual 2.04e-9
-  GMRES converged: 23 matvecs, 1 restart(s), residual 2.95e-9
-  GMRES converged: 23 matvecs, 1 restart(s), residual 8.57e-9
-  GMRES converged: 14 matvecs, 1 restart(s), residual 1.65e-9
-  GMRES converged: 17 matvecs, 1 restart(s), residual 2.51e-9
-  GMRES converged: 21 matvecs, 1 restart(s), residual 2.51e-9
-  GMRES converged: 13 matvecs, 1 restart(s), residual 5.30e-9
-  GMRES converged: 23 matvecs, 1 restart(s), residual 7.39e-9
-  GMRES converged: 20 matvecs, 1 restart(s), residual 2.47e-9
-  GMRES converged: 22 matvecs, 1 restart(s), residual 8.11e-9
-  GMRES converged: 22 matvecs, 1 restart(s), residual 8.11e-9
-  GMRES converged: 25 matvecs, 1 restart(s), residual 5.12e-9
-  GMRES converged: 25 matvecs, 1 restart(s), residual 5.12e-9
-  GMRES converged: 20 matvecs, 1 restart(s), residual 2.47e-9
-    [Phase GMRES] Column GMRES matvecs: max=166, avg=160.3
-    [Phase GMRES] All quadrature GMRES solves done [9.46483ms]
+    [Phase GMRES] Column GMRES matvecs: max=175, avg=169.7
+    [Phase GMRES] All quadrature GMRES solves done [1.450519ms]
     [Phase B] Rayleigh–Ritz: computing A·Q and B·Q (m_eff=3) ...
-    [Phase B] A·Q and B·Q done [139.334µs], solving reduced EVP (m_eff=3) ...
-  FEAST iter 1: trace change δ = 1.10e-13 (tol = 1.00e-8)
-Round 1 found 1 eigenpairs within the window
+    [Phase B] A·Q and B·Q done [26.04µs], solving reduced EVP (m_eff=3) ...
+  FEAST iter 1: trace change δ = 3.11e-13 (tol = 1.00e-8)
+Round 1 found 3 eigenpairs within the window
 BSE matvec style: "ao" (memory-efficient AO-basis matvec, bse_matvec_style = ao)
 BSE matvec AO pre-screening: kept 435/435 AO pairs (100.00%) at tol = 0.0e0
 BSE matvec (memory-efficient): 1 spin channel(s), 0.971 MB of AO folds; the [M,N,N] AO tensor is released after the build (no ri3mo, no ri_vv/ri_oo/ri_ov_tilde, no [OV,OV] matrices), built in 0.002 s
-Rayleigh-Ritz: H_proj range=[2.472e-1, 2.472e-1] (k=1)
+Rayleigh-Ritz: H_proj range=[-2.525e-6, 3.271e-1] (k=3)
 Rayleigh-Ritz singlet: 1 excitations within the window:
 	Dipole Moment Components:
-	x:0.1488542608513857, y:0.02345527226618805, z:-0.4202681644191528
-#0 Excitation energy=0.247177624061183, norm=1.000000
-Transition Dipole Square:0.19933307079493745; Oscillator Strength:0.03284711655727481
-      #4->#5,amplitude=0.7038196495657271
-      #4->#10,amplitude=0.04340104712052031
-      #3->#6,amplitude=-0.027027169865140546
-      #2->#7,amplitude=-0.02701486231514902
-      #4->#16,amplitude=-0.020841686414749313
+	x:0.12923969440184924, y:0.020371661102821584, z:-0.3648764762216696
+#0 Excitation energy=0.2519058205781108, norm=1.000000
+Transition Dipole Square:0.15025274608511419; Oscillator Strength:0.025233027531123473
+      #4->#5,amplitude=0.7008608310238925
+      #4->#10,amplitude=0.07473382027797376
+      #3->#6,amplitude=-0.030483103381035534
+      #2->#7,amplitude=-0.030466887997327947
+      #4->#16,amplitude=-0.024991052921979822
 1 excitations within the window:
-#0 Excitation energy=0.247177624061183, norm=1.000000
+#0 Excitation energy=0.2519058205781108, norm=1.000000
 	Dipole Moment Components:
-	x:0.1488542608513857, y:0.02345527226618805, z:-0.4202681644191528
-	Transition Dipole Square:0.19933307079493745; Oscillator Strength:0.03284711655727481
-      #4->#5,amplitude=0.7038196495657271
-      #4->#10,amplitude=0.04340104712052031
-      #3->#6,amplitude=-0.027027169865140546
-      #2->#7,amplitude=-0.02701486231514902
-      #4->#16,amplitude=-0.020841686414749313
-The first excitation obtained by BSE is 0.247177624061183
+	x:0.12923969440184924, y:0.020371661102821584, z:-0.3648764762216696
+	Transition Dipole Square:0.15025274608511419; Oscillator Strength:0.025233027531123473
+      #4->#5,amplitude=0.7008608310238925
+      #4->#10,amplitude=0.07473382027797376
+      #3->#6,amplitude=-0.030483103381035534
+      #2->#7,amplitude=-0.030466887997327947
+      #4->#16,amplitude=-0.024991052921979822
+The first excitation obtained by BSE is 0.2519058205781108
 
 ====================================================
               REST: Mission accomplished
 ====================================================
 The SCF energy        :     -56.5245527234 Ha
 Detailed time report:
-SCF       |:    0.302 s for the scf procedure
-Overall   |:    5.081 s for the whole job
+SCF       |:    0.286 s for the scf procedure
+Overall   |:    0.339 s for the whole job

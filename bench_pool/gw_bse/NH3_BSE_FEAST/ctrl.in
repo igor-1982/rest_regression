@@ -25,7 +25,7 @@
      bse_m_expected=            6
      bse_feast_renormalized_doubles=true
      bse_renormalized_doubles_extra_width=0.02
-     bse_auxbas_path=            "cc-pvdz-rifit"
+     bse_auxbas_path=            "minimum_auxbas_s"
      bse_matvec_style=           "ao"
           davidson_maximum_subspace_size=1000
           gw_scheme=                  "extrapolated"
