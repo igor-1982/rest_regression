@@ -1,1 +1,3 @@
 Title: Pure-QM NVT Langevin MD of one water (seed=12345, PBE-D3BJ/def2-SVP): checks the built-in MD loop runs end-to-end and is bit-reproducible for a fixed seed.
+
+Requires ase >= 3.25 in the Python environment REST was built against. ASE 3.25 added the sqrt(N/(N-1)) factor of the centre-of-mass-projected random displacement and velocity in Langevin(fixcm=True), so older releases follow a different trajectory from the same seed. The reference was generated with ase 3.28 or newer and is reproduced bit for bit with ase 3.25.0 and 3.26.0 on python 3.9.19. REST prints the interpreter and ASE identity at MD startup.
