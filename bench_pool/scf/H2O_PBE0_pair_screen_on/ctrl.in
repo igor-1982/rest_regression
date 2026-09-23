@@ -1,0 +1,22 @@
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     xc =                        "pbe0"
+     basis_path =                "def2-SVP"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+
+[ctrl.ri_jk]
+     pair_screen_threshold =     1.0e-4
+
+[geom]
+     name = "H2O"
+     unit = "angstrom"
+     position = '''
+        O   0.0000000000   0.0000000000   0.1173000000
+        H   0.0000000000   0.7572000000  -0.4692000000
+        H   0.0000000000  -0.7572000000  -0.4692000000'''
