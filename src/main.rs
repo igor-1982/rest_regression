@@ -14,6 +14,8 @@ mod parse_grad;
 
 mod filter;
 
+mod deps;
+
 mod json_ref;
 
 pub fn parse_input() -> ArgMatches {
@@ -837,6 +839,8 @@ fn main() -> anyhow::Result<()> {
     let mut njob: usize = 0;
     let mut npass: usize = 0;
     let mut nfail: usize = 0;
+    let mut nskip_dep: usize = 0;
+    let mut skip_dep_list: Vec<String> = vec![];
     
     for entry in WalkDir::new(&input_folder)
         .sort_by(|a, b| a.file_name().cmp(b.file_name()))
@@ -861,6 +865,28 @@ fn main() -> anyhow::Result<()> {
                     filter::remove_matched(&entry, &input_folder, set, &test_config, unmatched);
                 }
                 continue;
+            }
+        }
+
+        // auto-skip tests whose Python dependencies (tests.toml `requires = [...]`)
+        // are not importable in the current environment (e.g. ase / openmm for
+        // the MD / QM-MM cases); counted separately, neither pass nor fail
+        {
+            let test_name_for_cfg = entry.path().file_name().and_then(|n| n.to_str()).unwrap_or("");
+            if let Some(requires) = test_config.get(test_name_for_cfg).and_then(|e| e.requires.as_ref()) {
+                let missing = deps::missing_dependencies(requires);
+                if !missing.is_empty() {
+                    if dry_run {
+                        println!("Would skip: {} (missing Python dependency '{}')", entry.path().display(), missing.join(", "));
+                    } else {
+                        println!("WARNING : test '{}' skipped: missing Python dependency '{}' \
+                                  (declared via tests.toml requires = [{}])",
+                                 entry.path().display(), missing.join(", "), requires.join(", "));
+                    }
+                    nskip_dep += 1;
+                    skip_dep_list.push(entry.path().display().to_string());
+                    continue;
+                }
             }
         }
 
@@ -1122,9 +1148,19 @@ fn main() -> anyhow::Result<()> {
 
     println!("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     if dry_run {
+        if nskip_dep > 0 {
+            println!("Dry run: {} tests would be skipped (missing Python dependencies)", nskip_dep);
+        }
         println!("Dry run: {} tests would be run", njob);
     } else {
-        println!("Regression summary: {}/{} passed, {}/{} failed", npass, njob, nfail, njob);
+        println!("Regression summary: {}/{} passed, {}/{} failed, {} skipped (missing Python dependencies)",
+                 npass, njob, nfail, njob, nskip_dep);
+        if !skip_dep_list.is_empty() {
+            println!("Skipped for missing Python dependencies:");
+            for job in &skip_dep_list {
+                println!("S: \"{}\"", job);
+            }
+        }
         if is_pass {
             println!("All regression tasks passed");
         } else {
@@ -1143,33 +1179,6 @@ fn main() -> anyhow::Result<()> {
     } else {
         Err(anyhow::anyhow!("Some regression tasks failed"))
     }
-}
-
-#[test]
-pub fn test_env() -> anyhow::Result<()>{
-    use std::env;
-    let key = "REST_HOME";
-    match env::var_os(key) {
-        Some(val) => {
-            let mut val2 = val.clone();
-            val2.push("/utilities/rest_regression/bench_pools");
-            //let val3 = format!("{:?}/utilities/bench_pools",val2);
-            println!("{}: {:?}", key, val2);
-            //for entry in fs::read_dir(format!("{:?}/utilities/bench_pools",val))? {
-            for entry in fs::read_dir(val2)? {
-                let entry = entry?;
-                let path = entry.path();
-                if path.is_dir() {
-                    println!("Directory: {}", path.display());
-                } else {
-                    println!("File: {}", path.display());
-                }
-            }
-        },
-        None => println!("{} not defined in the environment.", key),
-    }
-
-    Ok(())
 }
 
 #[test]

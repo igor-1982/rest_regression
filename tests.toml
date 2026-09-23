@@ -65,6 +65,15 @@ tags = ["lda"]
 [H2_SVWN_TDA]
 tags = ["lda"]
 
+[NH2_CAMB3LYP_UKS]
+tags = ["tddft", "utddft", "rsh"]
+
+[H2O_PBE0_BOTH]
+tags = ["tddft"]
+
+[H2O_PBE0_STAB]
+tags = ["tddft", "stability"]
+
 [NH3_roSCAN]
 tags = ["ro", "meta-gga"]
 [N2_roR-xDH7]
@@ -126,6 +135,24 @@ timeout = 300
 # rsGW 后的 BSE：v/W/偶极矩阵/跃迁振幅与屏蔽能量都在 RS 分子轨道表象中。
 [NH3_BSE_RS_ORBITALS]
 timeout = 300
+
+# --- 依赖 Python 运行时的用例（requires = [...]）---
+# requires 列出的 Python 包若在当前环境中不可导入，回归工具会自动跳过该用例
+# （计为 skipped，不算失败）。
+[h2o_nvt]
+requires = ["ase"]
+
+[butane_qmmm_cut_sp]
+requires = ["ase", "openmm"]
+
+[peptide_qmmm_cut_sp]
+requires = ["ase", "openmm"]
+
+[water_dimer_qmmm_ase_opt]
+requires = ["ase", "openmm"]
+
+[water_mm_sp]
+requires = ["openmm"]
 
 # --- 按用例扩展的 MPI 范围（见 MPI_TEST_SCOPE.md §按用例扩展范围）---
 # dh 目录已从目录级范围移出：目录里除后 SCF 能量用例外还新增了 rayon-only 的 multipole

@@ -10,6 +10,10 @@ pub struct TestEntry {
     pub num_threads: Option<usize>,
     pub tags: Option<Vec<String>>,
     pub timeout: Option<u64>,
+    /// Python packages required to run this test (e.g. ["ase", "openmm"]).
+    /// When a package cannot be imported, the test is skipped automatically
+    /// (unless --no-dep-skip is given).
+    pub requires: Option<Vec<String>>,
 }
 
 pub type TestConfig = HashMap<String, TestEntry>;
