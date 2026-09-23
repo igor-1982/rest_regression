@@ -1,0 +1,31 @@
+# Water-dimer MP2 with the storage-level AO-pair pruning on.
+# The stored 3-center tensor carries 973 of 1176 AO-pair rows (17.3% dropped) and the post-SCF
+# AO-to-MO transform of the streaming PT2 driver reads them through the same PairMap.
+
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     xc =                        "mp2"
+     basis_path =                "def2-svp"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+     max_scf_cycle =             60
+
+[ctrl.ri_jk]
+     pair_screen_threshold =     1.0e-6
+
+[geom]
+     name = "water_dimer"
+     unit = "angstrom"
+     position = '''
+     O       0.0000000000     0.0000000000     0.0000000000
+     H       0.9572000000     0.0000000000     0.0000000000
+     H      -0.2399870    0.9272970     0.0000000000
+     O       2.9100000000     0.0000000000     0.0000000000
+     H       3.4958000000     0.7572000000     0.0000000000
+     H       3.4958000000    -0.7572000000     0.0000000000
+     '''

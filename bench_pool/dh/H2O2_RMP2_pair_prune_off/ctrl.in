@@ -1,0 +1,31 @@
+# Water-dimer MP2 with the storage-level AO-pair pruning switched off.
+# The keyword is written out at its default value, so the case locks that the value (not the
+# presence) of pair_screen_threshold selects the unpruned path.
+
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     xc =                        "mp2"
+     basis_path =                "def2-svp"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+     max_scf_cycle =             60
+
+[ctrl.ri_jk]
+     pair_screen_threshold =     0.0
+
+[geom]
+     name = "water_dimer"
+     unit = "angstrom"
+     position = '''
+     O       0.0000000000     0.0000000000     0.0000000000
+     H       0.9572000000     0.0000000000     0.0000000000
+     H      -0.2399870    0.9272970     0.0000000000
+     O       2.9100000000     0.0000000000     0.0000000000
+     H       3.4958000000     0.7572000000     0.0000000000
+     H       3.4958000000    -0.7572000000     0.0000000000
+     '''
