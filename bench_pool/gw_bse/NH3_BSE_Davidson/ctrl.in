@@ -19,6 +19,7 @@
      gw_or_bse=      "bse"
      bse_tda=true
      bse_davidson_solver=true
+     bse_matvec_style=           "ao"
      davidson_target_excitations=1
      davidson_maximum_subspace_size=10
      davidson_restart_dimensions=5

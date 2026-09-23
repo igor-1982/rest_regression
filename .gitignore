@@ -2,6 +2,7 @@ bench_pyscf
 work_pool
 restart
 *rchk
+*rest_results.json
 
 # GeomeTRIC temporary files
 GeomeTRIC*
