@@ -1,0 +1,36 @@
+# Water trimer analytic gradient of a global hybrid (PBE0) with the storage-level AO-pair
+# pruning on. Unlike the ammonia cases, this one drops a large part of the rows at the same
+# threshold (1517 of 2628 AO-pair rows at 1.0e-6), so the derivative contracts a tensor whose
+# row space is genuinely smaller than the full pair space.
+
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     job_type =                  "force"
+     xc =                        "pbe0"
+     basis_path =                "def2-svp"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     auxbasis_response =         true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+
+[ctrl.ri_jk]
+     pair_screen_threshold =     1.0e-6
+
+[geom]
+    name = "water_trimer"
+    unit = "Angstrom"
+    position = """
+        O    -2.1261000000     3.0170000000     0.8160000000
+        H    -1.8714000000     3.0380000000    -0.1512000000
+        H    -2.8262000000     2.3170000000     0.9600000000
+        O    -0.1860000000     0.8350000000     1.2320000000
+        H    -0.6708000000    -0.0232000000     1.0630000000
+        H    -0.8484000000     1.5610000000     1.4140000000
+        O    -1.1960000000    -1.4878000000    -2.2419000000
+        H    -0.2179000000    -1.3531000000    -2.0833000000
+        H    -1.5782000000    -0.6735000000    -2.6787000000
+    """
