@@ -1,0 +1,28 @@
+# Triplet oxygen analytic gradient of a global hybrid (B3LYP) in the unrestricted
+# (spin-polarized) scheme, with the storage-level AO-pair pruning on. Both spin channels
+# share the pair map of the compacted 3-center tensor.
+
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     job_type =                  "force"
+     xc =                        "b3lyp"
+     basis_path =                "def2-svp"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     auxbasis_response =         true
+     charge =                    0.0
+     spin =                      3.0
+     spin_polarization =         true
+
+[ctrl.ri_jk]
+     pair_screen_threshold =     1.0e-6
+
+[geom]
+     name = "O2"
+     unit = "angstrom"
+     position = '''
+          O    1.0000000000       0.0000000000       0.0000000000
+          O    2.2080000000       0.0000000000       0.0000000000
+     '''

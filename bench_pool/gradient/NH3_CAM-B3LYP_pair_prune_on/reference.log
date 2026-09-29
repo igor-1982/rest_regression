@@ -1,0 +1,201 @@
+=========================================================
+      Input parameters for the REST calculation
+=========================================================
+Calculation type: Force calculation
+Cube output: wavefunction
+The exchange-correlation method: cam-b3lyp
+Print level:   1    max log level: INFO
+The number of threads used for parallelism:      4
+The spheric-GTO basis set is taken from def2-svp
+The spheric-GTO auxiliary basis set is taken from def2-universal-jkfit
+Charge:   0; Spin:   1
+Spin polarization: Off
+Input molecular structure (in Angstrom): ----------
+N        0.00000000      0.00000000      0.00000000
+H        1.00000000      0.00000000      0.00000000
+H       -0.34202014      0.00000000      0.93969262
+H       -0.34202014      0.81379768     -0.46984631
+End of molecular structure ------------------------
+ERI Type: ri_v
+SCF convergency thresholds: 1e-8 for density matrix
+                            1e-6 Ha. for sum of eigenvalues
+                            1e-8 Ha. for total energy
+                            1e-5 Ha. for grad_dm
+SCF convergence criteria:       dm,eev
+Max. SCF cycle number:      100
+It is a finite cluster calculation
+Initial guess is prepared by (sad).
+=========================================================
+Using xc_parser legacy
+==== DFA Summary (legacy) ====
+Spin channel: 1
+SCF DFA components: [433]
+SCF DFA parameters: [1.0]
+SCF DFA hybrid coeff:       0.19000000
+Range-Separated Hybrid parameters:
+  omega:       0.33000000
+  alpha (LR-HF coeff):       0.65000000
+Post-SCF DFA: None
+==== End of Summary ====
+For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
+Libxc version used in REST: 7.0.0
+nbas: 15, natm: 4 for standard basis sets
+First valence state for the frozen-core algorithm:     0
+final nbas: 58,final natm: 8
+numbasis: 29, num_auxbas: 131
+Molecule_name: NH3
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (40327.70 MB) is more than required (1.26 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:      12.08385578 Hartree
+No ghost effective potential
+No ghost point charges
+Building short-range 3c RI integrals for RSH (omega = 0.3300)
+  SR 3c integrals built.
+In-core RI pair screening enabled (threshold 1.0e-6, 435 AO pairs).
+Storage-level AO-pair pruning: 435 of 435 AO-pair rows stored (100.00%), the full-space pair tables are unchanged.
+Storage-level AO-pair pruning of the short-range (RSH) 3c tensor: 435 rows stored.
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.02990870 with the total number of basis functions:     29
+Grid size: 44118
+ [non0tab] cutoff=1.0e-12, blksize=256 (auto), ao-sparsity=94.2% → skipping (AO too dense), falling back to dense
+
+=======================
+Generating SAD for atom: N
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (40304.57 MB) is more than required (0.09 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.18492513 with the total number of basis functions:     14
+Grid size: 14046
+Initial guess from SAP
+SCF Change: DM 3.76775e-3; eev 1.50631e-2 Ha; etot -9.86348e-3 Ha; grad 7.62832e-2 Ha
+SCF Change: DM 7.47138e-4; eev 1.61103e-2 Ha; etot 1.37577e-3 Ha; grad 1.52926e-2 Ha
+SCF Change: DM 1.56499e-4; eev 9.53211e-4 Ha; etot 1.09716e-3 Ha; grad 4.07817e-3 Ha
+SCF Change: DM 1.21211e-4; eev 2.71288e-3 Ha; etot -8.52415e-5 Ha; grad 9.99131e-4 Ha
+SCF Change: DM 3.62810e-5; eev 2.90907e-4 Ha; etot -1.55298e-4 Ha; grad 6.37734e-4 Ha
+SCF Change: DM 2.76529e-5; eev 9.20688e-4 Ha; etot 7.65345e-5 Ha; grad 2.05850e-4 Ha
+SCF Change: DM 6.74209e-6; eev 1.05744e-4 Ha; etot 5.67543e-5 Ha; grad 1.68440e-4 Ha
+SCF Change: DM 1.13881e-5; eev 3.23340e-4 Ha; etot -2.97486e-5 Ha; grad 1.07029e-4 Ha
+SCF Change: DM 2.85728e-6; eev 1.43133e-4 Ha; etot -4.21908e-9 Ha; grad 3.83182e-5 Ha
+SCF Change: DM 1.14656e-7; eev 3.44481e-7 Ha; etot -6.30315e-10 Ha; grad 7.41253e-7 Ha
+SCF Change: DM 4.09413e-9; eev 4.22147e-8 Ha; etot -3.19744e-13 Ha; grad 1.45861e-7 Ha
+SCF Change: DM 2.51682e-9; eev 2.62456e-8 Ha; etot -2.84217e-14 Ha; grad 1.22978e-7 Ha
+SCF Change: DM 1.76049e-9; eev 1.84962e-8 Ha; etot 1.42109e-14 Ha; grad 1.08883e-7 Ha
+SCF Change: DM 1.32531e-9; eev 1.40005e-8 Ha; etot 2.13163e-14 Ha; grad 9.90093e-8 Ha
+SCF Change: DM 1.04663e-9; eev 1.11038e-8 Ha; etot -2.13163e-14 Ha; grad 9.15690e-8 Ha
+SCF Change: DM 1.46829e-8; eev 1.54487e-7 Ha; etot 3.55271e-14 Ha; grad 8.56885e-8 Ha
+SCF Change: DM 5.02054e-10; eev 1.18987e-8 Ha; etot -5.68434e-14 Ha; grad 3.75775e-9 Ha
+SCF Change: DM 6.01703e-11; eev 1.33599e-9 Ha; etot 2.13163e-14 Ha; grad 1.14712e-10 Ha
+SCF is converged after   18 iterations.
+Energy:       -53.7711249968 Ha
+grad_dm l2: 5.68820e-10 Ha
+SAD generation for N complete.
+
+=======================
+Generating SAD for atom: H
+=======================
+Using xc_parser legacy
+==== End of Summary ====
+Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
+Checking memory requirement for RI J/K algorithms...
+Memory available for 1.5 times of RI integrals (40304.08 MB) is more than required (0.00 MB).
+Using standard incore RI-J/K algorithms.
+Nuc_energy:       0.00000000 Hartree
+No ghost effective potential
+No ghost point charges
+Overlap matrix is nonsigular:
+  Lowest eigenvalue:       0.31520018 with the total number of basis functions:      5
+Grid size: 10024
+Initial guess from SAP
+SCF Change: DM (1.85353e-2, 0.00000e0); eev 3.05132e-2 Ha; etot -1.52374e-2 Ha; grad (9.77637e-2, 0.00000e0) Ha
+SCF Change: DM (4.68253e-3, 0.00000e0); eev 4.22690e-2 Ha; etot -4.93006e-3 Ha; grad (3.44292e-2, 0.00000e0) Ha
+SCF Change: DM (3.71739e-4, 0.00000e0); eev 1.77983e-2 Ha; etot 1.36043e-3 Ha; grad (6.37969e-3, 0.00000e0) Ha
+SCF Change: DM (2.76501e-4, 0.00000e0); eev 4.18731e-3 Ha; etot 7.54429e-4 Ha; grad (3.62675e-4, 0.00000e0) Ha
+SCF Change: DM (1.62871e-4, 0.00000e0); eev 3.28476e-4 Ha; etot 1.20845e-4 Ha; grad (7.76088e-4, 0.00000e0) Ha
+SCF Change: DM (4.87152e-5, 0.00000e0); eev 2.98184e-4 Ha; etot -2.17091e-5 Ha; grad (3.23165e-4, 0.00000e0) Ha
+SCF Change: DM (6.92480e-6, 0.00000e0); eev 1.56066e-4 Ha; etot -2.13982e-5 Ha; grad (7.49624e-5, 0.00000e0) Ha
+SCF Change: DM (2.11446e-6, 0.00000e0); eev 5.02064e-5 Ha; etot -9.09432e-6 Ha; grad (6.00162e-6, 0.00000e0) Ha
+SCF Change: DM (2.06960e-7, 0.00000e0); eev 7.30878e-7 Ha; etot -4.31449e-11 Ha; grad (2.19419e-6, 0.00000e0) Ha
+SCF Change: DM (1.16694e-7, 0.00000e0); eev 4.12103e-7 Ha; etot -2.06890e-12 Ha; grad (1.82152e-6, 0.00000e0) Ha
+SCF Change: DM (7.86691e-8, 0.00000e0); eev 2.77818e-7 Ha; etot -9.97424e-13 Ha; grad (1.61140e-6, 0.00000e0) Ha
+SCF Change: DM (5.81021e-8, 0.00000e0); eev 2.05187e-7 Ha; etot -6.03406e-13 Ha; grad (1.46974e-6, 0.00000e0) Ha
+SCF Change: DM (4.53937e-8, 0.00000e0); eev 1.60307e-7 Ha; etot -4.10116e-13 Ha; grad (1.36512e-6, 0.00000e0) Ha
+SCF Change: DM (3.68506e-8, 0.00000e0); eev 1.30137e-7 Ha; etot -2.99427e-13 Ha; grad (1.28338e-6, 0.00000e0) Ha
+SCF Change: DM (3.07611e-8, 0.00000e0); eev 1.08632e-7 Ha; etot -2.29206e-13 Ha; grad (1.21702e-6, 0.00000e0) Ha
+SCF Change: DM (3.23072e-7, 0.00000e0); eev 1.14092e-6 Ha; etot -1.82410e-13 Ha; grad (1.16163e-6, 0.00000e0) Ha
+SCF Change: DM (3.70478e-8, 0.00000e0); eev 1.30834e-7 Ha; etot -1.40060e-12 Ha; grad (5.79889e-7, 0.00000e0) Ha
+SCF Change: DM (2.68788e-8, 0.00000e0); eev 9.49220e-8 Ha; etot -1.00642e-13 Ha; grad (5.13178e-7, 0.00000e0) Ha
+SCF Change: DM (2.32637e-8, 0.00000e0); eev 8.21554e-8 Ha; etot -6.55587e-14 Ha; grad (4.64779e-7, 0.00000e0) Ha
+SCF Change: DM (2.23206e-8, 0.00000e0); eev 7.88248e-8 Ha; etot -5.14588e-14 Ha; grad (4.22889e-7, 0.00000e0) Ha
+SCF Change: DM (2.32075e-8, 0.00000e0); eev 8.19567e-8 Ha; etot -4.45199e-14 Ha; grad (3.82697e-7, 0.00000e0) Ha
+SCF Change: DM (2.60445e-8, 0.00000e0); eev 9.19756e-8 Ha; etot -4.19664e-14 Ha; grad (3.40908e-7, 0.00000e0) Ha
+SCF Change: DM (3.18430e-8, 0.00000e0); eev 1.12453e-7 Ha; etot -4.14113e-14 Ha; grad (2.94011e-7, 0.00000e0) Ha
+SCF Change: DM (4.35944e-8, 0.00000e0); eev 1.53953e-7 Ha; etot -4.19109e-14 Ha; grad (2.36672e-7, 0.00000e0) Ha
+SCF Change: DM (9.29551e-9, 0.00000e0); eev 3.28269e-8 Ha; etot -4.27436e-14 Ha; grad (1.58174e-7, 0.00000e0) Ha
+SCF Change: DM (8.27720e-9, 0.00000e0); eev 2.92308e-8 Ha; etot -6.99441e-15 Ha; grad (1.41436e-7, 0.00000e0) Ha
+SCF Change: DM (8.00671e-9, 0.00000e0); eev 2.82755e-8 Ha; etot -5.44009e-15 Ha; grad (1.26531e-7, 0.00000e0) Ha
+SCF Change: DM (8.03786e-9, 0.00000e0); eev 2.83855e-8 Ha; etot -4.99600e-15 Ha; grad (1.12114e-7, 0.00000e0) Ha
+SCF Change: DM (8.18795e-9, 0.00000e0); eev 2.89156e-8 Ha; etot -4.21885e-15 Ha; grad (9.76405e-8, 0.00000e0) Ha
+SCF Change: DM (8.26207e-9, 0.00000e0); eev 2.91773e-8 Ha; etot -3.38618e-15 Ha; grad (8.28968e-8, 0.00000e0) Ha
+SCF Change: DM (7.88949e-9, 0.00000e0); eev 2.78616e-8 Ha; etot -3.05311e-15 Ha; grad (6.80196e-8, 0.00000e0) Ha
+SCF Change: DM (6.32870e-9, 0.00000e0); eev 2.23497e-8 Ha; etot -2.55351e-15 Ha; grad (5.38133e-8, 0.00000e0) Ha
+SCF Change: DM (2.74203e-9, 0.00000e0); eev 9.68342e-9 Ha; etot -1.66533e-15 Ha; grad (4.24175e-8, 0.00000e0) Ha
+SCF is converged after   33 iterations.
+Energy:        -0.4992784057 Ha
+grad_dm l2: 3.74800e-8 Ha
+SAD generation for H complete.
+Initial guess energy using single atom density (SAD):     -56.4992346609677867
+The total energy:       -56.3592140380 Ha by the initial guess
+Initial grad_dm l2:  1.44590e0 Ha
+SCF Change: DM 3.54166e-2; eev  1.62504e0 Ha; etot 1.31357e-3 Ha; grad  1.50888e0 Ha
+Energy:     -56.3579004650 Ha after    1 iterations (in       0.02 seconds).
+SCF Change: DM 1.74786e-2; eev 8.08901e-1 Ha; etot 4.26107e-3 Ha; grad  1.50331e0 Ha
+Energy:     -56.3536393964 Ha after    2 iterations (in       0.02 seconds).
+SCF Change: DM 2.97246e-4; eev 3.05099e-2 Ha; etot -1.23334e-1 Ha; grad 2.88783e-2 Ha
+Energy:     -56.4769737170 Ha after    3 iterations (in       0.02 seconds).
+SCF Change: DM 7.41962e-5; eev 3.05529e-4 Ha; etot -3.99544e-5 Ha; grad 1.30338e-3 Ha
+Energy:     -56.4770136713 Ha after    4 iterations (in       0.02 seconds).
+SCF Change: DM 2.28630e-5; eev 1.92540e-5 Ha; etot -2.93365e-7 Ha; grad 2.36972e-4 Ha
+Energy:     -56.4770139647 Ha after    5 iterations (in       0.02 seconds).
+SCF Change: DM 5.24262e-6; eev 9.41936e-6 Ha; etot -1.77153e-8 Ha; grad 5.66263e-5 Ha
+Energy:     -56.4770139824 Ha after    6 iterations (in       0.02 seconds).
+SCF Change: DM 3.25723e-7; eev 1.70903e-6 Ha; etot -7.18579e-10 Ha; grad 7.92582e-6 Ha
+Energy:     -56.4770139831 Ha after    7 iterations (in       0.02 seconds).
+SCF Change: DM 3.30120e-9; eev 4.09024e-8 Ha; etot -5.17275e-12 Ha; grad 1.56160e-6 Ha
+Energy:     -56.4770139831 Ha after    8 iterations (in       0.02 seconds).
+SCF is converged after    8 iterations.
+Energy:       -56.4770139831 Ha
+grad_dm l2: 1.48960e-6 Ha
+Force calculation invoked
+WARNING: the time record for rks grad calc_de_ext_field has been initialized previously.
+------ Output gradient [a.u.] ------
+N        0.00844825      0.01748295      0.01009359
+H       -0.01438162     -0.00265671     -0.00153377
+H        0.00296558     -0.00144742     -0.01461322
+H        0.00296588     -0.01337872      0.00605340
+
+------------------------------------
+force                   0.218 s for force calculation
+Mulliken population analysis:
+  0-N  :  -0.256641
+  1-H  :   0.086457
+  2-H  :   0.085092
+  3-H  :   0.085092
+
+====================================================
+              REST: Mission accomplished
+====================================================
+The SCF energy        :     -56.4770139831 Ha
+Detailed time report:
+force     |:    0.218 s for force calculation
+Overall   |:    0.606 s for the whole job
+SCF       |:    0.387 s for the scf procedure

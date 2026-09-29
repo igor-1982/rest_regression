@@ -1,0 +1,30 @@
+# Ammonia analytic gradient of a global hybrid (PBE0) with the storage-level AO-pair
+# pruning on: the derivative integrals are contracted over the stored rows of the
+# compacted 3-center tensor only, which is the row set of the pruned energy.
+
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     job_type =                  "force"
+     xc =                        "pbe0"
+     basis_path =                "def2-svp"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     auxbasis_response =         true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+
+[ctrl.ri_jk]
+     pair_screen_threshold =     1.0e-6
+
+[geom]
+    name = "NH3"
+    unit = "Angstrom"
+    position = """
+        N   0.0         0.0         0.0       
+        H   1.0         0.0         0.0       
+        H  -0.34202014  0.0         0.93969262
+        H  -0.34202014  0.81379768 -0.46984631
+    """
