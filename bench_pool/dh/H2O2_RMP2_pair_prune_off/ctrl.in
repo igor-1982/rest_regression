@@ -3,7 +3,7 @@
 # presence) of pair_screen_threshold selects the unpruned path.
 
 [ctrl]
-     print_level =               1
+     print_level =               2
      num_threads =               4
      xc =                        "mp2"
      basis_path =                "def2-svp"

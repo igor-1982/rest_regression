@@ -3,7 +3,7 @@
 # AO-to-MO transform of the streaming PT2 driver reads them through the same PairMap.
 
 [ctrl]
-     print_level =               1
+     print_level =               2
      num_threads =               4
      xc =                        "mp2"
      basis_path =                "def2-svp"
