@@ -1,10 +1,12 @@
-[DEBUG ctrl_io::path_util] Add the REST_BASIS_DIR path (/scratch/rest_pack/rest/basis-set-pool) to rest_basis_dir.
+REST git commit: 1c6f2d594af22d408e0f11dd8e4dfea8fa30e058
+REST git commit date: 2026-09-29 16:44:45 +0800
+[DEBUG ctrl_io::path_util] The REST_BASIS_DIR environment variable is not set.
 [DEBUG ctrl_io::path_util] Detected CONDA_PREFIX: /home/a/miniconda3/envs/pyscf-pip, inside_conda: false
 [DEBUG ctrl_io::path_util] Add the alternative default path (/home/a/rest_pack/rest/basis-set-pool/) to rest_basis_dir.
 [DEBUG ctrl_io::path_util] The specified path for the basis sets is: def2-svp (lowercase), try to find it from the rest_basis_dir
-[DEBUG ctrl_io::path_util] Found: /scratch/rest_pack/rest/basis-set-pool/def2-svp
+[DEBUG ctrl_io::path_util] Found: /home/a/rest_pack/rest/basis-set-pool/def2-svp
 [DEBUG ctrl_io::path_util] The specified path for the auxiliary basis sets is: def2-universal-jkfit (lowercase), try to find it from the rest_basis_dir
-[DEBUG ctrl_io::path_util] Found: /scratch/rest_pack/rest/basis-set-pool/def2-universal-jkfit
+[DEBUG ctrl_io::path_util] Found: /home/a/rest_pack/rest/basis-set-pool/def2-universal-jkfit
 =========================================================
       Input parameters for the REST calculation
 =========================================================
@@ -13,8 +15,8 @@ Cube output: wavefunction
 The exchange-correlation method: hf
 Print level:   2    max log level: DEBUG
 The number of threads used for parallelism:      4
-The spheric-GTO basis set is taken from /scratch/rest_pack/rest/basis-set-pool/def2-svp
-The spheric-GTO auxiliary basis set is taken from /scratch/rest_pack/rest/basis-set-pool/def2-universal-jkfit
+The spheric-GTO basis set is taken from /home/a/rest_pack/rest/basis-set-pool/def2-svp
+The spheric-GTO auxiliary basis set is taken from /home/a/rest_pack/rest/basis-set-pool/def2-universal-jkfit
 Charge:   0; Spin:   1
 Spin polarization: Off
 Input molecular structure (in Angstrom): ----------
@@ -34,6 +36,7 @@ Initial guess is prepared by (sad).
 [DEBUG ctrl_io] Turn on the basis pair symmetry for RI 3D-tensors
 [DEBUG ctrl_io] The pruning method is nwchem
 [DEBUG ctrl_io] The radial grid generation method is treutler
+[DEBUG ctrl_io] The Becke radii adjustment scheme is becke
 [DEBUG ctrl_io] min_num_angular_points: 110
 [DEBUG ctrl_io] max_num_angular_points: 590
 [DEBUG ctrl_io] hardness: 3
@@ -47,7 +50,7 @@ Using xc_parser legacy
 Spin channel: 1
 SCF DFA components: []
 SCF DFA parameters: []
-SCF DFA hybrid coeff:       0.00000000
+SCF DFA hybrid coeff:       1.00000000
 Post-SCF DFA: None
 ==== detailed info of the scf functional ====
 ==== End of Summary ====
@@ -60,9 +63,9 @@ numbasis: 24, num_auxbas: 113
 Molecule_name: H2O
 job_type = "SinglePoint"
 print_level = 2
-basis_path = "/scratch/rest_pack/rest/basis-set-pool/def2-svp"
+basis_path = "/home/a/rest_pack/rest/basis-set-pool/def2-svp"
 basis_type = "spheric"
-auxbas_path = "/scratch/rest_pack/rest/basis-set-pool/def2-universal-jkfit"
+auxbas_path = "/home/a/rest_pack/rest/basis-set-pool/def2-universal-jkfit"
 auxbas_type = "spheric"
 use_auxbas = true
 even_tempered_basis = false
@@ -75,6 +78,8 @@ use_isdf = false
 isdf_k_only = false
 isdf_k_mu = 8
 isdf_new = false
+isdf_type = "udd"
+ctrl_file = "ctrl.in"
 eri_type = "ri_v"
 use_ri_symm = true
 xc = "hf"
@@ -100,6 +105,7 @@ hardness = 3
 pruning = "nwchem"
 rad_grid_method = "treutler"
 external_grids = "grids"
+radii_adjust = "becke"
 mixer = "diis"
 mix_param = 0.8
 num_max_diis = 8
@@ -116,7 +122,7 @@ solvent_enabled = false
 solvent_ri = true
 solv_epsilon = 1.0
 solvent_model = "CPCM"
-solv_chunk = 8
+solv_chunk = 16
 pcm_cavity_radii = "UFF"
 smd_cavity_radii = "Bondi"
 solvent_name = ""
@@ -127,7 +133,7 @@ guessfile_type = "hdf5"
 initial_guess = "sad"
 basis_projection = "occupied"
 noiter = false
-check_stab = false
+check_stab = "off"
 use_dm_only = false
 vxc_screen_threshold = 0.000000000000001
 ao_cutoff = 0.000000000001
@@ -162,6 +168,7 @@ guess_mix_theta_deg = [15.0, 15.0]
 start_mix_cycle = 0
 xc_parser = "legacy"
 hamiltonian_distributed = "auto"
+rpa_distributed = "auto"
 use_fxc_opt = false
 rel = "None"
 analdrv_tasks = ["Multipole", "Hessian"]
@@ -172,11 +179,21 @@ threshold = 0.0000000000001
 uplo = "Upper"
 distributed = "auto"
 
+[ri_jk]
+schwartz_threshold = 0.000000000001
+schwartz_overlap_tol2 = 0.000000000000000000000001
+pair_screen_threshold = 0.0
+
 [ri_pt2]
 mpi_mode = 0
 fp_mode = "FP32"
 new_driver = false
 streaming = true
+engine = "Cpu"
+torch_devices = [0]
+torch_force_batch_inter = false
+torch_fold = "F32Acc"
+torch_batch = 16
 
 [thermo]
 temperature = 298.15
@@ -198,7 +215,7 @@ output_path = "./Thermochemistry.txt"
 
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (51452.59 MB) is more than required (0.37 MB).
+Memory available for 1.5 times of RI integrals (43475.93 MB) is more than required (0.37 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       9.31261943 Hartree
 [DEBUG scf_io] no empirical dispersion correction is employed
@@ -215,7 +232,7 @@ Using xc_parser legacy
 Spin channel: 1
 SCF DFA components: []
 SCF DFA parameters: []
-SCF DFA hybrid coeff:       0.00000000
+SCF DFA hybrid coeff:       1.00000000
 Post-SCF DFA: None
 ==== End of Summary ====
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
@@ -226,7 +243,7 @@ final nbas: 31,final natm: 2
 numbasis: 14, num_auxbas: 77
 Restricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (51452.60 MB) is more than required (0.09 MB).
+Memory available for 1.5 times of RI integrals (43475.93 MB) is more than required (0.09 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -235,7 +252,7 @@ Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.18745226 with the total number of basis functions:     14
 Grid size: 14262
 Initial guess from SAP
-The evaluation of vmat costs             0.01 seconds
+The evaluation of vmat costs             0.00 seconds
 The total energy:       -74.1875454698 Ha by the initial guess
 Initial grad_dm l2: 2.02349e-1 Ha
 SCF Change: DM 2.40367e-3; eev 8.81871e-2 Ha; etot 2.98921e-3 Ha; grad 9.05390e-2 Ha
@@ -256,30 +273,30 @@ SCF Change: DM 7.12807e-5; eev 1.03028e-3 Ha; etot 4.43803e-4 Ha; grad 9.49366e-
 Energy:     -74.1952253092 Ha after    8 iterations (in       0.00 seconds).
 SCF Change: DM 1.99666e-5; eev 1.03488e-3 Ha; etot -1.76739e-7 Ha; grad 3.89277e-4 Ha
 Energy:     -74.1952254859 Ha after    9 iterations (in       0.00 seconds).
-SCF Change: DM 6.96811e-7; eev 3.52206e-6 Ha; etot -3.60357e-8 Ha; grad 6.45231e-6 Ha
+SCF Change: DM 6.96811e-7; eev 3.52206e-6 Ha; etot -3.60356e-8 Ha; grad 6.45231e-6 Ha
 Energy:     -74.1952255220 Ha after   10 iterations (in       0.00 seconds).
-SCF Change: DM 2.61310e-8; eev 2.74971e-7 Ha; etot -1.59730e-11 Ha; grad 1.26841e-6 Ha
+SCF Change: DM 2.61310e-8; eev 2.74971e-7 Ha; etot -1.60014e-11 Ha; grad 1.26841e-6 Ha
 Energy:     -74.1952255220 Ha after   11 iterations (in       0.00 seconds).
-SCF Change: DM 1.62090e-8; eev 1.71286e-7 Ha; etot -2.55795e-13 Ha; grad 1.07519e-6 Ha
+SCF Change: DM 1.62090e-8; eev 1.71286e-7 Ha; etot -2.70006e-13 Ha; grad 1.07519e-6 Ha
 Energy:     -74.1952255220 Ha after   12 iterations (in       0.00 seconds).
-SCF Change: DM 1.14039e-8; eev 1.20846e-7 Ha; etot -4.26326e-14 Ha; grad 9.55284e-7 Ha
+SCF Change: DM 1.14039e-8; eev 1.20846e-7 Ha; etot -8.52651e-14 Ha; grad 9.55284e-7 Ha
 Energy:     -74.1952255220 Ha after   13 iterations (in       0.00 seconds).
 SCF Change: DM 8.62129e-9; eev 9.15463e-8 Ha; etot -5.68434e-14 Ha; grad 8.70900e-7 Ha
 Energy:     -74.1952255220 Ha after   14 iterations (in       0.00 seconds).
-SCF Change: DM 6.83097e-9; eev 7.26510e-8 Ha; etot -8.52651e-14 Ha; grad 8.07092e-7 Ha
+SCF Change: DM 6.83097e-9; eev 7.26510e-8 Ha; etot -9.94760e-14 Ha; grad 8.07092e-7 Ha
 Energy:     -74.1952255220 Ha after   15 iterations (in       0.00 seconds).
-SCF Change: DM 9.80168e-8; eev 9.96130e-7 Ha; etot 2.84217e-14 Ha; grad 7.56527e-7 Ha
+SCF Change: DM 9.80168e-8; eev 9.96130e-7 Ha; etot 8.52651e-14 Ha; grad 7.56527e-7 Ha
 Energy:     -74.1952255220 Ha after   16 iterations (in       0.00 seconds).
 SCF Change: DM 4.54288e-9; eev 1.15593e-7 Ha; etot -2.84217e-13 Ha; grad 4.43953e-8 Ha
 Energy:     -74.1952255220 Ha after   17 iterations (in       0.00 seconds).
-SCF Change: DM 3.93215e-10; eev 1.36407e-8 Ha; etot 4.26326e-14 Ha; grad 4.55153e-9 Ha
+SCF Change: DM 3.93216e-10; eev 1.36407e-8 Ha; etot  0.00000e0 Ha; grad 4.55153e-9 Ha
 Energy:     -74.1952255220 Ha after   18 iterations (in       0.00 seconds).
-SCF Change: DM 1.80519e-11; eev 8.54210e-10 Ha; etot -1.42109e-14 Ha; grad 8.59074e-10 Ha
+SCF Change: DM 1.80510e-11; eev 8.54185e-10 Ha; etot -2.84217e-14 Ha; grad 8.59077e-10 Ha
 Energy:     -74.1952255220 Ha after   19 iterations (in       0.00 seconds).
 SCF is converged after   19 iterations.
 Energy:       -74.1952255220 Ha
-grad_dm l2: 5.37311e-10 Ha
-the job costs             0.04 seconds
+grad_dm l2: 5.37321e-10 Ha
+the job costs             0.01 seconds
 SAD generation for O complete.
 
 =======================
@@ -290,7 +307,7 @@ Using xc_parser legacy
 Spin channel: 2
 SCF DFA components: []
 SCF DFA parameters: []
-SCF DFA hybrid coeff:       0.00000000
+SCF DFA hybrid coeff:       1.00000000
 Post-SCF DFA: None
 ==== End of Summary ====
 For SCF calculation, no core orbital is frozen by effective core potential (ECP) approximation
@@ -301,7 +318,7 @@ final nbas: 9,final natm: 2
 numbasis:  5, num_auxbas: 18
 Unrestricted Hartree-Fock (or Kohn-Sham) algorithm is invoked.
 Checking memory requirement for RI J/K algorithms...
-Memory available for 1.5 times of RI integrals (51445.61 MB) is more than required (0.00 MB).
+Memory available for 1.5 times of RI integrals (43475.93 MB) is more than required (0.00 MB).
 Using standard incore RI-J/K algorithms.
 Nuc_energy:       0.00000000 Hartree
 No ghost effective potential
@@ -310,7 +327,7 @@ Overlap matrix is nonsigular:
   Lowest eigenvalue:       0.31520018 with the total number of basis functions:      5
 Grid size: 10024
 Initial guess from SAP
-The evaluation of vmat costs             0.01 seconds
+The evaluation of vmat costs             0.00 seconds
 The total energy:        -0.4812944052 Ha by the initial guess
 Initial grad_dm l2: (1.12533e-1, 0.00000e0) Ha
 SCF Change: DM (1.85353e-2, 0.00000e0); eev 3.05132e-2 Ha; etot -1.52374e-2 Ha; grad (9.77637e-2, 0.00000e0) Ha
@@ -353,9 +370,9 @@ SCF Change: DM (2.32637e-8, 0.00000e0); eev 8.21554e-8 Ha; etot -6.51701e-14 Ha;
 Energy:      -0.4992784057 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   19 iterations (in       0.00 seconds).
 SCF Change: DM (2.23206e-8, 0.00000e0); eev 7.88248e-8 Ha; etot -5.15699e-14 Ha; grad (4.22889e-7, 0.00000e0) Ha
 Energy:      -0.4992784057 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   20 iterations (in       0.00 seconds).
-SCF Change: DM (2.32075e-8, 0.00000e0); eev 8.19567e-8 Ha; etot -4.45199e-14 Ha; grad (3.82697e-7, 0.00000e0) Ha
+SCF Change: DM (2.32075e-8, 0.00000e0); eev 8.19567e-8 Ha; etot -4.45755e-14 Ha; grad (3.82697e-7, 0.00000e0) Ha
 Energy:      -0.4992784057 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   21 iterations (in       0.00 seconds).
-SCF Change: DM (2.60445e-8, 0.00000e0); eev 9.19756e-8 Ha; etot -4.19109e-14 Ha; grad (3.40908e-7, 0.00000e0) Ha
+SCF Change: DM (2.60445e-8, 0.00000e0); eev 9.19756e-8 Ha; etot -4.18554e-14 Ha; grad (3.40908e-7, 0.00000e0) Ha
 Energy:      -0.4992784057 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   22 iterations (in       0.00 seconds).
 SCF Change: DM (3.18430e-8, 0.00000e0); eev 1.12453e-7 Ha; etot -4.13003e-14 Ha; grad (2.94011e-7, 0.00000e0) Ha
 Energy:      -0.4992784057 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   23 iterations (in       0.00 seconds).
@@ -382,17 +399,17 @@ Energy:      -0.4992784057 Ha with <S^2> =  0.750 and <2S+1> =  2.000 after   33
 SCF is converged after   33 iterations.
 Energy:        -0.4992784057 Ha
 grad_dm l2: 3.74800e-8 Ha
-the job costs             0.03 seconds
+the job costs             0.01 seconds
 SAD generation for H complete.
 [DEBUG scf_io] Exc:       0.00000000, Vxc:       0.00000000
-Initial guess energy using single atom density (SAD):     -75.9009789984878864
+Initial guess energy using single atom density (SAD):     -75.9009789984878296
 Detailed time report:
-Overall   |:    0.077 s for SCF Preparation
+InitGuess |:    0.016 s for Prepare initial guess
+Overall   |:    0.018 s for SCF Preparation
 DFT Grids |:    0.000 s for Initialization of the tabulated Grids and AOs
+CInt      |:    0.002 s for Two, Three, and Four-center integrals
 Solvent Calculation|:    0.000 s for Initialization of the solvent calculation
-InitGuess |:    0.071 s for Prepare initial guess
 ISDF      |:    0.000 s for ISDF initialization
-CInt      |:    0.006 s for Two, Three, and Four-center integrals
 [DEBUG scf_io] Exc:       0.00000000, Vxc:       0.00000000
 The total energy:       -75.9107206243 Ha by the initial guess
 Initial grad_dm l2: 8.91693e-1 Ha
@@ -471,7 +488,7 @@ solvent_model.refresh:         0.00s
 [DEBUG scf_io::scfrecord] using diis mixer
 [DEBUG scf_io] Exc:       0.00000000, Vxc:       0.00000000
 HOMO (  4):      -0.49882868, LUMO (  5):       0.178235, H-L Gap:       0.67706322
-SCF Change: DM 1.29484e-6; eev 1.71839e-5 Ha; etot -1.67432e-8 Ha; grad 3.70655e-5 Ha
+SCF Change: DM 1.29484e-6; eev 1.71839e-5 Ha; etot -1.67431e-8 Ha; grad 3.70655e-5 Ha
 Energy:     -75.9612828913 Ha after    7 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -483,7 +500,7 @@ solvent_model.refresh:         0.00s
 [DEBUG scf_io::scfrecord] using diis mixer
 [DEBUG scf_io] Exc:       0.00000000, Vxc:       0.00000000
 HOMO (  4):      -0.49882795, LUMO (  5):       0.178234, H-L Gap:       0.67706202
-SCF Change: DM 4.16437e-7; eev 2.41294e-6 Ha; etot -2.06882e-10 Ha; grad 9.61506e-6 Ha
+SCF Change: DM 4.16437e-7; eev 2.41294e-6 Ha; etot -2.06995e-10 Ha; grad 9.61506e-6 Ha
 Energy:     -75.9612828915 Ha after    8 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -495,7 +512,7 @@ solvent_model.refresh:         0.00s
 [DEBUG scf_io::scfrecord] using diis mixer
 [DEBUG scf_io] Exc:       0.00000000, Vxc:       0.00000000
 HOMO (  4):      -0.49882768, LUMO (  5):       0.178234, H-L Gap:       0.67706170
-SCF Change: DM 7.24622e-8; eev 4.22068e-7 Ha; etot -1.62004e-11 Ha; grad 1.47131e-6 Ha
+SCF Change: DM 7.24622e-8; eev 4.22068e-7 Ha; etot -1.64277e-11 Ha; grad 1.47131e-6 Ha
 Energy:     -75.9612828916 Ha after    9 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -507,7 +524,7 @@ solvent_model.refresh:         0.00s
 [DEBUG scf_io::scfrecord] using diis mixer
 [DEBUG scf_io] Exc:       0.00000000, Vxc:       0.00000000
 HOMO (  4):      -0.49882767, LUMO (  5):       0.178234, H-L Gap:       0.67706169
-SCF Change: DM 2.19508e-9; eev 2.48384e-8 Ha; etot -6.67910e-13 Ha; grad 1.88280e-7 Ha
+SCF Change: DM 2.19508e-9; eev 2.48384e-8 Ha; etot -5.40012e-13 Ha; grad 1.88280e-7 Ha
 Energy:     -75.9612828916 Ha after   10 iterations (in       0.00 seconds).
 Detailed timing info in this SCF step:
 prepare_next_input:            0.00s
@@ -536,10 +553,10 @@ Mulliken population analysis:
   1-H  :   0.167217
   2-H  :   0.167217
 =============== Multipole Moments (in analdrv) ===============
-Origin (a.u.): [    0.00000000,     0.00000000,     0.09656531]
+Origin (a.u.): [    0.00000000,     0.00000000,     0.00000000]
 Electric dipole moment (a.u.):
-    nuclear charges         : [   0.000000000000   0.000000000000  -0.956153600997]
-    SCF density             : [   0.000000000000  -0.000000000000   0.126076623922]
+    nuclear charges         : [   0.000000000000   0.000000000000   0.009499539845]
+    SCF density             : [   0.000000000000  -0.000000000000  -0.839576516920]
     total                   : [   0.000000000000  -0.000000000000  -0.830076977075]
     total, Debye (X Y Z)    :   0.000000000001  -0.000000000000  -2.109845181273
 Electric quadrupole moment, raw second moments (a.u.):
@@ -548,41 +565,41 @@ Electric quadrupole moment, raw second moments (a.u.):
     XZ:  -0.000000000000
     YY:  -5.213914509753
     YZ:   0.000000000000
-    ZZ:  -4.259382953353
+    ZZ:  -4.419696241364
 Electric quadrupole moment, traceless (a.u.):
-    XX:   1.653391299306
+    XX:   1.733547943311
     XY:  -0.000000000000
     XZ:  -0.000000000000
-    YY:  -1.542594316953
+    YY:  -1.462437672947
     YZ:   0.000000000000
-    ZZ:  -0.110796982353
+    ZZ:  -0.271110270364
 Electric octupole moment (a.u.):
     XXX:   0.000000000001
     XXY:  -0.000000000000
-    XXZ:  -1.474617172780
+    XXZ:  -1.772352895128
     XYY:   0.000000000000
     XYZ:  -0.000000000000
     XZZ:   0.000000000000
     YYY:  -0.000000000000
-    YYZ:   0.021647049766
+    YYZ:  -0.481836242476
     YZZ:  -0.000000000000
-    ZZZ:  -0.550443654205
+    ZZZ:  -1.807590666804
 Electric hexadecapole moment (a.u.):
     XXXX: -14.463936831665
     XXXY:   0.000000000000
     XXXZ:  -0.000000000001
     XXYY:  -5.281270242403
     XXYZ:   0.000000000000
-    XXZZ:  -3.806975467561
-    XYYY:  -0.000000000000
+    XXZZ:  -4.120520151990
+    XYYY:   0.000000000000
     XYYZ:  -0.000000000000
     XYZZ:   0.000000000000
-    XZZZ:  -0.000000000001
+    XZZZ:  -0.000000000000
     YYYY: -12.797797112293
     YYYZ:   0.000000000000
-    YYZZ:  -4.813472065372
+    YYZZ:  -4.857910379304
     YZZZ:   0.000000000000
-    ZZZZ: -15.069751543234
+    ZZZZ: -15.523665293945
 Timing dip_intor: 0.000 s
 Timing dip_nuc: 0.000 s
 Timing dip_scf: 0.000 s
@@ -594,7 +611,7 @@ Timing oct_nuc: 0.000 s
 Timing oct_scf: 0.000 s
 Timing hex_intor: 0.000 s
 Timing hex_nuc: 0.000 s
-Timing hex_scf: 0.001 s
+Timing hex_scf: 0.000 s
 [WARN] You are using analdrv module, which is still under development.
 [WARN] Keywords of analdrv will be updated in future versions.
 [DEBUG solvers::krylov]     tol(1.000e-9) < max ||r|| = 1.018e-7 < 1000 * tol(1.000e-9), max |r| = 4.974e-8
@@ -603,9 +620,9 @@ Timing hex_scf: 0.001 s
 Print hessian in [tA, sB] format (component xyz first, atom then)
 
                  0           1           2           3           4           5
-   0      0.802960    0.000000   -0.000000   -0.401480    0.000000    0.307307
+   0      0.802960    0.000000    0.000000   -0.401480    0.000000    0.307307
    1      0.000000    0.000004    0.000000    0.000000   -0.000002   -0.000000
-   2     -0.000000    0.000000    0.542430    0.242438   -0.000000   -0.271215
+   2      0.000000    0.000000    0.542430    0.242438   -0.000000   -0.271215
    3     -0.401480    0.000000    0.242438    0.434758   -0.000000   -0.274872
    4      0.000000   -0.000002   -0.000000   -0.000000    0.000002    0.000000
    5      0.307307   -0.000000   -0.271215   -0.274872    0.000000    0.253221
@@ -625,18 +642,18 @@ Print hessian in [tA, sB] format (component xyz first, atom then)
    8      0.274872    0.000000    0.253221
 
 Timing in Hessian calculation:
-    de_skeleton_HessNucRepl                                     :   0.000545 seconds
-    de_skeleton_RHessHcore                                      :   0.007567 seconds
-    de_skeleton_RHessRIJK                                       :   0.118324 seconds
-    de_ovlp                                                     :   0.002940 seconds
-    in compute_dimless_cpscf_rhs, f1ao_core_RHessHcore          :   0.001033 seconds
-    in compute_dimless_cpscf_rhs, f1bra_el_RHessRIJK            :   0.000502 seconds
-    in compute_dimless_cpscf_rhs, s1mo                          :   0.000337 seconds
-    compute_dimless_cpscf_rhs                                   :   0.002247 seconds
-    make_response_preparation                                   :   0.000105 seconds
-    finalize_cpscf                                              :   0.002531 seconds
-    de_cpscf                                                    :   0.033167 seconds
-    de_tot                                                      :   0.162728 seconds
+    de_skeleton_HessNucRepl                                     :   0.000120 seconds
+    de_skeleton_RHessHcore                                      :   0.002562 seconds
+    de_skeleton_RHessRIJK                                       :   0.036651 seconds
+    de_ovlp                                                     :   0.000658 seconds
+    in compute_dimless_cpscf_rhs, f1ao_core_RHessHcore          :   0.000481 seconds
+    in compute_dimless_cpscf_rhs, f1bra_el_RHessRIJK            :   0.000192 seconds
+    in compute_dimless_cpscf_rhs, s1mo                          :   0.000158 seconds
+    compute_dimless_cpscf_rhs                                   :   0.001056 seconds
+    make_response_preparation                                   :   0.000078 seconds
+    finalize_cpscf                                              :   0.000767 seconds
+    de_cpscf                                                    :   0.011347 seconds
+    de_tot                                                      :   0.051397 seconds
 =============== Vibrational Analysis (in analdrv) ===============
 
 Inactive modes:
@@ -658,7 +675,7 @@ Active modes:
   ----------------------------------------------------------------------------------
       1   O               -0.00 -0.00 -0.07    0.00 -0.00  0.05   -0.07 -0.00 -0.00   
       2   H                0.43 -0.00  0.56    0.58 -0.00 -0.40    0.56 -0.00 -0.43   
-      3   H               -0.43  0.00  0.56   -0.58 -0.00 -0.40    0.56  0.00  0.43   
+      3   H               -0.43 -0.00  0.56   -0.58 -0.00 -0.40    0.56  0.00  0.43   
 
 
 =============== End of Vibrational Analysis (in analdrv) ===============
@@ -714,6 +731,6 @@ Active modes:
 ====================================================
 The SCF energy        :     -75.9612828916 Ha
 Detailed time report:
-Overall   |:    0.260 s for the whole job
-SCF       |:    0.090 s for the scf procedure
-AnalDrv   |:    0.171 s for analytical derivative module
+AnalDrv   |:    0.054 s for analytical derivative module
+Overall   |:    0.078 s for the whole job
+SCF       |:    0.023 s for the scf procedure
