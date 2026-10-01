@@ -1,0 +1,27 @@
+[ctrl]
+    print_level =          1
+    num_threads =          4
+    xc =                   "mp2"
+    basis_path =           "def2-SVP"
+    auxbas_path =          "def2-universal-jkfit"
+    eri_type =             "ri-v"
+    use_ri_symm =          true
+    charge =               0.0
+    spin =                 1.0
+    spin_polarization =    false
+    job_type =             "force"
+    auxbasis_response =    true
+    outname =              "reference"
+
+[ctrl.j2c_decomp]
+policy = "cd"
+
+[geom]
+    name = "NH3"
+    unit = "Angstrom"
+    position = """
+    N   0.0000000000    0.0000000000    0.0000000000
+    H   0.0000000000    0.0000000000    1.1500000000
+    H   0.9674007198    0.0000000000   -0.2902341250
+    H  -0.4917018117    0.8516525201   -0.3062961203
+    """
