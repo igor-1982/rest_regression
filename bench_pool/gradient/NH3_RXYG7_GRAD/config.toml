@@ -1,0 +1,12 @@
+# json-reference mode for this test: auto-detected from the presence of
+# reference.json (requires outname = "reference" in ctrl.in); this file only
+# pins the required fields. Tolerance comes from the default table
+# (gradient: atol 1e-4, rtol 0). See docs/config-toml.md for the full rules.
+
+[config]
+fields = [
+    "scf_energy",
+    "energies/pt2",
+    "energies/xdh_energy",
+    "gradient",
+]

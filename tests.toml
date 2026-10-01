@@ -38,6 +38,23 @@ tags = ["mp2"]
 [O2_MP2]
 tags = ["mp2", "mpi"]
 
+# 双杂化（DH）解析梯度用例（json 参考模式，见 docs/config-toml.md）。
+# DH 解析梯度暂不支持 MPI（eval_force 在 MPI 下 panic），锁 num_mpi = 1 走 rayon-only；
+# 参考值由当前已验证的 REST 版本生成（NH3/def2-SVP/def2-universal-jkfit，
+# j2c policy = "cd"），梯度沿用默认容许误差表 (atol 1e-4, rtol 0)。
+[NH3_RMP2_GRAD]
+num_mpi = 1
+timeout = 120
+tags = ["dh", "mp2"]
+[NH3_RXYG7_GRAD]
+num_mpi = 1
+timeout = 120
+tags = ["dh"]
+[NH3CATION_UXYG7_GRAD]
+num_mpi = 1
+timeout = 120
+tags = ["dh"]
+
 [HI_Validate_ENXC_ECP_GEP]
 tags = ["ecp"]
 
