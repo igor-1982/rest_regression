@@ -1,0 +1,17 @@
+[ctrl]
+num_threads = 4
+print_level = 1
+xc = "wb97x-v"
+charge = 0.0
+spin = 1.0
+basis_path = "STO-3G"
+eri_type = "ri-v"
+auxbas_path = "def2-SV(P)-JKFIT"
+
+[geom]
+name = "CO single point, wb97x-v"
+unit = "Angstrom"
+position = """
+ C  0.000000  0.000000  0.000000,
+ O  0.000000  0.000000  1.128300,
+"""
