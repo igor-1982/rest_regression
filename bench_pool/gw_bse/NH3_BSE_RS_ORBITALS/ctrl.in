@@ -1,4 +1,11 @@
 [ctrl]
+     # pinned to the pre-2026-10 defaults (the reference values were recorded with them)
+     radii_adjust = "becke"
+     scf_acc_rho = 1.0e-8
+     scf_acc_eev = 1.0e-6
+     scf_acc_etot = 1.0e-8
+     scf_acc_g = 1.0e-5
+     scf_conv_criteria = "dm,eev"
      # rsGW 后的 BSE：RS 轨道系数用于 RI AO2MO，BSE 的 v/W/偶极/跃迁振幅
      # 与屏蔽能量都在 RS 分子轨道表象中。
      print_level =               1

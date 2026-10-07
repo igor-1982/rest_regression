@@ -1,4 +1,11 @@
 [ctrl]
+     # pinned to the pre-2026-10 defaults (the reference values were recorded with them)
+     radii_adjust = "becke"
+     scf_acc_rho = 1.0e-8
+     scf_acc_eev = 1.0e-6
+     scf_acc_etot = 1.0e-8
+     scf_acc_g = 1.0e-5
+     scf_conv_criteria = "dm,eev"
      # 覆盖 renormalized singles 的两个新选项：完整轨道空间HF对角化（rs_full_space）
      # 与将RS轨道系数用于RI AO2MO（rs_use_rs_orbitals），并令W也使用RS粒子能量。
      print_level =               1
