@@ -1,4 +1,7 @@
 [ctrl]
+    # pinned to the pre-2026-10 defaults (the reference values were recorded with them)
+    scf_acc_g = 1.0e-5
+    scf_conv_criteria = "dm,eev"
     print_level =        1
     xc =                 "hf"
     basis_path =         "def2-svp"

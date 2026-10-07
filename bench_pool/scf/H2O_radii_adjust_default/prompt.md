@@ -7,7 +7,7 @@ DFT 格点 Becke 划分中的原子半径调整方案，由 ctrl 关键词 `radi
 - `becke`：用 Bragg 半径本身，即 Becke 原文（JCP 88, 2547 (1988)）的写法，REST 的历史行为。
 - `treutler`：用 Bragg 半径的平方根，即 Treutler-Ahlrichs（JCP 102, 346 (1995)）的写法，也是
   PySCF `Grids` 与 PyFock 的缺省。
-- 不写该关键词时缺省为 `becke`。
+- 不写该关键词时缺省为 `treutler`（2026-10 起，此前为 `becke`）。
 
 两种方案只改权重、不改格点点位与点数，且都满足每个格点上 $sum_A p_A = 1$，差别是粗格点下的
 积分误差，随格点加密衰减。
@@ -24,12 +24,13 @@ ctrl.in 不写 `radii_adjust`，检验缺省值。
 
 ## 3. 覆盖点
 
-缺省分支：关键词缺失时必须走 Becke（原始半径）。若有人把缺省改成 treutler，本用例的能量会偏离参考值 2.3e-3 Ha 而失败。
+缺省分支：关键词缺失时必须走 treutler。参考值由 treutler 分支生成。若有人把缺省改回 becke，本用例的能量会偏离参考值 2.3e-3 Ha 而失败。
 
 ## 4. 对照
 
-参考值由本次改动的 release 构建（关键词实现完成后）生成，REST 自身两种方案的能量在同一点位上
-只差权重。外部对照：同一几何、同一泛函基组下 PySCF 2.3.0（`radi.becke_atomic_radii_adjust` 与
+参考值由本次改动的 release 构建（关键词实现完成后）生成，2026-10 缺省对齐 PySCF 之后重录为
+treutler 分支的值（-76.2521419658 Ha，此前 becke 为 -76.2544076928 Ha）。REST 自身两种方案的能量在同一点位上
+只差权重，差值随格点加密从 level 0 的 2.3e-3 Ha 衰减到 level 5 的 1.3e-8 Ha。外部对照：同一几何、同一泛函基组下 PySCF 2.3.0（`radi.becke_atomic_radii_adjust` 与
 `radi.treutler_atomic_radii_adjust`，均带 def2-universal-jkfit 的 density fitting）在 level 3 的
 (H2O)5 上给出 -381.4184303558 与 -381.4184302778 Ha，REST 对应值为 -381.4184303559 与
 -381.4184302778 Ha，两种方案都对齐到 1e-10 Ha。
