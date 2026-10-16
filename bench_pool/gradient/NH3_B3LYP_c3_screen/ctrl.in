@@ -1,0 +1,32 @@
+# Ammonia analytic gradient with the integral-level Schwartz screening of the
+# three-centre producers on (`c3_screen_threshold`): the rimatr build and the
+# de-jk derivative batches evaluate only the (shell pair, aux shell) triples
+# whose exact Schwarz bound reaches the threshold, filling the rest with zeros.
+
+[ctrl]
+     print_level =               1
+     num_threads =               4
+     job_type =                  "force"
+     xc =                        "b3lyp"
+     basis_path =                "def2-svp"
+     auxbas_path =               "def2-universal-jkfit"
+     eri_type =                  "ri_v"
+     use_ri_symm =               true
+     auxbasis_response =         true
+     charge =                    0.0
+     spin =                      1.0
+     spin_polarization =         false
+     outname =                   "reference"
+
+[ctrl.ri_jk]
+     c3_screen_threshold =       1.0e-12
+
+[geom]
+    name = "NH3"
+    unit = "Angstrom"
+    position = """
+        N   0.0         0.0         0.0
+        H   1.0         0.0         0.0
+        H  -0.34202014  0.0         0.93969262
+        H  -0.34202014  0.81379768 -0.46984631
+    """

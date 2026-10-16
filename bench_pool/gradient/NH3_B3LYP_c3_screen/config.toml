@@ -1,0 +1,11 @@
+# json-reference mode for this test: auto-detected from the presence of
+# reference.json (requires outname = "reference" in ctrl.in). The case pins the
+# fields of the screened path; tolerances come from the default table
+# (scf_energy atol 1e-8 rtol 1e-5, gradient atol 1e-4). See docs/config-toml.md.
+
+[config]
+fields = [
+    "scf_energy",
+    "total_energy",
+    "gradient",
+]
